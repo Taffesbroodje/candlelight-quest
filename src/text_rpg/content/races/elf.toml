@@ -1,0 +1,30 @@
+id = "elf"
+name = "Elf"
+description = "Graceful and long-lived, elves are a people of otherworldly beauty."
+speed = 30
+size = "Medium"
+
+[ability_bonuses]
+dexterity = 2
+
+[[traits]]
+name = "Darkvision"
+description = "You can see in dim light within 60 feet as if it were bright light, and in darkness as if it were dim light."
+
+[[traits]]
+name = "Keen Senses"
+description = "You have proficiency in the Perception skill."
+
+[[traits]]
+name = "Fey Ancestry"
+description = "You have advantage on saving throws against being charmed, and magic cannot put you to sleep."
+
+[[traits]]
+name = "Trance"
+description = "Elves do not need to sleep. Instead, they meditate deeply for 4 hours a day."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Elvish"

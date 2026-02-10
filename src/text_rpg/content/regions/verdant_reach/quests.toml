@@ -1,0 +1,74 @@
+[[quests]]
+id = "wolves_of_whisperwood"
+name = "Wolves of the Whisperwood"
+description = "Old Tom, a local farmer, has been losing livestock to increasingly bold wolf attacks near the Whisperwood. He begs you to investigate the forest edge and deal with the wolves before they threaten the village itself."
+quest_giver_id = "old_tom"
+status = "available"
+xp_reward = 100
+gold_reward = 25
+item_rewards = []
+level_requirement = 1
+
+[[quests.objectives]]
+id = "go_to_whisperwood"
+description = "Travel to the edge of the Whisperwood"
+objective_type = "travel"
+target_location_id = "whisperwood_edge"
+is_complete = false
+
+[[quests.objectives]]
+id = "defeat_wolves"
+description = "Defeat the wolf pack (0/3)"
+objective_type = "kill"
+target_entity_type = "wolf"
+target_count = 3
+current_count = 0
+is_complete = false
+
+[[quests.objectives]]
+id = "return_to_tom"
+description = "Return to Old Tom with news of your success"
+objective_type = "talk"
+target_npc_id = "old_tom"
+is_complete = false
+
+[[quests]]
+id = "missing_shipment"
+name = "The Missing Shipment"
+description = "Captain Vale reports that an important trade shipment has gone missing along the Ironridge road. Bandits are suspected. He needs someone to travel the road, find the stolen goods, and deal with the brigands."
+quest_giver_id = "captain_vale"
+status = "available"
+xp_reward = 150
+gold_reward = 50
+item_rewards = ["healing_potion"]
+level_requirement = 1
+
+[[quests.objectives]]
+id = "go_to_ironridge"
+description = "Travel to the Ironridge Mountain Road"
+objective_type = "travel"
+target_location_id = "ironridge_road"
+is_complete = false
+
+[[quests.objectives]]
+id = "defeat_bandits"
+description = "Defeat the bandits (0/3)"
+objective_type = "kill"
+target_entity_type = "bandit"
+target_count = 3
+current_count = 0
+is_complete = false
+
+[[quests.objectives]]
+id = "recover_shipment"
+description = "Recover the stolen trade goods"
+objective_type = "interact"
+target_item_id = "trade_goods"
+is_complete = false
+
+[[quests.objectives]]
+id = "return_to_vale"
+description = "Return to Captain Vale with the recovered shipment"
+objective_type = "talk"
+target_npc_id = "captain_vale"
+is_complete = false

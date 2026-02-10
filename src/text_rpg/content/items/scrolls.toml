@@ -1,0 +1,105 @@
+# Spell scrolls — single-use items that cast a spell
+
+[[items]]
+id = "scroll_fire_bolt"
+name = "Scroll of Fire Bolt"
+description = "A parchment inscribed with arcane sigils that crackle with heat. When read aloud, it unleashes a bolt of fire."
+item_type = "scroll"
+weight = 0.1
+value_gp = 25
+rarity = "common"
+
+[items.effects]
+spell_id = "fire_bolt"
+spell_level = 0
+
+[[items]]
+id = "scroll_healing_word"
+name = "Scroll of Healing Word"
+description = "A blessed parchment that radiates gentle warmth. Speaking the words written upon it channels divine healing energy."
+item_type = "scroll"
+weight = 0.1
+value_gp = 75
+rarity = "uncommon"
+
+[items.effects]
+spell_id = "healing_word"
+spell_level = 1
+
+[[items]]
+id = "scroll_shield"
+name = "Scroll of Shield"
+description = "A glimmering scroll that, when invoked, conjures an invisible barrier of magical force."
+item_type = "scroll"
+weight = 0.1
+value_gp = 75
+rarity = "uncommon"
+
+[items.effects]
+spell_id = "shield"
+spell_level = 1
+
+[[items]]
+id = "scroll_magic_missile"
+name = "Scroll of Magic Missile"
+description = "Three glowing darts of force are illustrated on this scroll. Reading it launches them unerringly at a target."
+item_type = "scroll"
+weight = 0.1
+value_gp = 75
+rarity = "uncommon"
+
+[items.effects]
+spell_id = "magic_missile"
+spell_level = 1
+
+[[items]]
+id = "scroll_sleep"
+name = "Scroll of Sleep"
+description = "Dreamy mist swirls within the ink of this scroll. Its magic sends creatures into a magical slumber."
+item_type = "scroll"
+weight = 0.1
+value_gp = 75
+rarity = "uncommon"
+
+[items.effects]
+spell_id = "sleep"
+spell_level = 1
+
+[[items]]
+id = "scroll_cure_wounds"
+name = "Scroll of Cure Wounds"
+description = "A holy scroll inscribed with prayers of mending. Touch a creature and speak the words to heal their wounds."
+item_type = "scroll"
+weight = 0.1
+value_gp = 75
+rarity = "uncommon"
+
+[items.effects]
+spell_id = "cure_wounds"
+spell_level = 1
+
+[[items]]
+id = "scroll_thunderwave"
+name = "Scroll of Thunderwave"
+description = "Thunder rumbles within the words of this scroll. Reading it releases a wave of concussive force."
+item_type = "scroll"
+weight = 0.1
+value_gp = 75
+rarity = "uncommon"
+
+[items.effects]
+spell_id = "thunderwave"
+spell_level = 1
+
+[[items]]
+id = "scroll_hold_person"
+name = "Scroll of Hold Person"
+description = "Chains of magical force are woven into the text of this scroll. It can paralyze a humanoid creature."
+item_type = "scroll"
+weight = 0.1
+value_gp = 150
+rarity = "rare"
+
+[items.effects]
+spell_id = "hold_person"
+spell_level = 2

@@ -1,0 +1,525 @@
+# =============================================================================
+# Threat Story Seeds — dangers that imperil the settlement and surroundings
+# =============================================================================
+
+[[seeds]]
+id = "spreading_blight"
+name = "The Spreading Blight"
+category = "threat"
+tags = ["nature", "corruption", "urgent"]
+level_range = [1, 3]
+incompatible_tags = ["fey_alliance"]
+weight = 1.0
+description_template = "A creeping rot spreads through the farmlands around {settlement}, wilting crops and tainting the soil with an unnatural darkness."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 5
+trigger_max = 12
+narrator_hints = [
+    "The fields nearest the {wilderness_location} have turned an ashen grey overnight. {farmer} wrings his hands as another row of wheat crumbles to dust.",
+    "A foul sweetness hangs in the air near the eastern plots. Blackened roots twist upward from the soil like grasping fingers.",
+    "Livestock refuse to graze on the afflicted pastures, lowing pitifully at their empty troughs."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "farmer", tag = "blight_worried"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "blighted_fields"}
+]
+quest_template = {type = "investigate", target = "whisperwood_edge", report_to = "farmer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The source of the blight pulses beneath a gnarled oak at the forest's edge — a corrupted druidic focus, cracked and leaking necrotic sap.",
+    "Removing the focus will not be enough. The corruption has already taken root in something deeper beneath the Whisperwood."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "blight_remedy_needed"}
+]
+quest_template = {type = "fetch", target = "purification_components", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 20
+narrator_hints = [
+    "The blight has reached the village well. {healer} reports three villagers bedridden with blackened veins spreading across their skin.",
+    "Blighted creatures — deer with fungal growths, rats trailing spore clouds — have been spotted stumbling out of the {wilderness_location}."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "blight_critical"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "blight_quarantine"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The purification ritual burns away the corruption in a wave of silver light. Within days, green shoots push through the cleansed soil."]
+failure_narrator_hints = ["The blight consumes the last of the fertile land. {settlement} faces a long, hungry winter, and the {wilderness_location} grows ever darker."]
+success_effects = [
+    {type = "faction_rep", faction_role = "farmer", delta = 15},
+    {type = "faction_rep", faction_role = "healer", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "farmer", delta = -15},
+    {type = "location_description_tag", location = "thornfield_village", tag = "famine_looming"}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "goblin_incursion"
+name = "Goblin Incursion"
+category = "threat"
+tags = ["combat", "goblins", "raids"]
+level_range = [1, 4]
+incompatible_tags = []
+weight = 1.2
+description_template = "Goblin raiding parties have been striking the outlying farms of {settlement}, growing bolder with each attack."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 8
+trigger_max = 18
+narrator_hints = [
+    "{farmer} arrives at the {settlement} square bloodied and breathless, reporting green-skinned raiders torching his grain stores.",
+    "Crude goblin totems — bundles of bone and feather — have appeared along the {wilderness_location} treeline. A warning, or a declaration of war.",
+    "{authority_npc} posts a bounty notice on the inn door. The parchment is already stained with dried blood."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "goblin_bounty"},
+    {type = "npc_dialogue_tag", role = "farmer", tag = "goblin_raid_victim"}
+]
+quest_template = {type = "investigate", target = "whisperwood_edge", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The goblin scouts were only the vanguard. Their main camp lies deeper in the forest, built around a collapsed ruin they have fortified with sharpened stakes.",
+    "Among the goblin debris, you find a crude map scratched on leather — they have been scouting {settlement}'s defenses with unsettling precision."
+]
+world_changes = [
+    {type = "location_description_tag", location = "whisperwood_depths", tag = "goblin_camp"}
+]
+quest_template = {type = "combat", target = "goblin_warband", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 22
+narrator_hints = [
+    "A goblin warhorn echoes through the night. Torches bob between the trees as a full assault force marshals at the {wilderness_location}.",
+    "{authority_npc} calls every able body to the barricades. The goblins have a battering ram — cobbled together from stolen timber."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "goblin_siege_prep"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "barricaded"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The goblin chieftain falls, and the warband scatters into the {wilderness_location}. {authority_npc} clasps your shoulder — the village stands because of you."]
+failure_narrator_hints = ["The goblins overrun the outer farms. Smoke rises over {settlement} as families flee with what little they can carry."]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 15},
+    {type = "faction_rep", faction_role = "farmer", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -10},
+    {type = "faction_rep", faction_role = "farmer", delta = -15}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "bandit_warlord"
+name = "The Bandit Warlord"
+category = "threat"
+tags = ["combat", "bandits", "road_danger"]
+level_range = [2, 5]
+incompatible_tags = []
+weight = 1.0
+description_template = "A cunning bandit leader has united the scattered highwaymen along the {settlement} trade roads into a disciplined force."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 12
+trigger_max = 25
+narrator_hints = [
+    "Three merchant caravans have vanished on the road to {settlement} this month alone. {innkeeper} says trade has slowed to a trickle.",
+    "A survivor stumbles into the inn, beaten and stripped of everything. He speaks of organized ambushes — not common thugs, but soldiers.",
+    "{authority_npc} paces before a map pinned to the guardhouse wall. Every attack follows a pattern — someone is thinking tactically."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "trade_disrupted"},
+    {type = "location_description_tag", location = "ironridge_road", tag = "bandit_territory"}
+]
+quest_template = {type = "investigate", target = "ironridge_road", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The bandits operate from a hidden camp off the road, concealed by a ravine. Their leader — a scarred ex-mercenary called Voss — commands with iron discipline.",
+    "Voss has been demanding 'tribute' from passing merchants. Those who refuse disappear. Those who pay spread the word: avoid {settlement}."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "bandit_tribute"}
+]
+quest_template = {type = "combat", target = "bandit_outpost", difficulty = "hard"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 28
+narrator_hints = [
+    "Voss sends an emissary to {settlement}: pay a weekly tithe or face consequences. The letter is pinned to the gate with a crossbow bolt.",
+    "{authority_npc} refuses to pay, but the guard force is thin. If the bandits attack in force, the village cannot hold without help."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "bandit_ultimatum"},
+    {type = "npc_dialogue_tag", role = "merchant", tag = "considering_leaving"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["With Voss defeated, the bandit alliance crumbles. Trade resumes on the roads, and {innkeeper} raises a toast to the hero who reopened them."]
+failure_narrator_hints = ["{settlement} becomes a tributary to Voss. Merchants pay the bandit tax, and {authority_npc} carries the shame of capitulation."]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 15},
+    {type = "faction_rep", faction_role = "merchant", delta = 20}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -15},
+    {type = "faction_rep", faction_role = "merchant", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "dragon_sighting"
+name = "Shadow in the Sky"
+category = "threat"
+tags = ["dragon", "epic", "fear"]
+level_range = [3, 5]
+incompatible_tags = []
+weight = 0.6
+description_template = "A young dragon has been spotted circling the mountains beyond {settlement}, casting a shadow of dread over the land."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 15
+trigger_max = 30
+narrator_hints = [
+    "A vast shadow passes over {settlement} at dusk. When folk look up, they see leathery wings silhouetted against the dying sun.",
+    "Charred sheep carcasses dot the highland pastures. The burns are too large and too precise for any natural fire.",
+    "{farmer} whispers that his grandfather spoke of a dragon's lair somewhere in the mountains. Most thought it a fireside tale — until now."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "farmer", tag = "dragon_fear"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "dragon_alert"}
+]
+quest_template = {type = "investigate", target = "ironridge_road", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The dragon — a young green, scales like tarnished copper — has claimed the old ruins as its lair. It is not yet fully grown, but it is cunning and territorial.",
+    "{merchant} recalls that dragonsbane herbs grow deep in the {wilderness_location}. A weapon coated in the stuff might give a mortal a fighting chance."
+]
+world_changes = [
+    {type = "location_description_tag", location = "old_ruins", tag = "dragon_lair"},
+    {type = "npc_dialogue_tag", role = "healer", tag = "dragonsbane_lore"}
+]
+quest_template = {type = "fetch", target = "dragonsbane_herbs", difficulty = "hard"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 30
+narrator_hints = [
+    "The dragon descends on the outlying farms at dawn, scattering livestock and setting a barn ablaze. It circles once, roaring, then returns to its lair.",
+    "{authority_npc} grimly states that the beast is testing defenses. The next attack will target {settlement} itself."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "dragon_threatened"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The dragon is driven from its lair, wounded and furious. It will not return soon. {settlement} celebrates with bonfires that light the valley."]
+failure_narrator_hints = ["The dragon claims dominion over the region. {settlement} lives under the shadow of its wings, offering tribute in livestock to keep the flames at bay."]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 20},
+    {type = "faction_rep", faction_role = "farmer", delta = 15}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -10},
+    {type = "faction_rep", faction_role = "farmer", delta = -20}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "undead_rising"
+name = "The Dead Walk"
+category = "threat"
+tags = ["undead", "necromancy", "horror"]
+level_range = [2, 5]
+incompatible_tags = []
+weight = 0.9
+description_template = "The dead do not rest peacefully near {settlement}. Graves lie empty, and pale shapes shamble through the mist at night."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 10
+trigger_max = 20
+narrator_hints = [
+    "{healer} rushes to the village square, ashen-faced. The cemetery behind the temple — three graves have been torn open from the inside.",
+    "A guardsman on night watch swears he saw a figure in a burial shroud standing at the edge of the {wilderness_location}, swaying but not breathing.",
+    "Dogs howl without ceasing after sundown. The air smells of turned earth and something older, something wrong."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "undead_distressed"},
+    {type = "location_description_tag", location = "thornfield_temple", tag = "desecrated_graves"}
+]
+quest_template = {type = "investigate", target = "thornfield_temple", report_to = "healer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The trail leads to the old ruins beyond the forest. Necromantic sigils have been carved into the stone, still glowing faintly with dark power.",
+    "Someone — or something — is deliberately raising the dead. The rituals are methodical, practiced. This is no wild magic."
+]
+world_changes = [
+    {type = "location_description_tag", location = "old_ruins", tag = "necromantic_circle"}
+]
+quest_template = {type = "combat", target = "undead_source", difficulty = "hard"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 25
+narrator_hints = [
+    "A shambling horde emerges from the tree line at midnight — a dozen corpses, eyes blazing with unnatural light. {authority_npc} sounds the alarm.",
+    "{healer} clutches a holy symbol, chanting prayers of warding. The dead press against the temple doors, scratching, moaning."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "undead_siege"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "undead_assault"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The necromantic focus shatters, and the risen dead collapse into dust and bone. {healer} leads a solemn reconsecration of the cemetery at dawn."]
+failure_narrator_hints = ["The dead continue to rise. {settlement} becomes a place of barred doors and sleepless nights, where no one ventures out after dark."]
+success_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = 20},
+    {type = "faction_rep", faction_role = "guard", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = -15},
+    {type = "faction_rep", faction_role = "guard", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "beast_swarm"
+name = "The Beast Swarm"
+category = "threat"
+tags = ["beasts", "nature", "survival"]
+level_range = [1, 3]
+incompatible_tags = []
+weight = 1.1
+description_template = "Unnatural numbers of predators are flooding out of the {wilderness_location}, driven by something deeper in the forest."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 6
+trigger_max = 14
+narrator_hints = [
+    "Wolf packs, normally shy of {settlement}, have been spotted hunting in broad daylight along the village perimeter.",
+    "{farmer} lost two cattle overnight — not to thieves, but to something with claws the size of plowshares. The tracks lead back to the {wilderness_location}.",
+    "Even the village cats have gone skittish, yowling at shadows. Something in the forest has upset the natural order."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "farmer", tag = "predator_losses"},
+    {type = "location_description_tag", location = "whisperwood_edge", tag = "predator_signs"}
+]
+quest_template = {type = "investigate", target = "whisperwood_edge", report_to = "farmer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The animals are fleeing something. Deep in the forest, a territorial owlbear matriarch has claimed a vast stretch of hunting ground, driving every other predator outward.",
+    "The beast's territory is marked by savaged tree trunks and the stench of musk. Approaching the den will require caution — or considerable firepower."
+]
+world_changes = [
+    {type = "location_description_tag", location = "whisperwood_depths", tag = "owlbear_territory"}
+]
+quest_template = {type = "combat", target = "alpha_predator", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 18
+narrator_hints = [
+    "A pack of displaced wolves attacks a group of children playing near the village edge. {authority_npc} is forced to organize hunting parties.",
+    "The displaced beasts are growing desperate and fearless. It is only a matter of time before someone is killed."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "beast_hunt_ordered"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["With the alpha predator dealt with, the forest's ecosystem slowly rebalances. The wolves retreat to their normal ranges, and livestock sleep safely again."]
+failure_narrator_hints = ["The predator menace worsens. Farmers abandon the outermost holdings, and {settlement} shrinks inward like a frightened animal."]
+success_effects = [
+    {type = "faction_rep", faction_role = "farmer", delta = 15},
+    {type = "faction_rep", faction_role = "guard", delta = 5}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "farmer", delta = -15}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "demonic_cult"
+name = "The Whispering Circle"
+category = "threat"
+tags = ["cult", "demonic", "infiltration"]
+level_range = [3, 5]
+incompatible_tags = []
+weight = 0.7
+description_template = "A secret cult has taken root in {settlement}, worshipping a fiendish patron and corrupting villagers from within."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 14
+trigger_max = 25
+narrator_hints = [
+    "Strange symbols appear scratched into door frames around {settlement} overnight — crude things, but {healer} recognizes them as infernal warding marks.",
+    "Several villagers have begun acting oddly: distant gazes, muttering in their sleep, disappearing for hours with no explanation.",
+    "{innkeeper} mentions that a hooded stranger has been meeting with locals in the back room, always after midnight. No one will say what they discuss."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "infernal_symbols"},
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "suspicious_meetings"}
+]
+quest_template = {type = "investigate", target = "thornfield_inn", report_to = "healer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The cult meets in a hidden cellar beneath an abandoned farmhouse. Their rituals are growing in power — a summoning circle has been half-completed in blood and ash.",
+    "The cult leader is no outsider but a trusted member of the community, twisted by whispered promises of power from something beyond the veil."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "cult_presence"}
+]
+quest_template = {type = "combat", target = "cult_hideout", difficulty = "hard"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 30
+narrator_hints = [
+    "The cult completes its summoning circle. A rift of hellish light cracks open at the old ruins, spilling heat and the stench of brimstone into the night air.",
+    "A lesser fiend steps through — a thing of horn and shadow. The cult kneels before it. If the portal is not closed, worse things will follow."
+]
+world_changes = [
+    {type = "location_description_tag", location = "old_ruins", tag = "demonic_portal"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "cult_emergency"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The portal collapses in on itself as the binding circle is shattered. The fiend is dragged back screaming, and the cultists scatter, broken."]
+failure_narrator_hints = ["The fiend establishes a foothold in the material world. {settlement} is gripped by a creeping corruption, and the cult grows bolder in its shadow."]
+success_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = 20},
+    {type = "faction_rep", faction_role = "guard", delta = 15}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = -20},
+    {type = "faction_rep", faction_role = "guard", delta = -15}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "elemental_rift"
+name = "The Elemental Rift"
+category = "threat"
+tags = ["elemental", "magical", "environmental"]
+level_range = [2, 4]
+incompatible_tags = []
+weight = 0.8
+description_template = "A tear between planes has opened near {settlement}, leaking raw elemental energy that warps the land and conjures hostile elementals."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 10
+trigger_max = 22
+narrator_hints = [
+    "The ground near the {wilderness_location} shimmers with heat haze even in the cold morning air. Stones crack and float inches off the earth.",
+    "{healer} reports that the ley lines beneath {settlement} are in turmoil — her divinations return nothing but static and screaming wind.",
+    "A farmer's well erupts in a geyser of boiling water. Another's field freezes solid in midsummer. The elements are at war with themselves."
+]
+world_changes = [
+    {type = "location_description_tag", location = "whisperwood_edge", tag = "elemental_distortion"},
+    {type = "npc_dialogue_tag", role = "healer", tag = "ley_line_disruption"}
+]
+quest_template = {type = "investigate", target = "whisperwood_edge", report_to = "healer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The rift is a jagged wound in the air itself, crackling with lightning and spewing gouts of flame. Small elementals — motes of living fire and stone — wander aimlessly from it.",
+    "To seal the rift, a binding focus must be crafted. {merchant} might know where to find the rare components — elemental cores from the creatures themselves."
+]
+world_changes = [
+    {type = "location_description_tag", location = "whisperwood_depths", tag = "elemental_rift_active"}
+]
+quest_template = {type = "fetch", target = "elemental_cores", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 26
+narrator_hints = [
+    "A massive earth elemental tears itself free of the hillside and lumbers toward {settlement}, leaving a trench of shattered rock in its wake.",
+    "The rift is widening. {healer} warns that if it reaches critical mass, the entire region could be torn apart by planar energies."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "elemental_evacuation"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The binding focus flares with light, and the rift snaps shut with a thunderclap that echoes across the valley. The land slowly settles, the elements returning to balance."]
+failure_narrator_hints = ["The rift stabilizes in its open state, a permanent scar on the landscape. Elementals roam freely, and {settlement} is forever changed by the wild magic at its doorstep."]
+success_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = 15},
+    {type = "faction_rep", faction_role = "farmer", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = -10},
+    {type = "faction_rep", faction_role = "farmer", delta = -15}
+]

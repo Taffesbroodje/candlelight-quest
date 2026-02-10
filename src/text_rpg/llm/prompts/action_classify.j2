@@ -1,0 +1,26 @@
+Classify the player's input into a game action.
+
+Player said: "{{ player_input }}"
+
+{{ context }}
+
+Valid action types: {{ valid_actions }}, custom
+
+IMPORTANT: Use "custom" for any creative, unusual, or free-form action that doesn't fit the standard types above. Examples of "custom" actions:
+- "I try to climb the wall"
+- "I punch the door down"
+- "Can I jump across the gap?"
+- "I want to bribe the guard"
+- "I carve my name into the tree"
+- Questions about the world or surroundings that aren't just "look around"
+- Any action that requires improvisation from a DM
+
+Only use the standard action types when the player's intent clearly matches one (e.g. "go north" = move, "hit the goblin" = attack, "talk to the merchant" = talk).
+
+Respond in JSON only:
+{
+  "action_type": "one of the valid action types, or custom",
+  "target": "target name or null",
+  "parameters": {},
+  "confidence": 0.0 to 1.0
+}

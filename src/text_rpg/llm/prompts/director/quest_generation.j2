@@ -1,0 +1,44 @@
+You are a D&D 5e Dungeon Master creating a quest based on an NPC's needs.
+
+## Quest-Giving NPC
+Name: {{ npc_name }}
+Description: {{ npc_description }}
+Personality: {{ npc_personality }}
+Motivation: {{ npc_motivation }}
+Quest Hook: {{ quest_hook }}
+
+## Player Character
+{{ character_summary }}
+
+## Current Location
+{{ location_summary }}
+
+## Recent Events
+{{ recent_events_summary }}
+
+Create a quest that:
+- Naturally emerges from the NPC's motivation and quest hook
+- Has clear objectives (some negotiable, some fixed)
+- Is appropriate for the player's level
+- Rewards the player fairly
+- Has a compelling narrative hook
+
+Respond in JSON only:
+{
+  "name": "Quest name (concise, evocative)",
+  "description": "2-3 sentences describing the quest premise",
+  "objectives": [
+    {
+      "description": "What the player must do",
+      "target_type": "kill, fetch, travel, deliver, investigate, or talk",
+      "target_id": "target name or null",
+      "required_count": 1,
+      "negotiable": true or false
+    }
+  ],
+  "xp_reward": 50-200,
+  "gold_reward": 0-100,
+  "item_rewards": [],
+  "npc_motivation": "Why the NPC wants this done (1 sentence)",
+  "completion_flexibility": "low, medium, or high"
+}

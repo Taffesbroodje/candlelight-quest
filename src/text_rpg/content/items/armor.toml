@@ -1,0 +1,83 @@
+[[items]]
+id = "leather_armor"
+name = "Leather Armor"
+description = "A breastpiece and shoulder protectors made of leather stiffened by boiling in oil."
+item_type = "armor"
+weight = 10.0
+value_gp = 10
+rarity = "common"
+armor_type = "light"
+ac_base = 11
+max_dex_bonus = 99
+stealth_disadvantage = false
+strength_requirement = 0
+
+[[items]]
+id = "hide_armor"
+name = "Hide Armor"
+description = "A crude armor made from thick animal hides."
+item_type = "armor"
+weight = 12.0
+value_gp = 10
+rarity = "common"
+armor_type = "medium"
+ac_base = 12
+max_dex_bonus = 2
+stealth_disadvantage = false
+strength_requirement = 0
+
+[[items]]
+id = "chain_mail"
+name = "Chain Mail"
+description = "Made of interlocking metal rings, chain mail includes a layer of quilted fabric worn underneath."
+item_type = "armor"
+weight = 55.0
+value_gp = 75
+rarity = "common"
+armor_type = "heavy"
+ac_base = 16
+max_dex_bonus = 0
+stealth_disadvantage = true
+strength_requirement = 13
+
+[[items]]
+id = "scale_mail"
+name = "Scale Mail"
+description = "A coat and leggings of leather covered with overlapping pieces of metal."
+item_type = "armor"
+weight = 45.0
+value_gp = 50
+rarity = "common"
+armor_type = "medium"
+ac_base = 14
+max_dex_bonus = 2
+stealth_disadvantage = true
+strength_requirement = 0
+
+[[items]]
+id = "shield"
+name = "Shield"
+description = "A wooden or metal shield carried in one hand. Wielding a shield increases your AC by 2."
+item_type = "armor"
+weight = 6.0
+value_gp = 10
+rarity = "common"
+armor_type = "shield"
+ac_base = 2
+max_dex_bonus = 0
+stealth_disadvantage = false
+strength_requirement = 0
+
+[[items]]
+id = "padded_armor"
+name = "Padded Armor"
+description = "Padded armor consists of quilted layers of cloth and batting."
+item_type = "armor"
+weight = 8.0
+value_gp = 5
+rarity = "common"
+armor_type = "light"
+ac_base = 11
+max_dex_bonus = 99
+stealth_disadvantage = true
+strength_requirement = 0

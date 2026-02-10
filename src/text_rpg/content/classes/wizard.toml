@@ -1,0 +1,43 @@
+id = "wizard"
+name = "Wizard"
+description = "A scholarly magic-user capable of manipulating the structures of reality."
+hit_die = "1d6"
+primary_ability = "intelligence"
+saving_throw_proficiencies = ["intelligence", "wisdom"]
+armor_proficiencies = []
+weapon_proficiencies = ["dagger", "dart", "sling", "quarterstaff", "light_crossbow"]
+starting_gold = 100
+skill_choices = 2
+available_skills = ["arcana", "history", "insight", "investigation", "medicine", "religion"]
+spellcasting_ability = "intelligence"
+cantrips_known = 3
+
+[starting_equipment]
+weapons = ["quarterstaff"]
+armor = []
+items = ["scholar_pack", "spellbook"]
+
+[[features]]
+level = 1
+name = "Spellcasting"
+description = "You can cast wizard spells. Intelligence is your spellcasting ability."
+
+[[features]]
+level = 1
+name = "Arcane Recovery"
+description = "Once per day when you finish a short rest, you can recover spell slots with a combined level equal to half your wizard level (rounded up)."
+
+[[features]]
+level = 2
+name = "Arcane Tradition"
+description = "You choose an arcane tradition: School of Evocation."
+
+[[features]]
+level = 4
+name = "Ability Score Improvement"
+description = "You can increase one ability score by 2, or two ability scores by 1 each."
+
+[[features]]
+level = 5
+name = "Arcane Mastery"
+description = "Your understanding of magic deepens, granting you more powerful spellcasting."

@@ -1,0 +1,387 @@
+# Cantrips (Level 0)
+
+[[spells]]
+id = "fire_bolt"
+name = "Fire Bolt"
+level = 0
+school = "evocation"
+classes = ["wizard"]
+casting_time = "action"
+range = 120
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You hurl a mote of fire at a creature or object within range."
+[spells.mechanics]
+type = "attack"
+damage_dice = "1d10"
+damage_type = "fire"
+
+[[spells]]
+id = "sacred_flame"
+name = "Sacred Flame"
+level = 0
+school = "evocation"
+classes = ["cleric"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V", "S"]
+description = "Flame-like radiance descends on a creature that you can see within range."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "1d8"
+damage_type = "radiant"
+
+[[spells]]
+id = "mage_hand"
+name = "Mage Hand"
+level = 0
+school = "conjuration"
+classes = ["wizard"]
+casting_time = "action"
+range = 30
+duration = "1 minute"
+components = ["V", "S"]
+description = "A spectral, floating hand appears at a point you choose within range."
+[spells.mechanics]
+type = "utility"
+
+[[spells]]
+id = "light"
+name = "Light"
+level = 0
+school = "evocation"
+classes = ["wizard", "cleric"]
+casting_time = "action"
+range = 0
+duration = "1 hour"
+components = ["V"]
+description = "You touch one object. It sheds bright light in a 20-foot radius."
+[spells.mechanics]
+type = "utility"
+
+[[spells]]
+id = "minor_illusion"
+name = "Minor Illusion"
+level = 0
+school = "illusion"
+classes = ["wizard"]
+casting_time = "action"
+range = 30
+duration = "1 minute"
+components = ["S"]
+description = "You create a sound or an image of an object within range."
+[spells.mechanics]
+type = "utility"
+
+[[spells]]
+id = "thaumaturgy"
+name = "Thaumaturgy"
+level = 0
+school = "transmutation"
+classes = ["cleric"]
+casting_time = "action"
+range = 30
+duration = "1 minute"
+components = ["V"]
+description = "You manifest a minor wonder, a sign of supernatural power."
+[spells.mechanics]
+type = "utility"
+
+[[spells]]
+id = "guidance"
+name = "Guidance"
+level = 0
+school = "divination"
+classes = ["cleric"]
+casting_time = "action"
+range = 0
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "You touch one willing creature. It can add 1d4 to one ability check."
+[spells.mechanics]
+type = "buff"
+effect = "guidance"
+bonus_dice = "1d4"
+
+# 1st Level Spells
+
+[[spells]]
+id = "magic_missile"
+name = "Magic Missile"
+level = 1
+school = "evocation"
+classes = ["wizard"]
+casting_time = "action"
+range = 120
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You create three glowing darts of magical force. Each dart hits automatically."
+[spells.mechanics]
+type = "auto_hit"
+damage_dice = "1d4+1"
+damage_type = "force"
+num_targets = 3
+
+[[spells]]
+id = "shield"
+name = "Shield"
+level = 1
+school = "abjuration"
+classes = ["wizard"]
+casting_time = "reaction"
+range = 0
+duration = "1 round"
+components = ["V", "S"]
+description = "An invisible barrier of magical force appears and protects you. +5 AC until your next turn."
+[spells.mechanics]
+type = "buff"
+effect = "shield"
+ac_bonus = 5
+
+[[spells]]
+id = "cure_wounds"
+name = "Cure Wounds"
+level = 1
+school = "evocation"
+classes = ["cleric"]
+casting_time = "action"
+range = 0
+duration = "instantaneous"
+components = ["V", "S"]
+description = "A creature you touch regains hit points equal to 1d8 + your spellcasting modifier."
+[spells.mechanics]
+type = "healing"
+healing_dice = "1d8"
+
+[[spells]]
+id = "healing_word"
+name = "Healing Word"
+level = 1
+school = "evocation"
+classes = ["cleric"]
+casting_time = "bonus_action"
+range = 60
+duration = "instantaneous"
+components = ["V"]
+description = "A creature of your choice that you can see regains hit points equal to 1d4 + your spellcasting modifier."
+[spells.mechanics]
+type = "healing"
+healing_dice = "1d4"
+
+[[spells]]
+id = "burning_hands"
+name = "Burning Hands"
+level = 1
+school = "evocation"
+classes = ["wizard"]
+casting_time = "action"
+range = 15
+duration = "instantaneous"
+components = ["V", "S"]
+description = "A thin sheet of flames shoots forth from your outstretched fingertips."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "3d6"
+damage_type = "fire"
+
+[[spells]]
+id = "mage_armor"
+name = "Mage Armor"
+level = 1
+school = "abjuration"
+classes = ["wizard"]
+casting_time = "action"
+range = 0
+duration = "8 hours"
+components = ["V", "S"]
+description = "You touch a willing creature and a protective magical force surrounds it. Its base AC becomes 13 + DEX modifier."
+[spells.mechanics]
+type = "buff"
+effect = "mage_armor"
+ac_base = 13
+
+[[spells]]
+id = "bless"
+name = "Bless"
+level = 1
+school = "enchantment"
+classes = ["cleric"]
+casting_time = "action"
+range = 30
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "You bless up to three creatures. They can add 1d4 to attack rolls and saving throws."
+[spells.mechanics]
+type = "buff"
+effect = "bless"
+bonus_dice = "1d4"
+
+[[spells]]
+id = "command"
+name = "Command"
+level = 1
+school = "enchantment"
+classes = ["cleric"]
+casting_time = "action"
+range = 60
+duration = "1 round"
+components = ["V"]
+description = "You speak a one-word command to a creature you can see. It must succeed on a Wisdom save or follow the command."
+[spells.mechanics]
+type = "save"
+save_ability = "wisdom"
+effect = "command"
+
+# 2nd Level Spells
+
+[[spells]]
+id = "scorching_ray"
+name = "Scorching Ray"
+level = 2
+school = "evocation"
+classes = ["wizard"]
+casting_time = "action"
+range = 120
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You create three rays of fire and hurl them at targets within range."
+[spells.mechanics]
+type = "attack"
+damage_dice = "2d6"
+damage_type = "fire"
+num_targets = 3
+
+[[spells]]
+id = "hold_person"
+name = "Hold Person"
+level = 2
+school = "enchantment"
+classes = ["wizard", "cleric"]
+casting_time = "action"
+range = 60
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "Choose a humanoid that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed."
+[spells.mechanics]
+type = "save"
+save_ability = "wisdom"
+effect = "paralyzed"
+
+[[spells]]
+id = "spiritual_weapon"
+name = "Spiritual Weapon"
+level = 2
+school = "evocation"
+classes = ["cleric"]
+casting_time = "bonus_action"
+range = 60
+duration = "1 minute"
+components = ["V", "S"]
+description = "You create a floating, spectral weapon that attacks enemies."
+[spells.mechanics]
+type = "attack"
+damage_dice = "1d8"
+damage_type = "force"
+
+[[spells]]
+id = "lesser_restoration"
+name = "Lesser Restoration"
+level = 2
+school = "abjuration"
+classes = ["cleric"]
+casting_time = "action"
+range = 0
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You touch a creature and can end one disease or condition afflicting it."
+[spells.mechanics]
+type = "utility"
+effect = "remove_condition"
+
+[[spells]]
+id = "misty_step"
+name = "Misty Step"
+level = 2
+school = "conjuration"
+classes = ["wizard"]
+casting_time = "bonus_action"
+range = 0
+duration = "instantaneous"
+components = ["V"]
+description = "Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied space."
+[spells.mechanics]
+type = "utility"
+effect = "teleport"
+
+# 3rd Level Spells
+
+[[spells]]
+id = "fireball"
+name = "Fireball"
+level = 3
+school = "evocation"
+classes = ["wizard"]
+casting_time = "action"
+range = 150
+duration = "instantaneous"
+components = ["V", "S"]
+description = "A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "8d6"
+damage_type = "fire"
+
+[[spells]]
+id = "counterspell"
+name = "Counterspell"
+level = 3
+school = "abjuration"
+classes = ["wizard"]
+casting_time = "reaction"
+range = 60
+duration = "instantaneous"
+components = ["S"]
+description = "You attempt to interrupt a creature in the process of casting a spell."
+[spells.mechanics]
+type = "utility"
+effect = "counterspell"
+
+[[spells]]
+id = "revivify"
+name = "Revivify"
+level = 3
+school = "necromancy"
+classes = ["cleric"]
+casting_time = "action"
+range = 0
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You touch a creature that has died within the last minute. That creature returns to life with 1 hit point."
+[spells.mechanics]
+type = "utility"
+effect = "revivify"
+
+[[spells]]
+id = "spirit_guardians"
+name = "Spirit Guardians"
+level = 3
+school = "conjuration"
+classes = ["cleric"]
+casting_time = "action"
+range = 0
+duration = "10 minutes"
+concentration = true
+components = ["V", "S"]
+description = "You call forth spirits to protect you. They flit around you to a distance of 15 feet."
+[spells.mechanics]
+type = "save"
+save_ability = "wisdom"
+damage_dice = "3d8"
+damage_type = "radiant"

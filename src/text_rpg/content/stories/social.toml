@@ -1,0 +1,331 @@
+# =============================================================================
+# Social Story Seeds — community events, celebrations, and social upheaval
+# =============================================================================
+
+[[seeds]]
+id = "harvest_festival"
+name = "The Harvest Moon Festival"
+category = "social"
+tags = ["festival", "celebration", "community"]
+level_range = [1, 3]
+incompatible_tags = ["crop_famine", "spreading_blight"]
+weight = 1.2
+description_template = "The annual harvest festival of {settlement} approaches, but preparations are disrupted by mishaps that threaten to ruin the beloved tradition."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 5
+trigger_max = 13
+narrator_hints = [
+    "Banners and garlands appear throughout {settlement} as the Harvest Moon Festival approaches. {innkeeper} hums while preparing the feast menu — it is the village's favorite time of year.",
+    "But trouble brews: the festival supplies have gone missing from the storehouse. Barrels of mead, sacks of flour, and the ceremonial harvest crown — all vanished.",
+    "{farmer} fears the festival will be cancelled. 'This is the one thing that holds us together,' he says. 'Without it, winter feels twice as long.'"
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "festival_preparations"},
+    {type = "npc_dialogue_tag", role = "farmer", tag = "festival_supplies_missing"}
+]
+quest_template = {type = "investigate", target = "thornfield_village", report_to = "innkeeper"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The supplies were not stolen by a thief — a family of displaced halflings, hiding in an abandoned root cellar, took them out of desperate hunger.",
+    "The halflings are refugees, too proud to beg and too afraid to ask for help. Punishing them would be easy. Helping them would be harder — and would set the tone for {settlement}'s character."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "halfling_refugees_found"}
+]
+quest_template = {type = "social", target = "halfling_family", difficulty = "easy"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 17
+narrator_hints = [
+    "The festival is two days away, and half the supplies are gone. {innkeeper} rallies the village — everyone must contribute what they can. But old resentments surface over who gives and who takes.",
+    "The question of the halflings divides opinion. Some want them welcomed to the feast. Others say charity begins at home. The festival becomes a test of the village's soul."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "festival_crisis"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "refugee_debate"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The Harvest Moon Festival is the best in a decade. The halflings sit at the long table alongside everyone else, and the harvest crown sits atop the head of the smallest halfling child, who beams with wonder."]
+failure_narrator_hints = ["The festival goes ahead, but it is a muted affair — less food, more tension, and empty seats where warmth should be. The halflings slip away in the night, unwelcomed."]
+success_effects = [
+    {type = "faction_rep", faction_role = "innkeeper", delta = 15},
+    {type = "faction_rep", faction_role = "farmer", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "innkeeper", delta = -10},
+    {type = "faction_rep", faction_role = "farmer", delta = -5}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "tournament"
+name = "The Thornfield Trials"
+category = "social"
+tags = ["competition", "combat", "honor"]
+level_range = [1, 4]
+incompatible_tags = []
+weight = 1.0
+description_template = "A grand tournament is held in {settlement}, drawing competitors from across the region. Glory, prizes, and trouble await."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 8
+trigger_max = 18
+narrator_hints = [
+    "{authority_npc} announces the first Thornfield Trials — a tournament of arms, archery, and wit. The prize is a masterwork weapon forged by the village smith and a purse of gold.",
+    "Competitors arrive from neighboring villages and the open road — sellswords, rangers, aspiring knights, and one or two individuals who look like they belong more in a dungeon than a tournament.",
+    "{innkeeper} rubs their hands with glee. A full inn, a packed common room, and ale flowing like the river in spring. This is the best thing to happen all season."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "tournament_announced"},
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "tournament_business_boom"}
+]
+quest_template = {type = "social", target = "tournament_registration", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The tournament begins well — the archery contest draws cheers, and the first bouts are fought cleanly. But a competitor from out of town is fighting dirty, using concealed blades.",
+    "Worse, someone is fixing the betting. A gambling ring has infiltrated the tournament, bribing fighters to throw matches. The integrity of the Trials is at stake."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "tournament_grounds"},
+    {type = "npc_dialogue_tag", role = "merchant", tag = "suspicious_betting"}
+]
+quest_template = {type = "investigate", target = "thornfield_inn", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 23
+narrator_hints = [
+    "The cheating fighter seriously injures a local competitor — a young guard beloved by the village. The crowd's mood turns ugly. {authority_npc} restrains the crowd from mob justice.",
+    "The gambling ring makes a bold play: they attempt to steal the tournament prize from the guarded tent. Greed and violence threaten to overshadow what should be a celebration."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "tournament_violence"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The cheaters are exposed and expelled. The final bout is fought clean and true. The winner raises the masterwork blade to thunderous applause, and {settlement} has a tradition to be proud of."]
+failure_narrator_hints = ["The tournament ends in scandal. The prize is stolen, the champion is disputed, and {settlement}'s first Trials are also its last. The memory lingers like a bad taste."]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 15},
+    {type = "faction_rep", faction_role = "innkeeper", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -15},
+    {type = "faction_rep", faction_role = "innkeeper", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "pilgrimage"
+name = "The Sacred Way"
+category = "social"
+tags = ["pilgrimage", "faith", "protection"]
+level_range = [1, 4]
+incompatible_tags = []
+weight = 0.9
+description_template = "A group of pilgrims passes through {settlement} on their way to a holy site. They bring faith, commerce, and the attention of those who prey on travelers."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 9
+trigger_max = 19
+narrator_hints = [
+    "A column of pilgrims approaches {settlement} — thirty souls in white robes, chanting softly, led by a weathered priestess carrying a silver reliquary.",
+    "{innkeeper} scrambles to accommodate the sudden influx. The pilgrims pay well and are gracious guests, but their presence doubles the village population overnight.",
+    "{healer} greets the priestess warmly — they trained at the same temple decades ago. The pilgrims are bound for a shrine deep in the mountains, but the road ahead is dangerous."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "pilgrims_arrived"},
+    {type = "npc_dialogue_tag", role = "healer", tag = "priestess_reunion"}
+]
+quest_template = {type = "social", target = "pilgrim_leaders", report_to = "healer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The pilgrims' reliquary is a genuine holy artifact — and word of its presence has reached unsavory ears. Bandits on the road ahead are gathering, drawn by the promise of a sacred treasure.",
+    "The priestess asks {settlement} for an escort through the dangerous stretch. {authority_npc} can spare few guards — but the pilgrims' coin and blessings would benefit the village greatly."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "escort_requested"}
+]
+quest_template = {type = "combat", target = "road_bandits", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 24
+narrator_hints = [
+    "A pilgrim goes missing — snatched from the road by bandits who demand the reliquary as ransom. The priestess refuses to surrender it but cannot sacrifice one of her flock.",
+    "The bandits grow impatient. A severed braid of the pilgrim's hair arrives with the next demand. Time is running out for a peaceful resolution."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "pilgrim_kidnapped"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The pilgrim is rescued and the bandits scattered. The priestess blesses {settlement} before departing — a warmth settles over the village that lasts through the winter. {healer} smiles for days."]
+failure_narrator_hints = ["The pilgrim is lost, and the priestess departs in grief. She does not curse {settlement}, but her silence is worse than any condemnation. {healer} does not speak of it."]
+success_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = 20},
+    {type = "faction_rep", faction_role = "guard", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = -15},
+    {type = "faction_rep", faction_role = "guard", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "refugee_wave"
+name = "The Dispossessed"
+category = "social"
+tags = ["refugees", "compassion", "resources"]
+level_range = [1, 4]
+incompatible_tags = []
+weight = 1.0
+description_template = "A wave of refugees from a distant conflict descends on {settlement}, overwhelming its resources and testing the limits of its hospitality."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 10
+trigger_max = 22
+narrator_hints = [
+    "They arrive in a straggling column — families with bundled possessions, children with hollow eyes, the elderly leaning on the young. Dozens of refugees from a burned village to the east.",
+    "{authority_npc} opens the gate but looks grim. {settlement} can barely feed itself. How does it feed twice its number?",
+    "{innkeeper} converts the common room into a dormitory. {healer} sets up a triage station. {farmer} looks at his granary and does the math — it does not add up."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "refugee_crisis"},
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "refugee_shelter"},
+    {type = "npc_dialogue_tag", role = "farmer", tag = "food_calculations"}
+]
+quest_template = {type = "social", target = "refugee_leaders", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The refugees are not just hungry — they are traumatized. Their village was destroyed by a warband that may still be following. {settlement} may be sheltering targets.",
+    "Integrating the refugees requires housing, food, and work. Some villagers resent the newcomers. Others open their homes. The village's character is being tested."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "refugee_camp"},
+    {type = "npc_dialogue_tag", role = "healer", tag = "trauma_treatment"}
+]
+quest_template = {type = "social", target = "integration_plan", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 26
+narrator_hints = [
+    "Tensions boil over. A refugee is accused of theft — the accusation may be false, born of prejudice. A brawl erupts between locals and newcomers. {authority_npc} stands between them.",
+    "Meanwhile, scouts report movement on the eastern road. The warband that destroyed the refugees' home may have followed them. {settlement} faces a choice: stand together or fracture."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "refugee_conflict"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "community_tension"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The village stands united. Locals and refugees fight side by side against the warband, and in the aftermath, there is no 'us' and 'them' — only neighbors. {settlement} grows larger and stronger."]
+failure_narrator_hints = ["The refugees are driven out by fear and resentment. They vanish down the road, and {settlement} is left smaller, meaner, and haunted by the memory of closed doors."]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 15},
+    {type = "faction_rep", faction_role = "farmer", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -10},
+    {type = "faction_rep", faction_role = "farmer", delta = -15}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "village_wedding"
+name = "The Thornfield Wedding"
+category = "social"
+tags = ["wedding", "celebration", "romance"]
+level_range = [1, 3]
+incompatible_tags = []
+weight = 1.0
+description_template = "A beloved couple in {settlement} announces their wedding, but family feuds, bad omens, and uninvited guests threaten to derail the happiest day."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 6
+trigger_max = 14
+narrator_hints = [
+    "The announcement brings joy to {settlement}: the miller's son and the weaver's daughter are to be married at the autumn equinox. {innkeeper} begins planning the feast.",
+    "But the families have history — a land dispute, a broken promise, a grudge that stretches back two generations. The parents smile through gritted teeth.",
+    "{healer} agrees to officiate but confides her concern. 'I have performed many weddings,' she says. 'This one has the feel of a powder keg with a ribbon on it.'"
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "wedding_feast_planning"},
+    {type = "npc_dialogue_tag", role = "healer", tag = "wedding_concern"}
+]
+quest_template = {type = "social", target = "wedding_families", report_to = "innkeeper"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The family feud runs deeper than expected. The bride's father has sworn to stop the wedding, and the groom's mother is spreading rumors to sabotage the weaver's business.",
+    "The couple is caught in the middle, torn between love and family loyalty. They beg for someone to broker peace before the wedding is cancelled entirely."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "farmer", tag = "wedding_feud_gossip"}
+]
+quest_template = {type = "social", target = "family_mediation", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 18
+narrator_hints = [
+    "The night before the wedding, a bad omen strikes — a crow flies through the temple window and dies on the altar. Superstitious villagers call it a sign that the union is cursed.",
+    "The bride's father makes his final move, publicly forbidding his daughter to wed. She stands in the square, veil in hand, choosing between two loves."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_temple", tag = "wedding_omen"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "wedding_drama"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The wedding takes place under an autumn sky so golden it seems painted. Both families weep — not from anger, but from the unexpected grace of watching their children's happiness heal old wounds."]
+failure_narrator_hints = ["The wedding is cancelled. The couple elopes in the night, and the families' bitterness deepens into something permanent. Two empty seats at the inn remind everyone of what could have been."]
+success_effects = [
+    {type = "faction_rep", faction_role = "innkeeper", delta = 15},
+    {type = "faction_rep", faction_role = "healer", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "innkeeper", delta = -10},
+    {type = "faction_rep", faction_role = "healer", delta = -5}
+]

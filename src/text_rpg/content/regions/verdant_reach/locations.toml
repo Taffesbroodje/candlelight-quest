@@ -1,0 +1,163 @@
+[[locations]]
+id = "thornfield_village"
+name = "Thornfield Village"
+region_id = "verdant_reach"
+description = "A bustling village at the crossroads of several trade routes. A cobblestone market square is surrounded by timber-framed buildings, with the sounds of merchants hawking wares and children playing in the streets."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "thornfield_inn"
+direction = "north"
+description = "A wooden sign depicting a boar tangled in brambles hangs above the inn entrance."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "thornfield_smithy"
+direction = "east"
+description = "The ring of hammer on anvil echoes from the smithy down the lane."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "thornfield_temple"
+direction = "west"
+description = "A modest stone temple with a golden sun carved above its door stands at the west end of the square."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "whisperwood_edge"
+direction = "southeast"
+description = "A dirt path leads past the last farmstead toward the dark treeline of the Whisperwood."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ironridge_road"
+direction = "northwest"
+description = "The northern trade road climbs into the rocky foothills of the Ironridge Mountains."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "thornfield_cottage"
+direction = "northeast"
+description = "A short path leads to a stone cottage with a 'FOR SALE' sign."
+is_locked = false
+
+[[locations]]
+id = "thornfield_inn"
+name = "The Bramble and Boar Inn"
+region_id = "verdant_reach"
+description = "A warm and lively tavern with a roaring hearth. The smell of roasted meat and fresh bread fills the air. Adventurers, merchants, and locals mingle over mugs of ale."
+location_type = "tavern"
+
+[[locations.connections]]
+target_location_id = "thornfield_village"
+direction = "south"
+description = "The door leads back out to the village market square."
+is_locked = false
+
+[[locations]]
+id = "thornfield_smithy"
+name = "Ironhand Forge"
+region_id = "verdant_reach"
+description = "A hot, soot-stained workshop where a grizzled dwarf hammers glowing metal into shape. Weapons and armor line the walls, and the forge burns day and night."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "thornfield_village"
+direction = "west"
+description = "The lane leads back to the village market square."
+is_locked = false
+
+[[locations]]
+id = "thornfield_temple"
+name = "Temple of the Dawn"
+region_id = "verdant_reach"
+description = "A small but well-kept shrine dedicated to the god of light. Candles flicker along the altar, and the air smells of incense. A sense of peace fills this sacred space."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "thornfield_village"
+direction = "east"
+description = "The temple doors open back to the village square."
+is_locked = false
+
+[[locations]]
+id = "whisperwood_edge"
+name = "Edge of the Whisperwood"
+region_id = "verdant_reach"
+description = "The ancient trees of the Whisperwood rise before you, their gnarled branches forming a canopy that blocks much of the sunlight. A narrow trail winds into the misty depths. Strange animal calls echo from within."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "thornfield_village"
+direction = "northwest"
+description = "The path leads back through open farmland to Thornfield."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "whisperwood_depths"
+direction = "east"
+description = "The trail plunges deeper into the dark, ancient forest."
+is_locked = false
+
+[[locations]]
+id = "whisperwood_depths"
+name = "Whisperwood Depths"
+region_id = "verdant_reach"
+description = "Deep within the Whisperwood, the canopy is so thick that only slivers of light reach the forest floor. Thick webs stretch between the trees, and the air is heavy with the smell of damp earth and decay. Something moves in the shadows."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "whisperwood_edge"
+direction = "west"
+description = "You can retrace your steps back toward the forest edge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "old_ruins"
+direction = "north"
+description = "Through the undergrowth, you spot crumbling stone walls atop a low hill."
+is_locked = false
+
+[[locations]]
+id = "thornfield_cottage"
+name = "Abandoned Cottage"
+region_id = "verdant_reach"
+description = "A small but sturdy stone cottage sits at the edge of the village. The roof needs patching and the garden is overgrown, but the walls are solid and the hearth is intact. A weathered 'FOR SALE' sign hangs on the gate."
+location_type = "residence"
+
+[locations.properties]
+purchasable = true
+price = 500
+home_name = "Thornfield Cottage"
+
+[[locations.connections]]
+target_location_id = "thornfield_village"
+direction = "south"
+description = "A short path leads back to the village square."
+is_locked = false
+
+[[locations]]
+id = "ironridge_road"
+name = "Ironridge Mountain Road"
+region_id = "verdant_reach"
+description = "A winding road that climbs through rocky terrain toward the Ironridge Mountains. Boulders provide ample cover for ambushes, and the remains of an overturned cart suggest this route is not entirely safe."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "thornfield_village"
+direction = "southeast"
+description = "The road descends back toward the safety of Thornfield."
+is_locked = false
+
+[[locations]]
+id = "old_ruins"
+name = "The Old Watchtower Ruins"
+region_id = "verdant_reach"
+description = "Crumbling stone walls are all that remain of an ancient watchtower. Vines and moss cover the fallen stones. Locals say the ruins are haunted, and strange lights can be seen here at night. A stone staircase descends into darkness below."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "whisperwood_depths"
+direction = "south"
+description = "A path leads back into the dense forest."
+is_locked = false

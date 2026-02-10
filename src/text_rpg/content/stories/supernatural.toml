@@ -1,0 +1,329 @@
+# =============================================================================
+# Supernatural Story Seeds — otherworldly forces and magical phenomena
+# =============================================================================
+
+[[seeds]]
+id = "portal_opens"
+name = "The Door Between"
+category = "supernatural"
+tags = ["portal", "planar", "otherworldly"]
+level_range = [3, 5]
+incompatible_tags = ["elemental_rift"]
+weight = 0.7
+description_template = "A shimmering portal materializes near {settlement}, connecting the material world to somewhere else entirely. Things are coming through."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 15
+trigger_max = 28
+narrator_hints = [
+    "A disc of rippling silver light appears at the edge of the {wilderness_location}, humming with a frequency felt more in the bones than the ears.",
+    "Through the portal, a landscape flickers — crystalline spires, an alien sky, vegetation that moves with intent. It is beautiful and deeply wrong.",
+    "{healer} approaches the portal with warding runes drawn on her arms. 'This is a breach between planes,' she says. 'It should not be possible here. Something thinned the barrier.'"
+]
+world_changes = [
+    {type = "location_description_tag", location = "whisperwood_edge", tag = "portal_active"},
+    {type = "npc_dialogue_tag", role = "healer", tag = "planar_breach"}
+]
+quest_template = {type = "investigate", target = "whisperwood_edge", report_to = "healer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "Creatures are crossing through — strange things, not inherently hostile but utterly alien. A crystalline bird perches on a rooftop, singing notes that rearrange the tiles beneath it.",
+    "The portal is anchored by a resonance node beneath the forest floor. To close it, the node must be detuned — but doing so requires entering the other side to find the matching anchor."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "alien_creatures"}
+]
+quest_template = {type = "fetch", target = "planar_anchor", difficulty = "hard"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 32
+narrator_hints = [
+    "The portal widens. Larger things push through — entities of living geometry, constructs of light and force. They reshape the land around the portal to match their world.",
+    "{authority_npc} evacuates the eastern farms. The alien landscape is spreading, converting the {wilderness_location} into something not of this world."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "portal_evacuation"},
+    {type = "location_description_tag", location = "whisperwood_depths", tag = "planar_conversion"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The anchor is detuned from the other side, and the portal collapses with a thunderous implosion. The alien landscape recedes, leaving only strange crystals embedded in the soil as proof it was real."]
+failure_narrator_hints = ["The portal stabilizes permanently. A section of the {wilderness_location} becomes a permanent bridge between worlds — beautiful, dangerous, and utterly beyond mortal control."]
+success_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = 20},
+    {type = "faction_rep", faction_role = "guard", delta = 15}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = -10},
+    {type = "faction_rep", faction_role = "farmer", delta = -20}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "ancient_curse"
+name = "The Whispered Price"
+category = "supernatural"
+tags = ["curse", "generational", "dark_magic"]
+level_range = [2, 5]
+incompatible_tags = []
+weight = 0.8
+description_template = "An ancient curse awakens in {settlement}, its origins buried in the village's forgotten history. The price of old sins comes due."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 10
+trigger_max = 21
+narrator_hints = [
+    "Every mirror in {settlement} cracks at the stroke of midnight. In the fractured glass, faces appear that are not reflections — they are the faces of the dead.",
+    "{healer} finds a curse marker beneath the temple foundation stone — a lead tablet inscribed with names. Some of those names belong to current villagers. The curse is generational.",
+    "Those whose names appear on the tablet begin to sicken. Not with any disease {healer} can treat — their shadows grow darker, their reflections move independently."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "curse_marker_found"},
+    {type = "location_description_tag", location = "thornfield_temple", tag = "cursed_foundation"}
+]
+quest_template = {type = "investigate", target = "thornfield_temple", report_to = "healer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The curse dates back to {settlement}'s founding. The original settlers wronged a powerful witch and were cursed unto the seventh generation. That generation is alive now.",
+    "The curse can be broken — but the ritual requires a component hidden at the site of the original transgression, deep in the {wilderness_location} where the witch's cottage once stood."
+]
+world_changes = [
+    {type = "location_description_tag", location = "whisperwood_depths", tag = "witch_cottage_ruins"}
+]
+quest_template = {type = "fetch", target = "curse_breaking_component", difficulty = "hard"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 27
+narrator_hints = [
+    "The afflicted grow worse — their shadows detach entirely, becoming malevolent copies that whisper secrets and sow discord. The line between person and shadow blurs.",
+    "{farmer} begs for help, one hand holding back his own shadow as it tries to strangle him. The curse is reaching its terminal phase."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "farmer", tag = "shadow_affliction"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "shadow_plague"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The curse-breaking ritual burns away the ancient malice. Shadows return to their proper places, mirrors heal, and the lead tablet crumbles to dust. The witch's grudge is finally laid to rest."]
+failure_narrator_hints = ["The curse claims its victims. Those afflicted become hollow, their shadows dominant. They wander the edges of {settlement}, neither alive nor dead, forever paying the price of ancestors' sins."]
+success_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = 20},
+    {type = "faction_rep", faction_role = "farmer", delta = 15}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = -15},
+    {type = "faction_rep", faction_role = "farmer", delta = -15}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "haunted_location"
+name = "The Restless Place"
+category = "supernatural"
+tags = ["haunting", "ghost", "unfinished_business"]
+level_range = [1, 4]
+incompatible_tags = []
+weight = 1.0
+description_template = "A location in {settlement} becomes violently haunted. Objects fly, voices wail, and no one can determine what the spirit wants."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 7
+trigger_max = 17
+narrator_hints = [
+    "The old storage barn on the village edge has become impossible to enter. Tools hurl themselves at anyone who opens the door. Frost rimes the walls in midsummer.",
+    "{farmer} tried to retrieve his grain stores and was flung across the yard by an invisible force. He landed unhurt but refuses to go near the barn again.",
+    "{healer} performs a divination and recoils. 'There is a presence,' she says. 'Angry, confused, and growing stronger. It died with something left unsaid.'"
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "farmer", tag = "haunted_barn"},
+    {type = "npc_dialogue_tag", role = "healer", tag = "ghost_detected"}
+]
+quest_template = {type = "investigate", target = "thornfield_village", report_to = "healer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The ghost is a former villager — a mason who died in an accident years ago. He was buried with a secret: the location of something he stole, something that belongs to another.",
+    "The spirit cannot rest because its crime was never confessed. To lay it to rest, the stolen object must be found and returned to its rightful owner."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "ghost_identified"}
+]
+quest_template = {type = "fetch", target = "stolen_heirloom", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 22
+narrator_hints = [
+    "The haunting spreads beyond the barn. Cold spots appear throughout {settlement}. Doors slam. Voices whisper from empty rooms. The ghost's anger is infecting the village.",
+    "A child claims the ghost spoke to them, begging for help. Its words were garbled, desperate. Whatever anchors it, the pain is growing."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "widespread_haunting"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The stolen object is returned. The ghost appears one last time — translucent, sorrowful, grateful. It mouths 'thank you' and dissolves into motes of light."]
+failure_narrator_hints = ["The ghost remains, a permanent resident of {settlement}. The villagers learn to live with cold spots and slamming doors. Some say they hear weeping on quiet nights."]
+success_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = 15},
+    {type = "faction_rep", faction_role = "farmer", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = -10},
+    {type = "faction_rep", faction_role = "farmer", delta = -5}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "divine_trial"
+name = "The God's Challenge"
+category = "supernatural"
+tags = ["divine", "trial", "faith"]
+level_range = [2, 5]
+incompatible_tags = []
+weight = 0.6
+description_template = "A divine entity turns its attention to {settlement}, issuing a trial that tests the village's worthiness. Failure carries a terrible price."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 13
+trigger_max = 25
+narrator_hints = [
+    "A pillar of golden light descends on the temple at dawn. Within it, a voice speaks — resonant, ancient, and undeniable. It declares a trial upon {settlement}.",
+    "{healer} falls to her knees. She recognizes the voice — a solar, a messenger of the divine. The trial will test three virtues: courage, compassion, and wisdom.",
+    "The villagers react with a mixture of awe and terror. Being noticed by the divine is not always a blessing. The trial has already begun."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "divine_trial_declared"},
+    {type = "location_description_tag", location = "thornfield_temple", tag = "divine_presence"}
+]
+quest_template = {type = "investigate", target = "thornfield_temple", report_to = "healer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The first test appears: a guardian construct of living stone blocks the road, allowing no one to pass until someone faces it in single combat. A test of courage.",
+    "The second test follows: a group of wounded strangers arrives at the gate, claiming to be refugees. But {authority_npc} suspects they are enemy scouts. A test of compassion."
+]
+world_changes = [
+    {type = "location_description_tag", location = "ironridge_road", tag = "divine_guardian"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "refugee_dilemma"}
+]
+quest_template = {type = "combat", target = "divine_guardian", difficulty = "hard"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 30
+narrator_hints = [
+    "The third and final test: a great moral dilemma with no right answer. The divine voice demands a sacrifice — something the village values deeply — to prove its wisdom.",
+    "{healer} prays for guidance but receives only silence. The gods test; they do not help. The answer must come from mortal hearts."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "divine_silence"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The golden light returns. The voice declares {settlement} worthy. A blessing settles over the village — the harvest will be plentiful, the sick will recover, and the light in the temple never quite fades."]
+failure_narrator_hints = ["The divine presence withdraws, and with it goes its protection. {settlement} is left exposed, stripped of a grace it never knew it had. The temple candles burn lower."]
+success_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = 25},
+    {type = "faction_rep", faction_role = "guard", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = -20},
+    {type = "faction_rep", faction_role = "guard", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "fey_incursion"
+name = "The Wild Court's Fancy"
+category = "supernatural"
+tags = ["fey", "trickery", "enchantment"]
+level_range = [2, 4]
+incompatible_tags = []
+weight = 0.9
+description_template = "The fey take an interest in {settlement}. Their gifts are beautiful, their games are cruel, and their rules make no mortal sense."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 8
+trigger_max = 19
+narrator_hints = [
+    "Mushroom rings appear overnight in every garden in {settlement}. The toadstools glow faintly in moonlight and rearrange themselves into new patterns by morning.",
+    "A satyr in motley clothing dances through the village square at dawn, playing a pipe. Children laugh and follow. Adults who listen too long find their feet moving without permission.",
+    "{healer} places cold iron at the village borders, but the fey seem amused rather than deterred. A tiny sprite leaves a note on her pillow: 'We are already inside.'"
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "fey_presence_detected"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "mushroom_rings"}
+]
+quest_template = {type = "investigate", target = "whisperwood_edge", report_to = "healer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "A fey noble — an eladrin lady with eyes like autumn leaves — has claimed the {wilderness_location} as her personal playground. She has 'invited' {settlement} to participate in a grand revel.",
+    "The invitation is, of course, not optional. Refusing insults the fey court. Attending means playing by rules that change on a whim. Both options carry risk."
+]
+world_changes = [
+    {type = "location_description_tag", location = "whisperwood_depths", tag = "fey_court_presence"}
+]
+quest_template = {type = "social", target = "fey_noble", difficulty = "hard"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 24
+narrator_hints = [
+    "The fey games intensify. Villagers who wander near the {wilderness_location} find themselves trapped in time loops, transformed into animals, or dancing until their feet bleed.",
+    "{farmer} has not returned from the forest in two days. Those who go looking find only his hat hanging from a branch, adorned with a tiny crown of flowers."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "farmer", tag = "fey_taken"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "fey_emergency"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The fey noble is outwitted at her own game — beaten by mortal cleverness and iron resolve. She laughs, declares the game well played, and withdraws her court. The mushroom rings crumble to dust."]
+failure_narrator_hints = ["The fey keep what they have taken. {settlement} learns to live at the edge of an enchanted forest, where the rules of reality are merely suggestions and nothing is ever quite safe."]
+success_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = 15},
+    {type = "faction_rep", faction_role = "farmer", delta = 15}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "farmer", delta = -15},
+    {type = "faction_rep", faction_role = "healer", delta = -10}
+]

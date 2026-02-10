@@ -1,0 +1,388 @@
+# =============================================================================
+# Personal Story Seeds — character-driven dramas tied to individual NPCs
+# =============================================================================
+
+[[seeds]]
+id = "revenge_seeker"
+name = "The Old Grudge"
+category = "personal"
+tags = ["revenge", "violence", "moral_choice"]
+level_range = [2, 5]
+incompatible_tags = []
+weight = 0.9
+description_template = "A stranger arrives in {settlement} seeking bloody revenge against one of the village's own. The target claims innocence."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 9
+trigger_max = 19
+narrator_hints = [
+    "A grim-faced warrior in travel-stained armor rides into {settlement}, asking pointed questions about {merchant}. Their hand never strays far from their blade.",
+    "{innkeeper} warns you: the stranger has been showing a sketch of {merchant} to anyone who will look. There is murder in those eyes.",
+    "{merchant} pales when told of the stranger. 'It's been ten years,' they whisper. 'I thought it was buried. I thought wrong.'"
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "stranger_asking_questions"},
+    {type = "npc_dialogue_tag", role = "merchant", tag = "past_catching_up"}
+]
+quest_template = {type = "social", target = "revenge_stranger", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The stranger's story is compelling: {merchant} was once a different person, living under a different name. A wrong was done — a family destroyed. The stranger lost everything.",
+    "But {merchant} has changed. They have built a new life, earned the village's trust. The truth is murky. Both sides have a claim to justice."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "vendetta_dilemma"}
+]
+quest_template = {type = "social", target = "mediate_conflict", difficulty = "hard"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 25
+narrator_hints = [
+    "The stranger's patience runs out. They challenge {merchant} to a duel in the village square at dawn. {authority_npc} cannot legally stop a sworn blood challenge.",
+    "If no one intervenes, one of them will die tomorrow. The village holds its breath."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "duel_challenge"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "tense_atmosphere"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["A resolution is reached — not through blood, but through truth and reparation. The stranger sheathes their blade, and {merchant} finally faces the past."]
+failure_narrator_hints = ["Steel clashes at dawn. When it is over, one lies bleeding in the dust. {settlement} is left to reckon with the wages of old sins."]
+success_effects = [
+    {type = "faction_rep", faction_role = "merchant", delta = 15},
+    {type = "faction_rep", faction_role = "guard", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "merchant", delta = -15},
+    {type = "faction_rep", faction_role = "guard", delta = -5}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "lost_relative"
+name = "The Missing Kin"
+category = "personal"
+tags = ["family", "search", "emotional"]
+level_range = [1, 3]
+incompatible_tags = []
+weight = 1.0
+description_template = "A {settlement} villager's long-lost relative may still be alive, and fragile hope kindles into desperate action."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 6
+trigger_max = 14
+narrator_hints = [
+    "{innkeeper} receives a battered letter, months old, bearing a seal they thought they would never see again — their sibling's personal mark.",
+    "The letter is cryptic: 'I am alive. I am held. The old place by the river. Hurry.' {innkeeper} stares at it, trembling between hope and dread.",
+    "{innkeeper} begs for help. They cannot leave the inn, but they cannot ignore this. Someone must investigate — someone they trust."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "lost_sibling_letter"}
+]
+quest_template = {type = "investigate", target = "old_ruins", report_to = "innkeeper"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The 'old place by the river' is a crumbling homestead, long abandoned. Signs of recent habitation are there — bedding, cold ashes, scratch marks on a locked cellar door.",
+    "The relative was held here but has been moved. A trail leads into the {wilderness_location}, marked with deliberate scratches on tree bark — a breadcrumb trail left by a prisoner."
+]
+world_changes = [
+    {type = "location_description_tag", location = "old_ruins", tag = "recent_captivity"}
+]
+quest_template = {type = "investigate", target = "whisperwood_depths", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 19
+narrator_hints = [
+    "The trail goes cold at a bandit camp. The captors are slavers who trade in people. {innkeeper}'s sibling is being prepared for transport to a distant market.",
+    "Time is critical. Once the caravan moves, the trail will be lost. {innkeeper} offers everything they own as a reward — the desperation is absolute."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "sibling_desperate_plea"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The sibling is freed, blinking in the sunlight. The reunion at the inn is wordless — just a long embrace and the sound of quiet weeping."]
+failure_narrator_hints = ["The slavers escape with their cargo. {innkeeper} places a candle in the window every night, a beacon for someone who may never return."]
+success_effects = [
+    {type = "faction_rep", faction_role = "innkeeper", delta = 25},
+    {type = "faction_rep", faction_role = "guard", delta = 5}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "innkeeper", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "old_rival"
+name = "Unfinished Business"
+category = "personal"
+tags = ["rivalry", "competition", "pride"]
+level_range = [1, 4]
+incompatible_tags = []
+weight = 1.0
+description_template = "An old rival of {merchant} arrives in {settlement}, reigniting a fierce competition that threatens to disrupt the whole village."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 7
+trigger_max = 16
+narrator_hints = [
+    "A flashy merchant's wagon rolls into {settlement}, flying the colors of a competing guild. The driver spots {merchant} and grins like a wolf.",
+    "'Well, well,' the newcomer drawls. 'Still peddling trinkets in the provinces, I see.' {merchant}'s jaw tightens. History hangs heavy between them.",
+    "{innkeeper} senses trouble brewing. These two were partners once, before a falling out that neither has ever explained."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "rival_arrived"},
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "rivalry_gossip"}
+]
+quest_template = {type = "social", target = "rival_merchant", report_to = "merchant"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The rival is not just here to gloat — they are scouting {settlement} as a new trade route. If they establish a presence, {merchant} will be undercut and ruined.",
+    "The rivalry runs deeper than business. There was a betrayal of trust, a stolen idea, and a friendship that ended in bitterness. Both carry the wound."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "business_threatened"}
+]
+quest_template = {type = "social", target = "negotiate_territory", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 21
+narrator_hints = [
+    "The rival begins selling goods at a loss, undercutting {merchant} on every item. It is a war of attrition — and the rival has deeper pockets.",
+    "{merchant} considers desperate measures — sabotage, calling in old debts, even violence. Someone must find a better way before the situation explodes."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "considering_sabotage"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "price_war"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["A truce is brokered. The rivals divide the territory fairly, and over ale at the inn, the first tentative words of reconciliation are spoken."]
+failure_narrator_hints = ["{merchant} is driven out of business. They sit in the empty shop, staring at bare shelves, while the rival's wagon departs with a triumphant crack of the whip."]
+success_effects = [
+    {type = "faction_rep", faction_role = "merchant", delta = 15},
+    {type = "faction_rep", faction_role = "innkeeper", delta = 5}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "merchant", delta = -20}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "debt_collector"
+name = "The Debt Comes Due"
+category = "personal"
+tags = ["debt", "intimidation", "protection"]
+level_range = [1, 4]
+incompatible_tags = []
+weight = 1.0
+description_template = "A ruthless debt collector arrives in {settlement}, targeting a villager who cannot pay. The methods employed are anything but legal."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 8
+trigger_max = 17
+narrator_hints = [
+    "A man in a fine coat and cold eyes arrives in {settlement}, accompanied by two large enforcers. They head straight for {farmer}'s homestead.",
+    "{farmer} emerges shaken. Years ago, he borrowed gold from a moneylender to save his farm. The debt has been sold to a collector with no patience and no mercy.",
+    "{innkeeper} overhears the collector threaten to take {farmer}'s land, livestock, and home if the debt is not paid in full within a week."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "farmer", tag = "debt_threatened"},
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "debt_collector_seen"}
+]
+quest_template = {type = "social", target = "debt_collector", report_to = "farmer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The debt is real, but the collector has inflated it with fraudulent interest. The original amount was modest — the current demand is ruinous.",
+    "The collector operates in a legal grey area. {authority_npc} cannot simply arrest them without evidence of fraud. The records must be obtained."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "debt_legal_grey_area"}
+]
+quest_template = {type = "investigate", target = "thornfield_inn", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 22
+narrator_hints = [
+    "The collector's enforcers rough up {farmer} as a 'reminder.' Black eye, split lip, the message is clear. Pay or suffer.",
+    "{authority_npc} wants to help but needs grounds to act. The enforcers are careful — they operate just this side of the law."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "farmer", tag = "beaten_by_enforcers"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The fraud is exposed, and {authority_npc} arrests the collector and his thugs. {farmer} keeps his land, and the village rallies around him with fierce solidarity."]
+failure_narrator_hints = ["{farmer} loses his homestead. He moves into a lean-to behind the inn, broken in spirit. The collector rides away counting his coins."]
+success_effects = [
+    {type = "faction_rep", faction_role = "farmer", delta = 20},
+    {type = "faction_rep", faction_role = "guard", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "farmer", delta = -20},
+    {type = "faction_rep", faction_role = "guard", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "secret_admirer"
+name = "Letters in the Night"
+category = "personal"
+tags = ["romance", "mystery", "social"]
+level_range = [1, 3]
+incompatible_tags = []
+weight = 0.8
+description_template = "Anonymous love letters appear in {settlement}, causing a stir of gossip, jealousy, and unintended consequences."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 5
+trigger_max = 12
+narrator_hints = [
+    "{innkeeper} finds a beautifully penned love letter slipped under the inn door at dawn, addressed to them in elegant script. No signature, only a pressed wildflower.",
+    "More letters appear — to the baker, to a guard, to {farmer}'s daughter. Each is heartfelt, each is anonymous. The village is consumed with curiosity and delight.",
+    "But the delight curdles when jealousy enters the picture. A rejected suitor accuses a rival of writing the letters to mock them. Tempers flare over poetry."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "love_letter_recipient"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "gossip_frenzy"}
+]
+quest_template = {type = "investigate", target = "thornfield_village", report_to = "innkeeper"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The letters are all written in the same hand. The admirer is not targeting one person — they are expressing a love for the community itself, longing to belong.",
+    "The writer is a shy newcomer living on the outskirts, too anxious to introduce themselves. But the jealousy their letters have caused is spiraling."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "admirer_identified"}
+]
+quest_template = {type = "social", target = "shy_newcomer", difficulty = "easy"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 16
+narrator_hints = [
+    "The jealous suitor discovers the writer's identity and publicly humiliates them. The newcomer retreats to their cottage, devastated. The village is divided between sympathy and laughter.",
+    "{innkeeper} feels terrible. What began as sweetness has become cruelty. Someone should set this right."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "farmer", tag = "admirer_sympathy"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The newcomer is welcomed into the community properly. The letters become a fond village legend, and the jealous suitor offers a grudging apology."]
+failure_narrator_hints = ["The newcomer leaves {settlement} quietly in the night. A final letter is found at the gate: 'I only wanted to be seen.' The village feels the absence."]
+success_effects = [
+    {type = "faction_rep", faction_role = "innkeeper", delta = 10},
+    {type = "faction_rep", faction_role = "farmer", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "innkeeper", delta = -5},
+    {type = "faction_rep", faction_role = "farmer", delta = -5}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "haunted_past"
+name = "Ghosts of Who I Was"
+category = "personal"
+tags = ["past", "trauma", "redemption"]
+level_range = [2, 5]
+incompatible_tags = []
+weight = 0.8
+description_template = "A villager in {settlement} is haunted — not by a ghost, but by the memories of who they used to be and the harm they once caused."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 11
+trigger_max = 20
+narrator_hints = [
+    "{authority_npc} has been having nightmares — waking screaming, pacing the walls at night. The guards whisper that their captain is coming undone.",
+    "You find {authority_npc} staring at an old medallion — a military commendation. 'I earned this,' they say quietly, 'by doing something unforgivable.'",
+    "A letter arrives for {authority_npc}, sealed with black wax. After reading it, they sit in silence for a long time, then ask to speak with you privately."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "past_haunting"}
+]
+quest_template = {type = "social", target = "authority_npc_past", report_to = "healer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "{authority_npc} confesses: before coming to {settlement}, they served a tyrant. They followed orders that led to innocent deaths. They fled and built a new identity here.",
+    "The letter is from a survivor — someone who remembers. They are coming to {settlement}. {authority_npc} does not know if they come seeking justice or vengeance."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "counseling_authority"}
+]
+quest_template = {type = "social", target = "prepare_confession", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 26
+narrator_hints = [
+    "The survivor arrives — not a warrior, but an old woman carrying a child's toy. She stands in the square and calls {authority_npc} by their real name.",
+    "The village watches. {authority_npc}'s secret is laid bare. The person they trust to protect them was once an instrument of destruction. How do you defend someone who does not defend themselves?"
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "identity_exposed"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "public_reckoning"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["{authority_npc} faces the survivor with honesty and grief. Forgiveness is not given — it is not that kind of story — but acknowledgment is. The village chooses to see who they are now, not who they were."]
+failure_narrator_hints = ["{authority_npc} resigns and leaves {settlement} in the night. The village loses its protector, and the survivor's anger finds no resolution — only an empty chair and an open wound."]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 15},
+    {type = "faction_rep", faction_role = "healer", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -25}
+]

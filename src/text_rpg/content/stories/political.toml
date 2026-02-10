@@ -1,0 +1,461 @@
+# =============================================================================
+# Political Story Seeds — power struggles, governance, and intrigue
+# =============================================================================
+
+[[seeds]]
+id = "succession_crisis"
+name = "The Empty Seat"
+category = "political"
+tags = ["leadership", "succession", "faction"]
+level_range = [2, 5]
+incompatible_tags = []
+weight = 0.9
+description_template = "The elder of {settlement} has died without naming an heir, and rival factions vie for control of the village council."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 10
+trigger_max = 22
+narrator_hints = [
+    "The village bell tolls long and low — the elder of {settlement} has passed in the night. By morning, whispered alliances already form in the market square.",
+    "{authority_npc} argues with the innkeeper over who should lead. The old ways say the guard captain speaks for the village in crisis. The merchants disagree.",
+    "{farmer} watches the bickering with weary eyes. 'We need someone who cares about the land, not about power,' he mutters."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "succession_claim"},
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "succession_opposition"}
+]
+quest_template = {type = "social", target = "village_council", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "Two factions solidify: {authority_npc}'s order-first coalition and {innkeeper}'s merchant-backed progressives. Both court you for support.",
+    "A third candidate emerges from the shadows — a retired adventurer with deep pockets and unknown motives. The race becomes a three-way contest."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "political_tension"}
+]
+quest_template = {type = "social", target = "faction_support", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 26
+narrator_hints = [
+    "The election is tomorrow, and tempers boil over. A brawl erupts in the inn. Accusations of bribery and intimidation fly from all sides.",
+    "Someone sets fire to the notice board — the candidates' platforms reduced to ash. {authority_npc} posts extra guards, but the damage is done."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_inn", tag = "political_brawl"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "election_security"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["A fair election is held, and {settlement} chooses its new leader. Whatever your role, the village respects the process. Unity, fragile but real, holds."]
+failure_narrator_hints = ["The election devolves into chaos. No leader is chosen, and {settlement} fragments into quarreling factions, each claiming authority."]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 10},
+    {type = "faction_rep", faction_role = "innkeeper", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -10},
+    {type = "faction_rep", faction_role = "innkeeper", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "faction_betrayal"
+name = "The Knife in the Dark"
+category = "political"
+tags = ["betrayal", "espionage", "trust"]
+level_range = [2, 5]
+incompatible_tags = []
+weight = 0.8
+description_template = "A trusted figure in {settlement} has been secretly working against the village's interests, selling information to outside forces."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 12
+trigger_max = 24
+narrator_hints = [
+    "{authority_npc} receives word that bandit raids have been suspiciously well-informed — as if someone is feeding them patrol schedules and caravan routes.",
+    "A coded letter is found in the mud near the smithy, addressed to someone using a cipher. {merchant} recognizes the seal — it belongs to a rival settlement.",
+    "Small things go wrong with unnerving precision. Supply caches raided, guard posts unmanned at the exact wrong moment. This is not bad luck — this is betrayal."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "security_leak"},
+    {type = "npc_dialogue_tag", role = "merchant", tag = "coded_letter"}
+]
+quest_template = {type = "investigate", target = "thornfield_village", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The trail of evidence points inward — the traitor is someone with access to village planning. The list of suspects is short and troubling.",
+    "Confronting the traitor will require proof. Accusations without evidence could tear the village apart faster than any outside enemy."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "betrayal_rumors"}
+]
+quest_template = {type = "investigate", target = "thornfield_smithy", difficulty = "hard"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 28
+narrator_hints = [
+    "The traitor realizes they are being investigated and makes a desperate move — framing an innocent villager to buy time for escape.",
+    "The framed villager is arrested. You must act quickly: expose the real traitor before an innocent person is punished."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "false_arrest"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "witch_hunt_atmosphere"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The traitor is unmasked in the village square. The truth is bitter, but it is better than the poison of suspicion. Justice is served."]
+failure_narrator_hints = ["The real traitor escapes, and an innocent pays the price. Trust in {settlement} is shattered — who else might be hiding behind a friendly face?"]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 15},
+    {type = "faction_rep", faction_role = "merchant", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -20},
+    {type = "faction_rep", faction_role = "merchant", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "alliance_proposal"
+name = "The Outstretched Hand"
+category = "political"
+tags = ["diplomacy", "alliance", "negotiation"]
+level_range = [1, 4]
+incompatible_tags = []
+weight = 1.0
+description_template = "A neighboring settlement sends envoys to {settlement} proposing a mutual defense pact — but their terms come with strings attached."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 8
+trigger_max = 18
+narrator_hints = [
+    "Three riders in fine cloaks arrive at the {settlement} gate bearing the banner of Ironridge. They request an audience with the village leadership.",
+    "{authority_npc} reads the proposal aloud in the square: mutual defense, shared trade routes, combined militia. The terms sound generous. Too generous.",
+    "{innkeeper} has heard rumors about Ironridge — they are struggling and desperate. This alliance may be less partnership and more lifeline."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "alliance_deliberation"},
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "ironridge_gossip"}
+]
+quest_template = {type = "social", target = "envoy_delegation", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The envoys are genuine, but they are concealing the extent of Ironridge's troubles. Accepting the alliance means shouldering their burdens — including a bandit problem they cannot solve alone.",
+    "Rejecting the alliance risks making an enemy of a neighbor. The envoys make it clear: if {settlement} won't be a friend, Ironridge will find friends elsewhere."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "alliance_economics"}
+]
+quest_template = {type = "social", target = "negotiate_terms", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 23
+narrator_hints = [
+    "Ironridge's situation deteriorates rapidly. Refugees arrive at {settlement}'s gate, begging for shelter. The alliance decision can no longer be delayed.",
+    "Both sides pressure you for a recommendation. The village is divided — accept and risk being dragged into someone else's war, or refuse and stand alone."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "farmer", tag = "alliance_worried"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "refugee_pressure"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The alliance is forged on fair terms. {settlement} and Ironridge stand together, stronger than either alone. The road between them becomes a lifeline of trade and trust."]
+failure_narrator_hints = ["Negotiations collapse. Ironridge turns bitter and cold. The road between the settlements becomes a line drawn in the dust."]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 10},
+    {type = "faction_rep", faction_role = "merchant", delta = 15}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -5},
+    {type = "faction_rep", faction_role = "merchant", delta = -15}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "village_rebellion"
+name = "The Breaking Point"
+category = "political"
+tags = ["rebellion", "unrest", "populism"]
+level_range = [2, 5]
+incompatible_tags = []
+weight = 0.8
+description_template = "Resentment against the leadership of {settlement} reaches a boiling point. The common folk demand change — by vote or by force."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 14
+trigger_max = 26
+narrator_hints = [
+    "Angry voices rise in the square. Farmers and laborers accuse the village leadership of hoarding resources while they starve. {farmer} leads the outcry.",
+    "A list of grievances is nailed to the inn door: unfair taxation, neglected roads, ignored petitions. {innkeeper} reads it aloud to a growing crowd.",
+    "{authority_npc} dismisses the complaints as the work of agitators. But the crowd's anger is real, and it is spreading."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "farmer", tag = "rebellion_leader"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "rebellion_dismissive"}
+]
+quest_template = {type = "social", target = "village_square", report_to = "innkeeper"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The grievances are legitimate — funds have been mismanaged, and the poorest have suffered most. But the rebels' solution — deposing the leadership by force — risks chaos.",
+    "A moderate path exists: mediate between the factions, address the grievances, and prevent bloodshed. But both sides must be willing to listen."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "civil_unrest"}
+]
+quest_template = {type = "social", target = "mediation", difficulty = "hard"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 30
+narrator_hints = [
+    "The rebels seize the granary and barricade the east road. {authority_npc} calls the guard to arms. {settlement} stands on the edge of a civil war.",
+    "Families are torn apart — brothers on opposite sides of the barricade. One spark will set the whole village ablaze."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "barricaded_streets"},
+    {type = "npc_dialogue_tag", role = "farmer", tag = "rebellion_ultimatum"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["A compromise is reached. The grievances are heard, reforms are promised, and the barricades come down. {settlement} is bruised but whole."]
+failure_narrator_hints = ["Violence erupts. By the time order is restored, {settlement} has lost good people on both sides. The scars run deep and will take years to heal."]
+success_effects = [
+    {type = "faction_rep", faction_role = "farmer", delta = 15},
+    {type = "faction_rep", faction_role = "guard", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "farmer", delta = -15},
+    {type = "faction_rep", faction_role = "guard", delta = -15}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "power_grab"
+name = "The Ambitious One"
+category = "political"
+tags = ["ambition", "corruption", "conspiracy"]
+level_range = [2, 4]
+incompatible_tags = []
+weight = 0.9
+description_template = "A charismatic newcomer to {settlement} is consolidating power through charm, favors, and carefully hidden threats."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 9
+trigger_max = 19
+narrator_hints = [
+    "A well-dressed stranger has settled in {settlement}, buying rounds at the inn and offering interest-free loans to struggling farmers. Everyone loves them.",
+    "{innkeeper} observes that the newcomer has a talent for making friends — and an even greater talent for making those friends dependent on their generosity.",
+    "{authority_npc} is uneasy. The stranger has made no overt moves, but a web of obligation is quietly being woven around the village's key figures."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "newcomer_charming"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "newcomer_suspicious"}
+]
+quest_template = {type = "investigate", target = "thornfield_inn", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The newcomer's background is fabricated — they were expelled from a distant city for fraud and manipulation. The generosity is a front for a long con.",
+    "Key villagers are already in the newcomer's debt. Exposing them will require turning those allies back before the trap closes."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "in_debt_to_newcomer"}
+]
+quest_template = {type = "social", target = "turn_allies", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 24
+narrator_hints = [
+    "The newcomer makes their move — calling in debts, demanding a seat on the village council, threatening to foreclose on farms. The friendly mask slips.",
+    "{farmer} realizes he has been played. His farm is mortgaged to the newcomer. Without intervention, half the village will be under one person's thumb."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "farmer", tag = "debt_trap"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "financial_crisis"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The newcomer's schemes are exposed in a public reckoning. Debts are annulled, and the con artist is driven from {settlement} in disgrace."]
+failure_narrator_hints = ["The newcomer's grip tightens. {settlement}'s leaders dance to their tune, and the village's independence is quietly stolen."]
+success_effects = [
+    {type = "faction_rep", faction_role = "farmer", delta = 15},
+    {type = "faction_rep", faction_role = "merchant", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "farmer", delta = -15},
+    {type = "faction_rep", faction_role = "merchant", delta = -15}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "noble_exile"
+name = "The Fallen Lord"
+category = "political"
+tags = ["nobility", "exile", "protection"]
+level_range = [2, 5]
+incompatible_tags = []
+weight = 0.8
+description_template = "An exiled noble arrives in {settlement}, fleeing assassins. Sheltering them brings danger; refusing them brings dishonor."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 11
+trigger_max = 21
+narrator_hints = [
+    "A cloaked figure collapses at the village gate — a young noble, wounded and desperate. They beg for sanctuary, claiming assassins follow close behind.",
+    "{authority_npc} faces an impossible choice: honor demands sheltering the refugee, but their pursuers are agents of a powerful duke. Harboring the exile could bring war.",
+    "{innkeeper} gives the noble a room and a hot meal. 'Politics can wait until morning,' they say. 'Decency cannot.'"
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "noble_dilemma"},
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "noble_sheltered"}
+]
+quest_template = {type = "social", target = "noble_refugee", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The noble's story checks out — they were framed for treason by a jealous cousin who now rules in their place. The evidence of their innocence exists, but it is held in a distant stronghold.",
+    "Assassins arrive at {settlement}, posing as bounty hunters with 'legal' writs. They are patient and professional. Time is running out."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "assassins_lurking"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "assassin_confrontation"}
+]
+quest_template = {type = "combat", target = "assassin_scouts", difficulty = "hard"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 27
+narrator_hints = [
+    "The duke's patience runs out. A formal demand arrives: surrender the exile or face economic sanctions and military pressure. {settlement} is a small village against a duchy.",
+    "The noble offers to leave, to spare the village. But going alone means certain death. Someone must decide the cost of doing the right thing."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "trade_sanctions_feared"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The noble's innocence is proven, and the duke's conspiracy is exposed. The exile returns home, and {settlement} earns a powerful and grateful ally."]
+failure_narrator_hints = ["The noble is taken. {settlement} suffers the duke's ire regardless, punished for daring to shelter a fugitive, however briefly."]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 10},
+    {type = "faction_rep", faction_role = "innkeeper", delta = 15}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -10},
+    {type = "faction_rep", faction_role = "merchant", delta = -15}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "merchant_election"
+name = "The Market War"
+category = "political"
+tags = ["commerce", "election", "rivalry"]
+level_range = [1, 3]
+incompatible_tags = []
+weight = 1.0
+description_template = "Two merchants compete for the position of market master in {settlement}, each promising prosperity but through very different means."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 7
+trigger_max = 15
+narrator_hints = [
+    "The old market master has retired, and two candidates have declared their intention to fill the role. Campaign posters plaster the village walls.",
+    "One candidate promises lower taxes and free trade. The other promises quality controls and fair wages. {innkeeper} says each has a point — and each has an agenda.",
+    "{farmer} is being courted by both sides. His endorsement would carry weight. He asks your opinion over a mug of ale."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "market_election"},
+    {type = "npc_dialogue_tag", role = "farmer", tag = "endorsement_sought"}
+]
+quest_template = {type = "social", target = "market_candidates", report_to = "innkeeper"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The free-trade candidate is secretly backed by outside merchants who want to flood {settlement} with cheap goods — undercutting local craftspeople.",
+    "The quality-controls candidate has been strong-arming vendors who do not support their campaign. Neither option is clean."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "market_dirty_politics"}
+]
+quest_template = {type = "investigate", target = "thornfield_village", difficulty = "easy"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 19
+narrator_hints = [
+    "The competition turns ugly. One candidate's market stall is vandalized overnight. Accusations and counter-accusations fill the air.",
+    "{merchant} threatens to leave {settlement} entirely if the wrong person wins. The village economy hangs in the balance."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "market_disrupted"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The election produces a fair result, and the new market master begins their tenure. Trade flourishes under watchful eyes, and {settlement}'s market grows."]
+failure_narrator_hints = ["The market election leaves a bitter taste. The loser and their supporters boycott the market, and trade suffers for months."]
+success_effects = [
+    {type = "faction_rep", faction_role = "merchant", delta = 15},
+    {type = "faction_rep", faction_role = "innkeeper", delta = 5}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "merchant", delta = -15},
+    {type = "faction_rep", faction_role = "farmer", delta = -5}
+]

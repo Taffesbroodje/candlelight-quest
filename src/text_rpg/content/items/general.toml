@@ -1,0 +1,120 @@
+[[items]]
+id = "healing_potion"
+name = "Potion of Healing"
+description = "A small vial of red liquid that restores health when consumed."
+item_type = "potion"
+weight = 0.5
+value_gp = 50
+rarity = "common"
+
+[items.effects]
+heal_dice = "2d4"
+heal_bonus = 2
+
+[[items]]
+id = "torch"
+name = "Torch"
+description = "A wooden rod wrapped in oil-soaked cloth, providing bright light in a 20-foot radius."
+item_type = "misc"
+weight = 1.0
+value_gp = 0
+rarity = "common"
+
+[[items]]
+id = "rope"
+name = "Hempen Rope (50 ft)"
+description = "A 50-foot length of sturdy hempen rope, useful for climbing and binding."
+item_type = "misc"
+weight = 10.0
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "rations"
+name = "Rations (1 day)"
+description = "Dry foods suitable for extended travel, including jerky, dried fruit, and hardtack."
+item_type = "misc"
+weight = 2.0
+value_gp = 0
+rarity = "common"
+
+[[items]]
+id = "waterskin"
+name = "Waterskin"
+description = "A leather pouch that can hold up to 4 pints of liquid."
+item_type = "misc"
+weight = 5.0
+value_gp = 0
+rarity = "common"
+
+[[items]]
+id = "bedroll"
+name = "Bedroll"
+description = "A portable sleeping mat that can be rolled up for travel."
+item_type = "misc"
+weight = 7.0
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "explorer_pack"
+name = "Explorer Pack"
+description = "Includes a backpack, a bedroll, a mess kit, a tinderbox, 10 torches, 10 days of rations, and a waterskin."
+item_type = "misc"
+weight = 59.0
+value_gp = 10
+rarity = "common"
+
+[[items]]
+id = "scholar_pack"
+name = "Scholar Pack"
+description = "Includes a backpack, a book of lore, a bottle of ink, an ink pen, 10 sheets of parchment, and a small knife."
+item_type = "misc"
+weight = 22.0
+value_gp = 40
+rarity = "common"
+
+[[items]]
+id = "burglar_pack"
+name = "Burglar Pack"
+description = "Includes a backpack, a bag of ball bearings, 10 feet of string, a bell, 5 candles, a crowbar, a hammer, 10 pitons, a hooded lantern, 2 flasks of oil, 5 days of rations, a tinderbox, and a waterskin."
+item_type = "misc"
+weight = 44.5
+value_gp = 16
+rarity = "common"
+
+[[items]]
+id = "priest_pack"
+name = "Priest Pack"
+description = "Includes a backpack, a blanket, 10 candles, a tinderbox, an alms box, 2 blocks of incense, a censer, vestments, 2 days of rations, and a waterskin."
+item_type = "misc"
+weight = 24.0
+value_gp = 19
+rarity = "common"
+
+[[items]]
+id = "holy_symbol"
+name = "Holy Symbol"
+description = "A representation of a god or pantheon, used as a divine spellcasting focus."
+item_type = "misc"
+weight = 1.0
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "thieves_tools"
+name = "Thieves Tools"
+description = "A set of picks and tools for disarming traps and opening locks."
+item_type = "tool"
+weight = 1.0
+value_gp = 25
+rarity = "common"
+
+[[items]]
+id = "spellbook"
+name = "Spellbook"
+description = "A leather-bound tome essential for wizards, containing the spells they have learned."
+item_type = "tool"
+weight = 3.0
+value_gp = 50
+rarity = "common"

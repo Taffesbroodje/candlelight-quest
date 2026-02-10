@@ -1,0 +1,73 @@
+# Enchanted weapons and armor — crafted via enchanting recipes
+
+[[items]]
+id = "fire_longsword"
+name = "Flaming Longsword"
+description = "A longsword wreathed in magical flame. The blade glows orange-red and sears anything it touches."
+item_type = "weapon"
+weapon_type = "martial_melee"
+damage_dice = "1d8+1d6"
+damage_type = "slashing/fire"
+weight = 3.0
+value_gp = 500
+rarity = "rare"
+properties = ["versatile"]
+
+[[items]]
+id = "frost_shortsword"
+name = "Frostbite Shortsword"
+description = "A shortsword coated in permanent rime. Frost crystals trail behind each swing."
+item_type = "weapon"
+weapon_type = "martial_melee"
+damage_dice = "1d6+1d4"
+damage_type = "piercing/cold"
+weight = 2.0
+value_gp = 400
+rarity = "rare"
+properties = ["finesse", "light"]
+
+[[items]]
+id = "lightning_rapier"
+name = "Stormstrike Rapier"
+description = "A rapier that crackles with electrical energy. Static sparks dance along the blade."
+item_type = "weapon"
+weapon_type = "martial_melee"
+damage_dice = "1d8+1d6"
+damage_type = "piercing/lightning"
+weight = 2.0
+value_gp = 600
+rarity = "rare"
+properties = ["finesse"]
+
+[[items]]
+id = "sharp_greataxe"
+name = "Keen Greataxe"
+description = "A greataxe honed to supernatural sharpness by magical enchantment. It cuts through armor like parchment."
+item_type = "weapon"
+weapon_type = "martial_melee"
+damage_dice = "1d12+2"
+damage_type = "slashing"
+weight = 7.0
+value_gp = 700
+rarity = "very_rare"
+properties = ["heavy", "two_handed"]
+
+[[items]]
+id = "armor_of_protection"
+name = "Armor of Protection"
+description = "Enchanted armor that shimmers with a faint protective aura. Grants an additional +1 to AC."
+item_type = "armor"
+armor_type = "medium"
+ac_base = 15
+weight = 40.0
+value_gp = 500
+rarity = "rare"
+
+[[items]]
+id = "ring_of_resistance"
+name = "Ring of Resistance"
+description = "A silver ring set with a shifting gemstone. Grants resistance to a chosen damage type."
+item_type = "misc"
+weight = 0.1
+value_gp = 800
+rarity = "very_rare"

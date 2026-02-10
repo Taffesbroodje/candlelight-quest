@@ -1,0 +1,26 @@
+id = "halfling"
+name = "Halfling"
+description = "The diminutive halflings survive in a world full of larger creatures by avoiding notice or, barring that, avoiding offense."
+speed = 25
+size = "Small"
+
+[ability_bonuses]
+dexterity = 2
+
+[[traits]]
+name = "Lucky"
+description = "When you roll a 1 on a d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
+
+[[traits]]
+name = "Brave"
+description = "You have advantage on saving throws against being frightened."
+
+[[traits]]
+name = "Halfling Nimbleness"
+description = "You can move through the space of any creature that is of a size larger than yours."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Halfling"

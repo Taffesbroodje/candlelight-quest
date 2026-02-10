@@ -1,0 +1,263 @@
+# Crafting materials and crafted items
+
+[[items]]
+id = "healing_herb"
+name = "Healing Herb"
+description = "A fragrant green herb with restorative properties, commonly found in forests and meadows."
+item_type = "material"
+weight = 0.1
+value_gp = 2
+rarity = "common"
+
+[[items]]
+id = "moonpetal"
+name = "Moonpetal"
+description = "A pale luminescent flower that blooms only at night. Prized by alchemists."
+item_type = "material"
+weight = 0.1
+value_gp = 5
+rarity = "uncommon"
+
+[[items]]
+id = "sulfur"
+name = "Sulfur"
+description = "A yellow mineral with a pungent smell, used in alchemical fire preparations."
+item_type = "material"
+weight = 0.5
+value_gp = 3
+rarity = "common"
+
+[[items]]
+id = "flask"
+name = "Empty Flask"
+description = "A sturdy glass flask suitable for holding alchemical concoctions."
+item_type = "material"
+weight = 0.5
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "iron_ingot"
+name = "Iron Ingot"
+description = "A bar of refined iron, ready for the forge."
+item_type = "material"
+weight = 3.0
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "leather_strip"
+name = "Leather Strip"
+description = "A cured strip of leather used for weapon grips and armor binding."
+item_type = "material"
+weight = 0.2
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "arcane_dust"
+name = "Arcane Dust"
+description = "Shimmering dust that pulses with residual magical energy. Essential for enchanting."
+item_type = "material"
+weight = 0.1
+value_gp = 15
+rarity = "uncommon"
+
+[[items]]
+id = "soul_gem"
+name = "Soul Gem"
+description = "A translucent crystal that hums with captured spiritual essence. Used in powerful enchantments."
+item_type = "material"
+weight = 0.2
+value_gp = 50
+rarity = "rare"
+
+[[items]]
+id = "enchanted_thread"
+name = "Enchanted Thread"
+description = "Thread spun from magical silk that never breaks. Used to weave enchantments into armor."
+item_type = "material"
+weight = 0.1
+value_gp = 20
+rarity = "uncommon"
+
+[[items]]
+id = "silver_ore"
+name = "Silver Ore"
+description = "Raw silver ore, effective against certain supernatural creatures."
+item_type = "material"
+weight = 2.0
+value_gp = 10
+rarity = "uncommon"
+
+[[items]]
+id = "beast_hide"
+name = "Beast Hide"
+description = "A thick hide stripped from a large beast. Can be tanned into sturdy leather."
+item_type = "material"
+weight = 3.0
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "dragon_scale_fragment"
+name = "Dragon Scale Fragment"
+description = "A small fragment of a dragon's scale, shimmering with iridescent colors. Incredibly rare and magically potent."
+item_type = "material"
+weight = 0.5
+value_gp = 100
+rarity = "very_rare"
+
+[[items]]
+id = "nightshade"
+name = "Nightshade"
+description = "A deadly purple flower that blooms in shadow. Toxic when ingested, but useful in alchemy."
+item_type = "material"
+weight = 0.1
+value_gp = 8
+rarity = "uncommon"
+
+[[items]]
+id = "firepowder"
+name = "Firepowder"
+description = "A volatile red powder that ignites at the slightest friction. Handle with care."
+item_type = "material"
+weight = 0.2
+value_gp = 12
+rarity = "uncommon"
+
+[[items]]
+id = "spider_silk"
+name = "Spider Silk"
+description = "Strong, flexible silk harvested from giant spiders. Useful in crafting and enchanting."
+item_type = "material"
+weight = 0.1
+value_gp = 8
+rarity = "uncommon"
+
+# New crafted items
+
+[[items]]
+id = "mana_potion"
+name = "Mana Potion"
+description = "A swirling blue elixir that restores magical energy. Recovers one level-1 spell slot."
+item_type = "potion"
+weight = 0.5
+value_gp = 75
+rarity = "uncommon"
+
+[[items]]
+id = "poison_vial"
+name = "Poison Vial"
+description = "A small vial of dark liquid. Can be applied to a weapon to add 1d4 poison damage for one attack."
+item_type = "potion"
+weight = 0.3
+value_gp = 40
+rarity = "uncommon"
+
+[[items]]
+id = "smoke_bomb"
+name = "Smoke Bomb"
+description = "A small ball that releases a cloud of obscuring smoke when thrown. Useful for escapes."
+item_type = "misc"
+weight = 0.5
+value_gp = 30
+rarity = "uncommon"
+
+[[items]]
+id = "silver_weapon_coating"
+name = "Silver Weapon Coating"
+description = "A silvered solution that can be applied to a weapon, making it effective against lycanthropes and undead."
+item_type = "misc"
+weight = 0.3
+value_gp = 50
+rarity = "uncommon"
+
+[[items]]
+id = "reinforced_chain_shirt"
+name = "Reinforced Chain Shirt"
+description = "A chain shirt reinforced with extra rings and padding, offering superior protection."
+item_type = "armor"
+armor_type = "medium"
+ac_base = 14
+weight = 25.0
+value_gp = 100
+rarity = "uncommon"
+
+[[items]]
+id = "feast"
+name = "Grand Feast"
+description = "A lavish meal fit for a king. Fully restores hunger and greatly boosts morale."
+item_type = "food"
+weight = 5.0
+value_gp = 15
+rarity = "uncommon"
+
+[[items]]
+id = "travelers_rations"
+name = "Traveler's Rations"
+description = "Compact, long-lasting rations designed for extended journeys. Better than standard rations."
+item_type = "food"
+weight = 1.0
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "energy_bar"
+name = "Energy Bar"
+description = "A dense bar of nuts, honey, and dried fruit. Provides a quick burst of energy."
+item_type = "food"
+weight = 0.2
+value_gp = 3
+rarity = "common"
+
+# Crafted consumables
+
+[[items]]
+id = "antidote"
+name = "Antidote"
+description = "A bitter green liquid that neutralizes most common poisons."
+item_type = "potion"
+weight = 0.5
+value_gp = 25
+rarity = "uncommon"
+
+[[items]]
+id = "alchemists_fire"
+name = "Alchemist's Fire"
+description = "A sticky, adhesive fluid that ignites on contact with air. Can be thrown as an improvised weapon."
+item_type = "potion"
+weight = 1.0
+value_gp = 50
+rarity = "uncommon"
+
+[[items]]
+id = "poultice"
+name = "Healing Poultice"
+description = "A damp herbal compress that slowly restores health when applied to wounds."
+item_type = "potion"
+weight = 0.3
+value_gp = 15
+rarity = "common"
+
+[items.effects]
+heal_dice = "1d4"
+heal_bonus = 1
+
+[[items]]
+id = "cooked_meal"
+name = "Cooked Meal"
+description = "A warm, well-prepared meal that satisfies hunger and lifts spirits."
+item_type = "food"
+weight = 1.0
+value_gp = 2
+rarity = "common"
+
+[[items]]
+id = "hearty_stew"
+name = "Hearty Stew"
+description = "A rich, filling stew packed with protein and flavor. Warms the body and soul."
+item_type = "food"
+weight = 1.5
+value_gp = 5
+rarity = "common"

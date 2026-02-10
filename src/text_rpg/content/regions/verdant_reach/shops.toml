@@ -1,0 +1,153 @@
+# Shops in Thornfield and surrounding area
+
+[[shops]]
+id = "elara_shop"
+owner_entity_id = "elara_innkeeper"
+location_id = "thornfield_inn"
+shop_type = "tavern"
+
+[[shops.stock]]
+item_id = "rations"
+quantity = 10
+base_price = 1
+base_stock = 10
+
+[[shops.stock]]
+item_id = "waterskin"
+quantity = 5
+base_price = 2
+base_stock = 5
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 3
+base_price = 50
+base_stock = 3
+
+[[shops.stock]]
+item_id = "cooked_meal"
+quantity = 5
+base_price = 3
+base_stock = 5
+
+[[shops.stock]]
+item_id = "hearty_stew"
+quantity = 3
+base_price = 6
+base_stock = 3
+
+[[shops.stock]]
+item_id = "torch"
+quantity = 10
+base_price = 1
+base_stock = 10
+
+[[shops.stock]]
+item_id = "bedroll"
+quantity = 2
+base_price = 2
+base_stock = 2
+
+
+[[shops]]
+id = "grimjaw_shop"
+owner_entity_id = "grimjaw_smith"
+location_id = "thornfield_smithy"
+shop_type = "smithy"
+
+[[shops.stock]]
+item_id = "longsword"
+quantity = 2
+base_price = 15
+base_stock = 2
+
+[[shops.stock]]
+item_id = "shortsword"
+quantity = 3
+base_price = 10
+base_stock = 3
+
+[[shops.stock]]
+item_id = "greataxe"
+quantity = 1
+base_price = 30
+base_stock = 1
+
+[[shops.stock]]
+item_id = "rapier"
+quantity = 2
+base_price = 25
+base_stock = 2
+
+[[shops.stock]]
+item_id = "dagger"
+quantity = 5
+base_price = 2
+base_stock = 5
+
+[[shops.stock]]
+item_id = "chain_mail"
+quantity = 1
+base_price = 75
+base_stock = 1
+
+[[shops.stock]]
+item_id = "leather_armor"
+quantity = 2
+base_price = 10
+base_stock = 2
+
+[[shops.stock]]
+item_id = "shield"
+quantity = 2
+base_price = 10
+base_stock = 2
+
+[[shops.stock]]
+item_id = "iron_ingot"
+quantity = 10
+base_price = 5
+base_stock = 10
+
+[[shops.stock]]
+item_id = "leather_strip"
+quantity = 8
+base_price = 2
+base_stock = 8
+
+
+[[shops]]
+id = "maren_shop"
+owner_entity_id = "sister_maren"
+location_id = "thornfield_temple"
+shop_type = "temple"
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 5
+base_price = 45
+base_stock = 5
+
+[[shops.stock]]
+item_id = "antidote"
+quantity = 3
+base_price = 20
+base_stock = 3
+
+[[shops.stock]]
+item_id = "healing_herb"
+quantity = 10
+base_price = 3
+base_stock = 10
+
+[[shops.stock]]
+item_id = "moonpetal"
+quantity = 5
+base_price = 8
+base_stock = 5
+
+[[shops.stock]]
+item_id = "holy_symbol"
+quantity = 2
+base_price = 5
+base_stock = 2

@@ -1,0 +1,30 @@
+id = "dwarf"
+name = "Dwarf"
+description = "Bold and hardy, dwarves are known as skilled warriors, miners, and workers of stone."
+speed = 25
+size = "Medium"
+
+[ability_bonuses]
+constitution = 2
+
+[[traits]]
+name = "Darkvision"
+description = "You can see in dim light within 60 feet as if it were bright light, and in darkness as if it were dim light."
+
+[[traits]]
+name = "Dwarven Resilience"
+description = "You have advantage on saving throws against poison, and you have resistance against poison damage."
+
+[[traits]]
+name = "Stonecunning"
+description = "Whenever you make a History check related to the origin of stonework, you are considered proficient and add double your proficiency bonus."
+
+[[traits]]
+name = "Dwarven Combat Training"
+description = "You have proficiency with the battleaxe, handaxe, light hammer, and warhammer."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Dwarvish"

@@ -1,0 +1,6 @@
+id = "verdant_reach"
+name = "The Verdant Reach"
+description = "A fertile stretch of rolling hills and ancient woodlands, the Verdant Reach has long been a crossroads of trade and adventure. The village of Thornfield sits at its heart, surrounded by farmland that gives way to the Whisperwood in the east and the Ironridge foothills to the north."
+level_range_min = 1
+level_range_max = 5
+climate = "temperate"

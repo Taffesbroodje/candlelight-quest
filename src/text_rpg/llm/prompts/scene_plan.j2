@@ -1,0 +1,20 @@
+You are a game master planning the next scene. Analyze the current situation and suggest what might happen.
+
+## Current Location
+{{ location }}
+
+## Present Entities
+{% for entity in entities %}
+- {{ entity.name }}: {{ entity.description | default("No description") }}
+{% endfor %}
+
+## Context
+{{ context }}
+
+Respond in JSON only:
+{
+  "available_actions": ["list of reasonable actions the player could take"],
+  "environmental_details": ["sensory details to enrich the scene"],
+  "npc_intentions": {"npc_name": "what they want or are doing"},
+  "tension_level": "low|medium|high"
+}

@@ -1,0 +1,97 @@
+[thornfield_guard]
+id = "thornfield_guard"
+name = "Thornfield Town Guard"
+region = "verdant_reach"
+description = "The stalwart defenders of Thornfield and surrounding settlements. They keep the peace and hunt criminals."
+default_reputation = 0
+
+[[thornfield_guard.goals]]
+id = "patrol_roads"
+description = "Keep the roads safe from bandits"
+check_interval = 15
+success_chance = 0.7
+success_event = "Guard patrol cleared bandits from the Ironridge Road."
+failure_event = "A merchant caravan was ambushed on the Ironridge Road despite guard patrols."
+success_effects = [{type = "faction_rep", faction_id = "thornfield_merchants", delta = 3}]
+failure_effects = [{type = "faction_rep", faction_id = "thornfield_merchants", delta = -5}]
+
+[[thornfield_guard.goals]]
+id = "recruit_militia"
+description = "Recruit villagers into a local militia"
+check_interval = 25
+success_chance = 0.5
+success_event = "Captain Vale has recruited a handful of villagers for militia training."
+failure_event = "Few villagers answered the guard's call for militia volunteers."
+success_effects = []
+failure_effects = []
+
+[thornfield_merchants]
+id = "thornfield_merchants"
+name = "Thornfield Merchants Guild"
+region = "verdant_reach"
+description = "A loose coalition of traders, shopkeepers, and artisans who control commerce in Thornfield."
+default_reputation = 0
+
+[[thornfield_merchants.goals]]
+id = "secure_trade_route"
+description = "Maintain the trade route to neighboring settlements"
+check_interval = 20
+success_chance = 0.6
+success_event = "Merchant Guild caravans successfully delivered goods to outlying villages."
+failure_event = "Trade route disruptions have caused shortages in Thornfield."
+success_effects = [{type = "faction_rep", faction_id = "thornfield_guard", delta = 2}]
+failure_effects = [{type = "faction_rep", faction_id = "thornfield_guard", delta = -3}]
+
+[[thornfield_merchants.goals]]
+id = "expand_market"
+description = "Attract new traders and expand the village market"
+check_interval = 30
+success_chance = 0.4
+success_event = "A new trader has set up shop in Thornfield, drawn by the Guild's reputation."
+failure_event = "The Merchants Guild's attempts to attract new traders fell flat this season."
+success_effects = []
+failure_effects = []
+
+[wilderness_bandits]
+id = "wilderness_bandits"
+name = "Wilderness Outlaws"
+region = "verdant_reach"
+description = "A scattered network of bandits, poachers, and rogues who prowl the roads and forests."
+default_reputation = 0
+
+[[wilderness_bandits.goals]]
+id = "raid_caravans"
+description = "Ambush merchant caravans on the roads"
+check_interval = 18
+success_chance = 0.5
+success_event = "Bandits ambushed a merchant caravan on the road, seizing goods and coin."
+failure_event = "A bandit ambush was foiled by an armed escort on the Ironridge Road."
+success_effects = [{type = "faction_rep", faction_id = "thornfield_merchants", delta = -5}]
+failure_effects = [{type = "faction_rep", faction_id = "thornfield_guard", delta = 3}]
+
+[temple_of_light]
+id = "temple_of_light"
+name = "Temple of the Light"
+region = "verdant_reach"
+description = "A holy order dedicated to healing, protection, and driving back the darkness."
+default_reputation = 10
+
+[[temple_of_light.goals]]
+id = "tend_the_sick"
+description = "Provide healing and care to the villagers"
+check_interval = 12
+success_chance = 0.8
+success_event = "Sister Maren treated several villagers at the temple, earning grateful praise."
+failure_event = "The temple's herb supplies ran low, limiting healing services this week."
+success_effects = [{type = "faction_rep", faction_id = "thornfield_guard", delta = 2}]
+failure_effects = []
+
+[[temple_of_light.goals]]
+id = "consecrate_grounds"
+description = "Ward the village against dark influences"
+check_interval = 25
+success_chance = 0.6
+success_event = "The temple completed its seasonal blessing, strengthening the village wards."
+failure_event = "The consecration ritual was disrupted by unsettling energies from the Whisperwood."
+success_effects = []
+failure_effects = [{type = "faction_rep", faction_id = "thornfield_guard", delta = -2}]

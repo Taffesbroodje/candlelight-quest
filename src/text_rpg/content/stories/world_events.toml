@@ -1,0 +1,342 @@
+# =============================================================================
+# World Events — random events that fire independently of story arcs
+# These make the world feel alive and dynamic
+# =============================================================================
+
+# --- WEATHER & ENVIRONMENT ---
+
+[[events]]
+id = "thunderstorm"
+description = "A sudden thunderstorm rolls in"
+probability = 0.08
+cooldown = 30
+conditions = {period = ["afternoon", "evening"]}
+narrator_hint = "Thunder rumbles overhead as dark clouds gather. Rain begins to patter on rooftops and leaves."
+
+[[events]]
+id = "heavy_fog"
+description = "A thick fog blankets the area"
+probability = 0.07
+cooldown = 25
+conditions = {period = ["dawn", "morning"]}
+narrator_hint = "A thick fog rolls in, reducing visibility to a few feet. Shapes loom and vanish in the murk."
+
+[[events]]
+id = "clear_starry_night"
+description = "An unusually clear, starry night"
+probability = 0.1
+cooldown = 20
+conditions = {period = ["night", "late_night"]}
+narrator_hint = "The sky is brilliantly clear tonight — countless stars shimmer overhead, and the air is crisp."
+
+[[events]]
+id = "unseasonable_heat"
+description = "A wave of unseasonable heat"
+probability = 0.05
+cooldown = 40
+narrator_hint = "The air is thick and oppressive — an unnatural heat hangs over the land. Even the shade offers little relief."
+
+[[events]]
+id = "gentle_rain"
+description = "A gentle, refreshing rain falls"
+probability = 0.09
+cooldown = 20
+conditions = {period = ["morning", "afternoon"]}
+narrator_hint = "A light rain falls, refreshing the air and raising the scent of wet earth. Puddles form in the path."
+
+# --- VISITORS & TRAVELERS ---
+
+[[events]]
+id = "merchant_caravan"
+description = "A merchant caravan arrives"
+probability = 0.07
+cooldown = 25
+conditions = {period = ["morning", "afternoon"], location_type = "settlement"}
+narrator_hint = "A merchant caravan rolls into town, its wagons laden with goods from distant lands."
+
+[[events]]
+id = "wandering_bard"
+description = "A wandering bard arrives at the tavern"
+probability = 0.06
+cooldown = 25
+conditions = {location_type = "tavern", period = ["evening", "night"]}
+narrator_hint = "A bard tunes their lute in the corner, ready to share tales and songs from the road."
+
+[[events]]
+id = "refugee_family"
+description = "A displaced family seeks shelter"
+probability = 0.04
+cooldown = 35
+conditions = {location_type = "settlement"}
+narrator_hint = "A haggard family arrives at the village gate, carrying all they own on their backs."
+
+[[events]]
+id = "traveling_healer"
+description = "An itinerant healer passes through"
+probability = 0.05
+cooldown = 30
+conditions = {location_type = "settlement", period = ["morning", "afternoon"]}
+narrator_hint = "A robed figure has set up a small table of poultices and remedies near the square."
+
+[[events]]
+id = "messenger_rider"
+description = "A royal messenger rides through at speed"
+probability = 0.06
+cooldown = 20
+narrator_hint = "A rider bearing official colors gallops through without stopping, cloak streaming behind."
+
+[[events]]
+id = "pilgrim_group"
+description = "A group of pilgrims passes through"
+probability = 0.05
+cooldown = 30
+conditions = {location_type = "settlement", period = ["morning", "midday"]}
+narrator_hint = "A small group of robed pilgrims passes through the village, chanting softly as they walk."
+
+# --- WILDLIFE & NATURE ---
+
+[[events]]
+id = "wolf_howls"
+description = "Wolf howls echo from the woods"
+probability = 0.1
+cooldown = 15
+conditions = {period = ["evening", "night", "late_night"], location_type = "wilderness"}
+narrator_hint = "Distant wolf howls echo through the trees, closer than usual."
+
+[[events]]
+id = "deer_herd"
+description = "A herd of deer crosses nearby"
+probability = 0.08
+cooldown = 20
+conditions = {period = ["dawn", "morning"], location_type = "wilderness"}
+narrator_hint = "A small herd of deer moves gracefully through the underbrush nearby."
+
+[[events]]
+id = "strange_bird_migration"
+description = "An unusual flock of birds flies overhead"
+probability = 0.04
+cooldown = 40
+narrator_hint = "A massive flock of black birds wheels overhead, moving against the wind in eerie silence."
+
+[[events]]
+id = "wild_boar_sighting"
+description = "A wild boar is spotted near the village"
+probability = 0.06
+cooldown = 25
+conditions = {location_type = "settlement"}
+narrator_hint = "A large wild boar has been spotted rooting around near the village outskirts."
+
+[[events]]
+id = "owl_call"
+description = "An owl hoots from the trees"
+probability = 0.08
+cooldown = 15
+conditions = {period = ["night", "late_night"]}
+narrator_hint = "A great owl hoots from somewhere in the canopy, its call resonating through the darkness."
+
+[[events]]
+id = "fox_den"
+description = "A fox is spotted near the path"
+probability = 0.07
+cooldown = 20
+conditions = {period = ["dawn", "evening"], location_type = "wilderness"}
+narrator_hint = "A red fox watches from the undergrowth, its bright eyes curious before it vanishes into the brush."
+
+# --- SOCIAL & VILLAGE LIFE ---
+
+[[events]]
+id = "village_argument"
+description = "Two villagers argue loudly in the street"
+probability = 0.07
+cooldown = 20
+conditions = {location_type = "settlement", period = ["morning", "afternoon"]}
+narrator_hint = "Raised voices carry across the square — two villagers argue heatedly over a property dispute."
+
+[[events]]
+id = "children_playing"
+description = "Children play a game in the village"
+probability = 0.1
+cooldown = 15
+conditions = {location_type = "settlement", period = ["morning", "afternoon"]}
+narrator_hint = "Children chase each other through the streets, laughing and shouting."
+
+[[events]]
+id = "market_day"
+description = "The village holds a small market"
+probability = 0.06
+cooldown = 30
+conditions = {location_type = "settlement", period = ["morning", "midday"]}
+narrator_hint = "Farmers have set up stalls in the square, hawking fresh produce and wares."
+
+[[events]]
+id = "town_crier"
+description = "A town crier announces news"
+probability = 0.07
+cooldown = 20
+conditions = {location_type = "settlement", period = ["morning", "afternoon"]}
+narrator_hint = "A town crier rings a bell, announcing news and proclamations from the regional lord."
+
+[[events]]
+id = "funeral_procession"
+description = "A somber funeral procession passes by"
+probability = 0.03
+cooldown = 50
+conditions = {location_type = "settlement"}
+narrator_hint = "A small, somber procession winds toward the temple, carrying a shrouded figure on a bier."
+
+[[events]]
+id = "tavern_brawl"
+description = "A brawl breaks out in the tavern"
+probability = 0.06
+cooldown = 25
+conditions = {location_type = "tavern", period = ["evening", "night"]}
+narrator_hint = "A chair crashes against the wall as a fight breaks out between two drunken patrons."
+
+[[events]]
+id = "village_gossip"
+description = "Villagers whisper about recent events"
+probability = 0.08
+cooldown = 15
+conditions = {location_type = "settlement"}
+narrator_hint = "A cluster of villagers huddle together, exchanging hushed gossip and nervous glances."
+
+[[events]]
+id = "blacksmith_hammering"
+description = "The rhythmic sound of smithing fills the air"
+probability = 0.1
+cooldown = 12
+conditions = {location_type = "settlement", period = ["morning", "afternoon"]}
+narrator_hint = "The steady clang of hammer on anvil rings out from the smithy, a reassuring rhythm of daily life."
+
+# --- MYSTERIOUS & SUPERNATURAL ---
+
+[[events]]
+id = "strange_lights"
+description = "Strange lights in the forest at night"
+probability = 0.04
+cooldown = 35
+conditions = {period = ["night", "late_night"], location_type = "wilderness"}
+narrator_hint = "Faint, flickering lights dance between the trees deep in the forest. Will-o'-wisps, or something else?"
+
+[[events]]
+id = "ominous_dream"
+description = "You have an unusually vivid dream during rest"
+probability = 0.05
+cooldown = 40
+narrator_hint = "Fragmented images linger from an unsettling dream — a dark tower, a weeping figure, a cracked bell."
+
+[[events]]
+id = "old_shrine_glow"
+description = "A forgotten roadside shrine glows faintly"
+probability = 0.04
+cooldown = 35
+conditions = {location_type = "wilderness"}
+narrator_hint = "A moss-covered roadside shrine emits a faint, warm glow as you pass."
+
+[[events]]
+id = "shooting_star"
+description = "A brilliant shooting star streaks across the sky"
+probability = 0.06
+cooldown = 30
+conditions = {period = ["night", "late_night"]}
+narrator_hint = "A brilliant streak of light arcs across the sky, leaving a fading trail of silver."
+
+[[events]]
+id = "cold_spot"
+description = "An unexplained chill passes through"
+probability = 0.04
+cooldown = 30
+narrator_hint = "A sudden, bone-deep chill passes through the air, gone as quickly as it came. Your breath mists briefly."
+
+# --- DANGER & TENSION ---
+
+[[events]]
+id = "distant_smoke"
+description = "Smoke rises from a distant location"
+probability = 0.05
+cooldown = 30
+conditions = {period = ["morning", "afternoon"]}
+narrator_hint = "A column of dark smoke rises from somewhere beyond the hills. Something is burning."
+
+[[events]]
+id = "abandoned_campsite"
+description = "Signs of a recently abandoned campsite"
+probability = 0.06
+cooldown = 25
+conditions = {location_type = "wilderness"}
+narrator_hint = "Embers still glow in a hastily abandoned campfire. Whoever was here left in a hurry."
+
+[[events]]
+id = "suspicious_stranger"
+description = "A cloaked stranger watches from a distance"
+probability = 0.04
+cooldown = 35
+conditions = {location_type = "settlement"}
+narrator_hint = "A cloaked figure leans against a wall across the square, watching the crowd intently."
+
+[[events]]
+id = "dead_animal"
+description = "A mutilated animal carcass found nearby"
+probability = 0.04
+cooldown = 40
+conditions = {location_type = "wilderness"}
+narrator_hint = "The remains of a deer lie at the trailside, torn apart by something with unusual strength."
+
+[[events]]
+id = "broken_signpost"
+description = "A trail signpost has been vandalized"
+probability = 0.05
+cooldown = 25
+conditions = {location_type = "wilderness"}
+narrator_hint = "A wooden signpost lies broken at the crossroads, its directional arms hacked off with an axe."
+
+# --- TRADE & ECONOMY ---
+
+[[events]]
+id = "supply_shortage"
+description = "A merchant complains about supply shortages"
+probability = 0.05
+cooldown = 35
+conditions = {location_type = "settlement"}
+narrator_hint = "A shopkeeper sighs, turning away a customer — shelves look emptier than usual."
+
+[[events]]
+id = "trade_route_disrupted"
+description = "Word spreads that the main trade route has been disrupted"
+probability = 0.04
+cooldown = 40
+narrator_hint = "Merchants whisper anxiously — bandits have been hitting caravans on the main road."
+
+[[events]]
+id = "good_harvest_news"
+description = "Word of a good harvest in a neighboring village"
+probability = 0.06
+cooldown = 30
+conditions = {location_type = "settlement"}
+narrator_hint = "News arrives of a bumper harvest in the next valley. Grain prices may fall this season."
+
+# --- MILITARY & GUARD ---
+
+[[events]]
+id = "guard_patrol"
+description = "A guard patrol marches through"
+probability = 0.08
+cooldown = 15
+conditions = {location_type = "settlement", period = ["morning", "afternoon"]}
+narrator_hint = "A small patrol of guards marches through the square, spears at the ready."
+
+[[events]]
+id = "wanted_poster"
+description = "A new wanted poster appears"
+probability = 0.05
+cooldown = 30
+conditions = {location_type = "settlement"}
+narrator_hint = "A fresh wanted poster has been nailed to the notice board, the ink still wet."
+
+[[events]]
+id = "guard_training"
+description = "Guards practice drills in the square"
+probability = 0.06
+cooldown = 20
+conditions = {location_type = "settlement", period = ["morning"]}
+narrator_hint = "Guards drill with wooden swords in the square, their sergeant barking orders."

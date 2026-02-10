@@ -1,0 +1,37 @@
+[llm]
+provider = "ollama"
+model = "mistral"
+base_url = "http://localhost:11434"
+temperature = 0.8
+max_tokens = 1024
+num_ctx = 4096  # context window size — set to model's max (mistral: 8192, but 4096 is safer for 18GB RAM)
+
+[llm.narrator]
+temperature = 0.9
+max_tokens = 512
+
+[llm.scene_planner]
+temperature = 0.7
+max_tokens = 256
+
+[rag]
+embedding_model = "nomic-embed-text"
+embedding_base_url = "http://localhost:11434"
+collection_prefix = "text_rpg"
+top_k = 5
+
+[game]
+autosave_interval = 5       # turns between autosaves
+director_interval = 10      # turns between director passes
+difficulty = "normal"       # easy, normal, hard
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+
+[display]
+narrative_width = 80
+show_dice_rolls = true
+show_mechanics = true
+color_theme = "default"
+
+[storage]
+db_path = "saves/game.db"

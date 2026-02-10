@@ -1,0 +1,46 @@
+id = "fighter"
+name = "Fighter"
+description = "A master of martial combat, skilled with a variety of weapons and armor."
+hit_die = "1d10"
+primary_ability = "strength"
+saving_throw_proficiencies = ["strength", "constitution"]
+armor_proficiencies = ["light", "medium", "heavy", "shield"]
+weapon_proficiencies = ["simple", "martial"]
+starting_gold = 150
+skill_choices = 2
+available_skills = ["acrobatics", "animal_handling", "athletics", "history", "insight", "intimidation", "perception", "survival"]
+
+[starting_equipment]
+weapons = ["longsword", "shield"]
+armor = ["chain_mail"]
+items = ["explorer_pack"]
+
+[[features]]
+level = 1
+name = "Fighting Style"
+description = "You adopt a particular style of fighting as your specialty. Defense: +1 AC while wearing armor."
+
+[[features]]
+level = 1
+name = "Second Wind"
+description = "You can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once per short rest."
+
+[[features]]
+level = 2
+name = "Action Surge"
+description = "You can take one additional action on your turn. Once per short rest."
+
+[[features]]
+level = 3
+name = "Martial Archetype"
+description = "You choose an archetype that you strive to emulate: Champion."
+
+[[features]]
+level = 4
+name = "Ability Score Improvement"
+description = "You can increase one ability score by 2, or two ability scores by 1 each."
+
+[[features]]
+level = 5
+name = "Extra Attack"
+description = "You can attack twice, instead of once, whenever you take the Attack action on your turn."

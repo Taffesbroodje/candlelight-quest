@@ -1,0 +1,458 @@
+# =============================================================================
+# Mystery Story Seeds — puzzles, secrets, and things that don't add up
+# =============================================================================
+
+[[seeds]]
+id = "serial_disappearances"
+name = "The Vanishing Folk"
+category = "mystery"
+tags = ["disappearance", "investigation", "suspense"]
+level_range = [1, 4]
+incompatible_tags = []
+weight = 1.0
+description_template = "People are vanishing from {settlement} without a trace. No bodies, no notes, no goodbyes — just empty beds and unanswered questions."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 7
+trigger_max = 16
+narrator_hints = [
+    "The cobbler's apprentice has not been seen in three days. His tools lie where he left them, mid-stitch, as if he simply ceased to exist.",
+    "{innkeeper} pulls you aside, voice low. A second villager has gone missing — the herbalist's daughter. She was last seen walking toward the {wilderness_location} at dusk.",
+    "{authority_npc} pins a list of the missing to the notice board. Three names, then four. The village grows quiet with dread."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "disappearance_gossip"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "missing_persons"}
+]
+quest_template = {type = "investigate", target = "thornfield_village", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "Each missing person was last seen near the old well at the village edge. Scratch marks ring the well's inner stones — someone climbed down, or was dragged.",
+    "Below the well, a tunnel leads into darkness. The air smells of damp stone and something floral, cloying — enchantment magic."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "well_mystery"}
+]
+quest_template = {type = "investigate", target = "old_ruins", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 22
+narrator_hints = [
+    "Another disappearance — this time {farmer} himself. His door was locked from the inside, the windows latched. Yet his bed is empty, still warm.",
+    "Villagers begin sleeping in pairs, barring doors with iron. Trust frays as whispers spread: is one of them responsible?"
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "disappearance_divination"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "paranoid_atmosphere"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The enchantment is broken, and the missing villagers are found alive in a hidden grotto, dazed but unharmed. They remember nothing but strange, beautiful music."]
+failure_narrator_hints = ["The disappearances continue. {settlement} slowly empties, and those who remain live in fear of being the next to vanish from their own beds."]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 15},
+    {type = "faction_rep", faction_role = "innkeeper", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -15},
+    {type = "faction_rep", faction_role = "innkeeper", delta = -5}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "cursed_artifact"
+name = "The Cursed Relic"
+category = "mystery"
+tags = ["curse", "artifact", "magical"]
+level_range = [2, 5]
+incompatible_tags = []
+weight = 0.9
+description_template = "A strange artifact unearthed near {settlement} brings fortune to its bearer — and misery to everyone around them."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 9
+trigger_max = 18
+narrator_hints = [
+    "A farmhand digging a new irrigation ditch unearths a tarnished amulet of black iron. Within hours, his luck turns golden — but his neighbor's barn collapses.",
+    "{innkeeper} mentions the amulet with unease. Everyone who touches it prospers, but accidents plague those nearby. A pattern is forming.",
+    "{healer} senses something emanating from the relic — a pulse of old magic, hungry and patient."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "cursed_relic_rumors"},
+    {type = "npc_dialogue_tag", role = "healer", tag = "relic_magical_aura"}
+]
+quest_template = {type = "investigate", target = "thornfield_temple", report_to = "healer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The amulet predates the village by centuries. {healer} identifies it as a soul-siphon — it feeds on the life force of those nearby to grant its bearer unnatural fortune.",
+    "The bearer refuses to relinquish the relic. Its influence has already taken hold, whispering promises of wealth and power into his dreams."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "soul_siphon_identified"}
+]
+quest_template = {type = "social", target = "artifact_bearer", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 24
+narrator_hints = [
+    "The bearer has locked himself in his home, raving about enemies and thieves. Meanwhile, three villagers have fallen gravely ill, their vitality draining away.",
+    "{healer} says the sick will die within days if the artifact is not destroyed or contained. Its hunger is growing."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "artifact_crisis"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "mysterious_illness"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The amulet shatters in a burst of dark energy, and the stolen vitality flows back to the afflicted. The bearer collapses, weeping, freed from the relic's grip."]
+failure_narrator_hints = ["The artifact cannot be separated from its bearer. He flees into the {wilderness_location}, taking the curse with him, but the damage to {settlement} lingers."]
+success_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = 15},
+    {type = "faction_rep", faction_role = "farmer", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = -10},
+    {type = "faction_rep", faction_role = "farmer", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "ancient_prophecy"
+name = "Words of the Seer"
+category = "mystery"
+tags = ["prophecy", "lore", "destiny"]
+level_range = [2, 5]
+incompatible_tags = []
+weight = 0.7
+description_template = "An ancient prophecy surfaces in {settlement}, its cryptic verses pointing to events unfolding in the present day."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 12
+trigger_max = 22
+narrator_hints = [
+    "{healer} uncovers a crumbling scroll behind the temple altar — a prophecy in an archaic dialect, speaking of a 'time of reckoning' for the land of thorns.",
+    "The prophecy's first verse describes events that have already come to pass: a blight, a gathering of beasts, a stranger's arrival. The remaining verses foretell what is yet to come.",
+    "Word of the prophecy spreads. Some villagers treat it as salvation, others as doom. {farmer} asks you with haunted eyes: are you the stranger the scroll speaks of?"
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "prophecy_keeper"},
+    {type = "npc_dialogue_tag", role = "farmer", tag = "prophecy_fearful"}
+]
+quest_template = {type = "investigate", target = "thornfield_temple", report_to = "healer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The scroll references a 'keystone beneath the roots' — a hidden artifact in the {wilderness_location} that must be found before the final verse is fulfilled.",
+    "Other forces may be seeking the keystone as well. The prophecy is not secret; those who know old lore have been watching."
+]
+world_changes = [
+    {type = "location_description_tag", location = "whisperwood_depths", tag = "prophecy_site"}
+]
+quest_template = {type = "fetch", target = "prophecy_keystone", difficulty = "hard"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 28
+narrator_hints = [
+    "The final verse speaks of a choice: the keystone can seal away a great evil or unleash it, depending on where it is placed.",
+    "Signs of the prophecy's culmination manifest — the sky darkens at noon, the wind speaks in half-heard voices. Time is running short."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "prophecy_culmination"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The keystone is placed in the sealing altar, and a wave of calm washes over the land. The prophecy is fulfilled — in the way of hope, not ruin."]
+failure_narrator_hints = ["The keystone falls into the wrong hands. The prophecy's darkest verses come to pass, and {settlement} braces for an age of shadow."]
+success_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = 20},
+    {type = "faction_rep", faction_role = "guard", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = -15},
+    {type = "faction_rep", faction_role = "guard", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "identity_impostor"
+name = "The Familiar Stranger"
+category = "mystery"
+tags = ["deception", "shapeshifter", "paranoia"]
+level_range = [2, 4]
+incompatible_tags = []
+weight = 0.9
+description_template = "Someone in {settlement} is not who they claim to be. A shapeshifter has replaced a trusted member of the community."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 8
+trigger_max = 17
+narrator_hints = [
+    "{innkeeper} confides that {farmer} has been acting strangely — forgetting details he has known for decades, using the wrong hand, calling people by the wrong names.",
+    "A child tugs your sleeve and whispers that they saw the person 'change' — their face rippled like water, just for a moment, when they thought no one was looking.",
+    "{authority_npc} receives conflicting reports: the same person seen in two places at once. Something is very wrong."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "impostor_suspicion"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "identity_confusion"}
+]
+quest_template = {type = "investigate", target = "thornfield_village", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The impostor is a doppelganger — a shapeshifting creature that has imprisoned the real villager and taken their place. But where is the original being held?",
+    "The doppelganger's disguise is nearly perfect, but it cannot replicate memories it has not consumed. Asking the right questions could expose it."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "shapeshifter_lore"}
+]
+quest_template = {type = "social", target = "doppelganger", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 21
+narrator_hints = [
+    "The doppelganger realizes it has been discovered and becomes desperate. It attempts to frame you for a crime, turning the village against its would-be savior.",
+    "Trust collapses in {settlement}. Neighbors eye each other with suspicion. Who else might be replaced?"
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "distrust_atmosphere"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The doppelganger is cornered and exposed, reverting to its true grey, featureless form. The real villager is found alive, shaken but grateful."]
+failure_narrator_hints = ["The doppelganger escapes into the night, and no one is sure if it truly left or simply chose a new face. {settlement} never quite trusts itself again."]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 15},
+    {type = "faction_rep", faction_role = "innkeeper", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -10},
+    {type = "faction_rep", faction_role = "innkeeper", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "hidden_dungeon"
+name = "The Depths Below"
+category = "mystery"
+tags = ["dungeon", "exploration", "ancient"]
+level_range = [2, 5]
+incompatible_tags = []
+weight = 1.0
+description_template = "A sinkhole near {settlement} reveals the entrance to an ancient underground complex, sealed for centuries and now exposed."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 10
+trigger_max = 20
+narrator_hints = [
+    "A section of the road near the {wilderness_location} collapses overnight, revealing carved stone steps descending into absolute darkness.",
+    "{merchant} examines the exposed stonework with wide eyes. The carvings predate any known civilization in the region — this was here before {settlement} existed.",
+    "A faint breeze rises from the opening, carrying the scent of dust and old metal. Something stirs below, awakened by the light."
+]
+world_changes = [
+    {type = "location_description_tag", location = "whisperwood_edge", tag = "sinkhole_entrance"},
+    {type = "npc_dialogue_tag", role = "merchant", tag = "dungeon_discovery"}
+]
+quest_template = {type = "investigate", target = "whisperwood_edge", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The complex is vast — halls of worked stone, sealed chambers, and traps still functional after centuries. Something valuable was kept here. Something dangerous.",
+    "Deeper in, you find murals depicting a great sealing ritual. Whatever was imprisoned below, the builders wanted it to stay forgotten."
+]
+world_changes = [
+    {type = "location_description_tag", location = "old_ruins", tag = "dungeon_mapped"}
+]
+quest_template = {type = "investigate", target = "old_ruins", difficulty = "hard"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 26
+narrator_hints = [
+    "The seals are failing. Strange sounds echo from the sinkhole at night — grinding stone, rattling chains, and a voice speaking in a language no one recognizes.",
+    "{authority_npc} posts guards at the entrance, but one by one they request reassignment. They speak of overwhelming dread emanating from below."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "dungeon_guards_posted"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The ancient guardian is put to rest, and the deepest chamber yields treasures and knowledge lost to time. The dungeon is secured and sealed properly."]
+failure_narrator_hints = ["The thing beneath the dungeon breaks free. The sinkhole becomes a wound in the earth, and {settlement} must deal with whatever crawled out."]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 10},
+    {type = "faction_rep", faction_role = "merchant", delta = 15}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -15},
+    {type = "faction_rep", faction_role = "farmer", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "ancient_map"
+name = "The Cartographer's Legacy"
+category = "mystery"
+tags = ["treasure", "exploration", "lore"]
+level_range = [1, 4]
+incompatible_tags = []
+weight = 1.0
+description_template = "An old map found in {settlement} marks locations that no longer appear on any modern chart — or do they?"
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 6
+trigger_max = 15
+narrator_hints = [
+    "{innkeeper} finds a water-stained map tucked behind a loose stone in the cellar wall. The ink is faded, but the landmarks are unmistakable — this is a map of the region as it was centuries ago.",
+    "Several locations are marked with symbols: a crown, a skull, a star. One of them corresponds to the old ruins. The others point to places no one has explored in living memory.",
+    "{farmer} recognizes one landmark — a standing stone in his north field. He has always wondered why it was there."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "old_map_found"},
+    {type = "npc_dialogue_tag", role = "farmer", tag = "standing_stone_clue"}
+]
+quest_template = {type = "investigate", target = "thornfield_inn", report_to = "innkeeper"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "Following the map's trail reveals a series of ancient waymarkers, each inscribed with a fragment of a riddle. Together, they point to a hidden vault.",
+    "The vault lies somewhere in the {wilderness_location}, protected by traps both mechanical and magical. Whoever hid this treasure wanted only the worthy to find it."
+]
+world_changes = [
+    {type = "location_description_tag", location = "whisperwood_depths", tag = "ancient_waymarkers"}
+]
+quest_template = {type = "investigate", target = "whisperwood_depths", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 20
+narrator_hints = [
+    "You are not the only one following the map. Fresh boot prints and discarded supplies mark the trail ahead — someone else is racing to the vault.",
+    "The rival treasure hunters are well-equipped and ruthless. They have already bypassed several traps, leaving them re-armed behind them for anyone following."
+]
+world_changes = [
+    {type = "location_description_tag", location = "whisperwood_depths", tag = "rival_treasure_hunters"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The vault opens to reveal a trove of ancient gold and a journal detailing the history of the region before {settlement} was founded. Knowledge and wealth, preserved across the ages."]
+failure_narrator_hints = ["The rival hunters reach the vault first and strip it bare. They vanish into the wilds, leaving only empty chests and the bitter taste of defeat."]
+success_effects = [
+    {type = "faction_rep", faction_role = "innkeeper", delta = 10},
+    {type = "faction_rep", faction_role = "merchant", delta = 15}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "innkeeper", delta = -5},
+    {type = "faction_rep", faction_role = "merchant", delta = -5}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "poisoned_well"
+name = "Bitter Water"
+category = "mystery"
+tags = ["poison", "investigation", "sabotage"]
+level_range = [1, 3]
+incompatible_tags = []
+weight = 1.1
+description_template = "The village well of {settlement} has been poisoned. Was it deliberate sabotage, or something more insidious?"
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 5
+trigger_max = 13
+narrator_hints = [
+    "Half the village wakes with cramps and fever. {healer} traces the illness to the main well — the water has a faint greenish tint and a metallic taste.",
+    "{farmer}'s livestock refuse to drink from the trough. Animals know what people do not — the water is tainted.",
+    "{authority_npc} orders the well sealed immediately. Until the source of the poison is found, {settlement} must rely on rainwater and the stream."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "well_poisoned"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "well_sealed"}
+]
+quest_template = {type = "investigate", target = "thornfield_village", report_to = "healer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The poison is not natural — it is an alchemical compound, distilled with skill and purpose. Someone with knowledge of herbcraft is responsible.",
+    "A trail of discarded vials leads from the well toward the {wilderness_location}. The saboteur was careful, but not careful enough."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "water_rationing"}
+]
+quest_template = {type = "investigate", target = "whisperwood_edge", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 17
+narrator_hints = [
+    "The stream is poisoned now too — the saboteur has escalated. {settlement} faces a water crisis. {healer} works day and night treating the sick.",
+    "Suspicion falls on outsiders and newcomers. Tempers flare as thirst and fear erode civility."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "water_crisis"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "water_desperate"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The saboteur is caught — a disgruntled alchemist with a grudge. The water source is purified, and {healer} brews remedies for the last of the sick."]
+failure_narrator_hints = ["{settlement} is forced to relocate its water supply at great cost. The saboteur is never found, and the well remains sealed, a monument to unsolved malice."]
+success_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = 15},
+    {type = "faction_rep", faction_role = "guard", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = -10},
+    {type = "faction_rep", faction_role = "guard", delta = -15}
+]

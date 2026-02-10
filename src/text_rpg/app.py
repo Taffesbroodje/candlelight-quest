@@ -1,0 +1,1115 @@
+"""Main application bootstrap — wires all systems together."""
+from __future__ import annotations
+
+import json
+import logging
+import uuid
+from pathlib import Path
+from typing import Any
+
+from text_rpg.utils import safe_json
+
+logger = logging.getLogger(__name__)
+
+
+def _load_config() -> dict[str, Any]:
+    """Load config.toml from project root."""
+    import tomllib
+
+    config_path = Path(__file__).parent.parent.parent / "config.toml"
+    if config_path.exists():
+        with open(config_path, "rb") as f:
+            return tomllib.load(f)
+    return {}
+
+
+class GameApp:
+    """Main application class that bootstraps and runs the game."""
+
+    def __init__(self, model_override: str | None = None):
+        self.config = _load_config()
+        self.model_override = model_override
+
+        # Lazy-initialized components
+        self._db = None
+        self._llm = None
+        self._vector_store = None
+        self._embeddings = None
+        self._indexer = None
+        self._retriever = None
+        self._registry = None
+        self._dispatcher = None
+        self._director = None
+        self._turn_loop = None
+        self._display = None
+        self._input_handler = None
+        self._combat_display = None
+        self._status_bar = None
+        self._map_display = None
+
+        # Current game state
+        self.game_id: str | None = None
+        self.character: dict | None = None
+
+    # -- Component initialization (lazy) --
+
+    @property
+    def db(self):
+        if self._db is None:
+            from text_rpg.storage.database import Database
+
+            db_path = self.config.get("storage", {}).get("db_path", "saves/game.db")
+            self._db = Database(db_path)
+            self._db.initialize()
+        return self._db
+
+    @property
+    def llm(self):
+        if self._llm is None:
+            from text_rpg.llm.ollama_provider import OllamaProvider
+
+            llm_cfg = self.config.get("llm", {})
+            model = self.model_override or llm_cfg.get("model", "mistral")
+            base_url = llm_cfg.get("base_url", "http://localhost:11434")
+            num_ctx = llm_cfg.get("num_ctx", 4096)
+            self._llm = OllamaProvider(model=model, base_url=base_url, num_ctx=num_ctx)
+        return self._llm
+
+    @property
+    def vector_store(self):
+        if self._vector_store is None:
+            from text_rpg.rag.vector_store import VectorStore
+
+            rag_cfg = self.config.get("rag", {})
+            prefix = rag_cfg.get("collection_prefix", "text_rpg")
+            self._vector_store = VectorStore(
+                persist_dir="data/chromadb", collection_prefix=prefix
+            )
+        return self._vector_store
+
+    @property
+    def embeddings(self):
+        if self._embeddings is None:
+            from text_rpg.rag.embeddings import OllamaEmbeddings
+
+            rag_cfg = self.config.get("rag", {})
+            model = rag_cfg.get("embedding_model", "nomic-embed-text")
+            base_url = rag_cfg.get("embedding_base_url", "http://localhost:11434")
+            self._embeddings = OllamaEmbeddings(model=model, base_url=base_url)
+        return self._embeddings
+
+    @property
+    def indexer(self):
+        if self._indexer is None:
+            from text_rpg.rag.indexer import Indexer
+
+            self._indexer = Indexer(self.vector_store, self.embeddings)
+        return self._indexer
+
+    @property
+    def retriever(self):
+        if self._retriever is None:
+            from text_rpg.rag.retriever import Retriever
+
+            top_k = self.config.get("rag", {}).get("top_k", 5)
+            self._retriever = Retriever(
+                self.vector_store, self.embeddings, top_k=top_k
+            )
+        return self._retriever
+
+    @property
+    def registry(self):
+        if self._registry is None:
+            from text_rpg.engine.system_registry import SystemRegistry
+
+            self._registry = SystemRegistry()
+            self._registry.register_defaults()
+        return self._registry
+
+    @property
+    def director(self):
+        if self._director is None:
+            from text_rpg.systems.director import Director
+
+            self._director = Director(
+                llm=self.llm,
+                retriever=self.retriever,
+                indexer=self.indexer,
+            )
+        return self._director
+
+    @property
+    def dispatcher(self):
+        if self._dispatcher is None:
+            from text_rpg.engine.action_dispatcher import ActionDispatcher
+
+            self._dispatcher = ActionDispatcher(self.registry, director=self.director)
+        return self._dispatcher
+
+    @property
+    def display(self):
+        if self._display is None:
+            from text_rpg.cli.display import Display
+
+            disp_cfg = self.config.get("display", {})
+            self._display = Display(
+                width=disp_cfg.get("narrative_width", 80),
+                show_dice=disp_cfg.get("show_dice_rolls", True),
+                show_mechanics=disp_cfg.get("show_mechanics", True),
+            )
+        return self._display
+
+    @property
+    def input_handler(self):
+        if self._input_handler is None:
+            from text_rpg.cli.input_handler import InputHandler
+
+            self._input_handler = InputHandler()
+        return self._input_handler
+
+    @property
+    def combat_display(self):
+        if self._combat_display is None:
+            from text_rpg.cli.combat_display import CombatDisplay
+
+            self._combat_display = CombatDisplay()
+        return self._combat_display
+
+    @property
+    def status_bar(self):
+        if self._status_bar is None:
+            from text_rpg.cli.status_bar import StatusBar
+
+            self._status_bar = StatusBar(self.display.console)
+        return self._status_bar
+
+    @property
+    def map_display(self):
+        if self._map_display is None:
+            from text_rpg.cli.map_display import MapDisplay
+
+            self._map_display = MapDisplay(self.display.console)
+        return self._map_display
+
+    # -- Repos (convenience accessors) --
+
+    def _get_repos(self) -> dict[str, Any]:
+        from text_rpg.storage.repos.save_game_repo import SaveGameRepo
+        from text_rpg.storage.repos.character_repo import CharacterRepo
+        from text_rpg.storage.repos.entity_repo import EntityRepo
+        from text_rpg.storage.repos.location_repo import LocationRepo
+        from text_rpg.storage.repos.event_ledger import EventLedgerRepo
+        from text_rpg.storage.repos.world_state_repo import WorldStateRepo
+        from text_rpg.storage.repos.intent_repo import IntentRepo
+        from text_rpg.storage.repos.trade_skill_repo import TradeSkillRepo
+        from text_rpg.storage.repos.spell_repo import SpellRepo
+        from text_rpg.storage.repos.reputation_repo import ReputationRepo
+        from text_rpg.storage.repos.shop_repo import ShopRepo
+        from text_rpg.storage.repos.companion_repo import CompanionRepo
+        from text_rpg.storage.repos.housing_repo import HousingRepo
+        from text_rpg.storage.repos.connection_repo import ConnectionRepo
+        from text_rpg.storage.repos.snapshot_repo import SnapshotRepo
+
+        return {
+            "save_game": SaveGameRepo(self.db),
+            "character": CharacterRepo(self.db),
+            "entity": EntityRepo(self.db),
+            "location": LocationRepo(self.db),
+            "event_ledger": EventLedgerRepo(self.db),
+            "world_state": WorldStateRepo(self.db),
+            "intent": IntentRepo(self.db),
+            "trade_skill": TradeSkillRepo(self.db),
+            "spell": SpellRepo(self.db),
+            "reputation": ReputationRepo(self.db),
+            "shop": ShopRepo(self.db),
+            "companion": CompanionRepo(self.db),
+            "housing": HousingRepo(self.db),
+            "connection": ConnectionRepo(self.db),
+            "snapshot": SnapshotRepo(self.db),
+        }
+
+    # -- Public interface --
+
+    def main_menu(self) -> None:
+        """Show main menu and handle selection."""
+        self.display.show_title_screen()
+
+        while True:
+            choice = self.display.show_main_menu()
+            if choice == "1":
+                self.new_game()
+                break
+            elif choice == "2":
+                if self._try_continue():
+                    break
+            elif choice == "3":
+                self.list_saves()
+                save_name = self.display.get_input("Enter save name > ")
+                if save_name:
+                    self.load_game(save_name)
+                    break
+            elif choice == "4":
+                self.display.show_system_check()
+            elif choice == "5":
+                self.display.show_info("Farewell, adventurer!")
+                return
+            else:
+                self.display.show_error("Invalid choice.")
+
+    def new_game(self) -> None:
+        """Start a new game with character creation."""
+        import random
+        from text_rpg.cli.character_creator import CharacterCreator
+        from text_rpg.content.loader import load_all_races, load_all_classes, load_region, load_origins
+        from text_rpg.mechanics.character_creation import create_character
+
+        # Character creation
+        races = load_all_races()
+        classes = load_all_classes()
+        creator = CharacterCreator()
+        params = creator.run(races, classes)
+
+        # Origin selection — show 3 random options (plus always include one)
+        all_origins = load_origins()
+        if all_origins:
+            # Shuffle and pick up to 4
+            random.shuffle(all_origins)
+            shown_origins = all_origins[:4]
+            chosen_origin = self.display.show_origin_selection(shown_origins)
+        else:
+            chosen_origin = None
+
+        # Create game
+        self.game_id = str(uuid.uuid4())
+        game_cfg = self.config.get("game", {})
+        starting_region = game_cfg.get("starting_region", "verdant_reach")
+        if chosen_origin:
+            starting_location = chosen_origin.get("starting_location", "thornfield_village")
+        else:
+            starting_location = game_cfg.get("starting_location", "thornfield_village")
+
+        # Build character
+        cls_data = classes.get(params["char_class"], {})
+        starting_gold = cls_data.get("starting_gold", 0)
+        char_dict = create_character(
+            name=params["name"],
+            race=params["race"],
+            char_class=params["char_class"],
+            ability_scores=params["ability_scores"],
+            skill_choices=params["skill_choices"],
+            game_id=self.game_id,
+            starting_gold=starting_gold,
+        )
+        self.character = char_dict
+
+        # Initialize database
+        repos = self._get_repos()
+        repos["save_game"].create_game(
+            self.game_id, params["name"], char_dict["id"], starting_location
+        )
+        repos["character"].save(char_dict)
+
+        # Load and save starting region
+        region_data = load_region(starting_region)
+        region_dict = {
+            "id": region_data["id"],
+            "game_id": self.game_id,
+            "name": region_data["name"],
+            "description": region_data["description"],
+            "locations": json.dumps([loc["id"] for loc in region_data.get("locations", [])]),
+            "level_range_min": region_data.get("level_range_min", 1),
+            "level_range_max": region_data.get("level_range_max", 5),
+            "climate": region_data.get("climate", "temperate"),
+            "faction": region_data.get("faction"),
+        }
+        repos["world_state"].save_region(region_dict)
+
+        # Save locations
+        for loc in region_data.get("locations", []):
+            loc_dict = {
+                "id": loc["id"],
+                "game_id": self.game_id,
+                "name": loc["name"],
+                "region_id": starting_region,
+                "description": loc["description"],
+                "location_type": loc.get("location_type", "wilderness"),
+                "connections": json.dumps(loc.get("connections", [])),
+                "entities": json.dumps(loc.get("entities", [])),
+                "items": json.dumps(loc.get("items", [])),
+                "visited": loc["id"] == starting_location,
+                "properties": json.dumps(loc.get("properties", {})),
+            }
+            repos["location"].save(loc_dict)
+
+            # Insert connections into dedicated table
+            for c in loc.get("connections", []):
+                if isinstance(c, dict) and c.get("target_location_id") and c.get("direction"):
+                    repos["connection"].add_connection(
+                        game_id=self.game_id,
+                        source_id=loc["id"],
+                        target_id=c["target_location_id"],
+                        direction=c["direction"],
+                        description=c.get("description", ""),
+                        is_locked=c.get("is_locked", False),
+                    )
+
+        # Save NPCs
+        for npc in region_data.get("npcs", []):
+            entity_dict = {
+                "id": npc["id"],
+                "game_id": self.game_id,
+                "name": npc["name"],
+                "entity_type": "npc",
+                "description": npc.get("description", ""),
+                "ability_scores": json.dumps(npc.get("ability_scores", {})),
+                "hp_current": npc.get("hp_current", 10),
+                "hp_max": npc.get("hp_max", 10),
+                "hp_temp": 0,
+                "ac": npc.get("ac", 10),
+                "speed": npc.get("speed", 30),
+                "level": npc.get("level", 1),
+                "challenge_rating": npc.get("challenge_rating"),
+                "attacks": json.dumps(npc.get("attacks", [])),
+                "behaviors": json.dumps(npc.get("behaviors", [])),
+                "dialogue_tags": json.dumps(npc.get("dialogue_tags", [])),
+                "location_id": npc.get("location_id", starting_location),
+                "loot_table": json.dumps(npc.get("loot_table", [])),
+                "is_hostile": npc.get("is_hostile", False),
+                "is_alive": True,
+                "profession": npc.get("profession"),
+                "schedule": json.dumps(npc.get("schedule")) if npc.get("schedule") else None,
+                "unavailable_periods": json.dumps(npc.get("unavailable_periods", [])),
+            }
+            repos["entity"].save(entity_dict)
+
+        # Save quests
+        for quest in region_data.get("quests", []):
+            quest_dict = {
+                "id": quest["id"],
+                "game_id": self.game_id,
+                "name": quest["name"],
+                "description": quest["description"],
+                "quest_giver_id": quest.get("quest_giver_id"),
+                "status": quest.get("status", "available"),
+                "objectives": json.dumps(quest.get("objectives", [])),
+                "xp_reward": quest.get("xp_reward", 0),
+                "item_rewards": json.dumps(quest.get("item_rewards", [])),
+                "gold_reward": quest.get("gold_reward", 0),
+                "level_requirement": quest.get("level_requirement", 1),
+            }
+            repos["world_state"].save_quest(quest_dict)
+
+        # Save shops
+        for shop in region_data.get("shops", []):
+            shop_dict = {
+                "id": shop["id"],
+                "game_id": self.game_id,
+                "owner_entity_id": shop["owner_entity_id"],
+                "location_id": shop["location_id"],
+                "shop_type": shop.get("shop_type", "general"),
+                "stock": shop.get("stock", []),
+                "gold_reserve": shop.get("gold_reserve", 500),
+                "price_modifier": shop.get("price_modifier", 1.0),
+                "restock_turn": 0,
+            }
+            repos["shop"].save_shop(shop_dict)
+
+        # Create inventory
+        from text_rpg.content.loader import load_all_items
+
+        items = load_all_items()
+        starting_items = []
+        # Give starter equipment based on class
+        starting_eq = cls_data.get("starting_equipment", {})
+        for weapon_id in starting_eq.get("weapons", []):
+            if weapon_id in items:
+                starting_items.append({"item_id": weapon_id, "quantity": 1})
+        for armor_id in starting_eq.get("armor", []):
+            if armor_id in items:
+                starting_items.append({"item_id": armor_id, "quantity": 1})
+        for item_id in starting_eq.get("items", []):
+            if item_id in items:
+                starting_items.append({"item_id": item_id, "quantity": 1})
+        # Everyone gets a healing potion
+        starting_items.append({"item_id": "healing_potion", "quantity": 2})
+
+        inv_id = str(uuid.uuid4())
+        inv_dict = {
+            "id": inv_id,
+            "game_id": self.game_id,
+            "owner_id": char_dict["id"],
+            "items": json.dumps(starting_items),
+        }
+        repos["world_state"].save_inventory(inv_dict)
+
+        # Auto-equip first weapon and first armor from starting equipment
+        first_weapon = next((w for w in starting_eq.get("weapons", []) if w in items), None)
+        first_armor = next(
+            (a for a in starting_eq.get("armor", [])
+             if a in items and items[a].get("armor_type") != "shield"),
+            None,
+        )
+        if first_weapon:
+            char_dict["equipped_weapon_id"] = first_weapon
+        if first_armor:
+            char_dict["equipped_armor_id"] = first_armor
+            # Recalculate AC based on equipped armor
+            from text_rpg.mechanics.combat_math import calculate_ac
+            armor_data = items[first_armor]
+            dex_mod = (char_dict["ability_scores"].get("dexterity", 10) - 10) // 2
+            char_dict["ac"] = calculate_ac(
+                armor_data.get("ac_base", 10), dex_mod,
+                armor_data.get("armor_type", "light"),
+            )
+        # Check for shield separately (equip alongside armor)
+        shield_id = next(
+            (a for a in starting_eq.get("armor", [])
+             if a in items and items[a].get("armor_type") == "shield"),
+            None,
+        )
+        if shield_id and first_armor:
+            # Shield adds +2 to existing armor AC
+            char_dict["ac"] = char_dict.get("ac", 10) + 2
+        elif shield_id and not first_armor:
+            char_dict["equipped_armor_id"] = shield_id
+            dex_mod = (char_dict["ability_scores"].get("dexterity", 10) - 10) // 2
+            char_dict["ac"] = 10 + dex_mod + 2
+
+        # Save character with equipped gear and recalculated AC
+        repos["character"].save(char_dict)
+        self.character = char_dict
+
+        # Initialize faction reputations from TOML defaults
+        from text_rpg.content.loader import load_all_factions
+        factions = load_all_factions()
+        for faction_id, faction_data in factions.items():
+            default_rep = faction_data.get("default_reputation", 0)
+            repos["reputation"].set_faction_rep(self.game_id, faction_id, default_rep)
+
+        # Learn starting spells for spellcasters
+        self._learn_starting_spells(char_dict, repos)
+
+        # Seed RAG if available
+        self._seed_rag()
+
+        # Log game start event
+        origin_name = chosen_origin["name"] if chosen_origin else "wandering traveler"
+        repos["event_ledger"].append({
+            "id": str(uuid.uuid4()),
+            "game_id": self.game_id,
+            "event_type": "WORLD_CHANGE",
+            "turn_number": 0,
+            "timestamp": self._now(),
+            "actor_id": char_dict["id"],
+            "target_id": None,
+            "location_id": starting_location,
+            "description": f"{params['name']} begins their adventure as {origin_name}.",
+            "mechanical_details": json.dumps({"origin": chosen_origin["id"] if chosen_origin else "wandering_traveler"}),
+            "is_canonical": True,
+        })
+
+        # Show prologue
+        self.display.show_success(f"\n{params['name']} has been created!")
+        if chosen_origin and chosen_origin.get("prologue"):
+            self.display.show_prologue(chosen_origin["prologue"])
+
+        # Show how to play
+        self.display.show_how_to_play()
+
+        self._run_game_loop()
+
+    def load_game(self, save_name: str) -> None:
+        """Load a saved game."""
+        repos = self._get_repos()
+        games = repos["save_game"].list_games()
+        game = None
+        for g in games:
+            if g["name"] == save_name:
+                game = g
+                break
+        if not game:
+            self.display.show_error(f"Save '{save_name}' not found.")
+            return
+
+        self.game_id = game["id"]
+        self.character = repos["character"].get_by_game(self.game_id)
+        if not self.character:
+            self.display.show_error("Save is corrupted — no character found.")
+            return
+
+        self.display.show_success(f"Loaded: {self.character['name']}")
+        self._run_game_loop()
+
+    def list_saves(self) -> None:
+        """List saved games."""
+        repos = self._get_repos()
+        games = repos["save_game"].list_games()
+        saves = []
+        for g in games:
+            char = repos["character"].get_by_game(g["id"])
+            saves.append({
+                "name": g["name"],
+                "character_name": char["name"] if char else "Unknown",
+                "turn_number": g.get("turn_number", 0),
+                "created_at": g.get("created_at", ""),
+            })
+        self.display.show_saves_list(saves)
+
+    # -- Game loop --
+
+    def _run_game_loop(self) -> None:
+        """Main game loop."""
+        repos = self._get_repos()
+        game = repos["save_game"].get_game(self.game_id)
+        if not game:
+            self.display.show_error("Game not found.")
+            return
+
+        current_location_id = game.get("current_location_id")
+        location = repos["location"].get(current_location_id, self.game_id)
+        if not location:
+            self.display.show_error(f"Location '{current_location_id}' not found.")
+            return
+
+        # Show initial location
+        self._show_location(location, repos)
+
+        # Build context packer and turn loop
+        from text_rpg.llm.context_packer import ContextPacker
+        from text_rpg.engine.turn_loop import TurnLoop
+
+        context_packer = ContextPacker()
+
+        # Inject dependencies into all registered systems
+        self.dispatcher.repos = repos
+        self.registry.inject_all(director=self.director, repos=repos, llm=self.llm)
+
+        from text_rpg.systems.world_sim import WorldSimulator
+        from text_rpg.engine.event_handlers import PostTurnEventHandler
+        world_sim = WorldSimulator(repos)
+        event_handler = PostTurnEventHandler(self.game_id, repos, self.display)
+
+        turn_loop = TurnLoop(
+            registry=self.registry,
+            dispatcher=self.dispatcher,
+            llm_provider=self.llm,
+            context_packer=context_packer,
+            retriever=self.retriever,
+            indexer=self.indexer,
+            repos=repos,
+            director=self.director,
+            world_sim=world_sim,
+        )
+
+        autosave_interval = self.config.get("game", {}).get("autosave_interval", 5)
+        turn_number = game.get("turn_number", 0)
+
+        while True:
+            # Refresh character for status bar
+            self.character = repos["character"].get_by_game(self.game_id)
+
+            # Render status bar before prompt
+            cur_game = repos["save_game"].get_game(self.game_id)
+            wt = cur_game.get("world_time", 480) if cur_game else 480
+            cur_loc_id = cur_game.get("current_location_id", "") if cur_game else ""
+            cur_loc = repos["location"].get(cur_loc_id, self.game_id) if cur_loc_id else None
+            loc_name = cur_loc.get("name", "") if cur_loc else ""
+
+            from text_rpg.mechanics import world_clock
+            world_time_info = {
+                "time_of_day": world_clock.get_period(wt),
+                "day": world_clock.get_day(wt),
+            }
+            self.status_bar.render(self.character, loc_name, world_time_info)
+
+            # Check for active combat → show combat menu
+            active_combat = repos["world_state"].get_active_combat(self.game_id)
+            if active_combat and active_combat.get("is_active"):
+                enemies = [c for c in active_combat.get("combatants", [])
+                          if c.get("combatant_type") == "enemy" and c.get("is_active", True)]
+                self.combat_display.show_combat_menu(active_combat, self.character, enemies)
+                prompt = "\n[Combat] > "
+            else:
+                # Show conversation indicator in prompt
+                conv = turn_loop.active_conversation
+                if conv:
+                    prompt = f"\n[Speaking with {conv['npc_name']}] > "
+                else:
+                    prompt = "\n> "
+            raw_input = self.display.get_input(prompt)
+            if not raw_input:
+                continue
+
+            # Handle meta commands locally (work even in conversation)
+            classified = self.input_handler.classify(raw_input)
+            if classified.get("is_meta"):
+                meta_result = self._handle_meta(classified, repos, turn_number, turn_loop)
+                if meta_result == "break":
+                    break
+                if meta_result == "continue":
+                    continue
+
+            # Confirm before attacking non-hostile NPCs
+            if classified.get("action_type") == "attack" and not (active_combat and active_combat.get("is_active")):
+                if self._should_confirm_attack(classified.get("target", ""), repos):
+                    confirm = self.display.get_input("Are you sure? This will have consequences. (y/n) > ")
+                    if confirm.lower() not in ("y", "yes"):
+                        self.display.show_info("You stay your hand.")
+                        continue
+
+            # Process game turn
+            try:
+                result = turn_loop.process_turn(raw_input, self.game_id)
+            except Exception as e:
+                logger.exception("Turn processing error")
+                self.display.show_error(f"Something went wrong: {e}")
+                continue
+
+            turn_number += 1
+            repos["save_game"].update_turn(self.game_id, turn_number)
+
+            # Show dice rolls
+            if result.action_result and hasattr(result.action_result, "dice_rolls"):
+                for dr in result.action_result.dice_rolls:
+                    if isinstance(dr, dict):
+                        self.display.show_dice_roll(
+                            dr.get("dice_expression", ""),
+                            dr.get("rolls", []),
+                            dr.get("modifier", 0),
+                            dr.get("total", 0),
+                            dr.get("purpose", ""),
+                        )
+
+            # Show mechanical summary
+            if result.mechanical_summary:
+                self.display.show_mechanical_summary(result.mechanical_summary)
+
+            # Show narrative
+            if result.narrative:
+                self.display.show_narrative(result.narrative)
+
+            # Process post-turn events (quests, reputation, bounties)
+            event_handler.process(result)
+
+            # Show level-up notification
+            if result.level_up:
+                self.display.show_level_up(
+                    result.level_up["new_level"],
+                    result.level_up["hp_gained"],
+                    result.level_up.get("new_features"),
+                )
+
+            # Show survival need warnings
+            if result.needs_warnings:
+                for warning in result.needs_warnings:
+                    self.display.console.print(f"  [dark_orange]{warning}[/dark_orange]")
+
+            # Update character state
+            self.character = repos["character"].get_by_game(self.game_id)
+
+            # Check if location changed — also ends any active conversation
+            game = repos["save_game"].get_game(self.game_id)
+            new_loc_id = game.get("current_location_id")
+            if new_loc_id != current_location_id:
+                current_location_id = new_loc_id
+                turn_loop.end_conversation()
+                location = repos["location"].get(current_location_id, self.game_id)
+                if location:
+                    self._show_location(location, repos)
+
+            # Autosave
+            if turn_number % autosave_interval == 0:
+                self._save_game(repos, turn_number)
+
+    # -- Helpers --
+
+    def _handle_meta(self, classified: dict, repos: dict, turn_number: int, turn_loop: Any) -> str | None:
+        """Handle a meta command. Returns 'break', 'continue', or None."""
+        action_type = classified["action_type"]
+
+        if action_type == "quit":
+            self._save_game(repos, turn_number)
+            self.display.show_info("Game saved. Farewell!")
+            return "break"
+
+        if action_type == "save":
+            self._save_game(repos, turn_number)
+            self.display.show_success("Game saved!")
+            return "continue"
+
+        if action_type == "help":
+            active_c = repos["world_state"].get_active_combat(self.game_id)
+            if active_c and active_c.get("is_active"):
+                help_mode = "combat"
+            elif turn_loop.active_conversation:
+                help_mode = "conversation"
+            else:
+                help_mode = "exploration"
+            self.display.show_help(help_mode)
+            return "continue"
+
+        if action_type == "inventory":
+            inv_params = classified.get("parameters", {})
+            self._show_inventory(
+                repos,
+                category_filter=inv_params.get("category"),
+                sort_by=inv_params.get("sort_by", "name"),
+                sort_desc=inv_params.get("sort_desc", False),
+            )
+            return "continue"
+
+        if action_type == "rewind":
+            self._handle_rewind(repos, turn_loop)
+            return "continue"
+
+        # Simple meta commands that call a single method
+        _simple = {
+            "character": lambda: self._show_character_sheet(repos),
+            "skills": lambda: self.display.show_skills(self.character),
+            "quests": lambda: self.display.show_quest_log(repos["world_state"].get_all_quests(self.game_id)),
+            "spells": lambda: self._show_spells(repos),
+            "recipes": lambda: self._show_trade_skills(repos),
+            "reputation": lambda: self._show_reputation(repos),
+            "bounty": lambda: self._show_bounty(repos),
+            "stories": lambda: self._show_stories(repos),
+            "map": lambda: self._show_map(repos),
+        }
+        handler = _simple.get(action_type)
+        if handler:
+            handler()
+            return "continue"
+
+        return None
+
+    def _show_location(self, location: dict, repos: dict) -> None:
+        """Display a location with its entities and items."""
+        connections = safe_json(location.get("connections"), [])
+
+        entities_ids = safe_json(location.get("entities"), [])
+
+        # Get entity names from the location (filtered by schedule availability)
+        entity_names = []
+        loc_entities = repos["entity"].get_by_location(self.game_id, location["id"])
+
+        # Get current time period for NPC availability
+        game = repos["save_game"].get_game(self.game_id)
+        wt = game.get("world_time", 480) if game else 480
+
+        from text_rpg.mechanics import world_clock
+        from text_rpg.mechanics.world_sim import is_npc_available
+        period = world_clock.get_period(wt)
+
+        for e in loc_entities:
+            if e.get("is_alive", True):
+                if e.get("entity_type") == "npc" and not is_npc_available(e, period):
+                    continue  # NPC is sleeping/unavailable
+                entity_names.append(e["name"])
+
+        items_ids = safe_json(location.get("items"), [])
+
+        # Build location name with time
+        time_str = world_clock.format_short(wt)
+        display_name = f"{location['name']} — {time_str}"
+
+        self.display.show_location(
+            name=display_name,
+            description=location.get("description", ""),
+            exits=connections,
+            entities=entity_names if entity_names else None,
+            items=items_ids if items_ids else None,
+        )
+
+    def _show_inventory(
+        self, repos: dict, category_filter: str | None = None,
+        sort_by: str = "name", sort_desc: bool = False,
+    ) -> None:
+        """Show player inventory with gold, equipped markers, and carry weight."""
+        if not self.character:
+            return
+        inv = repos["world_state"].get_inventory(self.character["id"], self.game_id)
+        if not inv:
+            self.display.show_info("Your pack is empty.")
+            return
+
+        items_data = safe_json(inv.get("items"), [])
+
+        from text_rpg.content.loader import load_all_items
+        from text_rpg.mechanics.ability_scores import modifier
+
+        all_items = load_all_items()
+        gold = self.character.get("gold", 0)
+
+        # Calculate carry weight and max
+        total_weight = 0.0
+        for entry in items_data:
+            item_id = entry.get("item_id", "")
+            qty = entry.get("quantity", 1)
+            item = all_items.get(item_id, {})
+            total_weight += item.get("weight", 0.0) * qty
+
+        scores = safe_json(self.character.get("ability_scores"), {})
+        str_score = scores.get("strength", 10)
+        max_carry = str_score * 15  # D&D 5e carrying capacity
+
+        self.display.show_inventory(
+            items=items_data,
+            all_items_data=all_items,
+            gold=gold,
+            equipped_weapon_id=self.character.get("equipped_weapon_id"),
+            equipped_armor_id=self.character.get("equipped_armor_id"),
+            category_filter=category_filter,
+            sort_by=sort_by,
+            sort_desc=sort_desc,
+            carry_weight=total_weight,
+            max_carry_weight=float(max_carry),
+        )
+
+    def _show_character_sheet(self, repos: dict) -> None:
+        """Show character sheet with equipped item names."""
+        if not self.character:
+            return
+
+        from text_rpg.content.loader import load_all_items
+        all_items = load_all_items()
+
+        equipped_items = {}
+        weapon_id = self.character.get("equipped_weapon_id")
+        armor_id = self.character.get("equipped_armor_id")
+        if weapon_id:
+            weapon_data = all_items.get(weapon_id, {})
+            equipped_items["weapon_name"] = weapon_data.get("name", weapon_id)
+            equipped_items["weapon_dice"] = weapon_data.get("damage_dice", "")
+        else:
+            equipped_items["weapon_name"] = "Unarmed"
+        if armor_id:
+            armor_data = all_items.get(armor_id, {})
+            equipped_items["armor_name"] = armor_data.get("name", armor_id)
+        else:
+            equipped_items["armor_name"] = "None"
+
+        # Get active bounties for character sheet
+        bounties = []
+        rep_repo = repos.get("reputation")
+        if rep_repo:
+            bounties = rep_repo.get_all_bounties(self.game_id)
+
+        self.display.show_character_sheet(self.character, equipped_items, bounties=bounties)
+
+    def _show_trade_skills(self, repos: dict) -> None:
+        """Show trade skills and available recipes."""
+        if not self.character:
+            return
+        self.display.show_trade_skills(
+            repos["trade_skill"].get_skills(self.game_id, self.character["id"]),
+            repos["trade_skill"].get_known_recipes(self.game_id, self.character["id"]),
+        )
+
+    def _should_confirm_attack(self, target_name: str, repos: dict) -> bool:
+        """Check if attacking this target should require confirmation (non-hostile NPC)."""
+        if not target_name or not self.game_id:
+            return False
+        game = repos["save_game"].get_game(self.game_id)
+        loc_id = game.get("current_location_id", "") if game else ""
+        if not loc_id:
+            return False
+        entities = repos["entity"].get_by_location(self.game_id, loc_id)
+        target_lower = target_name.lower()
+        for e in entities:
+            if not e.get("is_alive", True):
+                continue
+            name_lower = e["name"].lower()
+            if name_lower == target_lower or target_lower in name_lower or name_lower in target_lower:
+                return not e.get("is_hostile", False)
+        return False
+
+    def _show_reputation(self, repos: dict) -> None:
+        """Show faction reputation standings."""
+        from text_rpg.content.loader import load_all_factions
+        factions_data = load_all_factions()
+        faction_reps = repos["reputation"].get_all_faction_reps(self.game_id)
+        self.display.show_reputation(faction_reps, factions_data)
+
+    def _show_stories(self, repos: dict) -> None:
+        """Show story journal — active and completed arcs."""
+        from text_rpg.content.loader import load_all_story_seeds
+
+        all_seeds_list = load_all_story_seeds()
+        all_seeds = {s["id"]: s for s in all_seeds_list}
+        active = repos["world_state"].get_active_stories(self.game_id)
+        completed = repos["world_state"].get_completed_story_ids(self.game_id)
+        self.display.show_journal(active, completed, all_seeds)
+
+    def _show_map(self, repos: dict) -> None:
+        """Show ASCII map of visited locations."""
+        game = repos["save_game"].get_game(self.game_id)
+        current_loc_id = game.get("current_location_id", "") if game else ""
+        all_locs = repos["location"].get_all(self.game_id)
+        # Get home location
+        home_loc_id = None
+        if repos.get("housing") and self.character:
+            home = repos["housing"].get_home(self.game_id, self.character.get("id", ""))
+            if home:
+                home_loc_id = home.get("location_id")
+        conn_repo = repos.get("connection")
+        self.map_display.render(
+            all_locs, current_loc_id, home_loc_id,
+            connection_repo=conn_repo,
+            game_id=self.game_id,
+            total_locations=len(all_locs),
+        )
+
+    def _show_bounty(self, repos: dict) -> None:
+        """Show active bounties."""
+        bounties = repos["reputation"].get_all_bounties(self.game_id)
+        self.display.show_bounty(bounties)
+
+    def _learn_starting_spells(self, char_dict: dict, repos: dict) -> None:
+        """Learn starting spells for spellcaster classes."""
+        char_class = char_dict.get("char_class", "").lower()
+        casting_ability = char_dict.get("spellcasting_ability")
+        if not casting_ability:
+            return
+
+        from text_rpg.content.loader import load_all_spells
+        all_spells = load_all_spells()
+        spell_repo = repos.get("spell")
+        if not spell_repo:
+            return
+
+        game_id = char_dict["game_id"]
+        char_id = char_dict["id"]
+
+        # Get all spells for this class
+        class_cantrips = [s for s in all_spells.values() if s.get("level") == 0 and char_class in s.get("classes", [])]
+        class_level1 = [s for s in all_spells.values() if s.get("level") == 1 and char_class in s.get("classes", [])]
+
+        if char_class == "wizard":
+            # Wizard: 3 cantrips + 6 level-1 spells, all prepared
+            for cantrip in class_cantrips[:3]:
+                spell_repo.learn_spell(game_id, char_id, cantrip["id"])
+                spell_repo.prepare_spell(game_id, char_id, cantrip["id"])
+            for spell in class_level1[:6]:
+                spell_repo.learn_spell(game_id, char_id, spell["id"])
+                spell_repo.prepare_spell(game_id, char_id, spell["id"])
+        elif char_class == "cleric":
+            # Cleric: 3 cantrips + all level-1 cleric spells, all prepared
+            for cantrip in class_cantrips[:3]:
+                spell_repo.learn_spell(game_id, char_id, cantrip["id"])
+                spell_repo.prepare_spell(game_id, char_id, cantrip["id"])
+            for spell in class_level1:
+                spell_repo.learn_spell(game_id, char_id, spell["id"])
+                spell_repo.prepare_spell(game_id, char_id, spell["id"])
+
+    def _show_spells(self, repos: dict) -> None:
+        """Show known/prepared spells and spell slot status."""
+        if not self.character:
+            return
+        casting_ability = self.character.get("spellcasting_ability")
+        if not casting_ability:
+            self.display.show_info("You don't know how to cast spells.")
+            return
+
+        spell_repo = repos.get("spell")
+        if not spell_repo:
+            return
+
+        from text_rpg.content.loader import load_all_spells
+        all_spells = load_all_spells()
+        known_ids = spell_repo.get_known_spells(self.game_id, self.character["id"])
+        prepared_ids = spell_repo.get_prepared_spells(self.game_id, self.character["id"])
+
+        slots_remaining = safe_json(self.character.get("spell_slots_remaining"), {})
+        slots_max = safe_json(self.character.get("spell_slots_max"), {})
+
+        known_spells = [all_spells[sid] for sid in known_ids if sid in all_spells]
+        self.display.show_spells(
+            known_spells, prepared_ids, slots_remaining, slots_max,
+            self.character.get("concentration_spell"),
+        )
+
+    def _handle_rewind(self, repos: dict, turn_loop: Any) -> None:
+        """Handle the rewind/time travel command."""
+        from text_rpg.engine.snapshots import StateSerializer
+        from text_rpg.mechanics.time_travel import RESTORE_PRESETS
+
+        snapshot_repo = repos.get("snapshot")
+        if not snapshot_repo:
+            self.display.show_error("Time travel is not available.")
+            return
+
+        snapshot = snapshot_repo.get_latest(self.game_id)
+        if not snapshot:
+            self.display.show_error("No snapshots available. You need to rest or explore more first.")
+            return
+
+        confirm = self.display.get_input(
+            f"Rewind to turn {snapshot['turn_number']}? "
+            f"Your stats and inventory will be preserved, but the world will reset. (y/n) > "
+        )
+        if confirm.lower() not in ("y", "yes"):
+            self.display.show_info("You remain in the present.")
+            return
+
+        config = RESTORE_PRESETS["artifact"]
+        serializer = StateSerializer(repos)
+        serializer.restore(self.game_id, snapshot, config)
+
+        game = repos["save_game"].get_game(self.game_id)
+        loop_count = game.get("loop_count", 1)
+        serializer.record_canon_entry(self.game_id, snapshot["id"], "rewind", loop_count)
+
+        # End any active conversation
+        turn_loop.end_conversation()
+
+        # Refresh character
+        self.character = repos["character"].get_by_game(self.game_id)
+
+        self.display.console.print(
+            f"\n[bold magenta]The world shifts around you. You feel a sense of deja vu...[/bold magenta]"
+            f"\n[dim]Loop {loop_count} — rewound to turn {snapshot['turn_number']}[/dim]\n"
+        )
+
+        # Show the restored location
+        location = repos["location"].get(snapshot["location_id"], self.game_id)
+        if location:
+            self._show_location(location, repos)
+
+    def _save_game(self, repos: dict, turn_number: int) -> None:
+        """Save current game state."""
+        repos["save_game"].update_turn(self.game_id, turn_number)
+
+    def _try_continue(self) -> bool:
+        """Try to continue the most recent game."""
+        repos = self._get_repos()
+        games = repos["save_game"].list_games()
+        if not games:
+            self.display.show_info("No saved games found. Start a new game!")
+            return False
+        latest = games[0]
+        self.game_id = latest["id"]
+        self.character = repos["character"].get_by_game(self.game_id)
+        if not self.character:
+            self.display.show_error("Save is corrupted.")
+            return False
+        self.display.show_success(f"Continuing: {self.character['name']}")
+        self._run_game_loop()
+        return True
+
+    def _seed_rag(self) -> None:
+        """Seed RAG with SRD reference data if available."""
+        try:
+            from text_rpg.rag.seed_data.loader import load_seed_data
+
+            if self.indexer.is_available:
+                docs = load_seed_data()
+                if docs:
+                    self.indexer.index_seed_data(docs)
+                    logger.info(f"Seeded RAG with {len(docs)} documents.")
+        except Exception as e:
+            logger.debug(f"RAG seeding skipped: {e}")
+
+    @staticmethod
+    def _now() -> str:
+        from datetime import datetime, timezone
+
+        return datetime.now(timezone.utc).isoformat()

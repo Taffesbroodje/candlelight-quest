@@ -1,0 +1,398 @@
+# =============================================================================
+# Disaster Story Seeds — natural and magical calamities that threaten survival
+# =============================================================================
+
+[[seeds]]
+id = "crop_famine"
+name = "The Hungry Season"
+category = "disaster"
+tags = ["famine", "survival", "agriculture"]
+level_range = [1, 3]
+incompatible_tags = ["spreading_blight"]
+weight = 1.1
+description_template = "A devastating crop failure threatens {settlement} with starvation. The granaries dwindle, and hard choices must be made."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 5
+trigger_max = 14
+narrator_hints = [
+    "{farmer} stares at his fields with hollow eyes. The harvest has failed — blight, insects, and unseasonable frost have conspired to destroy nearly everything.",
+    "The granary stocks are dangerously low. {innkeeper} begins rationing portions at the inn, and the usual warmth of the common room grows thin.",
+    "{authority_npc} convenes an emergency council. At the current rate of consumption, {settlement} has perhaps six weeks of food remaining."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "farmer", tag = "harvest_failed"},
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "food_rationing"}
+]
+quest_template = {type = "investigate", target = "thornfield_village", report_to = "farmer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "Wild game in the {wilderness_location} could supplement the village's stores, but the forest is dangerous and the game is scarce this season.",
+    "{merchant} knows of a grain merchant in a distant town who might sell surplus — but the price will be steep, and the road is long."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "grain_trade_option"}
+]
+quest_template = {type = "fetch", target = "food_supplies", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 18
+narrator_hints = [
+    "The first child falls ill from malnutrition. {healer} does what she can, but medicine cannot replace bread. Villagers grow desperate.",
+    "Theft from the granary is reported. Neighbors turn on each other. Hunger strips away the veneer of civilization."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "malnutrition_cases"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "famine_desperation"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The supply caravan arrives just in time. {farmer} weeps with relief as sacks of grain are unloaded. {settlement} will survive to see the next planting season."]
+failure_narrator_hints = ["Families begin to leave {settlement}, scattering to distant relatives and uncertain futures. The village shrinks, hollowed out by hunger."]
+success_effects = [
+    {type = "faction_rep", faction_role = "farmer", delta = 20},
+    {type = "faction_rep", faction_role = "merchant", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "farmer", delta = -20},
+    {type = "faction_rep", faction_role = "innkeeper", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "drought"
+name = "The Parched Earth"
+category = "disaster"
+tags = ["drought", "water", "survival"]
+level_range = [1, 3]
+incompatible_tags = ["poisoned_well"]
+weight = 1.0
+description_template = "An unnatural drought grips {settlement}. Streams dry to trickles, wells drop to mud, and the sun beats down without mercy."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 7
+trigger_max = 16
+narrator_hints = [
+    "It has not rained in six weeks. The stream that feeds {settlement}'s mill has slowed to a muddy thread. Cracks spider across the baked earth.",
+    "{farmer}'s well produces brackish sludge instead of water. The deeper wells fare little better. Something unnatural is drawing the moisture from the land.",
+    "{healer} performs a rain prayer at the temple. The sky remains cloudless, mockingly blue. She senses a magical hand in the drought."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "farmer", tag = "drought_suffering"},
+    {type = "npc_dialogue_tag", role = "healer", tag = "unnatural_drought"}
+]
+quest_template = {type = "investigate", target = "thornfield_temple", report_to = "healer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The drought is centered on an ancient aquifer beneath the {wilderness_location}. Something is siphoning the groundwater — a creature, a curse, or a device.",
+    "A hidden spring deeper in the forest still flows. It could sustain the village temporarily, but reaching it means braving the parched and hostile woodland."
+]
+world_changes = [
+    {type = "location_description_tag", location = "whisperwood_edge", tag = "dried_stream"},
+    {type = "location_description_tag", location = "whisperwood_depths", tag = "hidden_spring"}
+]
+quest_template = {type = "investigate", target = "whisperwood_depths", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 21
+narrator_hints = [
+    "Livestock begin dying. The village pond is a cracked basin of dried mud. {authority_npc} orders strict water rationing — one bucket per household per day.",
+    "Tempers flare over the remaining water. A fight breaks out at the well, and {authority_npc} must physically separate the combatants."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "water_rationing"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "severe_drought"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The source of the drought is broken, and water returns to the wells and streams. The first rain falls like a benediction, and {settlement} drinks deeply."]
+failure_narrator_hints = ["The drought continues. {settlement} becomes a dusty ghost of itself, dependent on costly water shipments from distant sources."]
+success_effects = [
+    {type = "faction_rep", faction_role = "farmer", delta = 20},
+    {type = "faction_rep", faction_role = "healer", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "farmer", delta = -20},
+    {type = "faction_rep", faction_role = "healer", delta = -5}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "earthquake"
+name = "When the Ground Shakes"
+category = "disaster"
+tags = ["earthquake", "destruction", "rescue"]
+level_range = [1, 4]
+incompatible_tags = []
+weight = 0.8
+description_template = "A sudden earthquake rocks {settlement}, collapsing buildings, opening fissures, and trapping villagers in the rubble."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 8
+trigger_max = 17
+narrator_hints = [
+    "The ground heaves without warning. Timber cracks, stone walls buckle, and a deafening roar fills the air as {settlement} is shaken to its foundations.",
+    "When the dust settles, the temple's east wall has collapsed, the smithy chimney has toppled, and cries for help rise from the rubble of the market stalls.",
+    "{authority_npc} organizes rescue parties amid the chaos. {healer} tends to the injured in the open square, the temple too damaged to use."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "earthquake_damage"},
+    {type = "location_description_tag", location = "thornfield_temple", tag = "wall_collapsed"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "rescue_coordination"}
+]
+quest_template = {type = "fetch", target = "rescue_survivors", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The earthquake has opened a deep fissure near the {wilderness_location}. Strange vapors rise from it, and the aftershocks have not stopped.",
+    "{healer} warns that the fissure is not natural — it follows the path of a ley line. Something underground has shifted, and it may shift again."
+]
+world_changes = [
+    {type = "location_description_tag", location = "whisperwood_edge", tag = "earthquake_fissure"}
+]
+quest_template = {type = "investigate", target = "whisperwood_edge", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 22
+narrator_hints = [
+    "A stronger aftershock hits. More buildings collapse. The fissure widens, swallowing a section of road. {settlement} is being torn apart.",
+    "{merchant} says the village must be evacuated. {authority_npc} refuses to abandon the settlement. Someone must find and address the source before it is too late."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "evacuation_urged"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "earthquake_critical"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The source of the tremors — a destabilized magical node — is sealed. The ground stills, and {settlement} begins the long work of rebuilding, grateful for solid earth."]
+failure_narrator_hints = ["{settlement} is evacuated as the fissures spread. The village will be rebuilt, but not here. The ruins settle into the broken earth, a monument to what was."]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 15},
+    {type = "faction_rep", faction_role = "healer", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -10},
+    {type = "faction_rep", faction_role = "farmer", delta = -20}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "wildfire"
+name = "The Burning Wood"
+category = "disaster"
+tags = ["fire", "evacuation", "nature"]
+level_range = [1, 4]
+incompatible_tags = []
+weight = 0.9
+description_template = "A wildfire erupts in the {wilderness_location} and races toward {settlement}, threatening to consume everything in its path."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 6
+trigger_max = 15
+narrator_hints = [
+    "A column of smoke rises above the {wilderness_location}, dark and dense. Within hours, the wind carries ash and the smell of burning timber to {settlement}.",
+    "The glow of flames is visible from the village at night — an advancing wall of fire consuming the forest. The wind is blowing toward the village.",
+    "{authority_npc} orders firebreaks dug around the village perimeter. {farmer} leads teams to wet down rooftops with precious water."
+]
+world_changes = [
+    {type = "location_description_tag", location = "whisperwood_edge", tag = "wildfire_approaching"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "fire_defense"}
+]
+quest_template = {type = "fetch", target = "firebreak_supplies", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The fire was not natural — traces of alchemist's fire are found at the ignition point. Someone set the {wilderness_location} ablaze deliberately.",
+    "The firebreaks slow the advance but cannot stop it entirely. A controlled counter-burn might save the village, but it is dangerous and requires precise timing."
+]
+world_changes = [
+    {type = "location_description_tag", location = "whisperwood_depths", tag = "forest_ablaze"}
+]
+quest_template = {type = "investigate", target = "whisperwood_edge", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 19
+narrator_hints = [
+    "Embers drift over the firebreaks. A thatched roof catches, then another. The fire has breached the village perimeter.",
+    "{healer} evacuates the temple, carrying the sick on stretchers. {innkeeper} throws open the inn's stone cellar as a shelter. The heat is unbearable."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "village_burning"},
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "cellar_shelter"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The counter-burn works — the fire runs out of fuel at the village edge and dies. Charred but standing, {settlement} survives. Rain begins to fall, hissing on hot stone."]
+failure_narrator_hints = ["Half of {settlement} is consumed. The survivors huddle in what remains, faces black with soot, counting what they have lost."]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 15},
+    {type = "faction_rep", faction_role = "farmer", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -10},
+    {type = "faction_rep", faction_role = "farmer", delta = -15}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "magical_storm"
+name = "The Wyrdstorm"
+category = "disaster"
+tags = ["magical", "storm", "chaos"]
+level_range = [2, 5]
+incompatible_tags = []
+weight = 0.7
+description_template = "A storm of raw magical energy descends on {settlement}, warping reality and driving creatures mad with arcane power."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 12
+trigger_max = 24
+narrator_hints = [
+    "The sky turns the color of bruised plums. Lightning arcs between clouds in impossible patterns — spirals, geometric shapes, runes written in electricity.",
+    "When the first drops of rain hit the ground, they glow faintly blue. A chicken struck by a raindrop begins speaking in Common before keeling over. The villagers stare in horror.",
+    "{healer} recognizes the phenomenon from ancient texts — a wyrdstorm, a magical weather event that occurs when ley lines overflow. It could last hours or days."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "wyrdstorm_lore"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "magical_storm"}
+]
+quest_template = {type = "investigate", target = "thornfield_temple", report_to = "healer"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The wyrdstorm is feeding on a surge in the local ley line. A node beneath the {wilderness_location} is overcharged — if it is not vented, the storm will intensify.",
+    "The magical rain has begun causing mutations — plants twist into strange shapes, animals grow extra limbs. The effects on people have been minor so far, but that may change."
+]
+world_changes = [
+    {type = "location_description_tag", location = "whisperwood_edge", tag = "magical_mutations"}
+]
+quest_template = {type = "fetch", target = "ley_line_anchor", difficulty = "hard"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 28
+narrator_hints = [
+    "The storm intensifies. Reality warps visibly — buildings shift position, gravity reverses in patches, time stutters and skips. {settlement} is becoming unmoored.",
+    "{authority_npc} reports that two guards have been transmuted into stone. {healer} maintains a warding circle, but her strength is failing."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "reality_warping"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "wyrdstorm_casualties"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The ley line anchor is placed, and the overcharged node vents harmlessly into the earth. The storm dissipates, leaving strange but harmless aurora in the night sky."]
+failure_narrator_hints = ["The wyrdstorm leaves {settlement} permanently changed. Patches of wild magic linger — areas where the laws of nature bend, sometimes beautifully, sometimes terribly."]
+success_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = 20},
+    {type = "faction_rep", faction_role = "guard", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "healer", delta = -15},
+    {type = "faction_rep", faction_role = "farmer", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "mine_collapse"
+name = "Buried Alive"
+category = "disaster"
+tags = ["collapse", "rescue", "mining"]
+level_range = [1, 3]
+incompatible_tags = []
+weight = 1.0
+description_template = "The old mine near {settlement} collapses, trapping workers in the dark below. A desperate rescue race begins."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 6
+trigger_max = 13
+narrator_hints = [
+    "A thunderous rumble shakes the ground near the old mine on the Ironridge road. When the dust clears, the entrance is buried under tons of rock and earth.",
+    "{merchant} rushes into the village, covered in dust. 'Six people are trapped below,' he gasps. 'The main shaft has caved in. We need help — now.'",
+    "{authority_npc} assembles a rescue team. {merchant} sketches the mine layout from memory — there may be an air shaft, a second way in, if it has not collapsed too."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "mine_collapse_survivor"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "rescue_operation"},
+    {type = "location_description_tag", location = "ironridge_road", tag = "mine_collapsed"}
+]
+quest_template = {type = "fetch", target = "rescue_equipment", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The secondary shaft is partially blocked but passable. Beyond it, the trapped miners bang on pipes — they are alive, but the air is running thin.",
+    "The collapse was not accidental. Support beams were deliberately weakened — someone wanted this mine shut down, or its workers silenced."
+]
+world_changes = [
+    {type = "location_description_tag", location = "ironridge_road", tag = "mine_sabotage_evidence"}
+]
+quest_template = {type = "investigate", target = "ironridge_road", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 16
+narrator_hints = [
+    "A second collapse blocks the rescue tunnel. The trapped miners' tapping grows weaker. Time is measured in hours now, not days.",
+    "{healer} prepares for the worst, arranging medical supplies at the mine entrance. The families of the trapped wait in agonized silence."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "healer", tag = "mine_medical_prep"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The last stone is cleared, and the miners stumble into daylight, coughing but alive. The cheers of {settlement} echo off the hills. The saboteur is identified and brought to justice."]
+failure_narrator_hints = ["The mine claims its victims. Six empty chairs at six family tables. {settlement} mourns, and the mine entrance is sealed with a cairn of stones and wildflowers."]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 15},
+    {type = "faction_rep", faction_role = "merchant", delta = 15}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -15},
+    {type = "faction_rep", faction_role = "merchant", delta = -10}
+]

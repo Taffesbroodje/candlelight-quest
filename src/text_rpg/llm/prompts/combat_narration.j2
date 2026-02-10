@@ -1,0 +1,22 @@
+Narrate this combat exchange in 1-2 vivid sentences. Use second person ("you") for the player, third person for enemies.
+
+RULES:
+- Be dramatic and visceral. Describe the motion, impact, and reaction.
+- Do NOT mention numbers, dice, AC, HP, or game mechanics.
+- If critical hit, make it feel devastating. If miss, describe the near-miss.
+- If someone is defeated, describe their fall dramatically.
+- Keep it to 1-2 sentences maximum. Be punchy, not flowery.
+
+Attacker: {{ attacker_name }}
+Attacker Type: {{ attacker_type }}
+Defender: {{ defender_name }}
+Attack Name: {{ attack_name | default("weapon strike") }}
+Hit or Miss: {{ "hit" if hit else "miss" }}
+Critical: {{ "yes" if critical else "no" }}
+Damage: {{ damage | default(0) }}
+Damage Type: {{ damage_type | default("") }}
+Defender Defeated: {{ "yes" if defeated else "no" }}
+
+{% if wound %}Wound Inflicted: {{ wound }}
+{% endif %}
+{% if location_desc %}Setting: {{ location_desc }}{% endif %}

@@ -1,0 +1,395 @@
+# =============================================================================
+# Economic Story Seeds — trade disputes, resource crises, and financial intrigue
+# =============================================================================
+
+[[seeds]]
+id = "trade_war"
+name = "The Trade War"
+category = "economic"
+tags = ["trade", "conflict", "embargo"]
+level_range = [2, 4]
+incompatible_tags = []
+weight = 1.0
+description_template = "A neighboring settlement imposes a trade embargo on {settlement}, choking off vital supplies and threatening economic ruin."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 10
+trigger_max = 20
+narrator_hints = [
+    "The caravans stop coming. {merchant} checks the road every morning, but the usual traders from Ironridge have ceased all shipments without explanation.",
+    "A curt message arrives: Ironridge has declared a trade embargo on {settlement}, accusing the village of selling tainted goods. {merchant} insists the accusation is baseless.",
+    "{innkeeper} warns that the inn's stores will run dry within a fortnight. Salt, iron nails, lamp oil — all come from Ironridge. Without them, daily life grinds to a halt."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "embargo_outraged"},
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "supply_shortage"}
+]
+quest_template = {type = "investigate", target = "ironridge_road", report_to = "merchant"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The embargo is a cover. Ironridge's merchant guild is pressuring {settlement} to accept unfavorable trade terms — exclusive contracts that would make the village a captive market.",
+    "A sympathetic Ironridge trader passes word that some merchants there oppose the embargo. An alliance could break the guild's stranglehold, but it must be done quietly."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "embargo_true_motive"}
+]
+quest_template = {type = "social", target = "ironridge_allies", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 25
+narrator_hints = [
+    "The embargo bites deep. Prices soar as stockpiles dwindle. {merchant}'s shelves are nearly bare. Villagers begin hoarding, and fights break out over the last sack of flour.",
+    "Ironridge ups the pressure — they offer to end the embargo immediately if {settlement} accepts their terms. The temptation to capitulate is enormous."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "shortage_crisis"},
+    {type = "npc_dialogue_tag", role = "farmer", tag = "hoarding_tensions"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The dissident Ironridge merchants break the embargo, and the guild's power play collapses. Free trade resumes, and {settlement} emerges more resilient and better connected."]
+failure_narrator_hints = ["{settlement} accepts the unfavorable terms. Ironridge's merchants grow fat on the captive market, and {merchant} swallows the bitter pill of dependence."]
+success_effects = [
+    {type = "faction_rep", faction_role = "merchant", delta = 20},
+    {type = "faction_rep", faction_role = "innkeeper", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "merchant", delta = -20},
+    {type = "faction_rep", faction_role = "innkeeper", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "resource_shortage"
+name = "The Iron Famine"
+category = "economic"
+tags = ["resources", "scarcity", "competition"]
+level_range = [1, 3]
+incompatible_tags = []
+weight = 1.1
+description_template = "A critical resource has become scarce in {settlement}, pitting villagers against each other in a scramble for what remains."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 6
+trigger_max = 15
+narrator_hints = [
+    "{merchant} announces with grim finality that iron stock has run out. No horseshoes, no nails, no plow repairs. The smithy falls silent.",
+    "The Ironridge mines have reported a cave-in that has halted production. How long the shortage will last, no one knows. {farmer} stares at a cracked plowshare with quiet desperation.",
+    "{authority_npc} realizes the implications — without iron, the guard cannot maintain weapons or armor. {settlement}'s defense capabilities begin to erode."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "iron_shortage"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "defense_concerns"}
+]
+quest_template = {type = "investigate", target = "ironridge_road", report_to = "merchant"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "An alternative iron source exists — an old, abandoned mine in the hills near the {wilderness_location}. It was closed years ago due to danger, but the ore is still there.",
+    "Reopening the mine is risky. The tunnels are unstable, and rumors persist of something living in the deeper shafts. But the alternative is a village without iron."
+]
+world_changes = [
+    {type = "location_description_tag", location = "ironridge_road", tag = "abandoned_mine_prospect"}
+]
+quest_template = {type = "investigate", target = "ironridge_road", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 20
+narrator_hints = [
+    "The shortage reaches crisis levels. Villagers begin fighting over scraps of old metal. A plow is stolen, and {farmer} accuses a neighbor. Community bonds strain.",
+    "{merchant} warns that without iron within the week, essential services will fail. No repairs, no tools, no defense."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "farmer", tag = "plow_stolen"},
+    {type = "location_description_tag", location = "thornfield_village", tag = "resource_desperation"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The old mine is cleared and reopened. The first cartload of ore arrives at the smithy, and the ring of hammer on anvil is the sweetest sound {settlement} has heard in weeks."]
+failure_narrator_hints = ["The iron shortage becomes the new normal. {settlement} adapts — wooden tools, leather armor, stone repairs — but the village is diminished, its edge blunted."]
+success_effects = [
+    {type = "faction_rep", faction_role = "merchant", delta = 15},
+    {type = "faction_rep", faction_role = "farmer", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "merchant", delta = -15},
+    {type = "faction_rep", faction_role = "farmer", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "treasure_hunt"
+name = "Gold Fever"
+category = "economic"
+tags = ["treasure", "greed", "competition"]
+level_range = [1, 4]
+incompatible_tags = []
+weight = 1.0
+description_template = "Rumors of buried treasure near {settlement} spark a gold rush that threatens to tear the community apart with greed."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 7
+trigger_max = 16
+narrator_hints = [
+    "A prospector stumbles into {settlement} with a gold nugget the size of a walnut, babbling about a vein near the old ruins. By nightfall, half the village has grabbed a pickaxe.",
+    "{innkeeper} is overwhelmed — strangers are pouring in, buying rooms and supplies. The rumor has spread beyond {settlement}. Treasure hunters arrive daily.",
+    "{authority_npc} struggles to keep order as competing claims are staked. The village was not built for a gold rush, and the infrastructure groans."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "gold_rush_boom"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "claim_disputes"}
+]
+quest_template = {type = "investigate", target = "old_ruins", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The gold is real but limited — a small cache, not a vein. The prospector exaggerated, and the rush has attracted far more people than the treasure can satisfy.",
+    "Worse, the cache is located in unstable ruins. Digging recklessly could trigger a collapse — and several competing groups are doing exactly that."
+]
+world_changes = [
+    {type = "location_description_tag", location = "old_ruins", tag = "treasure_digging"}
+]
+quest_template = {type = "social", target = "mediate_claims", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 21
+narrator_hints = [
+    "A fight erupts at the dig site. Shovels and pickaxes become weapons. One prospector is badly injured. {authority_npc} declares the site off-limits, but no one listens.",
+    "The treasure hunters have trashed the ruins and the surrounding land. {farmer} is furious — they have dug up his grazing fields. Gold fever has become a plague."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "farmer", tag = "fields_destroyed"},
+    {type = "location_description_tag", location = "old_ruins", tag = "treasure_chaos"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["Order is restored. The cache is fairly divided, the excess prospectors depart, and the ruins are stabilized. {settlement} is richer in gold and wiser in greed."]
+failure_narrator_hints = ["The treasure is plundered by the strongest, the ruins collapse, and the prospectors leave a scarred landscape behind. {settlement} got nothing but trouble."]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 10},
+    {type = "faction_rep", faction_role = "merchant", delta = 15}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -10},
+    {type = "faction_rep", faction_role = "farmer", delta = -15}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "smuggling_ring"
+name = "The Shadow Market"
+category = "economic"
+tags = ["smuggling", "crime", "contraband"]
+level_range = [2, 5]
+incompatible_tags = []
+weight = 0.9
+description_template = "A smuggling ring is operating through {settlement}, using the village as a waypoint for illegal goods and dangerous contraband."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 11
+trigger_max = 22
+narrator_hints = [
+    "{authority_npc} intercepts a crate of unmarked goods at the village gate — inside, prohibited alchemical reagents and weapons with filed-off maker's marks.",
+    "Strange wagons pass through {settlement} at odd hours, always covered, always in a hurry. {innkeeper} notices they never stop at the inn — they go straight to a barn on the outskirts.",
+    "{merchant} is approached by a cloaked figure offering to sell goods at suspiciously low prices. The quality is excellent. The source is anything but legitimate."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "contraband_intercepted"},
+    {type = "npc_dialogue_tag", role = "merchant", tag = "shady_offer"}
+]
+quest_template = {type = "investigate", target = "thornfield_village", report_to = "authority_npc"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The smuggling ring is well-organized, using a network of dead drops and coded signals. The barn on the outskirts is a distribution point for goods moving between larger cities.",
+    "Disturbingly, the ring has at least one local accomplice — someone who provides information on guard patrols and opens gates at the right times."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "smuggler_presence"}
+]
+quest_template = {type = "investigate", target = "ironridge_road", difficulty = "hard"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 27
+narrator_hints = [
+    "The smugglers escalate — the latest shipment contains poisons and necromantic components. This is no longer just illegal trade; it is a supply line for something dangerous.",
+    "The local accomplice is identified: a trusted villager, deep in debt, coerced into cooperation. Confronting them risks tipping off the entire ring."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "smuggler_accomplice"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The smuggling ring is dismantled in a coordinated raid. The contraband is seized, and the local accomplice is given a chance at redemption. {settlement}'s roads are clean again."]
+failure_narrator_hints = ["The ring slips away, relocating to another route. The contraband continues to flow, and {settlement}'s reputation as a safe haven is tarnished."]
+success_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = 20},
+    {type = "faction_rep", faction_role = "merchant", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "guard", delta = -15},
+    {type = "faction_rep", faction_role = "merchant", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "counterfeit_coins"
+name = "Fool's Gold"
+category = "economic"
+tags = ["forgery", "deception", "investigation"]
+level_range = [1, 3]
+incompatible_tags = []
+weight = 1.0
+description_template = "Counterfeit coins have flooded the markets of {settlement}, undermining trust and threatening to collapse the local economy."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 5
+trigger_max = 14
+narrator_hints = [
+    "{merchant} bites a gold coin and frowns. The teeth marks sink too deep — the coin is gilded lead. A second inspection reveals half the day's takings are worthless.",
+    "Word spreads fast. Every merchant in {settlement} begins testing their coins. The results are alarming — nearly a third of the circulating currency is counterfeit.",
+    "{innkeeper} refuses to accept coin at all, demanding barter. The marketplace grinds to a confused halt as trust in money evaporates."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "counterfeit_discovered"},
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "barter_only"}
+]
+quest_template = {type = "investigate", target = "thornfield_village", report_to = "merchant"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The counterfeit coins are expertly made — someone with smithing skill and access to a forge. The trail leads to a hidden workshop outside the village.",
+    "The forger has been operating for weeks, slowly replacing real coins with fakes through everyday transactions. The accumulated real gold has been hidden somewhere."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "forger_trail"}
+]
+quest_template = {type = "investigate", target = "thornfield_smithy", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 18
+narrator_hints = [
+    "No one will trade with {settlement}. Ironridge merchants reject all coins from the village. The economy collapses into barter and IOUs.",
+    "{authority_npc} declares an emergency. Without functioning currency, taxes cannot be collected, guards cannot be paid, and the village administration seizes up."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "economic_collapse"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "currency_emergency"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["The forger is caught and the stolen gold recovered. Real coins are redistributed, and {merchant} personally verifies every piece. Confidence returns, slowly but surely."]
+failure_narrator_hints = ["{settlement} endures months of barter economy. The forger escapes with the real gold, and the village's financial reputation takes years to rebuild."]
+success_effects = [
+    {type = "faction_rep", faction_role = "merchant", delta = 20},
+    {type = "faction_rep", faction_role = "guard", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "merchant", delta = -20},
+    {type = "faction_rep", faction_role = "guard", delta = -10}
+]
+
+
+# -----------------------------------------------------------------------------
+
+[[seeds]]
+id = "guild_dispute"
+name = "The Broken Compact"
+category = "economic"
+tags = ["guild", "labor", "negotiation"]
+level_range = [1, 4]
+incompatible_tags = []
+weight = 0.9
+description_template = "The craftsmen of {settlement} form a guild and demand better terms, threatening to withhold their labor if their conditions are not met."
+
+[seeds.hook]
+trigger_type = "turn_range"
+trigger_min = 8
+trigger_max = 18
+narrator_hints = [
+    "The smithy, the tanner, and the carpenter close their doors simultaneously. A notice is posted: 'No work until fair wages and safe conditions are guaranteed.'",
+    "{merchant} is caught in the middle — the guild supplies the goods they sell. Without craftsmen working, the shelves empty and commerce stalls.",
+    "{authority_npc} calls the guild's action blackmail. The guild leader calls it justice. Both are partly right."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "merchant", tag = "guild_strike_impact"},
+    {type = "npc_dialogue_tag", role = "authority_npc", tag = "guild_confrontation"}
+]
+quest_template = {type = "social", target = "guild_leader", report_to = "innkeeper"}
+
+[seeds.development]
+trigger_type = "quest_complete"
+trigger_value = "hook_quest"
+narrator_hints = [
+    "The guild's grievances are real: long hours, dangerous conditions, and wages that have not risen in years despite growing demand. But the shutdown hurts everyone.",
+    "An outside agitator may be encouraging the hardline stance — someone who benefits from {settlement}'s internal strife. The guild leader is being played."
+]
+world_changes = [
+    {type = "npc_dialogue_tag", role = "innkeeper", tag = "mediator_needed"}
+]
+quest_template = {type = "investigate", target = "thornfield_smithy", difficulty = "medium"}
+
+[seeds.escalation]
+trigger_type = "turn_offset"
+trigger_value = 23
+narrator_hints = [
+    "The standoff enters its second week. Essential repairs go unmade, tools break without replacement, and daily life in {settlement} begins to fray.",
+    "{authority_npc} threatens to bring in outside workers. The guild threatens permanent departure. A breaking point approaches — someone must bridge the gap."
+]
+world_changes = [
+    {type = "location_description_tag", location = "thornfield_village", tag = "labor_standoff"},
+    {type = "location_description_tag", location = "thornfield_smithy", tag = "closed_indefinitely"}
+]
+
+[seeds.resolution]
+trigger_type = "quest_complete"
+trigger_value = "escalation_quest"
+success_narrator_hints = ["A fair compact is signed. Wages rise, conditions improve, and the craftsmen return to work. The sound of the smithy hammer is a sound of compromise and progress."]
+failure_narrator_hints = ["The guild fractures. Some craftsmen leave {settlement} for better opportunities. Those who stay work under worse conditions than before, bitter and resentful."]
+success_effects = [
+    {type = "faction_rep", faction_role = "merchant", delta = 10},
+    {type = "faction_rep", faction_role = "farmer", delta = 10}
+]
+failure_effects = [
+    {type = "faction_rep", faction_role = "merchant", delta = -15},
+    {type = "faction_rep", faction_role = "farmer", delta = -10}
+]

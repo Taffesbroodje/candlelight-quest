@@ -1,0 +1,24 @@
+id = "human"
+name = "Human"
+description = "Versatile and ambitious, humans are the most adaptable of all races."
+speed = 30
+size = "Medium"
+
+[ability_bonuses]
+strength = 1
+dexterity = 1
+constitution = 1
+intelligence = 1
+wisdom = 1
+charisma = 1
+
+[[traits]]
+name = "Versatile"
+description = "You gain proficiency in one additional skill of your choice."
+
+[[traits]]
+name = "Extra Language"
+description = "You can speak, read, and write one extra language of your choice."
+
+[[languages]]
+name = "Common"

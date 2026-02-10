@@ -1,0 +1,43 @@
+id = "cleric"
+name = "Cleric"
+description = "A priestly champion who wields divine magic in service of a higher power."
+hit_die = "1d8"
+primary_ability = "wisdom"
+saving_throw_proficiencies = ["wisdom", "charisma"]
+armor_proficiencies = ["light", "medium", "shield"]
+weapon_proficiencies = ["simple"]
+starting_gold = 125
+skill_choices = 2
+available_skills = ["history", "insight", "medicine", "persuasion", "religion"]
+spellcasting_ability = "wisdom"
+cantrips_known = 3
+
+[starting_equipment]
+weapons = ["mace"]
+armor = ["scale_mail", "shield"]
+items = ["priest_pack", "holy_symbol"]
+
+[[features]]
+level = 1
+name = "Spellcasting"
+description = "You can cast cleric spells. Wisdom is your spellcasting ability."
+
+[[features]]
+level = 1
+name = "Divine Domain"
+description = "You choose a divine domain: Life Domain. You gain heavy armor proficiency and the Disciple of Life feature."
+
+[[features]]
+level = 2
+name = "Channel Divinity"
+description = "You gain the ability to channel divine energy. You can use Turn Undead and Preserve Life."
+
+[[features]]
+level = 4
+name = "Ability Score Improvement"
+description = "You can increase one ability score by 2, or two ability scores by 1 each."
+
+[[features]]
+level = 5
+name = "Destroy Undead"
+description = "When an undead fails its saving throw against your Turn Undead, it is instantly destroyed if its CR is at or below 1/2."

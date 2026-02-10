@@ -1,0 +1,214 @@
+[[npcs]]
+id = "elara_innkeeper"
+name = "Elara Bramblewood"
+entity_type = "npc"
+profession = "innkeeper"
+description = "A cheerful halfling woman with curly auburn hair and a warm smile. She runs the Bramble and Boar with effortless charm, always ready with a tale or a mug of her finest ale."
+location_id = "thornfield_inn"
+dialogue_tags = ["greeting", "rumors", "quest_info", "shop_food"]
+behaviors = ["friendly", "merchant", "information"]
+is_hostile = false
+is_alive = true
+level = 3
+hp_current = 18
+hp_max = 18
+ac = 11
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 14
+constitution = 12
+intelligence = 13
+wisdom = 15
+charisma = 16
+
+[npcs.schedule]
+dawn = "thornfield_inn"
+morning = "thornfield_inn"
+midday = "thornfield_village"
+afternoon = "thornfield_inn"
+evening = "thornfield_inn"
+night = "thornfield_inn"
+late_night = "thornfield_inn"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_herb", "moonpetal"]
+disliked_gifts = ["dagger", "spider_silk"]
+
+[[npcs.attacks]]
+name = "Rolling Pin"
+damage_dice = "1d4"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "grimjaw_smith"
+name = "Grimjaw Ironhand"
+entity_type = "npc"
+profession = "blacksmith"
+description = "A broad-shouldered dwarf with a magnificent braided beard and arms like tree trunks. His leather apron is scorched from years at the forge, and his eyes appraise everything with a craftsman critical eye."
+location_id = "thornfield_smithy"
+dialogue_tags = ["greeting", "shop_weapons", "shop_armor", "craft_info"]
+behaviors = ["gruff", "merchant", "craftsman"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 45
+hp_max = 45
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 18
+dexterity = 10
+constitution = 16
+intelligence = 12
+wisdom = 14
+charisma = 10
+
+[npcs.schedule]
+dawn = "thornfield_smithy"
+morning = "thornfield_smithy"
+midday = "thornfield_inn"
+afternoon = "thornfield_smithy"
+evening = "thornfield_smithy"
+night = "thornfield_smithy"
+late_night = "thornfield_smithy"
+
+[npcs.properties]
+preferred_gifts = ["silver_ore", "beast_hide", "dragon_scale_fragment"]
+disliked_gifts = ["rations", "nightshade"]
+
+[[npcs.attacks]]
+name = "Warhammer"
+damage_dice = "1d8"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "sister_maren"
+name = "Sister Maren"
+entity_type = "npc"
+profession = "healer"
+description = "A serene human woman in white robes embroidered with golden suns. Her calm blue eyes and gentle voice put even the most troubled souls at ease. She tends to the sick and offers guidance to any who seek it."
+location_id = "thornfield_temple"
+dialogue_tags = ["greeting", "healing", "quest_info", "lore", "blessing"]
+behaviors = ["kind", "healer", "spiritual"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 33
+hp_max = 33
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 12
+constitution = 14
+intelligence = 13
+wisdom = 18
+charisma = 16
+
+[npcs.schedule]
+dawn = "thornfield_temple"
+morning = "thornfield_temple"
+midday = "thornfield_temple"
+afternoon = "thornfield_village"
+evening = "thornfield_temple"
+night = "thornfield_temple"
+late_night = "thornfield_temple"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "moonpetal", "healing_herb"]
+disliked_gifts = ["dagger", "nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Sacred Flame"
+damage_dice = "1d8"
+damage_type = "radiant"
+
+[[npcs]]
+id = "old_tom"
+name = "Old Tom"
+entity_type = "npc"
+profession = "farmer"
+description = "A weathered human farmer with a sun-beaten face and calloused hands. His eyes carry a haunted look since the wolf attacks began, and he speaks in a low, worried voice about the strange happenings near the Whisperwood."
+location_id = "thornfield_village"
+dialogue_tags = ["greeting", "quest_wolves", "rumors", "lore"]
+behaviors = ["nervous", "quest_giver", "information"]
+is_hostile = false
+is_alive = true
+level = 1
+hp_current = 8
+hp_max = 8
+ac = 10
+unavailable_periods = ["late_night", "night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 10
+constitution = 12
+intelligence = 10
+wisdom = 13
+charisma = 9
+
+[npcs.schedule]
+dawn = "thornfield_village"
+morning = "whisperwood_edge"
+midday = "thornfield_village"
+afternoon = "whisperwood_edge"
+evening = "thornfield_inn"
+night = "thornfield_village"
+late_night = "thornfield_village"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_herb"]
+disliked_gifts = ["arcane_dust", "spider_silk"]
+
+[[npcs.attacks]]
+name = "Pitchfork"
+damage_dice = "1d6"
+damage_type = "piercing"
+
+[[npcs]]
+id = "captain_vale"
+name = "Captain Roderick Vale"
+entity_type = "npc"
+profession = "guard"
+description = "A tall, broad-shouldered human man in polished half-plate armor. A longsword hangs at his side and a shield bearing the Thornfield crest is strapped to his back. He carries himself with military discipline and speaks with authority."
+location_id = "thornfield_village"
+dialogue_tags = ["greeting", "quest_shipment", "guard_info", "lore"]
+behaviors = ["authoritative", "quest_giver", "protector"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 44
+hp_max = 44
+ac = 18
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 12
+constitution = 14
+intelligence = 13
+wisdom = 14
+charisma = 15
+
+[npcs.schedule]
+dawn = "thornfield_village"
+morning = "thornfield_village"
+midday = "thornfield_inn"
+afternoon = "ironridge_road"
+evening = "thornfield_village"
+night = "thornfield_village"
+late_night = "thornfield_village"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "rations"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Longsword"
+damage_dice = "1d8"
+damage_type = "slashing"

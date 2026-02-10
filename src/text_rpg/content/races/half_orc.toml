@@ -1,0 +1,31 @@
+id = "half_orc"
+name = "Half-Orc"
+description = "Half-orcs grayish pigmentation, sloping foreheads, jutting jaws, and prominent teeth mark them for all to see."
+speed = 30
+size = "Medium"
+
+[ability_bonuses]
+strength = 2
+constitution = 1
+
+[[traits]]
+name = "Darkvision"
+description = "You can see in dim light within 60 feet as if it were bright light, and in darkness as if it were dim light."
+
+[[traits]]
+name = "Relentless Endurance"
+description = "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You cannot use this feature again until you finish a long rest."
+
+[[traits]]
+name = "Savage Attacks"
+description = "When you score a critical hit with a melee weapon attack, you can roll one of the weapon damage dice one additional time and add it to the extra damage."
+
+[[traits]]
+name = "Menacing"
+description = "You gain proficiency in the Intimidation skill."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Orc"

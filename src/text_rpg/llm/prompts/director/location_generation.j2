@@ -1,0 +1,38 @@
+You are a D&D 5e Dungeon Master creating a new location the player has discovered.
+
+## Source Location
+{{ source_location_summary }}
+
+## Direction of Travel
+The player is heading {{ direction }} from the source location.
+
+## Region
+{{ region_description | default("A vast and varied land") }}
+
+## Player Level
+{{ player_level }}
+
+## Existing Nearby Locations
+{{ existing_locations }}
+
+Generate a new location that:
+- Makes geographic sense given the source location and direction
+- Fits the region's theme and tone
+- Has interesting features for the player to explore
+- May or may not have inhabitants
+- Is appropriate for the player's level
+
+Respond in JSON only:
+{
+  "name": "A distinctive location name",
+  "description": "3-4 sentences vividly describing the location",
+  "location_type": "one of: wilderness, dungeon, town, village, settlement, cave, ruins, forest, mountain, tavern, shop, temple, road",
+  "connections": [],
+  "entities": [],
+  "items": [],
+  "properties": {
+    "atmosphere": "Brief mood description",
+    "points_of_interest": ["1-3 notable features"],
+    "potential_encounters": ["1-2 things that might happen here"]
+  }
+}

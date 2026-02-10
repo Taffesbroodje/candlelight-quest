@@ -1,0 +1,90 @@
+# Starting origin scenarios — each gives a different intro flavor
+# The player picks one after character creation, then gets a narrated prologue
+
+[[origins]]
+id = "wandering_traveler"
+name = "The Wandering Traveler"
+summary = "You arrive at Thornfield Village after weeks on the road, seeking fortune and purpose."
+prologue = """The road behind you stretches for miles through rolling farmland and distant hills. You've walked for weeks now — through rain-soaked villages, past abandoned roadside shrines, and along trade routes thick with merchants and brigands alike.
+
+Now, as the sun begins to dip below the horizon, the cobblestone roofs of Thornfield Village rise from the landscape ahead. Smoke curls from chimneys, and you can hear the distant clamor of a market winding down for the evening.
+
+You hitch your pack higher on your shoulders and step through the village gate. A new chapter begins."""
+starting_location = "thornfield_village"
+bonus_items = []
+
+[[origins]]
+id = "tavern_rumor"
+name = "A Rumor at the Inn"
+summary = "You followed a rumor of ancient treasure to this remote village. The locals seem wary."
+prologue = """It started with a drunk merchant in a city tavern three towns over, whispering about ruins in the Whisperwood — an old watchtower where no one goes, where strange lights burn at night, and where treasure lies buried beneath centuries of rubble.
+
+Most dismissed the tale. You didn't.
+
+After days of travel, you push open the heavy oak door of The Bramble and Boar Inn in Thornfield Village. The warmth of the hearth washes over you. A few locals glance your way — curious, perhaps wary. The innkeeper raises an eyebrow.
+
+"Another adventurer," she mutters, polishing a mug. "The Whisperwood claims one a month. You look like you might last two."
+
+You take a seat and order an ale. Tomorrow, the real work begins."""
+starting_location = "thornfield_inn"
+bonus_items = []
+
+[[origins]]
+id = "merchant_guard"
+name = "The Caravan Guard"
+summary = "Hired as a guard for a merchant caravan, your contract ends here. Now you're free."
+prologue = """For three weeks you marched alongside the merchant Aldric's caravan — twelve wagons loaded with grain, cloth, and ironwork bound for the frontier settlements. The pay was modest, the food worse, but the work kept you fed and moving forward.
+
+This morning, as the caravan creaked to a halt in Thornfield's market square, Aldric pressed a small pouch of coin into your hand.
+
+"Contract's done," he said, already eyeing his next route. "You're free. There's work in this area if you've a mind for it — the Whisperwood's been restless, and the village elder's been looking for capable folk."
+
+The caravan moves on without you. You stand in the square, free for the first time in weeks, with a few coins and a choice to make."""
+starting_location = "thornfield_village"
+bonus_items = []
+
+[[origins]]
+id = "escaped_prisoner"
+name = "The Escaped Prisoner"
+summary = "Wrongfully imprisoned, you escaped during a transfer and fled into the wilderness."
+prologue = """The manacles left their marks on your wrists — red, raw bands that ache when the wind blows cold. You were taken three weeks ago from your home, accused of crimes you didn't commit. The trial was a farce. The sentence: hard labor in the Ironridge mines.
+
+But the prison wagon never made it. Somewhere on the mountain road, bandits attacked the escort. In the chaos, you slipped your bonds and ran — ran until your lungs burned and your legs gave out.
+
+You stumbled through the Whisperwood for days, surviving on berries and stream water, before the trees thinned and you saw it: a village, quiet and ordinary, with smoke rising from its chimneys.
+
+Thornfield. You've heard the name. It's far enough from the cities that no one should know your face. For now, at least, you're free. But you'll need to be careful — and you'll need allies if you're to clear your name."""
+starting_location = "whisperwood_edge"
+bonus_items = []
+
+[[origins]]
+id = "divine_calling"
+name = "The Divine Calling"
+summary = "Visions from a deity led you to this village. Something important awaits in the Whisperwood."
+prologue = """The dreams started a fortnight ago. Every night, the same vision — a watchtower in ruins, wreathed in silver light, deep within an ancient forest. A voice, neither male nor female, speaking a single word that you could never quite remember upon waking.
+
+You consulted sages and priests. The sages shrugged. A temple elder, though, went pale. "The Whisperwood," she whispered. "Near Thornfield Village. There are ruins there — old ones, from before the kingdom. If you're being called... you should answer."
+
+So you traveled. And now you stand at the gates of Thornfield, a village that smells of bread and horse dung and has no idea what stirs in the woods nearby.
+
+The dreams have stopped since you arrived. Whatever called you here — it knows you've come."""
+starting_location = "thornfield_temple"
+bonus_items = []
+
+[[origins]]
+id = "lost_memory"
+name = "The Amnesiac"
+summary = "You woke in a field outside the village with no memory of how you got here."
+prologue = """You wake face-down in tall grass, dew soaking through your clothes. Your head throbs. When you sit up, the world lurches sideways before settling into focus.
+
+A field. Farmland. A village in the distance, its rooftops catching the morning sun.
+
+You reach for your name and find it — but little else. You know who you are, what you can do, the weight of a weapon in your hand. But the *how* and *why* of your presence here? Gone. A void where memory should be.
+
+Your pack lies nearby — your belongings intact, as if carefully placed rather than dropped. In one pocket, a folded note in handwriting you don't recognize:
+
+*"Trust no one. Find the tower. Remember."*
+
+You pocket the note, stand on unsteady legs, and start walking toward the village. Someone here must know something. And if they don't — well, perhaps the tower will have answers."""
+starting_location = "thornfield_village"
+bonus_items = []

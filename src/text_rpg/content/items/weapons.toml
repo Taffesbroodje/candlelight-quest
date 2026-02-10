@@ -1,0 +1,129 @@
+[[items]]
+id = "dagger"
+name = "Dagger"
+description = "A simple, light blade favored by rogues and spellcasters alike."
+item_type = "weapon"
+weight = 1.0
+value_gp = 2
+rarity = "common"
+weapon_type = "simple_melee"
+damage_dice = "1d4"
+damage_type = "piercing"
+properties = ["finesse", "light", "thrown"]
+
+[[items]]
+id = "shortsword"
+name = "Shortsword"
+description = "A short, quick blade ideal for close combat."
+item_type = "weapon"
+weight = 2.0
+value_gp = 10
+rarity = "common"
+weapon_type = "martial_melee"
+damage_dice = "1d6"
+damage_type = "piercing"
+properties = ["finesse", "light"]
+
+[[items]]
+id = "longsword"
+name = "Longsword"
+description = "A versatile blade, the weapon of choice for many warriors."
+item_type = "weapon"
+weight = 3.0
+value_gp = 15
+rarity = "common"
+weapon_type = "martial_melee"
+damage_dice = "1d8"
+damage_type = "slashing"
+properties = ["versatile"]
+
+[[items]]
+id = "greataxe"
+name = "Greataxe"
+description = "A massive axe requiring two hands, capable of devastating blows."
+item_type = "weapon"
+weight = 7.0
+value_gp = 30
+rarity = "common"
+weapon_type = "martial_melee"
+damage_dice = "1d12"
+damage_type = "slashing"
+properties = ["heavy", "two_handed"]
+
+[[items]]
+id = "rapier"
+name = "Rapier"
+description = "An elegant thrusting weapon favored by duelists."
+item_type = "weapon"
+weight = 2.0
+value_gp = 25
+rarity = "common"
+weapon_type = "martial_melee"
+damage_dice = "1d8"
+damage_type = "piercing"
+properties = ["finesse"]
+
+[[items]]
+id = "quarterstaff"
+name = "Quarterstaff"
+description = "A sturdy wooden staff, versatile in combat and useful as a walking stick."
+item_type = "weapon"
+weight = 4.0
+value_gp = 2
+rarity = "common"
+weapon_type = "simple_melee"
+damage_dice = "1d6"
+damage_type = "bludgeoning"
+properties = ["versatile"]
+
+[[items]]
+id = "shortbow"
+name = "Shortbow"
+description = "A compact bow suited for skirmishers and mounted combatants."
+item_type = "weapon"
+weight = 2.0
+value_gp = 25
+rarity = "common"
+weapon_type = "simple_ranged"
+damage_dice = "1d6"
+damage_type = "piercing"
+properties = ["ammunition", "two_handed"]
+
+[[items]]
+id = "light_crossbow"
+name = "Light Crossbow"
+description = "A mechanical ranged weapon that fires bolts with deadly accuracy."
+item_type = "weapon"
+weight = 5.0
+value_gp = 25
+rarity = "common"
+weapon_type = "simple_ranged"
+damage_dice = "1d8"
+damage_type = "piercing"
+properties = ["ammunition", "loading", "two_handed"]
+
+[[items]]
+id = "mace"
+name = "Mace"
+description = "A heavy bludgeoning weapon favored by clerics and temple guards."
+item_type = "weapon"
+weight = 4.0
+value_gp = 5
+rarity = "common"
+weapon_type = "simple_melee"
+damage_dice = "1d6"
+damage_type = "bludgeoning"
+properties = []
+
+[[items]]
+id = "handaxe"
+name = "Handaxe"
+description = "A small axe that can be used in melee or thrown at enemies."
+item_type = "weapon"
+weight = 2.0
+value_gp = 5
+rarity = "common"
+weapon_type = "simple_melee"
+damage_dice = "1d6"
+damage_type = "slashing"
+properties = ["light", "thrown"]

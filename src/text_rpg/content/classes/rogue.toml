@@ -1,0 +1,51 @@
+id = "rogue"
+name = "Rogue"
+description = "A scoundrel who uses stealth and trickery to overcome obstacles and enemies."
+hit_die = "1d8"
+primary_ability = "dexterity"
+saving_throw_proficiencies = ["dexterity", "intelligence"]
+armor_proficiencies = ["light"]
+weapon_proficiencies = ["simple", "hand_crossbow", "longsword", "rapier", "shortsword"]
+starting_gold = 120
+skill_choices = 4
+available_skills = ["acrobatics", "athletics", "deception", "insight", "intimidation", "investigation", "perception", "performance", "persuasion", "sleight_of_hand", "stealth"]
+
+[starting_equipment]
+weapons = ["rapier", "shortbow"]
+armor = ["leather_armor"]
+items = ["burglar_pack", "thieves_tools"]
+
+[[features]]
+level = 1
+name = "Expertise"
+description = "Choose two of your skill proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies."
+
+[[features]]
+level = 1
+name = "Sneak Attack"
+description = "Once per turn, you can deal an extra 1d6 damage to one creature you hit with an attack if you have advantage or an ally is within 5 feet of the target. Damage increases at higher levels."
+
+[[features]]
+level = 1
+name = "Thieves Cant"
+description = "You know thieves cant, a secret mix of dialect, jargon, and code."
+
+[[features]]
+level = 2
+name = "Cunning Action"
+description = "You can use a bonus action to take the Dash, Disengage, or Hide action."
+
+[[features]]
+level = 3
+name = "Roguish Archetype"
+description = "You choose an archetype: Thief."
+
+[[features]]
+level = 4
+name = "Ability Score Improvement"
+description = "You can increase one ability score by 2, or two ability scores by 1 each."
+
+[[features]]
+level = 5
+name = "Uncanny Dodge"
+description = "When an attacker you can see hits you with an attack, you can use your reaction to halve the attack damage against you."

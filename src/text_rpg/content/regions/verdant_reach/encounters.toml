@@ -1,0 +1,223 @@
+[[encounters]]
+id = "wolf_pack"
+name = "Wolf Pack"
+location_ids = ["whisperwood_edge", "whisperwood_depths"]
+encounter_chance = 0.4
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "healing_herb", chance = 0.5},
+    {id = "beast_hide", chance = 0.3},
+]
+gold_min = 0
+gold_max = 3
+
+[[encounters.entities]]
+id = "wolf"
+name = "Wolf"
+entity_type = "enemy"
+description = "A large grey wolf with gleaming yellow eyes and bared fangs."
+level = 1
+hp_max = 11
+ac = 13
+count_min = 2
+count_max = 4
+xp_value = 25
+
+[encounters.entities.ability_scores]
+strength = 12
+dexterity = 15
+constitution = 12
+intelligence = 3
+wisdom = 12
+charisma = 6
+
+[[encounters.entities.attacks]]
+name = "Bite"
+damage_dice = "2d4"
+damage_bonus = 2
+damage_type = "piercing"
+
+[[encounters]]
+id = "bandit_ambush"
+name = "Bandit Ambush"
+location_ids = ["ironridge_road"]
+encounter_chance = 0.5
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "dagger", chance = 0.25},
+    {id = "rations", chance = 0.5},
+    {id = "healing_potion", chance = 0.15},
+]
+gold_min = 5
+gold_max = 15
+
+[[encounters.entities]]
+id = "bandit"
+name = "Bandit"
+entity_type = "enemy"
+description = "A rough-looking human in mismatched leather armor, armed with a scimitar and a wicked grin."
+level = 2
+hp_max = 11
+ac = 12
+count_min = 2
+count_max = 3
+xp_value = 25
+
+[encounters.entities.ability_scores]
+strength = 11
+dexterity = 12
+constitution = 12
+intelligence = 10
+wisdom = 10
+charisma = 10
+
+[[encounters.entities.attacks]]
+name = "Scimitar"
+damage_dice = "1d6"
+damage_bonus = 1
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Light Crossbow"
+damage_dice = "1d8"
+damage_bonus = 1
+damage_type = "piercing"
+
+[[encounters]]
+id = "giant_spider"
+name = "Giant Spider"
+location_ids = ["whisperwood_depths"]
+encounter_chance = 0.3
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "spider_silk", chance = 1.0},
+    {id = "healing_potion", chance = 0.25},
+    {id = "arcane_dust", chance = 0.15},
+]
+gold_min = 10
+gold_max = 30
+
+[[encounters.entities]]
+id = "giant_spider"
+name = "Giant Spider"
+entity_type = "enemy"
+description = "A massive spider the size of a horse, its many eyes glinting in the darkness. Thick webs coat the trees around it."
+level = 3
+hp_max = 26
+ac = 14
+count_min = 1
+count_max = 1
+xp_value = 100
+
+[encounters.entities.ability_scores]
+strength = 14
+dexterity = 16
+constitution = 12
+intelligence = 2
+wisdom = 11
+charisma = 4
+
+[[encounters.entities.attacks]]
+name = "Bite"
+damage_dice = "1d8"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[encounters.entities.attacks]]
+name = "Web"
+damage_dice = "0d0"
+damage_bonus = 0
+damage_type = "restrained"
+
+# -- Puzzle encounters --
+
+[[encounters]]
+id = "locked_chest"
+name = "Ancient Locked Chest"
+location_ids = ["old_ruins", "whisperwood_depths"]
+encounter_chance = 0.25
+fight_type = "puzzle"
+description = "An ornate iron chest sits half-buried in rubble, its lock mechanisms intricate and clearly ancient. Strange runes are etched around the keyhole."
+
+[encounters.puzzle]
+puzzle_type = "lock"
+dc = 15
+required_item = "thieves_tools"
+
+[encounters.loot]
+items = [
+    {id = "healing_potion", chance = 0.8},
+    {id = "arcane_dust", chance = 0.5},
+    {id = "soul_gem", chance = 0.15},
+]
+gold_min = 15
+gold_max = 40
+
+[[encounters]]
+id = "trapped_hallway"
+name = "Trapped Corridor"
+location_ids = ["old_ruins"]
+encounter_chance = 0.3
+fight_type = "puzzle"
+description = "The stone corridor ahead looks deceptively empty, but grooves in the floor tiles and tiny holes in the walls betray a deadly trap."
+
+[encounters.puzzle]
+puzzle_type = "trap"
+dc = 13
+trap_damage = "2d6"
+
+[encounters.loot]
+items = [
+    {id = "healing_herb", chance = 0.6},
+]
+gold_min = 5
+gold_max = 15
+
+[[encounters]]
+id = "riddle_door"
+name = "The Whispering Door"
+location_ids = ["old_ruins", "whisperwood_depths"]
+encounter_chance = 0.2
+fight_type = "puzzle"
+description = "A massive stone door blocks the passage. Carved into its surface is a face whose stone lips move, speaking in a rasping voice: 'I have cities but no houses, forests but no trees, water but no fish. What am I?'"
+
+[encounters.puzzle]
+puzzle_type = "riddle"
+dc = 12
+riddle_question = "I have cities but no houses, forests but no trees, water but no fish. What am I?"
+riddle_answer = "a map"
+
+[encounters.loot]
+items = [
+    {id = "healing_potion", chance = 0.5},
+    {id = "enchanted_thread", chance = 0.3},
+]
+gold_min = 20
+gold_max = 50
+
+[[encounters]]
+id = "fire_ward"
+name = "Elemental Fire Ward"
+location_ids = ["whisperwood_depths"]
+encounter_chance = 0.15
+fight_type = "puzzle"
+description = "A wall of shimmering blue-white ice blocks the passage, radiating intense cold. It seems to respond to elemental magic — fire, perhaps, could melt through."
+
+[encounters.puzzle]
+puzzle_type = "elemental"
+dc = 14
+required_spell = "fire_bolt"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.8},
+    {id = "dragon_scale_fragment", chance = 0.2},
+]
+gold_min = 25
+gold_max = 60
