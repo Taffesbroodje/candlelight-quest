@@ -123,6 +123,50 @@ RACIAL_TRAITS: dict[str, list[str]] = {
     "dwarf": ["Darkvision", "Dwarven Resilience", "Stonecunning", "Dwarven Combat Training"],
     "halfling": ["Lucky", "Brave", "Halfling Nimbleness"],
     "half_orc": ["Darkvision", "Relentless Endurance", "Savage Attacks", "Menacing"],
+    "half_elf": ["Darkvision", "Fey Ancestry", "Skill Versatility"],
+    "gnome": ["Darkvision", "Gnome Cunning", "Artificer's Lore"],
+    "tiefling": ["Darkvision", "Hellish Resistance", "Infernal Legacy"],
+    "dragonborn": ["Breath Weapon", "Draconic Resistance", "Draconic Ancestry"],
+    "goliath": ["Natural Athlete", "Stone's Endurance", "Mountain Born"],
+    "aasimar": ["Darkvision", "Celestial Resistance", "Healing Hands", "Light Bearer"],
+    "tabaxi": ["Darkvision", "Feline Agility", "Cat's Claws"],
+    "firbolg": ["Firbolg Magic", "Hidden Step", "Speech of Beast and Leaf"],
+    "kenku": ["Expert Forgery", "Kenku Training", "Mimicry"],
+    "lizardfolk": ["Natural Armor", "Hungry Jaws", "Cunning Artisan", "Hold Breath"],
+    "goblin": ["Darkvision", "Fury of the Small", "Nimble Escape"],
+    "orc": ["Darkvision", "Aggressive", "Powerful Build", "Primal Intuition"],
+    "genasi": ["Elemental Heritage", "Unending Breath", "Elemental Attunement"],
+    "changeling": ["Shapechanger", "Changeling Instincts", "Unsettling Visage"],
+    "warforged": ["Constructed Resilience", "Sentry's Rest", "Integrated Protection"],
+    "centaur": ["Charge", "Equine Build", "Hooves", "Survivor"],
+    "minotaur": ["Horns", "Goring Rush", "Hammering Horns", "Labyrinthine Recall"],
+    "bugbear": ["Darkvision", "Long-Limbed", "Powerful Build", "Surprise Attack", "Sneaky"],
+}
+
+RACIAL_SIZE: dict[str, str] = {
+    "human": "Medium",
+    "elf": "Medium",
+    "dwarf": "Medium",
+    "halfling": "Small",
+    "half_orc": "Medium",
+    "half_elf": "Medium",
+    "gnome": "Small",
+    "tiefling": "Medium",
+    "dragonborn": "Medium",
+    "goliath": "Medium",
+    "aasimar": "Medium",
+    "tabaxi": "Medium",
+    "firbolg": "Medium",
+    "kenku": "Medium",
+    "lizardfolk": "Medium",
+    "goblin": "Small",
+    "orc": "Medium",
+    "genasi": "Medium",
+    "changeling": "Medium",
+    "warforged": "Medium",
+    "centaur": "Large",
+    "minotaur": "Large",
+    "bugbear": "Large",
 }
 
 RACIAL_SPEED: dict[str, int] = {
@@ -131,6 +175,24 @@ RACIAL_SPEED: dict[str, int] = {
     "dwarf": 25,
     "halfling": 25,
     "half_orc": 30,
+    "half_elf": 30,
+    "gnome": 25,
+    "tiefling": 30,
+    "dragonborn": 30,
+    "goliath": 30,
+    "aasimar": 30,
+    "tabaxi": 30,
+    "firbolg": 30,
+    "kenku": 30,
+    "lizardfolk": 30,
+    "goblin": 30,
+    "orc": 30,
+    "genasi": 30,
+    "changeling": 30,
+    "warforged": 30,
+    "centaur": 40,
+    "minotaur": 30,
+    "bugbear": 30,
 }
 
 
@@ -177,8 +239,9 @@ def create_character(
     # Proficiency bonus
     prof_bonus = proficiency_bonus(1)
 
-    # Speed
+    # Speed and size
     speed = RACIAL_SPEED.get(race.lower(), 30)
+    size = RACIAL_SIZE.get(race.lower(), "Medium")
 
     # Class features at level 1
     features = list(CLASS_FEATURES.get((char_class.lower(), 1), []))
@@ -211,6 +274,7 @@ def create_character(
         "equipped_armor_id": None,
         "conditions": [],
         "hit_dice_remaining": 1,
+        "size": size,
         "speed": speed,
         "gold": starting_gold,
         "hunger": 100,

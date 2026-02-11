@@ -1,0 +1,31 @@
+id = "orc"
+name = "Orc"
+description = "Powerful and proud warriors, orcs possess a fierce culture that values strength, honor, and the glory of battle above all else."
+speed = 30
+size = "Medium"
+
+[ability_bonuses]
+strength = 2
+constitution = 1
+
+[[traits]]
+name = "Darkvision"
+description = "You can see in dim light within 60 feet as if it were bright light, and in darkness as if it were dim light."
+
+[[traits]]
+name = "Aggressive"
+description = "As a bonus action, you can move up to your speed toward a hostile creature you can see."
+
+[[traits]]
+name = "Powerful Build"
+description = "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+
+[[traits]]
+name = "Primal Intuition"
+description = "You are proficient in two of the following skills of your choice: Animal Handling, Insight, Intimidation, Medicine, Nature, Perception, Survival."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Orc"

@@ -1,0 +1,27 @@
+id = "goliath"
+name = "Goliath"
+description = "Towering mountain-dwelling nomads, goliaths are driven by a fierce competitive spirit and an unyielding will forged in the harshest peaks."
+speed = 30
+size = "Medium"
+
+[ability_bonuses]
+strength = 2
+constitution = 1
+
+[[traits]]
+name = "Natural Athlete"
+description = "You have proficiency in the Athletics skill."
+
+[[traits]]
+name = "Stone's Endurance"
+description = "Once per short rest, when you take damage, you can use your reaction to reduce the damage by 1d12 + your Constitution modifier."
+
+[[traits]]
+name = "Mountain Born"
+description = "You have resistance to cold damage and are naturally adapted to high altitude, including elevations above 20,000 feet."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Giant"

@@ -1,0 +1,26 @@
+id = "gnome"
+name = "Gnome"
+description = "Curious tinkerers and inventors, gnomes are driven by an insatiable desire to understand and improve the world around them."
+speed = 25
+size = "Small"
+
+[ability_bonuses]
+intelligence = 2
+
+[[traits]]
+name = "Darkvision"
+description = "You can see in dim light within 60 feet as if it were bright light, and in darkness as if it were dim light."
+
+[[traits]]
+name = "Gnome Cunning"
+description = "You have advantage on all Intelligence, Wisdom, and Charisma saving throws against magic."
+
+[[traits]]
+name = "Artificer's Lore"
+description = "You have double proficiency on History checks related to magic items, alchemical objects, or technological devices."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Gnomish"

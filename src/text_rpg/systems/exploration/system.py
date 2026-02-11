@@ -6,6 +6,7 @@ import logging
 from typing import Any
 
 from text_rpg.mechanics.ability_scores import modifier
+from text_rpg.mechanics.size import stealth_modifier
 from text_rpg.mechanics.skills import SKILL_ABILITY_MAP, skill_check
 from text_rpg.models.action import Action, ActionResult, DiceRoll, StateMutation
 from text_rpg.systems.base import GameContext, GameSystem
@@ -291,7 +292,9 @@ class ExplorationSystem(GameSystem):
         prof_bonus = char.get("proficiency_bonus", 2)
         is_prof = "investigation" in skill_profs or "perception" in skill_profs
 
-        success, result = skill_check(wis_score, prof_bonus, is_prof, dc=12)
+        # Searching uses stealth-like awareness — size helps small creatures
+        size_mod = stealth_modifier(char.get("size", "Medium"))
+        success, result = skill_check(wis_score, prof_bonus, is_prof, dc=12, size_modifier=size_mod)
 
         dice_rolls = [DiceRoll(
             dice_expression="1d20", rolls=result.individual_rolls,

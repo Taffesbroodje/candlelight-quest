@@ -1,0 +1,26 @@
+id = "genasi"
+name = "Genasi"
+description = "Beings suffused with elemental energy, genasi are born of the union between genies and mortals, carrying the raw power of the elements within their blood."
+speed = 30
+size = "Medium"
+
+[ability_bonuses]
+constitution = 2
+
+[[traits]]
+name = "Elemental Heritage"
+description = "Choose an element at character creation. Fire grants resistance to fire damage. Water grants a swimming speed of 30 feet. Earth grants the ability to cast Passage Without Trace once per long rest. Air grants the ability to cast Levitate once per long rest."
+
+[[traits]]
+name = "Unending Breath"
+description = "You can hold your breath indefinitely while you are not incapacitated."
+
+[[traits]]
+name = "Elemental Attunement"
+description = "You know one cantrip based on your chosen element: Produce Flame (fire), Shape Water (water), Mold Earth (earth), or Gust (air)."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Primordial"

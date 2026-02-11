@@ -1,0 +1,27 @@
+id = "warforged"
+name = "Warforged"
+description = "Living constructs originally built for war, warforged are sentient beings of wood, metal, and stone who now seek purpose and identity beyond the battles they were made for."
+speed = 30
+size = "Medium"
+
+[ability_bonuses]
+constitution = 2
+
+[[traits]]
+name = "Constructed Resilience"
+description = "You have advantage on saving throws against being poisoned, resistance to poison damage, and immunity to disease. You do not need to eat, drink, or breathe."
+
+[[traits]]
+name = "Sentry's Rest"
+description = "You do not need to sleep. Instead, you enter an inactive state for 6 hours during a long rest, remaining semiconscious and aware of your surroundings."
+
+[[traits]]
+name = "Integrated Protection"
+description = "Your body provides a base AC of 11 + your proficiency bonus. You can integrate armor into your body during a long rest, gaining its benefits while it cannot be removed against your will."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "One Other"
+note = "You know one additional language of your choice."

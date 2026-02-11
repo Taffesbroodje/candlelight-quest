@@ -1,0 +1,27 @@
+id = "tiefling"
+name = "Tiefling"
+description = "Bearing the mark of an infernal heritage, tieflings are distinguished by their horns, tails, and an unmistakable aura of otherworldly power."
+speed = 30
+size = "Medium"
+
+[ability_bonuses]
+charisma = 2
+intelligence = 1
+
+[[traits]]
+name = "Darkvision"
+description = "You can see in dim light within 60 feet as if it were bright light, and in darkness as if it were dim light."
+
+[[traits]]
+name = "Hellish Resistance"
+description = "You have resistance to fire damage."
+
+[[traits]]
+name = "Infernal Legacy"
+description = "You know the Thaumaturgy cantrip. At 3rd level, you can cast Hellish Rebuke as a 2nd-level spell once per long rest. Charisma is your spellcasting ability for these spells."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Infernal"

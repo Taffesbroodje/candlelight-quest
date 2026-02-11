@@ -1,0 +1,27 @@
+id = "goblin"
+name = "Goblin"
+description = "Small but fierce and cunning, goblins thrive in the margins of civilization, using their wits, agility, and sheer tenacity to survive where others would falter."
+speed = 30
+size = "Small"
+
+[ability_bonuses]
+dexterity = 2
+constitution = 1
+
+[[traits]]
+name = "Darkvision"
+description = "You can see in dim light within 60 feet as if it were bright light, and in darkness as if it were dim light."
+
+[[traits]]
+name = "Fury of the Small"
+description = "Once per short rest, when you hit a creature that is of a larger size than you with an attack or spell, you can deal extra damage equal to your level."
+
+[[traits]]
+name = "Nimble Escape"
+description = "You can take the Disengage or Hide action as a bonus action on each of your turns."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Goblin"

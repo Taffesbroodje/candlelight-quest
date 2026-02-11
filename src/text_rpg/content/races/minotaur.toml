@@ -1,0 +1,31 @@
+id = "minotaur"
+name = "Minotaur"
+description = "Towering bull-headed humanoids, minotaurs are fearsome warriors whose imposing presence and raw strength make them formidable on any battlefield."
+speed = 30
+size = "Large"
+
+[ability_bonuses]
+strength = 2
+constitution = 1
+
+[[traits]]
+name = "Horns"
+description = "Your horns are natural melee weapons, which deal 1d6 piercing damage on a hit. When you take the Dash action, you can make one horn attack as a bonus action."
+
+[[traits]]
+name = "Goring Rush"
+description = "When you use your Dash action and move at least 20 feet, you can make one melee attack with your horns as a bonus action."
+
+[[traits]]
+name = "Hammering Horns"
+description = "When you hit a creature with a horn attack, you can attempt to push it. The target must succeed on a Strength saving throw or be pushed up to 10 feet away from you."
+
+[[traits]]
+name = "Labyrinthine Recall"
+description = "You can perfectly recall any path you have traveled. You have advantage on checks to avoid getting lost."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Minotaur"

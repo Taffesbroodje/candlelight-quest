@@ -17,6 +17,7 @@ from text_rpg.mechanics.combat_math import (
     calculate_flee_dc,
     damage_roll,
     determine_turn_order,
+    grapple_check,
     initiative_roll,
     npc_choose_action,
 )
@@ -62,7 +63,7 @@ class CombatSystem(GameSystem):
 
     @property
     def handled_action_types(self) -> set[str]:
-        return {"attack", "dodge", "dash", "disengage", "help", "hide", "flee", "combat_item", "combat_spell", "class_ability", "puzzle"}
+        return {"attack", "dodge", "dash", "disengage", "help", "hide", "flee", "combat_item", "combat_spell", "class_ability", "puzzle", "grapple"}
 
     def can_handle(self, action: Action, context: GameContext) -> bool:
         at = action.action_type.lower()
@@ -300,6 +301,15 @@ class CombatSystem(GameSystem):
             events.extend(ability_result.get("events", []))
             outcome_parts.append(ability_result["description"])
 
+        elif action_type in ("grapple",):
+            grapple_result = self._resolve_grapple(action, context, combat)
+            if not grapple_result["success"]:
+                return ActionResult(action_id=action.id, success=False, outcome_description=grapple_result["description"])
+            mutations.extend(grapple_result.get("mutations", []))
+            dice_rolls.extend(grapple_result.get("dice_rolls", []))
+            events.extend(grapple_result.get("events", []))
+            outcome_parts.append(grapple_result["description"])
+
         elif action_type in ("dash",):
             outcome_parts.append("You take the Dash action, doubling your movement.")
 
@@ -516,6 +526,113 @@ class CombatSystem(GameSystem):
             events.append({"event_type": "COMBAT_FLEE_FAIL", "description": "Failed to flee from combat."})
 
         return {"dice_rolls": dice_rolls, "events": events, "description": desc, "escaped": success}
+
+    def _resolve_grapple(self, action: Action, context: GameContext, combat: dict) -> dict:
+        """Resolve a grapple attempt. Athletics contest with size advantage/disadvantage."""
+        char = context.character
+        target = self._find_combat_target(action.target_id, context, combat)
+        if not target:
+            return {"success": False, "description": "No valid target to grapple."}
+
+        scores = safe_json(char.get("ability_scores"), {})
+        str_score = scores.get("strength", 10)
+        prof_bonus = char.get("proficiency_bonus", 2)
+        skill_profs = safe_json(char.get("skill_proficiencies"), [])
+        is_prof = "athletics" in skill_profs
+
+        target_scores = safe_json(target.get("ability_scores"), {})
+        # Defender uses higher of Athletics (STR) or Acrobatics (DEX)
+        target_str = target_scores.get("strength", 10)
+        target_dex = target_scores.get("dexterity", 10)
+        defender_score = max(target_str, target_dex)
+        target_prof = target.get("proficiency_bonus", 2)
+        target_profs = safe_json(target.get("skill_proficiencies"), [])
+        defender_proficient = "athletics" in target_profs or "acrobatics" in target_profs
+
+        attacker_size = char.get("size", "Medium")
+        defender_size = target.get("size", "Medium")
+
+        result = grapple_check(
+            attacker_athletics=str_score,
+            attacker_prof=prof_bonus,
+            attacker_proficient=is_prof,
+            defender_score=defender_score,
+            defender_prof=target_prof,
+            defender_proficient=defender_proficient,
+            attacker_size=attacker_size,
+            defender_size=defender_size,
+        )
+
+        dice_rolls: list[DiceRoll] = []
+        mutations: list[StateMutation] = []
+        events: list[dict[str, Any]] = []
+
+        if result.get("auto_fail"):
+            return {
+                "success": True,
+                "description": f"You can't grapple {target['name']} — {result.get('reason', 'too large!')}",
+                "mutations": [], "dice_rolls": [], "events": [],
+            }
+
+        atk_roll_result = result["attacker_roll"]
+        def_roll_result = result["defender_roll"]
+
+        dice_rolls.append(DiceRoll(
+            dice_expression="1d20", rolls=atk_roll_result.individual_rolls,
+            modifier=atk_roll_result.modifier, total=atk_roll_result.total,
+            purpose="grapple_athletics", advantage=result["advantage"], disadvantage=result["disadvantage"],
+        ))
+        dice_rolls.append(DiceRoll(
+            dice_expression="1d20", rolls=def_roll_result.individual_rolls,
+            modifier=def_roll_result.modifier, total=def_roll_result.total,
+            purpose=f"grapple_contest ({target['name']})",
+        ))
+
+        if result["success"]:
+            # Apply grappled condition to target in combat state
+            target_combatant = self._get_combatant(combat, target["id"])
+            if target_combatant:
+                target_combatant.setdefault("conditions", []).append("grappled")
+            size_note = ""
+            if result["advantage"]:
+                size_note = " (size advantage!)"
+            desc = (
+                f"You grapple {target['name']}!{size_note} "
+                f"(Athletics {atk_roll_result.total} vs {def_roll_result.total}) "
+                f"{target['name']} is grappled — their speed is 0."
+            )
+            events.append({
+                "event_type": "GRAPPLE",
+                "description": f"Grappled {target['name']}.",
+                "actor_id": char["id"], "target_id": target["id"],
+                "mechanical_details": {
+                    "attacker_roll": atk_roll_result.total,
+                    "defender_roll": def_roll_result.total,
+                    "attacker_size": attacker_size,
+                    "defender_size": defender_size,
+                },
+            })
+        else:
+            size_note = ""
+            if result["disadvantage"]:
+                size_note = " (size disadvantage)"
+            desc = (
+                f"You fail to grapple {target['name']}!{size_note} "
+                f"(Athletics {atk_roll_result.total} vs {def_roll_result.total})"
+            )
+            events.append({
+                "event_type": "GRAPPLE_FAIL",
+                "description": f"Failed to grapple {target['name']}.",
+                "actor_id": char["id"], "target_id": target["id"],
+            })
+
+        return {
+            "success": True,
+            "description": desc,
+            "mutations": mutations,
+            "dice_rolls": dice_rolls,
+            "events": events,
+        }
 
     # -- Combat Spell/Item Resolution --
 

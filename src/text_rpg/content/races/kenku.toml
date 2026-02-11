@@ -1,0 +1,28 @@
+id = "kenku"
+name = "Kenku"
+description = "Corvid humanoids who long ago lost their wings and true voices, kenku are expert mimics and forgers, surviving through cunning imitation and resourcefulness."
+speed = 30
+size = "Medium"
+
+[ability_bonuses]
+dexterity = 2
+wisdom = 1
+
+[[traits]]
+name = "Expert Forgery"
+description = "You have proficiency with calligrapher's supplies. You can duplicate other creatures' handwriting and craftwork with remarkable accuracy."
+
+[[traits]]
+name = "Kenku Training"
+description = "You are proficient in two of the following skills of your choice: Acrobatics, Deception, Stealth, Sleight of Hand."
+
+[[traits]]
+name = "Mimicry"
+description = "You can mimic sounds and voices you have heard. A creature that hears the sounds you make can tell they are imitations with a successful Wisdom (Insight) check opposed by your Charisma (Deception) check."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Auran"
+note = "You can understand Auran but can only speak through mimicry of sounds and voices you have heard."

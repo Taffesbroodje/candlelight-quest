@@ -1,0 +1,30 @@
+id = "firbolg"
+name = "Firbolg"
+description = "Gentle forest giants with a deep connection to nature, firbolgs are reclusive guardians who prefer peace but will defend the wilds with formidable magic."
+speed = 30
+size = "Medium"
+
+[ability_bonuses]
+wisdom = 2
+strength = 1
+
+[[traits]]
+name = "Firbolg Magic"
+description = "You can cast Detect Magic and Disguise Self once each per short rest. When you use Disguise Self, you can appear up to 3 feet shorter, allowing you to blend in among smaller folk."
+
+[[traits]]
+name = "Hidden Step"
+description = "Once per short rest, as a bonus action, you can turn invisible until the start of your next turn or until you attack, make a damage roll, or force someone to make a saving throw."
+
+[[traits]]
+name = "Speech of Beast and Leaf"
+description = "You can communicate simple ideas with beasts and plants. They can understand the meaning of your words, though you have no special ability to understand them in return."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Elvish"
+
+[[languages]]
+name = "Giant"

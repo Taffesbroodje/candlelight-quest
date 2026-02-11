@@ -1,0 +1,35 @@
+id = "bugbear"
+name = "Bugbear"
+description = "Hulking and surprisingly stealthy, bugbears are large goblinoids that combine brute strength with an uncanny ability to move unseen despite their size."
+speed = 30
+size = "Large"
+
+[ability_bonuses]
+strength = 2
+dexterity = 1
+
+[[traits]]
+name = "Darkvision"
+description = "You can see in dim light within 60 feet as if it were bright light, and in darkness as if it were dim light."
+
+[[traits]]
+name = "Long-Limbed"
+description = "When you make a melee attack on your turn, your reach is 5 feet greater than normal."
+
+[[traits]]
+name = "Powerful Build"
+description = "You count as one size larger when determining your carrying capacity and the weight you can push, drag, or lift."
+
+[[traits]]
+name = "Surprise Attack"
+description = "If you hit a creature that has not yet taken a turn in combat, you deal an extra 2d6 damage."
+
+[[traits]]
+name = "Sneaky"
+description = "You have proficiency in the Stealth skill."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Goblin"

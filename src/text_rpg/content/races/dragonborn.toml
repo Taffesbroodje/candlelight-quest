@@ -1,0 +1,27 @@
+id = "dragonborn"
+name = "Dragonborn"
+description = "Proud and honorable, dragonborn are dragon-descended warriors who carry the elemental might of their draconic ancestors in their blood."
+speed = 30
+size = "Medium"
+
+[ability_bonuses]
+strength = 2
+charisma = 1
+
+[[traits]]
+name = "Breath Weapon"
+description = "Once per short rest, you can exhale destructive energy in a 15-foot cone, dealing 2d6 damage of your draconic ancestry type. Each creature in the area must make a Dexterity saving throw."
+
+[[traits]]
+name = "Draconic Resistance"
+description = "You have resistance to the damage type associated with your breath weapon."
+
+[[traits]]
+name = "Draconic Ancestry"
+description = "Choose a dragon type that determines your breath weapon's damage type and your damage resistance."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Draconic"

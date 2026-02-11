@@ -1,0 +1,31 @@
+id = "centaur"
+name = "Centaur"
+description = "Noble beings with the upper body of a humanoid and the lower body of a horse, centaurs roam vast plains and forests as proud hunters and warriors."
+speed = 40
+size = "Large"
+
+[ability_bonuses]
+strength = 2
+wisdom = 1
+
+[[traits]]
+name = "Charge"
+description = "If you move at least 30 feet straight toward a target and then hit it with a melee weapon attack on the same turn, you can deal an extra 1d6 damage."
+
+[[traits]]
+name = "Equine Build"
+description = "You count as one size larger for carrying capacity. Climbing costs you 4 feet of movement per 1 foot climbed. You cannot fit in spaces designed for Medium or smaller creatures."
+
+[[traits]]
+name = "Hooves"
+description = "Your hooves are natural melee weapons, which deal 1d6 bludgeoning damage on a hit."
+
+[[traits]]
+name = "Survivor"
+description = "You have proficiency in one of the following skills: Animal Handling, Medicine, Nature, or Survival."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Sylvan"

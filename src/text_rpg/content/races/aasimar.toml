@@ -1,0 +1,31 @@
+id = "aasimar"
+name = "Aasimar"
+description = "Touched by celestial power, aasimar are beings of divine heritage who carry the light of the upper planes within their souls."
+speed = 30
+size = "Medium"
+
+[ability_bonuses]
+charisma = 2
+wisdom = 1
+
+[[traits]]
+name = "Darkvision"
+description = "You can see in dim light within 60 feet as if it were bright light, and in darkness as if it were dim light."
+
+[[traits]]
+name = "Celestial Resistance"
+description = "You have resistance to necrotic damage and radiant damage."
+
+[[traits]]
+name = "Healing Hands"
+description = "Once per long rest, as an action, you can touch a creature and restore a number of hit points equal to your level."
+
+[[traits]]
+name = "Light Bearer"
+description = "You know the Light cantrip. Charisma is your spellcasting ability for it."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Celestial"

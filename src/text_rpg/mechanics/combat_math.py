@@ -4,6 +4,7 @@ from __future__ import annotations
 import random
 
 from text_rpg.mechanics.dice import DiceResult, roll, roll_d20, roll_with_advantage, roll_with_disadvantage
+from text_rpg.mechanics.size import grapple_size_advantage
 
 
 def attack_roll(
@@ -156,4 +157,71 @@ def npc_choose_action(npc: dict, targets: list[dict], context: dict | None = Non
         "action": "attack",
         "npc_id": npc.get("entity_id", npc.get("id", "")),
         "target_id": target.get("entity_id", target.get("id", "")),
+    }
+
+
+def grapple_check(
+    attacker_athletics: int,
+    attacker_prof: int,
+    attacker_proficient: bool,
+    defender_score: int,
+    defender_prof: int,
+    defender_proficient: bool,
+    attacker_size: str = "Medium",
+    defender_size: str = "Medium",
+) -> dict:
+    """Resolve a grapple attempt. Attacker Athletics vs defender Athletics or Acrobatics.
+
+    Returns dict with success, attacker_roll, defender_roll, auto_fail, advantage, disadvantage.
+    """
+    from text_rpg.mechanics.ability_scores import modifier
+    from text_rpg.mechanics.skills import skill_check
+
+    advantage, disadvantage = grapple_size_advantage(attacker_size, defender_size)
+
+    # Auto-fail: can't grapple creatures 2+ sizes larger
+    atk_rank = {"Small": -1, "Medium": 0, "Large": 1}.get(attacker_size, 0)
+    def_rank = {"Small": -1, "Medium": 0, "Large": 1}.get(defender_size, 0)
+    if def_rank - atk_rank >= 2:
+        return {
+            "success": False,
+            "auto_fail": True,
+            "reason": "Target is too large to grapple.",
+            "advantage": False,
+            "disadvantage": True,
+        }
+
+    # Attacker Athletics check (DC = defender's contested roll)
+    # Roll defender first to set the DC
+    def_mod = modifier(defender_score)
+    if defender_proficient:
+        def_mod += defender_prof
+    defender_roll = roll_d20()
+    defender_roll.modifier = def_mod
+    defender_roll.total = defender_roll.individual_rolls[0] + def_mod
+
+    # Attacker roll with potential size advantage/disadvantage
+    if advantage and not disadvantage:
+        best, _, _ = roll_with_advantage()
+        attacker_roll = best
+    elif disadvantage and not advantage:
+        worst, _, _ = roll_with_disadvantage()
+        attacker_roll = worst
+    else:
+        attacker_roll = roll_d20()
+
+    atk_mod = modifier(attacker_athletics)
+    if attacker_proficient:
+        atk_mod += attacker_prof
+    attacker_roll.modifier = atk_mod
+    attacker_roll.total = attacker_roll.individual_rolls[0] + atk_mod
+
+    success = attacker_roll.total >= defender_roll.total
+    return {
+        "success": success,
+        "auto_fail": False,
+        "attacker_roll": attacker_roll,
+        "defender_roll": defender_roll,
+        "advantage": advantage,
+        "disadvantage": disadvantage,
     }

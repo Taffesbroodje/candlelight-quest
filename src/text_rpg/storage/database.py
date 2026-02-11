@@ -26,6 +26,8 @@ _MIGRATIONS = [
     "016_traits",
     "017_elements_spells",
     "018_guilds_professions",
+    "019_origin_id",
+    "020_size",
 ]
 
 

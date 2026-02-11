@@ -1,0 +1,27 @@
+id = "changeling"
+name = "Changeling"
+description = "Shapeshifters who can alter their appearance at will, changelings live hidden among other races, their true nature a closely guarded secret."
+speed = 30
+size = "Medium"
+
+[ability_bonuses]
+charisma = 2
+
+[[traits]]
+name = "Shapechanger"
+description = "As an action, you can change your appearance to resemble any humanoid you have seen. The transformation lasts until you use this ability again or until you die."
+
+[[traits]]
+name = "Changeling Instincts"
+description = "You are proficient in two of the following skills of your choice: Deception, Insight, Intimidation, Persuasion."
+
+[[traits]]
+name = "Unsettling Visage"
+description = "When a creature you can see targets you with an attack, you can use your reaction to impose disadvantage on the attack roll by briefly shifting your appearance. Once you use this trait, you cannot use it again until you finish a short or long rest."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Two Others"
+note = "You know two additional languages of your choice."

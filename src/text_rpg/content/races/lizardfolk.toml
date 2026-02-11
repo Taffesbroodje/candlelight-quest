@@ -1,0 +1,31 @@
+id = "lizardfolk"
+name = "Lizardfolk"
+description = "Cold-blooded reptilian hunters with an alien mindset, lizardfolk view the world through a primal lens of survival, seeing most creatures as either predator, prey, or irrelevant."
+speed = 30
+size = "Medium"
+
+[ability_bonuses]
+constitution = 2
+wisdom = 1
+
+[[traits]]
+name = "Natural Armor"
+description = "When you are not wearing armor, your AC is 13 + your Dexterity modifier. You can use a shield and still gain this benefit."
+
+[[traits]]
+name = "Hungry Jaws"
+description = "Once per short rest, as a bonus action, you can make a special bite attack dealing 1d6 piercing damage. If you hit, you gain temporary hit points equal to your Constitution modifier (minimum of 1)."
+
+[[traits]]
+name = "Cunning Artisan"
+description = "During a short rest, you can harvest bone and hide from a slain creature to craft one of the following: a shield, a club, a javelin, or 1d4 darts or blowgun needles."
+
+[[traits]]
+name = "Hold Breath"
+description = "You can hold your breath for up to 15 minutes at a time."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Draconic"

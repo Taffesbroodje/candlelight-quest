@@ -33,11 +33,16 @@ def skill_check(
     dc: int,
     advantage: bool = False,
     disadvantage: bool = False,
+    size_modifier: int = 0,
 ) -> tuple[bool, DiceResult]:
-    """Make a skill check. Returns (success, dice_result)."""
+    """Make a skill check. Returns (success, dice_result).
+
+    size_modifier is added to the roll total (e.g. +2 stealth for Small).
+    """
     mod = modifier(ability_score)
     if is_proficient:
         mod += proficiency_bonus
+    mod += size_modifier
 
     if advantage and not disadvantage:
         best, _, _ = roll_with_advantage()

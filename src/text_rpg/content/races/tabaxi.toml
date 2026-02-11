@@ -1,0 +1,27 @@
+id = "tabaxi"
+name = "Tabaxi"
+description = "Feline humanoids driven by an insatiable curiosity, tabaxi are agile wanderers who roam the world in search of stories, artifacts, and new experiences."
+speed = 30
+size = "Medium"
+
+[ability_bonuses]
+dexterity = 2
+charisma = 1
+
+[[traits]]
+name = "Darkvision"
+description = "You can see in dim light within 60 feet as if it were bright light, and in darkness as if it were dim light."
+
+[[traits]]
+name = "Feline Agility"
+description = "When you move on your turn, you can double your speed until the end of the turn. Once you use this trait, you must stand still on a subsequent turn before you can use it again."
+
+[[traits]]
+name = "Cat's Claws"
+description = "You have a climbing speed of 20 feet. In addition, your claws are natural weapons that deal 1d4 slashing damage."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Feline"

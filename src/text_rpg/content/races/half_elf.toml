@@ -1,0 +1,27 @@
+id = "half_elf"
+name = "Half-Elf"
+description = "Born of two worlds, half-elves blend human ambition and adaptability with the grace and keen senses of their elven heritage."
+speed = 30
+size = "Medium"
+
+[ability_bonuses]
+charisma = 2
+dexterity = 1
+
+[[traits]]
+name = "Darkvision"
+description = "You can see in dim light within 60 feet as if it were bright light, and in darkness as if it were dim light."
+
+[[traits]]
+name = "Fey Ancestry"
+description = "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+
+[[traits]]
+name = "Skill Versatility"
+description = "You gain proficiency in two additional skills of your choice."
+
+[[languages]]
+name = "Common"
+
+[[languages]]
+name = "Elvish"
