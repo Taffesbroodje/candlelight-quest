@@ -1,0 +1,243 @@
+# =============================================================================
+# Necromancy Spells — Life force manipulation, death, and undeath
+# =============================================================================
+
+# Cantrips
+
+[[spells]]
+id = "chill_touch"
+name = "Chill Touch"
+level = 0
+school = "necromancy"
+classes = ["wizard", "sorcerer", "warlock"]
+casting_time = "action"
+range = 120
+duration = "1 round"
+components = ["V", "S"]
+description = "You create a ghostly, skeletal hand in the space of a creature within range. The target can't regain hit points until the start of your next turn."
+[spells.mechanics]
+type = "attack"
+damage_dice = "1d8"
+damage_type = "necrotic"
+
+[[spells]]
+id = "spare_the_dying"
+name = "Spare the Dying"
+level = 0
+school = "necromancy"
+classes = ["cleric"]
+casting_time = "action"
+range = 0
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You touch a living creature that has 0 hit points. The creature becomes stable."
+[spells.mechanics]
+type = "healing"
+healing_dice = "0d0"
+
+[[spells]]
+id = "toll_the_dead"
+name = "Toll the Dead"
+level = 0
+school = "necromancy"
+classes = ["cleric", "warlock", "wizard"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You point at one creature you can see and the sound of a dolorous bell fills the air. The target must succeed on a Wisdom save or take necrotic damage."
+[spells.mechanics]
+type = "save"
+save_ability = "wisdom"
+damage_dice = "1d8"
+damage_type = "necrotic"
+
+# 1st Level
+
+[[spells]]
+id = "inflict_wounds"
+name = "Inflict Wounds"
+level = 1
+school = "necromancy"
+classes = ["cleric"]
+casting_time = "action"
+range = 0
+duration = "instantaneous"
+components = ["V", "S"]
+description = "Make a melee spell attack against a creature you can reach. On a hit, the target takes 3d10 necrotic damage."
+[spells.mechanics]
+type = "attack"
+damage_dice = "3d10"
+damage_type = "necrotic"
+
+[[spells]]
+id = "false_life"
+name = "False Life"
+level = 1
+school = "necromancy"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 0
+duration = "1 hour"
+components = ["V", "S"]
+description = "Bolstering yourself with a necromantic facsimile of life, you gain 1d4 + 4 temporary hit points."
+[spells.mechanics]
+type = "buff"
+effect = "temp_hp"
+bonus_hp = 4
+
+# 2nd Level
+
+[[spells]]
+id = "gentle_repose"
+name = "Gentle Repose"
+level = 2
+school = "necromancy"
+classes = ["wizard", "cleric"]
+casting_time = "action"
+range = 0
+duration = "10 days"
+components = ["V", "S"]
+description = "You touch a corpse or other remains. For the duration, the target is protected from decay and can't become undead."
+[spells.mechanics]
+type = "utility"
+effect = "preserve_corpse"
+
+[[spells]]
+id = "ray_of_enfeeblement"
+name = "Ray of Enfeeblement"
+level = 2
+school = "necromancy"
+classes = ["warlock", "wizard"]
+casting_time = "action"
+range = 60
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "A black beam of enervating energy springs from your finger. The target deals only half damage with weapon attacks that use Strength."
+[spells.mechanics]
+type = "attack"
+damage_dice = "0d0"
+damage_type = "necrotic"
+
+# 3rd Level
+
+[[spells]]
+id = "vampiric_touch"
+name = "Vampiric Touch"
+level = 3
+school = "necromancy"
+classes = ["wizard", "warlock"]
+casting_time = "action"
+range = 0
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "The touch of your shadow-wreathed hand siphons life force. Make a melee spell attack. On a hit, deal 3d6 necrotic damage and regain half the damage dealt."
+[spells.mechanics]
+type = "attack"
+damage_dice = "3d6"
+damage_type = "necrotic"
+
+[[spells]]
+id = "bestow_curse"
+name = "Bestow Curse"
+level = 3
+school = "necromancy"
+classes = ["bard", "cleric", "wizard"]
+casting_time = "action"
+range = 0
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "You touch a creature, and that creature must succeed on a Wisdom save or become cursed."
+[spells.mechanics]
+type = "save"
+save_ability = "wisdom"
+effect = "cursed"
+
+# 4th Level
+
+[[spells]]
+id = "blight"
+name = "Blight"
+level = 4
+school = "necromancy"
+classes = ["wizard", "druid", "sorcerer", "warlock"]
+casting_time = "action"
+range = 30
+duration = "instantaneous"
+components = ["V", "S"]
+description = "Necromantic energy washes over a creature of your choice. The target must make a Constitution save."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "8d8"
+damage_type = "necrotic"
+
+# 5th Level
+
+[[spells]]
+id = "raise_dead"
+name = "Raise Dead"
+level = 5
+school = "necromancy"
+classes = ["cleric", "bard", "paladin"]
+casting_time = "action"
+range = 0
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You return a dead creature you touch to life, provided it has been dead no longer than 10 days."
+[spells.mechanics]
+type = "utility"
+effect = "raise_dead"
+
+[[spells]]
+id = "contagion"
+name = "Contagion"
+level = 5
+school = "necromancy"
+classes = ["cleric", "druid"]
+casting_time = "action"
+range = 0
+duration = "7 days"
+components = ["V", "S"]
+description = "Your touch inflicts disease. Make a melee spell attack. On a hit, you afflict the creature with a disease of your choice."
+[spells.mechanics]
+type = "attack"
+damage_dice = "0d0"
+damage_type = "necrotic"
+
+# 6th Level
+
+[[spells]]
+id = "heal"
+name = "Heal"
+level = 6
+school = "necromancy"
+classes = ["cleric", "druid"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V", "S"]
+description = "Choose a creature you can see within range. A surge of positive energy washes through the creature, causing it to regain 70 hit points."
+[spells.mechanics]
+type = "healing"
+healing_dice = "0d0"
+
+[[spells]]
+id = "harm"
+name = "Harm"
+level = 6
+school = "necromancy"
+classes = ["cleric"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You unleash a virulent disease on a creature. The target must make a Constitution save, taking 14d6 necrotic damage on a failure."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "14d6"
+damage_type = "necrotic"

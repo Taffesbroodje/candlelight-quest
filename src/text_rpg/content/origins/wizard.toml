@@ -1,0 +1,206 @@
+# =============================================================================
+# Wizard Origins — Backgrounds shaped by arcane study, curiosity, and ambition
+# =============================================================================
+
+[[origins]]
+id = "academy_dropout"
+name = "Academy Dropout"
+category = "wizard"
+summary = "A gifted but rebellious student who abandoned formal training to learn magic on their own terms."
+prologue = """
+The Thornfield Lyceum accepted you on a scholarship — a rare honor for someone \
+without family connections or inherited wealth. You arrived with a secondhand \
+spellbook and a hunger for knowledge that the academy's dusty professors could \
+not satisfy fast enough. The curriculum moved at the pace of the slowest student. \
+The theory lectures droned on for hours about principles you had intuited by age \
+twelve. You began skipping classes to read ahead, experimenting with cantrips in \
+your dormitory, and asking questions that your instructors found uncomfortable.
+
+The breaking point came in your second year, during a transmutation seminar. You \
+demonstrated a technique you had developed independently — elegant, efficient, and \
+entirely outside the academy's approved methodology. The professor called it \
+reckless. The dean called it dangerous. You called it progress. The disciplinary \
+hearing lasted twenty minutes. You packed your trunk in ten.
+
+You kept the fragment of your spellbook — the pages covered in your own annotations, \
+the margins crammed with original theories that no professor had validated and no \
+exam had tested. The Thornfield Inn serves cheap ale and asks no questions, which \
+is all you require while you decide what comes next. The academy taught you the \
+rules of magic. You intend to discover the exceptions."""
+ability_choices = ["intelligence", "dexterity", "charisma"]
+skill_proficiencies = ["arcana", "deception"]
+starting_equipment = ["spellbook_fragment", "common_clothes"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "thornfield_inn"
+feature_name = "Unorthodox Methods"
+feature_description = "Your self-taught approach to magic reveals shortcuts others overlook. Once per long rest, when you fail an arcana check, you may reroll it using an unconventional approach."
+required_races = []
+excluded_races = []
+required_classes = ["wizard"]
+excluded_classes = []
+
+[[origins]]
+id = "forbidden_knowledge_seeker"
+name = "Forbidden Knowledge Seeker"
+category = "wizard"
+summary = "A scholar who ventured beyond sanctioned lore, drawn to truths that others fear to uncover."
+prologue = """
+Every library has a restricted section, and you have broken into all of them. The \
+pursuit began innocently — a footnote in a history of the Second Age that referenced \
+a text no catalogue listed, a spell notation in a language that predated the common \
+tongue by millennia. You followed the thread with the patience of a spider and the \
+obsession of a moth circling flame. Each forbidden text led to another, each sealed \
+archive to a deeper one, until the knowledge you carried in your mind became \
+something that made other scholars uncomfortable to stand near.
+
+The masters at your former institution did not expel you. They simply stopped \
+inviting you to lectures, stopped responding to your correspondence, stopped \
+meeting your eyes in the halls. You were not dangerous — not yet — but you were \
+asking questions whose answers had been deliberately buried, and the people who \
+buried them had good reasons. You chose not to care about their reasons.
+
+The Sunken Reach called to you through the pages of a journal you found in a dead \
+collector's estate — descriptions of a temple complex swallowed by the bog, its \
+lower vaults still sealed with wards that predated the current magical tradition. \
+You stand at the threshold now, your crystal focus humming against your palm, the \
+journal's sketched map committed to memory. Whatever knowledge was locked away \
+down here, it was hidden for a reason. You intend to find out if that reason \
+still holds."""
+ability_choices = ["intelligence", "wisdom", "constitution"]
+skill_proficiencies = ["arcana", "history"]
+starting_equipment = ["old_journal", "crystal_focus"]
+bonus_gold = 8
+starting_region = "sunken_reach"
+starting_location = "sunken_temple"
+feature_name = "Occult Intuition"
+feature_description = "Your study of forbidden texts grants you a sense for concealed magical knowledge. You gain advantage on investigation checks to find hidden magical writings, wards, or sealed arcane chambers."
+required_races = []
+excluded_races = []
+required_classes = ["wizard"]
+excluded_classes = []
+
+[[origins]]
+id = "tower_heir"
+name = "Tower Heir"
+category = "wizard"
+summary = "Born into a lineage of mages, expected to uphold a family tradition of arcane mastery."
+prologue = """
+Your family has produced a wizard in every generation for as long as the records \
+survive — and your family keeps meticulous records. The tower outside Thornfield \
+Village, three stories of weathered stone wrapped in climbing ivy and faintly \
+glowing ward-lines, has been your home since birth. You learned to read from \
+spellbooks, took your first steps on floors inscribed with protective circles, \
+and cast your first cantrip before you lost your milk teeth. Magic is not a \
+calling for you. It is an inheritance, as natural and inescapable as the color \
+of your eyes.
+
+The expectations that accompany such a lineage are considerable. Your grandmother \
+was court wizard to a king. Your mother mapped the ley lines of the Verdant Reach \
+and published treatises that are still required reading at every academy in the \
+realm. Your crystal focus was cut from the same vein of quartz that powered your \
+great-grandfather's most famous enchantment. The weight of all this presses down \
+on you like a physical thing.
+
+You have talent — everyone agrees on that. What you lack, according to your mother, \
+is perspective. "A wizard who has never left the tower," she told you on your \
+nameday, "knows only tower magic." She handed you a scroll of pedigree — your \
+credentials, your proof of lineage, your ticket to respect among strangers — and \
+opened the front door. The village sprawls below, ordinary and mundane, and beyond \
+it lies a world that your family has studied from a distance for generations. You \
+are the first in a long time to walk into it."""
+ability_choices = ["intelligence", "charisma", "wisdom"]
+skill_proficiencies = ["arcana", "persuasion"]
+starting_equipment = ["crystal_focus", "scroll_of_pedigree"]
+bonus_gold = 15
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Arcane Heritage"
+feature_description = "Your bloodline carries a deep attunement to magical energy. You can sense the presence of active magical effects within 30 feet, though not their exact nature or source."
+required_races = []
+excluded_races = []
+required_classes = ["wizard"]
+excluded_classes = []
+
+[[origins]]
+id = "arcane_accident_survivor"
+name = "Arcane Accident Survivor"
+category = "wizard"
+summary = "A wizard scarred by a catastrophic magical mishap, forever changed by the forces they unleashed."
+prologue = """
+You do not remember the explosion itself. You remember the preparation — the careful \
+arrangement of reagents, the triple-checked circle of containment, the thrill of \
+attempting a transmutation that your notes assured you was theoretically sound. You \
+remember the hum of gathering energy, the way the air tasted of copper and ozone, \
+the moment when the equations in your mind aligned with the forces in the circle \
+and everything felt perfect, balanced, inevitable. Then light, and silence, and \
+three weeks of darkness.
+
+You woke in the overgrown ruins where they found you — half-buried in rubble that \
+had once been a workshop, your crystal focus fused to your palm by heat you do \
+not recall feeling. The healers who tended you spoke in careful voices about nerve \
+damage and residual thaumic contamination. Your hair grew back in a different color. \
+Your dreams are louder now, crowded with formulae that dissolve when you try to \
+write them down. Something changed inside you during those three weeks of darkness, \
+something the healers cannot name and you cannot undo.
+
+The ruins around you are scorched in patterns that scholars have traveled days to \
+study. They call the blast radius "remarkable." They call your survival \
+"statistically impossible." You call it Tuesday, because the alternative is to \
+scream. Your focus still hums against your scarred palm. The magic still answers \
+when you call it. But it answers differently now — rawer, wilder, less interested \
+in the careful boundaries you once trusted. You must learn to control what you \
+have become, or it will control you."""
+ability_choices = ["intelligence", "constitution", "wisdom"]
+skill_proficiencies = ["arcana", "medicine"]
+starting_equipment = ["crystal_focus", "common_clothes"]
+bonus_gold = 3
+starting_region = "thornwild"
+starting_location = "overgrown_ruins"
+feature_name = "Thaumic Scarring"
+feature_description = "The residual magic in your body grants you resistance to the first instance of magical damage you take each day, as the scars absorb and disperse a portion of the energy."
+required_races = []
+excluded_races = []
+required_classes = ["wizard"]
+excluded_classes = []
+
+[[origins]]
+id = "collector_of_oddities"
+name = "Collector of Oddities"
+category = "wizard"
+summary = "An eccentric scholar who catalogues the strange, the cursed, and the inexplicable."
+prologue = """
+Most wizards pursue power. You pursue curiosity. Your specialty — if a word so \
+dignified can be applied to your chaotic methodology — is the documentation and \
+classification of magical anomalies. Cursed teapots that pour backwards. Mirrors \
+that show reflections three seconds delayed. A compass that points toward the \
+nearest lie. Your collection, at its peak, filled four rented rooms above a \
+chandler's shop in Saltmere and required a rotating schedule of wards to keep \
+the more temperamental specimens from interacting.
+
+The academic establishment considers your work frivolous. You consider their work \
+boring, which you feel is a more damning criticism. While they debate the finer \
+points of evocation theory in their comfortable towers, you crawl through \
+marketplaces and estate sales, magnifying glass in hand, searching for the items \
+that do not behave as they should. Every oddity tells a story — about the magic \
+that created it, the hands that carried it, the world that produced circumstances \
+strange enough to bring it into being.
+
+The collection had to be sold when your landlord discovered what was in the rooms. \
+The incident with the self-replicating candelabra was, in hindsight, preventable. \
+You kept your journal and your magnifying glass — the two tools that matter most — \
+and relocated to the market district, where eccentricity is merely a flavor of \
+commerce. Your eye for the unusual has not dimmed. If anything, having lost your \
+collection has sharpened your hunger to build a new one."""
+ability_choices = ["intelligence", "charisma", "dexterity"]
+skill_proficiencies = ["arcana", "investigation"]
+starting_equipment = ["magnifying_glass", "old_journal"]
+bonus_gold = 10
+starting_region = "iron_coast"
+starting_location = "saltmere_market"
+feature_name = "Eye for the Anomalous"
+feature_description = "Your experience with magical curiosities allows you to immediately identify whether an object is enchanted, cursed, or otherwise magically unusual upon close inspection."
+required_races = []
+excluded_races = []
+required_classes = ["wizard"]
+excluded_classes = []

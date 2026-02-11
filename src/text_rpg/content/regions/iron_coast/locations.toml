@@ -1,0 +1,387 @@
+[[locations]]
+id = "saltmere_docks"
+name = "Saltmere Docks"
+region_id = "iron_coast"
+description = "A sprawling wooden wharf crowded with merchant ships, fishing boats, and the occasional warship. Crates of cargo are stacked high along the pier, and dockhands shout over the crash of waves. The smell of salt, tar, and fresh fish hangs heavy in the air."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "saltmere_market"
+direction = "north"
+description = "A wide stone ramp leads up from the docks to the bustling open-air market."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "fishers_cove"
+direction = "east"
+description = "A sandy footpath follows the shoreline east toward a small fishing village."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "tide_caves"
+direction = "south"
+description = "Slippery stone steps descend along the cliff face toward dark cave openings revealed by the retreating tide."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "saltmere_tavern"
+direction = "north"
+description = "A rickety wooden staircase leads up to the raucous sounds and warm glow of a dockside tavern."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "shipwright_yard"
+direction = "east"
+description = "The clanging of hammers and smell of fresh tar drift from the open-air boatyard just along the waterfront."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "saltmere_watchtower"
+direction = "east"
+description = "A stone path leads to the squat watchtower guarding the harbor entrance."
+is_locked = false
+
+[[locations]]
+id = "saltmere_market"
+name = "Saltmere Market"
+region_id = "iron_coast"
+description = "An open-air market where merchants from across the seas hawk exotic spices, silks, and curiosities. Colorful canvas awnings shade the stalls, and the babel of a dozen languages fills the air. Pickpockets are said to work the crowds with practiced ease."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "saltmere_docks"
+direction = "south"
+description = "The stone ramp descends back down to the busy docks."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "saltmere_guildhall"
+direction = "west"
+description = "An imposing stone building with iron-banded doors bears the crest of the Trade Guild."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "coastal_road"
+direction = "east"
+description = "A well-traveled road leaves the market and winds along the clifftops heading inland."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "saltmere_tavern"
+direction = "west"
+description = "The sound of a fiddle and raucous laughter drifts from a tavern wedged between market stalls and the dockside."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "inland_road_east"
+direction = "east"
+description = "A road climbs away from the market toward the scrubby hills east of Saltmere."
+is_locked = false
+
+[[locations]]
+id = "saltmere_guildhall"
+name = "Saltmere Guildhall"
+region_id = "iron_coast"
+description = "A grand stone building where the merchants' guild conducts its affairs. Polished hardwood floors and gilded chandeliers speak of the wealth that flows through Saltmere. Guild contracts and bounty notices are pinned to a board near the entrance."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "saltmere_market"
+direction = "east"
+description = "The guildhall doors open back onto the noisy market square."
+is_locked = false
+
+[[locations]]
+id = "tide_caves"
+name = "Tide Caves"
+region_id = "iron_coast"
+description = "A labyrinth of sea-carved tunnels beneath the cliffs, accessible only when the tide pulls back. The walls are slick with brine and barnacles, and the echoing drip of water masks other sounds. Smugglers have used these passages for generations to move contraband past the harbor watch."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "saltmere_docks"
+direction = "north"
+description = "The stone steps climb back up the cliff face to the safety of the docks."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "smuggler_den"
+direction = "south"
+description = "Behind a curtain of falling water, a narrow passage leads deeper into a hidden chamber."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "beach_camp"
+direction = "east"
+description = "A low tunnel opens onto a rocky beach strewn with shipwreck debris."
+is_locked = false
+
+[[locations]]
+id = "storm_point_lighthouse"
+name = "Storm Point Lighthouse"
+region_id = "iron_coast"
+description = "A tall stone lighthouse perched on a windswept promontory high above the crashing waves. Its beacon has been dark for months, and the keeper who once tended it now speaks of strange lights in the sea at night. Gulls nest in the crumbling upper gallery."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "coastal_road"
+direction = "south"
+description = "A narrow path switchbacks down from the lighthouse to rejoin the coastal road."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "cliff_path"
+direction = "north"
+description = "A precarious cliffside trail with a fraying rope rail leads back toward the harbor heights."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "salt_flats"
+direction = "west"
+description = "The ground levels out into a broad, blindingly white expanse of crusted salt."
+is_locked = false
+
+[[locations]]
+id = "coastal_road"
+name = "Coastal Road"
+region_id = "iron_coast"
+description = "A packed-earth road that winds along the clifftops between Saltmere and the inland regions. Wildflowers cling to the chalky soil, and the sea breeze carries the tang of salt. Travelers should beware — the road's isolation makes it a favorite hunting ground for raiders."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "saltmere_market"
+direction = "west"
+description = "The road leads back toward the market stalls and masts of Saltmere."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "storm_point_lighthouse"
+direction = "north"
+description = "A narrow side path climbs the promontory toward the dark silhouette of the old lighthouse."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "fishers_cove"
+direction = "east"
+description = "The road dips down toward a sheltered cove where fishing nets hang to dry."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "salt_flats"
+direction = "north"
+description = "A dusty track leads off the road toward a shimmering white plain of crusted salt."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "inland_road_east"
+direction = "northeast"
+description = "A branch in the road climbs northeast through scrubby hillside away from the coast."
+is_locked = false
+
+[[locations]]
+id = "fishers_cove"
+name = "Fisher's Cove"
+region_id = "iron_coast"
+description = "A quiet fishing village nestled in a sheltered bay east of Saltmere. Brightly painted boats bob at anchor, and nets are spread across wooden racks to dry. The villagers are friendly but wary of outsiders, having suffered from pirate raids in recent seasons."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "saltmere_docks"
+direction = "west"
+description = "The sandy footpath follows the shoreline back to the busy port of Saltmere."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "coastal_road"
+direction = "west"
+description = "A trail climbs from the cove up to the main coastal road."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "shipwright_yard"
+direction = "north"
+description = "A wooden boardwalk follows the waterline north to the boatyard where hulls are under construction."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "beach_camp"
+direction = "south"
+description = "The shoreline curves south past the cove to a rocky beach littered with shipwreck debris."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "oyster_beds"
+direction = "east"
+description = "At low tide, vast mudflats stretch east from the cove where locals harvest oysters and clams."
+is_locked = false
+
+# -- New locations --
+
+[[locations]]
+id = "saltmere_tavern"
+name = "Saltmere Tavern"
+region_id = "iron_coast"
+description = "A rowdy dockside tavern reeking of salt and spilled ale. Sailors swap tales of sea monsters while pirates nurse rum in shadowed corners. A fiddler plays jaunty tunes over the din."
+location_type = "tavern"
+
+[[locations.connections]]
+target_location_id = "saltmere_docks"
+direction = "south"
+description = "A rickety staircase descends back to the bustling docks below."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "saltmere_market"
+direction = "east"
+description = "A narrow alley leads out toward the noise and color of the open-air market."
+is_locked = false
+
+[[locations]]
+id = "shipwright_yard"
+name = "Shipwright Yard"
+region_id = "iron_coast"
+description = "An open-air boatyard where the skeletons of half-built vessels rise like wooden ribcages. The sound of caulking hammers and the smell of tar fill the air."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "saltmere_docks"
+direction = "west"
+description = "The waterfront path leads west back to the main docks."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "fishers_cove"
+direction = "south"
+description = "A wooden boardwalk follows the shoreline south toward a quiet fishing village."
+is_locked = false
+
+[[locations]]
+id = "smuggler_den"
+name = "Smuggler's Den"
+region_id = "iron_coast"
+description = "A hidden chamber carved into the tide cave walls, concealed behind a waterfall. Crates of contraband are stacked high, and escape tunnels lead in every direction."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "tide_caves"
+direction = "north"
+description = "The narrow passage leads back through the waterfall curtain into the main tide caves."
+is_locked = false
+
+[[locations]]
+id = "saltmere_watchtower"
+name = "Saltmere Watchtower"
+region_id = "iron_coast"
+description = "A squat stone tower at the harbor entrance, manned day and night by the port watch. Signal flags and a brass telescope allow them to spot approaching ships."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "saltmere_docks"
+direction = "west"
+description = "The stone path leads back to the busy docks."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "cliff_path"
+direction = "south"
+description = "A precarious cliffside trail with a fraying rope rail descends along the sea cliffs."
+is_locked = false
+
+[[locations]]
+id = "beach_camp"
+name = "Beach Camp"
+region_id = "iron_coast"
+description = "A rocky beach littered with shipwreck debris — splintered masts, torn sails, and barnacle-crusted hull planks. Scavengers pick through the wreckage at low tide."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "fishers_cove"
+direction = "north"
+description = "The shoreline curves north past the rocks toward the sheltered fishing cove."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "tide_caves"
+direction = "west"
+description = "A low tunnel in the cliff face leads into the echoing darkness of the tide caves."
+is_locked = false
+
+[[locations]]
+id = "oyster_beds"
+name = "Oyster Beds"
+region_id = "iron_coast"
+description = "Vast tidal flats exposed at low tide, where locals harvest oysters and clams. Occasionally a lucky diver finds a pearl worth a small fortune."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "fishers_cove"
+direction = "east"
+description = "The mudflats give way to firmer sand leading back toward the fishing cove."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "beach_camp"
+direction = "south"
+description = "The tidal flats slope south toward a rocky beach strewn with wreckage."
+is_locked = false
+
+[[locations]]
+id = "cliff_path"
+name = "Cliff Path"
+region_id = "iron_coast"
+description = "A precarious trail carved into the seaside cliffs, with nothing but a fraying rope rail between you and the crashing waves far below. It connects the harbor heights to the lighthouse."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "saltmere_watchtower"
+direction = "north"
+description = "The trail climbs up to the squat stone watchtower overlooking the harbor."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "storm_point_lighthouse"
+direction = "south"
+description = "The cliffside path winds south toward the windswept promontory and the dark lighthouse."
+is_locked = false
+
+[[locations]]
+id = "salt_flats"
+name = "Salt Flats"
+region_id = "iron_coast"
+description = "A broad expanse of evaporated seawater leaving behind crusted white salt. Workers scrape and bag the mineral under the harsh sun. The glare is blinding."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "coastal_road"
+direction = "south"
+description = "A dusty track leads back south to the coastal road."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "storm_point_lighthouse"
+direction = "east"
+description = "The salt crust gives way to windswept grass as the path approaches the lighthouse promontory."
+is_locked = false
+
+[[locations]]
+id = "inland_road_east"
+name = "Inland Road East"
+region_id = "iron_coast"
+description = "The road east from Saltmere climbs away from the coast through scrubby hillside. The salt air fades, replaced by the smell of grass and earth. A distant town's smoke rises ahead."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "saltmere_market"
+direction = "west"
+description = "The road descends back toward the coast and the market stalls of Saltmere."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "coastal_road"
+direction = "south"
+description = "A branch in the road heads south to rejoin the main coastal road."
+is_locked = false
+
+[locations.properties]
+border_region = "stormhaven"
+border_direction = "east"

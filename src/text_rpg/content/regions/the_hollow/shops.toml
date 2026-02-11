@@ -1,0 +1,157 @@
+# The Hollow shops — haunted swamp
+
+[[shops]]
+id = "last_light_inn"
+owner_entity_id = "innkeeper_mercy"
+location_id = "hollows_inn"
+shop_type = "tavern"
+
+[[shops.stock]]
+item_id = "rations"
+quantity = 15
+base_price = 1
+base_stock = 15
+
+[[shops.stock]]
+item_id = "cooked_meal"
+quantity = 5
+base_price = 3
+base_stock = 5
+
+[[shops.stock]]
+item_id = "hearty_stew"
+quantity = 3
+base_price = 6
+base_stock = 3
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 3
+base_price = 50
+base_stock = 3
+
+[[shops.stock]]
+item_id = "waterskin"
+quantity = 5
+base_price = 2
+base_stock = 5
+
+[[shops.stock]]
+item_id = "antidote"
+quantity = 3
+base_price = 15
+base_stock = 3
+
+[[shops]]
+id = "scavenger_market"
+owner_entity_id = "scavenger_muck"
+location_id = "hollows_market"
+shop_type = "general"
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 5
+base_price = 50
+base_stock = 5
+
+[[shops.stock]]
+item_id = "antidote"
+quantity = 5
+base_price = 15
+base_stock = 5
+
+[[shops.stock]]
+item_id = "torch"
+quantity = 15
+base_price = 1
+base_stock = 15
+
+[[shops.stock]]
+item_id = "lantern"
+quantity = 5
+base_price = 5
+base_stock = 5
+
+[[shops.stock]]
+item_id = "rations"
+quantity = 20
+base_price = 1
+base_stock = 20
+
+[[shops.stock]]
+item_id = "hempen_rope"
+quantity = 10
+base_price = 1
+base_stock = 10
+
+[[shops]]
+id = "witch_shop"
+owner_entity_id = "the_bog_witch"
+location_id = "witch_tower"
+shop_type = "general"
+
+[[shops.stock]]
+item_id = "nightshade"
+quantity = 5
+base_price = 10
+base_stock = 5
+
+[[shops.stock]]
+item_id = "moonpetal"
+quantity = 8
+base_price = 8
+base_stock = 8
+
+[[shops.stock]]
+item_id = "arcane_dust"
+quantity = 5
+base_price = 10
+base_stock = 5
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 3
+base_price = 50
+base_stock = 3
+
+[[shops.stock]]
+item_id = "antidote"
+quantity = 3
+base_price = 15
+base_stock = 3
+
+[[shops]]
+id = "verdis_alchemy"
+owner_entity_id = "alchemist_verdis"
+location_id = "alchemist_grove"
+shop_type = "apothecary"
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 5
+base_price = 45
+base_stock = 5
+
+[[shops.stock]]
+item_id = "antidote"
+quantity = 8
+base_price = 12
+base_stock = 8
+
+[[shops.stock]]
+item_id = "healing_herb"
+quantity = 15
+base_price = 2
+base_stock = 15
+
+[[shops.stock]]
+item_id = "moonpetal"
+quantity = 5
+base_price = 8
+base_stock = 5
+
+[[shops.stock]]
+item_id = "herbalism_kit"
+quantity = 2
+base_price = 5
+base_stock = 2

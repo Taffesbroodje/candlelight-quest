@@ -1,0 +1,343 @@
+[[npcs]]
+id = "forgemaster_durgan"
+name = "Forgemaster Durgan"
+entity_type = "npc"
+profession = "blacksmith"
+description = "A barrel-chested dwarf with a magnificently braided black beard singed at the tips from years at the volcanic forge. His skin is ruddy from the heat, and his arms are corded with muscle. He speaks few words, but each one carries the weight of stone, and his craftsmanship is legendary throughout the highlands."
+location_id = "cinderhold_forge"
+dialogue_tags = ["greeting", "shop_weapons", "shop_armor", "craft_info", "lore"]
+behaviors = ["gruff", "merchant", "craftsman"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 45
+hp_max = 45
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 18
+dexterity = 10
+constitution = 16
+intelligence = 14
+wisdom = 13
+charisma = 10
+
+[npcs.schedule]
+dawn = "cinderhold_forge"
+morning = "cinderhold_forge"
+midday = "cinderhold_tavern"
+afternoon = "cinderhold_forge"
+evening = "cinderhold_forge"
+night = "cinderhold_forge"
+late_night = "cinderhold_forge"
+
+[npcs.properties]
+preferred_gifts = ["iron_ingot", "silver_ore", "dragon_scale_fragment"]
+disliked_gifts = ["rations", "nightshade"]
+
+[[npcs.attacks]]
+name = "Forge Hammer"
+damage_dice = "1d10"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "tavern_keeper_hild"
+name = "Tavern Keeper Hild"
+entity_type = "npc"
+profession = "innkeeper"
+description = "A stout human woman with ash-blonde hair pulled back in a tight bun and laugh lines etched deep around her eyes. She runs The Ember Rest with no-nonsense efficiency, breaking up bar fights with a stern word and a raised fist. Her dark ale is the best in the highlands."
+location_id = "cinderhold_tavern"
+dialogue_tags = ["greeting", "rumors", "quest_info", "shop_food"]
+behaviors = ["friendly", "merchant", "information"]
+is_hostile = false
+is_alive = true
+level = 3
+hp_current = 20
+hp_max = 20
+ac = 11
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 11
+constitution = 14
+intelligence = 12
+wisdom = 14
+charisma = 15
+
+[npcs.schedule]
+dawn = "cinderhold_tavern"
+morning = "cinderhold_tavern"
+midday = "cinderhold_gate"
+afternoon = "cinderhold_tavern"
+evening = "cinderhold_tavern"
+night = "cinderhold_tavern"
+late_night = "cinderhold_tavern"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_herb", "moonpetal"]
+disliked_gifts = ["poison_vial", "nightshade"]
+
+[[npcs.attacks]]
+name = "Iron Ladle"
+damage_dice = "1d4"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "mine_boss_gretta"
+name = "Mine Boss Gretta"
+entity_type = "npc"
+profession = "mine_boss"
+description = "A broad-shouldered human woman with close-cropped grey hair and a face marked by a jagged scar running from temple to jaw. She commands the mining crews with gruff authority and knows every tunnel in the deep mines. Her eyes are hard, but she is fiercely protective of her workers."
+location_id = "deep_mines"
+dialogue_tags = ["greeting", "quest_info", "lore", "warnings"]
+behaviors = ["authoritative", "quest_giver", "protector"]
+is_hostile = false
+is_alive = true
+level = 4
+hp_current = 32
+hp_max = 32
+ac = 15
+unavailable_periods = ["late_night", "night"]
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 12
+constitution = 15
+intelligence = 12
+wisdom = 14
+charisma = 13
+
+[npcs.schedule]
+dawn = "deep_mines"
+morning = "deep_mines"
+midday = "cinderhold_tavern"
+afternoon = "deep_mines"
+evening = "cinderhold_gate"
+night = "cinderhold_tavern"
+late_night = "cinderhold_tavern"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "lantern", "rations"]
+disliked_gifts = ["arcane_dust", "spider_silk"]
+
+[[npcs.attacks]]
+name = "Miner's Pick"
+damage_dice = "1d8"
+damage_type = "piercing"
+
+[[npcs]]
+id = "guard_captain_ashwin"
+name = "Guard Captain Ashwin"
+entity_type = "npc"
+profession = "guard_captain"
+description = "A lean, sharp-eyed human man in dark plate armor dusted with volcanic ash. He keeps watch over Cinderhold's gate with quiet intensity, his hand never far from the hilt of his greatsword. Bandits and monsters alike have learned to give him a wide berth."
+location_id = "cinderhold_gate"
+dialogue_tags = ["greeting", "guard_info", "quest_info", "bounties"]
+behaviors = ["stoic", "quest_giver", "protector"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 44
+hp_max = 44
+ac = 18
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 13
+constitution = 14
+intelligence = 12
+wisdom = 15
+charisma = 14
+
+[npcs.schedule]
+dawn = "cinderhold_gate"
+morning = "cinderhold_gate"
+midday = "cinderhold_gate"
+afternoon = "highland_road"
+evening = "cinderhold_gate"
+night = "cinderhold_gate"
+late_night = "cinderhold_gate"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "rations"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Greatsword"
+damage_dice = "2d6"
+damage_type = "slashing"
+
+[[npcs]]
+id = "hermit_pyra"
+name = "Hermit Pyra"
+entity_type = "npc"
+profession = "hermit"
+description = "A wiry tiefling woman with ember-red skin and small curving horns, wrapped in layers of ash-grey cloth. She has lived alone at the sulfur springs for years, claiming the volcanic spirits speak to her. Despite her wild appearance, she possesses deep knowledge of herbs, minerals, and the mountain's moods."
+location_id = "sulfur_springs"
+dialogue_tags = ["greeting", "lore", "healing", "quest_info", "prophecy"]
+behaviors = ["mystical", "healer", "eccentric"]
+is_hostile = false
+is_alive = true
+level = 3
+hp_current = 18
+hp_max = 18
+ac = 12
+unavailable_periods = []
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 13
+constitution = 12
+intelligence = 15
+wisdom = 18
+charisma = 14
+
+[npcs.schedule]
+dawn = "sulfur_springs"
+morning = "sulfur_springs"
+midday = "obsidian_plateau"
+afternoon = "sulfur_springs"
+evening = "sulfur_springs"
+night = "sulfur_springs"
+late_night = "sulfur_springs"
+
+[npcs.properties]
+preferred_gifts = ["healing_herb", "moonpetal", "arcane_dust"]
+disliked_gifts = ["iron_ingot", "dagger"]
+
+[[npcs.attacks]]
+name = "Fire Bolt"
+damage_dice = "1d10"
+damage_type = "fire"
+
+[[npcs]]
+id = "brother_foundry"
+name = "Brother Foundry"
+entity_type = "npc"
+profession = "priest"
+description = "A stocky dwarf priest with burn scars on his hands from years of tending the eternal flame. His deep voice rumbles like distant thunder when he chants prayers to the Forge Father."
+location_id = "cinderhold_shrine"
+dialogue_tags = ["greeting", "healing", "blessing", "lore", "shop_supplies"]
+behaviors = ["devout", "healer", "spiritual"]
+is_hostile = false
+is_alive = true
+level = 4
+hp_current = 30
+hp_max = 30
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 10
+constitution = 15
+intelligence = 13
+wisdom = 17
+charisma = 14
+
+[npcs.schedule]
+dawn = "cinderhold_shrine"
+morning = "cinderhold_shrine"
+midday = "cinderhold_shrine"
+afternoon = "cinderhold_shrine"
+evening = "cinderhold_shrine"
+night = "cinderhold_tavern"
+late_night = "cinderhold_shrine"
+
+[npcs.properties]
+preferred_gifts = ["holy_symbol", "healing_herb", "iron_ingot"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Sacred Flame"
+damage_dice = "1d8"
+damage_type = "radiant"
+
+[[npcs]]
+id = "prospector_quinn"
+name = "Prospector Quinn"
+entity_type = "npc"
+profession = "prospector"
+description = "A wiry gnome with goggles permanently pushed up on her forehead and pockets bulging with rock samples. She's convinced there's mithral somewhere in the ash wastes and won't stop looking."
+location_id = "hot_springs_camp"
+dialogue_tags = ["greeting", "rumors", "lore", "quest_info"]
+behaviors = ["eccentric", "information", "persistent"]
+is_hostile = false
+is_alive = true
+level = 2
+hp_current = 14
+hp_max = 14
+ac = 11
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 13
+constitution = 12
+intelligence = 16
+wisdom = 12
+charisma = 11
+
+[npcs.schedule]
+dawn = "hot_springs_camp"
+morning = "hot_springs_camp"
+midday = "ash_wastes"
+afternoon = "ash_wastes"
+evening = "sulfur_springs"
+night = "hot_springs_camp"
+late_night = "hot_springs_camp"
+
+[npcs.properties]
+preferred_gifts = ["iron_ingot", "healing_potion", "lantern"]
+disliked_gifts = ["rations", "bedroll"]
+
+[[npcs.attacks]]
+name = "Mining Pick"
+damage_dice = "1d6"
+damage_type = "piercing"
+
+[[npcs]]
+id = "drill_sergeant_kova"
+name = "Drill Sergeant Kova"
+entity_type = "npc"
+profession = "guard"
+description = "A scarred half-orc woman who trains the Cinderhold militia with ruthless efficiency. Her bark is worse than her bite, but her bite is still formidable."
+location_id = "cinderhold_barracks"
+dialogue_tags = ["greeting", "guard_info", "quest_info", "training"]
+behaviors = ["authoritative", "protector", "disciplined"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 44
+hp_max = 44
+ac = 17
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 17
+dexterity = 13
+constitution = 15
+intelligence = 10
+wisdom = 14
+charisma = 13
+
+[npcs.schedule]
+dawn = "cinderhold_barracks"
+morning = "cinderhold_barracks"
+midday = "cinderhold_barracks"
+afternoon = "cinderhold_barracks"
+evening = "highland_road"
+night = "cinderhold_tavern"
+late_night = "cinderhold_barracks"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "rations"]
+disliked_gifts = ["arcane_dust", "moonpetal"]
+
+[[npcs.attacks]]
+name = "Longsword"
+damage_dice = "1d8"
+damage_type = "slashing"

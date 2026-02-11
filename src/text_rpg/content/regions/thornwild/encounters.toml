@@ -1,0 +1,239 @@
+[[encounters]]
+id = "thornwild_wolves"
+name = "Thornwild Wolves"
+location_ids = ["thornwild_trails", "beast_den"]
+encounter_chance = 0.35
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "beast_hide", chance = 0.4},
+    {id = "healing_herb", chance = 0.3},
+]
+gold_min = 0
+gold_max = 5
+
+[[encounters.entities]]
+id = "thornwild_wolf"
+name = "Thornwild Wolf"
+entity_type = "enemy"
+description = "A lean grey wolf with thorns tangled in its thick fur, its amber eyes gleaming with feral cunning."
+level = 1
+hp_max = 11
+ac = 13
+count_min = 2
+count_max = 4
+xp_value = 25
+
+[encounters.entities.ability_scores]
+strength = 12
+dexterity = 15
+constitution = 12
+intelligence = 3
+wisdom = 12
+charisma = 6
+
+[[encounters.entities.attacks]]
+name = "Bite"
+damage_dice = "2d4"
+damage_bonus = 2
+damage_type = "piercing"
+
+[[encounters]]
+id = "awakened_vines"
+name = "Awakened Vines"
+location_ids = ["overgrown_ruins", "fey_crossing"]
+encounter_chance = 0.25
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "healing_herb", chance = 0.5},
+    {id = "enchanted_thread", chance = 0.2},
+]
+gold_min = 0
+gold_max = 8
+
+[[encounters.entities]]
+id = "awakened_vine"
+name = "Awakened Vine"
+entity_type = "enemy"
+description = "A writhing mass of thorny vines animated by residual fey magic, lashing out at anything that draws near."
+level = 2
+hp_max = 18
+ac = 12
+count_min = 1
+count_max = 2
+xp_value = 50
+
+[encounters.entities.ability_scores]
+strength = 15
+dexterity = 8
+constitution = 14
+intelligence = 1
+wisdom = 10
+charisma = 1
+
+[[encounters.entities.attacks]]
+name = "Vine Lash"
+damage_dice = "1d8"
+damage_bonus = 1
+damage_type = "bludgeoning"
+
+# -- Puzzle encounters --
+
+[[encounters]]
+id = "fey_riddle"
+name = "Fey Riddle"
+location_ids = ["fey_crossing"]
+encounter_chance = 0.3
+fight_type = "puzzle"
+description = "The air shimmers and a disembodied voice echoes through the clearing, playful yet commanding: 'Answer my riddle, mortal, and I shall let you pass. Fail, and the thorns shall claim you.'"
+
+[encounters.puzzle]
+puzzle_type = "riddle"
+dc = 14
+riddle_question = "I am not alive but I grow; I don't have lungs but I need air; I don't have a mouth but water kills me. What am I?"
+riddle_answer = "fire"
+
+[encounters.loot]
+items = [
+    {id = "moonpetal", chance = 0.6},
+    {id = "arcane_dust", chance = 0.4},
+    {id = "enchanted_thread", chance = 0.2},
+]
+gold_min = 10
+gold_max = 35
+
+[[encounters]]
+id = "dire_boar"
+name = "Dire Boar"
+location_ids = ["beast_den", "thornwild_trails"]
+encounter_chance = 0.2
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "beast_hide", chance = 0.8},
+    {id = "healing_potion", chance = 0.3},
+    {id = "rations", chance = 0.5},
+]
+gold_min = 10
+gold_max = 25
+
+[[encounters.entities]]
+id = "dire_boar"
+name = "Dire Boar"
+entity_type = "enemy"
+description = "A massive boar the size of a pony, with tusks like curved daggers and coarse bristly hide scarred from countless fights. It paws the earth and snorts furiously."
+level = 3
+hp_max = 30
+ac = 14
+count_min = 1
+count_max = 1
+xp_value = 100
+
+[encounters.entities.ability_scores]
+strength = 17
+dexterity = 10
+constitution = 16
+intelligence = 2
+wisdom = 12
+charisma = 5
+
+[[encounters.entities.attacks]]
+name = "Tusk Charge"
+damage_dice = "2d6"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[encounters]]
+id = "spider_colony"
+name = "Spider Colony"
+location_ids = ["spider_nest", "bramble_gate"]
+encounter_chance = 0.4
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "spider_silk", chance = 0.6},
+    {id = "antidote", chance = 0.3},
+    {id = "healing_herb", chance = 0.2},
+]
+gold_min = 0
+gold_max = 8
+
+[[encounters.entities]]
+id = "forest_spider"
+name = "Forest Spider"
+entity_type = "enemy"
+description = "A dog-sized spider with mottled green-brown carapace, blending perfectly with the forest floor. Venom glistens on its fangs."
+level = 2
+hp_max = 14
+ac = 13
+count_min = 3
+count_max = 5
+xp_value = 25
+
+[encounters.entities.ability_scores]
+strength = 10
+dexterity = 15
+constitution = 11
+intelligence = 2
+wisdom = 10
+charisma = 4
+
+[[encounters.entities.attacks]]
+name = "Venomous Bite"
+damage_dice = "1d6"
+damage_bonus = 1
+damage_type = "piercing"
+
+[[encounters]]
+id = "forest_elemental"
+name = "Forest Elemental"
+location_ids = ["moonwell", "mushroom_hollow"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "enchanted_thread", chance = 0.7},
+    {id = "moonpetal", chance = 0.5},
+    {id = "arcane_dust", chance = 0.4},
+    {id = "healing_potion", chance = 0.3},
+]
+gold_min = 20
+gold_max = 50
+
+[[encounters.entities]]
+id = "forest_elemental"
+name = "Forest Elemental"
+entity_type = "enemy"
+description = "A towering mass of tangled roots, living wood, and swirling leaves given terrible purpose. Its eyes are knotholes burning with emerald fire, and the ground trembles with each step."
+level = 4
+hp_max = 38
+ac = 14
+count_min = 1
+count_max = 1
+xp_value = 200
+
+[encounters.entities.ability_scores]
+strength = 16
+dexterity = 10
+constitution = 16
+intelligence = 6
+wisdom = 14
+charisma = 8
+
+[[encounters.entities.attacks]]
+name = "Slam"
+damage_dice = "2d8"
+damage_bonus = 3
+damage_type = "bludgeoning"
+
+[[encounters.entities.attacks]]
+name = "Entangle"
+damage_dice = "1d6"
+damage_bonus = 0
+damage_type = "bludgeoning"

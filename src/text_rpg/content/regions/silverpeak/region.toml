@@ -1,0 +1,6 @@
+id = "silverpeak"
+name = "Silverpeak"
+description = "A mountain fortress-city renowned for the finest smiths, gem cutters, and enchanters in the realm. Built into the peak itself with both a surface city and an extensive undercity, Silverpeak hosts dwarven clans, human merchants, and elven enchanters. Rumors persist of an ancient dragon sleeping in the deepest chambers."
+level_range_min = 7
+level_range_max = 12
+climate = "alpine"

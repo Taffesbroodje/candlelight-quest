@@ -74,6 +74,10 @@ class SaveGameRepo:
         with self.db.get_connection() as conn:
             # Tables added in later migrations (order: leaf tables first)
             for table in (
+                "discovered_combinations",
+                "custom_spells",
+                "character_traits",
+                "behavior_events",
                 "snapshots",
                 "location_connections",
                 "companions",

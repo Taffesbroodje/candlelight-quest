@@ -1,0 +1,257 @@
+# =============================================================================
+# Conjuration Spells — Summoning, teleportation, and creation
+# =============================================================================
+
+# Cantrips
+
+[[spells]]
+id = "poison_spray"
+name = "Poison Spray"
+level = 0
+school = "conjuration"
+classes = ["wizard", "druid", "sorcerer", "warlock"]
+casting_time = "action"
+range = 10
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You extend your hand toward a creature and project a puff of noxious gas."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "1d12"
+damage_type = "poison"
+
+# 1st Level
+
+[[spells]]
+id = "entangle"
+name = "Entangle"
+level = 1
+school = "conjuration"
+classes = ["druid", "ranger"]
+casting_time = "action"
+range = 90
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "Grasping weeds and vines sprout from the ground in a 20-foot square. Creatures must succeed on a Strength save or be restrained."
+[spells.mechanics]
+type = "save"
+save_ability = "strength"
+effect = "restrained"
+
+[[spells]]
+id = "goodberry"
+name = "Goodberry"
+level = 1
+school = "conjuration"
+classes = ["druid", "ranger"]
+casting_time = "action"
+range = 0
+duration = "instantaneous"
+components = ["V", "S"]
+description = "Up to ten berries appear in your hand. Each berry restores 1 hit point when consumed and provides enough nourishment for one day."
+[spells.mechanics]
+type = "healing"
+healing_dice = "1d1"
+
+[[spells]]
+id = "find_familiar"
+name = "Find Familiar"
+level = 1
+school = "conjuration"
+classes = ["wizard"]
+casting_time = "action"
+range = 10
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You gain the service of a familiar, a spirit that takes an animal form you choose."
+[spells.mechanics]
+type = "utility"
+effect = "summon_familiar"
+
+[[spells]]
+id = "ensnaring_strike"
+name = "Ensnaring Strike"
+level = 1
+school = "conjuration"
+classes = ["ranger"]
+casting_time = "bonus_action"
+range = 0
+duration = "1 minute"
+concentration = true
+components = ["V"]
+description = "The next time you hit a creature with a weapon attack, a writhing mass of thorny vines appears. The target must succeed on a Strength save or be restrained."
+[spells.mechanics]
+type = "buff"
+effect = "smite"
+damage_dice = "1d6"
+damage_type = "piercing"
+
+# 2nd Level
+
+[[spells]]
+id = "cloud_of_daggers"
+name = "Cloud of Daggers"
+level = 2
+school = "conjuration"
+classes = ["wizard", "bard", "sorcerer", "warlock"]
+casting_time = "action"
+range = 60
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "You fill the air with spinning daggers in a 5-foot cube. A creature takes damage when it enters the area or starts its turn there."
+[spells.mechanics]
+type = "auto_hit"
+damage_dice = "4d4"
+damage_type = "slashing"
+
+[[spells]]
+id = "find_steed"
+name = "Find Steed"
+level = 2
+school = "conjuration"
+classes = ["paladin"]
+casting_time = "action"
+range = 30
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You summon a spirit that assumes the form of an unusually intelligent, strong, and loyal steed."
+[spells.mechanics]
+type = "utility"
+effect = "summon_steed"
+
+# 3rd Level
+
+[[spells]]
+id = "conjure_animals"
+name = "Conjure Animals"
+level = 3
+school = "conjuration"
+classes = ["druid", "ranger"]
+casting_time = "action"
+range = 60
+duration = "1 hour"
+concentration = true
+components = ["V", "S"]
+description = "You summon fey spirits that take the form of beasts to fight alongside you."
+[spells.mechanics]
+type = "utility"
+effect = "summon"
+
+[[spells]]
+id = "conjure_barrage"
+name = "Conjure Barrage"
+level = 3
+school = "conjuration"
+classes = ["ranger"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You throw a nonmagical weapon or fire a piece of ammunition into the air to create a cone of identical weapons that shoot forward."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "3d8"
+damage_type = "slashing"
+
+[[spells]]
+id = "plant_growth"
+name = "Plant Growth"
+level = 3
+school = "conjuration"
+classes = ["druid", "bard", "ranger"]
+casting_time = "action"
+range = 150
+duration = "instantaneous"
+components = ["V", "S"]
+description = "All normal plants in a 100-foot radius centered on that point become thick and overgrown. Movement through the area costs 4 feet for every 1 foot."
+[spells.mechanics]
+type = "utility"
+effect = "difficult_terrain"
+
+# 4th Level
+
+[[spells]]
+id = "conjure_minor_elementals"
+name = "Conjure Minor Elementals"
+level = 4
+school = "conjuration"
+classes = ["wizard", "druid"]
+casting_time = "action"
+range = 90
+duration = "1 hour"
+concentration = true
+components = ["V", "S"]
+description = "You summon elementals that appear in unoccupied spaces that you can see within range."
+[spells.mechanics]
+type = "utility"
+effect = "summon"
+
+[[spells]]
+id = "dimension_door"
+name = "Dimension Door"
+level = 4
+school = "conjuration"
+classes = ["wizard", "bard", "sorcerer", "warlock"]
+casting_time = "action"
+range = 500
+duration = "instantaneous"
+components = ["V"]
+description = "You teleport yourself to any spot within range. You can bring one willing creature with you."
+[spells.mechanics]
+type = "utility"
+effect = "teleport"
+
+# 5th Level
+
+[[spells]]
+id = "conjure_elemental"
+name = "Conjure Elemental"
+level = 5
+school = "conjuration"
+classes = ["wizard", "druid"]
+casting_time = "action"
+range = 90
+duration = "1 hour"
+concentration = true
+components = ["V", "S"]
+description = "You call forth an elemental servant from the appropriate elemental plane."
+[spells.mechanics]
+type = "utility"
+effect = "summon"
+
+[[spells]]
+id = "swift_quiver"
+name = "Swift Quiver"
+level = 5
+school = "conjuration"
+classes = ["ranger"]
+casting_time = "bonus_action"
+range = 0
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "Your quiver produces an endless supply of nonmagical ammunition. You can make two ranged weapon attacks as a bonus action."
+[spells.mechanics]
+type = "buff"
+effect = "swift_quiver"
+
+# 6th Level
+
+[[spells]]
+id = "word_of_recall"
+name = "Word of Recall"
+level = 6
+school = "conjuration"
+classes = ["cleric"]
+casting_time = "action"
+range = 5
+duration = "instantaneous"
+components = ["V"]
+description = "You and up to five willing creatures teleport to a previously designated sanctuary."
+[spells.mechanics]
+type = "utility"
+effect = "teleport"

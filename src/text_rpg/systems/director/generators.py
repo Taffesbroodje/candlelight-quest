@@ -16,6 +16,7 @@ from text_rpg.systems.director.schemas import (
     validate_npc,
     validate_plausibility,
     validate_quest,
+    validate_spell_proposal,
 )
 from text_rpg.utils import safe_json, safe_props
 
@@ -218,6 +219,36 @@ def generate_follow_up_quest(
     return data
 
 
+def generate_region(
+    llm: LLMProvider,
+    context: GameContext,
+    current_region: dict,
+    target_level_min: int,
+    target_level_max: int,
+    existing_region_names: list[str],
+) -> dict:
+    """Generate a new region for the player to discover. Returns validated region dict."""
+    from text_rpg.systems.director.schemas import validate_region
+
+    env = _get_jinja()
+    template = env.get_template("director/region_generation.j2")
+
+    prompt = template.render(
+        current_region_name=current_region.get("name", "Unknown"),
+        current_level_min=current_region.get("level_range_min", 1),
+        current_level_max=current_region.get("level_range_max", 5),
+        current_region_description=current_region.get("description", ""),
+        character_summary=_format_character(context.character),
+        player_level=context.character.get("level", 1),
+        target_level_min=target_level_min,
+        target_level_max=target_level_max,
+        existing_regions=", ".join(existing_region_names) if existing_region_names else "None known",
+    )
+
+    raw = llm.generate_structured(prompt, temperature=0.9, max_tokens=1024)
+    return validate_region(raw)
+
+
 def evaluate_plausibility(
     llm: LLMProvider,
     action_description: str,
@@ -334,3 +365,33 @@ def plausibility_to_dc(plausibility: float) -> int:
     # Logarithmic mapping: DC = 5 - 8.33 * ln(p)
     dc = 5 - 8.33 * math.log(p)
     return max(5, min(40, round(dc)))
+
+
+def evaluate_spell_invention(
+    llm: LLMProvider,
+    spell_concept: str,
+    context: GameContext,
+) -> dict:
+    """Evaluate a player's spell invention concept via LLM. Returns validated dict."""
+    env = _get_jinja()
+    template = env.get_template("director/spell_evaluation.j2")
+
+    # Gather known elements from player's spell repertoire
+    known_elements: set[str] = set()
+    from text_rpg.content.loader import load_all_spells
+    all_spells = load_all_spells()
+    for spell in all_spells.values():
+        mechanics = spell.get("mechanics", {})
+        dt = mechanics.get("damage_type", "")
+        if dt:
+            known_elements.add(dt)
+
+    prompt = template.render(
+        spell_concept=spell_concept,
+        character_summary=_format_character(context.character),
+        location_summary=_format_location(context.location),
+        known_elements=", ".join(sorted(known_elements)) if known_elements else "none",
+    )
+
+    raw = llm.generate_structured(prompt, temperature=0.8, max_tokens=512)
+    return validate_spell_proposal(raw)

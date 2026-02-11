@@ -1,0 +1,145 @@
+# Stormhaven shops
+
+[[shops]]
+id = "drowning_man_tavern"
+owner_entity_id = "innkeeper_dirge"
+location_id = "the_drowning_man"
+shop_type = "tavern"
+
+[[shops.stock]]
+item_id = "rations"
+quantity = 15
+base_price = 1
+base_stock = 15
+
+[[shops.stock]]
+item_id = "cooked_meal"
+quantity = 5
+base_price = 3
+base_stock = 5
+
+[[shops.stock]]
+item_id = "hearty_stew"
+quantity = 3
+base_price = 6
+base_stock = 3
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 2
+base_price = 50
+base_stock = 2
+
+[[shops.stock]]
+item_id = "waterskin"
+quantity = 5
+base_price = 2
+base_stock = 5
+
+[[shops]]
+id = "harpooner_supply"
+owner_entity_id = "guildmaster_harlan"
+location_id = "harpooners_hall"
+shop_type = "general"
+
+[[shops.stock]]
+item_id = "hempen_rope"
+quantity = 15
+base_price = 1
+base_stock = 15
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 3
+base_price = 50
+base_stock = 3
+
+[[shops.stock]]
+item_id = "rations"
+quantity = 20
+base_price = 1
+base_stock = 20
+
+[[shops.stock]]
+item_id = "handaxe"
+quantity = 3
+base_price = 5
+base_stock = 3
+
+[[shops.stock]]
+item_id = "lantern"
+quantity = 3
+base_price = 5
+base_stock = 3
+
+[[shops]]
+id = "griff_chandlery"
+owner_entity_id = "chandler_griff"
+location_id = "chandler_shop"
+shop_type = "general"
+
+[[shops.stock]]
+item_id = "hempen_rope"
+quantity = 20
+base_price = 1
+base_stock = 20
+
+[[shops.stock]]
+item_id = "lantern"
+quantity = 5
+base_price = 5
+base_stock = 5
+
+[[shops.stock]]
+item_id = "torch"
+quantity = 15
+base_price = 1
+base_stock = 15
+
+[[shops.stock]]
+item_id = "waterskin"
+quantity = 8
+base_price = 2
+base_stock = 8
+
+[[shops.stock]]
+item_id = "bedroll"
+quantity = 3
+base_price = 2
+base_stock = 3
+
+[[shops.stock]]
+item_id = "iron_ingot"
+quantity = 5
+base_price = 5
+base_stock = 5
+
+[[shops]]
+id = "chapel_healing"
+owner_entity_id = "priestess_coral"
+location_id = "stormhaven_chapel"
+shop_type = "temple"
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 5
+base_price = 45
+base_stock = 5
+
+[[shops.stock]]
+item_id = "antidote"
+quantity = 3
+base_price = 15
+base_stock = 3
+
+[[shops.stock]]
+item_id = "healing_herb"
+quantity = 10
+base_price = 3
+base_stock = 10
+
+[[shops.stock]]
+item_id = "holy_symbol"
+quantity = 2
+base_price = 5
+base_stock = 2

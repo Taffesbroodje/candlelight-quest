@@ -1,0 +1,6 @@
+id = "ashen_highlands"
+name = "The Ashen Highlands"
+description = "A stark, dramatic landscape of blackened volcanic rock and steaming vents, where the mining town of Cinderhold clings to the slopes of a dormant volcano. Rich veins of ore and obsidian draw hardy miners and ambitious smiths, but the deep tunnels harbor dangers far worse than cave-ins. The air tastes of sulfur, and the ground trembles with the mountain's restless dreams."
+level_range_min = 1
+level_range_max = 5
+climate = "arid"

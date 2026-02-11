@@ -1,0 +1,213 @@
+# =============================================================================
+# Cleric Origins — Backgrounds rooted in faith, devotion, and divine purpose
+# =============================================================================
+
+[[origins]]
+id = "doubting_priest"
+name = "Doubting Priest"
+category = "cleric"
+summary = "A devout servant of the temple whose faith cracked under the weight of unanswered prayers."
+prologue = """
+You served the Temple of Light in Thornfield for eleven years. You led morning \
+prayers, tended the sick, counseled the grieving, and spoke of divine grace with \
+a conviction that filled the stone nave and lifted the hearts of everyone who \
+listened. Your faith was a fortress — mortared with scripture, buttressed by \
+ritual, unshakeable in the face of doubt. Until the plague came to the outer \
+farms, and no amount of prayer stopped the children from dying in their mothers' \
+arms.
+
+You prayed harder. You fasted. You knelt on the cold temple floor until your \
+knees bled through your robes, begging for intervention, for a sign, for the \
+smallest whisper that the suffering served a purpose. The silence that answered \
+was not empty — it was vast, a silence with weight and texture, the silence of \
+something that could speak and chose not to. That silence broke something in you \
+that eleven years of devotion had built.
+
+You still wear the holy symbol. You still feel the divine power move through you \
+when you lay hands on the wounded — that, at least, has not abandoned you. But \
+the prayers taste different in your mouth now, seasoned with questions that your \
+prayer book does not address. The temple elders see the change in you and offer \
+platitudes about tests of faith. You nod and smile and say nothing, because the \
+truth is worse than doubt: you believe more deeply than ever, and it is the nature \
+of what you believe in that has changed."""
+ability_choices = ["wisdom", "intelligence", "charisma"]
+skill_proficiencies = ["religion", "insight"]
+starting_equipment = ["holy_symbol", "prayer_book"]
+bonus_gold = 8
+starting_region = "verdant_reach"
+starting_location = "thornfield_temple"
+feature_name = "Crisis of Conviction"
+feature_description = "Your spiritual struggle has deepened your empathy. You gain advantage on insight checks when counseling or reading the emotional state of distressed individuals."
+required_races = []
+excluded_races = []
+required_classes = ["cleric"]
+excluded_classes = []
+
+[[origins]]
+id = "miracle_worker"
+name = "Miracle Worker"
+category = "cleric"
+summary = "A healer whose divine gifts drew crowds, reverence, and eventually dangerous attention."
+prologue = """
+The first time you healed someone, you were fourteen. A farmhand had gashed his \
+leg on a scythe blade, and the wound was deep enough that the bone showed through. \
+You pressed your hands over the torn flesh because you did not know what else to \
+do, and the light came — golden, warm, flowing through your fingers like water \
+through sand. The wound closed. The farmhand stared. You fainted. When you woke, \
+the village was already whispering.
+
+Word spread the way word always does in small communities — fast, distorted, and \
+impossible to contain. Within a year, pilgrims were arriving in Thornfield asking \
+for the miracle worker. You healed who you could. A child's fever. A merchant's \
+shattered wrist. A soldier's infected arrow wound. Each healing left you drained \
+and humbled, and each one added another layer to a reputation you had never \
+sought. The temple welcomed you, provided training, gave your gift a theological \
+framework. But the crowds kept growing, and with them came those who wanted to \
+use your gift rather than honor it.
+
+You left Thornfield on a morning when a minor lord's retinue arrived demanding \
+that you attend his ailing wife exclusively — at his estate, under his control, \
+for an indefinite duration. The temple elders urged you to comply. You packed \
+your herbalism kit, tucked your holy symbol beneath your shirt, and slipped out \
+through the garden gate before dawn. Your gift belongs to the suffering, not the \
+powerful. You will heal on the road, where the need is greatest and the politics \
+are simplest."""
+ability_choices = ["wisdom", "charisma", "constitution"]
+skill_proficiencies = ["medicine", "religion"]
+starting_equipment = ["holy_symbol", "herbalism_kit"]
+bonus_gold = 10
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Healing Hands"
+feature_description = "Your innate connection to divine healing energy is exceptionally strong. When you cast a healing spell, you may add your wisdom modifier a second time to the hit points restored once per long rest."
+required_races = []
+excluded_races = []
+required_classes = ["cleric"]
+excluded_classes = []
+
+[[origins]]
+id = "cult_survivor"
+name = "Cult Survivor"
+category = "cleric"
+summary = "A former cultist who escaped a dark congregation and now seeks redemption through true faith."
+prologue = """
+They called themselves the Drowned Choir, and for two years you sang with them. \
+The recruitment was subtle — a friendly face at a crossroads shrine, an invitation \
+to a prayer circle that offered community when you had none, a theology that \
+answered the questions the mainstream temples refused to acknowledge. By the time \
+you understood what they truly worshipped, you were in too deep to simply walk away. \
+The rituals in the Murkfen shrine grew darker by degrees — animal sacrifice, then \
+blood oaths, then ceremonies conducted in a language that made your teeth ache \
+and your shadow twitch independently of your body.
+
+You broke free on the night of the Submersion, when the Choir's leader demanded \
+that the congregation wade into the black water of the fen and breathe it in as \
+proof of devotion. Two of your fellow congregants did not surface. You watched \
+their candles go out beneath the water, and something inside you — something the \
+Choir had not managed to extinguish — screamed loudly enough to drown out the \
+chanting. You ran. Through the bog, through the reeds, through mud that sucked \
+at your boots like hungry mouths.
+
+The holy symbol you carry now is not the Choir's. You found it in the muck near \
+the shrine's outer boundary, half-buried and tarnished — a symbol of a faith \
+older and cleaner than the one that had enslaved you. It felt warm in your hand. \
+It still does. You do not know if the gods are real, but you know that whatever \
+power flows through this symbol pulled you from the dark water, and you owe it a \
+debt you intend to repay with every breath you take above the surface."""
+ability_choices = ["wisdom", "constitution", "intelligence"]
+skill_proficiencies = ["religion", "insight"]
+starting_equipment = ["holy_symbol", "common_clothes"]
+bonus_gold = 3
+starting_region = "sunken_reach"
+starting_location = "murkfen_shrine"
+feature_name = "Scars of the Faithful"
+feature_description = "Your exposure to dark rituals grants you resistance to their lure. You have advantage on saving throws against being charmed or mentally dominated by fiends, undead, or cultists."
+required_races = []
+excluded_races = []
+required_classes = ["cleric"]
+excluded_classes = []
+
+[[origins]]
+id = "gravekeeper"
+name = "Gravekeeper"
+category = "cleric"
+summary = "A solemn warden of the dead who speaks the rites that keep the buried at rest."
+prologue = """
+The living avoid you, and you have made peace with that. For eight years you have \
+tended the burial grounds of the Murkfen — the old cemetery on the island where \
+the bog's dead are interred according to rites that predate the temple hierarchy \
+by centuries. Yours is a solitary vocation. You dig the graves, wash the bodies, \
+speak the words that bind the departed to their rest, and ensure that what lies \
+beneath the soil stays beneath the soil. In the Sunken Reach, that last duty is \
+not ceremonial. The bog remembers its dead, and some of them remember the bog.
+
+You carry a lantern because the mist rolls in without warning, and a shovel because \
+the ground here is never fully settled. Your holy symbol hangs from a chain around \
+your neck, close enough to grab in the dark, because there have been nights when \
+you needed it in a hurry. The locals leave offerings at the cemetery gate — bread, \
+coin, wildflowers — but they do not enter, and they do not linger. They are \
+grateful for your service in the way people are grateful for chamber pots: \
+essential, but not something they wish to discuss at dinner.
+
+Lately, the wards have been straining. You find scratches on the undersides of \
+coffin lids that were not there when you sealed them. The candles at the grave \
+markers gutter in windless air. Something is stirring in the deeper plots, the \
+oldest ones, where the names on the stones have weathered to nothing. You have \
+sent word to the temple, but the temple is far away and the dead are patient. \
+You tighten your grip on your shovel, adjust your lantern, and walk the rows \
+one more time. If the wards fail, you will be the first to know — and the last \
+line between the buried and the world above."""
+ability_choices = ["wisdom", "constitution", "strength"]
+skill_proficiencies = ["religion", "medicine"]
+starting_equipment = ["holy_symbol", "lantern", "shovel"]
+bonus_gold = 5
+starting_region = "sunken_reach"
+starting_location = "murkfen_shrine"
+feature_name = "Warden of the Dead"
+feature_description = "Your long vigil over burial grounds grants you an innate sense for undead. You can detect the presence of undead creatures within 60 feet, even through walls or underground."
+required_races = []
+excluded_races = []
+required_classes = ["cleric"]
+excluded_classes = []
+
+[[origins]]
+id = "pilgrimage_walker"
+name = "Pilgrimage Walker"
+category = "cleric"
+summary = "A devout wanderer who walks the sacred roads seeking divine revelation through hardship."
+prologue = """
+The pilgrimage began with a vow, spoken at dawn in a temple you will not see again \
+until the journey is complete. You swore to walk the old roads — the routes that \
+the first priests traveled when the temples were stones in open fields and the gods \
+spoke through thunder and birdsong rather than through gilded altars and stained \
+glass. Your order calls it the Long Circuit: a path that touches every sacred site \
+in the known regions, from the coastal shrines to the highland cairns, from the \
+forest groves to the fen chapels. No horse. No carriage. No shortcuts. The road \
+is the prayer, and every blister is an offering.
+
+You have walked for months now, sleeping in hedgerows and temple doorways, eating \
+what the land provides and what the faithful share. Your boots are held together \
+by faith and twine. Your bedroll smells of campfire smoke and pine needles. Your \
+holy symbol has been kissed by the lips of a hundred strangers who saw you on the \
+road and asked for a blessing. You gave them freely, every one, because a pilgrim \
+who hoards grace has misunderstood the point.
+
+The highland road stretches before you, winding through volcanic scree and scrub \
+toward the next waypoint on your circuit. The Ashen Highlands are harsh country — \
+thin air, sharp stone, and a sky that seems too close. Other pilgrims have warned \
+you about the road ahead. Bandits. Rockslides. Creatures that come down from the \
+obsidian plateau when the wind shifts. You adjust the bedroll on your shoulders, \
+touch the holy symbol at your throat, and keep walking. The road provides. It \
+always has."""
+ability_choices = ["wisdom", "constitution", "charisma"]
+skill_proficiencies = ["religion", "survival"]
+starting_equipment = ["holy_symbol", "travelers_clothes", "bedroll"]
+bonus_gold = 5
+starting_region = "ashen_highlands"
+starting_location = "highland_road"
+feature_name = "Pilgrim's Endurance"
+feature_description = "Months of walking sacred roads have toughened your body and spirit. You require half the normal food and water, and you gain advantage on constitution saves against exhaustion from travel."
+required_races = []
+excluded_races = []
+required_classes = ["cleric"]
+excluded_classes = []

@@ -1,0 +1,389 @@
+# =============================================================================
+# Evocation Spells — Raw elemental energy unleashed
+# =============================================================================
+
+# Cantrips
+
+[[spells]]
+id = "eldritch_blast"
+name = "Eldritch Blast"
+level = 0
+school = "evocation"
+classes = ["warlock"]
+casting_time = "action"
+range = 120
+duration = "instantaneous"
+components = ["V", "S"]
+description = "A beam of crackling energy streaks toward a creature within range."
+[spells.mechanics]
+type = "attack"
+damage_dice = "1d10"
+damage_type = "force"
+
+[[spells]]
+id = "produce_flame"
+name = "Produce Flame"
+level = 0
+school = "evocation"
+classes = ["druid"]
+casting_time = "action"
+range = 30
+duration = "10 minutes"
+components = ["V", "S"]
+description = "A flickering flame appears in your hand. You can hurl it at a creature."
+[spells.mechanics]
+type = "attack"
+damage_dice = "1d8"
+damage_type = "fire"
+
+[[spells]]
+id = "shocking_grasp"
+name = "Shocking Grasp"
+level = 0
+school = "evocation"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 0
+duration = "instantaneous"
+components = ["V", "S"]
+description = "Lightning springs from your hand to deliver a shock to a creature you touch."
+[spells.mechanics]
+type = "attack"
+damage_dice = "1d8"
+damage_type = "lightning"
+
+[[spells]]
+id = "word_of_radiance"
+name = "Word of Radiance"
+level = 0
+school = "evocation"
+classes = ["cleric"]
+casting_time = "action"
+range = 5
+duration = "instantaneous"
+components = ["V"]
+description = "You utter a divine word, and burning radiance erupts from you."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "1d6"
+damage_type = "radiant"
+
+# 1st Level
+
+[[spells]]
+id = "thunderwave"
+name = "Thunderwave"
+level = 1
+school = "evocation"
+classes = ["wizard", "bard", "druid", "sorcerer"]
+casting_time = "action"
+range = 0
+duration = "instantaneous"
+components = ["V", "S"]
+description = "A wave of thunderous force sweeps out from you in a 15-foot cube."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "2d8"
+damage_type = "thunder"
+
+[[spells]]
+id = "witch_bolt"
+name = "Witch Bolt"
+level = 1
+school = "evocation"
+classes = ["wizard", "sorcerer", "warlock"]
+casting_time = "action"
+range = 30
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "A beam of crackling blue energy lances out toward a creature, forming a sustained arc."
+[spells.mechanics]
+type = "attack"
+damage_dice = "1d12"
+damage_type = "lightning"
+
+[[spells]]
+id = "guiding_bolt"
+name = "Guiding Bolt"
+level = 1
+school = "evocation"
+classes = ["cleric"]
+casting_time = "action"
+range = 120
+duration = "1 round"
+components = ["V", "S"]
+description = "A flash of light streaks toward a creature. The next attack roll against it has advantage."
+[spells.mechanics]
+type = "attack"
+damage_dice = "4d6"
+damage_type = "radiant"
+
+[[spells]]
+id = "chromatic_orb"
+name = "Chromatic Orb"
+level = 1
+school = "evocation"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 90
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You hurl a 4-inch-diameter sphere of energy at a creature. Choose acid, cold, fire, lightning, poison, or thunder."
+[spells.mechanics]
+type = "attack"
+damage_dice = "3d8"
+damage_type = "fire"
+
+[[spells]]
+id = "chaos_bolt"
+name = "Chaos Bolt"
+level = 1
+school = "evocation"
+classes = ["sorcerer"]
+casting_time = "action"
+range = 120
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You hurl an undulating, warbling mass of chaotic energy at a creature."
+[spells.mechanics]
+type = "attack"
+damage_dice = "2d8"
+damage_type = "fire"
+
+# 2nd Level
+
+[[spells]]
+id = "shatter"
+name = "Shatter"
+level = 2
+school = "evocation"
+classes = ["wizard", "bard", "sorcerer", "warlock"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V", "S"]
+description = "A sudden loud ringing noise erupts from a point of your choice. Each creature in a 10-foot radius must make a Constitution save."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "3d8"
+damage_type = "thunder"
+
+[[spells]]
+id = "moonbeam"
+name = "Moonbeam"
+level = 2
+school = "evocation"
+classes = ["druid"]
+casting_time = "action"
+range = 120
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "A silvery beam of pale light shines down in a 5-foot-radius, 40-foot-high cylinder."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "2d10"
+damage_type = "radiant"
+
+[[spells]]
+id = "branding_smite"
+name = "Branding Smite"
+level = 2
+school = "evocation"
+classes = ["paladin"]
+casting_time = "bonus_action"
+range = 0
+duration = "1 minute"
+concentration = true
+components = ["V"]
+description = "The next time you hit a creature with a weapon attack, the weapon gleams with astral radiance."
+[spells.mechanics]
+type = "buff"
+effect = "smite"
+damage_dice = "2d6"
+damage_type = "radiant"
+
+# 3rd Level
+
+[[spells]]
+id = "lightning_bolt"
+name = "Lightning Bolt"
+level = 3
+school = "evocation"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 100
+duration = "instantaneous"
+components = ["V", "S"]
+description = "A stroke of lightning forming a line 100 feet long and 5 feet wide blasts out from you."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "8d6"
+damage_type = "lightning"
+
+[[spells]]
+id = "call_lightning"
+name = "Call Lightning"
+level = 3
+school = "evocation"
+classes = ["druid"]
+casting_time = "action"
+range = 120
+duration = "10 minutes"
+concentration = true
+components = ["V", "S"]
+description = "A storm cloud appears and you can call down bolts of lightning each round."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "3d10"
+damage_type = "lightning"
+
+[[spells]]
+id = "aura_of_vitality"
+name = "Aura of Vitality"
+level = 3
+school = "evocation"
+classes = ["paladin"]
+casting_time = "action"
+range = 0
+duration = "1 minute"
+concentration = true
+components = ["V"]
+description = "Healing energy radiates from you in an aura. You can restore 2d6 hit points to one creature as a bonus action each round."
+[spells.mechanics]
+type = "healing"
+healing_dice = "2d6"
+
+# 4th Level
+
+[[spells]]
+id = "ice_storm"
+name = "Ice Storm"
+level = 4
+school = "evocation"
+classes = ["wizard", "druid", "sorcerer"]
+casting_time = "action"
+range = 300
+duration = "instantaneous"
+components = ["V", "S"]
+description = "A hail of rock-hard ice pounds to the ground in a 20-foot-radius, 40-foot-high cylinder."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "2d8"
+damage_type = "bludgeoning"
+
+[[spells]]
+id = "wall_of_fire"
+name = "Wall of Fire"
+level = 4
+school = "evocation"
+classes = ["wizard", "druid", "sorcerer"]
+casting_time = "action"
+range = 120
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "You create a wall of fire on a solid surface within range."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "5d8"
+damage_type = "fire"
+
+# 5th Level
+
+[[spells]]
+id = "cone_of_cold"
+name = "Cone of Cold"
+level = 5
+school = "evocation"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V", "S"]
+description = "A blast of cold air erupts from your hands in a 60-foot cone."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "8d8"
+damage_type = "cold"
+
+[[spells]]
+id = "flame_strike"
+name = "Flame Strike"
+level = 5
+school = "evocation"
+classes = ["cleric"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V", "S"]
+description = "A vertical column of divine fire roars down from the heavens."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "4d6"
+damage_type = "fire"
+
+[[spells]]
+id = "destructive_wave"
+name = "Destructive Wave"
+level = 5
+school = "evocation"
+classes = ["paladin"]
+casting_time = "action"
+range = 30
+duration = "instantaneous"
+components = ["V"]
+description = "You strike the ground, creating a burst of divine energy that ripples outward."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "5d6"
+damage_type = "radiant"
+
+# 6th Level
+
+[[spells]]
+id = "chain_lightning"
+name = "Chain Lightning"
+level = 6
+school = "evocation"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 150
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You create a bolt of lightning that arcs toward a target. Three bolts then leap from that target to up to three other targets."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "10d8"
+damage_type = "lightning"
+
+[[spells]]
+id = "sunbeam"
+name = "Sunbeam"
+level = 6
+school = "evocation"
+classes = ["druid", "sorcerer"]
+casting_time = "action"
+range = 60
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "A beam of brilliant light flashes out from your hand in a 5-foot-wide, 60-foot-long line."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "6d8"
+damage_type = "radiant"

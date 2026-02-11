@@ -111,6 +111,182 @@ def pacing_check(context: GameContext) -> bool:
     return context.turn_number > 0 and context.turn_number % 10 == 0
 
 
+def should_reveal_new_region(
+    context: GameContext,
+    repos: dict[str, Any],
+    all_region_ids: list[str],
+) -> bool:
+    """True when player is near the ceiling of the current region and has explored most locations.
+
+    Tier-aware progression:
+    - Player level must be within 1 of the region's level_range_max
+    - Player has visited 60%+ of the locations in the current region
+    - Prefers revealing same-tier unexplored regions before higher tiers
+    - Only reveals T(N+1) when no same-tier unexplored regions remain
+    """
+    region_id = context.location.get("region_id", "")
+    if not region_id:
+        return False
+
+    location_repo = repos.get("location")
+    if not location_repo:
+        return False
+
+    # Check exploration percentage in current region
+    region_locations = location_repo.get_by_region(context.game_id, region_id)
+    if not region_locations:
+        return False
+
+    visited = sum(1 for loc in region_locations if loc.get("visited"))
+    total = len(region_locations)
+    if total == 0:
+        return False
+
+    exploration_pct = visited / total
+    if exploration_pct < 0.6:
+        return False
+
+    # Check player level vs region max
+    from text_rpg.content.loader import load_region, load_all_regions
+    try:
+        region_data = load_region(region_id)
+    except Exception:
+        return False
+
+    level_max = region_data.get("level_range_max", 5)
+    player_level = context.character.get("level", 1)
+    if player_level < level_max - 1:
+        return False
+
+    # Build set of visited regions
+    visited_regions = set()
+    all_game_locations = location_repo.get_all(context.game_id)
+    for loc in all_game_locations:
+        r = loc.get("region_id", "")
+        if r and loc.get("visited"):
+            visited_regions.add(r)
+
+    # Load all region metadata for tier-aware selection
+    all_regions = load_all_regions()
+    current_level_max = level_max
+
+    # Find unvisited content regions, grouped by tier proximity
+    same_tier = []
+    next_tier = []
+    for rid in all_region_ids:
+        if rid in visited_regions:
+            continue
+        rdata = all_regions.get(rid)
+        if not rdata:
+            continue
+        r_min = rdata.get("level_range_min", 1)
+        r_max = rdata.get("level_range_max", 5)
+        # Same tier: level ranges overlap with current region
+        if r_min <= current_level_max and r_max >= region_data.get("level_range_min", 1):
+            same_tier.append(rid)
+        # Next tier: level_range_min is within reach (player level >= r_min - 2)
+        elif player_level >= r_min - 2:
+            next_tier.append(rid)
+
+    # Prefer same-tier regions first, then next-tier
+    if same_tier or next_tier:
+        return True
+
+    # If all content regions visited, Director can generate a new one
+    return True
+
+
+def should_spawn_arcane_location(context: GameContext, repos: dict[str, Any]) -> bool:
+    """True when the player has invented 3+ spells, suggesting an arcane location nearby.
+
+    This spawns a library, arcane tower, or enchanted grove to support further research.
+    """
+    spell_creation_repo = repos.get("spell_creation")
+    if not spell_creation_repo:
+        return False
+
+    char_id = context.character.get("id", "")
+    customs = spell_creation_repo.get_custom_spells(context.game_id, char_id)
+    combos = spell_creation_repo.get_discovered_combinations(context.game_id, char_id)
+
+    total_discoveries = len(customs) + len(combos)
+    if total_discoveries < 3:
+        return False
+
+    # Don't spawn if already at an arcane location
+    loc_type = context.location.get("location_type", "")
+    if loc_type in ("arcane_tower", "library", "academy", "enchanted_grove"):
+        return False
+
+    return True
+
+
+def should_spawn_guild_trainer(context: GameContext, repos: dict[str, Any]) -> bool:
+    """True if a guild trainer NPC should appear at this location.
+
+    Conditions:
+    - Location is a T2+ settlement (town, village, settlement)
+    - No trainer NPC already at this location
+    - Player has at least one guild membership
+    """
+    loc_type = context.location.get("location_type", "wilderness")
+    if loc_type not in ("town", "village", "settlement", "tavern", "shop", "guild_hall"):
+        return False
+
+    # Check that no trainer NPC is already present
+    for entity in context.entities:
+        if not entity.get("is_alive", True):
+            continue
+        props = safe_props(entity)
+        if props.get("teaches"):
+            return False
+
+    # Player must be in a guild
+    guild_repo = repos.get("guild")
+    if not guild_repo:
+        return False
+
+    char_id = context.character.get("id", "")
+    memberships = guild_repo.get_memberships(context.game_id, char_id)
+    return len(memberships) > 0
+
+
+def should_offer_guild_recruitment(context: GameContext, repos: dict[str, Any]) -> bool:
+    """True if the player has a trade skill L3+ but is not in the corresponding guild.
+
+    Used to generate recruitment dialogue from NPCs.
+    """
+    trade_repo = repos.get("trade_skill")
+    guild_repo = repos.get("guild")
+    if not trade_repo or not guild_repo:
+        return False
+
+    char_id = context.character.get("id", "")
+    game_id = context.game_id
+
+    skills = trade_repo.get_skills(game_id, char_id)
+    memberships = guild_repo.get_memberships(game_id, char_id)
+    member_guild_ids = {m["guild_id"] for m in memberships}
+
+    from text_rpg.content.loader import load_all_guilds
+    guilds = load_all_guilds()
+
+    # Check if player has a high-level skill without guild membership
+    for skill in skills:
+        if not skill.get("is_learned"):
+            continue
+        if skill.get("level", 1) < 3:
+            continue
+
+        skill_name = skill.get("skill_name", "")
+        # Find the guild for this profession
+        for gid, gdata in guilds.items():
+            if gdata.get("profession") == skill_name and gid not in member_guild_ids:
+                return True
+
+    return False
+
+
 def should_spawn_bounty_hunter(context: GameContext, bounty_amount: int) -> bool:
     """True if the player has a high enough bounty for a bounty hunter encounter.
 

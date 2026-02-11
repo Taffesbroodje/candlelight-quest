@@ -12,6 +12,7 @@ from jinja2 import Environment, FileSystemLoader
 from text_rpg.content.loader import load_all_items
 from text_rpg.mechanics.ability_scores import modifier
 from text_rpg.mechanics.combat_math import (
+    assess_threat_level,
     attack_roll,
     calculate_flee_dc,
     damage_roll,
@@ -25,6 +26,7 @@ from text_rpg.mechanics.conditions import (
     has_attack_advantage,
     has_attack_disadvantage,
 )
+from text_rpg.mechanics.elements import get_effective_damage
 from text_rpg.mechanics.skills import skill_check
 from text_rpg.models.action import Action, ActionResult, DiceRoll, StateMutation
 from text_rpg.systems.base import GameContext, GameSystem
@@ -60,10 +62,17 @@ class CombatSystem(GameSystem):
 
     @property
     def handled_action_types(self) -> set[str]:
-        return {"attack", "dodge", "dash", "disengage", "help", "hide", "flee", "combat_item", "combat_spell", "puzzle"}
+        return {"attack", "dodge", "dash", "disengage", "help", "hide", "flee", "combat_item", "combat_spell", "class_ability", "puzzle"}
 
     def can_handle(self, action: Action, context: GameContext) -> bool:
-        return action.action_type.lower() in self.handled_action_types
+        at = action.action_type.lower()
+        if at in self.handled_action_types:
+            return True
+        # During active combat, also intercept cast_spell and use_item
+        if context.combat_state and context.combat_state.get("is_active"):
+            if at in ("cast_spell", "use_item"):
+                return True
+        return False
 
     def resolve(self, action: Action, context: GameContext) -> ActionResult:
         # Check for puzzle encounter
@@ -115,6 +124,18 @@ class CombatSystem(GameSystem):
             if e.get("is_hostile") and e.get("is_alive", True):
                 enemy_ids.add(e["id"])
 
+        # Assess threat level before combat
+        player_level = context.character.get("level", 1)
+        threat_warnings: list[str] = []
+        for eid in enemy_ids:
+            for e in context.entities:
+                if e["id"] == eid:
+                    enemy_level = e.get("level", e.get("challenge_rating", 1)) or 1
+                    threat = assess_threat_level(player_level, enemy_level)
+                    if threat in ("deadly", "overwhelming"):
+                        threat_warnings.append(f"{e['name']} ({threat})")
+                    break
+
         # Build combat state via start_combat
         combat = self.start_combat(context, list(enemy_ids))
 
@@ -143,6 +164,15 @@ class CombatSystem(GameSystem):
             "description": f"Combat begins! Initiative: {', '.join(init_report)}",
             "actor_id": context.character["id"],
         }]
+
+        # Show threat warning if applicable
+        if threat_warnings:
+            warning = "DANGER: " + ", ".join(threat_warnings) + "!"
+            events.append({
+                "event_type": "THREAT_WARNING",
+                "description": warning,
+                "actor_id": context.character["id"],
+            })
 
         # Determine who goes first
         first_id = combat["turn_order"][0] if combat["turn_order"] else None
@@ -242,13 +272,33 @@ class CombatSystem(GameSystem):
                     dice_rolls=dice_rolls, events=events,
                 )
 
-        elif action_type in ("3", "combat_item"):
-            # Delegate to inventory system but consume combat turn
-            outcome_parts.append(f"You use an item during combat.")
+        elif action_type in ("3", "combat_item", "use_item"):
+            spell_result = self._resolve_combat_item(action, context, combat)
+            if not spell_result["success"]:
+                return ActionResult(action_id=action.id, success=False, outcome_description=spell_result["description"])
+            mutations.extend(spell_result.get("mutations", []))
+            dice_rolls.extend(spell_result.get("dice_rolls", []))
+            events.extend(spell_result.get("events", []))
+            outcome_parts.append(spell_result["description"])
 
-        elif action_type in ("2", "combat_spell"):
-            # Delegate to spellcasting but consume combat turn
-            outcome_parts.append(f"You cast a spell during combat.")
+        elif action_type in ("2", "combat_spell", "cast_spell"):
+            spell_result = self._resolve_combat_spell(action, context, combat)
+            if not spell_result["success"]:
+                return ActionResult(action_id=action.id, success=False, outcome_description=spell_result["description"])
+            mutations.extend(spell_result.get("mutations", []))
+            dice_rolls.extend(spell_result.get("dice_rolls", []))
+            events.extend(spell_result.get("events", []))
+            outcome_parts.append(spell_result["description"])
+            xp += spell_result.get("xp", 0)
+
+        elif action_type in ("6", "class_ability"):
+            ability_result = self._resolve_class_ability(action, context, combat)
+            if not ability_result["success"]:
+                return ActionResult(action_id=action.id, success=False, outcome_description=ability_result["description"])
+            mutations.extend(ability_result.get("mutations", []))
+            dice_rolls.extend(ability_result.get("dice_rolls", []))
+            events.extend(ability_result.get("events", []))
+            outcome_parts.append(ability_result["description"])
 
         elif action_type in ("dash",):
             outcome_parts.append("You take the Dash action, doubling your movement.")
@@ -338,14 +388,27 @@ class CombatSystem(GameSystem):
         if hit:
             dmg_dice, dmg_mod = self._get_damage_dice(char)
             dmg_result = damage_roll(dmg_dice, dmg_mod, is_critical)
+
+            # Apply resistance/vulnerability/immunity
+            weapon = self._get_weapon_data(char)
+            raw_damage_type = weapon.get("damage_type", "physical") if weapon else "physical"
+            target_props = safe_json(target.get("properties"), {}) or {}
+            effective_dmg, dmg_label = get_effective_damage(
+                dmg_result.total,
+                raw_damage_type,
+                target_props.get("resistances", []),
+                target_props.get("vulnerabilities", []),
+                target_props.get("immunities", []),
+            )
+
             dice_rolls.append(DiceRoll(
                 dice_expression=dmg_dice, rolls=dmg_result.individual_rolls,
-                modifier=dmg_mod, total=dmg_result.total, purpose="damage_roll",
+                modifier=dmg_mod, total=effective_dmg, purpose="damage_roll",
             ))
 
             # Update HP in combat state
             old_hp = self._get_combatant_hp(combat, target["id"])
-            new_hp = max(0, old_hp - dmg_result.total)
+            new_hp = max(0, old_hp - effective_dmg)
             self._set_combatant_hp(combat, target["id"], new_hp)
 
             mutations.append(StateMutation(
@@ -355,15 +418,15 @@ class CombatSystem(GameSystem):
 
             defeated = new_hp <= 0
             crit_text = " CRITICAL HIT!" if is_critical else ""
-            desc = f"Hit!{crit_text} {dmg_result.total} damage to {target['name']}."
+            resist_text = f" ({dmg_label})" if dmg_label != "normal" else ""
+            desc = f"Hit!{crit_text} {effective_dmg} damage to {target['name']}.{resist_text}"
 
             # Narrative prose from LLM
-            weapon = self._get_weapon_data(char)
             attack_name = weapon.get("name", "weapon strike") if weapon else "weapon strike"
             narration = self._narrate_attack(
                 attacker_name=char["name"], attacker_type="player",
                 defender_name=target["name"], hit=True, critical=is_critical,
-                damage=dmg_result.total, damage_type=weapon.get("damage_type", "") if weapon else "",
+                damage=effective_dmg, damage_type=raw_damage_type,
                 defeated=defeated, attack_name=attack_name,
             )
             if narration:
@@ -371,9 +434,14 @@ class CombatSystem(GameSystem):
 
             events.append({
                 "event_type": "ATTACK",
-                "description": f"{char['name']} attacks {target['name']} and hits for {dmg_result.total} damage.",
+                "description": f"{char['name']} attacks {target['name']} and hits for {effective_dmg} damage.",
                 "actor_id": char["id"], "target_id": target["id"],
-                "mechanical_details": {"damage": dmg_result.total, "critical": is_critical},
+                "mechanical_details": {
+                    "damage": effective_dmg, "critical": is_critical,
+                    "attack_style": self._get_attack_style(char),
+                    "damage_type": raw_damage_type,
+                    "damage_modifier": dmg_label,
+                },
             })
 
             if defeated:
@@ -404,7 +472,10 @@ class CombatSystem(GameSystem):
                 "event_type": "ATTACK",
                 "description": f"{char['name']} attacks {target['name']} and misses.",
                 "actor_id": char["id"], "target_id": target["id"],
-                "mechanical_details": {"hit": False},
+                "mechanical_details": {
+                    "hit": False,
+                    "attack_style": self._get_attack_style(char),
+                },
             })
 
         return {"mutations": mutations, "dice_rolls": dice_rolls, "events": events, "description": desc, "xp": xp}
@@ -429,7 +500,13 @@ class CombatSystem(GameSystem):
             modifier=roll_result.modifier, total=roll_result.total,
             purpose=f"flee_check (DC {dc})",
         )]
-        events: list[dict[str, Any]] = []
+        flee_skill = "acrobatics" if "acrobatics" in skill_profs else "athletics"
+        events: list[dict[str, Any]] = [{
+            "event_type": "SKILL_CHECK",
+            "description": f"{flee_skill} check (DC {dc}) — {'success' if success else 'failure'}",
+            "actor_id": char.get("id", ""),
+            "mechanical_details": {"skill": flee_skill, "dc": dc, "success": success, "roll": roll_result.total},
+        }]
 
         if success:
             desc = f"You successfully flee from combat! (Roll: {roll_result.total} vs DC {dc})"
@@ -439,6 +516,381 @@ class CombatSystem(GameSystem):
             events.append({"event_type": "COMBAT_FLEE_FAIL", "description": "Failed to flee from combat."})
 
         return {"dice_rolls": dice_rolls, "events": events, "description": desc, "escaped": success}
+
+    # -- Combat Spell/Item Resolution --
+
+    def _resolve_combat_spell(self, action: Action, context: GameContext, combat: dict) -> dict:
+        """Resolve casting a spell during combat. Delegates to SpellcastingSystem then syncs combat HP."""
+        # Determine spell name from the action
+        spell_name = action.target_id or action.parameters.get("spell_name") or ""
+
+        if not spell_name:
+            # Bare "2" with no spell — list available spells as a prompt
+            return self._prompt_spell_list(context)
+
+        from text_rpg.systems.spellcasting.system import SpellcastingSystem
+
+        spell_system = SpellcastingSystem()
+        spell_system.inject(repos=(self._repos or {}))
+
+        # Build a cast_spell action for the SpellcastingSystem
+        spell_action = Action(
+            id=action.id,
+            action_type="cast_spell",
+            target_id=spell_name,
+            parameters=action.parameters,
+            raw_input=action.raw_input,
+        )
+        result = spell_system.resolve(spell_action, context)
+
+        # Sync HP mutations to combat state
+        for mut in result.state_mutations:
+            if mut.field == "hp_current":
+                self._set_combatant_hp(combat, mut.target_id, mut.new_value)
+                # Check if enemy was killed
+                if mut.target_type == "entity" and mut.new_value <= 0:
+                    self._mark_combatant_defeated(combat, mut.target_id)
+
+        return {
+            "success": result.success,
+            "description": result.outcome_description,
+            "mutations": list(result.state_mutations),
+            "dice_rolls": list(result.dice_rolls),
+            "events": list(result.events),
+            "xp": result.xp_gained,
+        }
+
+    def _prompt_spell_list(self, context: GameContext) -> dict:
+        """Return a prompt showing available spells when player types bare '2'."""
+        char = context.character
+        if not char.get("spellcasting_ability"):
+            return {"success": False, "description": "You don't know any spells."}
+
+        repos = self._repos or {}
+        spell_repo = repos.get("spell")
+        if not spell_repo:
+            return {"success": False, "description": "Type 'cast [spell name]' to cast a spell."}
+
+        prepared = spell_repo.get_prepared_spells(context.game_id, char["id"])
+        known = spell_repo.get_known_spells(context.game_id, char["id"])
+
+        from text_rpg.content.loader import load_all_spells
+        all_spells = load_all_spells()
+
+        # Show cantrips (always available) and prepared spells
+        cantrip_names = []
+        leveled_names = []
+        for sid in known:
+            spell = all_spells.get(sid)
+            if not spell:
+                continue
+            if spell["level"] == 0:
+                cantrip_names.append(spell["name"])
+            elif sid in prepared:
+                leveled_names.append(f"{spell['name']} (L{spell['level']})")
+
+        parts = ["Type 'cast [spell name]' to cast during combat."]
+        if cantrip_names:
+            parts.append(f"Cantrips: {', '.join(cantrip_names)}")
+        if leveled_names:
+            slots = safe_json(char.get("spell_slots_remaining"), {})
+            slot_str = ", ".join(f"L{k}:{v}" for k, v in sorted(slots.items()) if int(v) > 0)
+            parts.append(f"Prepared: {', '.join(leveled_names)}")
+            if slot_str:
+                parts.append(f"Slots: {slot_str}")
+
+        return {"success": False, "description": "\n".join(parts)}
+
+    def _resolve_combat_item(self, action: Action, context: GameContext, combat: dict) -> dict:
+        """Resolve using an item during combat. Delegates to InventorySystem then syncs combat HP."""
+        item_name = action.target_id or action.parameters.get("item_name") or ""
+
+        if not item_name:
+            # Bare "3" with no item — list usable combat items
+            return self._prompt_item_list(context)
+
+        from text_rpg.systems.inventory.system import InventorySystem
+
+        inv_system = InventorySystem()
+        item_action = Action(
+            id=action.id,
+            action_type="use_item",
+            target_id=item_name,
+            parameters=action.parameters,
+            raw_input=action.raw_input,
+        )
+        result = inv_system.resolve(item_action, context)
+
+        # Sync HP mutations to combat state
+        for mut in result.state_mutations:
+            if mut.field == "hp_current":
+                self._set_combatant_hp(combat, mut.target_id, mut.new_value)
+
+        return {
+            "success": result.success,
+            "description": result.outcome_description,
+            "mutations": list(result.state_mutations),
+            "dice_rolls": list(result.dice_rolls),
+            "events": list(result.events),
+            "xp": 0,
+        }
+
+    def _prompt_item_list(self, context: GameContext) -> dict:
+        """Return a prompt showing usable combat items when player types bare '3'."""
+        inv = context.inventory
+        if not inv:
+            return {"success": False, "description": "You don't have any items."}
+
+        items = safe_json(inv.get("items"), [])
+        if not items:
+            return {"success": False, "description": "Your inventory is empty."}
+
+        all_items_data = load_all_items()
+        usable = []
+        for entry in items:
+            item_id = entry.get("item_id", "")
+            item_data = all_items_data.get(item_id, {})
+            item_type = item_data.get("item_type", "")
+            # Show potions, scrolls, and consumables
+            if item_type in ("potion", "scroll", "consumable") or item_id in ("healing_potion",):
+                name = item_data.get("name", item_id)
+                qty = entry.get("quantity", 1)
+                usable.append(f"{name} x{qty}" if qty > 1 else name)
+
+        if not usable:
+            return {"success": False, "description": "You have no usable combat items. (Potions, scrolls)"}
+
+        return {
+            "success": False,
+            "description": f"Type 'use [item name]' to use an item.\nUsable: {', '.join(usable)}",
+        }
+
+    # -- Class Ability Resolution --
+
+    def _resolve_class_ability(self, action: Action, context: GameContext, combat: dict) -> dict:
+        """Resolve a class-specific combat ability (rage, flurry, lay on hands, etc.)."""
+        char = context.character
+        char_id = char["id"]
+        char_class = (char.get("char_class") or "").lower()
+        raw = (action.raw_input or "").lower().strip()
+        mutations: list[StateMutation] = []
+        events: list[dict[str, Any]] = []
+        dice_rolls: list[DiceRoll] = []
+
+        if char_class == "barbarian" or raw in ("rage",):
+            return self._resolve_rage(char, char_id, combat, mutations, events)
+
+        if char_class == "monk" or raw in ("flurry", "flurry of blows"):
+            return self._resolve_flurry(action, char, char_id, context, combat, mutations, events, dice_rolls)
+
+        if char_class == "paladin" or raw in ("lay on hands",):
+            return self._resolve_lay_on_hands(char, char_id, combat, mutations, events)
+
+        if char_class == "bard" or raw in ("inspire", "bardic inspiration"):
+            return self._resolve_bardic_inspiration(char, char_id, mutations, events)
+
+        if char_class == "druid" or raw in ("wild shape",):
+            return self._resolve_wild_shape(char, char_id, combat, mutations, events)
+
+        return {"success": False, "description": "Your class doesn't have a special combat ability."}
+
+    def _resolve_rage(self, char: dict, char_id: str, combat: dict,
+                      mutations: list, events: list) -> dict:
+        from text_rpg.mechanics.class_resources import get_rage_uses
+        level = char.get("level", 1)
+        remaining = char.get("rage_remaining")
+        if remaining is None:
+            remaining = get_rage_uses(level)
+        if remaining <= 0:
+            return {"success": False, "description": "You have no rage uses remaining."}
+
+        # Set rage condition on player combatant
+        self._set_player_condition(combat, "raging")
+        mutations.append(StateMutation(
+            target_type="character", target_id=char_id,
+            field="rage_remaining", old_value=remaining, new_value=remaining - 1,
+        ))
+        events.append({
+            "event_type": "CLASS_ABILITY",
+            "description": "You enter a rage! Resistance to physical damage, +2 melee damage.",
+            "actor_id": char_id,
+            "mechanical_details": {"ability": "rage", "remaining": remaining - 1},
+        })
+        return {
+            "success": True,
+            "description": "You let out a primal roar and enter a RAGE! (+2 melee damage, resistance to bludgeoning/piercing/slashing)",
+            "mutations": mutations, "dice_rolls": [], "events": events,
+        }
+
+    def _resolve_flurry(self, action: Action, char: dict, char_id: str,
+                        context: GameContext, combat: dict,
+                        mutations: list, events: list, dice_rolls: list) -> dict:
+        ki = char.get("ki_remaining")
+        if ki is None:
+            from text_rpg.mechanics.class_resources import get_ki_points
+            ki = get_ki_points(char.get("level", 1))
+        if ki <= 0:
+            return {"success": False, "description": "You have no ki points remaining."}
+
+        # Spend 1 ki for two unarmed strikes
+        mutations.append(StateMutation(
+            target_type="character", target_id=char_id,
+            field="ki_remaining", old_value=ki, new_value=ki - 1,
+        ))
+
+        target = self._find_combat_target(action.target_id, context, combat)
+        if not target:
+            return {"success": False, "description": "No valid target for Flurry of Blows."}
+
+        scores = safe_json(char.get("ability_scores"), {})
+        dex_mod = modifier(scores.get("dexterity", 10))
+        prof = char.get("proficiency_bonus", 2)
+        atk_bonus = dex_mod + prof
+        target_ac = target.get("ac", 10)
+        total_damage = 0
+        parts: list[str] = ["Flurry of Blows!"]
+
+        for i in range(2):
+            from text_rpg.mechanics.combat_math import attack_roll as atk_roll, damage_roll as dmg_roll
+            hit, crit, result = atk_roll(atk_bonus, target_ac)
+            dice_rolls.append(DiceRoll(
+                dice_expression="1d20", rolls=result.individual_rolls,
+                modifier=atk_bonus, total=result.total,
+                purpose=f"unarmed strike {i+1}",
+            ))
+            if hit:
+                dmg = dmg_roll("1d4", dex_mod, crit)
+                dice_rolls.append(DiceRoll(
+                    dice_expression="1d4", rolls=dmg.individual_rolls,
+                    modifier=dex_mod, total=dmg.total,
+                    purpose=f"unarmed damage {i+1}",
+                ))
+                total_damage += dmg.total
+                parts.append(f"Strike {i+1}: {'CRIT! ' if crit else ''}{dmg.total} damage.")
+            else:
+                parts.append(f"Strike {i+1}: Miss!")
+
+        if total_damage > 0:
+            old_hp = self._get_combatant_hp(combat, target["id"])
+            new_hp = max(0, old_hp - total_damage)
+            self._set_combatant_hp(combat, target["id"], new_hp)
+            mutations.append(StateMutation(
+                target_type="entity", target_id=target["id"],
+                field="hp_current", old_value=old_hp, new_value=new_hp,
+            ))
+            if new_hp <= 0:
+                self._mark_combatant_defeated(combat, target["id"])
+                parts.append(f"{target['name']} is defeated!")
+
+        events.append({
+            "event_type": "CLASS_ABILITY",
+            "description": " ".join(parts),
+            "actor_id": char_id,
+            "mechanical_details": {"ability": "flurry_of_blows", "ki_remaining": ki - 1, "damage": total_damage},
+        })
+        return {
+            "success": True, "description": " ".join(parts),
+            "mutations": mutations, "dice_rolls": dice_rolls, "events": events,
+        }
+
+    def _resolve_lay_on_hands(self, char: dict, char_id: str, combat: dict,
+                              mutations: list, events: list) -> dict:
+        pool = char.get("lay_on_hands_remaining")
+        if pool is None:
+            from text_rpg.mechanics.class_resources import get_lay_on_hands_pool
+            pool = get_lay_on_hands_pool(char.get("level", 1))
+        if pool <= 0:
+            return {"success": False, "description": "Your Lay on Hands pool is empty."}
+
+        hp_cur = self._get_combatant_hp(combat, char_id)
+        hp_max = char.get("hp_max", 10)
+        missing = hp_max - hp_cur
+        if missing <= 0:
+            return {"success": False, "description": "You are already at full health."}
+
+        heal_amount = min(missing, pool, 10)  # Heal up to 10 per use
+        new_hp = hp_cur + heal_amount
+        self._set_combatant_hp(combat, char_id, new_hp)
+
+        mutations.append(StateMutation(
+            target_type="character", target_id=char_id,
+            field="hp_current", old_value=hp_cur, new_value=new_hp,
+        ))
+        mutations.append(StateMutation(
+            target_type="character", target_id=char_id,
+            field="lay_on_hands_remaining", old_value=pool, new_value=pool - heal_amount,
+        ))
+        events.append({
+            "event_type": "CLASS_ABILITY",
+            "description": f"Lay on Hands: healed {heal_amount} HP. ({pool - heal_amount} pool remaining)",
+            "actor_id": char_id,
+        })
+        return {
+            "success": True,
+            "description": f"You channel divine energy, healing yourself for {heal_amount} HP. (Pool: {pool - heal_amount} remaining)",
+            "mutations": mutations, "dice_rolls": [], "events": events,
+        }
+
+    def _resolve_bardic_inspiration(self, char: dict, char_id: str,
+                                     mutations: list, events: list) -> dict:
+        remaining = char.get("bardic_inspiration_remaining")
+        if remaining is None:
+            from text_rpg.mechanics.class_resources import get_inspiration_uses
+            scores = safe_json(char.get("ability_scores"), {})
+            remaining = get_inspiration_uses(scores.get("charisma", 10))
+        if remaining <= 0:
+            return {"success": False, "description": "You have no Bardic Inspiration uses remaining."}
+
+        from text_rpg.mechanics.class_resources import get_inspiration_die
+        die = get_inspiration_die(char.get("level", 1))
+
+        mutations.append(StateMutation(
+            target_type="character", target_id=char_id,
+            field="bardic_inspiration_remaining", old_value=remaining, new_value=remaining - 1,
+        ))
+        events.append({
+            "event_type": "CLASS_ABILITY",
+            "description": f"Used Bardic Inspiration ({die}). {remaining - 1} uses left.",
+            "actor_id": char_id,
+        })
+        return {
+            "success": True,
+            "description": f"You play an inspiring melody! Gain a {die} Bardic Inspiration die to add to your next attack, check, or save.",
+            "mutations": mutations, "dice_rolls": [], "events": events,
+        }
+
+    def _resolve_wild_shape(self, char: dict, char_id: str, combat: dict,
+                            mutations: list, events: list) -> dict:
+        remaining = char.get("wild_shape_remaining")
+        if remaining is None:
+            remaining = 2  # Wild Shape: 2 uses per short rest
+        if remaining <= 0:
+            return {"success": False, "description": "You have no Wild Shape uses remaining."}
+
+        from text_rpg.mechanics.class_resources import get_wild_shape_temp_hp
+        temp_hp = get_wild_shape_temp_hp(char.get("level", 1))
+
+        # Add temp HP to player combatant
+        player = self._get_combatant(combat, char_id)
+        if player:
+            hp = player.get("hp", {})
+            if isinstance(hp, dict):
+                hp["temp"] = temp_hp
+
+        mutations.append(StateMutation(
+            target_type="character", target_id=char_id,
+            field="wild_shape_remaining", old_value=remaining, new_value=remaining - 1,
+        ))
+        events.append({
+            "event_type": "CLASS_ABILITY",
+            "description": f"Wild Shape: gained {temp_hp} temporary HP.",
+            "actor_id": char_id,
+        })
+        return {
+            "success": True,
+            "description": f"You shift into a bestial form! Gained {temp_hp} temporary HP. ({remaining - 1} uses left)",
+            "mutations": mutations, "dice_rolls": [], "events": events,
+        }
 
     # -- NPC Turn Resolution --
 
@@ -564,14 +1016,32 @@ class CombatSystem(GameSystem):
 
         if hit:
             dmg_result = damage_roll(dmg_dice, dmg_mod, is_critical)
+
+            # Determine NPC's damage type for resistance check
+            npc_dmg_type_raw = ""
+            if npc_entity:
+                npc_attacks_raw = safe_json(npc_entity.get("attacks"), [])
+                if npc_attacks_raw and isinstance(npc_attacks_raw[0], dict):
+                    npc_dmg_type_raw = npc_attacks_raw[0].get("damage_type", "")
+
+            # Apply player's resistance/vulnerability/immunity
+            char_props = safe_json(context.character.get("properties"), {}) or {}
+            effective_npc_dmg, npc_dmg_label = get_effective_damage(
+                dmg_result.total,
+                npc_dmg_type_raw,
+                char_props.get("resistances", []),
+                char_props.get("vulnerabilities", []),
+                char_props.get("immunities", []),
+            )
+
             dice_rolls.append(DiceRoll(
                 dice_expression=dmg_dice, rolls=dmg_result.individual_rolls,
-                modifier=dmg_mod, total=dmg_result.total,
+                modifier=dmg_mod, total=effective_npc_dmg,
                 purpose=f"damage_roll ({npc_name})",
             ))
 
             old_hp = self._get_combatant_hp(combat, char_id)
-            new_hp = max(0, old_hp - dmg_result.total)
+            new_hp = max(0, old_hp - effective_npc_dmg)
             self._set_combatant_hp(combat, char_id, new_hp)
 
             mutations.append(StateMutation(
@@ -582,18 +1052,23 @@ class CombatSystem(GameSystem):
             ))
 
             crit = " CRITICAL HIT!" if is_critical else ""
-            desc = f"{npc_name} attacks you and hits!{crit} {dmg_result.total} damage."
+            resist_text = f" ({npc_dmg_label})" if npc_dmg_label != "normal" else ""
+            desc = f"{npc_name} attacks you and hits!{crit} {effective_npc_dmg} damage.{resist_text}"
             events.append({
                 "event_type": "ATTACK",
-                "description": f"{npc_name} attacks {context.character['name']} for {dmg_result.total} damage.",
+                "description": f"{npc_name} attacks {context.character['name']} for {effective_npc_dmg} damage.",
                 "actor_id": npc.get("entity_id", ""), "target_id": char_id,
-                "mechanical_details": {"damage": dmg_result.total, "critical": is_critical, "npc_attack": True},
+                "mechanical_details": {
+                    "damage": effective_npc_dmg, "critical": is_critical,
+                    "npc_attack": True, "attack_style": "melee",
+                    "damage_modifier": npc_dmg_label,
+                },
             })
 
             # Check for wounds from heavy hits
             from text_rpg.mechanics.wounds import check_for_wound
             hp_max = context.character.get("hp_max", 10)
-            wound = check_for_wound(dmg_result.total, hp_max)
+            wound = check_for_wound(effective_npc_dmg, hp_max)
             wound_text = None
             if wound and new_hp > 0:
                 # Add wound to character
@@ -614,16 +1089,14 @@ class CombatSystem(GameSystem):
 
             # Narrative prose from LLM
             npc_attack_name = "attack"
-            npc_dmg_type = ""
             if npc_entity:
-                npc_attacks = safe_json(npc_entity.get("attacks"), [])
-                if npc_attacks and isinstance(npc_attacks[0], dict):
-                    npc_attack_name = npc_attacks[0].get("name", "attack")
-                    npc_dmg_type = npc_attacks[0].get("damage_type", "")
+                npc_attacks_for_narration = safe_json(npc_entity.get("attacks"), [])
+                if npc_attacks_for_narration and isinstance(npc_attacks_for_narration[0], dict):
+                    npc_attack_name = npc_attacks_for_narration[0].get("name", "attack")
             narration = self._narrate_attack(
                 attacker_name=npc_name, attacker_type="enemy",
                 defender_name=context.character["name"], hit=True, critical=is_critical,
-                damage=dmg_result.total, damage_type=npc_dmg_type,
+                damage=effective_npc_dmg, damage_type=npc_dmg_type_raw,
                 defeated=new_hp <= 0, attack_name=npc_attack_name, wound=wound_text,
             )
             if narration:
@@ -650,7 +1123,7 @@ class CombatSystem(GameSystem):
                 "event_type": "ATTACK",
                 "description": f"{npc_name} attacks {context.character['name']} and misses.",
                 "actor_id": npc.get("entity_id", ""), "target_id": char_id,
-                "mechanical_details": {"hit": False, "npc_attack": True},
+                "mechanical_details": {"hit": False, "npc_attack": True, "attack_style": "melee"},
             })
 
         # Clear dodging after being attacked
@@ -1064,7 +1537,16 @@ class CombatSystem(GameSystem):
                 return e
         return None
 
-    # -- Weapon/Attack Helpers (unchanged) --
+    # -- Weapon/Attack Helpers --
+
+    def _get_attack_style(self, char: dict) -> str:
+        """Determine if a character's attack is melee or ranged."""
+        weapon = self._get_weapon_data(char)
+        if weapon:
+            weapon_type = weapon.get("weapon_type", "")
+            if "ranged" in weapon_type:
+                return "ranged"
+        return "melee"
 
     def _get_weapon_data(self, char: dict) -> dict | None:
         weapon_id = char.get("equipped_weapon_id")

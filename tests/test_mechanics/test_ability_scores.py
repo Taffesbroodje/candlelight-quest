@@ -6,6 +6,7 @@ import pytest
 from text_rpg.mechanics.ability_scores import (
     RACIAL_BONUSES,
     STANDARD_ARRAY,
+    apply_origin_bonuses,
     apply_racial_bonuses,
     generate_ability_scores,
     modifier,
@@ -73,3 +74,43 @@ class TestApplyRacialBonuses:
         original = dict(sample_ability_scores)
         apply_racial_bonuses(sample_ability_scores, "elf")
         assert sample_ability_scores == original
+
+
+class TestApplyOriginBonuses:
+    def test_basic_origin_bonuses(self, sample_ability_scores):
+        result = apply_origin_bonuses(sample_ability_scores, "strength", "dexterity")
+        assert result["strength"] == sample_ability_scores["strength"] + 2
+        assert result["dexterity"] == sample_ability_scores["dexterity"] + 1
+
+    def test_other_scores_unchanged(self, sample_ability_scores):
+        result = apply_origin_bonuses(sample_ability_scores, "strength", "dexterity")
+        for ability in ["constitution", "intelligence", "wisdom", "charisma"]:
+            assert result[ability] == sample_ability_scores[ability]
+
+    def test_cap_at_20(self):
+        scores = {"strength": 19, "dexterity": 20, "constitution": 10,
+                  "intelligence": 10, "wisdom": 10, "charisma": 10}
+        result = apply_origin_bonuses(scores, "strength", "dexterity")
+        assert result["strength"] == 20  # 19 + 2 = 21, capped to 20
+        assert result["dexterity"] == 20  # 20 + 1 = 21, capped to 20
+
+    def test_input_not_mutated(self, sample_ability_scores):
+        original = dict(sample_ability_scores)
+        apply_origin_bonuses(sample_ability_scores, "charisma", "wisdom")
+        assert sample_ability_scores == original
+
+    def test_invalid_ability_ignored(self, sample_ability_scores):
+        result = apply_origin_bonuses(sample_ability_scores, "nonexistent", "dexterity")
+        assert result["dexterity"] == sample_ability_scores["dexterity"] + 1
+        assert "nonexistent" not in result
+
+    @pytest.mark.parametrize("primary, secondary", [
+        ("strength", "constitution"),
+        ("dexterity", "charisma"),
+        ("intelligence", "wisdom"),
+        ("charisma", "strength"),
+    ])
+    def test_various_combinations(self, sample_ability_scores, primary, secondary):
+        result = apply_origin_bonuses(sample_ability_scores, primary, secondary)
+        assert result[primary] == min(sample_ability_scores[primary] + 2, 20)
+        assert result[secondary] == min(sample_ability_scores[secondary] + 1, 20)

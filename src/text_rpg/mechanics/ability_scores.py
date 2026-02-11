@@ -45,3 +45,13 @@ def apply_racial_bonuses(scores: dict[str, int], race: str) -> dict[str, int]:
         if ability in result:
             result[ability] += bonus
     return result
+
+
+def apply_origin_bonuses(scores: dict[str, int], primary: str, secondary: str) -> dict[str, int]:
+    """Apply origin ability score bonuses: +2 to primary, +1 to secondary, capped at 20."""
+    result = dict(scores)
+    if primary in result:
+        result[primary] = min(result[primary] + 2, 20)
+    if secondary in result:
+        result[secondary] = min(result[secondary] + 1, 20)
+    return result

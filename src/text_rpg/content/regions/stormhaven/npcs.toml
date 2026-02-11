@@ -1,0 +1,356 @@
+# Stormhaven NPCs — coastal town
+
+[[npcs]]
+id = "guildmaster_harlan"
+name = "Guildmaster Harlan Deepwater"
+entity_type = "npc"
+profession = "guildmaster"
+description = "A weathered human man built like a ship's mast, with a salt-white beard and hands scarred by harpoon lines. He leads the Harpooner's Guild with iron authority and deep respect for the sea."
+location_id = "harpooners_hall"
+dialogue_tags = ["greeting", "quest_info", "lore", "politics"]
+behaviors = ["authoritative", "quest_giver", "respected"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 55
+hp_max = 55
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 18
+dexterity = 12
+constitution = 16
+intelligence = 12
+wisdom = 15
+charisma = 14
+
+[npcs.schedule]
+dawn = "stormhaven_harbor"
+morning = "harpooners_hall"
+midday = "harpooners_hall"
+afternoon = "stormhaven_market"
+evening = "the_drowning_man"
+night = "harpooners_hall"
+late_night = "harpooners_hall"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_potion", "hempen_rope"]
+disliked_gifts = ["nightshade", "arcane_dust"]
+
+[[npcs.attacks]]
+name = "Harpoon"
+damage_dice = "1d10"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[npcs]]
+id = "innkeeper_dirge"
+name = "Innkeeper Dirge"
+entity_type = "npc"
+profession = "innkeeper"
+description = "A gaunt, hollow-eyed human man who never smiles. Despite his grim demeanor, he serves the strongest drinks in town and keeps the peace with a truncheon he calls 'The Negotiator.'"
+location_id = "the_drowning_man"
+dialogue_tags = ["greeting", "rumors", "shop_food", "quest_info"]
+behaviors = ["grim", "merchant", "information"]
+is_hostile = false
+is_alive = true
+level = 4
+hp_current = 30
+hp_max = 30
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 12
+constitution = 14
+intelligence = 13
+wisdom = 14
+charisma = 10
+
+[npcs.schedule]
+dawn = "the_drowning_man"
+morning = "the_drowning_man"
+midday = "stormhaven_market"
+afternoon = "the_drowning_man"
+evening = "the_drowning_man"
+night = "the_drowning_man"
+late_night = "the_drowning_man"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_potion"]
+disliked_gifts = ["holy_symbol", "moonpetal"]
+
+[[npcs.attacks]]
+name = "The Negotiator"
+damage_dice = "1d6"
+damage_bonus = 2
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "priestess_coral"
+name = "Priestess Coral"
+entity_type = "npc"
+profession = "priestess"
+description = "A serene sea-elf woman with blue-green skin and kelp-like hair. She tends the Chapel of the Storm and offers blessings to sailors. Her voice is like the sound of waves on a calm shore."
+location_id = "stormhaven_chapel"
+dialogue_tags = ["greeting", "healing", "blessing", "lore"]
+behaviors = ["serene", "healer", "spiritual"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 36
+hp_max = 36
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 14
+constitution = 12
+intelligence = 14
+wisdom = 18
+charisma = 16
+
+[npcs.schedule]
+dawn = "stormhaven_chapel"
+morning = "stormhaven_chapel"
+midday = "stormhaven_chapel"
+afternoon = "stormhaven_harbor"
+evening = "stormhaven_chapel"
+night = "stormhaven_chapel"
+late_night = "stormhaven_chapel"
+
+[npcs.properties]
+preferred_gifts = ["moonpetal", "healing_herb", "holy_symbol"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Tidal Wave"
+damage_dice = "2d8"
+damage_type = "cold"
+
+[[npcs]]
+id = "captain_scarlet"
+name = "Captain Scarlet Vane"
+entity_type = "npc"
+profession = "privateer"
+description = "A charismatic tiefling woman with crimson skin and a plumed hat. She captains the privateer ship Crimson Tide and walks the line between legal privateering and outright piracy."
+location_id = "privateer_dock"
+dialogue_tags = ["greeting", "quest_info", "rumors", "shop_supplies"]
+behaviors = ["charismatic", "quest_giver", "opportunist"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 48
+hp_max = 48
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 18
+constitution = 13
+intelligence = 14
+wisdom = 12
+charisma = 17
+
+[npcs.schedule]
+dawn = "privateer_dock"
+morning = "privateer_dock"
+midday = "the_drowning_man"
+afternoon = "stormhaven_harbor"
+evening = "the_drowning_man"
+night = "privateer_dock"
+late_night = "privateer_dock"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "dagger"]
+disliked_gifts = ["holy_symbol", "healing_herb"]
+
+[[npcs.attacks]]
+name = "Rapier"
+damage_dice = "1d8"
+damage_bonus = 4
+damage_type = "piercing"
+
+[[npcs.attacks]]
+name = "Flintlock Pistol"
+damage_dice = "1d10"
+damage_bonus = 2
+damage_type = "piercing"
+
+[[npcs]]
+id = "chandler_griff"
+name = "Chandler Griff"
+entity_type = "npc"
+profession = "chandler"
+description = "A stocky halfling man with a perpetual squint from years of inventorying tiny ship fittings. He sells everything a vessel needs and knows every ship in the harbor by name."
+location_id = "chandler_shop"
+dialogue_tags = ["greeting", "shop_supplies", "rumors", "lore"]
+behaviors = ["practical", "merchant", "knowledgeable"]
+is_hostile = false
+is_alive = true
+level = 3
+hp_current = 20
+hp_max = 20
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 14
+constitution = 12
+intelligence = 15
+wisdom = 14
+charisma = 13
+
+[npcs.schedule]
+dawn = "chandler_shop"
+morning = "chandler_shop"
+midday = "stormhaven_market"
+afternoon = "chandler_shop"
+evening = "the_drowning_man"
+night = "chandler_shop"
+late_night = "chandler_shop"
+
+[npcs.properties]
+preferred_gifts = ["hempen_rope", "lantern"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Marlinspike"
+damage_dice = "1d4"
+damage_type = "piercing"
+
+[[npcs]]
+id = "lighthouse_tide"
+name = "Lighthouse Keeper Tide"
+entity_type = "npc"
+profession = "lighthouse_keeper"
+description = "An ancient gnome of indeterminate age who has tended the lighthouse for decades. They speak to the lighthouse as if it were alive and claim to understand the language of storms."
+location_id = "stormhaven_lighthouse"
+dialogue_tags = ["greeting", "lore", "rumors", "quest_info"]
+behaviors = ["eccentric", "information", "mysterious"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 22
+hp_max = 22
+ac = 13
+unavailable_periods = []
+
+[npcs.ability_scores]
+strength = 6
+dexterity = 14
+constitution = 12
+intelligence = 17
+wisdom = 18
+charisma = 12
+
+[npcs.schedule]
+dawn = "stormhaven_lighthouse"
+morning = "stormhaven_lighthouse"
+midday = "stormhaven_lighthouse"
+afternoon = "stormhaven_lighthouse"
+evening = "stormhaven_lighthouse"
+night = "stormhaven_lighthouse"
+late_night = "stormhaven_lighthouse"
+
+[npcs.properties]
+preferred_gifts = ["lantern", "arcane_dust", "moonpetal"]
+disliked_gifts = ["rations", "iron_ingot"]
+
+[[npcs.attacks]]
+name = "Lightning Bolt Scroll"
+damage_dice = "2d6"
+damage_type = "lightning"
+
+[[npcs]]
+id = "netter_moll"
+name = "Netter Moll"
+entity_type = "npc"
+profession = "fisherman"
+description = "A tough, sun-darkened human woman who leads the fishers' community. Her hands are permanently rough from hauling nets, and she has a sailor's vocabulary that could strip paint."
+location_id = "fishers_quarter"
+dialogue_tags = ["greeting", "rumors", "quest_info", "lore"]
+behaviors = ["tough", "information", "community_leader"]
+is_hostile = false
+is_alive = true
+level = 3
+hp_current = 22
+hp_max = 22
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 13
+constitution = 14
+intelligence = 10
+wisdom = 14
+charisma = 12
+
+[npcs.schedule]
+dawn = "stormhaven_harbor"
+morning = "net_menders_row"
+midday = "fishers_quarter"
+afternoon = "net_menders_row"
+evening = "the_drowning_man"
+night = "fishers_quarter"
+late_night = "fishers_quarter"
+
+[npcs.properties]
+preferred_gifts = ["rations", "hempen_rope", "healing_herb"]
+disliked_gifts = ["arcane_dust", "nightshade"]
+
+[[npcs.attacks]]
+name = "Gutting Knife"
+damage_dice = "1d4"
+damage_bonus = 1
+damage_type = "slashing"
+
+[[npcs]]
+id = "marshal_brine"
+name = "Harbor Marshal Brine"
+entity_type = "npc"
+profession = "marshal"
+description = "A stern half-orc man in a long oilskin coat, with a trident badge pinned to his chest. He enforces harbor law and keeps the uneasy peace between the Guild and the privateers."
+location_id = "stormhaven_harbor"
+dialogue_tags = ["greeting", "guard_info", "quest_info", "rumors"]
+behaviors = ["authoritative", "protector", "impartial"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 56
+hp_max = 56
+ac = 17
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 17
+dexterity = 13
+constitution = 15
+intelligence = 12
+wisdom = 15
+charisma = 13
+
+[npcs.schedule]
+dawn = "stormhaven_harbor"
+morning = "stormhaven_harbor"
+midday = "stormhaven_market"
+afternoon = "privateer_dock"
+evening = "stormhaven_harbor"
+night = "the_drowning_man"
+late_night = "stormhaven_harbor"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "rations"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Trident"
+damage_dice = "1d8"
+damage_bonus = 3
+damage_type = "piercing"

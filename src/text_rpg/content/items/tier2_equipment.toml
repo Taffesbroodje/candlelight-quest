@@ -1,0 +1,204 @@
+# Tier 2 Equipment (L4-8 regions: Greenvale, Stormhaven, Dusthollow, Mistwood, Cragmoor)
+# Quality mundane + uncommon magic items
+
+# --- Weapons ---
+
+[[items]]
+id = "longbow"
+name = "Longbow"
+description = "A tall bow made from a single piece of yew, favored by archers and scouts."
+item_type = "weapon"
+weight = 2.0
+value_gp = 50
+rarity = "common"
+weapon_type = "martial_ranged"
+damage_dice = "1d8"
+damage_type = "piercing"
+properties = ["ammunition", "heavy", "two_handed"]
+
+[[items]]
+id = "greatsword"
+name = "Greatsword"
+description = "A massive two-handed blade that cleaves through armor with devastating force."
+item_type = "weapon"
+weight = 6.0
+value_gp = 50
+rarity = "common"
+weapon_type = "martial_melee"
+damage_dice = "2d6"
+damage_type = "slashing"
+properties = ["heavy", "two_handed"]
+
+[[items]]
+id = "warhammer"
+name = "Warhammer"
+description = "A heavy hammer designed for crushing armor and bone alike."
+item_type = "weapon"
+weight = 2.0
+value_gp = 15
+rarity = "common"
+weapon_type = "martial_melee"
+damage_dice = "1d8"
+damage_type = "bludgeoning"
+properties = ["versatile"]
+
+[[items]]
+id = "flail"
+name = "Flail"
+description = "A spiked metal ball on a chain, swung with deadly momentum."
+item_type = "weapon"
+weight = 2.0
+value_gp = 10
+rarity = "common"
+weapon_type = "martial_melee"
+damage_dice = "1d8"
+damage_type = "bludgeoning"
+properties = []
+
+[[items]]
+id = "trident"
+name = "Trident"
+description = "A three-pronged spear that can be thrown or used in melee."
+item_type = "weapon"
+weight = 4.0
+value_gp = 5
+rarity = "common"
+weapon_type = "martial_melee"
+damage_dice = "1d6"
+damage_type = "piercing"
+properties = ["thrown", "versatile"]
+
+[[items]]
+id = "silver_dagger"
+name = "Silver Dagger"
+description = "A dagger forged with silver, effective against lycanthropes and certain fiends."
+item_type = "weapon"
+weight = 1.0
+value_gp = 102
+rarity = "uncommon"
+weapon_type = "simple_melee"
+damage_dice = "1d4"
+damage_type = "piercing"
+properties = ["finesse", "light", "thrown"]
+
+[[items]]
+id = "quality_longsword"
+name = "Quality Longsword"
+description = "A finely crafted longsword, balanced and sharp beyond normal smithing."
+item_type = "weapon"
+weight = 3.0
+value_gp = 100
+rarity = "uncommon"
+weapon_type = "martial_melee"
+damage_dice = "1d8+1"
+damage_type = "slashing"
+properties = ["versatile"]
+
+[[items]]
+id = "composite_shortbow"
+name = "Composite Shortbow"
+description = "A shortbow with horn and sinew lamination for extra power."
+item_type = "weapon"
+weight = 2.0
+value_gp = 75
+rarity = "uncommon"
+weapon_type = "martial_ranged"
+damage_dice = "1d6+1"
+damage_type = "piercing"
+properties = ["ammunition", "two_handed"]
+
+# --- Armor ---
+
+[[items]]
+id = "breastplate"
+name = "Breastplate"
+description = "A fitted metal chest piece worn with flexible leather underneath, offering solid protection with decent mobility."
+item_type = "armor"
+weight = 20.0
+value_gp = 400
+rarity = "uncommon"
+armor_type = "medium"
+ac_base = 14
+max_dex_bonus = 2
+stealth_disadvantage = false
+strength_requirement = 0
+
+[[items]]
+id = "half_plate"
+name = "Half Plate"
+description = "Shaped metal plates covering most of the body, with chain and leather for the joints."
+item_type = "armor"
+weight = 40.0
+value_gp = 750
+rarity = "uncommon"
+armor_type = "medium"
+ac_base = 15
+max_dex_bonus = 2
+stealth_disadvantage = true
+strength_requirement = 0
+
+[[items]]
+id = "studded_leather"
+name = "Studded Leather"
+description = "Tough leather armor reinforced with close-set rivets, offering protection without sacrificing agility."
+item_type = "armor"
+weight = 13.0
+value_gp = 45
+rarity = "common"
+armor_type = "light"
+ac_base = 12
+max_dex_bonus = 99
+stealth_disadvantage = false
+strength_requirement = 0
+
+[[items]]
+id = "splint_armor"
+name = "Splint Armor"
+description = "Narrow vertical strips of metal riveted to a backing of leather, worn over cloth padding."
+item_type = "armor"
+weight = 60.0
+value_gp = 200
+rarity = "uncommon"
+armor_type = "heavy"
+ac_base = 17
+max_dex_bonus = 0
+stealth_disadvantage = true
+strength_requirement = 15
+
+[[items]]
+id = "reinforced_shield"
+name = "Reinforced Shield"
+description = "A shield reinforced with iron bands, sturdier than standard."
+item_type = "armor"
+weight = 8.0
+value_gp = 50
+rarity = "uncommon"
+armor_type = "shield"
+ac_base = 2
+max_dex_bonus = 0
+stealth_disadvantage = false
+strength_requirement = 0
+
+# --- Potions ---
+
+[[items]]
+id = "greater_healing_potion"
+name = "Potion of Greater Healing"
+description = "A larger vial of luminous red liquid that mends even serious wounds."
+item_type = "potion"
+weight = 0.5
+value_gp = 150
+rarity = "uncommon"
+
+[items.effects]
+heal_dice = "4d4"
+heal_bonus = 4
+
+[[items]]
+id = "potion_of_climbing"
+name = "Potion of Climbing"
+description = "Grants a climbing speed equal to your walking speed for 1 hour."
+item_type = "potion"
+weight = 0.5
+value_gp = 75
+rarity = "uncommon"

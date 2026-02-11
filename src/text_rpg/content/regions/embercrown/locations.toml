@@ -1,0 +1,577 @@
+# Embercrown — volcanic caldera city, L10-16
+
+[[locations]]
+id = "embercrown_gate"
+name = "Embercrown Gate"
+region_id = "embercrown"
+description = "The obsidian gates of Embercrown, set into the caldera wall. Heat radiates from the stone, and the air shimmers. Guards in heat-resistant armor watch the approach."
+location_type = "town"
+
+[[locations.connections]]
+target_location_id = "furnace_district"
+direction = "north"
+description = "A wide avenue leads north into the industrial heart of the city."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "obsidian_market"
+direction = "east"
+description = "Polished obsidian platforms glitter to the east, bustling with traders."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ember_quarter"
+direction = "west"
+description = "Warm, glowing buildings line the western residential district."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ash_wastes_south"
+direction = "south"
+description = "The road south passes through volcanic ash wastes."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "merchant_road_west"
+direction = "southwest"
+description = "The western trade road winds through mountain passes."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "drake_trail_north"
+direction = "north"
+description = "A dangerous trail heads north into drake territory."
+is_locked = false
+
+[[locations]]
+id = "furnace_district"
+name = "Furnace District"
+region_id = "embercrown"
+description = "The industrial heart of Embercrown where massive furnaces burn day and night. Rivers of molten metal flow through stone channels, and the clanging of hammers never stops."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "embercrown_gate"
+direction = "south"
+description = "The avenue leads south back to the main gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "magma_forge"
+direction = "east"
+description = "Heat intensifies as you approach the legendary Magma Forge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "embercrown_arena"
+direction = "north"
+description = "The roar of crowds echoes from the arena to the north."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ember_barracks"
+direction = "west"
+description = "Military quarters for the Phoenix Guard lie to the west."
+is_locked = false
+
+[[locations]]
+id = "obsidian_market"
+name = "Obsidian Market"
+region_id = "embercrown"
+description = "A marketplace built on polished obsidian platforms. Exotic fire-forged goods, volcanic gems, and heat-resistant materials are traded. The heat from below keeps the stone warm."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "embercrown_gate"
+direction = "west"
+description = "The main gate lies to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "burning_library"
+direction = "north"
+description = "The scent of salamander-hide parchment drifts from the library to the north."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "embassy_row"
+direction = "east"
+description = "Diplomatic missions and foreign embassies line the eastern street."
+is_locked = false
+
+[[locations]]
+id = "ember_quarter"
+name = "Ember Quarter"
+region_id = "embercrown"
+description = "The residential district where tieflings and fire genasi live. Buildings of dark stone glow with internal heat, and fire features as both decoration and utility."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "embercrown_gate"
+direction = "east"
+description = "The main gate lies to the east."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ash_temple"
+direction = "north"
+description = "The grand temple of volcanic stone rises to the north."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hot_spring_baths"
+direction = "south"
+description = "Steam rises from the natural hot spring baths to the south."
+is_locked = false
+
+[[locations]]
+id = "ash_temple"
+name = "Ash Temple"
+region_id = "embercrown"
+description = "A grand temple of volcanic stone where priests tend eternal flames. The altar is a natural fissure from which sacred fire emerges."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "ember_quarter"
+direction = "south"
+description = "The residential quarter lies to the south."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "black_glass_tower"
+direction = "east"
+description = "The obsidian tower of scholars rises to the east."
+is_locked = false
+
+[[locations]]
+id = "giant_throne_room"
+name = "Giant Throne Room"
+region_id = "embercrown"
+description = "The ancient throne room of the Fire Giant king, sealed behind massive doors of heat-blackened iron. The temperature beyond is lethal without protection."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "deep_caldera"
+direction = "north"
+description = "A passage climbs north toward the deep caldera."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "fire_giant_ruins"
+direction = "west"
+description = "Colossal corridors lead west into the ruined giant city."
+is_locked = false
+
+[[locations]]
+id = "lava_falls"
+name = "Lava Falls"
+region_id = "embercrown"
+description = "A spectacular cascade of molten lava pouring into a lake of fire. The heat is immense, and the light turns night to day. Fire elementals dance in the flows."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "caldera_rim_path"
+direction = "north"
+description = "The rim path continues north along the caldera edge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "volcanic_vents"
+direction = "east"
+description = "Superheated gas vents hiss to the east."
+is_locked = false
+
+[[locations]]
+id = "caldera_rim_path"
+name = "Caldera Rim Path"
+region_id = "embercrown"
+description = "A path carved along the inner rim of the caldera, offering views of the lava lake below and the city above. Guardrails are intermittent."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "embercrown_gate"
+direction = "south"
+description = "The path descends south toward the main gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "lava_falls"
+direction = "south"
+description = "The spectacular lava falls are visible to the south."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "phoenix_roost"
+direction = "east"
+description = "A high ledge to the east where a legendary creature nests."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "skybridge"
+direction = "north"
+description = "An enchanted stone bridge spans the caldera to the north."
+is_locked = false
+
+[[locations]]
+id = "fire_giant_ruins"
+name = "Fire Giant Ruins"
+region_id = "embercrown"
+description = "The ruins of the Fire Giant civilization, partially submerged in cooled lava. Massive doorways and colossal furniture hint at the scale of the former inhabitants."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "giant_throne_room"
+direction = "east"
+description = "The throne room lies beyond massive iron doors to the east."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "giant_burial_ground"
+direction = "south"
+description = "Carved chambers descend south to the giant burial ground."
+is_locked = false
+
+[[locations]]
+id = "cultist_hideout"
+name = "Cultist Hideout"
+region_id = "embercrown"
+description = "A hidden chamber where cultists worship the sleeping Fire Giant king. Dark rituals and fire magic fill the air."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "mining_tunnels_east"
+direction = "west"
+description = "The mining tunnels extend to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "deep_caldera"
+direction = "south"
+description = "A dangerous descent leads south to the deep caldera."
+is_locked = false
+
+[[locations]]
+id = "magma_forge"
+name = "Magma Forge"
+region_id = "embercrown"
+description = "The legendary Magma Forge, where master smiths work metal heated by volcanic vents. Weapons forged here are among the finest in existence."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "furnace_district"
+direction = "west"
+description = "The furnace district lies to the west."
+is_locked = false
+
+[[locations]]
+id = "crystal_caverns"
+name = "Crystal Caverns"
+region_id = "embercrown"
+description = "Caverns filled with fire crystals that glow like captured sunlight. The crystals are valuable but harvesting them risks triggering volcanic activity."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "mining_tunnels_east"
+direction = "north"
+description = "Tunnels lead north to the main mining complex."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "volcanic_vents"
+direction = "west"
+description = "Superheated gas escapes from vents to the west."
+is_locked = false
+
+[[locations]]
+id = "volcanic_vents"
+name = "Volcanic Vents"
+region_id = "embercrown"
+description = "Natural vents where superheated gas and steam escape from deep underground. The ground is unstable, and eruptions are unpredictable."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "lava_falls"
+direction = "west"
+description = "The lava falls cascade to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "crystal_caverns"
+direction = "east"
+description = "Glowing crystal caverns open to the east."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "sulfur_flats"
+direction = "south"
+description = "Yellow sulfur deposits stretch to the south."
+is_locked = false
+
+[[locations]]
+id = "sulfur_flats"
+name = "Sulfur Flats"
+region_id = "embercrown"
+description = "A flat expanse of yellow sulfur deposits surrounding bubbling mud pools. The smell is overwhelming, but alchemists prize the pure sulfur."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "volcanic_vents"
+direction = "north"
+description = "The volcanic vents hiss to the north."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "fire_elemental_nexus"
+direction = "east"
+description = "The air shimmers with elemental energy to the east."
+is_locked = false
+
+[[locations]]
+id = "embercrown_arena"
+name = "Embercrown Arena"
+region_id = "embercrown"
+description = "A grand arena where gladiators fight surrounded by walls of flame. Champions earn legendary status, and the crowd's bloodlust is matched only by the heat."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "furnace_district"
+direction = "south"
+description = "The furnace district lies to the south."
+is_locked = false
+
+[[locations]]
+id = "phoenix_roost"
+name = "Phoenix Roost"
+region_id = "embercrown"
+description = "A high ledge where a phoenix makes its nest. The legendary bird is sacred to Embercrown, and its periodic death and rebirth is a city-wide celebration."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "caldera_rim_path"
+direction = "west"
+description = "The rim path continues to the west."
+is_locked = false
+
+[[locations]]
+id = "ember_barracks"
+name = "Ember Barracks"
+region_id = "embercrown"
+description = "Military quarters for the Phoenix Guard, Embercrown's elite soldiers. Trained to fight in extreme heat, they are fearsome warriors."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "furnace_district"
+direction = "east"
+description = "The furnace district lies to the east."
+is_locked = false
+
+[[locations]]
+id = "embassy_row"
+name = "Embassy Row"
+region_id = "embercrown"
+description = "A district of diplomatic missions from other cities and races. Fire-resistant construction protects visiting dignitaries from the city's extreme environment."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "obsidian_market"
+direction = "west"
+description = "The obsidian market lies to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "black_glass_tower"
+direction = "north"
+description = "The volcanic glass tower rises to the north."
+is_locked = false
+
+[[locations]]
+id = "deep_caldera"
+name = "Deep Caldera"
+region_id = "embercrown"
+description = "The deepest accessible level of the caldera, where the heat approaches the limits of magical protection. Ancient giant artifacts are found here."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "giant_throne_room"
+direction = "south"
+description = "Massive iron doors lead south to the throne room."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "cultist_hideout"
+direction = "north"
+description = "A hidden passage leads north to a concealed chamber."
+is_locked = false
+
+[[locations]]
+id = "fire_elemental_nexus"
+name = "Fire Elemental Nexus"
+region_id = "embercrown"
+description = "A convergence point of fire elemental energy where the boundary between the material world and the Elemental Plane of Fire is thin."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "sulfur_flats"
+direction = "west"
+description = "The sulfur flats stretch to the west."
+is_locked = false
+
+[[locations]]
+id = "black_glass_tower"
+name = "Black Glass Tower"
+region_id = "embercrown"
+description = "A tower of volcanic glass housing sages and scholars who study fire magic, giant lore, and volcanic phenomena."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "ash_temple"
+direction = "west"
+description = "The grand temple lies to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "embassy_row"
+direction = "south"
+description = "Embassy row lies to the south."
+is_locked = false
+
+[[locations]]
+id = "embercrown_prison"
+name = "Embercrown Prison"
+region_id = "embercrown"
+description = "A prison built into the caldera wall, where the heat itself serves as punishment. Cells closer to the lava are reserved for the worst offenders."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "ember_barracks"
+direction = "south"
+description = "The barracks lie to the south."
+is_locked = false
+
+[[locations]]
+id = "ash_wastes_south"
+name = "Ash Wastes South"
+region_id = "embercrown"
+description = "The road heading south from Embercrown through volcanic ash wastes toward distant Deadmarsh."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "embercrown_gate"
+direction = "north"
+description = "The obsidian gates of Embercrown rise to the north."
+is_locked = false
+
+[locations.properties]
+border_region = "deadmarsh"
+border_direction = "south"
+
+[[locations]]
+id = "drake_trail_north"
+name = "Drake Trail North"
+region_id = "embercrown"
+description = "A dangerous trail heading north into territory claimed by dragonkind. Few who take this road return unchanged."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "embercrown_gate"
+direction = "south"
+description = "The trail descends south back to Embercrown."
+is_locked = false
+
+[locations.properties]
+border_region = "drake_wastes"
+border_direction = "north"
+
+[[locations]]
+id = "merchant_road_west"
+name = "Merchant Road West"
+region_id = "embercrown"
+description = "The western trade road connecting Embercrown to the wider realm through mountain passes."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "embercrown_gate"
+direction = "northeast"
+description = "The road leads northeast back to Embercrown."
+is_locked = false
+
+[locations.properties]
+border_region = "deadmarsh"
+border_direction = "west"
+
+[[locations]]
+id = "mining_tunnels_east"
+name = "Mining Tunnels East"
+region_id = "embercrown"
+description = "Eastern mining tunnels where fire crystals and obsidian are extracted. The deeper tunnels have been sealed after miners broke through into something ancient."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "crystal_caverns"
+direction = "south"
+description = "A shaft descends south to the crystal caverns."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "cultist_hideout"
+direction = "east"
+description = "A concealed passage leads east to a hidden chamber."
+is_locked = false
+
+[[locations]]
+id = "hot_spring_baths"
+name = "Hot Spring Baths"
+region_id = "embercrown"
+description = "Natural hot springs channeled into bath houses. A luxury in a city of fire, these heated pools are social gathering spots for all classes."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "ember_quarter"
+direction = "north"
+description = "The residential quarter lies to the north."
+is_locked = false
+
+[[locations]]
+id = "giant_burial_ground"
+name = "Giant Burial Ground"
+region_id = "embercrown"
+description = "An ancient cemetery where Fire Giants interred their dead. Massive stone sarcophagi line carved chambers, and the dead do not rest easy."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "fire_giant_ruins"
+direction = "north"
+description = "The ruined giant city lies to the north."
+is_locked = false
+
+[[locations]]
+id = "burning_library"
+name = "Burning Library"
+region_id = "embercrown"
+description = "A library of fire-resistant scrolls and books bound in salamander hide. Knowledge of fire magic, giant lore, and volcanic science is preserved here."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "obsidian_market"
+direction = "south"
+description = "The obsidian market lies to the south."
+is_locked = false
+
+[[locations]]
+id = "skybridge"
+name = "Skybridge"
+region_id = "embercrown"
+description = "A bridge of enchanted stone spanning the caldera from rim to rim. The lava lake glows far below, and the view is both terrifying and beautiful."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "caldera_rim_path"
+direction = "south"
+description = "The rim path continues to the south."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "embercrown_arena"
+direction = "east"
+description = "The arena's fiery walls blaze to the east."
+is_locked = false

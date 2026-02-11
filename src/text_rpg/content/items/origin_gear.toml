@@ -1,0 +1,686 @@
+# Origin-specific starting items — flavor and utility gear granted by backgrounds
+
+# --- Clothing & Accessories ---
+
+[[items]]
+id = "fine_clothes"
+name = "Fine Clothes"
+description = "Elegant garments befitting a noble or courtier."
+item_type = "misc"
+weight = 3.0
+value_gp = 15
+rarity = "common"
+
+[[items]]
+id = "common_clothes"
+name = "Common Clothes"
+description = "Simple, sturdy clothing worn by working folk."
+item_type = "misc"
+weight = 3.0
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "travelers_clothes"
+name = "Traveler's Clothes"
+description = "Durable clothing designed for life on the road."
+item_type = "misc"
+weight = 4.0
+value_gp = 2
+rarity = "common"
+
+[[items]]
+id = "costume_clothes"
+name = "Costume Clothes"
+description = "Colorful garments designed to capture attention on stage."
+item_type = "misc"
+weight = 4.0
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "robes"
+name = "Robes"
+description = "Simple cloth robes worn by scholars and acolytes."
+item_type = "misc"
+weight = 4.0
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "signet_ring"
+name = "Signet Ring"
+description = "A ring bearing a family crest, proof of noble lineage."
+item_type = "misc"
+weight = 0.0
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "holy_symbol"
+name = "Holy Symbol"
+description = "A sacred emblem representing devotion to a deity."
+item_type = "misc"
+weight = 1.0
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "amulet_of_passage"
+name = "Amulet of Passage"
+description = "A diplomatic token granting safe passage through hostile territories."
+item_type = "misc"
+weight = 0.1
+value_gp = 10
+rarity = "uncommon"
+
+# --- Tools & Kits ---
+
+[[items]]
+id = "herbalism_kit"
+name = "Herbalism Kit"
+description = "A collection of clippers, mortar, pouches, and vials for gathering and preparing herbs."
+item_type = "tool"
+weight = 3.0
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "alchemists_supplies"
+name = "Alchemist's Supplies"
+description = "Beakers, chemicals, and mixing equipment for alchemical experiments."
+item_type = "tool"
+weight = 8.0
+value_gp = 50
+rarity = "common"
+
+[[items]]
+id = "smiths_tools"
+name = "Smith's Tools"
+description = "Hammers, tongs, and a portable bellows for metalwork."
+item_type = "tool"
+weight = 8.0
+value_gp = 20
+rarity = "common"
+
+[[items]]
+id = "cooks_utensils"
+name = "Cook's Utensils"
+description = "A set of pots, knives, and spices for preparing meals."
+item_type = "tool"
+weight = 8.0
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "brewers_supplies"
+name = "Brewer's Supplies"
+description = "A siphon, hops, and measuring equipment for brewing."
+item_type = "tool"
+weight = 9.0
+value_gp = 20
+rarity = "common"
+
+[[items]]
+id = "masons_tools"
+name = "Mason's Tools"
+description = "Trowels, chisels, and levels for working stone."
+item_type = "tool"
+weight = 8.0
+value_gp = 10
+rarity = "common"
+
+[[items]]
+id = "cartographers_tools"
+name = "Cartographer's Tools"
+description = "Quills, ink, parchment, compasses, and rulers for mapmaking."
+item_type = "tool"
+weight = 6.0
+value_gp = 15
+rarity = "common"
+
+[[items]]
+id = "navigators_tools"
+name = "Navigator's Tools"
+description = "A sextant, compass, and star charts for finding your way."
+item_type = "tool"
+weight = 2.0
+value_gp = 25
+rarity = "common"
+
+[[items]]
+id = "disguise_kit"
+name = "Disguise Kit"
+description = "Cosmetics, hair dye, small props, and clothing pieces for altering your appearance."
+item_type = "tool"
+weight = 3.0
+value_gp = 25
+rarity = "common"
+
+[[items]]
+id = "forgery_kit"
+name = "Forgery Kit"
+description = "Papers, inks, seals, and gold leaf for creating convincing forgeries."
+item_type = "tool"
+weight = 5.0
+value_gp = 15
+rarity = "common"
+
+[[items]]
+id = "climbers_kit"
+name = "Climber's Kit"
+description = "Pitons, boot tips, gloves, and a harness for scaling surfaces."
+item_type = "tool"
+weight = 12.0
+value_gp = 25
+rarity = "common"
+
+[[items]]
+id = "fishing_tackle"
+name = "Fishing Tackle"
+description = "A rod, line, hooks, and bait for catching fish."
+item_type = "tool"
+weight = 4.0
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "musical_instrument"
+name = "Musical Instrument"
+description = "A well-crafted lute, suitable for performances."
+item_type = "tool"
+weight = 2.0
+value_gp = 30
+rarity = "common"
+
+[[items]]
+id = "pan_flute"
+name = "Pan Flute"
+description = "A simple wind instrument made from bound reeds."
+item_type = "tool"
+weight = 0.5
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "drum"
+name = "Drum"
+description = "A small hand drum, good for keeping rhythm."
+item_type = "tool"
+weight = 3.0
+value_gp = 6
+rarity = "common"
+
+[[items]]
+id = "leatherworkers_tools"
+name = "Leatherworker's Tools"
+description = "Needles, thread, and cutting tools for working leather and hide."
+item_type = "tool"
+weight = 5.0
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "woodcarvers_tools"
+name = "Woodcarver's Tools"
+description = "A knife, gouge, and small saw for shaping wood."
+item_type = "tool"
+weight = 5.0
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "calligraphers_supplies"
+name = "Calligrapher's Supplies"
+description = "Fine ink, parchment sheets, and quills for elegant writing."
+item_type = "tool"
+weight = 5.0
+value_gp = 10
+rarity = "common"
+
+[[items]]
+id = "miners_pick"
+name = "Miner's Pick"
+description = "A sturdy pick for breaking rock and mining ore."
+item_type = "tool"
+weight = 10.0
+value_gp = 2
+rarity = "common"
+
+# --- Documents & Containers ---
+
+[[items]]
+id = "scroll_of_pedigree"
+name = "Scroll of Pedigree"
+description = "An official document tracing your noble lineage."
+item_type = "misc"
+weight = 0.1
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "letter_of_introduction"
+name = "Letter of Introduction"
+description = "A sealed letter from a patron, introducing you to their associates."
+item_type = "misc"
+weight = 0.0
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "guild_letter"
+name = "Guild Letter"
+description = "A letter from your guild, certifying your membership and skills."
+item_type = "misc"
+weight = 0.0
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "mysterious_note"
+name = "Mysterious Note"
+description = "A cryptic note in handwriting you don't recognize: 'Trust no one. Find the tower. Remember.'"
+item_type = "misc"
+weight = 0.0
+value_gp = 0
+rarity = "common"
+
+[[items]]
+id = "old_journal"
+name = "Old Journal"
+description = "A leather-bound journal filled with faded observations and sketches."
+item_type = "misc"
+weight = 1.0
+value_gp = 2
+rarity = "common"
+
+[[items]]
+id = "sea_chart"
+name = "Sea Chart"
+description = "A stained nautical chart showing coastal waters and hidden coves."
+item_type = "misc"
+weight = 0.1
+value_gp = 10
+rarity = "common"
+
+[[items]]
+id = "star_chart"
+name = "Star Chart"
+description = "A detailed map of constellations and celestial movements."
+item_type = "misc"
+weight = 0.1
+value_gp = 10
+rarity = "common"
+
+[[items]]
+id = "treasure_map"
+name = "Treasure Map"
+description = "A tattered map with an X marking a location in the wilderness."
+item_type = "misc"
+weight = 0.0
+value_gp = 5
+rarity = "uncommon"
+
+[[items]]
+id = "prayer_book"
+name = "Prayer Book"
+description = "A small book of hymns and prayers to the gods."
+item_type = "misc"
+weight = 1.0
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "spellbook_fragment"
+name = "Spellbook Fragment"
+description = "Torn pages from a spellbook, containing partial arcane formulae."
+item_type = "misc"
+weight = 0.5
+value_gp = 15
+rarity = "uncommon"
+
+[[items]]
+id = "belt_pouch"
+name = "Belt Pouch"
+description = "A small leather pouch that attaches to your belt."
+item_type = "misc"
+weight = 1.0
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "backpack"
+name = "Backpack"
+description = "A sturdy canvas backpack for carrying your gear."
+item_type = "misc"
+weight = 5.0
+value_gp = 2
+rarity = "common"
+
+[[items]]
+id = "sack"
+name = "Sack"
+description = "A large burlap sack for carrying bulk goods."
+item_type = "misc"
+weight = 0.5
+value_gp = 0
+rarity = "common"
+
+# --- Survival & Exploration Gear ---
+
+[[items]]
+id = "bedroll"
+name = "Bedroll"
+description = "A padded roll of blankets for sleeping outdoors."
+item_type = "misc"
+weight = 7.0
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "mess_kit"
+name = "Mess Kit"
+description = "A tin box containing a cup, fork, and small pan."
+item_type = "misc"
+weight = 1.0
+value_gp = 0
+rarity = "common"
+
+[[items]]
+id = "waterskin"
+name = "Waterskin"
+description = "A leather container for carrying water."
+item_type = "misc"
+weight = 5.0
+value_gp = 0
+rarity = "common"
+
+[[items]]
+id = "hunting_trap"
+name = "Hunting Trap"
+description = "A spring-loaded iron trap for catching game."
+item_type = "tool"
+weight = 25.0
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "lantern"
+name = "Lantern"
+description = "A hooded lantern that casts bright light in a 30-foot radius."
+item_type = "misc"
+weight = 2.0
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "tinderbox"
+name = "Tinderbox"
+description = "Flint, fire steel, and tinder for starting fires."
+item_type = "misc"
+weight = 1.0
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "hempen_rope"
+name = "Hempen Rope (50 ft.)"
+description = "Fifty feet of sturdy hemp rope."
+item_type = "misc"
+weight = 10.0
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "grappling_hook"
+name = "Grappling Hook"
+description = "An iron hook for climbing walls and crossing gaps."
+item_type = "misc"
+weight = 4.0
+value_gp = 2
+rarity = "common"
+
+[[items]]
+id = "spyglass"
+name = "Spyglass"
+description = "A small telescope for observing distant objects."
+item_type = "misc"
+weight = 1.0
+value_gp = 1000
+rarity = "rare"
+
+[[items]]
+id = "compass"
+name = "Compass"
+description = "A magnetic compass that always points north."
+item_type = "misc"
+weight = 0.5
+value_gp = 25
+rarity = "common"
+
+# --- Thematic Specialty Items ---
+
+[[items]]
+id = "crowbar"
+name = "Crowbar"
+description = "An iron bar for prying things open."
+item_type = "tool"
+weight = 5.0
+value_gp = 2
+rarity = "common"
+
+[[items]]
+id = "manacles"
+name = "Manacles"
+description = "Iron shackles. A grim reminder of imprisonment."
+item_type = "misc"
+weight = 6.0
+value_gp = 2
+rarity = "common"
+
+[[items]]
+id = "gambling_set"
+name = "Gambling Set"
+description = "A set of dice and marked cards for games of chance."
+item_type = "tool"
+weight = 0.5
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "shovel"
+name = "Shovel"
+description = "A sturdy shovel for digging."
+item_type = "tool"
+weight = 5.0
+value_gp = 2
+rarity = "common"
+
+[[items]]
+id = "ink_and_quill"
+name = "Ink and Quill"
+description = "A bottle of black ink and a feather quill for writing."
+item_type = "misc"
+weight = 0.1
+value_gp = 10
+rarity = "common"
+
+[[items]]
+id = "small_knife"
+name = "Small Knife"
+description = "A simple utility knife, useful for everyday tasks."
+item_type = "misc"
+weight = 0.5
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "iron_pot"
+name = "Iron Pot"
+description = "A heavy iron cooking pot."
+item_type = "misc"
+weight = 10.0
+value_gp = 2
+rarity = "common"
+
+[[items]]
+id = "beast_trophy"
+name = "Beast Trophy"
+description = "A fang or claw taken from a dangerous creature — proof of your survival."
+item_type = "misc"
+weight = 0.5
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "lucky_coin"
+name = "Lucky Coin"
+description = "A worn copper coin you've carried for years. It brings you comfort, if not luck."
+item_type = "misc"
+weight = 0.0
+value_gp = 0
+rarity = "common"
+
+[[items]]
+id = "family_locket"
+name = "Family Locket"
+description = "A small silver locket containing a tiny portrait."
+item_type = "misc"
+weight = 0.0
+value_gp = 10
+rarity = "common"
+
+[[items]]
+id = "wanted_poster"
+name = "Wanted Poster"
+description = "A faded poster with your face on it. The likeness is questionable."
+item_type = "misc"
+weight = 0.0
+value_gp = 0
+rarity = "common"
+
+[[items]]
+id = "merchant_ledger"
+name = "Merchant's Ledger"
+description = "A book of accounts, debts, and trade contacts."
+item_type = "misc"
+weight = 2.0
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "trophy_medal"
+name = "Trophy Medal"
+description = "A bronze medal awarded for winning a competition."
+item_type = "misc"
+weight = 0.1
+value_gp = 10
+rarity = "common"
+
+[[items]]
+id = "military_insignia"
+name = "Military Insignia"
+description = "A badge marking your rank and service in an army."
+item_type = "misc"
+weight = 0.0
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "druidic_focus"
+name = "Druidic Focus"
+description = "A sprig of mistletoe used as a focus for nature magic."
+item_type = "misc"
+weight = 0.0
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "crystal_focus"
+name = "Crystal Focus"
+description = "A small crystal that hums faintly with arcane energy."
+item_type = "misc"
+weight = 1.0
+value_gp = 10
+rarity = "common"
+
+[[items]]
+id = "rune_stones"
+name = "Rune Stones"
+description = "A set of carved stones inscribed with ancient runes."
+item_type = "misc"
+weight = 1.0
+value_gp = 15
+rarity = "uncommon"
+
+[[items]]
+id = "dream_catcher"
+name = "Dream Catcher"
+description = "A woven hoop said to ward off nightmares."
+item_type = "misc"
+weight = 0.1
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "perfume_vial"
+name = "Perfume Vial"
+description = "A small glass vial of expensive perfume."
+item_type = "misc"
+weight = 0.0
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "incense_sticks"
+name = "Incense Sticks"
+description = "Fragrant sticks burned during prayer and meditation."
+item_type = "misc"
+weight = 0.5
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "tattoo_needles"
+name = "Tattoo Needles"
+description = "Fine needles and pigment for tribal or ceremonial tattoos."
+item_type = "tool"
+weight = 0.5
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "whistle"
+name = "Whistle"
+description = "A small tin whistle."
+item_type = "misc"
+weight = 0.0
+value_gp = 0
+rarity = "common"
+
+[[items]]
+id = "magnifying_glass"
+name = "Magnifying Glass"
+description = "A lens mounted in a wire frame, useful for examining small details."
+item_type = "misc"
+weight = 0.0
+value_gp = 100
+rarity = "uncommon"
+
+[[items]]
+id = "hourglass"
+name = "Hourglass"
+description = "A small hourglass that measures one hour."
+item_type = "misc"
+weight = 1.0
+value_gp = 25
+rarity = "common"
+
+[[items]]
+id = "sealing_wax"
+name = "Sealing Wax"
+description = "A stick of red wax for sealing letters."
+item_type = "misc"
+weight = 0.0
+value_gp = 1
+rarity = "common"

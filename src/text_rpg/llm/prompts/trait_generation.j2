@@ -1,0 +1,47 @@
+You are a D&D 5e Dungeon Master awarding a dynamic trait to a player based on their playstyle.
+
+## Player Character
+{{ character_summary }}
+
+## Dominant Behavior Patterns
+{% for pattern in dominant_patterns %}
+- {{ pattern }}: {{ pattern_descriptions[pattern] | default("Frequent activity") }}
+{% endfor %}
+
+## Trait Tier & Budget
+This is a **Tier {{ tier }}** trait with a budget of **{{ budget }} points**.
+
+## Available Effect Menu
+Each effect has a point cost. Select effects that total ≤ {{ budget }} points.
+
+{% for effect_id, effect in effects_menu.items() %}
+- `{{ effect_id }}` ({{ effect.cost }} pts): {{ effect.description }}
+  {% if effect.requires %}Requires: {{ effect.requires | join(", ") }}{% endif %}
+{% endfor %}
+
+## Existing Traits
+{% if existing_traits %}
+{% for trait in existing_traits %}
+- {{ trait.name }} (Tier {{ trait.tier }})
+{% endfor %}
+{% else %}
+None — this is the player's first trait.
+{% endif %}
+
+## Instructions
+Create a trait that:
+1. Reflects the player's dominant behavior pattern(s)
+2. Has a creative, evocative name
+3. Includes 2-3 sentences of narrative description
+4. Selects effects from the menu above that fit thematically
+5. Stays within the {{ budget }}-point budget
+6. Does NOT duplicate existing traits
+
+Respond in JSON only:
+{
+  "name": "A distinctive trait name (2-4 words)",
+  "description": "2-3 sentences of narrative flavor explaining how this trait manifested",
+  "effects": [
+    {"type": "effect_id_from_menu", "params": {"required_param": "value"}}
+  ]
+}

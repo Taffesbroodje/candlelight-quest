@@ -53,11 +53,52 @@ def load_all_factions() -> dict[str, dict]:
 
 
 def load_origins() -> list[dict[str, Any]]:
-    origins_file = CONTENT_DIR / "origins.toml"
-    if origins_file.exists():
-        data = load_toml(origins_file)
-        return data.get("origins", [])
-    return []
+    """Deprecated: use load_all_origins() instead."""
+    return load_all_origins()
+
+
+def load_all_origins() -> list[dict[str, Any]]:
+    """Load all origins from content/origins/*.toml directory.
+
+    Each TOML file contains [[origins]] arrays. The filename (minus .toml)
+    is used as the category if not specified in the origin data.
+    """
+    origins_dir = CONTENT_DIR / "origins"
+    if not origins_dir.exists():
+        return []
+    all_origins: list[dict[str, Any]] = []
+    for f in sorted(origins_dir.glob("*.toml")):
+        category = f.stem
+        data = load_toml(f)
+        for origin in data.get("origins", []):
+            if "category" not in origin:
+                origin["category"] = category
+            all_origins.append(origin)
+    return all_origins
+
+
+def filter_origins(
+    origins: list[dict[str, Any]],
+    race: str,
+    char_class: str,
+) -> list[dict[str, Any]]:
+    """Filter origins to those available for a given race and class."""
+    available = []
+    for origin in origins:
+        req_races = origin.get("required_races", [])
+        exc_races = origin.get("excluded_races", [])
+        req_classes = origin.get("required_classes", [])
+        exc_classes = origin.get("excluded_classes", [])
+        if req_races and race not in req_races:
+            continue
+        if race in exc_races:
+            continue
+        if req_classes and char_class not in req_classes:
+            continue
+        if char_class in exc_classes:
+            continue
+        available.append(origin)
+    return available
 
 
 def load_all_story_seeds() -> list[dict[str, Any]]:
@@ -73,6 +114,38 @@ def load_world_events() -> list[dict[str, Any]]:
         return []
     data = load_toml(events_file)
     return data.get("events", [])
+
+
+def load_all_regions() -> dict[str, dict[str, Any]]:
+    """Load all region metadata (id, name, level ranges) without full location data."""
+    regions: dict[str, dict[str, Any]] = {}
+    regions_dir = CONTENT_DIR / "regions"
+    if not regions_dir.exists():
+        return regions
+    for d in sorted(regions_dir.iterdir()):
+        region_file = d / "region.toml"
+        if d.is_dir() and region_file.exists():
+            data = load_toml(region_file)
+            regions[data["id"]] = data
+    return regions
+
+
+def load_all_guilds() -> dict[str, dict]:
+    """Load all guild definitions from content/guilds/guilds.toml."""
+    guilds_file = CONTENT_DIR / "guilds" / "guilds.toml"
+    if not guilds_file.exists():
+        return {}
+    data = load_toml(guilds_file)
+    return {k: v for k, v in data.items() if isinstance(v, dict) and "name" in v}
+
+
+def load_work_order_templates() -> list[dict[str, Any]]:
+    """Load work order templates from content/guilds/work_orders.toml."""
+    orders_file = CONTENT_DIR / "guilds" / "work_orders.toml"
+    if not orders_file.exists():
+        return []
+    data = load_toml(orders_file)
+    return data.get("orders", [])
 
 
 def load_region(region_id: str) -> dict[str, Any]:

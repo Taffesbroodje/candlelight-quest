@@ -105,6 +105,16 @@ class RestSystem(GameSystem):
                 ))
                 desc += f" Arcane Recovery: restored {', '.join(recovered_text)} spell slot(s)."
 
+        actual_healed = new_hp - old_hp
+        events = [{"event_type": "REST", "description": desc}]
+        if actual_healed > 0:
+            events.append({
+                "event_type": "HEAL",
+                "description": f"Healed {actual_healed} HP from short rest.",
+                "actor_id": char["id"],
+                "mechanical_details": {"amount": actual_healed, "source": "short_rest"},
+            })
+
         return ActionResult(
             action_id=action.id, success=True,
             outcome_description=desc,
@@ -113,7 +123,7 @@ class RestSystem(GameSystem):
                 modifier=con_mod, total=healed, purpose="hit_dice_healing",
             )],
             state_mutations=mutations,
-            events=[{"event_type": "REST", "description": desc}],
+            events=events,
         )
 
     def _long_rest(self, action: Action, context: GameContext) -> ActionResult:
@@ -187,9 +197,19 @@ class RestSystem(GameSystem):
             except Exception:
                 pass
 
+        hp_healed = max_hp - old_hp
+        events = [{"event_type": "REST", "description": desc}]
+        if hp_healed > 0:
+            events.append({
+                "event_type": "HEAL",
+                "description": f"Healed {hp_healed} HP from long rest.",
+                "actor_id": char["id"],
+                "mechanical_details": {"amount": hp_healed, "source": "long_rest"},
+            })
+
         return ActionResult(
             action_id=action.id, success=True,
             outcome_description=desc,
             state_mutations=mutations,
-            events=[{"event_type": "REST", "description": desc}],
+            events=events,
         )

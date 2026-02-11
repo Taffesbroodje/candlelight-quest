@@ -1,0 +1,53 @@
+id = "bard"
+name = "Bard"
+description = "An inspiring magician whose power echoes the music of creation."
+hit_die = "1d8"
+primary_ability = "charisma"
+saving_throw_proficiencies = ["dexterity", "charisma"]
+armor_proficiencies = ["light"]
+weapon_proficiencies = ["simple", "hand_crossbow", "longsword", "rapier", "shortsword"]
+starting_gold = 125
+skill_choices = 3
+available_skills = ["acrobatics", "animal_handling", "arcana", "athletics", "deception", "history", "insight", "intimidation", "investigation", "medicine", "nature", "perception", "performance", "persuasion", "religion", "sleight_of_hand", "stealth", "survival"]
+spellcasting_ability = "charisma"
+cantrips_known = 2
+
+[starting_equipment]
+weapons = ["rapier"]
+armor = ["leather_armor"]
+items = ["entertainer_pack", "lute"]
+
+[[features]]
+level = 1
+name = "Spellcasting"
+description = "You can cast bard spells. Charisma is your spellcasting ability."
+
+[[features]]
+level = 1
+name = "Bardic Inspiration"
+description = "You can inspire others through stirring words or music. A creature within 60 feet that can hear you gains a Bardic Inspiration d6 to add to one ability check, attack roll, or saving throw. You can use this a number of times equal to your Charisma modifier (minimum 1) per long rest."
+
+[[features]]
+level = 2
+name = "Jack of All Trades"
+description = "You can add half your proficiency bonus, rounded down, to any ability check you make that doesn't already include your proficiency bonus."
+
+[[features]]
+level = 2
+name = "Song of Rest"
+description = "You can use soothing music or oration to help revitalize your wounded allies during a short rest. You and any friendly creatures who can hear your performance regain an extra 1d6 hit points."
+
+[[features]]
+level = 3
+name = "Bard College"
+description = "You choose a college: College of Lore. You gain proficiency in three skills of your choice and can use Cutting Words to subtract your Bardic Inspiration die from an enemy's attack roll, ability check, or damage roll."
+
+[[features]]
+level = 4
+name = "Ability Score Improvement"
+description = "You can increase one ability score by 2, or two ability scores by 1 each."
+
+[[features]]
+level = 5
+name = "Font of Inspiration"
+description = "You regain all of your expended uses of Bardic Inspiration when you finish a short or long rest."

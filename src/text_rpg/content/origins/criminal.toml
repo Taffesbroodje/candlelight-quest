@@ -1,0 +1,254 @@
+# Criminal origins — those who learned their trade in the shadows
+
+[[origins]]
+id = "criminal"
+name = "Criminal"
+category = "criminal"
+summary = "You made your living outside the law, running jobs for a thieves' guild in the port city."
+prologue = """The docks of Saltmere never sleep, and neither did you — not when there was work to be done. For years you ran jobs for the Velvet Hand, the guild that controlled every back alley and rooftop between the harbor and the merchant quarter. Burglary, extortion, the occasional smuggling run — you did what needed doing and kept your mouth shut.
+
+Then things went sideways. A job went wrong, or maybe you crossed the wrong people, or maybe you just got tired of looking over your shoulder every time the city watch passed. Either way, you slipped out of Saltmere with what you could carry and a promise to yourself: no more working for someone else's cut.
+
+You stand now on the salt-stained planks of the outer docks, hood pulled low, watching the fishing boats come in. There's opportunity here for someone with your skills — opportunity that doesn't involve a noose."""
+ability_choices = ["dexterity", "intelligence", "charisma"]
+skill_proficiencies = ["deception", "stealth"]
+starting_equipment = ["crowbar", "common_clothes"]
+bonus_gold = 10
+starting_region = "iron_coast"
+starting_location = "saltmere_docks"
+feature_name = "Criminal Contact"
+feature_description = "You have a reliable contact in the criminal underworld who can relay messages, fence stolen goods, and provide information about local illicit activity."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "smuggler"
+name = "Smuggler"
+category = "criminal"
+summary = "You made a fortune moving contraband along the coast, slipping past harbor patrols with a silver tongue and a fast boat."
+prologue = """You learned early that borders are just lines on a map, and tariffs are just taxes on the clever. For years you ran goods along the Iron Coast — sealed crates that you never opened, passengers who paid in gold and silence, alchemical reagents that the crown would rather see burned than traded. Your contacts stretched from Saltmere to ports you'd never name aloud.
+
+The work was good until the harbor master's new lieutenant started taking her job seriously. Three of your crew got pinched. Your boat was impounded. You barely slipped the net yourself, abandoning your cargo in a sea cave and walking away with nothing but the clothes on your back and a pouch of emergency coin.
+
+Now you're back at the docks where it all started, anonymous among the fishermen and longshoremen. You know these waters, these alleys, these people. Rebuilding won't take long — not for someone who knows where the cracks in the system are."""
+ability_choices = ["dexterity", "charisma", "intelligence"]
+skill_proficiencies = ["deception", "sleight_of_hand"]
+starting_equipment = ["common_clothes", "belt_pouch"]
+bonus_gold = 15
+starting_region = "iron_coast"
+starting_location = "saltmere_docks"
+feature_name = "Smuggler's Routes"
+feature_description = "You know hidden paths and secret passages used by smugglers, granting advantage on checks to find concealed routes or hidden compartments in ships and buildings."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "pirate"
+name = "Pirate"
+category = "criminal"
+summary = "You sailed under a black flag, taking what you wanted from merchant vessels before the navy scattered your crew."
+prologue = """The sea was your kingdom and the deck of the Crimson Maw was your throne — or near enough. For two years you sailed with Captain Vashka's crew, raiding merchant galleons and coastal traders from the Storm Points to the southern reaches. You weren't the captain, but you earned your share with strong arms and a louder voice, and the crew respected that.
+
+It ended the way these things always end. The royal navy caught the Maw in shallow waters off the cape. Cannon fire splintered the hull. Vashka went down with the ship — stubborn to the last. You and a handful of survivors made it to shore in a stolen longboat, splitting up before the navy patrols could sweep the beaches.
+
+You dragged yourself into Saltmere three days later, salt-crusted and sunburned, with rope-burned hands and a coil of rigging you couldn't bring yourself to abandon. The sea calls to you still. But for now, dry land will have to do."""
+ability_choices = ["strength", "dexterity", "charisma"]
+skill_proficiencies = ["athletics", "intimidation"]
+starting_equipment = ["hempen_rope", "sea_chart"]
+bonus_gold = 12
+starting_region = "iron_coast"
+starting_location = "saltmere_docks"
+feature_name = "Bad Reputation"
+feature_description = "People in port towns recognize the look of a pirate and tend to stay out of your way, granting advantage on Intimidation checks against common folk in coastal settlements."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "spy"
+name = "Spy"
+category = "criminal"
+summary = "You gathered secrets for a powerful patron, living behind false names and borrowed faces in a web of lies."
+prologue = """You have worn so many faces that some mornings you forget which one is real. For years you served as an agent for interests you were never fully briefed on — a noble house, a merchant consortium, perhaps something older and less visible. Your handler gave you assignments: infiltrate a household, befriend a magistrate, copy a letter, plant a rumor. You excelled. You had to.
+
+Your last assignment brought you to Thornfield Village, posing as a traveling merchant. The target was simple — observe the comings and goings at the inn, report anything unusual about travelers heading into the Whisperwood. But your handler went silent three weeks ago. No dead drops, no coded messages, nothing. You're operating blind.
+
+You sit in the corner of the Bramble and Boar, nursing an ale and watching the door, as you've done every evening since you arrived. Old habits. The locals think you're just another quiet traveler. That's exactly what you need them to think while you figure out whether your silence means you've been abandoned — or compromised."""
+ability_choices = ["dexterity", "intelligence", "charisma"]
+skill_proficiencies = ["deception", "stealth"]
+starting_equipment = ["disguise_kit", "common_clothes"]
+bonus_gold = 15
+starting_region = "verdant_reach"
+starting_location = "thornfield_inn"
+feature_name = "False Identity"
+feature_description = "You have established a convincing alternate identity complete with documentation and a backstory, allowing you to assume that persona without arousing suspicion."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "fence"
+name = "Fence"
+category = "criminal"
+summary = "You built a respectable front while buying and selling stolen goods, connecting thieves with wealthy buyers."
+prologue = """To the world, you were a dealer in curiosities — antiques, rare books, unusual imports. Your shop was modest but well-appointed, your reputation among the merchant class impeccable. What they didn't know was that half your inventory had been liberated from its rightful owners by associates who preferred to work at night.
+
+You were the middleman, the essential link between those who stole and those who bought. You appraised, you negotiated, you laundered coin through legitimate transactions. The margins were extraordinary. For years, it worked beautifully — until a particularly distinctive ruby necklace was traced back through your ledgers by a persistent investigator.
+
+You closed up shop overnight, settling debts where you could and burning bridges where you couldn't. Saltmere's market district is large enough to disappear in, and you still have your ledger of contacts — names and debts that people would pay handsomely to keep quiet. Starting over won't be pleasant, but you've rebuilt before."""
+ability_choices = ["charisma", "intelligence", "dexterity"]
+skill_proficiencies = ["deception", "persuasion"]
+starting_equipment = ["merchant_ledger", "belt_pouch"]
+bonus_gold = 15
+starting_region = "iron_coast"
+starting_location = "saltmere_market"
+feature_name = "Black Market Connections"
+feature_description = "You know how to locate underground merchants and can buy or sell goods that legitimate shops won't touch, often at favorable rates."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "poacher"
+name = "Poacher"
+category = "criminal"
+summary = "You hunted in forbidden forests and noble game preserves, selling pelts and trophies to those who didn't ask questions."
+prologue = """The Thornwild doesn't belong to anyone, no matter what the crown's land charters say. That's what you told yourself every time you slipped past the ranger patrols with your traps and your bow, tracking game through ancient groves where hunting was punishable by branding. The creatures of the deep forest — dire elk, silver foxes, the occasional griffon youngling — fetched prices that a lifetime of honest work couldn't match.
+
+You learned the trails that the rangers don't patrol, the hours when the game wardens change shifts, the art of moving through dense underbrush without snapping a single twig. The forest became your livelihood and your sanctuary. You knew its rhythms better than most druids.
+
+But the rangers have been getting sharper lately, and a trapper you worked with was caught and hanged last month. You've retreated to the outer trails for now, keeping a lower profile while the heat dies down. Your traps are still set. The forest still provides. You just need to be more careful about who's watching."""
+ability_choices = ["dexterity", "wisdom", "strength"]
+skill_proficiencies = ["stealth", "survival"]
+starting_equipment = ["hunting_trap", "common_clothes"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "thornwild_trails"
+feature_name = "Wild Instinct"
+feature_description = "Years of evading ranger patrols have sharpened your senses in natural environments, granting advantage on Perception checks to detect approaching creatures or people in wilderness settings."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "tomb_robber"
+name = "Tomb Robber"
+category = "criminal"
+summary = "You plundered ancient burial sites for treasure, braving curses and cave-ins for the promise of forgotten gold."
+prologue = """Most people hear the word "tomb" and think of death. You hear it and think of opportunity. The old civilizations buried their dead with gold, gems, enchanted weapons, and artifacts that modern scholars would kill to study. All of it sitting underground, doing no one any good — until someone with a strong back and a flexible conscience digs it up.
+
+You've crawled through collapsed passages, decoded locking mechanisms older than the kingdom, and pried open sarcophagi that hadn't seen light in a thousand years. You've also run from things in the dark that you prefer not to name. The work is dangerous, lonely, and technically illegal in every jurisdiction that has laws about desecrating burial sites. But the payoff, when it comes, is life-changing.
+
+The Sunken Reach drew you here — whispers of a temple complex half-swallowed by the bog, its lower chambers still sealed and unexplored. You arrived at the site with your tools and your nerve, ready to see what the ancients left behind. The locals warn you away, of course. They always do."""
+ability_choices = ["dexterity", "intelligence", "wisdom"]
+skill_proficiencies = ["investigation", "stealth"]
+starting_equipment = ["crowbar", "lantern", "shovel"]
+bonus_gold = 10
+starting_region = "sunken_reach"
+starting_location = "sunken_temple"
+feature_name = "Dungeon Sense"
+feature_description = "Your experience in ancient ruins gives you an intuitive sense for structural instability and hidden mechanisms, granting advantage on checks to detect traps and secret doors in underground environments."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "charlatan"
+name = "Charlatan"
+category = "criminal"
+summary = "You made your living through cons and confidence schemes, selling miracles to the desperate and gullible."
+prologue = """You've been a faith healer in a border town, a dispossessed prince collecting donations for a reconquest that would never come, a traveling alchemist selling colored water as potions of vitality, and half a dozen other personas that you've shed like old skins. The trick is never the disguise — it's the story. People don't believe what they see. They believe what they want to see. You just give them permission.
+
+Your last con was your best: posing as an emissary of the Temple of Light, collecting tithes from rural villages for a cathedral fund that existed only in your imagination. It worked beautifully for months, until an actual temple envoy arrived in one of the villages you'd already fleeced. The ensuing confusion was dramatic, and your exit was undignified.
+
+You arrived at the Thornfield market with a new name, a new wardrobe, and a confidence born of years spent reading people like open books. This village is small enough to be trusting and large enough to have money. You just need to find the right angle — and the right marks."""
+ability_choices = ["charisma", "dexterity", "intelligence"]
+skill_proficiencies = ["deception", "sleight_of_hand"]
+starting_equipment = ["disguise_kit", "forgery_kit"]
+bonus_gold = 15
+starting_region = "verdant_reach"
+starting_location = "thornfield_market"
+feature_name = "Second Identity"
+feature_description = "You have crafted a detailed backup persona with forged papers and practiced mannerisms, allowing you to assume a false identity that withstands casual scrutiny."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "escaped_prisoner"
+name = "Escaped Prisoner"
+category = "criminal"
+summary = "You broke free from captivity and fled into the wilderness, surviving on desperation and raw grit."
+prologue = """The manacles left their marks — pale bands of scarred skin around your wrists that you've learned to keep covered. Whether you were guilty of what they accused you of matters less now than the fact that you're free. The prison wagon was ambushed on a forest road, and in the chaos of splintering wood and shouting guards, you ran. You ran until your lungs screamed and your legs buckled, and then you crawled.
+
+The Whisperwood swallowed you whole. For days you stumbled through dense undergrowth, drinking from streams and eating whatever you could scavenge. The forest doesn't care about warrants or sentences. It tested you with cold, hunger, and the distant howling of things that hunt at night. You survived because you refused to die — not after everything you'd endured.
+
+You emerged at the wood's edge, gaunt and wild-eyed, with nothing but the ragged clothes on your back and a pair of broken manacles you couldn't quite bring yourself to discard. Thornfield's chimneys smoke in the distance. You need food, shelter, and a plan — and you need to stay ahead of anyone who might come looking."""
+ability_choices = ["strength", "dexterity", "constitution"]
+skill_proficiencies = ["athletics", "stealth"]
+starting_equipment = ["manacles", "common_clothes"]
+bonus_gold = 2
+starting_region = "verdant_reach"
+starting_location = "whisperwood_edge"
+feature_name = "Survivor's Resilience"
+feature_description = "Months of deprivation have hardened your body and will, granting advantage on Constitution saving throws against exhaustion from hunger, thirst, or forced marches."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "bandit_defector"
+name = "Bandit Defector"
+category = "criminal"
+summary = "You rode with a bandit gang until their cruelty crossed a line, and you slipped away under cover of darkness."
+prologue = """It started simply enough — highway robbery on the trade roads, splitting the take evenly, never hurting anyone who didn't resist. The Thornwild Reapers were small-time, more desperate than dangerous, and you told yourself it was survival, not villainy. But gangs have a way of escalating. New recruits brought new appetites. The leader, a scarred half-orc called Grinner, started targeting farmsteads. Then pilgrims. Then the killings began.
+
+You'd crossed plenty of lines in your life, but watching the Reapers put a torch to a family's home while they begged for mercy was the line you couldn't cross back over. That night, while the others drank and celebrated, you packed what little was yours and vanished into the Thornwild trails.
+
+Grinner doesn't forgive desertion. You know the Reapers' camps, their routes, their signals — which makes you valuable to anyone opposing them, and a target for the gang itself. You move carefully through the forest paths, sleeping light, keeping your blade close. You need allies, and you need them fast."""
+ability_choices = ["strength", "dexterity", "wisdom"]
+skill_proficiencies = ["intimidation", "survival"]
+starting_equipment = ["common_clothes", "small_knife"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "thornwild_trails"
+feature_name = "Bandit's Insight"
+feature_description = "Your time among outlaws taught you to read ambush terrain and recognize the signs of criminal activity, granting advantage on Perception checks to detect ambushes or bandit presence."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "forger"
+name = "Forger"
+category = "criminal"
+summary = "You crafted impeccable forgeries of documents, currency, and seals, supplying the underworld with paper lies."
+prologue = """Your hands are your fortune. With the right ink, the right paper, and enough time, you can reproduce any document ever written — land deeds, noble charters, letters of marque, even currency. You apprenticed as a scribe before discovering that your talents were worth ten times more to the wrong people than to the right ones. The guilds of Saltmere paid handsomely for forged trade permits. Smugglers needed customs stamps. Criminals needed new identities.
+
+For years you worked from a cramped room above a chandler's shop, turning out masterworks of deception by candlelight. Your forgeries were so precise that even the documents' supposed authors couldn't tell the difference. You were proud of that — the artistry of it, the perfection of each stroke and seal.
+
+Then a forged land deed you'd crafted wound up in a property dispute that reached the magistrate's court. An expert was called. Your work held up — but the investigation led uncomfortably close to your door. You packed your tools and left Saltmere for the guildhall district, where your particular skills might find legitimate — or at least less traceable — employment."""
+ability_choices = ["intelligence", "dexterity", "charisma"]
+skill_proficiencies = ["deception", "investigation"]
+starting_equipment = ["forgery_kit", "ink_and_quill"]
+bonus_gold = 12
+starting_region = "iron_coast"
+starting_location = "saltmere_guildhall"
+feature_name = "Master Penman"
+feature_description = "Your expert knowledge of inks, papers, and official formats allows you to detect forged documents on sight and reproduce any handwriting or seal you've studied for at least one minute."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []

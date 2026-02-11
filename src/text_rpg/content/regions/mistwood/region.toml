@@ -1,0 +1,6 @@
+id = "mistwood"
+name = "Mistwood"
+description = "An ancient fog-shrouded forest where visibility rarely extends beyond twenty paces. The elven enclave of Silverleaf hides within, protected by rangers and old magic. Druids tend to corrupted groves, fey creatures play tricks on travelers, and darker things lurk in the deepest fog."
+level_range_min = 4
+level_range_max = 8
+climate = "temperate_misty"

@@ -1,0 +1,193 @@
+# =============================================================================
+# Abjuration Spells — Protective magic, wards, and banishments
+# =============================================================================
+
+# 1st Level
+
+[[spells]]
+id = "shield_of_faith"
+name = "Shield of Faith"
+level = 1
+school = "abjuration"
+classes = ["cleric", "paladin"]
+casting_time = "bonus_action"
+range = 60
+duration = "10 minutes"
+concentration = true
+components = ["V", "S"]
+description = "A shimmering field appears around a creature of your choice, granting +2 AC."
+[spells.mechanics]
+type = "buff"
+effect = "shield_of_faith"
+ac_bonus = 2
+
+[[spells]]
+id = "armor_of_agathys"
+name = "Armor of Agathys"
+level = 1
+school = "abjuration"
+classes = ["warlock"]
+casting_time = "action"
+range = 0
+duration = "1 hour"
+components = ["V", "S"]
+description = "A protective magical force surrounds you, manifesting as a spectral frost. You gain 5 temporary hit points. If a creature hits you with a melee attack while you have these temp HP, it takes 5 cold damage."
+[spells.mechanics]
+type = "buff"
+effect = "temp_hp"
+bonus_hp = 5
+
+[[spells]]
+id = "sanctuary"
+name = "Sanctuary"
+level = 1
+school = "abjuration"
+classes = ["cleric"]
+casting_time = "bonus_action"
+range = 30
+duration = "1 minute"
+components = ["V", "S"]
+description = "You ward a creature. Any creature that targets the warded creature with an attack or harmful spell must first make a Wisdom save."
+[spells.mechanics]
+type = "buff"
+effect = "sanctuary"
+
+[[spells]]
+id = "absorb_elements"
+name = "Absorb Elements"
+level = 1
+school = "abjuration"
+classes = ["wizard", "druid", "ranger", "sorcerer"]
+casting_time = "reaction"
+range = 0
+duration = "1 round"
+components = ["S"]
+description = "You capture incoming elemental energy, gaining resistance to it and dealing extra damage on your next melee attack."
+[spells.mechanics]
+type = "buff"
+effect = "absorb_elements"
+damage_dice = "1d6"
+
+# 2nd Level
+
+[[spells]]
+id = "warding_bond"
+name = "Warding Bond"
+level = 2
+school = "abjuration"
+classes = ["cleric"]
+casting_time = "action"
+range = 0
+duration = "1 hour"
+components = ["V", "S"]
+description = "You touch a willing creature and create a ward. The target gains +1 AC and +1 to saving throws, and has resistance to all damage."
+[spells.mechanics]
+type = "buff"
+effect = "warding_bond"
+ac_bonus = 1
+
+[[spells]]
+id = "pass_without_trace"
+name = "Pass Without Trace"
+level = 2
+school = "abjuration"
+classes = ["druid", "ranger"]
+casting_time = "action"
+range = 0
+duration = "1 hour"
+concentration = true
+components = ["V", "S"]
+description = "A veil of shadows and silence radiates from you, masking you and your companions. +10 to Stealth checks."
+[spells.mechanics]
+type = "buff"
+effect = "stealth_bonus"
+
+# 3rd Level
+
+[[spells]]
+id = "dispel_magic"
+name = "Dispel Magic"
+level = 3
+school = "abjuration"
+classes = ["wizard", "cleric", "bard", "druid", "paladin", "sorcerer", "warlock"]
+casting_time = "action"
+range = 120
+duration = "instantaneous"
+components = ["V", "S"]
+description = "Choose one creature, object, or magical effect within range. Any spell of 3rd level or lower on the target ends."
+[spells.mechanics]
+type = "utility"
+effect = "dispel_magic"
+
+[[spells]]
+id = "protection_from_energy"
+name = "Protection from Energy"
+level = 3
+school = "abjuration"
+classes = ["wizard", "cleric", "druid", "ranger", "sorcerer"]
+casting_time = "action"
+range = 0
+duration = "1 hour"
+concentration = true
+components = ["V", "S"]
+description = "A willing creature you touch has resistance to one damage type of your choice: acid, cold, fire, lightning, or thunder."
+[spells.mechanics]
+type = "buff"
+effect = "damage_resistance"
+
+# 4th Level
+
+[[spells]]
+id = "banishment"
+name = "Banishment"
+level = 4
+school = "abjuration"
+classes = ["wizard", "cleric", "paladin", "sorcerer", "warlock"]
+casting_time = "action"
+range = 60
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "You attempt to send one creature to another plane of existence. The target must succeed on a Charisma save."
+[spells.mechanics]
+type = "save"
+save_ability = "charisma"
+effect = "banished"
+
+# 5th Level
+
+[[spells]]
+id = "banishing_smite"
+name = "Banishing Smite"
+level = 5
+school = "abjuration"
+classes = ["paladin"]
+casting_time = "bonus_action"
+range = 0
+duration = "1 minute"
+concentration = true
+components = ["V"]
+description = "The next time you hit a creature with a weapon attack, your weapon crackles with force. If the attack reduces the target to 50 HP or fewer, you banish it."
+[spells.mechanics]
+type = "buff"
+effect = "smite"
+damage_dice = "5d10"
+damage_type = "force"
+
+# 6th Level
+
+[[spells]]
+id = "globe_of_invulnerability"
+name = "Globe of Invulnerability"
+level = 6
+school = "abjuration"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 0
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "An immobile, faintly shimmering barrier springs into existence in a 10-foot radius around you. Any spell of 5th level or lower cast from outside cannot affect creatures within."
+[spells.mechanics]
+type = "buff"
+effect = "spell_immunity"

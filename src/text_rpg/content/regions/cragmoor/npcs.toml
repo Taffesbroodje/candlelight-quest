@@ -1,0 +1,345 @@
+# Cragmoor NPCs — Hammerfall mining town and surroundings
+
+[[npcs]]
+id = "elder_thorin"
+name = "Council Elder Thorin Stonebrow"
+entity_type = "npc"
+profession = "council_elder"
+description = "A venerable dwarf with a silver-streaked beard braided with iron rings. He leads the Mining Council and holds Hammerfall together through force of personality and ancient tradition."
+location_id = "hammerfall_hall"
+dialogue_tags = ["greeting", "quest_info", "lore", "politics"]
+behaviors = ["wise", "quest_giver", "regal"]
+is_hostile = false
+is_alive = true
+level = 8
+hp_current = 55
+hp_max = 55
+ac = 17
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 10
+constitution = 18
+intelligence = 15
+wisdom = 18
+charisma = 14
+
+[npcs.schedule]
+dawn = "hammerfall_hall"
+morning = "hammerfall_hall"
+midday = "hammerfall_hall"
+afternoon = "hammerfall_hall"
+evening = "hammerfall_tavern"
+night = "hammerfall_hall"
+late_night = "hammerfall_hall"
+
+[npcs.properties]
+preferred_gifts = ["iron_ingot", "healing_potion"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Ancient Warhammer"
+damage_dice = "1d10"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "innkeeper_gorla"
+name = "Innkeeper Gorla"
+entity_type = "npc"
+profession = "innkeeper"
+description = "A stout dwarven woman with a thunderous laugh and arms strong enough to carry four mugs in each hand. She brews her own ale and tolerates no fighting that breaks her furniture."
+location_id = "hammerfall_tavern"
+dialogue_tags = ["greeting", "rumors", "shop_food", "quest_info"]
+behaviors = ["friendly", "merchant", "information"]
+is_hostile = false
+is_alive = true
+level = 4
+hp_current = 32
+hp_max = 32
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 10
+constitution = 16
+intelligence = 11
+wisdom = 13
+charisma = 15
+
+[npcs.schedule]
+dawn = "hammerfall_tavern"
+morning = "hammerfall_tavern"
+midday = "hammerfall_tavern"
+afternoon = "hammerfall_tavern"
+evening = "hammerfall_tavern"
+night = "hammerfall_tavern"
+late_night = "hammerfall_tavern"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_herb"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Ale Keg"
+damage_dice = "1d6"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "master_smith_valka"
+name = "Master Smith Valka"
+entity_type = "npc"
+profession = "blacksmith"
+description = "A fire genasi woman whose hair literally smolders. She's the finest smith in Cragmoor and her weapons command premium prices. She speaks little but her craft speaks volumes."
+location_id = "hammerfall_forge"
+dialogue_tags = ["greeting", "shop_weapons", "shop_armor", "craft_info"]
+behaviors = ["focused", "merchant", "craftsman"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 48
+hp_max = 48
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 18
+dexterity = 12
+constitution = 16
+intelligence = 14
+wisdom = 13
+charisma = 10
+
+[npcs.schedule]
+dawn = "hammerfall_forge"
+morning = "hammerfall_forge"
+midday = "hammerfall_forge"
+afternoon = "hammerfall_forge"
+evening = "hammerfall_forge"
+night = "hammerfall_tavern"
+late_night = "hammerfall_forge"
+
+[npcs.properties]
+preferred_gifts = ["iron_ingot", "dragon_scale_fragment"]
+disliked_gifts = ["nightshade", "rations"]
+
+[[npcs.attacks]]
+name = "Forge Hammer"
+damage_dice = "1d10"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "priest_durak"
+name = "Priest Durak"
+entity_type = "npc"
+profession = "priest"
+description = "A solemn dwarf cleric in robes of grey stone-cloth. He tends the eternal flames and offers blessings to miners before they descend into the deep."
+location_id = "hammerfall_temple"
+dialogue_tags = ["greeting", "healing", "blessing", "lore"]
+behaviors = ["devout", "healer", "spiritual"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 38
+hp_max = 38
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 10
+constitution = 14
+intelligence = 13
+wisdom = 18
+charisma = 14
+
+[npcs.schedule]
+dawn = "hammerfall_temple"
+morning = "hammerfall_temple"
+midday = "hammerfall_temple"
+afternoon = "hammerfall_temple"
+evening = "hammerfall_temple"
+night = "hammerfall_tavern"
+late_night = "hammerfall_temple"
+
+[npcs.properties]
+preferred_gifts = ["holy_symbol", "healing_herb"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Sacred Flame"
+damage_dice = "2d8"
+damage_type = "radiant"
+
+[[npcs]]
+id = "gem_cutter_brillia"
+name = "Gem Cutter Brillia"
+entity_type = "npc"
+profession = "gem_cutter"
+description = "A gnome woman with jeweler's loupes permanently attached to her spectacles and fingers that move with hummingbird precision. She can identify any gem by touch alone."
+location_id = "gem_cutter_workshop"
+dialogue_tags = ["greeting", "shop_supplies", "lore", "craft_info"]
+behaviors = ["meticulous", "merchant", "knowledgeable"]
+is_hostile = false
+is_alive = true
+level = 4
+hp_current = 20
+hp_max = 20
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 6
+dexterity = 18
+constitution = 10
+intelligence = 18
+wisdom = 14
+charisma = 12
+
+[npcs.schedule]
+dawn = "gem_cutter_workshop"
+morning = "gem_cutter_workshop"
+midday = "gem_cutter_workshop"
+afternoon = "gem_cutter_workshop"
+evening = "hammerfall_market"
+night = "hammerfall_tavern"
+late_night = "gem_cutter_workshop"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "moonpetal"]
+disliked_gifts = ["rations", "bedroll"]
+
+[[npcs.attacks]]
+name = "Gem-Cutting Laser"
+damage_dice = "1d6"
+damage_type = "radiant"
+
+[[npcs]]
+id = "mine_foreman_greta"
+name = "Mine Foreman Greta"
+entity_type = "npc"
+profession = "mine_foreman"
+description = "A broad-shouldered dwarf woman with a lamp permanently affixed to her helmet. She runs the mining operations with military efficiency and knows every tunnel by heart."
+location_id = "silver_mines"
+dialogue_tags = ["greeting", "quest_info", "rumors", "lore"]
+behaviors = ["practical", "quest_giver", "hardworking"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 40
+hp_max = 40
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 10
+constitution = 16
+intelligence = 12
+wisdom = 14
+charisma = 12
+
+[npcs.schedule]
+dawn = "silver_mines"
+morning = "silver_mines"
+midday = "silver_mines"
+afternoon = "silver_mines"
+evening = "hammerfall_tavern"
+night = "hammerfall_gate"
+late_night = "silver_mines"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "lantern", "rations"]
+disliked_gifts = ["arcane_dust", "spider_silk"]
+
+[[npcs.attacks]]
+name = "Mining Pick"
+damage_dice = "1d8"
+damage_type = "piercing"
+
+[[npcs]]
+id = "commander_ironside"
+name = "Guard Commander Ironside"
+entity_type = "npc"
+profession = "guard_commander"
+description = "A scarred half-orc in heavy plate who leads the Ironside Guard. He takes the deep-tunnel threats seriously and runs constant patrols. His loyalty to Hammerfall is absolute."
+location_id = "hammerfall_barracks"
+dialogue_tags = ["greeting", "guard_info", "quest_info", "rumors"]
+behaviors = ["authoritative", "protector", "disciplined"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 58
+hp_max = 58
+ac = 18
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 18
+dexterity = 12
+constitution = 16
+intelligence = 11
+wisdom = 14
+charisma = 13
+
+[npcs.schedule]
+dawn = "hammerfall_barracks"
+morning = "hammerfall_barracks"
+midday = "silver_mines"
+afternoon = "silver_mines"
+evening = "hammerfall_gate"
+night = "hammerfall_barracks"
+late_night = "hammerfall_barracks"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "rations"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Greatsword"
+damage_dice = "2d6"
+damage_type = "slashing"
+
+[[npcs]]
+id = "farmer_sporren"
+name = "Mushroom Farmer Sporren"
+entity_type = "npc"
+profession = "farmer"
+description = "A peculiar deep gnome who cultivates the enormous mushrooms as food. He talks to his fungi, names them, and gets defensive if anyone suggests eating his favorites."
+location_id = "mushroom_caverns"
+dialogue_tags = ["greeting", "shop_supplies", "lore", "rumors"]
+behaviors = ["eccentric", "merchant", "nature_lover"]
+is_hostile = false
+is_alive = true
+level = 2
+hp_current = 14
+hp_max = 14
+ac = 11
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 12
+constitution = 14
+intelligence = 14
+wisdom = 13
+charisma = 10
+
+[npcs.schedule]
+dawn = "mushroom_caverns"
+morning = "mushroom_caverns"
+midday = "mushroom_caverns"
+afternoon = "mushroom_caverns"
+evening = "mithral_vein"
+night = "mushroom_caverns"
+late_night = "mushroom_caverns"
+
+[npcs.properties]
+preferred_gifts = ["healing_herb", "moonpetal"]
+disliked_gifts = ["torch", "lantern"]
+
+[[npcs.attacks]]
+name = "Spore Puff"
+damage_dice = "1d4"
+damage_type = "poison"

@@ -1,0 +1,205 @@
+[[encounters]]
+id = "corrupted_treant"
+name = "Corrupted Treant"
+location_ids = ["corrupted_grove", "deep_mistwood"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "enchanted_thread", chance = 0.6},
+    {id = "healing_potion", chance = 0.4},
+    {id = "arcane_dust", chance = 0.3},
+    {id = "moonpetal", chance = 0.4},
+]
+gold_min = 25
+gold_max = 60
+
+[[encounters.entities]]
+id = "corrupted_treant"
+name = "Corrupted Treant"
+entity_type = "enemy"
+description = "An ancient tree twisted by dark corruption, its bark blackened and oozing foul sap. Glowing red eyes peer from knotholes, and its massive limbs swing with terrible force."
+level = 6
+hp_max = 58
+ac = 14
+count_min = 1
+count_max = 1
+xp_value = 300
+
+[encounters.entities.ability_scores]
+strength = 19
+dexterity = 6
+constitution = 18
+intelligence = 8
+wisdom = 10
+charisma = 4
+
+[[encounters.entities.attacks]]
+name = "Slam"
+damage_dice = "2d10"
+damage_bonus = 4
+damage_type = "bludgeoning"
+
+[[encounters.entities.attacks]]
+name = "Root Snare"
+damage_dice = "1d8"
+damage_bonus = 4
+damage_type = "bludgeoning"
+
+[[encounters]]
+id = "shadow_beasts"
+name = "Shadow Beasts"
+location_ids = ["shadow_hollow", "deep_mistwood"]
+encounter_chance = 0.30
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.4},
+    {id = "soul_gem", chance = 0.1},
+    {id = "healing_herb", chance = 0.3},
+]
+gold_min = 5
+gold_max = 20
+
+[[encounters.entities]]
+id = "shadow_beast"
+name = "Shadow Beast"
+entity_type = "enemy"
+description = "A predator woven from living shadow, its form shifting and indistinct. Red pinpoints of light serve as eyes, and its claws leave trails of darkness in the air."
+level = 4
+hp_max = 24
+ac = 14
+count_min = 2
+count_max = 4
+xp_value = 75
+
+[encounters.entities.ability_scores]
+strength = 14
+dexterity = 16
+constitution = 12
+intelligence = 4
+wisdom = 10
+charisma = 6
+
+[[encounters.entities.attacks]]
+name = "Shadow Claw"
+damage_dice = "1d8"
+damage_bonus = 2
+damage_type = "necrotic"
+
+[[encounters]]
+id = "owlbear_pair"
+name = "Owlbear Pair"
+location_ids = ["owl_bear_den"]
+encounter_chance = 0.25
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "beast_hide", chance = 0.8},
+    {id = "healing_potion", chance = 0.3},
+    {id = "rations", chance = 0.4},
+]
+gold_min = 15
+gold_max = 35
+
+[[encounters.entities]]
+id = "owlbear"
+name = "Owlbear"
+entity_type = "enemy"
+description = "A massive beast with the body of a bear and the head of a great owl. Its feathered hide is matted with old blood, and it screeches with ear-splitting fury."
+level = 5
+hp_max = 42
+ac = 13
+count_min = 2
+count_max = 2
+xp_value = 200
+
+[encounters.entities.ability_scores]
+strength = 18
+dexterity = 10
+constitution = 16
+intelligence = 3
+wisdom = 12
+charisma = 5
+
+[[encounters.entities.attacks]]
+name = "Beak"
+damage_dice = "1d10"
+damage_bonus = 4
+damage_type = "piercing"
+
+[[encounters.entities.attacks]]
+name = "Claws"
+damage_dice = "2d6"
+damage_bonus = 4
+damage_type = "slashing"
+
+# -- Puzzle encounter --
+
+[[encounters]]
+id = "fey_tricksters"
+name = "Fey Tricksters"
+location_ids = ["fey_hollow", "fog_trails"]
+encounter_chance = 0.25
+fight_type = "puzzle"
+description = "A circle of tiny fey creatures materializes from the mist, giggling. They've rearranged the trail markers and hidden your pack. They'll return everything — if you can answer their riddle."
+
+[encounters.puzzle]
+puzzle_type = "riddle"
+dc = 13
+riddle_question = "The fey chorus sings: 'I have roots nobody sees, am taller than trees, up up up I go, yet I never grow. What am I?'"
+riddle_answer = "a mountain"
+
+[encounters.loot]
+items = [
+    {id = "moonpetal", chance = 0.7},
+    {id = "enchanted_thread", chance = 0.3},
+    {id = "arcane_dust", chance = 0.4},
+]
+gold_min = 10
+gold_max = 40
+
+[[encounters]]
+id = "giant_spiders_mistwood"
+name = "Giant Spiders"
+location_ids = ["spider_silk_bridge", "corrupted_grove"]
+encounter_chance = 0.35
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "spider_silk", chance = 0.6},
+    {id = "antidote", chance = 0.3},
+    {id = "healing_herb", chance = 0.2},
+]
+gold_min = 0
+gold_max = 10
+
+[[encounters.entities]]
+id = "mistwood_spider"
+name = "Mistwood Spider"
+entity_type = "enemy"
+description = "A pale spider the size of a large dog, its translucent carapace blending with the mist. Venom drips from oversized fangs as it descends silently from its web."
+level = 3
+hp_max = 18
+ac = 13
+count_min = 3
+count_max = 5
+xp_value = 50
+
+[encounters.entities.ability_scores]
+strength = 12
+dexterity = 15
+constitution = 11
+intelligence = 2
+wisdom = 10
+charisma = 4
+
+[[encounters.entities.attacks]]
+name = "Venomous Bite"
+damage_dice = "1d6"
+damage_bonus = 2
+damage_type = "piercing"

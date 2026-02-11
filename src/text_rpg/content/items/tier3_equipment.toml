@@ -1,0 +1,191 @@
+# Tier 3 Equipment (L7-12 regions: Kingsward, Silverpeak, The Hollow, Deadmarsh)
+# Rare magic weapons and armor
+
+# --- Weapons ---
+
+[[items]]
+id = "longsword_plus_one"
+name = "Longsword +1"
+description = "A magically enhanced longsword that glows faintly blue."
+item_type = "weapon"
+weight = 3.0
+value_gp = 500
+rarity = "rare"
+weapon_type = "martial_melee"
+damage_dice = "1d8+1"
+damage_type = "slashing"
+properties = ["versatile"]
+
+[[items]]
+id = "vicious_rapier"
+name = "Vicious Rapier"
+description = "A rapier enchanted to cause grievous wounds."
+item_type = "weapon"
+weight = 2.0
+value_gp = 600
+rarity = "rare"
+weapon_type = "martial_melee"
+damage_dice = "1d8+1d4"
+damage_type = "piercing"
+properties = ["finesse"]
+
+[[items]]
+id = "wand_of_magic_missiles"
+name = "Wand of Magic Missiles"
+description = "A slender wand that fires unerring bolts of force."
+item_type = "misc"
+weight = 1.0
+value_gp = 800
+rarity = "rare"
+
+[[items]]
+id = "shadow_dagger"
+name = "Shadow Dagger"
+description = "A dagger that seems to drink in light."
+item_type = "weapon"
+weight = 1.0
+value_gp = 450
+rarity = "rare"
+weapon_type = "simple_melee"
+damage_dice = "1d4+1d4"
+damage_type = "piercing/necrotic"
+properties = ["finesse", "light", "thrown"]
+
+[[items]]
+id = "holy_mace"
+name = "Holy Mace"
+description = "A mace blessed by the High Temple, radiant against undead."
+item_type = "weapon"
+weight = 4.0
+value_gp = 700
+rarity = "rare"
+weapon_type = "simple_melee"
+damage_dice = "1d6+1d6"
+damage_type = "bludgeoning/radiant"
+properties = []
+
+[[items]]
+id = "crossbow_of_accuracy"
+name = "Crossbow of Accuracy"
+description = "An enchanted crossbow that guides bolts to their target."
+item_type = "weapon"
+weight = 5.0
+value_gp = 500
+rarity = "rare"
+weapon_type = "simple_ranged"
+damage_dice = "1d8+2"
+damage_type = "piercing"
+properties = ["ammunition", "loading", "two_handed"]
+
+[[items]]
+id = "greatsword_plus_one"
+name = "Greatsword +1"
+description = "A massive enchanted blade that hums with power."
+item_type = "weapon"
+weight = 6.0
+value_gp = 750
+rarity = "rare"
+weapon_type = "martial_melee"
+damage_dice = "2d6+1"
+damage_type = "slashing"
+properties = ["heavy", "two_handed"]
+
+# --- Armor ---
+
+[[items]]
+id = "mithral_chain"
+name = "Mithral Chain Mail"
+description = "Chain mail forged from mithral, light as cloth."
+item_type = "armor"
+weight = 25.0
+value_gp = 800
+rarity = "rare"
+armor_type = "heavy"
+ac_base = 16
+max_dex_bonus = 0
+stealth_disadvantage = false
+strength_requirement = 0
+
+[[items]]
+id = "elven_chain"
+name = "Elven Chain Shirt"
+description = "Delicate elven chain that can be worn under clothing."
+item_type = "armor"
+weight = 10.0
+value_gp = 600
+rarity = "rare"
+armor_type = "medium"
+ac_base = 14
+max_dex_bonus = 2
+stealth_disadvantage = false
+strength_requirement = 0
+
+[[items]]
+id = "shield_plus_one"
+name = "Shield +1"
+description = "A magically reinforced shield."
+item_type = "armor"
+weight = 6.0
+value_gp = 500
+rarity = "rare"
+armor_type = "shield"
+ac_base = 3
+max_dex_bonus = 0
+stealth_disadvantage = false
+strength_requirement = 0
+
+[[items]]
+id = "cloak_of_protection"
+name = "Cloak of Protection"
+description = "A fine cloak that grants +1 to AC and saving throws."
+item_type = "misc"
+weight = 1.0
+value_gp = 600
+rarity = "rare"
+
+[[items]]
+id = "adamantine_breastplate"
+name = "Adamantine Breastplate"
+description = "Breastplate forged from adamantine, turns critical hits into normal hits."
+item_type = "armor"
+weight = 20.0
+value_gp = 1000
+rarity = "rare"
+armor_type = "medium"
+ac_base = 14
+max_dex_bonus = 2
+stealth_disadvantage = false
+strength_requirement = 0
+
+# --- Potions ---
+
+[[items]]
+id = "superior_healing_potion"
+name = "Potion of Superior Healing"
+description = "A potent draught of deep crimson liquid that rapidly knits flesh and bone."
+item_type = "potion"
+weight = 0.5
+value_gp = 500
+rarity = "rare"
+
+[items.effects]
+heal_dice = "8d4"
+heal_bonus = 8
+
+[[items]]
+id = "potion_of_heroism"
+name = "Potion of Heroism"
+description = "Grants 10 temporary hit points and the effects of the bless spell."
+item_type = "potion"
+weight = 0.5
+value_gp = 300
+rarity = "rare"
+
+[[items]]
+id = "potion_of_invisibility"
+name = "Potion of Invisibility"
+description = "Makes you invisible for 1 hour or until you attack."
+item_type = "potion"
+weight = 0.5
+value_gp = 500
+rarity = "rare"

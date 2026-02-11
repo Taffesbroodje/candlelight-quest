@@ -155,6 +155,19 @@ class ExplorationSystem(GameSystem):
                 purpose=f"{skill_name}_check (DC {dc})",
             )]
 
+            # Record the skill check event for behavior tracking
+            skill_check_event = {
+                "event_type": "SKILL_CHECK",
+                "description": f"{skill_name} check (DC {dc}) — {'success' if success else 'failure'}",
+                "actor_id": char.get("id", ""),
+                "mechanical_details": {
+                    "skill": skill_name,
+                    "dc": dc,
+                    "success": success,
+                    "roll": roll_result.total,
+                },
+            }
+
             if success:
                 # Generate and save new location
                 new_location = self._director.generate_location_for_direction(
@@ -176,11 +189,14 @@ class ExplorationSystem(GameSystem):
                         StateMutation(target_type="game", target_id=context.game_id, field="current_location_id", old_value=context.location["id"], new_value=target_loc_id),
                         StateMutation(target_type="location", target_id=target_loc_id, field="visited", old_value=False, new_value=True),
                     ],
-                    events=[{
-                        "event_type": "DISCOVERY",
-                        "description": f"Discovered a new path {direction} leading to {new_location.get('name', 'a new area')}.",
-                        "location_id": target_loc_id,
-                    }],
+                    events=[
+                        skill_check_event,
+                        {
+                            "event_type": "DISCOVERY",
+                            "description": f"Discovered a new path {direction} leading to {new_location.get('name', 'a new area')}.",
+                            "location_id": target_loc_id,
+                        },
+                    ],
                 )
             else:
                 failure_desc = plausibility.get(
@@ -191,10 +207,13 @@ class ExplorationSystem(GameSystem):
                     action_id=action.id, success=False,
                     outcome_description=failure_desc,
                     dice_rolls=dice_rolls,
-                    events=[{
-                        "event_type": "EXPLORATION_FAIL",
-                        "description": f"Failed to find a path {direction}.",
-                    }],
+                    events=[
+                        skill_check_event,
+                        {
+                            "event_type": "EXPLORATION_FAIL",
+                            "description": f"Failed to find a path {direction}.",
+                        },
+                    ],
                 )
         except Exception as e:
             logger.warning(f"Dynamic location generation failed: {e}")
@@ -279,14 +298,26 @@ class ExplorationSystem(GameSystem):
             modifier=result.modifier, total=result.total, purpose="investigation_check",
         )]
 
+        search_skill = "investigation" if "investigation" in skill_profs else "perception"
+        skill_event = {
+            "event_type": "SKILL_CHECK",
+            "description": f"{search_skill} check (DC 12) — {'success' if success else 'failure'}",
+            "actor_id": char.get("id", ""),
+            "mechanical_details": {"skill": search_skill, "dc": 12, "success": success, "roll": result.total},
+        }
+
         if success:
             outcome = "Your thorough search reveals something interesting."
         else:
             outcome = "After searching carefully, you find nothing of note."
 
+        events = [skill_event]
+        if success:
+            events.append({"event_type": "DISCOVERY", "description": outcome})
+
         return ActionResult(
             action_id=action.id, success=success, outcome_description=outcome, dice_rolls=dice_rolls,
-            events=[{"event_type": "DISCOVERY", "description": outcome}] if success else [],
+            events=events,
         )
 
     def _resolve_interact(self, action: Action, context: GameContext) -> ActionResult:

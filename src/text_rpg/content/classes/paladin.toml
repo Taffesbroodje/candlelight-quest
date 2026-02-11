@@ -1,0 +1,57 @@
+id = "paladin"
+name = "Paladin"
+description = "A holy warrior bound to a sacred oath, wielding divine magic and martial prowess."
+hit_die = "1d10"
+primary_ability = "strength"
+saving_throw_proficiencies = ["wisdom", "charisma"]
+armor_proficiencies = ["light", "medium", "heavy", "shield"]
+weapon_proficiencies = ["simple", "martial"]
+starting_gold = 150
+skill_choices = 2
+available_skills = ["athletics", "insight", "intimidation", "medicine", "persuasion", "religion"]
+spellcasting_ability = "charisma"
+
+[starting_equipment]
+weapons = ["longsword", "shield"]
+armor = ["chain_mail"]
+items = ["priest_pack", "holy_symbol"]
+
+[[features]]
+level = 1
+name = "Divine Sense"
+description = "As an action, you can detect the presence of any celestial, fiend, or undead within 60 feet that is not behind total cover. You can use this feature a number of times equal to 1 + your Charisma modifier per long rest."
+
+[[features]]
+level = 1
+name = "Lay on Hands"
+description = "You have a pool of healing power that replenishes on a long rest. With this pool, you can restore a total number of hit points equal to your paladin level x 5. You can also expend 5 hit points from the pool to cure one disease or neutralize one poison."
+
+[[features]]
+level = 2
+name = "Spellcasting"
+description = "You can cast paladin spells. Charisma is your spellcasting ability. You prepare a number of spells equal to your Charisma modifier + half your paladin level (rounded down, minimum 1)."
+
+[[features]]
+level = 2
+name = "Fighting Style"
+description = "You adopt a style of fighting as your specialty. Defense: +1 AC while wearing armor."
+
+[[features]]
+level = 2
+name = "Divine Smite"
+description = "When you hit a creature with a melee weapon attack, you can expend one spell slot to deal radiant damage to the target, in addition to the weapon's damage. The extra damage is 2d8 for a 1st-level slot, plus 1d8 for each spell level higher than 1st, to a maximum of 5d8. The damage increases by 1d8 if the target is an undead or a fiend."
+
+[[features]]
+level = 3
+name = "Sacred Oath"
+description = "You swear the oath that binds you as a paladin forever: Oath of Devotion. You gain Channel Divinity options: Sacred Weapon (add CHA mod to attack rolls for 1 minute) and Turn the Unholy (turn fiends and undead)."
+
+[[features]]
+level = 4
+name = "Ability Score Improvement"
+description = "You can increase one ability score by 2, or two ability scores by 1 each."
+
+[[features]]
+level = 5
+name = "Extra Attack"
+description = "You can attack twice, instead of once, whenever you take the Attack action on your turn."

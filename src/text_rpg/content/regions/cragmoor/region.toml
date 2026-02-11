@@ -1,0 +1,6 @@
+id = "cragmoor"
+name = "Cragmoor"
+description = "Harsh mountain territory centered around the mining town of Hammerfall. Rich veins of iron, silver, and rare mithral draw dwarven clans and human fortune-seekers alike. Competition between mining factions is fierce, and something ancient was breached in the deepest tunnels."
+level_range_min = 4
+level_range_max = 8
+climate = "mountain_cold"

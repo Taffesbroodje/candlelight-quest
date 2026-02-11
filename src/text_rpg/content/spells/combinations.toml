@@ -1,0 +1,289 @@
+# =============================================================================
+# Combination Spells — Discovered by merging two elemental spell types
+# =============================================================================
+
+[[spells]]
+id = "firestorm"
+name = "Firestorm"
+level = 3
+school = "evocation"
+classes = ["wizard", "sorcerer", "druid"]
+casting_time = "action"
+range = 90
+duration = "instantaneous"
+components = ["V", "S"]
+is_combination = true
+required_elements = ["fire", "wind"]
+description = "A roaring vortex of wind-fed flame engulfs the area."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "6d6"
+damage_type = "fire"
+
+[[spells]]
+id = "ice_lance"
+name = "Ice Lance"
+level = 2
+school = "evocation"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 90
+duration = "instantaneous"
+components = ["V", "S"]
+is_combination = true
+required_elements = ["water", "cold"]
+description = "A spear of crystallized ice hurtles toward a creature."
+[spells.mechanics]
+type = "attack"
+damage_dice = "4d6"
+damage_type = "cold"
+
+[[spells]]
+id = "mud_pit"
+name = "Mud Pit"
+level = 1
+school = "conjuration"
+classes = ["wizard", "druid"]
+casting_time = "action"
+range = 60
+duration = "1 minute"
+components = ["V", "S", "M"]
+concentration = true
+is_combination = true
+required_elements = ["water", "earth"]
+description = "The ground turns to thick, sucking mud, slowing all who enter."
+[spells.mechanics]
+type = "save"
+save_ability = "strength"
+damage_dice = "2d6"
+damage_type = "earth"
+
+[[spells]]
+id = "chain_storm"
+name = "Chain Storm"
+level = 4
+school = "evocation"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 120
+duration = "instantaneous"
+components = ["V", "S"]
+is_combination = true
+required_elements = ["lightning", "water"]
+description = "Lightning arcs through water-saturated air, chaining between targets."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "8d6"
+damage_type = "lightning"
+
+[[spells]]
+id = "sandstorm"
+name = "Sandstorm"
+level = 3
+school = "evocation"
+classes = ["wizard", "druid", "sorcerer"]
+casting_time = "action"
+range = 90
+duration = "instantaneous"
+components = ["V", "S"]
+is_combination = true
+required_elements = ["earth", "wind"]
+description = "A blinding torrent of sand and stone shreds everything in its path."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "5d6"
+damage_type = "earth"
+
+[[spells]]
+id = "acid_rain"
+name = "Acid Rain"
+level = 3
+school = "conjuration"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 90
+duration = "instantaneous"
+components = ["V", "S", "M"]
+is_combination = true
+required_elements = ["acid", "water"]
+description = "Corrosive droplets rain down from a conjured cloud, dissolving everything."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "6d6"
+damage_type = "acid"
+
+[[spells]]
+id = "frozen_flame"
+name = "Frozen Flame"
+level = 4
+school = "evocation"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V", "S"]
+is_combination = true
+required_elements = ["fire", "cold"]
+description = "Paradoxical energy tears at the fabric of reality as fire and ice collide."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "6d8"
+damage_type = "force"
+
+[[spells]]
+id = "thunder_quake"
+name = "Thunder Quake"
+level = 4
+school = "evocation"
+classes = ["wizard", "druid", "sorcerer"]
+casting_time = "action"
+range = 90
+duration = "instantaneous"
+components = ["V", "S", "M"]
+is_combination = true
+required_elements = ["thunder", "earth"]
+description = "A deafening boom shatters the ground, sending shockwaves through stone."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "7d6"
+damage_type = "thunder"
+
+[[spells]]
+id = "blinding_storm"
+name = "Blinding Storm"
+level = 3
+school = "evocation"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 120
+duration = "instantaneous"
+components = ["V", "S"]
+is_combination = true
+required_elements = ["lightning", "wind"]
+description = "Lightning dances through a howling gale, striking with blinding fury."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "5d8"
+damage_type = "lightning"
+
+[[spells]]
+id = "poison_mist"
+name = "Poison Mist"
+level = 2
+school = "conjuration"
+classes = ["wizard", "sorcerer", "druid"]
+casting_time = "action"
+range = 60
+duration = "1 minute"
+components = ["V", "S"]
+concentration = true
+is_combination = true
+required_elements = ["poison", "wind"]
+description = "A toxic green fog spreads on the wind, choking all who breathe it."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "3d8"
+damage_type = "poison"
+
+[[spells]]
+id = "radiant_blaze"
+name = "Radiant Blaze"
+level = 4
+school = "evocation"
+classes = ["wizard", "cleric", "sorcerer"]
+casting_time = "action"
+range = 90
+duration = "instantaneous"
+components = ["V", "S"]
+is_combination = true
+required_elements = ["radiant", "fire"]
+description = "Holy fire burns with the intensity of the sun, purifying all it touches."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "7d6"
+damage_type = "radiant"
+
+[[spells]]
+id = "shadow_frost"
+name = "Shadow Frost"
+level = 4
+school = "necromancy"
+classes = ["wizard", "warlock"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V", "S"]
+is_combination = true
+required_elements = ["necrotic", "cold"]
+description = "Tendrils of shadow-infused frost drain warmth and vitality."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "6d8"
+damage_type = "necrotic"
+
+[[spells]]
+id = "psychic_quake"
+name = "Psychic Quake"
+level = 5
+school = "evocation"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 90
+duration = "instantaneous"
+components = ["V", "S"]
+is_combination = true
+required_elements = ["psychic", "earth"]
+description = "The very ground screams with psychic energy, shattering minds and stone alike."
+[spells.mechanics]
+type = "save"
+save_ability = "intelligence"
+damage_dice = "8d6"
+damage_type = "psychic"
+
+[[spells]]
+id = "force_gale"
+name = "Force Gale"
+level = 4
+school = "evocation"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 120
+duration = "instantaneous"
+components = ["V", "S"]
+is_combination = true
+required_elements = ["force", "wind"]
+description = "Pure arcane force rides a howling wind, hammering everything in its path."
+[spells.mechanics]
+type = "save"
+save_ability = "strength"
+damage_dice = "6d8"
+damage_type = "force"
+
+[[spells]]
+id = "steam_blast"
+name = "Steam Blast"
+level = 2
+school = "evocation"
+classes = ["wizard", "sorcerer", "druid"]
+casting_time = "action"
+range = 30
+duration = "instantaneous"
+components = ["V", "S"]
+is_combination = true
+required_elements = ["fire", "water"]
+description = "Superheated steam erupts in a scalding cone, blistering flesh."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "3d8"
+damage_type = "fire"

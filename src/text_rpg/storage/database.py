@@ -22,6 +22,10 @@ _MIGRATIONS = [
     "012_multiclass_housing",
     "013_connections",
     "014_snapshots",
+    "015_class_resources",
+    "016_traits",
+    "017_elements_spells",
+    "018_guilds_professions",
 ]
 
 

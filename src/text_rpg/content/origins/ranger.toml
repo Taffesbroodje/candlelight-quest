@@ -1,0 +1,189 @@
+# =============================================================================
+# Ranger Origins — Sentinels of the borderlands, at home where others fear to tread
+# =============================================================================
+
+[[origins]]
+id = "frontier_pathfinder"
+name = "Frontier Pathfinder"
+category = "ranger"
+summary = "A professional trail-blazer who maps the unmapped for those who follow."
+prologue = """
+The cartographer's guild in Saltmere pays well for accurate maps of places no one \
+has mapped before. You have been collecting that pay for six years, walking into \
+territory that the guild marks with the polite notation "unexplored" and that the \
+locals mark with the more honest notation "here be death." You have mapped three \
+new river systems, two mountain passes, and a network of caves that the Sunken \
+Reach traders now use to bypass the winter floods.
+
+Your tools are simple: a compass, a measuring rope, a stack of parchment treated \
+to resist water, and the bow you carry for the things that object to being mapped. \
+You have learned that the wilderness is not hostile — it is indifferent, which is \
+worse. A hostile enemy can be fought. An indifferent landscape will kill you through \
+carelessness and bad luck, and the only defense is attention.
+
+The guild's latest commission is their most ambitious: a full survey of the \
+Thornwild interior, where the trees grow so thick that the canopy blocks the sun \
+and the trails change with the seasons. No one has successfully mapped it. Three \
+previous surveyors went in. Two came back. The third became a cautionary tale that \
+the guild tells new recruits. You are not a cautionary tale. You are very, very \
+careful, and you intend to prove it."""
+ability_choices = ["dexterity", "wisdom", "intelligence"]
+skill_proficiencies = ["survival", "nature"]
+starting_equipment = ["cartographers_tools", "travelers_clothes"]
+bonus_gold = 15
+starting_region = "thornwild"
+starting_location = "rangers_lodge"
+feature_name = "Trailblazer"
+feature_description = "Your pathfinding experience means you never get lost in wilderness terrain. You and your companions travel at full speed through difficult terrain, and you have advantage on Survival checks for navigation."
+required_races = []
+excluded_races = []
+required_classes = ["ranger"]
+excluded_classes = []
+
+[[origins]]
+id = "beast_companion_raised"
+name = "Beast Companion Raised"
+category = "ranger"
+summary = "Raised alongside wild animals after being lost in the forest as a child."
+prologue = """
+The stories say you were raised by wolves. The truth is both more mundane and more \
+remarkable. You wandered into the Thornwild at age four — no one knows how or why, \
+and you have no memory of a life before the forest. What you remember is the den. \
+A family of wolves accepted you the way they would accept a particularly useless \
+pup: with tolerance, occasional discipline, and a pragmatic recognition that you \
+were simply there.
+
+You learned to walk silently because the wolves expected it. You learned to read \
+the wind because the wolves depended on it. You learned to fight because the \
+forest demanded it. By the time the rangers found you at age twelve, you could \
+not speak but you could track a deer across bare rock and communicate with animals \
+through body language more eloquently than most people communicate with words.
+
+The rangers taught you language. You taught them how the forest actually works. It \
+was a fair trade. You live at the lodge now, nominally civilized, but you still \
+sleep better outside than in, and you still trust the judgment of animals more \
+than the judgment of people. The forest is not where you were lost. It is where \
+you were found."""
+ability_choices = ["wisdom", "dexterity", "strength"]
+skill_proficiencies = ["animal_handling", "perception"]
+starting_equipment = ["common_clothes", "hunting_trap"]
+bonus_gold = 3
+starting_region = "thornwild"
+starting_location = "thornwild_trails"
+feature_name = "Beast Speech"
+feature_description = "Your years among animals have given you an intuitive understanding of beast behavior. You can communicate simple concepts to beasts through body language and have advantage on Animal Handling checks."
+required_races = []
+excluded_races = []
+required_classes = ["ranger"]
+excluded_classes = []
+
+[[origins]]
+id = "border_warden"
+name = "Border Warden"
+category = "ranger"
+summary = "A sworn guardian of the boundary between civilized lands and the dangerous wild."
+prologue = """
+The border between the Verdant Reach and the Whisperwood is not marked on any map, \
+but everyone who lives near it knows exactly where it falls. On one side, farms \
+and fences and the comfortable sounds of human habitation. On the other, ancient \
+trees and the uncomfortable certainty that something is watching. You have patrolled \
+that border for eight years, ensuring that the things in the forest stay in the \
+forest and the people on the farms stay on the farms.
+
+The work is lonely. You walk a circuit of twenty miles, checking snare lines, \
+reading animal signs, and occasionally discouraging something with teeth and claws \
+from venturing too close to the livestock. The farmers wave when they see you. The \
+children bring you apples. The mayor sends a stipend that barely covers arrows. It \
+is thankless work, and it matters more than any work you have ever done.
+
+The Whisperwood has been restless lately. The usual predators have retreated deeper, \
+and something new is moving in the canopy — something large enough to shake \
+branches but quiet enough to avoid your traps. You have reported this to the \
+militia. They smiled and nodded. The border warden sees what no one else will \
+look at, and warns of what no one else will believe."""
+ability_choices = ["dexterity", "wisdom", "constitution"]
+skill_proficiencies = ["perception", "stealth"]
+starting_equipment = ["common_clothes", "hempen_rope"]
+bonus_gold = 8
+starting_region = "verdant_reach"
+starting_location = "whisperwood_edge"
+feature_name = "Boundary Sense"
+feature_description = "Your years of border patrol have given you an instinct for territorial boundaries. You can sense when you are crossing into a new territory type and have advantage on Perception checks to detect ambushes."
+required_races = []
+excluded_races = []
+required_classes = ["ranger"]
+excluded_classes = []
+
+[[origins]]
+id = "bounty_tracker"
+name = "Bounty Tracker"
+category = "ranger"
+summary = "A professional tracker who hunts criminals and fugitives for coin."
+prologue = """
+The guild calls you a "recovery specialist." The courts call you a bounty hunter. \
+The people you bring back call you worse things. You prefer "tracker," because \
+tracking is the part you are good at. The apprehension is just the final step in \
+a process that began with a footprint, a broken twig, or the direction a horse \
+was facing when it was last watered.
+
+You learned the trade from your father, who learned it from his mother, who \
+allegedly learned it from an elf — though you suspect that last part was \
+embellishment. The skills are real regardless: how to read a trail days old, how \
+to predict where a fugitive will rest based on the terrain, how to close distance \
+without being detected. Your father always said that the best capture is the one \
+where the target does not know you are there until they feel the rope.
+
+The Iron Coast courts keep you busy. Smugglers, deserters, debtors who flee their \
+obligations — the sea breeds a particular kind of criminal who thinks that boarding \
+a ship is the same as disappearing. It is not. Ships dock. Sailors talk. And you \
+are very, very patient."""
+ability_choices = ["dexterity", "intelligence", "wisdom"]
+skill_proficiencies = ["investigation", "survival"]
+starting_equipment = ["manacles", "hempen_rope"]
+bonus_gold = 12
+starting_region = "iron_coast"
+starting_location = "saltmere_docks"
+feature_name = "Relentless Pursuit"
+feature_description = "Once you have identified a target, you are nearly impossible to shake. You have advantage on Survival checks to track a specific creature and can continue tracking even through urban environments."
+required_races = []
+excluded_races = []
+required_classes = ["ranger"]
+excluded_classes = []
+
+[[origins]]
+id = "wildlands_cartographer"
+name = "Wildlands Cartographer"
+category = "ranger"
+summary = "An explorer-scholar who documents the natural world with meticulous precision."
+prologue = """
+The Sunken Reach is the least-documented region in the known world. The swamp \
+resists documentation — trails change with the water level, landmarks sink or \
+emerge with the seasons, and the creatures that live there rearrange the landscape \
+simply by existing. You have spent four years attempting the impossible: a \
+comprehensive survey of the bog system, its waterways, its flora, and its fauna.
+
+Your journals fill three waterproof cases. You have cataloged forty-seven species \
+of aquatic plant, nineteen previously unknown insects, and a fish that glows blue \
+during mating season. Your maps are works of art — precise, color-coded, annotated \
+with seasonal variation notes that would make the cartographer's guild weep with \
+professional envy.
+
+The trading post at Murkfen has been your base of operations. The locals think you \
+are eccentric but harmless, and they appreciate the practical benefits of your \
+maps — knowing which trails flood in spring has saved more than one merchant from \
+drowning. But the deep interior remains unmapped. The locals refuse to guide you \
+there, citing reasons that range from "cursed" to "something big lives in the \
+temple." You intend to find out what, document it thoroughly, and add it to the \
+appendix."""
+ability_choices = ["intelligence", "wisdom", "dexterity"]
+skill_proficiencies = ["nature", "investigation"]
+starting_equipment = ["cartographers_tools", "ink_and_quill"]
+bonus_gold = 10
+starting_region = "sunken_reach"
+starting_location = "murkfen_trading_post"
+feature_name = "Field Naturalist"
+feature_description = "Your extensive cataloging of the natural world means you can identify any plant or animal on sight. You have advantage on Nature checks and can determine if water, food, or plants are safe to consume."
+required_races = []
+excluded_races = []
+required_classes = ["ranger"]
+excluded_classes = []

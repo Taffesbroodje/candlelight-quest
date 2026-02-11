@@ -1,0 +1,531 @@
+# Kingsward NPCs — the great city
+
+[[npcs]]
+id = "guildmaster_helena"
+name = "Guildmaster Helena Vex"
+entity_type = "npc"
+profession = "guildmaster"
+description = "A sharp-featured human woman in her forties with silver-streaked hair and calculating grey eyes. She runs the Adventurers' Guild with ruthless efficiency and knows the name and capability of every registered adventurer."
+location_id = "adventurers_guild"
+dialogue_tags = ["greeting", "quest_info", "lore", "politics", "shop_supplies"]
+behaviors = ["authoritative", "quest_giver", "shrewd"]
+is_hostile = false
+is_alive = true
+level = 10
+hp_current = 65
+hp_max = 65
+ac = 17
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 16
+constitution = 14
+intelligence = 16
+wisdom = 16
+charisma = 18
+
+[npcs.schedule]
+dawn = "adventurers_guild"
+morning = "adventurers_guild"
+midday = "guild_district"
+afternoon = "adventurers_guild"
+evening = "adventurers_guild"
+night = "adventurers_guild"
+late_night = "adventurers_guild"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "arcane_dust"]
+disliked_gifts = ["rations", "torch"]
+
+[[npcs.attacks]]
+name = "Rapier"
+damage_dice = "1d8"
+damage_bonus = 4
+damage_type = "piercing"
+
+[[npcs.attacks]]
+name = "Hand Crossbow"
+damage_dice = "1d6"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[npcs]]
+id = "archmage_soren"
+name = "Archmage Soren"
+entity_type = "npc"
+profession = "archmage"
+description = "An elderly elf in robes that shimmer between blue and violet, with a long white beard and eyes that glow faintly with arcane energy. He leads the Mages' Collective and speaks with measured precision."
+location_id = "mages_tower"
+dialogue_tags = ["greeting", "lore", "quest_info", "shop_supplies"]
+behaviors = ["wise", "quest_giver", "academic"]
+is_hostile = false
+is_alive = true
+level = 12
+hp_current = 55
+hp_max = 55
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 12
+constitution = 12
+intelligence = 20
+wisdom = 18
+charisma = 14
+
+[npcs.schedule]
+dawn = "mages_tower"
+morning = "mages_tower"
+midday = "university_quarter"
+afternoon = "mages_tower"
+evening = "mages_tower"
+night = "mages_tower"
+late_night = "mages_tower"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "soul_gem", "moonpetal"]
+disliked_gifts = ["rations", "iron_ingot"]
+
+[[npcs.attacks]]
+name = "Arcane Blast"
+damage_dice = "3d8"
+damage_type = "force"
+
+[[npcs]]
+id = "high_priestess_auriel"
+name = "High Priestess Auriel"
+entity_type = "npc"
+profession = "high_priestess"
+description = "A radiant aasimar woman with golden skin and a warm, commanding presence. She leads the Grand Cathedral and serves as the spiritual heart of Kingsward. Her healing magic is legendary."
+location_id = "grand_cathedral"
+dialogue_tags = ["greeting", "healing", "blessing", "lore", "quest_info"]
+behaviors = ["compassionate", "healer", "spiritual"]
+is_hostile = false
+is_alive = true
+level = 11
+hp_current = 60
+hp_max = 60
+ac = 18
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 12
+constitution = 14
+intelligence = 16
+wisdom = 20
+charisma = 18
+
+[npcs.schedule]
+dawn = "grand_cathedral"
+morning = "grand_cathedral"
+midday = "temple_district"
+afternoon = "grand_cathedral"
+evening = "grand_cathedral"
+night = "grand_cathedral"
+late_night = "grand_cathedral"
+
+[npcs.properties]
+preferred_gifts = ["holy_symbol", "moonpetal", "healing_herb"]
+disliked_gifts = ["nightshade", "poison_vial", "dagger"]
+
+[[npcs.attacks]]
+name = "Divine Radiance"
+damage_dice = "3d10"
+damage_type = "radiant"
+
+[[npcs]]
+id = "lord_baric"
+name = "Lord Commander Baric"
+entity_type = "npc"
+profession = "guard_commander"
+description = "A massive human man in full plate armor, with a face like weathered granite and a voice that can silence a room. He commands the city guard and takes the safety of Kingsward personally."
+location_id = "military_quarter"
+dialogue_tags = ["greeting", "guard_info", "quest_info", "rumors"]
+behaviors = ["authoritative", "protector", "disciplined"]
+is_hostile = false
+is_alive = true
+level = 10
+hp_current = 80
+hp_max = 80
+ac = 20
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 20
+dexterity = 12
+constitution = 18
+intelligence = 12
+wisdom = 16
+charisma = 14
+
+[npcs.schedule]
+dawn = "military_quarter"
+morning = "kingsward_gate"
+midday = "kingsward_square"
+afternoon = "military_quarter"
+evening = "training_grounds"
+night = "military_quarter"
+late_night = "military_quarter"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "rations"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Greatsword"
+damage_dice = "2d6"
+damage_bonus = 5
+damage_type = "slashing"
+
+[[npcs]]
+id = "the_whisper"
+name = "The Whisper"
+entity_type = "npc"
+profession = "thieves_guild_leader"
+description = "A figure shrouded in dark clothing whose face is never fully visible. Their voice is a barely audible rasp, and they seem to know things before they happen. They lead Kingsward's underworld."
+location_id = "thieves_den"
+dialogue_tags = ["greeting", "quest_info", "rumors", "shop_supplies"]
+behaviors = ["mysterious", "quest_giver", "criminal"]
+is_hostile = false
+is_alive = true
+level = 11
+hp_current = 50
+hp_max = 50
+ac = 18
+unavailable_periods = ["dawn", "morning", "midday"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 20
+constitution = 12
+intelligence = 18
+wisdom = 16
+charisma = 16
+
+[npcs.schedule]
+dawn = "thieves_den"
+morning = "thieves_den"
+midday = "thieves_den"
+afternoon = "sewers"
+evening = "slums_district"
+night = "thieves_den"
+late_night = "thieves_den"
+
+[npcs.properties]
+preferred_gifts = ["dagger", "arcane_dust", "soul_gem"]
+disliked_gifts = ["holy_symbol", "healing_herb"]
+
+[[npcs.attacks]]
+name = "Shadow Daggers"
+damage_dice = "2d6"
+damage_bonus = 5
+damage_type = "piercing"
+
+[[npcs]]
+id = "professor_willard"
+name = "Professor Willard"
+entity_type = "npc"
+profession = "professor"
+description = "A disheveled human man with wild white hair and ink-stained fingers. He is the Royal University's foremost historian and can recall obscure facts about any topic, though he often forgets where he left his spectacles."
+location_id = "university_quarter"
+dialogue_tags = ["greeting", "lore", "quest_info", "rumors"]
+behaviors = ["eccentric", "academic", "information"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 28
+hp_max = 28
+ac = 11
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 10
+constitution = 10
+intelligence = 20
+wisdom = 16
+charisma = 12
+
+[npcs.schedule]
+dawn = "university_quarter"
+morning = "university_quarter"
+midday = "mages_tower"
+afternoon = "university_quarter"
+evening = "the_old_quarter"
+night = "university_quarter"
+late_night = "university_quarter"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "moonpetal"]
+disliked_gifts = ["rations", "iron_ingot"]
+
+[[npcs.attacks]]
+name = "Heavy Book"
+damage_dice = "1d4"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "arena_brutus"
+name = "Arena Master Brutus"
+entity_type = "npc"
+profession = "arena_master"
+description = "A towering goliath covered in scars and tattoos, with a booming voice that fills the arena. He organizes the fights, judges the matches, and occasionally steps into the ring himself for exhibition bouts."
+location_id = "kingsward_arena"
+dialogue_tags = ["greeting", "quest_info", "rumors", "training"]
+behaviors = ["boisterous", "quest_giver", "fighter"]
+is_hostile = false
+is_alive = true
+level = 10
+hp_current = 85
+hp_max = 85
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 20
+dexterity = 14
+constitution = 18
+intelligence = 10
+wisdom = 12
+charisma = 16
+
+[npcs.schedule]
+dawn = "training_grounds"
+morning = "kingsward_arena"
+midday = "kingsward_arena"
+afternoon = "kingsward_arena"
+evening = "kingsward_arena"
+night = "market_quarter"
+late_night = "kingsward_arena"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "rations"]
+disliked_gifts = ["moonpetal", "holy_symbol"]
+
+[[npcs.attacks]]
+name = "Greataxe"
+damage_dice = "1d12"
+damage_bonus = 5
+damage_type = "slashing"
+
+[[npcs]]
+id = "merchant_goldtongue"
+name = "Master Merchant Goldtongue"
+entity_type = "npc"
+profession = "merchant_master"
+description = "A sleek dragonborn with bronze scales and an ever-present smile. He heads the Merchants' Guild and can sell sand in a desert. His deals always favor him, but he makes you feel like you won."
+location_id = "merchant_guild_hq"
+dialogue_tags = ["greeting", "shop_supplies", "quest_info", "politics"]
+behaviors = ["charismatic", "merchant", "political"]
+is_hostile = false
+is_alive = true
+level = 8
+hp_current = 45
+hp_max = 45
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 14
+constitution = 12
+intelligence = 17
+wisdom = 14
+charisma = 20
+
+[npcs.schedule]
+dawn = "merchant_guild_hq"
+morning = "market_quarter"
+midday = "the_bazaar"
+afternoon = "merchant_guild_hq"
+evening = "noble_quarter"
+night = "merchant_guild_hq"
+late_night = "merchant_guild_hq"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "soul_gem"]
+disliked_gifts = ["rations", "torch"]
+
+[[npcs.attacks]]
+name = "Concealed Dagger"
+damage_dice = "1d4"
+damage_bonus = 2
+damage_type = "piercing"
+
+[[npcs]]
+id = "steward_elise"
+name = "Royal Steward Elise"
+entity_type = "npc"
+profession = "steward"
+description = "An impeccably dressed half-elf woman who manages the castle's affairs with clockwork precision. She is the gatekeeper to the Crown, and nothing reaches the throne room without her approval."
+location_id = "royal_castle"
+dialogue_tags = ["greeting", "quest_info", "politics", "lore"]
+behaviors = ["formal", "political", "information"]
+is_hostile = false
+is_alive = true
+level = 8
+hp_current = 38
+hp_max = 38
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 14
+constitution = 12
+intelligence = 18
+wisdom = 16
+charisma = 17
+
+[npcs.schedule]
+dawn = "royal_castle"
+morning = "royal_castle"
+midday = "castle_approach"
+afternoon = "royal_castle"
+evening = "noble_quarter"
+night = "royal_castle"
+late_night = "royal_castle"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "moonpetal"]
+disliked_gifts = ["rations", "dagger"]
+
+[[npcs.attacks]]
+name = "Concealed Stiletto"
+damage_dice = "1d4"
+damage_bonus = 2
+damage_type = "piercing"
+
+[[npcs]]
+id = "blacksmith_orin"
+name = "Blacksmith Orin"
+entity_type = "npc"
+profession = "blacksmith"
+description = "A burly dwarf who runs the best smithy in the Market Quarter. He's not as renowned as the master forges elsewhere, but his prices are fair and his work is solid — the common adventurer's best friend."
+location_id = "market_quarter"
+dialogue_tags = ["greeting", "shop_weapons", "shop_armor", "craft_info"]
+behaviors = ["friendly", "merchant", "craftsman"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 52
+hp_max = 52
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 18
+dexterity = 10
+constitution = 16
+intelligence = 13
+wisdom = 13
+charisma = 12
+
+[npcs.schedule]
+dawn = "market_quarter"
+morning = "market_quarter"
+midday = "market_quarter"
+afternoon = "market_quarter"
+evening = "market_quarter"
+night = "the_old_quarter"
+late_night = "market_quarter"
+
+[npcs.properties]
+preferred_gifts = ["iron_ingot", "beast_hide"]
+disliked_gifts = ["nightshade", "arcane_dust"]
+
+[[npcs.attacks]]
+name = "Warhammer"
+damage_dice = "1d10"
+damage_bonus = 4
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "healer_rosa"
+name = "Healer Rosa"
+entity_type = "npc"
+profession = "healer"
+description = "A gentle tiefling woman with lavender skin and kind eyes who operates a free clinic in the temple district. She treats rich and poor alike and never turns away anyone in need."
+location_id = "temple_district"
+dialogue_tags = ["greeting", "healing", "shop_potions", "rumors"]
+behaviors = ["compassionate", "healer", "merchant"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 38
+hp_max = 38
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 12
+constitution = 12
+intelligence = 14
+wisdom = 18
+charisma = 16
+
+[npcs.schedule]
+dawn = "temple_district"
+morning = "temple_district"
+midday = "slums_district"
+afternoon = "temple_district"
+evening = "temple_district"
+night = "grand_cathedral"
+late_night = "temple_district"
+
+[npcs.properties]
+preferred_gifts = ["healing_herb", "moonpetal", "holy_symbol"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Sacred Flame"
+damage_dice = "2d8"
+damage_type = "radiant"
+
+[[npcs]]
+id = "sewer_rat_king"
+name = "The Rat King"
+entity_type = "npc"
+profession = "sewer_boss"
+description = "A hunched, scarred goblin who rules the sewer tunnels with an army of trained rats. He's surprisingly well-informed about everything happening above, and he trades information for food."
+location_id = "sewers"
+dialogue_tags = ["greeting", "rumors", "quest_info", "shop_supplies"]
+behaviors = ["crafty", "information", "territorial"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 32
+hp_max = 32
+ac = 14
+unavailable_periods = []
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 16
+constitution = 14
+intelligence = 14
+wisdom = 14
+charisma = 8
+
+[npcs.schedule]
+dawn = "sewers"
+morning = "sewers"
+midday = "sewers"
+afternoon = "sewers"
+evening = "sewers"
+night = "slums_district"
+late_night = "sewers"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_herb"]
+disliked_gifts = ["holy_symbol", "torch"]
+
+[[npcs.attacks]]
+name = "Rat Swarm Command"
+damage_dice = "2d4"
+damage_bonus = 2
+damage_type = "piercing"

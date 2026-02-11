@@ -1,0 +1,309 @@
+# The Veil NPCs — planar boundary entities, L16-20
+
+[[npcs]]
+id = "planar_gatekeeper"
+name = "The Planar Gatekeeper"
+entity_type = "npc"
+profession = "gatekeeper"
+description = "An ageless figure in shimmering robes woven from planar energy, their eyes glowing with the light of a dozen realities. They have stood watch at the gate since before the oldest mortal kingdom was founded, and they will stand long after the last one falls."
+location_id = "planar_gate"
+dialogue_tags = ["greeting", "lore", "quest_info", "planar_knowledge", "warnings"]
+behaviors = ["vigilant", "wise", "dutiful", "quest_giver"]
+is_hostile = false
+is_alive = true
+level = 14
+hp_current = 70
+hp_max = 70
+ac = 18
+unavailable_periods = []
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 14
+constitution = 16
+intelligence = 18
+wisdom = 20
+charisma = 16
+
+[npcs.schedule]
+dawn = "planar_gate"
+morning = "planar_gate"
+midday = "planar_gate"
+afternoon = "planar_gate"
+evening = "planar_gate"
+night = "planar_gate"
+late_night = "planar_gate"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "arcane_dust"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Planar Blade"
+damage_dice = "3d6"
+damage_bonus = 3
+damage_type = "force"
+
+[[npcs]]
+id = "fey_archon"
+name = "Fey Archon Luminara"
+entity_type = "npc"
+profession = "archon"
+description = "A being of impossible beauty with skin like liquid moonlight and hair that moves like aurora borealis. Their smile is a promise and a trap in equal measure. They speak in riddles wrapped in compliments, and every word carries a binding."
+location_id = "fey_court_embassy"
+dialogue_tags = ["greeting", "lore", "bargains", "riddles", "fey_politics"]
+behaviors = ["capricious", "elegant", "dangerous", "merchant"]
+is_hostile = false
+is_alive = true
+level = 16
+hp_current = 80
+hp_max = 80
+ac = 17
+unavailable_periods = []
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 18
+constitution = 12
+intelligence = 18
+wisdom = 16
+charisma = 22
+
+[npcs.schedule]
+dawn = "fey_court_embassy"
+morning = "fey_court_embassy"
+midday = "feywild_fragment"
+afternoon = "fey_court_embassy"
+evening = "fey_court_embassy"
+night = "fey_court_embassy"
+late_night = "fey_court_embassy"
+
+[npcs.properties]
+preferred_gifts = ["moonpetal", "enchanted_thread", "arcane_dust"]
+disliked_gifts = ["iron_ingot", "torch"]
+
+[[npcs.attacks]]
+name = "Fey Charm"
+damage_dice = "3d8"
+damage_bonus = 0
+damage_type = "psychic"
+
+[[npcs]]
+id = "shadow_lord"
+name = "The Shadow Lord"
+entity_type = "npc"
+profession = "shadow_lord"
+description = "A towering figure of living darkness, their form constantly shifting between vaguely humanoid and something far less recognizable. Two pinpoints of cold white light serve as eyes, and their voice resonates from everywhere and nowhere at once."
+location_id = "shadow_fortress"
+dialogue_tags = ["greeting", "lore", "threats", "bargains", "shadow_knowledge"]
+behaviors = ["menacing", "calculating", "patient", "political"]
+is_hostile = false
+is_alive = true
+level = 16
+hp_current = 85
+hp_max = 85
+ac = 18
+unavailable_periods = []
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 18
+constitution = 14
+intelligence = 18
+wisdom = 16
+charisma = 18
+
+[npcs.schedule]
+dawn = "shadow_fortress"
+morning = "shadow_fortress"
+midday = "shadow_fortress"
+afternoon = "shadow_fortress"
+evening = "shadowfell_fragment"
+night = "shadow_fortress"
+late_night = "shadow_fortress"
+
+[npcs.properties]
+preferred_gifts = ["soul_gem", "nightshade"]
+disliked_gifts = ["holy_symbol", "torch"]
+
+[[npcs.attacks]]
+name = "Shadow Blade"
+damage_dice = "3d8"
+damage_bonus = 0
+damage_type = "necrotic"
+
+[[npcs]]
+id = "elemental_prince"
+name = "Elemental Prince Ignis"
+entity_type = "npc"
+profession = "elemental"
+description = "A colossal humanoid form of living flame, crowned with a wreath of white-hot fire. Magma flows through veins visible beneath a surface of cooled obsidian that cracks and reforms with every movement. Their voice is the roar of a wildfire."
+location_id = "elemental_fire_pocket"
+dialogue_tags = ["greeting", "lore", "challenges", "elemental_knowledge", "boasts"]
+behaviors = ["proud", "primal", "fierce", "quest_giver"]
+is_hostile = false
+is_alive = true
+level = 16
+hp_current = 100
+hp_max = 100
+ac = 16
+unavailable_periods = []
+
+[npcs.ability_scores]
+strength = 20
+dexterity = 14
+constitution = 20
+intelligence = 12
+wisdom = 14
+charisma = 16
+
+[npcs.schedule]
+dawn = "elemental_fire_pocket"
+morning = "elemental_fire_pocket"
+midday = "elemental_fire_pocket"
+afternoon = "elemental_fire_pocket"
+evening = "elemental_fire_pocket"
+night = "elemental_fire_pocket"
+late_night = "elemental_fire_pocket"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "dragon_scale_fragment"]
+disliked_gifts = ["healing_herb", "rations"]
+
+[[npcs.attacks]]
+name = "Primal Fire"
+damage_dice = "4d8"
+damage_bonus = 0
+damage_type = "fire"
+
+[[npcs]]
+id = "celestial_guide"
+name = "Celestial Guide Seraphiel"
+entity_type = "npc"
+profession = "celestial"
+description = "A being of pure radiance in humanoid form, with six wings of golden light folded behind them. Their features are serene and impossibly perfect, and their presence fills mortals with a sense of peace — or inadequacy. They speak with the weight of millennia."
+location_id = "angel_waystation"
+dialogue_tags = ["greeting", "lore", "blessings", "quest_info", "divine_knowledge"]
+behaviors = ["serene", "compassionate", "powerful", "healer"]
+is_hostile = false
+is_alive = true
+level = 16
+hp_current = 90
+hp_max = 90
+ac = 19
+unavailable_periods = []
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 14
+constitution = 16
+intelligence = 16
+wisdom = 22
+charisma = 20
+
+[npcs.schedule]
+dawn = "angel_waystation"
+morning = "angel_waystation"
+midday = "celestial_overlook"
+afternoon = "angel_waystation"
+evening = "angel_waystation"
+night = "angel_waystation"
+late_night = "angel_waystation"
+
+[npcs.properties]
+preferred_gifts = ["holy_symbol", "moonpetal", "soul_gem"]
+disliked_gifts = ["nightshade", "poison_vial", "dagger"]
+
+[[npcs.attacks]]
+name = "Holy Smite"
+damage_dice = "4d8"
+damage_bonus = 0
+damage_type = "radiant"
+
+[[npcs]]
+id = "demon_negotiator"
+name = "Demon Negotiator Malphas"
+entity_type = "npc"
+profession = "demon"
+description = "A strikingly handsome figure in impeccable black attire, betrayed only by eyes like burning coals and a shadow that moves independently. They speak with honeyed words and impeccable logic, making damnation sound like a reasonable business arrangement."
+location_id = "demon_gate"
+dialogue_tags = ["greeting", "bargains", "threats", "lore", "infernal_knowledge"]
+behaviors = ["cunning", "persuasive", "treacherous", "merchant"]
+is_hostile = false
+is_alive = true
+level = 16
+hp_current = 95
+hp_max = 95
+ac = 17
+unavailable_periods = []
+
+[npcs.ability_scores]
+strength = 18
+dexterity = 16
+constitution = 18
+intelligence = 20
+wisdom = 14
+charisma = 20
+
+[npcs.schedule]
+dawn = "demon_gate"
+morning = "demon_gate"
+midday = "demon_gate"
+afternoon = "demon_gate"
+evening = "demon_gate"
+night = "demon_gate"
+late_night = "demon_gate"
+
+[npcs.properties]
+preferred_gifts = ["soul_gem", "nightshade", "arcane_dust"]
+disliked_gifts = ["holy_symbol", "healing_herb"]
+
+[[npcs.attacks]]
+name = "Hellfire"
+damage_dice = "4d8"
+damage_bonus = 0
+damage_type = "fire"
+
+[[npcs]]
+id = "the_weaver"
+name = "The Weaver"
+entity_type = "npc"
+profession = "veil_entity"
+description = "An entity that defies comprehension — sometimes appearing as an impossibly old figure stitching reality with needle and thread, sometimes as a kaleidoscopic fractal of eyes and hands, sometimes as nothing at all. They are the Veil itself given awareness, and they have watched the planes since before time was invented."
+location_id = "the_convergence"
+dialogue_tags = ["greeting", "lore", "cosmic_knowledge", "quest_info", "prophecy", "riddles"]
+behaviors = ["enigmatic", "ancient", "incomprehensible", "quest_giver"]
+is_hostile = false
+is_alive = true
+level = 20
+hp_current = 150
+hp_max = 150
+ac = 20
+unavailable_periods = []
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 16
+constitution = 16
+intelligence = 24
+wisdom = 24
+charisma = 20
+
+[npcs.schedule]
+dawn = "the_convergence"
+morning = "the_convergence"
+midday = "the_convergence"
+afternoon = "the_convergence"
+evening = "the_convergence"
+night = "the_convergence"
+late_night = "the_convergence"
+
+[npcs.properties]
+preferred_gifts = ["soul_gem", "arcane_dust"]
+disliked_gifts = ["rations", "torch"]
+
+[[npcs.attacks]]
+name = "Reality Tear"
+damage_dice = "5d10"
+damage_bonus = 0
+damage_type = "force"

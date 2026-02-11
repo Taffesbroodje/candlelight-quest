@@ -31,9 +31,15 @@ class TestGetSpellSlots:
     def test_unknown_class_empty(self):
         assert get_spell_slots("barbarian", 5) == {}
 
-    def test_level_clamped_high(self):
-        # Level 10 clamped to 5
-        assert get_spell_slots("wizard", 10) == get_spell_slots("wizard", 5)
+    def test_level_10_has_5th_level_slots(self):
+        slots = get_spell_slots("wizard", 10)
+        assert 5 in slots
+        assert slots[5] == 2
+
+    def test_level_11_has_6th_level_slots(self):
+        slots = get_spell_slots("wizard", 11)
+        assert 6 in slots
+        assert slots[6] == 1
 
     def test_returns_copy(self):
         s1 = get_spell_slots("wizard", 1)
@@ -41,6 +47,57 @@ class TestGetSpellSlots:
         assert s1 == s2
         s1[1] = 99
         assert s2[1] != 99
+
+    # Full caster tests (bard, druid, sorcerer — same table as wizard/cleric)
+    @pytest.mark.parametrize("cls", ["bard", "druid", "sorcerer", "cleric"])
+    def test_full_casters_match_wizard(self, cls):
+        for level in range(1, 21):
+            assert get_spell_slots(cls, level) == get_spell_slots("wizard", level)
+
+    # Half caster tests
+    def test_paladin_no_slots_level_1(self):
+        assert get_spell_slots("paladin", 1) == {}
+
+    def test_paladin_slots_level_2(self):
+        assert get_spell_slots("paladin", 2) == {1: 2}
+
+    def test_paladin_slots_level_5(self):
+        slots = get_spell_slots("paladin", 5)
+        assert slots == {1: 4, 2: 2}
+
+    def test_ranger_no_slots_level_1(self):
+        assert get_spell_slots("ranger", 1) == {}
+
+    def test_ranger_slots_level_2(self):
+        assert get_spell_slots("ranger", 2) == {1: 2}
+
+    @pytest.mark.parametrize("cls", ["paladin", "ranger"])
+    def test_half_casters_match(self, cls):
+        for level in range(1, 21):
+            assert get_spell_slots("paladin", level) == get_spell_slots("ranger", level)
+
+    # Pact magic tests (warlock)
+    def test_warlock_level_1(self):
+        assert get_spell_slots("warlock", 1) == {1: 1}
+
+    def test_warlock_level_2(self):
+        assert get_spell_slots("warlock", 2) == {1: 2}
+
+    def test_warlock_level_3(self):
+        # Level 3: 2 slots at level 2
+        assert get_spell_slots("warlock", 3) == {2: 2}
+
+    def test_warlock_level_5(self):
+        # Level 5: 2 slots at level 3
+        assert get_spell_slots("warlock", 5) == {3: 2}
+
+    def test_warlock_level_9(self):
+        # Level 9: 2 slots at level 5
+        assert get_spell_slots("warlock", 9) == {5: 2}
+
+    def test_warlock_level_11(self):
+        # Level 11: 3 slots at level 5
+        assert get_spell_slots("warlock", 11) == {5: 3}
 
 
 class TestCanCastSpell:

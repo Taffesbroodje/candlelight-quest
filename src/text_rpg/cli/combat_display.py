@@ -95,9 +95,45 @@ class CombatDisplay:
         content.append("[cyan bold][2][/cyan bold] Cast Spell\n", style="")
         content.append("  [cyan bold][3][/cyan bold] Use Item   ", style="")
         content.append("[cyan bold][4][/cyan bold] Flee\n", style="")
-        content.append("  [cyan bold][5][/cyan bold] Dodge\n", style="")
+        content.append("  [cyan bold][5][/cyan bold] Dodge", style="")
+
+        # Show class-specific ability if applicable
+        class_ability = self._get_class_ability_label(character)
+        if class_ability:
+            content.append(f"      [cyan bold][6][/cyan bold] {class_ability}", style="")
+        content.append("\n")
 
         self.console.print(Panel(content, border_style="red", box=box.ROUNDED, width=42))
+
+    def show_threat_warning(self, threats: list[tuple[str, str]]) -> None:
+        """Show danger warnings before combat. threats is [(name, level)]."""
+        if not threats:
+            return
+        lines = []
+        for name, threat in threats:
+            if threat == "overwhelming":
+                lines.append(f"[bold red]OVERWHELMING:[/bold red] {name} — [red]This foe will destroy you![/red]")
+            elif threat == "deadly":
+                lines.append(f"[bold red]DEADLY:[/bold red] {name} — [red]You sense great danger.[/red]")
+        if lines:
+            self.console.print(Panel(
+                "\n".join(lines),
+                title="[bold red]Threat Assessment[/bold red]",
+                border_style="red", box=box.HEAVY,
+            ))
+
+    @staticmethod
+    def _get_class_ability_label(character: dict) -> str | None:
+        """Return the label for a class-specific combat ability, or None."""
+        char_class = (character.get("char_class") or "").lower()
+        _CLASS_ABILITIES = {
+            "barbarian": "Rage",
+            "bard": "Inspire",
+            "monk": "Flurry",
+            "paladin": "Lay on Hands",
+            "druid": "Wild Shape",
+        }
+        return _CLASS_ABILITIES.get(char_class)
 
     def show_turn_start(self, combatant_name: str, is_player: bool) -> None:
         if is_player:

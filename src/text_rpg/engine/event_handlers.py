@@ -18,6 +18,7 @@ class PostTurnEventHandler:
         """Process all post-turn events from a turn result."""
         self._check_quest_events(result)
         self._check_reputation_events(result)
+        self._check_guild_events(result)
 
     def _check_quest_events(self, result: Any) -> None:
         """Detect quest-related events and show notifications."""
@@ -93,6 +94,32 @@ class PostTurnEventHandler:
             npc_name = entity.get("name", "someone")
             rep_repo.add_bounty(self.game_id, region, 15, f"Murder of {npc_name}")
             rep_repo.adjust_faction_rep(self.game_id, "thornfield_guard", -10)
+
+    def _check_guild_events(self, result: Any) -> None:
+        """Handle guild-related events: work order completion, rank-up."""
+        if not result.events:
+            return
+        for event in result.events:
+            event_type = event.get("event_type", "")
+            details = safe_json(event.get("mechanical_details"), {})
+
+            if event_type == "WORK_ORDER_COMPLETE":
+                guild_name = details.get("guild_name", "your guild")
+                reward_gold = details.get("reward_gold", 0)
+                self.display.console.print(
+                    f"\n  [green]Work order complete! +{reward_gold} gold[/green]"
+                )
+            elif event_type == "GUILD_RANK_UP":
+                new_rank = details.get("new_rank", "")
+                if new_rank:
+                    self.display.console.print(
+                        f"\n  [bold yellow]Guild Rank Up: {new_rank.capitalize()}![/bold yellow]"
+                    )
+            elif event_type == "GUILD_JOINED":
+                guild_name = details.get("guild_name", "a guild")
+                self.display.console.print(
+                    f"\n  [cyan]Joined {guild_name}![/cyan]"
+                )
 
     def _get_current_region(self) -> str:
         """Get the region_id for the player's current location."""

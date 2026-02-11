@@ -1,0 +1,441 @@
+# Silverpeak NPCs — mountain fortress-city
+
+[[npcs]]
+id = "clan_elder_mithras"
+name = "Clan Elder Mithras Silverbeard"
+entity_type = "npc"
+profession = "council_elder"
+description = "An ancient dwarf with a beard of pure silver, braided with mithral clasps. He has sat the Mountain Throne for over a century and remembers when the deep tunnels were first sealed. His wisdom is legendary, but his patience for fools is not."
+location_id = "silverpeak_throne"
+dialogue_tags = ["greeting", "quest_info", "lore", "politics"]
+behaviors = ["wise", "quest_giver", "regal"]
+is_hostile = false
+is_alive = true
+level = 10
+hp_current = 65
+hp_max = 65
+ac = 18
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 10
+constitution = 18
+intelligence = 16
+wisdom = 18
+charisma = 15
+
+[npcs.schedule]
+dawn = "silverpeak_throne"
+morning = "silverpeak_throne"
+midday = "silverpeak_throne"
+afternoon = "silverpeak_library"
+evening = "silverpeak_tavern"
+night = "silverpeak_throne"
+late_night = "silverpeak_throne"
+
+[npcs.properties]
+preferred_gifts = ["soul_gem", "healing_potion"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Ancient Hammer"
+damage_dice = "1d10"
+damage_bonus = 3
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "master_smith_ingrid"
+name = "Master Smith Ingrid Flameheart"
+entity_type = "npc"
+profession = "master_smith"
+description = "A broad-shouldered dwarven woman whose arms bear the scars of a lifetime at the forge. Her eyes glow faintly orange from decades of staring into the Great Forge's flames. She speaks in measured words but her craft is unmatched in the realm."
+location_id = "silverpeak_forge_complex"
+dialogue_tags = ["greeting", "shop_weapons", "shop_armor", "craft_info"]
+behaviors = ["focused", "merchant", "craftsman"]
+is_hostile = false
+is_alive = true
+level = 9
+hp_current = 60
+hp_max = 60
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 18
+dexterity = 12
+constitution = 17
+intelligence = 14
+wisdom = 13
+charisma = 10
+
+[npcs.schedule]
+dawn = "silverpeak_forge_complex"
+morning = "silverpeak_forge_complex"
+midday = "silverpeak_forge_complex"
+afternoon = "silverpeak_forge_complex"
+evening = "silverpeak_forge_complex"
+night = "silverpeak_tavern"
+late_night = "silverpeak_forge_complex"
+
+[npcs.properties]
+preferred_gifts = ["iron_ingot", "arcane_dust"]
+disliked_gifts = ["nightshade", "rations"]
+
+[[npcs.attacks]]
+name = "Forge Hammer"
+damage_dice = "1d10"
+damage_bonus = 4
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "enchantress_seraphina"
+name = "Enchantress Seraphina"
+entity_type = "npc"
+profession = "enchantress"
+description = "A tall elven woman with silver hair that floats as if weightless. Arcane sigils shimmer faintly on her skin, and her fingers trail sparks of light. She left her homeland to study the unique magical resonance of Silverpeak's gemstones."
+location_id = "enchanter_tower"
+dialogue_tags = ["greeting", "shop_supplies", "lore", "craft_info"]
+behaviors = ["elegant", "merchant", "academic"]
+is_hostile = false
+is_alive = true
+level = 10
+hp_current = 45
+hp_max = 45
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 14
+constitution = 12
+intelligence = 20
+wisdom = 16
+charisma = 16
+
+[npcs.schedule]
+dawn = "enchanter_tower"
+morning = "enchanter_tower"
+midday = "silverpeak_library"
+afternoon = "enchanter_tower"
+evening = "enchanter_tower"
+night = "mountain_observatory"
+late_night = "enchanter_tower"
+
+[npcs.properties]
+preferred_gifts = ["soul_gem", "moonpetal"]
+disliked_gifts = ["iron_ingot", "rations"]
+
+[[npcs.attacks]]
+name = "Arcane Bolt"
+damage_dice = "2d8"
+damage_bonus = 0
+damage_type = "force"
+
+[[npcs]]
+id = "gem_master_corbin"
+name = "Gem Master Corbin"
+entity_type = "npc"
+profession = "gem_cutter"
+description = "A wiry gnome with magnifying lenses built into his spectacles, layered three deep. His hands are remarkably steady, and he can identify any gemstone by touch, taste, or the sound it makes when tapped. He is obsessively meticulous about his work."
+location_id = "artisan_quarter"
+dialogue_tags = ["greeting", "shop_supplies", "lore", "craft_info"]
+behaviors = ["meticulous", "merchant", "knowledgeable"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 28
+hp_max = 28
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 18
+constitution = 10
+intelligence = 18
+wisdom = 14
+charisma = 12
+
+[npcs.schedule]
+dawn = "artisan_quarter"
+morning = "artisan_quarter"
+midday = "artisan_quarter"
+afternoon = "silverpeak_market"
+evening = "artisan_quarter"
+night = "silverpeak_tavern"
+late_night = "artisan_quarter"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "moonpetal"]
+disliked_gifts = ["rations", "torch"]
+
+[[npcs.attacks]]
+name = "Gem Shard"
+damage_dice = "1d6"
+damage_bonus = 0
+damage_type = "piercing"
+
+[[npcs]]
+id = "innkeeper_baldric"
+name = "Innkeeper Baldric"
+entity_type = "npc"
+profession = "innkeeper"
+description = "A portly human with a ruddy face and an impressive mustache waxed to perfect points. He came to Silverpeak as a merchant decades ago and never left. He knows every traveler's story and most of the city's gossip."
+location_id = "silverpeak_inn"
+dialogue_tags = ["greeting", "rumors", "shop_food", "quest_info"]
+behaviors = ["friendly", "merchant", "information"]
+is_hostile = false
+is_alive = true
+level = 4
+hp_current = 28
+hp_max = 28
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 10
+constitution = 14
+intelligence = 12
+wisdom = 13
+charisma = 15
+
+[npcs.schedule]
+dawn = "silverpeak_inn"
+morning = "silverpeak_inn"
+midday = "silverpeak_market"
+afternoon = "silverpeak_inn"
+evening = "silverpeak_inn"
+night = "silverpeak_inn"
+late_night = "silverpeak_inn"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_herb"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Iron Mug"
+damage_dice = "1d4"
+damage_bonus = 0
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "barkeep_stonefoot"
+name = "Barkeep Stonefoot"
+entity_type = "npc"
+profession = "barkeep"
+description = "A stocky dwarf with stone-grey skin and a permanent scowl that belies a dry sense of humor. He brews ale from mountain spring water and mushroom grain, and his Crystal Chalice special can knock out an ogre. He tolerates no bar fights — and can end them quickly."
+location_id = "silverpeak_tavern"
+dialogue_tags = ["greeting", "rumors", "shop_food", "lore"]
+behaviors = ["gruff", "merchant", "tough"]
+is_hostile = false
+is_alive = true
+level = 4
+hp_current = 32
+hp_max = 32
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 15
+dexterity = 10
+constitution = 16
+intelligence = 10
+wisdom = 12
+charisma = 13
+
+[npcs.schedule]
+dawn = "silverpeak_tavern"
+morning = "silverpeak_tavern"
+midday = "silverpeak_tavern"
+afternoon = "silverpeak_tavern"
+evening = "silverpeak_tavern"
+night = "silverpeak_tavern"
+late_night = "silverpeak_tavern"
+
+[npcs.properties]
+preferred_gifts = ["rations", "iron_ingot"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Bar Stool"
+damage_dice = "1d6"
+damage_bonus = 0
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "high_priest_orendil"
+name = "High Priest Orendil"
+entity_type = "npc"
+profession = "high_priest"
+description = "A venerable half-elf in robes of deep grey embroidered with golden flame patterns. He has served the Temple of the Mountain God for over sixty years and channels divine power with practiced ease. His voice resonates through the stone chambers like a bell."
+location_id = "silverpeak_temple"
+dialogue_tags = ["greeting", "healing", "blessing", "lore"]
+behaviors = ["devout", "healer", "spiritual"]
+is_hostile = false
+is_alive = true
+level = 9
+hp_current = 50
+hp_max = 50
+ac = 17
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 10
+constitution = 14
+intelligence = 15
+wisdom = 20
+charisma = 16
+
+[npcs.schedule]
+dawn = "silverpeak_temple"
+morning = "silverpeak_temple"
+midday = "silverpeak_temple"
+afternoon = "silverpeak_temple"
+evening = "silverpeak_throne"
+night = "silverpeak_temple"
+late_night = "silverpeak_temple"
+
+[npcs.properties]
+preferred_gifts = ["holy_symbol", "healing_herb"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Divine Light"
+damage_dice = "2d10"
+damage_bonus = 0
+damage_type = "radiant"
+
+[[npcs]]
+id = "archivist_penna"
+name = "Archivist Penna"
+entity_type = "npc"
+profession = "archivist"
+description = "A young human woman with ink-stained fingers and spectacles perched on the tip of her nose. She catalogues everything — ancient stone tablets, mining surveys, arcane formulas — and has an eidetic memory for what she has read. She rarely looks up from her work."
+location_id = "silverpeak_library"
+dialogue_tags = ["greeting", "lore", "quest_info", "rumors"]
+behaviors = ["scholarly", "information", "academic"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 22
+hp_max = 22
+ac = 11
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 6
+dexterity = 10
+constitution = 10
+intelligence = 20
+wisdom = 16
+charisma = 10
+
+[npcs.schedule]
+dawn = "silverpeak_library"
+morning = "silverpeak_library"
+midday = "silverpeak_library"
+afternoon = "silverpeak_library"
+evening = "silverpeak_library"
+night = "silverpeak_tavern"
+late_night = "silverpeak_library"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "moonpetal"]
+disliked_gifts = ["rations", "torch"]
+
+[[npcs.attacks]]
+name = "Heavy Tome"
+damage_dice = "1d4"
+damage_bonus = 0
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "guard_captain_granite"
+name = "Guard Captain Granite"
+entity_type = "npc"
+profession = "guard_captain"
+description = "A barrel-chested dwarf in polished mithral plate, his face a map of old battle scars. He commands the Mountain Guard with iron discipline and has personally fought back incursions from the deep tunnels more times than he can count. He trusts actions over words."
+location_id = "silverpeak_barracks"
+dialogue_tags = ["greeting", "guard_info", "quest_info", "rumors"]
+behaviors = ["disciplined", "protector", "authoritative"]
+is_hostile = false
+is_alive = true
+level = 9
+hp_current = 68
+hp_max = 68
+ac = 19
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 18
+dexterity = 12
+constitution = 17
+intelligence = 12
+wisdom = 14
+charisma = 13
+
+[npcs.schedule]
+dawn = "silverpeak_barracks"
+morning = "silverpeak_barracks"
+midday = "silverpeak_deep"
+afternoon = "silverpeak_barracks"
+evening = "silverpeak_gate"
+night = "silverpeak_barracks"
+late_night = "silverpeak_barracks"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "iron_ingot"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Mithral Warhammer"
+damage_dice = "1d10"
+damage_bonus = 4
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "astronomer_celeste"
+name = "Astronomer Celeste"
+entity_type = "npc"
+profession = "astronomer"
+description = "A willowy half-elf with deep violet eyes that seem to reflect starlight even in daylight. She studies celestial patterns from the mountain summit and speaks in cryptic, poetic fragments. The mountain clans consult her before major decisions, believing she reads fate in the stars."
+location_id = "mountain_observatory"
+dialogue_tags = ["greeting", "lore", "rumors", "quest_info"]
+behaviors = ["dreamy", "academic", "mysterious"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 22
+hp_max = 22
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 12
+constitution = 10
+intelligence = 18
+wisdom = 17
+charisma = 14
+
+[npcs.schedule]
+dawn = "mountain_observatory"
+morning = "silverpeak_library"
+midday = "silverpeak_tavern"
+afternoon = "mountain_observatory"
+evening = "mountain_observatory"
+night = "mountain_observatory"
+late_night = "mountain_observatory"
+
+[npcs.properties]
+preferred_gifts = ["moonpetal", "arcane_dust"]
+disliked_gifts = ["iron_ingot", "rations"]
+
+[[npcs.attacks]]
+name = "Starlight Bolt"
+damage_dice = "1d6"
+damage_bonus = 0
+damage_type = "radiant"

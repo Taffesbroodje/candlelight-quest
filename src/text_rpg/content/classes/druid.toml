@@ -1,0 +1,38 @@
+id = "druid"
+name = "Druid"
+description = "A priest of the Old Faith, wielding the powers of nature and adopting animal forms."
+hit_die = "1d8"
+primary_ability = "wisdom"
+saving_throw_proficiencies = ["intelligence", "wisdom"]
+armor_proficiencies = ["light", "medium", "shield"]
+weapon_proficiencies = ["club", "dagger", "dart", "javelin", "mace", "quarterstaff", "scimitar", "sling"]
+starting_gold = 100
+skill_choices = 2
+available_skills = ["arcana", "animal_handling", "insight", "medicine", "nature", "perception", "religion", "survival"]
+spellcasting_ability = "wisdom"
+cantrips_known = 2
+
+[starting_equipment]
+weapons = ["scimitar"]
+armor = ["leather_armor", "shield"]
+items = ["explorer_pack", "druidic_focus"]
+
+[[features]]
+level = 1
+name = "Spellcasting"
+description = "You can cast druid spells. Wisdom is your spellcasting ability. You know all druid spells and prepare a number equal to your Wisdom modifier + druid level each day."
+
+[[features]]
+level = 1
+name = "Druidic"
+description = "You know Druidic, the secret language of druids. You can speak the language and use it to leave hidden messages."
+
+[[features]]
+level = 2
+name = "Wild Shape"
+description = "You can use your action to magically assume the shape of a beast. You gain temporary hit points equal to your druid level x 4 and a natural weapon dealing 1d6 + Wisdom modifier damage. The form lasts 1 hour or until temp HP are depleted. You can use this feature twice per short rest."
+
+[[features]]
+level = 4
+name = "Ability Score Improvement"
+description = "You can increase one ability score by 2, or two ability scores by 1 each."

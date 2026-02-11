@@ -1,0 +1,656 @@
+# Crownhold NPCs — the true capital
+
+[[npcs]]
+id = "the_monarch"
+name = "The Monarch"
+entity_type = "npc"
+profession = "monarch"
+description = "The supreme ruler of the realm, draped in ermine and cloth-of-gold, with a crown of ancient design upon their brow. Every word carries the weight of law, and their piercing gaze misses nothing in the web of courtly politics."
+location_id = "royal_palace"
+dialogue_tags = ["greeting", "politics", "quest_info", "lore", "royal_decree"]
+behaviors = ["regal", "political", "commanding"]
+is_hostile = false
+is_alive = true
+level = 14
+hp_current = 65
+hp_max = 65
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 12
+constitution = 12
+intelligence = 18
+wisdom = 18
+charisma = 20
+
+[npcs.schedule]
+dawn = "royal_palace"
+morning = "royal_palace"
+midday = "imperial_gardens"
+afternoon = "royal_palace"
+evening = "royal_palace"
+night = "royal_palace"
+late_night = "royal_palace"
+
+[npcs.properties]
+preferred_gifts = ["soul_gem", "moonpetal"]
+disliked_gifts = ["rations", "torch"]
+
+[[npcs.attacks]]
+name = "Royal Scepter"
+damage_dice = "2d6"
+damage_type = "force"
+
+[[npcs]]
+id = "grand_guild_master"
+name = "Grand Master of Guilds"
+entity_type = "npc"
+profession = "guild_master"
+description = "A silver-tongued half-elf in immaculate silks, whose network of trade agreements and guild charters makes them one of the most powerful people in the capital. They smile easily, but their eyes are always calculating."
+location_id = "merchants_mile"
+dialogue_tags = ["greeting", "shop_supplies", "quest_info", "politics", "rumors"]
+behaviors = ["shrewd", "political", "merchant"]
+is_hostile = false
+is_alive = true
+level = 12
+hp_current = 55
+hp_max = 55
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 14
+constitution = 12
+intelligence = 18
+wisdom = 16
+charisma = 19
+
+[npcs.schedule]
+dawn = "merchants_mile"
+morning = "merchants_mile"
+midday = "palace_district"
+afternoon = "merchants_mile"
+evening = "noble_heights"
+night = "merchants_mile"
+late_night = "merchants_mile"
+
+[npcs.properties]
+preferred_gifts = ["soul_gem", "arcane_dust"]
+disliked_gifts = ["rations", "torch"]
+
+[[npcs.attacks]]
+name = "Concealed Dagger"
+damage_dice = "1d4"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[npcs]]
+id = "academy_headmaster"
+name = "Academy Headmaster"
+entity_type = "npc"
+profession = "headmaster"
+description = "An ancient gnome whose wild white hair defies gravity and whose robes are covered in chalk dust and arcane formulae. Despite an absent-minded manner, their intellect is the sharpest in the realm and their magical knowledge borders on the divine."
+location_id = "grand_academy"
+dialogue_tags = ["greeting", "lore", "quest_info", "shop_supplies", "training"]
+behaviors = ["academic", "wise", "eccentric"]
+is_hostile = false
+is_alive = true
+level = 12
+hp_current = 48
+hp_max = 48
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 12
+constitution = 12
+intelligence = 20
+wisdom = 18
+charisma = 16
+
+[npcs.schedule]
+dawn = "grand_academy"
+morning = "grand_library"
+midday = "university_campus_ch"
+afternoon = "grand_academy"
+evening = "grand_academy"
+night = "grand_academy"
+late_night = "grand_academy"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "spellbook", "moonpetal"]
+disliked_gifts = ["rations", "dagger"]
+
+[[npcs.attacks]]
+name = "Arcane Blast"
+damage_dice = "3d8"
+damage_type = "force"
+
+[[npcs]]
+id = "ch_high_priest"
+name = "High Priest of Crownhold"
+entity_type = "npc"
+profession = "high_priest"
+description = "A towering human man with a shaved head and golden vestments that seem to radiate faint warmth. His voice resonates with divine authority, yet his compassion for the suffering is genuine and boundless."
+location_id = "high_cathedral"
+dialogue_tags = ["greeting", "healing", "blessing", "lore", "quest_info"]
+behaviors = ["devout", "compassionate", "authoritative"]
+is_hostile = false
+is_alive = true
+level = 12
+hp_current = 58
+hp_max = 58
+ac = 18
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 10
+constitution = 14
+intelligence = 16
+wisdom = 20
+charisma = 18
+
+[npcs.schedule]
+dawn = "high_cathedral"
+morning = "high_cathedral"
+midday = "high_temple_quarter"
+afternoon = "high_cathedral"
+evening = "high_cathedral"
+night = "high_cathedral"
+late_night = "high_cathedral"
+
+[npcs.properties]
+preferred_gifts = ["holy_symbol", "moonpetal", "healing_herb"]
+disliked_gifts = ["nightshade", "poison_vial", "dagger"]
+
+[[npcs.attacks]]
+name = "Divine Judgment"
+damage_dice = "3d10"
+damage_type = "radiant"
+
+[[npcs]]
+id = "ch_spymaster"
+name = "The Spymaster"
+entity_type = "npc"
+profession = "spymaster"
+description = "A nondescript human of indeterminate age whose face seems to change subtly every time you look away. They speak in whispers, appear without warning, and know secrets that could topple nations."
+location_id = "palace_district"
+dialogue_tags = ["greeting", "quest_info", "rumors", "politics", "information"]
+behaviors = ["secretive", "dangerous", "information"]
+is_hostile = false
+is_alive = true
+level = 11
+hp_current = 45
+hp_max = 45
+ac = 17
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 20
+constitution = 12
+intelligence = 18
+wisdom = 16
+charisma = 16
+
+[npcs.schedule]
+dawn = "palace_district"
+morning = "embassy_row_ch"
+midday = "palace_district"
+afternoon = "thieves_quarter_ch"
+evening = "palace_district"
+night = "undercity_entrance"
+late_night = "palace_district"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "soul_gem"]
+disliked_gifts = ["holy_symbol", "torch"]
+
+[[npcs.attacks]]
+name = "Shadow Daggers"
+damage_dice = "2d6"
+damage_bonus = 5
+damage_type = "piercing"
+
+[[npcs]]
+id = "ch_arena_champion"
+name = "Arena Champion"
+entity_type = "npc"
+profession = "champion"
+description = "A massive dragonborn in gleaming ceremonial plate, scarred from hundreds of victories. The crowd chants their name, and their confident grin never falters. They live for the roar of the arena."
+location_id = "grand_arena"
+dialogue_tags = ["greeting", "quest_info", "training", "rumors"]
+behaviors = ["proud", "fighter", "dramatic"]
+is_hostile = false
+is_alive = true
+level = 14
+hp_current = 100
+hp_max = 100
+ac = 19
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 20
+dexterity = 16
+constitution = 18
+intelligence = 10
+wisdom = 14
+charisma = 16
+
+[npcs.schedule]
+dawn = "training_academy"
+morning = "grand_arena"
+midday = "grand_arena"
+afternoon = "grand_arena"
+evening = "arena_district"
+night = "grand_arena"
+late_night = "grand_arena"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "beast_hide"]
+disliked_gifts = ["moonpetal", "spellbook"]
+
+[[npcs.attacks]]
+name = "Champion's Blade"
+damage_dice = "2d8"
+damage_bonus = 6
+damage_type = "slashing"
+
+[[npcs]]
+id = "dwarven_ambassador"
+name = "Dwarven Ambassador Stoneheart"
+entity_type = "npc"
+profession = "ambassador"
+description = "A stocky dwarf with an immaculately braided beard woven with gold thread and gemstones. Every word is measured, every gesture deliberate, and their knowledge of diplomatic protocol is absolute."
+location_id = "embassy_row_ch"
+dialogue_tags = ["greeting", "politics", "lore", "quest_info", "rumors"]
+behaviors = ["diplomatic", "formal", "proud"]
+is_hostile = false
+is_alive = true
+level = 8
+hp_current = 48
+hp_max = 48
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 10
+constitution = 16
+intelligence = 14
+wisdom = 15
+charisma = 14
+
+[npcs.schedule]
+dawn = "embassy_row_ch"
+morning = "embassy_row_ch"
+midday = "palace_district"
+afternoon = "embassy_row_ch"
+evening = "merchants_mile"
+night = "embassy_row_ch"
+late_night = "embassy_row_ch"
+
+[npcs.properties]
+preferred_gifts = ["iron_ingot", "healing_potion"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Ceremonial Hammer"
+damage_dice = "1d8"
+damage_bonus = 2
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "elven_ambassador"
+name = "Elven Ambassador Starweave"
+entity_type = "npc"
+profession = "ambassador"
+description = "A tall, willowy elf with silver hair and eyes that shift between violet and blue. They move with an ethereal grace and speak in riddles as often as plain words. Centuries of life lend weight to every observation."
+location_id = "embassy_row_ch"
+dialogue_tags = ["greeting", "politics", "lore", "quest_info", "rumors"]
+behaviors = ["elegant", "diplomatic", "perceptive"]
+is_hostile = false
+is_alive = true
+level = 8
+hp_current = 38
+hp_max = 38
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 16
+constitution = 10
+intelligence = 18
+wisdom = 16
+charisma = 17
+
+[npcs.schedule]
+dawn = "embassy_row_ch"
+morning = "imperial_gardens"
+midday = "embassy_row_ch"
+afternoon = "grand_library"
+evening = "embassy_row_ch"
+night = "embassy_row_ch"
+late_night = "embassy_row_ch"
+
+[npcs.properties]
+preferred_gifts = ["moonpetal", "arcane_dust"]
+disliked_gifts = ["iron_ingot", "rations"]
+
+[[npcs.attacks]]
+name = "Rapier"
+damage_dice = "1d8"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[npcs]]
+id = "foreign_ambassador"
+name = "Foreign Ambassador Zara"
+entity_type = "npc"
+profession = "ambassador"
+description = "A dark-skinned human woman from distant southern lands, with intricate facial tattoos and flowing robes of vibrant colors. Her curiosity about local customs is matched only by her skill at navigating political waters."
+location_id = "foreign_quarter"
+dialogue_tags = ["greeting", "politics", "lore", "quest_info", "shop_supplies"]
+behaviors = ["charismatic", "diplomatic", "curious"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 35
+hp_max = 35
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 14
+constitution = 12
+intelligence = 16
+wisdom = 14
+charisma = 17
+
+[npcs.schedule]
+dawn = "foreign_quarter"
+morning = "foreign_quarter"
+midday = "embassy_row_ch"
+afternoon = "harbor_district"
+evening = "foreign_quarter"
+night = "foreign_quarter"
+late_night = "foreign_quarter"
+
+[npcs.properties]
+preferred_gifts = ["moonpetal", "beast_hide"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Scimitar"
+damage_dice = "1d6"
+damage_bonus = 2
+damage_type = "slashing"
+
+[[npcs]]
+id = "undercity_lord_shadow"
+name = "Undercity Lord Shadow"
+entity_type = "npc"
+profession = "crime_lord"
+description = "A gaunt tiefling whose eyes burn like embers in the underground darkness. They rule the Undercity Market through fear, controlling the flow of contraband and forbidden services. Their network of informants rivals the Spymaster's."
+location_id = "undercity_market"
+dialogue_tags = ["greeting", "quest_info", "rumors", "shop_supplies", "information"]
+behaviors = ["menacing", "criminal", "cunning"]
+is_hostile = false
+is_alive = true
+level = 11
+hp_current = 52
+hp_max = 52
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 18
+constitution = 13
+intelligence = 16
+wisdom = 14
+charisma = 16
+
+[npcs.schedule]
+dawn = "undercity_market"
+morning = "undercity_market"
+midday = "crown_sewers"
+afternoon = "undercity_market"
+evening = "undercity_market"
+night = "thieves_quarter_ch"
+late_night = "undercity_market"
+
+[npcs.properties]
+preferred_gifts = ["soul_gem", "nightshade"]
+disliked_gifts = ["holy_symbol", "healing_herb"]
+
+[[npcs.attacks]]
+name = "Poisoned Blade"
+damage_dice = "1d6"
+damage_bonus = 4
+damage_type = "piercing"
+
+[[npcs]]
+id = "undercity_lord_viper"
+name = "Undercity Lord Viper"
+entity_type = "npc"
+profession = "crime_lord"
+description = "A deceptively charming halfling with a perpetual smile and quick hands. They control the Thieves' Quarter with a combination of bribery, blackmail, and ruthless ambition. Crossing Viper is a death sentence delivered with a grin."
+location_id = "thieves_quarter_ch"
+dialogue_tags = ["greeting", "quest_info", "rumors", "shop_supplies", "information"]
+behaviors = ["charming", "dangerous", "ambitious"]
+is_hostile = false
+is_alive = true
+level = 10
+hp_current = 48
+hp_max = 48
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 18
+constitution = 12
+intelligence = 17
+wisdom = 13
+charisma = 16
+
+[npcs.schedule]
+dawn = "thieves_quarter_ch"
+morning = "thieves_quarter_ch"
+midday = "artisan_quarter"
+afternoon = "thieves_quarter_ch"
+evening = "undercity_entrance"
+night = "thieves_quarter_ch"
+late_night = "thieves_quarter_ch"
+
+[npcs.properties]
+preferred_gifts = ["dagger", "nightshade"]
+disliked_gifts = ["holy_symbol", "healing_herb"]
+
+[[npcs.attacks]]
+name = "Twin Daggers"
+damage_dice = "2d4"
+damage_bonus = 4
+damage_type = "piercing"
+
+[[npcs]]
+id = "master_merchant_silk"
+name = "Master Merchant Silk"
+entity_type = "npc"
+profession = "merchant"
+description = "A refined elven woman in exquisite fabrics, whose every gesture speaks of wealth and taste. She deals in luxury goods and high fashion, catering to the nobility and foreign dignitaries. Her connections span the continent."
+location_id = "merchants_mile"
+dialogue_tags = ["greeting", "shop_supplies", "rumors", "politics"]
+behaviors = ["refined", "merchant", "shrewd"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 32
+hp_max = 32
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 14
+constitution = 10
+intelligence = 18
+wisdom = 14
+charisma = 18
+
+[npcs.schedule]
+dawn = "merchants_mile"
+morning = "merchants_mile"
+midday = "noble_heights"
+afternoon = "merchants_mile"
+evening = "foreign_quarter"
+night = "merchants_mile"
+late_night = "merchants_mile"
+
+[npcs.properties]
+preferred_gifts = ["moonpetal", "soul_gem"]
+disliked_gifts = ["rations", "iron_ingot"]
+
+[[npcs.attacks]]
+name = "Concealed Crossbow"
+damage_dice = "1d6"
+damage_type = "piercing"
+
+[[npcs]]
+id = "master_merchant_gold"
+name = "Master Merchant Gold"
+entity_type = "npc"
+profession = "merchant"
+description = "A jovial, barrel-chested human with a booming laugh and a handshake that could crush walnuts. He controls much of the harbor trade and knows every ship captain by name. His warehouse empire is vast."
+location_id = "harbor_district"
+dialogue_tags = ["greeting", "shop_supplies", "rumors", "quest_info"]
+behaviors = ["jovial", "merchant", "connected"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 35
+hp_max = 35
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 12
+constitution = 14
+intelligence = 16
+wisdom = 14
+charisma = 17
+
+[npcs.schedule]
+dawn = "harbor_district"
+morning = "harbor_district"
+midday = "merchants_mile"
+afternoon = "harbor_district"
+evening = "foreign_quarter"
+night = "harbor_district"
+late_night = "harbor_district"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_potion"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Hidden Dagger"
+damage_dice = "1d4"
+damage_bonus = 1
+damage_type = "piercing"
+
+[[npcs]]
+id = "military_commander"
+name = "Military Commander Steele"
+entity_type = "npc"
+profession = "commander"
+description = "A scarred, iron-jawed woman in polished plate armor bearing the insignia of the Imperial High Command. She has fought in every major campaign of the last two decades and trains her officers to the same unforgiving standard."
+location_id = "military_academy"
+dialogue_tags = ["greeting", "quest_info", "guard_info", "training", "rumors"]
+behaviors = ["disciplined", "authoritative", "protector"]
+is_hostile = false
+is_alive = true
+level = 12
+hp_current = 80
+hp_max = 80
+ac = 19
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 18
+dexterity = 14
+constitution = 16
+intelligence = 14
+wisdom = 16
+charisma = 14
+
+[npcs.schedule]
+dawn = "training_academy"
+morning = "military_academy"
+midday = "palace_district"
+afternoon = "military_academy"
+evening = "military_academy"
+night = "military_academy"
+late_night = "military_academy"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "iron_ingot"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Greatsword"
+damage_dice = "2d6"
+damage_bonus = 4
+damage_type = "slashing"
+
+[[npcs]]
+id = "court_wizard"
+name = "Court Wizard Meraxis"
+entity_type = "npc"
+profession = "court_wizard"
+description = "A tall, gaunt human with deep-set eyes that crackle with barely contained arcane energy. Their robes shift between patterns like a living illusion, and their tower laboratory is said to contain portals to other planes."
+location_id = "royal_palace"
+dialogue_tags = ["greeting", "lore", "quest_info", "shop_supplies", "training"]
+behaviors = ["brilliant", "eccentric", "powerful"]
+is_hostile = false
+is_alive = true
+level = 13
+hp_current = 55
+hp_max = 55
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 12
+constitution = 12
+intelligence = 20
+wisdom = 18
+charisma = 14
+
+[npcs.schedule]
+dawn = "royal_palace"
+morning = "grand_academy"
+midday = "royal_palace"
+afternoon = "grand_library"
+evening = "royal_palace"
+night = "royal_palace"
+late_night = "royal_palace"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "soul_gem", "spellbook"]
+disliked_gifts = ["rations", "iron_ingot"]
+
+[[npcs.attacks]]
+name = "Arcane Barrage"
+damage_dice = "4d8"
+damage_type = "force"

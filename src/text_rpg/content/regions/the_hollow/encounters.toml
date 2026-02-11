@@ -1,0 +1,271 @@
+# The Hollow encounters — L7-12
+
+[[encounters]]
+id = "undead_rising"
+name = "Undead Rising"
+location_ids = ["bone_marsh", "corpse_bog", "lost_village"]
+encounter_chance = 0.4
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "healing_herb", chance = 0.2},
+]
+gold_min = 2
+gold_max = 10
+
+[[encounters.entities]]
+id = "hollow_zombie"
+name = "Hollow Zombie"
+entity_type = "enemy"
+description = "A shambling corpse dragged from the bog, its flesh grey and bloated. It moves with mindless hunger, reaching for the living with rotting hands."
+level = 5
+hp_max = 28
+ac = 8
+count_min = 4
+count_max = 6
+xp_value = 50
+
+[encounters.entities.ability_scores]
+strength = 14
+dexterity = 6
+constitution = 16
+intelligence = 3
+wisdom = 6
+charisma = 5
+
+[[encounters.entities.attacks]]
+name = "Slam"
+damage_dice = "1d8"
+damage_bonus = 2
+damage_type = "bludgeoning"
+
+[[encounters]]
+id = "necromancer_thralls"
+name = "Necromancer and Thralls"
+location_ids = ["necromancer_ruins", "drowned_cathedral"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.6},
+    {id = "soul_gem", chance = 0.2},
+    {id = "nightshade", chance = 0.4},
+    {id = "healing_potion", chance = 0.4},
+]
+gold_min = 40
+gold_max = 100
+
+[[encounters.entities]]
+id = "hollow_necromancer"
+name = "Hollow Necromancer"
+entity_type = "enemy"
+description = "A robed figure crackling with necrotic energy, commanding the dead with gestures of pale, skeletal hands. Their eyes burn with unholy light and their voice echoes with the whispers of enslaved souls."
+level = 9
+hp_max = 48
+ac = 14
+count_min = 1
+count_max = 1
+xp_value = 500
+
+[encounters.entities.ability_scores]
+strength = 10
+dexterity = 12
+constitution = 12
+intelligence = 18
+wisdom = 14
+charisma = 14
+
+[[encounters.entities.attacks]]
+name = "Necrotic Bolt"
+damage_dice = "3d8"
+damage_type = "necrotic"
+
+[[encounters.entities.attacks]]
+name = "Drain Life"
+damage_dice = "2d6"
+damage_type = "necrotic"
+
+[[encounters.entities]]
+id = "skeleton_thrall"
+name = "Skeleton Thrall"
+entity_type = "enemy"
+description = "A clattering skeleton bound to the necromancer's will, wielding a corroded blade with mechanical precision."
+level = 5
+hp_max = 25
+ac = 12
+count_min = 3
+count_max = 3
+xp_value = 50
+
+[encounters.entities.ability_scores]
+strength = 12
+dexterity = 14
+constitution = 10
+intelligence = 6
+wisdom = 8
+charisma = 5
+
+[[encounters.entities.attacks]]
+name = "Rusty Sword"
+damage_dice = "1d6"
+damage_bonus = 2
+damage_type = "slashing"
+
+[[encounters]]
+id = "swamp_troll"
+name = "Swamp Troll"
+location_ids = ["troll_bridge"]
+encounter_chance = 0.25
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "beast_hide", chance = 0.6},
+    {id = "healing_potion", chance = 0.4},
+]
+gold_min = 25
+gold_max = 60
+
+[[encounters.entities]]
+id = "swamp_troll"
+name = "Swamp Troll"
+entity_type = "enemy"
+description = "A massive, green-skinned brute that has claimed the bridge as its territory. Its regenerating flesh knits wounds closed before your eyes, and its claws can rend armor like parchment."
+level = 8
+hp_max = 65
+ac = 14
+count_min = 1
+count_max = 1
+xp_value = 400
+
+[encounters.entities.ability_scores]
+strength = 20
+dexterity = 10
+constitution = 18
+intelligence = 6
+wisdom = 10
+charisma = 6
+
+[[encounters.entities.attacks]]
+name = "Claw"
+damage_dice = "2d8"
+damage_bonus = 5
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Bite"
+damage_dice = "1d10"
+damage_bonus = 5
+damage_type = "piercing"
+
+[[encounters]]
+id = "swamp_hag"
+name = "Swamp Hag"
+location_ids = ["witch_tower", "fog_garden", "hanging_tree"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "nightshade", chance = 0.5},
+    {id = "arcane_dust", chance = 0.4},
+    {id = "moonpetal", chance = 0.3},
+    {id = "healing_potion", chance = 0.3},
+]
+gold_min = 30
+gold_max = 70
+
+[[encounters.entities]]
+id = "swamp_hag"
+name = "Swamp Hag"
+entity_type = "enemy"
+description = "A twisted crone with bark-like skin and hair of living moss. She cackles as she hurls hexes and lightning, her form shifting between that of a beautiful woman and a horrifying monster."
+level = 8
+hp_max = 55
+ac = 15
+count_min = 1
+count_max = 1
+xp_value = 400
+
+[encounters.entities.ability_scores]
+strength = 16
+dexterity = 12
+constitution = 16
+intelligence = 16
+wisdom = 14
+charisma = 16
+
+[[encounters.entities.attacks]]
+name = "Hex"
+damage_dice = "2d8"
+damage_type = "necrotic"
+
+[[encounters.entities.attacks]]
+name = "Lightning Bolt"
+damage_dice = "3d6"
+damage_type = "lightning"
+
+[[encounters]]
+id = "hollow_wisps"
+name = "Hollow Wisps"
+location_ids = ["will_lantern_path", "fog_garden"]
+encounter_chance = 0.3
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.5},
+    {id = "moonpetal", chance = 0.3},
+]
+gold_min = 10
+gold_max = 30
+
+[[encounters.entities]]
+id = "hollow_wisp"
+name = "Hollow Wisp"
+entity_type = "enemy"
+description = "A flickering orb of pale light that drifts through the mist, luring travelers off the path. When provoked, it erupts with crackling lightning that arcs between the water and its victims."
+level = 6
+hp_max = 28
+ac = 17
+count_min = 2
+count_max = 4
+xp_value = 100
+
+[encounters.entities.ability_scores]
+strength = 1
+dexterity = 18
+constitution = 10
+intelligence = 13
+wisdom = 14
+charisma = 11
+
+[[encounters.entities.attacks]]
+name = "Shock"
+damage_dice = "2d8"
+damage_type = "lightning"
+
+[[encounters]]
+id = "ghost_council"
+name = "The Ghost Council"
+location_ids = ["spirit_mound"]
+encounter_chance = 0.2
+fight_type = "puzzle"
+description = "The spirits form a council and address you directly. An ancient chief speaks: 'We cannot rest until our question is answered. What has a heart that does not beat?'"
+
+[encounters.puzzle]
+puzzle_type = "riddle"
+dc = 14
+riddle_question = "The spirits form a council and address you directly. An ancient chief speaks: 'We cannot rest until our question is answered. What has a heart that does not beat?'"
+riddle_answer = "an artichoke"
+
+[encounters.loot]
+items = [
+    {id = "soul_gem", chance = 0.3},
+    {id = "arcane_dust", chance = 0.5},
+    {id = "healing_potion", chance = 0.4},
+]
+gold_min = 25
+gold_max = 60

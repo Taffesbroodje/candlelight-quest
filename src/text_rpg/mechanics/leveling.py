@@ -15,6 +15,14 @@ HIT_DICE: dict[str, str] = {
     "wizard": "1d6",
     "rogue": "1d8",
     "cleric": "1d8",
+    "barbarian": "1d12",
+    "bard": "1d8",
+    "druid": "1d8",
+    "monk": "1d8",
+    "paladin": "1d10",
+    "ranger": "1d10",
+    "sorcerer": "1d6",
+    "warlock": "1d8",
 }
 
 _PROF_BONUS = {

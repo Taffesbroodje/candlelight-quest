@@ -1,0 +1,56 @@
+id = "barbarian"
+name = "Barbarian"
+description = "A fierce warrior of primitive background who can enter a battle rage."
+hit_die = "1d12"
+primary_ability = "strength"
+saving_throw_proficiencies = ["strength", "constitution"]
+armor_proficiencies = ["light", "medium", "shield"]
+weapon_proficiencies = ["simple", "martial"]
+starting_gold = 100
+skill_choices = 2
+available_skills = ["animal_handling", "athletics", "intimidation", "nature", "perception", "survival"]
+
+[starting_equipment]
+weapons = ["greataxe", "handaxe"]
+armor = []
+items = ["explorer_pack"]
+
+[[features]]
+level = 1
+name = "Rage"
+description = "In battle, you fight with primal ferocity. On your turn, you can enter a rage as a bonus action. While raging, you gain +2 bonus to melee damage, resistance to bludgeoning/piercing/slashing damage, and advantage on Strength checks and saves. You can rage 2 times per long rest."
+
+[[features]]
+level = 1
+name = "Unarmored Defense"
+description = "While you are not wearing any armor, your AC equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit."
+
+[[features]]
+level = 2
+name = "Reckless Attack"
+description = "You can throw aside all concern for defense to attack with fierce desperation. You gain advantage on melee weapon attack rolls using Strength during this turn, but attack rolls against you have advantage until your next turn."
+
+[[features]]
+level = 2
+name = "Danger Sense"
+description = "You have advantage on Dexterity saving throws against effects that you can see, such as traps and spells."
+
+[[features]]
+level = 3
+name = "Primal Path"
+description = "You choose a path that shapes the nature of your rage: Path of the Berserker. While raging, you can make a single melee weapon attack as a bonus action on each of your turns."
+
+[[features]]
+level = 4
+name = "Ability Score Improvement"
+description = "You can increase one ability score by 2, or two ability scores by 1 each."
+
+[[features]]
+level = 5
+name = "Extra Attack"
+description = "You can attack twice, instead of once, whenever you take the Attack action on your turn."
+
+[[features]]
+level = 5
+name = "Fast Movement"
+description = "Your speed increases by 10 feet while you aren't wearing heavy armor."

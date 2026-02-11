@@ -1,0 +1,6 @@
+id = "the_veil"
+name = "The Veil"
+description = "The boundary between the mortal world and the planes of existence, where reality frays and patches of the Feywild, Shadowfell, Elemental Planes, and Astral Sea bleed through. The landscape shifts constantly, and at the center lies the Convergence — where all planes meet. Only the most powerful adventurers dare enter."
+level_range_min = 16
+level_range_max = 20
+climate = "planar"

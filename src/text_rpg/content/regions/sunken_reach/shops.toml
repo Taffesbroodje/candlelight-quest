@@ -1,0 +1,79 @@
+# Shops in the Sunken Reach region
+
+[[shops]]
+id = "marsh_trading"
+owner_entity_id = "trader_marsh"
+location_id = "murkfen_trading_post"
+shop_type = "general"
+
+[[shops.stock]]
+item_id = "rations"
+quantity = 15
+base_price = 1
+base_stock = 15
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 3
+base_price = 50
+base_stock = 3
+
+[[shops.stock]]
+item_id = "hempen_rope"
+quantity = 5
+base_price = 1
+base_stock = 5
+
+[[shops.stock]]
+item_id = "lantern"
+quantity = 2
+base_price = 5
+base_stock = 2
+
+[[shops.stock]]
+item_id = "fishing_tackle"
+quantity = 2
+base_price = 1
+base_stock = 2
+
+[[shops.stock]]
+item_id = "herbalism_kit"
+quantity = 1
+base_price = 5
+base_stock = 1
+
+[[shops]]
+id = "mama_kitchen"
+owner_entity_id = "mama_gator"
+location_id = "fisherman_platform"
+shop_type = "tavern"
+
+[[shops.stock]]
+item_id = "cooked_meal"
+quantity = 8
+base_price = 3
+base_stock = 8
+
+[[shops.stock]]
+item_id = "hearty_stew"
+quantity = 5
+base_price = 6
+base_stock = 5
+
+[[shops.stock]]
+item_id = "rations"
+quantity = 15
+base_price = 1
+base_stock = 15
+
+[[shops.stock]]
+item_id = "healing_herb"
+quantity = 5
+base_price = 3
+base_stock = 5
+
+[[shops.stock]]
+item_id = "antidote"
+quantity = 3
+base_price = 10
+base_stock = 3

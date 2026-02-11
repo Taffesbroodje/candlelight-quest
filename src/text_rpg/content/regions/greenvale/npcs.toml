@@ -1,0 +1,350 @@
+# Greenvale NPCs — Millhaven and surrounding farmland
+
+[[npcs]]
+id = "mayor_aldith"
+name = "Mayor Aldith Greenfield"
+entity_type = "npc"
+profession = "mayor"
+description = "A stout halfling woman with steel-grey hair pulled into a tight bun and sharp, appraising eyes. She runs Millhaven with a firm hand and a keen head for numbers, balancing farmers, merchants, and militia."
+location_id = "millhaven_square"
+dialogue_tags = ["greeting", "quest_info", "lore", "politics"]
+behaviors = ["authoritative", "quest_giver", "political"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 32
+hp_max = 32
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 12
+constitution = 12
+intelligence = 16
+wisdom = 16
+charisma = 17
+
+[npcs.schedule]
+dawn = "millhaven_square"
+morning = "millhaven_warehouse"
+midday = "millhaven_square"
+afternoon = "millhaven_square"
+evening = "millhaven_inn"
+night = "millhaven_square"
+late_night = "millhaven_square"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "rations"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Walking Cane"
+damage_dice = "1d4"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "innkeeper_rowan"
+name = "Innkeeper Rowan"
+entity_type = "npc"
+profession = "innkeeper"
+description = "A tall, broad-chested human man with a booming laugh and a magnificent handlebar mustache. He runs the Golden Grain with warmth and efficiency, always ready with a story or a refill."
+location_id = "millhaven_inn"
+dialogue_tags = ["greeting", "rumors", "shop_food", "quest_info"]
+behaviors = ["friendly", "merchant", "information"]
+is_hostile = false
+is_alive = true
+level = 4
+hp_current = 28
+hp_max = 28
+ac = 11
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 10
+constitution = 14
+intelligence = 12
+wisdom = 13
+charisma = 16
+
+[npcs.schedule]
+dawn = "millhaven_inn"
+morning = "millhaven_inn"
+midday = "millhaven_inn"
+afternoon = "millhaven_square"
+evening = "millhaven_inn"
+night = "millhaven_inn"
+late_night = "millhaven_inn"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_herb"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Frying Pan"
+damage_dice = "1d6"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "priestess_hazel"
+name = "Priestess Hazel"
+entity_type = "npc"
+profession = "priestess"
+description = "A gentle half-elf woman with a crown of woven wildflowers and green robes embroidered with vine patterns. She tends the Temple of the Harvest and the healing garden with equal devotion."
+location_id = "millhaven_temple"
+dialogue_tags = ["greeting", "healing", "blessing", "lore", "quest_info"]
+behaviors = ["kind", "healer", "spiritual"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 38
+hp_max = 38
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 12
+constitution = 13
+intelligence = 14
+wisdom = 18
+charisma = 16
+
+[npcs.schedule]
+dawn = "millhaven_temple"
+morning = "millhaven_temple"
+midday = "millhaven_temple"
+afternoon = "millhaven_square"
+evening = "millhaven_temple"
+night = "millhaven_temple"
+late_night = "millhaven_temple"
+
+[npcs.properties]
+preferred_gifts = ["healing_herb", "moonpetal", "holy_symbol"]
+disliked_gifts = ["nightshade", "poison_vial", "dagger"]
+
+[[npcs.attacks]]
+name = "Sacred Flame"
+damage_dice = "2d8"
+damage_type = "radiant"
+
+[[npcs]]
+id = "smith_barnabas"
+name = "Smith Barnabas"
+entity_type = "npc"
+profession = "blacksmith"
+description = "A massive human man with arms like tree trunks and a face permanently reddened by forge heat. He crafts everything from plowshares to swords and takes fierce pride in his work."
+location_id = "millhaven_smithy"
+dialogue_tags = ["greeting", "shop_weapons", "shop_armor", "craft_info"]
+behaviors = ["gruff", "merchant", "craftsman"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 48
+hp_max = 48
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 18
+dexterity = 10
+constitution = 16
+intelligence = 12
+wisdom = 12
+charisma = 10
+
+[npcs.schedule]
+dawn = "millhaven_smithy"
+morning = "millhaven_smithy"
+midday = "millhaven_inn"
+afternoon = "millhaven_smithy"
+evening = "millhaven_smithy"
+night = "millhaven_inn"
+late_night = "millhaven_smithy"
+
+[npcs.properties]
+preferred_gifts = ["iron_ingot", "beast_hide"]
+disliked_gifts = ["nightshade", "arcane_dust"]
+
+[[npcs.attacks]]
+name = "Warhammer"
+damage_dice = "1d10"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "apothecary_nettie"
+name = "Apothecary Nettie"
+entity_type = "npc"
+profession = "apothecary"
+description = "A wizened gnome woman with thick spectacles and stained fingers. She knows every herb, fungus, and root within fifty miles and brews potions that are either miraculous cures or taste like death — often both."
+location_id = "millhaven_apothecary"
+dialogue_tags = ["greeting", "shop_potions", "lore", "quest_info"]
+behaviors = ["eccentric", "merchant", "knowledgeable"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 25
+hp_max = 25
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 6
+dexterity = 14
+constitution = 12
+intelligence = 18
+wisdom = 16
+charisma = 11
+
+[npcs.schedule]
+dawn = "millhaven_apothecary"
+morning = "millhaven_apothecary"
+midday = "millhaven_temple"
+afternoon = "millhaven_apothecary"
+evening = "millhaven_apothecary"
+night = "millhaven_inn"
+late_night = "millhaven_apothecary"
+
+[npcs.properties]
+preferred_gifts = ["healing_herb", "moonpetal", "nightshade"]
+disliked_gifts = ["iron_ingot", "shield"]
+
+[[npcs.attacks]]
+name = "Acid Splash"
+damage_dice = "1d6"
+damage_type = "acid"
+
+[[npcs]]
+id = "cooperative_joss"
+name = "Cooperative Master Joss"
+entity_type = "npc"
+profession = "merchant_guild"
+description = "A portly human man with ink-stained fingers and a practiced smile that never quite reaches his calculating eyes. He controls the Farmers' Cooperative and takes a cut of every bushel that passes through Millhaven."
+location_id = "millhaven_warehouse"
+dialogue_tags = ["greeting", "shop_supplies", "quest_info", "politics"]
+behaviors = ["shrewd", "merchant", "political"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 28
+hp_max = 28
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 12
+constitution = 12
+intelligence = 16
+wisdom = 14
+charisma = 16
+
+[npcs.schedule]
+dawn = "millhaven_warehouse"
+morning = "millhaven_warehouse"
+midday = "millhaven_inn"
+afternoon = "millhaven_warehouse"
+evening = "millhaven_square"
+night = "millhaven_inn"
+late_night = "millhaven_warehouse"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "rations"]
+disliked_gifts = ["nightshade", "dagger"]
+
+[[npcs.attacks]]
+name = "Concealed Dagger"
+damage_dice = "1d4"
+damage_type = "piercing"
+
+[[npcs]]
+id = "militia_thrace"
+name = "Militia Captain Thrace"
+entity_type = "npc"
+profession = "guard"
+description = "A lean, scarred human woman with cropped hair and a perpetual scowl. She commands the Millhaven Militia and takes the bandit problem personally — she lost her brother to a raid two years ago."
+location_id = "hillcrest_watchtower"
+dialogue_tags = ["greeting", "quest_info", "guard_info", "rumors"]
+behaviors = ["authoritative", "quest_giver", "protector"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 52
+hp_max = 52
+ac = 17
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 14
+constitution = 14
+intelligence = 12
+wisdom = 14
+charisma = 13
+
+[npcs.schedule]
+dawn = "hillcrest_watchtower"
+morning = "greenflow_west_road"
+midday = "millhaven_square"
+afternoon = "hillcrest_watchtower"
+evening = "millhaven_inn"
+night = "hillcrest_watchtower"
+late_night = "hillcrest_watchtower"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "rations"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Longsword"
+damage_dice = "1d8"
+damage_type = "slashing"
+
+[[npcs.attacks]]
+name = "Heavy Crossbow"
+damage_dice = "1d10"
+damage_type = "piercing"
+
+[[npcs]]
+id = "beekeeper_blossom"
+name = "Beekeeper Blossom"
+entity_type = "npc"
+profession = "farmer"
+description = "A cheerful halfling woman perpetually surrounded by a gentle cloud of bees that never sting her. Her honey is famous across the valley, and she knows every wildflower within walking distance."
+location_id = "honey_farm"
+dialogue_tags = ["greeting", "rumors", "lore", "shop_supplies"]
+behaviors = ["friendly", "merchant", "nature_lover"]
+is_hostile = false
+is_alive = true
+level = 3
+hp_current = 18
+hp_max = 18
+ac = 11
+unavailable_periods = ["late_night", "night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 14
+constitution = 12
+intelligence = 12
+wisdom = 16
+charisma = 15
+
+[npcs.schedule]
+dawn = "honey_farm"
+morning = "orchard_hill"
+midday = "honey_farm"
+afternoon = "honey_farm"
+evening = "millhaven_inn"
+night = "honey_farm"
+late_night = "honey_farm"
+
+[npcs.properties]
+preferred_gifts = ["healing_herb", "moonpetal"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Bee Swarm Command"
+damage_dice = "1d4"
+damage_type = "piercing"

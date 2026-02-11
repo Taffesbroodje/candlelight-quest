@@ -1,0 +1,441 @@
+# Frostmere NPCs — frozen lake city
+
+[[npcs]]
+id = "ice_queen_solara"
+name = "Ice Queen Solara"
+entity_type = "npc"
+profession = "queen"
+description = "A commanding woman draped in robes of living frost, her silver-white hair flowing as though caught in an eternal wind. Her eyes are pale blue and pierce through any deception. She rules Frostmere with wisdom and political acumen, balancing the interests of southern merchants and northern tribes."
+location_id = "ice_palace"
+dialogue_tags = ["greeting", "quest_info", "lore", "politics"]
+behaviors = ["regal", "political", "wise"]
+is_hostile = false
+is_alive = true
+level = 14
+hp_current = 75
+hp_max = 75
+ac = 18
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 16
+constitution = 14
+intelligence = 18
+wisdom = 18
+charisma = 20
+
+[npcs.schedule]
+dawn = "ice_palace"
+morning = "ice_palace"
+midday = "ice_palace"
+afternoon = "aurora_temple"
+evening = "ice_palace"
+night = "aurora_observatory"
+late_night = "ice_palace"
+
+[npcs.properties]
+preferred_gifts = ["soul_gem", "moonpetal"]
+disliked_gifts = ["rations", "torch"]
+
+[[npcs.attacks]]
+name = "Ice Scepter"
+damage_dice = "3d8"
+damage_bonus = 0
+damage_type = "cold"
+
+[[npcs]]
+id = "tribal_elder_windchaser"
+name = "Tribal Elder Windchaser"
+entity_type = "npc"
+profession = "tribal_elder"
+description = "An aged man wrapped in mammoth furs, his weathered face painted with faded blue spirals. His eyes hold the quiet intensity of someone who has survived a hundred frozen winters. He speaks slowly but each word carries the weight of generations of oral tradition."
+location_id = "northern_tribal_camp"
+dialogue_tags = ["greeting", "quest_info", "lore", "trade"]
+behaviors = ["wise", "spiritual", "diplomatic"]
+is_hostile = false
+is_alive = true
+level = 10
+hp_current = 50
+hp_max = 50
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 12
+constitution = 14
+intelligence = 14
+wisdom = 20
+charisma = 16
+
+[npcs.schedule]
+dawn = "northern_tribal_camp"
+morning = "northern_tribal_camp"
+midday = "mammoth_graveyard"
+afternoon = "northern_tribal_camp"
+evening = "northern_tribal_camp"
+night = "northern_tribal_camp"
+late_night = "northern_tribal_camp"
+
+[npcs.properties]
+preferred_gifts = ["beast_hide", "healing_herb"]
+disliked_gifts = ["arcane_dust", "soul_gem"]
+
+[[npcs.attacks]]
+name = "Spirit Lance"
+damage_dice = "2d8"
+damage_bonus = 0
+damage_type = "force"
+
+[[npcs]]
+id = "frost_enchantress_glaciel"
+name = "Frost Enchantress Glaciel"
+entity_type = "npc"
+profession = "enchantress"
+description = "An elven woman whose skin has taken on a faint blue tint from decades of working with frost magic. Ice crystals form spontaneously in her hair, and her breath always mists, even indoors. Her enchantments are sought after across the northern lands."
+location_id = "enchanter_spire"
+dialogue_tags = ["greeting", "shop_supplies", "lore", "craft_info"]
+behaviors = ["elegant", "merchant", "academic"]
+is_hostile = false
+is_alive = true
+level = 11
+hp_current = 48
+hp_max = 48
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 14
+constitution = 12
+intelligence = 20
+wisdom = 16
+charisma = 14
+
+[npcs.schedule]
+dawn = "enchanter_spire"
+morning = "enchanter_spire"
+midday = "enchanter_spire"
+afternoon = "aurora_temple"
+evening = "enchanter_spire"
+night = "crystal_grove"
+late_night = "enchanter_spire"
+
+[npcs.properties]
+preferred_gifts = ["soul_gem", "arcane_dust"]
+disliked_gifts = ["rations", "beast_hide"]
+
+[[npcs.attacks]]
+name = "Frost Ray"
+damage_dice = "3d6"
+damage_bonus = 0
+damage_type = "cold"
+
+[[npcs]]
+id = "northern_ranger_commander"
+name = "Northern Ranger Commander"
+entity_type = "npc"
+profession = "ranger_commander"
+description = "A lean, scarred woman whose eyes constantly scan the horizon. She wears white-and-grey ranger leathers and carries a frost-touched longbow that has ended countless threats on the tundra. Her reports to Frostmere keep the city safe from what lurks in the frozen wastes."
+location_id = "ranger_fort"
+dialogue_tags = ["greeting", "quest_info", "guard_info", "rumors"]
+behaviors = ["disciplined", "quest_giver", "protector"]
+is_hostile = false
+is_alive = true
+level = 10
+hp_current = 65
+hp_max = 65
+ac = 17
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 18
+constitution = 15
+intelligence = 13
+wisdom = 16
+charisma = 12
+
+[npcs.schedule]
+dawn = "ranger_fort"
+morning = "tundra_wastes"
+midday = "ranger_fort"
+afternoon = "ranger_fort"
+evening = "frost_market"
+night = "ranger_fort"
+late_night = "ranger_fort"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "beast_hide"]
+disliked_gifts = ["arcane_dust", "moonpetal"]
+
+[[npcs.attacks]]
+name = "Frost Longbow"
+damage_dice = "1d8"
+damage_bonus = 4
+damage_type = "piercing"
+
+[[npcs]]
+id = "ice_fisherman_elder"
+name = "Ice Fisherman Elder"
+entity_type = "npc"
+profession = "fisherman"
+description = "A stout, weathered man with hands like leather and a bushy white beard permanently crusted with ice. He has fished the frozen lake for fifty years and knows every crack, every current, and every strange thing that has floated up from the ruins below."
+location_id = "ice_fishing_village"
+dialogue_tags = ["greeting", "rumors", "lore", "quest_info"]
+behaviors = ["practical", "information", "friendly"]
+is_hostile = false
+is_alive = true
+level = 4
+hp_current = 25
+hp_max = 25
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 12
+constitution = 14
+intelligence = 10
+wisdom = 16
+charisma = 12
+
+[npcs.schedule]
+dawn = "frozen_lake_surface"
+morning = "ice_fishing_village"
+midday = "ice_fishing_village"
+afternoon = "frozen_lake_surface"
+evening = "ice_fishing_village"
+night = "ice_fishing_village"
+late_night = "ice_fishing_village"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_herb"]
+disliked_gifts = ["arcane_dust", "soul_gem"]
+
+[[npcs.attacks]]
+name = "Ice Pick"
+damage_dice = "1d6"
+damage_bonus = 2
+damage_type = "piercing"
+
+[[npcs]]
+id = "archaeologist_fenn"
+name = "Archaeologist Fenn"
+entity_type = "npc"
+profession = "archaeologist"
+description = "A wiry gnome bundled in oversized furs, his eyes wide with perpetual excitement behind fogged goggles. He has dedicated his life to studying the under-ice city and can barely contain himself when discussing its alien architecture and strange glyphs."
+location_id = "under_ice_city"
+dialogue_tags = ["greeting", "quest_info", "lore", "shop_supplies"]
+behaviors = ["excited", "academic", "quest_giver"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 32
+hp_max = 32
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 14
+constitution = 12
+intelligence = 20
+wisdom = 15
+charisma = 12
+
+[npcs.schedule]
+dawn = "under_ice_city"
+morning = "under_ice_city"
+midday = "under_ice_city"
+afternoon = "buried_ruins"
+evening = "under_ice_city"
+night = "frost_market"
+late_night = "under_ice_city"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "torch"]
+disliked_gifts = ["beast_hide", "rations"]
+
+[[npcs.attacks]]
+name = "Ice Pick"
+damage_dice = "1d4"
+damage_bonus = 0
+damage_type = "piercing"
+
+[[npcs]]
+id = "frost_giant_hrimgar"
+name = "Frost Giant Diplomat Hrimgar"
+entity_type = "npc"
+profession = "diplomat"
+description = "A frost giant of unusual temperament — where his kin are brutish, Hrimgar is measured and formal. He stands fifteen feet tall with blue skin etched in runic tattoos, and speaks Common with a deep, rumbling accent. He represents the frost giant clans in rare negotiations with the smaller races."
+location_id = "frost_giant_outpost"
+dialogue_tags = ["greeting", "lore", "politics", "quest_info"]
+behaviors = ["formal", "diplomatic", "intimidating"]
+is_hostile = false
+is_alive = true
+level = 12
+hp_current = 85
+hp_max = 85
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 22
+dexterity = 8
+constitution = 20
+intelligence = 12
+wisdom = 14
+charisma = 13
+
+[npcs.schedule]
+dawn = "frost_giant_outpost"
+morning = "frost_giant_outpost"
+midday = "glacial_rift"
+afternoon = "frost_giant_outpost"
+evening = "frost_giant_outpost"
+night = "frost_giant_outpost"
+late_night = "frost_giant_outpost"
+
+[npcs.properties]
+preferred_gifts = ["beast_hide", "healing_potion"]
+disliked_gifts = ["torch", "rations"]
+
+[[npcs.attacks]]
+name = "Greataxe"
+damage_dice = "3d8"
+damage_bonus = 6
+damage_type = "slashing"
+
+[[npcs]]
+id = "temple_keeper_aurora"
+name = "Temple Keeper Aurora"
+entity_type = "npc"
+profession = "priestess"
+description = "A serene woman whose eyes shimmer with shifting colors that mirror the aurora borealis. Her voice carries a resonant calm that soothes even the most troubled souls. She channels the divine energy of the northern lights to heal and protect, and speaks of the aurora as a living entity."
+location_id = "aurora_temple"
+dialogue_tags = ["greeting", "healing", "blessing", "lore"]
+behaviors = ["serene", "healer", "spiritual"]
+is_hostile = false
+is_alive = true
+level = 10
+hp_current = 52
+hp_max = 52
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 12
+constitution = 14
+intelligence = 16
+wisdom = 20
+charisma = 17
+
+[npcs.schedule]
+dawn = "aurora_temple"
+morning = "aurora_temple"
+midday = "aurora_temple"
+afternoon = "aurora_observatory"
+evening = "aurora_temple"
+night = "aurora_temple"
+late_night = "aurora_temple"
+
+[npcs.properties]
+preferred_gifts = ["moonpetal", "healing_herb"]
+disliked_gifts = ["beast_hide", "iron_ingot"]
+
+[[npcs.attacks]]
+name = "Aurora Beam"
+damage_dice = "3d8"
+damage_bonus = 0
+damage_type = "radiant"
+
+[[npcs]]
+id = "market_master_coldforge"
+name = "Market Master Coldforge"
+entity_type = "npc"
+profession = "merchant"
+description = "A stocky dwarf with a frostbitten nose and sharp, calculating eyes. He has run the Frost Market for decades, maintaining order among traders from both the southern kingdoms and the northern tribes. He knows the value of everything and the price of nothing — at least, not until he has had time to think about it."
+location_id = "frost_market"
+dialogue_tags = ["greeting", "shop_supplies", "rumors", "trade"]
+behaviors = ["shrewd", "merchant", "knowledgeable"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 32
+hp_max = 32
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 12
+constitution = 14
+intelligence = 16
+wisdom = 14
+charisma = 16
+
+[npcs.schedule]
+dawn = "frost_market"
+morning = "frost_market"
+midday = "frost_market"
+afternoon = "frost_market"
+evening = "longhouse_quarter"
+night = "frost_market"
+late_night = "frost_market"
+
+[npcs.properties]
+preferred_gifts = ["soul_gem", "healing_potion"]
+disliked_gifts = ["torch", "rations"]
+
+[[npcs.attacks]]
+name = "Hidden Dagger"
+damage_dice = "1d4"
+damage_bonus = 1
+damage_type = "piercing"
+
+[[npcs]]
+id = "expedition_leader_tundra"
+name = "Expedition Leader Tundra"
+entity_type = "npc"
+profession = "expedition_leader"
+description = "A broad-shouldered human with a face like carved granite and a deep, booming voice. He has led more expeditions into the frozen wastes than anyone alive and carries the scars to prove it. He outfits parties heading into dangerous territory and gives blunt assessments of their chances."
+location_id = "ranger_fort"
+dialogue_tags = ["greeting", "quest_info", "shop_supplies", "rumors"]
+behaviors = ["bold", "quest_giver", "experienced"]
+is_hostile = false
+is_alive = true
+level = 9
+hp_current = 58
+hp_max = 58
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 14
+constitution = 16
+intelligence = 12
+wisdom = 14
+charisma = 14
+
+[npcs.schedule]
+dawn = "ranger_fort"
+morning = "tundra_wastes"
+midday = "ranger_fort"
+afternoon = "ranger_fort"
+evening = "ranger_fort"
+night = "longhouse_quarter"
+late_night = "ranger_fort"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "beast_hide"]
+disliked_gifts = ["moonpetal", "arcane_dust"]
+
+[[npcs.attacks]]
+name = "War Pick"
+damage_dice = "1d8"
+damage_bonus = 3
+damage_type = "piercing"

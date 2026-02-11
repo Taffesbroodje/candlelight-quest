@@ -1,0 +1,52 @@
+id = "ranger"
+name = "Ranger"
+description = "A warrior who combats threats on the edges of civilization with martial prowess and nature magic."
+hit_die = "1d10"
+primary_ability = "dexterity"
+saving_throw_proficiencies = ["strength", "dexterity"]
+armor_proficiencies = ["light", "medium", "shield"]
+weapon_proficiencies = ["simple", "martial"]
+starting_gold = 125
+skill_choices = 3
+available_skills = ["animal_handling", "athletics", "insight", "investigation", "nature", "perception", "stealth", "survival"]
+spellcasting_ability = "wisdom"
+
+[starting_equipment]
+weapons = ["longbow", "shortsword"]
+armor = ["scale_mail"]
+items = ["explorer_pack", "quiver"]
+
+[[features]]
+level = 1
+name = "Favored Enemy"
+description = "You have significant experience studying, tracking, and hunting a chosen type of enemy. You gain +2 damage against your favored enemy type and advantage on Wisdom (Survival) checks to track them."
+
+[[features]]
+level = 1
+name = "Natural Explorer"
+description = "You are an unsurpassed explorer in your favored terrain. You gain advantage on initiative rolls, ignore difficult terrain in your favored environment, and your group cannot become lost except by magical means."
+
+[[features]]
+level = 2
+name = "Spellcasting"
+description = "You can cast ranger spells. Wisdom is your spellcasting ability. You learn spells from the ranger spell list."
+
+[[features]]
+level = 2
+name = "Fighting Style"
+description = "You adopt a particular style of fighting as your specialty. Archery: +2 bonus to attack rolls with ranged weapons."
+
+[[features]]
+level = 3
+name = "Ranger Archetype"
+description = "You choose an archetype: Hunter. You gain the Colossus Slayer feature, dealing an extra 1d8 damage to a creature once per turn when it is below its hit point maximum."
+
+[[features]]
+level = 4
+name = "Ability Score Improvement"
+description = "You can increase one ability score by 2, or two ability scores by 1 each."
+
+[[features]]
+level = 5
+name = "Extra Attack"
+description = "You can attack twice, instead of once, whenever you take the Attack action on your turn."

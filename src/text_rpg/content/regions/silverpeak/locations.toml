@@ -1,0 +1,486 @@
+# Silverpeak — mountain fortress-city, L7-12
+
+[[locations]]
+id = "silverpeak_gate"
+name = "Silverpeak Gate"
+region_id = "silverpeak"
+description = "Massive stone gates set into the mountainside, flanked by carved guardian statues. The path up is treacherous, discouraging the unprepared."
+location_type = "town"
+
+[[locations.connections]]
+target_location_id = "silverpeak_upper"
+direction = "north"
+description = "A wide stairway carved into the rock ascends to the surface city."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "silverpeak_south_road"
+direction = "south"
+description = "The main road descends south toward Cragmoor and the lowlands."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "silverpeak_west_road"
+direction = "west"
+description = "A mountain road winds west toward the distant coast."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "silverpeak_east_road"
+direction = "east"
+description = "An eastern pass leads through high valleys toward Kingsward."
+is_locked = false
+
+[[locations]]
+id = "silverpeak_upper"
+name = "Silverpeak Upper City"
+region_id = "silverpeak"
+description = "The surface level of the city, with stone buildings clinging to terraced platforms. Wind whips through the streets, but the views are breathtaking."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "silverpeak_gate"
+direction = "south"
+description = "Steps descend back to the main gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "silverpeak_lower"
+direction = "down"
+description = "A broad spiral ramp descends into the underground city."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "silverpeak_market"
+direction = "east"
+description = "A lantern-lit passage leads to the underground bazaar."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "silverpeak_tavern"
+direction = "north"
+description = "The sparkling glow of the Crystal Chalice beckons ahead."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "clan_quarter"
+direction = "west"
+description = "A wide avenue leads to the residential clan halls."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "enchanter_tower"
+direction = "north"
+description = "A crystalline spire rises above the rooftops to the north."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "silverpeak_inn"
+direction = "south"
+description = "A warm lantern marks the entrance to the mountainside inn."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mountain_observatory"
+direction = "up"
+description = "A steep stairway climbs to the summit observatory."
+is_locked = false
+
+[[locations]]
+id = "silverpeak_lower"
+name = "Silverpeak Lower City"
+region_id = "silverpeak"
+description = "The underground city carved into the mountain's heart. Warm, well-lit, and bustling with dwarven craftwork. The deeper you go, the older the tunnels."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "silverpeak_upper"
+direction = "up"
+description = "The spiral ramp ascends to the surface city."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "silverpeak_forge_complex"
+direction = "east"
+description = "Waves of heat roll from the direction of the Great Forge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "silverpeak_temple"
+direction = "west"
+description = "The sound of chanting drifts from the deep temple."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "silverpeak_deep"
+direction = "down"
+description = "Heavy sealed doors mark the entrance to the deep tunnels below."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "silverpeak_throne"
+direction = "north"
+description = "An ornate corridor leads to the Mountain Throne."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "gem_vault"
+direction = "east"
+description = "A heavily guarded passage leads to the gem vault."
+is_locked = false
+
+[[locations]]
+id = "silverpeak_throne"
+name = "The Mountain Throne"
+region_id = "silverpeak"
+description = "A grand chamber where the Council of Clans meets. The throne is carved from a single enormous gemstone that catches the light of a hundred lanterns."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "silverpeak_lower"
+direction = "south"
+description = "The ornate corridor leads back to the lower city."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "silverpeak_library"
+direction = "east"
+description = "A vaulted archway opens into the great archive."
+is_locked = false
+
+[[locations]]
+id = "silverpeak_forge_complex"
+name = "The Great Forge"
+region_id = "silverpeak"
+description = "The legendary Great Forge, a vast complex of furnaces and anvils where master smiths create weapons and armor of extraordinary quality. The heat is immense."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "silverpeak_lower"
+direction = "west"
+description = "The passage leads back to the lower city, mercifully cooler."
+is_locked = false
+
+[[locations]]
+id = "enchanter_tower"
+name = "Enchanter's Tower"
+region_id = "silverpeak"
+description = "A crystalline tower where enchanters bind magic into items. The air crackles with energy and enchanted objects float on display shelves."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "silverpeak_upper"
+direction = "south"
+description = "Steps descend back to the upper city streets."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "artisan_quarter"
+direction = "west"
+description = "A walkway connects to the artisan workshops."
+is_locked = false
+
+[[locations]]
+id = "silverpeak_market"
+name = "Silverpeak Underground Bazaar"
+region_id = "silverpeak"
+description = "An underground bazaar where precious metals, gems, enchanted items, and mountain goods are traded. Lantern light glitters off displayed wares."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "silverpeak_upper"
+direction = "west"
+description = "The passage leads back to the upper city."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "artisan_quarter"
+direction = "south"
+description = "A lane runs south to the artisan workshops."
+is_locked = false
+
+[[locations]]
+id = "silverpeak_temple"
+name = "Temple of the Mountain God"
+region_id = "silverpeak"
+description = "A deep temple carved into living rock, dedicated to the Mountain God. Eternal flames burn in stone braziers, and sacred water flows from the mountain's heart."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "silverpeak_lower"
+direction = "east"
+description = "A stone passage leads back to the lower city."
+is_locked = false
+
+[[locations]]
+id = "silverpeak_library"
+name = "The Great Archive"
+region_id = "silverpeak"
+description = "A vast archive of dwarven history, mining records, and arcane lore. Stone tablets and leather-bound tomes fill endless shelves carved into the rock."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "silverpeak_throne"
+direction = "west"
+description = "The archway leads back to the Mountain Throne chamber."
+is_locked = false
+
+[[locations]]
+id = "silverpeak_tavern"
+name = "The Crystal Chalice"
+region_id = "silverpeak"
+description = "A tavern carved from quartz-veined rock. The walls sparkle, the ale is strong, and the songs echo through the mountain."
+location_type = "tavern"
+
+[[locations.connections]]
+target_location_id = "silverpeak_upper"
+direction = "south"
+description = "The tavern door opens back to the upper city."
+is_locked = false
+
+[[locations]]
+id = "silverpeak_inn"
+name = "The Hearthstone Inn"
+region_id = "silverpeak"
+description = "A comfortable inn for travelers, with heated stone beds and thick furs. The mountain's warmth keeps the rooms cozy despite the altitude."
+location_type = "tavern"
+
+[[locations.connections]]
+target_location_id = "silverpeak_upper"
+direction = "south"
+description = "The inn door leads back to the upper city streets."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "silverpeak_tavern"
+direction = "east"
+description = "A short walk leads to the Crystal Chalice."
+is_locked = false
+
+[[locations]]
+id = "clan_quarter"
+name = "Clan Quarter"
+region_id = "silverpeak"
+description = "The residential district where dwarven clan families live. Each clan has its own hall with distinctive architecture and ancestral treasures."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "silverpeak_upper"
+direction = "east"
+description = "The avenue leads back to the upper city center."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "silverpeak_barracks"
+direction = "north"
+description = "A reinforced passage leads to the Mountain Guard barracks."
+is_locked = false
+
+[[locations]]
+id = "artisan_quarter"
+name = "Artisan Quarter"
+region_id = "silverpeak"
+description = "Workshops of skilled artisans — jewelers, leatherworkers, weavers, and sculptors. The quality of work here commands premium prices."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "silverpeak_market"
+direction = "north"
+description = "The lane leads north to the underground bazaar."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "enchanter_tower"
+direction = "east"
+description = "The walkway connects to the Enchanter's Tower."
+is_locked = false
+
+[[locations]]
+id = "silverpeak_deep"
+name = "The Deep Tunnels"
+region_id = "silverpeak"
+description = "The deepest tunnels below the city, sealed by heavy doors. Ancient dwarven warnings are carved around the entrance. Strange sounds echo from below."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "silverpeak_lower"
+direction = "up"
+description = "The sealed doors lead back up to the lower city."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "dragon_gate"
+direction = "south"
+description = "The tunnel descends toward a massive adamantine door radiating heat."
+is_locked = false
+
+[[locations]]
+id = "dragon_gate"
+name = "The Dragon Gate"
+region_id = "silverpeak"
+description = "A massive door of adamantine bearing a dragon's face, sealed with ancient magic. Heat radiates from beyond, and claw marks score the inside of the door."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "silverpeak_deep"
+direction = "north"
+description = "The tunnel climbs back toward the deep tunnels."
+is_locked = false
+
+[[locations]]
+id = "mountain_observatory"
+name = "Mountain Observatory"
+region_id = "silverpeak"
+description = "An open-air platform at Silverpeak's summit where astronomers study the skies. On clear nights, the stars seem close enough to touch."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "silverpeak_upper"
+direction = "down"
+description = "The steep stairway descends back to the upper city."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "eagle_aerie"
+direction = "east"
+description = "A narrow ledge trail leads to the eagle nesting grounds."
+is_locked = false
+
+[[locations]]
+id = "silverpeak_barracks"
+name = "Mountain Guard Barracks"
+region_id = "silverpeak"
+description = "The Mountain Guard headquarters, carved into a natural cavern. Disciplined dwarven soldiers drill here constantly."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "clan_quarter"
+direction = "south"
+description = "The passage leads back to the clan quarter."
+is_locked = false
+
+[[locations]]
+id = "ice_caves"
+name = "Ice Caves"
+region_id = "silverpeak"
+description = "Natural caverns of blue ice beyond the city's heated zones. Beautiful but deadly cold. Strange creatures adapted to the freezing temperatures lurk within."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "silverpeak_north_road"
+direction = "east"
+description = "A frozen passage connects back to the northern road."
+is_locked = false
+
+[[locations]]
+id = "silverpeak_north_road"
+name = "Northern Mountain Road"
+region_id = "silverpeak"
+description = "A treacherous mountain road heading north into even higher peaks toward Frostmere. Snow and ice make passage dangerous."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "silverpeak_gate"
+direction = "south"
+description = "The road descends south back to the Silverpeak gates."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ice_caves"
+direction = "west"
+description = "A frozen opening in the rock face leads into blue-lit ice caverns."
+is_locked = false
+
+[locations.properties]
+border_region = "frostmere"
+border_direction = "north"
+
+[[locations]]
+id = "silverpeak_south_road"
+name = "Southern Mountain Road"
+region_id = "silverpeak"
+description = "The main road south descending from the mountains toward Cragmoor and Kingsward."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "silverpeak_gate"
+direction = "north"
+description = "The road climbs back up to the Silverpeak gates."
+is_locked = false
+
+[locations.properties]
+border_region = "cragmoor"
+border_direction = "south"
+
+[[locations]]
+id = "silverpeak_west_road"
+name = "Western Mountain Road"
+region_id = "silverpeak"
+description = "A coastal mountain road heading west toward Stormhaven far below."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "silverpeak_gate"
+direction = "east"
+description = "The road climbs back east to the Silverpeak gates."
+is_locked = false
+
+[locations.properties]
+border_region = "stormhaven"
+border_direction = "west"
+
+[[locations]]
+id = "silverpeak_east_road"
+name = "Eastern Mountain Pass"
+region_id = "silverpeak"
+description = "An eastern mountain pass leading toward Kingsward through high valleys."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "silverpeak_gate"
+direction = "west"
+description = "The pass road leads back west to the Silverpeak gates."
+is_locked = false
+
+[locations.properties]
+border_region = "kingsward"
+border_direction = "east"
+
+[[locations]]
+id = "gem_vault"
+name = "The Gem Vault"
+region_id = "silverpeak"
+description = "A heavily guarded vault where the most precious gems and mithral ingots are stored. Multiple locks, wards, and guards protect its contents."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "silverpeak_lower"
+direction = "east"
+description = "The guarded corridor leads back to the lower city."
+is_locked = false
+
+[[locations]]
+id = "avalanche_pass"
+name = "Avalanche Pass"
+region_id = "silverpeak"
+description = "A dangerous stretch of mountain path prone to avalanches. The snow is deep and unstable, and the wind howls constantly."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "silverpeak_north_road"
+direction = "east"
+description = "The path reconnects with the northern mountain road."
+is_locked = false
+
+[[locations]]
+id = "eagle_aerie"
+name = "Eagle Aerie"
+region_id = "silverpeak"
+description = "A high mountain ledge where giant eagles nest. The view encompasses the entire region, and the eagles are sacred to the mountain clans."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "mountain_observatory"
+direction = "west"
+description = "The narrow ledge trail leads back to the observatory."
+is_locked = false

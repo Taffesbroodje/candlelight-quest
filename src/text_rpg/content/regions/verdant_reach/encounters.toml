@@ -221,3 +221,74 @@ items = [
 ]
 gold_min = 25
 gold_max = 60
+
+[[encounters]]
+id = "grave_stirring"
+name = "Grave Stirring"
+location_ids = ["thornfield_cemetery"]
+encounter_chance = 0.25
+fight_type = "puzzle"
+description = "Pale blue lights rise from the oldest graves, drifting in a slow circle. The inscriptions on the headstones seem to glow faintly — reading them in the right order might put the spirits to rest."
+
+[encounters.puzzle]
+puzzle_type = "riddle"
+dc = 13
+riddle_question = "Three stones bear names from a single family. The father died in spring, the mother in winter, the child between. In what season did the child pass?"
+riddle_answer = "autumn"
+
+[encounters.loot]
+items = [
+    {id = "moonpetal", chance = 0.6},
+    {id = "healing_potion", chance = 0.3},
+    {id = "arcane_dust", chance = 0.25},
+]
+gold_min = 10
+gold_max = 30
+
+[[encounters]]
+id = "highwaymen"
+name = "Highwaymen"
+location_ids = ["west_road", "south_crossroads"]
+encounter_chance = 0.35
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "dagger", chance = 0.25},
+    {id = "rations", chance = 0.4},
+    {id = "healing_potion", chance = 0.1},
+]
+gold_min = 5
+gold_max = 20
+
+[[encounters.entities]]
+id = "highwayman"
+name = "Highwayman"
+entity_type = "enemy"
+description = "A masked brigand in a tattered cloak, armed with a short sword and hand crossbow. He eyes your coin purse with practiced intent."
+level = 2
+hp_max = 13
+ac = 12
+count_min = 2
+count_max = 3
+xp_value = 25
+
+[encounters.entities.ability_scores]
+strength = 12
+dexterity = 14
+constitution = 11
+intelligence = 10
+wisdom = 10
+charisma = 10
+
+[[encounters.entities.attacks]]
+name = "Short Sword"
+damage_dice = "1d6"
+damage_bonus = 1
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Hand Crossbow"
+damage_dice = "1d6"
+damage_bonus = 1
+damage_type = "piercing"

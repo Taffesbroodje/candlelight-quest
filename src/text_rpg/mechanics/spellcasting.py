@@ -10,24 +10,95 @@ from text_rpg.mechanics.dice import DiceResult, roll
 SPELLCASTING_ABILITY: dict[str, str] = {
     "wizard": "intelligence",
     "cleric": "wisdom",
+    "bard": "charisma",
+    "druid": "wisdom",
+    "paladin": "charisma",
+    "ranger": "wisdom",
+    "sorcerer": "charisma",
+    "warlock": "charisma",
 }
 
-# Spell slots by class and character level (levels 1-5, spell levels 1-3)
+# Full caster spell slot table (wizard, cleric, bard, druid, sorcerer)
+_FULL_CASTER_SLOTS: dict[int, dict[int, int]] = {
+    1: {1: 2},
+    2: {1: 3},
+    3: {1: 4, 2: 2},
+    4: {1: 4, 2: 3},
+    5: {1: 4, 2: 3, 3: 2},
+    6: {1: 4, 2: 3, 3: 3},
+    7: {1: 4, 2: 3, 3: 3, 4: 1},
+    8: {1: 4, 2: 3, 3: 3, 4: 2},
+    9: {1: 4, 2: 3, 3: 3, 4: 3, 5: 1},
+    10: {1: 4, 2: 3, 3: 3, 4: 3, 5: 2},
+    11: {1: 4, 2: 3, 3: 3, 4: 3, 5: 2, 6: 1},
+    12: {1: 4, 2: 3, 3: 3, 4: 3, 5: 2, 6: 1},
+    13: {1: 4, 2: 3, 3: 3, 4: 3, 5: 2, 6: 1},
+    14: {1: 4, 2: 3, 3: 3, 4: 3, 5: 2, 6: 1},
+    15: {1: 4, 2: 3, 3: 3, 4: 3, 5: 2, 6: 1},
+    16: {1: 4, 2: 3, 3: 3, 4: 3, 5: 2, 6: 1},
+    17: {1: 4, 2: 3, 3: 3, 4: 3, 5: 2, 6: 1},
+    18: {1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 1},
+    19: {1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 2},
+    20: {1: 4, 2: 3, 3: 3, 4: 3, 5: 3, 6: 2},
+}
+
+# Half caster spell slot table (paladin, ranger — no slots at level 1)
+_HALF_CASTER_SLOTS: dict[int, dict[int, int]] = {
+    1: {},
+    2: {1: 2},
+    3: {1: 3},
+    4: {1: 3},
+    5: {1: 4, 2: 2},
+    6: {1: 4, 2: 2},
+    7: {1: 4, 2: 3},
+    8: {1: 4, 2: 3},
+    9: {1: 4, 2: 3, 3: 2},
+    10: {1: 4, 2: 3, 3: 2},
+    11: {1: 4, 2: 3, 3: 3},
+    12: {1: 4, 2: 3, 3: 3},
+    13: {1: 4, 2: 3, 3: 3, 4: 1},
+    14: {1: 4, 2: 3, 3: 3, 4: 1},
+    15: {1: 4, 2: 3, 3: 3, 4: 2},
+    16: {1: 4, 2: 3, 3: 3, 4: 2},
+    17: {1: 4, 2: 3, 3: 3, 4: 3, 5: 1},
+    18: {1: 4, 2: 3, 3: 3, 4: 3, 5: 1},
+    19: {1: 4, 2: 3, 3: 3, 4: 3, 5: 2},
+    20: {1: 4, 2: 3, 3: 3, 4: 3, 5: 2},
+}
+
+# Pact magic (warlock): all slots are always at the highest castable level.
+# Stored as {slot_level: num_slots} for consistency with other casters.
+_PACT_MAGIC_SLOTS: dict[int, dict[int, int]] = {
+    1: {1: 1},
+    2: {1: 2},
+    3: {2: 2},
+    4: {2: 2},
+    5: {3: 2},
+    6: {3: 2},
+    7: {4: 2},
+    8: {4: 2},
+    9: {5: 2},
+    10: {5: 2},
+    11: {5: 3},
+    12: {5: 3},
+    13: {5: 3},
+    14: {5: 3},
+    15: {5: 3},
+    16: {5: 3},
+    17: {5: 4},
+    18: {5: 4},
+    19: {5: 4},
+    20: {5: 4},
+}
+
+FULL_CASTERS = {"wizard", "cleric", "bard", "druid", "sorcerer"}
+HALF_CASTERS = {"paladin", "ranger"}
+PACT_CASTERS = {"warlock"}
+
+# Legacy compat: SPELL_SLOTS still used by some callers
 SPELL_SLOTS: dict[str, dict[int, dict[int, int]]] = {
-    "wizard": {
-        1: {1: 2},
-        2: {1: 3},
-        3: {1: 4, 2: 2},
-        4: {1: 4, 2: 3},
-        5: {1: 4, 2: 3, 3: 2},
-    },
-    "cleric": {
-        1: {1: 2},
-        2: {1: 3},
-        3: {1: 4, 2: 2},
-        4: {1: 4, 2: 3},
-        5: {1: 4, 2: 3, 3: 2},
-    },
+    cls: {level: dict(slots) for level, slots in _FULL_CASTER_SLOTS.items()}
+    for cls in FULL_CASTERS
 }
 
 CANTRIP_SCALING_LEVELS = [5, 11, 17]
@@ -35,9 +106,15 @@ CANTRIP_SCALING_LEVELS = [5, 11, 17]
 
 def get_spell_slots(class_name: str, level: int) -> dict[int, int]:
     """Return max spell slots for a class at a given character level."""
-    class_slots = SPELL_SLOTS.get(class_name.lower(), {})
-    clamped = min(max(level, 1), 5)
-    return dict(class_slots.get(clamped, {}))
+    cls = class_name.lower()
+    clamped = min(max(level, 1), 20)
+    if cls in FULL_CASTERS:
+        return dict(_FULL_CASTER_SLOTS.get(clamped, {}))
+    if cls in HALF_CASTERS:
+        return dict(_HALF_CASTER_SLOTS.get(clamped, {}))
+    if cls in PACT_CASTERS:
+        return dict(_PACT_MAGIC_SLOTS.get(clamped, {}))
+    return {}
 
 
 def calculate_spell_dc(ability_score: int, prof_bonus: int) -> int:

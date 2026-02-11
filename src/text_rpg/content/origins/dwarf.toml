@@ -1,0 +1,185 @@
+# Dwarf-specific origins — forged in stone, tempered by tradition
+
+[[origins]]
+id = "clanless_outcast"
+name = "Clanless Outcast"
+category = "dwarf"
+summary = "Stripped of clan and name, you wander the highland roads with nothing but grit and a grudging will to survive."
+prologue = """The brand on your forearm still aches when the wind shifts — three jagged lines scored through the sigil of Clan Bronzeanvil. They held the ceremony at dawn, as tradition demands. Your mother watched from the gallery. She did not weep.
+
+You do not speak of what happened. The charge was real enough, though the punishment far outstripped the crime. In dwarven law, there is no appeal from a Clan Moot's judgment. One strike of the branding iron and two centuries of lineage turned to ash. They let you keep your tools. A final, deliberate insult — the message that you might still be of some use, even without a name.
+
+The highland road stretches before you now, winding between sulfur-stained bluffs and smoking vents. Other outcasts walk these trails: prospectors too stubborn to die, deserters from forgotten wars, the occasional surface-dweller foolish enough to wander this far from green country. You are one of them now. Clanless. Nameless. Free, if you can stomach the taste of it."""
+ability_choices = ["constitution", "strength", "wisdom"]
+skill_proficiencies = ["survival", "intimidation"]
+starting_equipment = ["smiths_tools", "common_clothes"]
+bonus_gold = 5
+starting_region = "ashen_highlands"
+starting_location = "highland_road"
+feature_name = "Hardened Exile"
+feature_description = "Years without clan support have taught you to endure. You have advantage on Constitution checks to resist exhaustion from harsh environments."
+required_races = ["dwarf"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "deep_miner"
+name = "Deep Miner"
+category = "dwarf"
+summary = "You've spent decades carving ore from the deepest shafts, where the stone groans and the dark has teeth."
+prologue = """Thirty years in the deep shafts. That is what your hands know — the weight of a pick, the ring of iron on granite, the way the lantern flame flickers when bad air seeps through a fissure. You learned to read the stone before you learned to read runes. Down in the deep mines, the rock speaks to those patient enough to listen: a low groan before a collapse, a crystalline chime where veins of ore hide, silence where the tunnels should never be silent.
+
+Last season, your crew broke through into a chamber that was not on any survey map. The walls were carved — not by dwarf hands, but by something older. Symbols you could not read. A cold draft rising from a shaft that dropped beyond the reach of your lantern. The foreman sealed the breach and filed no report. But you remember. You drew the symbols in your journal before the mortar dried.
+
+Now you climb the shaft ladders at shift's end and wonder what waits below the lowest level. The mines are deep, but whatever carved those walls went deeper still."""
+ability_choices = ["constitution", "strength", "wisdom"]
+skill_proficiencies = ["athletics", "perception"]
+starting_equipment = ["miners_pick", "lantern"]
+bonus_gold = 10
+starting_region = "ashen_highlands"
+starting_location = "deep_mines"
+feature_name = "Stone Sense"
+feature_description = "Your decades underground have given you an instinct for structural integrity. You can detect unstable stonework, hidden passages, and changes in air pressure within tunnels."
+required_races = ["dwarf"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "dwarven_runecaster"
+name = "Dwarven Runecaster"
+category = "dwarf"
+summary = "You studied the old runes carved into the bones of the mountain, and the mountain answered back."
+prologue = """The forge-temple of Cinderhold was never meant to be a school. It is a place of making — where steel meets fire and the old runes are hammered into blades, shields, and the great doors that seal the deep halls. But you were not drawn to the metal. You were drawn to the marks themselves.
+
+The runecasters are few now, a dwindling tradition in an age that favors hammers over glyphs. Your master, Thrain Ashmark, taught you in the old way: one rune per season, carved into stone until the shape lived in your fingers. "A rune is not a spell," he would say, tracing the angular lines with a soot-blackened thumb. "A spell is a thing you do. A rune is a thing you understand." He died last winter, mid-sentence, his hand resting on a half-carved ward-stone. You finished the carving for him.
+
+Now the forge-temple feels too quiet. Thrain's workshop gathers dust, and the younger smiths eye it with plans for expansion. You have your stones, your inks, and a head full of angular shapes that hum faintly when you close your eyes. The mountain has more to teach — but perhaps the lessons lie beyond these walls."""
+ability_choices = ["intelligence", "constitution", "wisdom"]
+skill_proficiencies = ["arcana", "history"]
+starting_equipment = ["rune_stones", "ink_and_quill"]
+bonus_gold = 10
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_forge"
+feature_name = "Runic Literacy"
+feature_description = "You can decipher ancient dwarven runes and identify magical inscriptions, gaining advantage on Arcana checks related to runes and wards."
+required_races = ["dwarf"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "brewmaster"
+name = "Brewmaster"
+category = "dwarf"
+summary = "Your ales are legendary in three holds, and your tongue is sharper than any axe — you talk as well as you brew."
+prologue = """There is an art to brewing that most surface folk will never grasp. It is not merely chemistry, though the proportions matter. It is patience, intuition, and a willingness to argue with a barrel of fermenting grain at three in the morning. You have done all three, and your Obsidian Stout won the Cinderhold Cask-Breaking Competition four years running before they asked you to stop entering.
+
+The tavern has been your laboratory, your stage, and your confessional. Over twenty years behind the bar, you have heard every confession, settled a hundred disputes, brokered three marriages, and prevented at least one war — the latter involving a keg of mead, two rival clan-chiefs, and your timely suggestion that they settle their differences over a drinking contest rather than axes. They both passed out before a blow was struck. You consider it your finest work.
+
+But the tavern grows small. Your recipes demand ingredients that do not grow in volcanic soil — highland barley is fine for stouts, but you have heard rumors of honeydew from the Thornwild, of rare bog-herbs from the Sunken Reach. A true brewmaster does not wait for ingredients to come to them."""
+ability_choices = ["constitution", "charisma", "wisdom"]
+skill_proficiencies = ["nature", "persuasion"]
+starting_equipment = ["brewers_supplies", "cooks_utensils"]
+bonus_gold = 12
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_tavern"
+feature_name = "Tavern Wisdom"
+feature_description = "Years of listening to patrons have made you a keen judge of character. You gain advantage on Insight checks when conversing over food or drink."
+required_races = ["dwarf"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "forge_priest"
+name = "Forge Priest"
+category = "dwarf"
+summary = "You serve the Maker-God at the sacred forge, where prayer is the ring of hammer on steel."
+prologue = """In Cinderhold, the forge and the altar are one. The great anvil at the temple's heart was carved from a single block of obsidian, and the flames that heat it have not gone out in six hundred years. You were consecrated there as a child — anointed with soot and oil, your first prayer a wordless cry that echoed off the vaulted stone ceiling. The priests said it was auspicious. Your mother said you were simply hungry.
+
+You learned the liturgy the way all forge-priests do: with hammer in hand. Every strike is a verse, every finished blade a hymn. The Maker-God does not demand kneeling or silence — He demands work. Good work, honest work, work that leaves you aching and covered in ash and deeply, profoundly satisfied. Your hands are calloused beyond feeling, your arms thick from years at the anvil, and your faith as solid as the stone beneath your feet.
+
+But faith unchallenged is faith untested. The senior priests speak of darkness stirring in the deep places — old forges gone cold, sacred wards crumbling. The Maker-God's fire burns eternal, but His servants must carry it where it is needed. You have been given His blessing and His tools. The rest is up to you."""
+ability_choices = ["wisdom", "constitution", "strength"]
+skill_proficiencies = ["religion", "athletics"]
+starting_equipment = ["holy_symbol", "smiths_tools"]
+bonus_gold = 10
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_forge"
+feature_name = "Sacred Smithing"
+feature_description = "Your prayers are forged in steel. You can bless weapons and armor during a long rest, granting a faint divine warmth that comforts allies nearby."
+required_races = ["dwarf"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "tunnel_scout"
+name = "Tunnel Scout"
+category = "dwarf"
+summary = "You patrol the forgotten passages between holds, where the maps end and the creatures begin."
+prologue = """The deep mines are mapped, catalogued, and patrolled. But between the mines lie the old tunnels — passages carved centuries ago and since abandoned, collapsed, or simply forgotten. These are the places where things creep in from below: blind crawlers, fungal colonies, the occasional lost goblin warband that stumbled through a fissure. Someone has to watch these passages. Someone has to walk them alone, in the dark, with nothing but a lantern and steady nerves.
+
+That someone has been you for the better part of a decade. The Tunnel Scouts are not a formal military unit — more a loose confederation of dwarves who are too restless for mine work, too solitary for the garrison, and too stubborn to die in the dark. You know the forgotten passages better than any living dwarf. You know where the air turns bad, where the floors are rotten, where the echoes behave strangely because something is listening from the other side of the wall.
+
+Lately, the echoes have been stranger than usual. New passages are opening — not from collapse, but from something digging upward. The scout-captain wants reports. You want answers. The two are not always the same thing."""
+ability_choices = ["dexterity", "constitution", "wisdom"]
+skill_proficiencies = ["stealth", "perception"]
+starting_equipment = ["lantern", "hempen_rope"]
+bonus_gold = 8
+starting_region = "ashen_highlands"
+starting_location = "deep_mines"
+feature_name = "Darktunnel Navigation"
+feature_description = "You can navigate underground passages by touch and sound alone. You suffer no penalty to Perception checks in total darkness within enclosed spaces."
+required_races = ["dwarf"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "grudge_keeper"
+name = "Grudge Keeper"
+category = "dwarf"
+summary = "You maintain the Book of Grudges — an ancient record of every wrong done to your people, none forgiven, none forgotten."
+prologue = """The Book of Grudges is not a single volume. It is a library — shelf after shelf of leather-bound ledgers reaching back to the founding of the first hold. Every slight, every betrayal, every broken oath and unpaid debt, inscribed in iron-gall ink on vellum pages that will outlast the stone itself. The dwarves forget nothing. The Grudge Keepers ensure it.
+
+You were apprenticed to the role at forty — young, by dwarven standards, but your memory was exceptional and your sense of justice unyielding. For decades you have catalogued wrongs: trade disputes with human merchants, elven promises left unfulfilled, goblin raids that went unanswered. You know the name of every oathbreaker in a two-hundred-year span. You know which debts have been settled and which still burn. The older Keepers say the work changes you — that after enough years reading grievances, you start to see the world as a ledger, every interaction a potential entry. They are not wrong.
+
+But a Grudge Keeper who never leaves the archive is only half-useful. The oldest entries in the Book are marked "unresolved" — grudges so old that no one remembers the details, only that the debt remains. Someone must investigate. Someone must determine whether these ancient wrongs can still be righted, or whether they should be marked "beyond remedy" and sealed. You have volunteered. The archivists think you are mad. You think they have been reading too long and acting too little."""
+ability_choices = ["wisdom", "intelligence", "constitution"]
+skill_proficiencies = ["history", "insight"]
+starting_equipment = ["old_journal", "ink_and_quill"]
+bonus_gold = 8
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_gate"
+feature_name = "Eidetic Grievance"
+feature_description = "You never forget a slight or a broken promise. You gain advantage on Insight checks to detect deception related to oaths, debts, or agreements."
+required_races = ["dwarf"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "stone_singer"
+name = "Stone Singer"
+category = "dwarf"
+summary = "Your voice echoes through the deep halls, carrying the old songs that the mountains themselves remember."
+prologue = """Dwarven music is not like the music of other races. There are no airy melodies, no delicate harmonics plucked from gut strings in candlelit parlors. Dwarven music is bass and resonance — the deep harmonic drone of voices echoing off cavern walls, the rhythmic percussion of hammers on anvils, the strange overtone singing that makes the stalactites hum in sympathy. It is music that moves stone. The old songs say that the first dwarves sang the mountains into being. You are not certain this is metaphor.
+
+You discovered your gift young, as most Stone Singers do — a note held too long in the echo-hall, a resonance that cracked a flagstone beneath your feet. The elder singers took you in and trained your voice: how to pitch a drone that calms frightened miners, how to sing a ward-tone that discourages cave-crawlers, how to find the harmonic frequency of a stone wall and make it ring like a bell. It is rare magic, neither arcane nor divine, but something older — the voice of the mountain itself, channeled through mortal lungs.
+
+The tavern has been your stage of late, your deep-hall chants adapted for audiences who want entertainment rather than resonance. They clap and buy you drinks, and you smile and perform, but you can feel the mountain's voice growing restless in your chest. There are songs that have not been sung in centuries — songs meant for chambers that no living dwarf has seen. The stone remembers them. It is waiting for someone to sing along."""
+ability_choices = ["charisma", "constitution", "wisdom"]
+skill_proficiencies = ["performance", "history"]
+starting_equipment = ["musical_instrument", "rune_stones"]
+bonus_gold = 8
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_tavern"
+feature_name = "Resonant Voice"
+feature_description = "Your voice carries the deep harmonics of the mountain. You can cause stone surfaces to vibrate faintly, revealing hidden hollows or unstable sections."
+required_races = ["dwarf"]
+excluded_races = []
+required_classes = []
+excluded_classes = []

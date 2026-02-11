@@ -1,0 +1,6 @@
+id = "deadmarsh"
+name = "Deadmarsh"
+description = "A cursed wasteland born from an ancient magical catastrophe that shattered reality itself. The fortress of Ashwatch serves as humanity's bulwark against the corruption. Rich deposits of crystallized magic draw fortune-seekers to the frontier boomtown of Driftwood, where life is cheap and crystal is king."
+level_range_min = 8
+level_range_max = 12
+climate = "wasteland"

@@ -1,0 +1,185 @@
+# Elf-specific origins — ancient grace, long memory, and the weight of centuries
+
+[[origins]]
+id = "exiled_courtling"
+name = "Exiled Courtling"
+category = "elf"
+summary = "Once a rising voice in the elven court, you were cast out for a scandal that rewrote your future."
+prologue = """The court of the Silver Boughs was your world for nearly a century. You learned its rhythms the way a sailor learns the tides — the subtle shift of alliances over decades, the art of the compliment that cuts, the careful choreography of power expressed through poetry, patronage, and precisely timed silences. You were good at it. Perhaps too good.
+
+The details of your exile are a matter of perspective. Your enemies call it treason. You call it honesty at an inconvenient volume. The Arbiter of the Court was neither interested in nor swayed by the distinction. The sentence was pronounced in the Hall of Whispered Verdicts: banishment from all elven holdings for a span of one hundred years. Your titles dissolved like morning frost. Your quarters were reassigned before you reached the gate.
+
+You arrived in Briarhaven — a modest elven village at the edge of the Thornwild, far from the silver spires and their serpentine politics. The villagers regard you with the polite wariness reserved for disgraced nobility. You still dress well, still speak with the cadence of the court, still instinctively calculate the social geometry of every room you enter. Old habits do not die in a century. They barely sleep."""
+ability_choices = ["charisma", "dexterity", "intelligence"]
+skill_proficiencies = ["persuasion", "deception"]
+starting_equipment = ["fine_clothes", "family_locket"]
+bonus_gold = 15
+starting_region = "thornwild"
+starting_location = "briarhaven_village"
+feature_name = "Court Instincts"
+feature_description = "Decades of navigating elven politics have given you an ear for subtext. You gain advantage on Insight checks during formal or political conversations."
+required_races = ["elf"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "starwatcher"
+name = "Starwatcher"
+category = "elf"
+summary = "You have spent centuries mapping the heavens, and the stars have begun to move in ways your charts cannot explain."
+prologue = """The observatory was a platform of living wood, grown from the crown of the tallest oak in Briarhaven's grove over the course of two hundred years. You watched the stars from that platform for longer than most human kingdoms endure. You charted the wandering of the Shepherd's Lantern across the ecliptic, predicted the return of the Crimson Comet within a margin of three days, and identified two previously unnamed constellations that the Celestial Archive in the Silver Boughs formally recognized. It was quiet, patient work, and it suited you.
+
+Then the anomalies began. Six months ago, the constellation known as the Warden's Eye shifted — not the slow precession of centuries, but a sudden lateral displacement of nearly half a degree. No natural phenomenon accounts for this. You checked your instruments, recalibrated your charts, and observed again. The shift was real. Worse, it was accelerating. The Eye is opening, and whatever it watches is watching back.
+
+You brought your findings to the grove elders. They listened politely and suggested you rest. You have not rested. Your charts are covered in corrections, your spyglass pointed at a patch of sky that should not be moving, and your sleep — such as elves know it — filled with visions of geometries that have no name in any language you speak. Something is happening in the heavens. You intend to understand it before it reaches the ground."""
+ability_choices = ["intelligence", "wisdom", "dexterity"]
+skill_proficiencies = ["arcana", "nature"]
+starting_equipment = ["star_chart", "spyglass"]
+bonus_gold = 10
+starting_region = "thornwild"
+starting_location = "briarhaven_grove"
+feature_name = "Celestial Reader"
+feature_description = "You can navigate by starlight and predict weather patterns with uncanny accuracy. You never become lost outdoors at night while the sky is visible."
+required_races = ["elf"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "bladesinger_initiate"
+name = "Bladesinger Initiate"
+category = "elf"
+summary = "You train in the ancient art of the Bladesong — where swordplay and spellcraft become a single, lethal dance."
+prologue = """The Bladesong is not taught. It is earned. For three decades you have trained in the open-air amphitheater at Briarhaven's heart, where the elder Bladesingers demonstrate forms that blur the line between combat and art. A sweep of the sword that becomes a somatic gesture. A parry that channels arcane force. A pirouette that ends with a blade at the throat and a ward-spell shimmering in the air. It is beautiful and devastating and maddeningly difficult to learn.
+
+You are an initiate — not yet a full Bladesinger, but no longer a mere student. Your footwork is precise, your blade transitions fluid, and you can sustain a minor cantrip through two full exchange sequences without losing the rhythm. The masters say you have promise. They also say you are impatient, which in elven culture is the gravest criticism one can level at a student. You prefer the word "driven."
+
+The final trial of initiation requires a journey — a Bladesinger must carry the art beyond the practice floor and into the world, where the dance meets real steel and real consequences. Your crystal focus hums against your hip, resonating with the faint arcane charge that builds in your muscles after hours of practice. The amphitheater is behind you. The world is the stage now, and the performance has begun."""
+ability_choices = ["dexterity", "intelligence", "charisma"]
+skill_proficiencies = ["acrobatics", "performance"]
+starting_equipment = ["costume_clothes", "crystal_focus"]
+bonus_gold = 10
+starting_region = "thornwild"
+starting_location = "briarhaven_village"
+feature_name = "Bladesong Rhythm"
+feature_description = "Your martial training is infused with arcane cadence. When unarmored, your movements carry a faint musical resonance that steadies your footing on difficult terrain."
+required_races = ["elf"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "ancient_dreamer"
+name = "Ancient Dreamer"
+category = "elf"
+summary = "Your trances carry memories far older than your own — visions of an age before the sundering of the fey and mortal worlds."
+prologue = """Elves do not sleep, but they dream. In the meditative state called the Reverie, most elves revisit their own memories — sorting, reflecting, finding peace. Your Reverie has never been so orderly. Since childhood, your trances have carried you to places you have never been: vast cities of crystal and living wood, skies lit by three moons, a language spoken in colors rather than sound. The elder dreamers say you carry ancestral memory — echoes of the age before the Sundering, when the fey and mortal worlds were one.
+
+The visions have grown sharper with age. What were once impressionistic flashes have become coherent scenes: a council of beings neither elf nor fey debating in a hall of woven starlight, a great tree whose roots pierce the boundary between worlds, a warning spoken in a voice like wind through ancient branches. You have transcribed what you can in your journal, but the language of dreams resists ink. The meaning slips away like water through cupped hands.
+
+The Fey Crossing at the edge of the Thornwild calls to you. In your trances, you have seen it — not as it is now, a faint shimmer between old stones, but as it was: a gateway wide enough to march an army through, blazing with light that cast no shadows. Something happened there, long ago. Something your blood remembers even if your mind does not. You go to the crossing at dawn, when the veil is thinnest, and you listen."""
+ability_choices = ["wisdom", "intelligence", "charisma"]
+skill_proficiencies = ["history", "insight"]
+starting_equipment = ["dream_catcher", "old_journal"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "fey_crossing"
+feature_name = "Ancestral Reverie"
+feature_description = "Your trances sometimes reveal fragments of ancient memory. After a long rest, you may recall a useful detail about ruins, artifacts, or forgotten lore."
+required_races = ["elf"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "feywild_emissary"
+name = "Feywild Emissary"
+category = "elf"
+summary = "You bear a diplomatic token from the fey courts, tasked with mending the fraying boundary between worlds."
+prologue = """The summons arrived on a leaf — a single autumn leaf that drifted through your window on a windless night and landed on your pillow. When you touched it, the message unfolded in your mind like a flower blooming in fast-motion: a voice of honey and thorns, speaking in the old fey dialect that most modern elves have forgotten. You understood every word.
+
+The Fey Court of the Thorn Bower requests — not commands, never commands, for the fey are meticulous about the distinction — that a representative of the mortal elves attend to a matter of mutual concern. The boundary between the Feywild and the material plane is thinning. What was once a gossamer curtain has become a moth-eaten rag, and things are slipping through in both directions. The fey are not alarmed, precisely — alarm is an emotion they consider vulgar — but they are concerned enough to reach across the veil for help. The amulet of passage arrived the following morning, delivered by a fox with knowing eyes.
+
+You stand now at the Fey Crossing, where the air smells of jasmine and ozone and the light bends in ways that make your shadow point the wrong direction. The amulet is warm against your chest. Beyond the shimmer, you can almost see the Thorn Bower — vast, ancient, and patient. But first, there is work to do on this side of the veil. The boundary must be understood before it can be mended."""
+ability_choices = ["charisma", "wisdom", "dexterity"]
+skill_proficiencies = ["persuasion", "arcana"]
+starting_equipment = ["amulet_of_passage", "fine_clothes"]
+bonus_gold = 15
+starting_region = "thornwild"
+starting_location = "fey_crossing"
+feature_name = "Fey Diplomat"
+feature_description = "Your connection to the fey courts grants you an instinct for bargains and binding words. You can sense when a verbal agreement carries magical weight."
+required_races = ["elf"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "last_of_the_line"
+name = "Last of the Line"
+category = "elf"
+summary = "Your house fell to ruin long ago, and you are the sole inheritor of a bloodline that once shaped history."
+prologue = """House Tessarael was ancient when the kingdoms of men were still mud huts and campfire circles. Your ancestors planted the first wards along the Thornwild's borders, negotiated the original compact with the fey courts, and built the watchtowers whose ruins now crumble beneath centuries of vine and neglect. The house declined slowly, as elven houses do — not in a single catastrophe, but in a long exhale of fading purpose, dwindling births, and quiet departures. Your parents were the last to bear the name with any conviction. When they passed into the Long Silence, the estate was already more ruin than home.
+
+You grew up among those ruins, surrounded by the artifacts of a grander age. Portraits of ancestors whose names you memorized but whose deeds felt increasingly irrelevant. A library of treaties with nations that no longer exist. A family locket containing a miniature portrait of the house's founder — an elf whose eyes, you have been told, look remarkably like yours.
+
+The overgrown ruins of House Tessarael are behind you now. You carry the locket, a set of traveling clothes, and the stubborn conviction that a bloodline is not merely a list of names but a thread of purpose. Your ancestors built something meaningful. Whatever destroyed it — time, neglect, or something more deliberate — you intend to understand. And perhaps, in understanding, to rebuild."""
+ability_choices = ["constitution", "wisdom", "charisma"]
+skill_proficiencies = ["survival", "history"]
+starting_equipment = ["family_locket", "travelers_clothes"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "overgrown_ruins"
+feature_name = "Noble Remnant"
+feature_description = "The Tessarael name still carries weight among those with long memories. Elder elves and fey creatures may recognize your lineage and treat you with guarded respect."
+required_races = ["elf"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "shadow_walker"
+name = "Shadow Walker"
+category = "elf"
+summary = "You move through the Thornwild's darkest paths unseen, a silent watcher who knows the forest's secrets."
+prologue = """The Thornwild has layers that most travelers never see. There are the sunlit trails where rangers patrol and merchants carefully tread. Below that, the understory paths — game trails and dry creek beds known to hunters and herbalists. And below that, there are the shadow paths: routes through the densest thickets, beneath root arches, along fungal highways that glow faintly in the perpetual twilight of the deep canopy. These are your roads.
+
+You do not remember choosing this life. It chose you, the way the forest chooses which seeds take root and which rot on the ground. As a child, you wandered further than the other elven children and came back later, quieter, with leaves in your hair and an unsettling calmness in your eyes. The adults worried. Then they stopped worrying, because you stopped coming back for days at a time, and when you did, you moved so silently that they often did not notice your return.
+
+The Thornwild trusts you — or at least tolerates you — in a way it tolerates very few. You have seen the things that move in the deepest shadows: creatures that have no names in the Common tongue, fey spirits that flicker between the trees like candlelight, and darker things that even the fey avoid. You carry a small knife, wear common clothes stained green and brown, and leave no footprints on soft ground. The forest has much to tell those who walk quietly enough to hear it."""
+ability_choices = ["dexterity", "wisdom", "intelligence"]
+skill_proficiencies = ["stealth", "perception"]
+starting_equipment = ["common_clothes", "small_knife"]
+bonus_gold = 8
+starting_region = "thornwild"
+starting_location = "thornwild_trails"
+feature_name = "Forest Ghost"
+feature_description = "You have learned to move through dense woodland without disturbing branch or leaf. You leave no trail in natural terrain unless you choose to."
+required_races = ["elf"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "tree_warden"
+name = "Tree Warden"
+category = "elf"
+summary = "You tend the sacred groves and ancient trees, a guardian of the green places where the old magic still breathes."
+prologue = """The grove at Briarhaven is old. Not old in the way that humans use the word — not decades or even centuries, but millennia. The heart-tree at its center was ancient when the first elves walked this forest, and its roots reach so deep that the druids say they drink from the same waters as the World Tree itself. You have tended this grove for eighty years, and in that time you have come to understand that a tree is not a thing — it is a conversation. Between root and soil, between branch and wind, between bark and the slow patient light of centuries.
+
+Your duties are simple and profound: prune the deadwood, redirect the streams that feed the root systems, drive out the parasitic vines that creep in from the blighted sections of the Thornwild, and listen. Always listen. The heart-tree communicates in a language older than elvish — a slow pulse of sap and growth that takes seasons to form a single thought. You have learned to hear it the way one learns to hear a heartbeat in a silent room: not with the ears, but with the stillness behind them.
+
+Lately, the heart-tree's pulse has quickened. Not in the way of spring growth or summer flourishing, but in the way of alarm — a deep, vegetative distress that you feel in your bones when you press your palm against the bark. Something is wrong beneath the soil. Something is poisoning the deep roots, and the grove is afraid. You gather your focus and your kit and prepare to go where the roots lead, even if that path takes you far from the green safety of the grove."""
+ability_choices = ["wisdom", "strength", "constitution"]
+skill_proficiencies = ["nature", "survival"]
+starting_equipment = ["druidic_focus", "herbalism_kit"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "briarhaven_grove"
+feature_name = "Greenspeech"
+feature_description = "Your bond with plant life allows you to sense the health and mood of vegetation. You can detect blight, poison, or unnatural influence in natural environments."
+required_races = ["elf"]
+excluded_races = []
+required_classes = []
+excluded_classes = []

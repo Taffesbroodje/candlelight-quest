@@ -1,0 +1,390 @@
+# Guild definitions — one per trade skill, mapped to existing factions.
+
+[smiths_guild]
+id = "smiths_guild"
+name = "Order of the Anvil"
+profession = "smithing"
+faction_id = "fire_smiths_guild"
+hq_region = "embercrown"
+description = "A venerable order of master smiths, forging weapons and armor of legendary quality. Their anvils ring day and night in the volcanic forges of Embercrown."
+motto = "Through fire, perfection."
+
+[[smiths_guild.ranks]]
+id = "initiate"
+title = "Initiate"
+min_rep = 0
+min_trade_level = 1
+[smiths_guild.ranks.perks]
+shop_discount = 0.0
+xp_multiplier = 1.0
+dc_reduction = 0
+crit_chance = 0.0
+
+[[smiths_guild.ranks]]
+id = "apprentice"
+title = "Apprentice"
+min_rep = 10
+min_trade_level = 3
+[smiths_guild.ranks.perks]
+shop_discount = 0.05
+xp_multiplier = 1.1
+dc_reduction = 1
+crit_chance = 0.0
+
+[[smiths_guild.ranks]]
+id = "journeyman"
+title = "Journeyman"
+min_rep = 25
+min_trade_level = 5
+[smiths_guild.ranks.perks]
+shop_discount = 0.10
+xp_multiplier = 1.2
+dc_reduction = 2
+crit_chance = 0.05
+unlocked_recipes = ["forge_mithril_blade"]
+
+[[smiths_guild.ranks]]
+id = "expert"
+title = "Expert"
+min_rep = 45
+min_trade_level = 7
+[smiths_guild.ranks.perks]
+shop_discount = 0.15
+xp_multiplier = 1.3
+dc_reduction = 3
+crit_chance = 0.08
+
+[[smiths_guild.ranks]]
+id = "master"
+title = "Master"
+min_rep = 70
+min_trade_level = 9
+[smiths_guild.ranks.perks]
+shop_discount = 0.20
+xp_multiplier = 1.5
+dc_reduction = 4
+crit_chance = 0.10
+unlocked_recipes = ["forge_adamantine_plate"]
+
+[[smiths_guild.ranks]]
+id = "grandmaster"
+title = "Grandmaster"
+min_rep = 90
+min_trade_level = 10
+[smiths_guild.ranks.perks]
+shop_discount = 0.25
+xp_multiplier = 1.75
+dc_reduction = 5
+crit_chance = 0.15
+
+
+[alchemists_guild]
+id = "alchemists_guild"
+name = "Circle of the Cauldron"
+profession = "alchemy"
+faction_id = "mages_collective"
+hq_region = "kingsward"
+description = "Alchemists who brew potions of extraordinary potency. Their laboratories in Kingsward produce elixirs sought by adventurers across the realm."
+motto = "In mixture, truth."
+
+[[alchemists_guild.ranks]]
+id = "initiate"
+title = "Initiate"
+min_rep = 0
+min_trade_level = 1
+[alchemists_guild.ranks.perks]
+shop_discount = 0.0
+xp_multiplier = 1.0
+dc_reduction = 0
+crit_chance = 0.0
+
+[[alchemists_guild.ranks]]
+id = "apprentice"
+title = "Apprentice"
+min_rep = 10
+min_trade_level = 3
+[alchemists_guild.ranks.perks]
+shop_discount = 0.05
+xp_multiplier = 1.1
+dc_reduction = 1
+crit_chance = 0.0
+
+[[alchemists_guild.ranks]]
+id = "journeyman"
+title = "Journeyman"
+min_rep = 25
+min_trade_level = 5
+[alchemists_guild.ranks.perks]
+shop_discount = 0.10
+xp_multiplier = 1.2
+dc_reduction = 2
+crit_chance = 0.05
+unlocked_recipes = ["brew_greater_healing"]
+
+[[alchemists_guild.ranks]]
+id = "expert"
+title = "Expert"
+min_rep = 45
+min_trade_level = 7
+[alchemists_guild.ranks.perks]
+shop_discount = 0.15
+xp_multiplier = 1.3
+dc_reduction = 3
+crit_chance = 0.08
+
+[[alchemists_guild.ranks]]
+id = "master"
+title = "Master"
+min_rep = 70
+min_trade_level = 9
+[alchemists_guild.ranks.perks]
+shop_discount = 0.20
+xp_multiplier = 1.5
+dc_reduction = 4
+crit_chance = 0.10
+unlocked_recipes = ["brew_elixir_of_power"]
+
+[[alchemists_guild.ranks]]
+id = "grandmaster"
+title = "Grandmaster"
+min_rep = 90
+min_trade_level = 10
+[alchemists_guild.ranks.perks]
+shop_discount = 0.25
+xp_multiplier = 1.75
+dc_reduction = 5
+crit_chance = 0.15
+
+
+[herbalists_guild]
+id = "herbalists_guild"
+name = "Greenwardens"
+profession = "herbalism"
+faction_id = "briarhaven_druids"
+hq_region = "verdant_reach"
+description = "Guardians of nature's bounty, the Greenwardens cultivate rare herbs and craft remedies from the living world. Their groves in the Verdant Reach are sacred places of healing."
+motto = "From root to remedy."
+
+[[herbalists_guild.ranks]]
+id = "initiate"
+title = "Initiate"
+min_rep = 0
+min_trade_level = 1
+[herbalists_guild.ranks.perks]
+shop_discount = 0.0
+xp_multiplier = 1.0
+dc_reduction = 0
+crit_chance = 0.0
+
+[[herbalists_guild.ranks]]
+id = "apprentice"
+title = "Apprentice"
+min_rep = 10
+min_trade_level = 3
+[herbalists_guild.ranks.perks]
+shop_discount = 0.05
+xp_multiplier = 1.1
+dc_reduction = 1
+crit_chance = 0.0
+
+[[herbalists_guild.ranks]]
+id = "journeyman"
+title = "Journeyman"
+min_rep = 25
+min_trade_level = 5
+[herbalists_guild.ranks.perks]
+shop_discount = 0.10
+xp_multiplier = 1.2
+dc_reduction = 2
+crit_chance = 0.05
+unlocked_recipes = ["craft_antitoxin"]
+
+[[herbalists_guild.ranks]]
+id = "expert"
+title = "Expert"
+min_rep = 45
+min_trade_level = 7
+[herbalists_guild.ranks.perks]
+shop_discount = 0.15
+xp_multiplier = 1.3
+dc_reduction = 3
+crit_chance = 0.08
+
+[[herbalists_guild.ranks]]
+id = "master"
+title = "Master"
+min_rep = 70
+min_trade_level = 9
+[herbalists_guild.ranks.perks]
+shop_discount = 0.20
+xp_multiplier = 1.5
+dc_reduction = 4
+crit_chance = 0.10
+unlocked_recipes = ["craft_elixir_of_vitality"]
+
+[[herbalists_guild.ranks]]
+id = "grandmaster"
+title = "Grandmaster"
+min_rep = 90
+min_trade_level = 10
+[herbalists_guild.ranks.perks]
+shop_discount = 0.25
+xp_multiplier = 1.75
+dc_reduction = 5
+crit_chance = 0.15
+
+
+[enchanters_guild]
+id = "enchanters_guild"
+name = "Enchanter's Circle"
+profession = "enchanting"
+faction_id = "enchanter_circle"
+hq_region = "silverpeak"
+description = "Masters of arcane infusion, the Enchanter's Circle weaves magic into mundane objects, creating items of wondrous power. Their workshops shimmer with latent enchantment."
+motto = "Mundane to marvelous."
+
+[[enchanters_guild.ranks]]
+id = "initiate"
+title = "Initiate"
+min_rep = 0
+min_trade_level = 1
+[enchanters_guild.ranks.perks]
+shop_discount = 0.0
+xp_multiplier = 1.0
+dc_reduction = 0
+crit_chance = 0.0
+
+[[enchanters_guild.ranks]]
+id = "apprentice"
+title = "Apprentice"
+min_rep = 10
+min_trade_level = 3
+[enchanters_guild.ranks.perks]
+shop_discount = 0.05
+xp_multiplier = 1.1
+dc_reduction = 1
+crit_chance = 0.0
+
+[[enchanters_guild.ranks]]
+id = "journeyman"
+title = "Journeyman"
+min_rep = 25
+min_trade_level = 5
+[enchanters_guild.ranks.perks]
+shop_discount = 0.10
+xp_multiplier = 1.2
+dc_reduction = 2
+crit_chance = 0.05
+unlocked_recipes = ["enchant_glow_weapon"]
+
+[[enchanters_guild.ranks]]
+id = "expert"
+title = "Expert"
+min_rep = 45
+min_trade_level = 7
+[enchanters_guild.ranks.perks]
+shop_discount = 0.15
+xp_multiplier = 1.3
+dc_reduction = 3
+crit_chance = 0.08
+
+[[enchanters_guild.ranks]]
+id = "master"
+title = "Master"
+min_rep = 70
+min_trade_level = 9
+[enchanters_guild.ranks.perks]
+shop_discount = 0.20
+xp_multiplier = 1.5
+dc_reduction = 4
+crit_chance = 0.10
+unlocked_recipes = ["enchant_legendary_weapon"]
+
+[[enchanters_guild.ranks]]
+id = "grandmaster"
+title = "Grandmaster"
+min_rep = 90
+min_trade_level = 10
+[enchanters_guild.ranks.perks]
+shop_discount = 0.25
+xp_multiplier = 1.75
+dc_reduction = 5
+crit_chance = 0.15
+
+
+[cooks_guild]
+id = "cooks_guild"
+name = "Fellowship of the Hearth"
+profession = "cooking"
+faction_id = "greenvale_cooperative"
+hq_region = "greenvale"
+description = "The Fellowship of the Hearth believes that good food sustains both body and spirit. Their cooks are welcome in every tavern and camp across the land."
+motto = "A full belly, a brave heart."
+
+[[cooks_guild.ranks]]
+id = "initiate"
+title = "Initiate"
+min_rep = 0
+min_trade_level = 1
+[cooks_guild.ranks.perks]
+shop_discount = 0.0
+xp_multiplier = 1.0
+dc_reduction = 0
+crit_chance = 0.0
+
+[[cooks_guild.ranks]]
+id = "apprentice"
+title = "Apprentice"
+min_rep = 10
+min_trade_level = 3
+[cooks_guild.ranks.perks]
+shop_discount = 0.05
+xp_multiplier = 1.1
+dc_reduction = 1
+crit_chance = 0.0
+
+[[cooks_guild.ranks]]
+id = "journeyman"
+title = "Journeyman"
+min_rep = 25
+min_trade_level = 5
+[cooks_guild.ranks.perks]
+shop_discount = 0.10
+xp_multiplier = 1.2
+dc_reduction = 2
+crit_chance = 0.05
+unlocked_recipes = ["cook_feast_platter"]
+
+[[cooks_guild.ranks]]
+id = "expert"
+title = "Expert"
+min_rep = 45
+min_trade_level = 7
+[cooks_guild.ranks.perks]
+shop_discount = 0.15
+xp_multiplier = 1.3
+dc_reduction = 3
+crit_chance = 0.08
+
+[[cooks_guild.ranks]]
+id = "master"
+title = "Master"
+min_rep = 70
+min_trade_level = 9
+[cooks_guild.ranks.perks]
+shop_discount = 0.20
+xp_multiplier = 1.5
+dc_reduction = 4
+crit_chance = 0.10
+unlocked_recipes = ["cook_heroes_banquet"]
+
+[[cooks_guild.ranks]]
+id = "grandmaster"
+title = "Grandmaster"
+min_rep = 90
+min_trade_level = 10
+[cooks_guild.ranks.perks]
+shop_discount = 0.25
+xp_multiplier = 1.75
+dc_reduction = 5
+crit_chance = 0.15

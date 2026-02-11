@@ -95,3 +95,736 @@ success_event = "The temple completed its seasonal blessing, strengthening the v
 failure_event = "The consecration ritual was disrupted by unsettling energies from the Whisperwood."
 success_effects = []
 failure_effects = [{type = "faction_rep", faction_id = "thornfield_guard", delta = -2}]
+
+# === THORNWILD ===
+
+[briarhaven_druids]
+id = "briarhaven_druids"
+name = "Briarhaven Druid Circle"
+region = "thornwild"
+description = "Druids and rangers who protect the ancient forest from exploitation and corruption."
+default_reputation = 0
+
+[[briarhaven_druids.goals]]
+id = "protect_forest"
+description = "Prevent overharvesting and corruption of the Thornwild"
+check_interval = 15
+success_chance = 0.7
+success_event = "The druids successfully cleansed a corrupted grove in the Thornwild."
+failure_event = "Dark corruption spread further into the heart of the Thornwild."
+success_effects = []
+failure_effects = []
+
+# === IRON COAST ===
+
+[saltmere_port_authority]
+id = "saltmere_port_authority"
+name = "Saltmere Port Authority"
+region = "iron_coast"
+description = "The harbor authority that manages trade, docking fees, and port security in Saltmere."
+default_reputation = 0
+
+[[saltmere_port_authority.goals]]
+id = "maintain_trade"
+description = "Keep shipping lanes safe and trade flowing"
+check_interval = 18
+success_chance = 0.6
+success_event = "A large trade fleet docked safely at Saltmere, bringing prosperity."
+failure_event = "Pirates disrupted shipping lanes, causing trade losses at Saltmere."
+success_effects = []
+failure_effects = []
+
+[saltmere_smugglers]
+id = "saltmere_smugglers"
+name = "Saltmere Smugglers"
+region = "iron_coast"
+description = "A network of smugglers operating from the tide caves, dealing in contraband and stolen goods."
+default_reputation = 0
+
+[[saltmere_smugglers.goals]]
+id = "smuggle_goods"
+description = "Move contraband through the tide caves undetected"
+check_interval = 15
+success_chance = 0.5
+success_event = "A shipment of contraband passed through Saltmere undetected."
+failure_event = "The port watch intercepted a smuggler's cargo in the tide caves."
+success_effects = [{type = "faction_rep", faction_id = "saltmere_port_authority", delta = -3}]
+failure_effects = [{type = "faction_rep", faction_id = "saltmere_port_authority", delta = 3}]
+
+# === ASHEN HIGHLANDS ===
+
+[cinderhold_miners]
+id = "cinderhold_miners"
+name = "Cinderhold Mining Consortium"
+region = "ashen_highlands"
+description = "The organized miners who extract ore from the deep mines of Cinderhold."
+default_reputation = 0
+
+[[cinderhold_miners.goals]]
+id = "expand_mines"
+description = "Open new mining shafts and increase ore production"
+check_interval = 20
+success_chance = 0.5
+success_event = "Miners struck a new vein of iron in the deep mines."
+failure_event = "A cave-in collapsed a promising new shaft in the Cinderhold mines."
+success_effects = []
+failure_effects = []
+
+# === SUNKEN REACH ===
+
+[murkfen_traders]
+id = "murkfen_traders"
+name = "Murkfen Trading Company"
+region = "sunken_reach"
+description = "Swamp traders who navigate the treacherous waterways to connect isolated communities."
+default_reputation = 0
+
+[[murkfen_traders.goals]]
+id = "trade_routes"
+description = "Maintain water trade routes through the swamp"
+check_interval = 18
+success_chance = 0.6
+success_event = "Traders navigated a new shortcut through the swamp channels."
+failure_event = "A trading barge was lost in the deeper swamp waters."
+success_effects = []
+failure_effects = []
+
+# === GREENVALE (T2) ===
+
+[greenvale_cooperative]
+id = "greenvale_cooperative"
+name = "Greenvale Farmers' Cooperative"
+region = "greenvale"
+description = "A powerful agricultural guild that controls most trade in the fertile Greenvale region."
+default_reputation = 0
+
+[[greenvale_cooperative.goals]]
+id = "control_market"
+description = "Maintain control over grain prices and trade"
+check_interval = 20
+success_chance = 0.6
+success_event = "The Cooperative negotiated favorable trade terms with Kingsward merchants."
+failure_event = "Independent farmers undercut Cooperative prices at the Millhaven market."
+success_effects = []
+failure_effects = []
+
+[millhaven_militia]
+id = "millhaven_militia"
+name = "Millhaven Militia"
+region = "greenvale"
+description = "The town militia that protects Millhaven and surrounding farms from bandits and wild threats."
+default_reputation = 0
+
+[[millhaven_militia.goals]]
+id = "hunt_bandits"
+description = "Track and eliminate bandit camps in the western hills"
+check_interval = 15
+success_chance = 0.5
+success_event = "Militia Captain Thrace led a successful raid on a bandit hideout."
+failure_event = "Bandits raided a farm convoy despite increased militia patrols."
+success_effects = [{type = "faction_rep", faction_id = "greenvale_cooperative", delta = 3}]
+failure_effects = [{type = "faction_rep", faction_id = "greenvale_cooperative", delta = -3}]
+
+# === STORMHAVEN (T2) ===
+
+[harpooners_guild]
+id = "harpooners_guild"
+name = "Harpooner's Guild"
+region = "stormhaven"
+description = "The powerful whaling and fishing guild that controls Stormhaven's primary industry."
+default_reputation = 0
+
+[[harpooners_guild.goals]]
+id = "whaling_season"
+description = "Secure profitable whaling expeditions"
+check_interval = 20
+success_chance = 0.6
+success_event = "The Harpooner's fleet returned with a record whale catch."
+failure_event = "Storms drove the whale pods away from Stormhaven's waters."
+success_effects = []
+failure_effects = []
+
+[stormhaven_privateers]
+id = "stormhaven_privateers"
+name = "Stormhaven Privateers"
+region = "stormhaven"
+description = "Licensed privateers who walk the line between legal commerce raiding and outright piracy."
+default_reputation = 0
+
+[[stormhaven_privateers.goals]]
+id = "raid_shipping"
+description = "Capture enemy merchant vessels under letter of marque"
+check_interval = 18
+success_chance = 0.5
+success_event = "Captain Scarlet Vane captured a rich merchant prize off the coast."
+failure_event = "A privateer ship was captured by naval forces and its crew imprisoned."
+success_effects = [{type = "faction_rep", faction_id = "harpooners_guild", delta = -2}]
+failure_effects = [{type = "faction_rep", faction_id = "harpooners_guild", delta = 2}]
+
+# === DUSTHOLLOW (T2) ===
+
+[dusthollow_ranch_alliance]
+id = "dusthollow_ranch_alliance"
+name = "Dusthollow Ranch Alliance"
+region = "dusthollow"
+description = "A coalition of cattle ranchers and horse breeders who dominate Dusthollow's economy."
+default_reputation = 0
+
+[[dusthollow_ranch_alliance.goals]]
+id = "protect_herds"
+description = "Defend cattle from wolves, rustlers, and dust storms"
+check_interval = 15
+success_chance = 0.6
+success_event = "Ranch hands drove off a wolf pack threatening the herds."
+failure_event = "Rustlers made off with a dozen head of cattle from Big Mae's ranch."
+success_effects = []
+failure_effects = []
+
+[nomadic_plainspeople]
+id = "nomadic_plainspeople"
+name = "Nomadic Plainspeople"
+region = "dusthollow"
+description = "The nomadic tribes who roam the great plains, trading furs and herbs at seasonal camps."
+default_reputation = 0
+
+[[nomadic_plainspeople.goals]]
+id = "preserve_traditions"
+description = "Maintain the old ways and sacred sites"
+check_interval = 25
+success_chance = 0.7
+success_event = "The tribes completed their seasonal migration and sacred ceremonies."
+failure_event = "Settler encroachment forced the tribes to abandon a sacred campsite."
+success_effects = []
+failure_effects = [{type = "faction_rep", faction_id = "dusthollow_ranch_alliance", delta = -3}]
+
+# === MISTWOOD (T2) ===
+
+[silverleaf_council]
+id = "silverleaf_council"
+name = "Silverleaf Council"
+region = "mistwood"
+description = "The elven governing body of Silverleaf Village, dedicated to preserving the ancient forest."
+default_reputation = 0
+
+[[silverleaf_council.goals]]
+id = "ward_forest"
+description = "Maintain magical wards protecting the forest from corruption"
+check_interval = 20
+success_chance = 0.7
+success_event = "Elder Aelindra renewed the ancient wards protecting the Mistwood."
+failure_event = "Shadow corruption breached the outer wards of the Mistwood."
+success_effects = []
+failure_effects = []
+
+[mistwood_rangers]
+id = "mistwood_rangers"
+name = "Mistwood Rangers"
+region = "mistwood"
+description = "An elite force of rangers who patrol the fog-shrouded forest and guide lost travelers."
+default_reputation = 0
+
+[[mistwood_rangers.goals]]
+id = "patrol_trails"
+description = "Keep the fog trails safe and marked"
+check_interval = 15
+success_chance = 0.6
+success_event = "Rangers rescued a lost merchant caravan from the deep Mistwood."
+failure_event = "Fey tricksters rearranged trail markers, and several travelers went missing."
+success_effects = [{type = "faction_rep", faction_id = "silverleaf_council", delta = 2}]
+failure_effects = [{type = "faction_rep", faction_id = "silverleaf_council", delta = -2}]
+
+# === CRAGMOOR (T2) ===
+
+[hammerfall_mining_council]
+id = "hammerfall_mining_council"
+name = "Hammerfall Mining Council"
+region = "cragmoor"
+description = "The governing body of Hammerfall, representing the major mining clans."
+default_reputation = 0
+
+[[hammerfall_mining_council.goals]]
+id = "secure_mines"
+description = "Keep the deep tunnels safe from subterranean threats"
+check_interval = 18
+success_chance = 0.6
+success_event = "The Mining Council sealed a dangerous breach in the deep tunnels."
+failure_event = "Creatures from below overran a mining camp in the silver mines."
+success_effects = []
+failure_effects = []
+
+[ironside_guard]
+id = "ironside_guard"
+name = "Ironside Guard"
+region = "cragmoor"
+description = "The military force that protects Hammerfall from external and subterranean threats."
+default_reputation = 0
+
+[[ironside_guard.goals]]
+id = "deep_patrol"
+description = "Patrol the deepest tunnels for breaches"
+check_interval = 15
+success_chance = 0.5
+success_event = "Guard Commander Ironside's patrol eliminated a crawler nest in the deep mines."
+failure_event = "Deep crawlers were spotted dangerously close to the residential tunnels."
+success_effects = [{type = "faction_rep", faction_id = "hammerfall_mining_council", delta = 3}]
+failure_effects = [{type = "faction_rep", faction_id = "hammerfall_mining_council", delta = -3}]
+
+# === KINGSWARD (T3) ===
+
+[royal_court]
+id = "royal_court"
+name = "Royal Court"
+region = "kingsward"
+description = "The seat of royal governance, administering law and policy across the realm."
+default_reputation = 0
+
+[[royal_court.goals]]
+id = "maintain_order"
+description = "Enforce royal law and maintain stability"
+check_interval = 20
+success_chance = 0.7
+success_event = "The Royal Court resolved a trade dispute between guilds peacefully."
+failure_event = "A jurisdictional conflict between guilds escalated into street brawls."
+success_effects = []
+failure_effects = [{type = "faction_rep", faction_id = "kingsward_merchants_guild", delta = -3}]
+
+[adventurers_guild_faction]
+id = "adventurers_guild_faction"
+name = "Adventurers' Guild"
+region = "kingsward"
+description = "A guild for registered adventurers, offering contracts, supplies, and mutual aid."
+default_reputation = 0
+
+[[adventurers_guild_faction.goals]]
+id = "complete_contracts"
+description = "Fulfill monster hunting and dungeon clearing contracts"
+check_interval = 15
+success_chance = 0.6
+success_event = "Guildmaster Helena posted record contract completions this season."
+failure_event = "Several high-profile contracts went unfulfilled, damaging the Guild's reputation."
+success_effects = [{type = "faction_rep", faction_id = "royal_court", delta = 2}]
+failure_effects = [{type = "faction_rep", faction_id = "royal_court", delta = -2}]
+
+[kingsward_merchants_guild]
+id = "kingsward_merchants_guild"
+name = "Merchants' Guild"
+region = "kingsward"
+description = "The powerful merchants' guild controlling trade through Kingsward's markets."
+default_reputation = 0
+
+[[kingsward_merchants_guild.goals]]
+id = "expand_trade"
+description = "Open new trade routes and attract foreign merchants"
+check_interval = 20
+success_chance = 0.6
+success_event = "Master Merchant Goldtongue secured a lucrative trade agreement."
+failure_event = "Tariff disputes closed a major trade route through the eastern gate."
+success_effects = [{type = "faction_rep", faction_id = "royal_court", delta = 2}]
+failure_effects = [{type = "faction_rep", faction_id = "royal_court", delta = -2}]
+
+[mages_collective]
+id = "mages_collective"
+name = "Mages' Collective"
+region = "kingsward"
+description = "An organization of arcane practitioners, maintaining the Mages' Tower and regulating magic use."
+default_reputation = 0
+
+[[mages_collective.goals]]
+id = "arcane_research"
+description = "Advance magical knowledge and maintain wards"
+check_interval = 25
+success_chance = 0.6
+success_event = "Archmage Soren's researchers made a breakthrough in ward enchantment."
+failure_event = "A magical experiment went awry, causing minor damage to the university quarter."
+success_effects = []
+failure_effects = [{type = "faction_rep", faction_id = "royal_court", delta = -3}]
+
+[kingsward_thieves_guild]
+id = "kingsward_thieves_guild"
+name = "Thieves' Guild"
+region = "kingsward"
+description = "The organized criminal underworld of Kingsward, led by the enigmatic Whisper."
+default_reputation = -10
+
+[[kingsward_thieves_guild.goals]]
+id = "expand_network"
+description = "Extend influence into new districts and businesses"
+check_interval = 18
+success_chance = 0.5
+success_event = "The Whisper's network quietly absorbed another district's protection racket."
+failure_event = "City guards raided a Thieves' Guild safehouse, scattering operatives."
+success_effects = [{type = "faction_rep", faction_id = "royal_court", delta = -3}]
+failure_effects = [{type = "faction_rep", faction_id = "royal_court", delta = 3}]
+
+[temple_order]
+id = "temple_order"
+name = "Temple Order"
+region = "kingsward"
+description = "The organized clergy of Kingsward's temples, led by the Grand Cathedral."
+default_reputation = 10
+
+[[temple_order.goals]]
+id = "heal_the_sick"
+description = "Provide healing and spiritual guidance to all who seek it"
+check_interval = 12
+success_chance = 0.8
+success_event = "High Priestess Auriel organized a mass healing for the Slums district."
+failure_event = "A plague outbreak overwhelmed the temple's healing resources."
+success_effects = [{type = "faction_rep", faction_id = "royal_court", delta = 2}]
+failure_effects = []
+
+# === SILVERPEAK (T3) ===
+
+[council_of_clans]
+id = "council_of_clans"
+name = "Council of Clans"
+region = "silverpeak"
+description = "The dwarven clans that govern Silverpeak, managing mining rights and forge access."
+default_reputation = 0
+
+[[council_of_clans.goals]]
+id = "manage_resources"
+description = "Fairly distribute mining claims and forge time"
+check_interval = 20
+success_chance = 0.6
+success_event = "The Council resolved a mining claim dispute between rival clans."
+failure_event = "A territorial dispute between clans led to a tunnel skirmish."
+success_effects = []
+failure_effects = []
+
+[enchanter_circle]
+id = "enchanter_circle"
+name = "Enchanter's Circle"
+region = "silverpeak"
+description = "Elite enchanters who bind magic into weapons, armor, and artifacts."
+default_reputation = 0
+
+[[enchanter_circle.goals]]
+id = "master_enchantment"
+description = "Push the boundaries of enchantment magic"
+check_interval = 25
+success_chance = 0.5
+success_event = "Enchantress Seraphina created a new enchantment formula."
+failure_event = "An enchantment experiment destabilized, damaging the tower."
+success_effects = [{type = "faction_rep", faction_id = "council_of_clans", delta = 2}]
+failure_effects = [{type = "faction_rep", faction_id = "council_of_clans", delta = -2}]
+
+# === THE HOLLOW (T3) ===
+
+[hollow_scavengers]
+id = "hollow_scavengers"
+name = "Hollow Scavengers"
+region = "the_hollow"
+description = "Brave or desperate souls who venture into the haunted swamp for rare ingredients and artifacts."
+default_reputation = 0
+
+[[hollow_scavengers.goals]]
+id = "deep_expeditions"
+description = "Mount expeditions into the deepest parts of the Hollow"
+check_interval = 18
+success_chance = 0.4
+success_event = "Scavenger King Muck's expedition returned with rare alchemical ingredients."
+failure_event = "An expedition to the drowned cathedral ended with heavy losses."
+success_effects = []
+failure_effects = []
+
+[shrine_of_passage]
+id = "shrine_of_passage"
+name = "Shrine of Passage"
+region = "the_hollow"
+description = "Priests who help the dead find peace and protect the living from undead threats."
+default_reputation = 10
+
+[[shrine_of_passage.goals]]
+id = "ward_undead"
+description = "Maintain wards against undead and bless the restless dead"
+check_interval = 15
+success_chance = 0.6
+success_event = "Priestess Vesper's wards held back a surge of undead from the bone marsh."
+failure_event = "Necromantic energy overwhelmed the shrine's wards overnight."
+success_effects = []
+failure_effects = []
+
+# === DEADMARSH (T3) ===
+
+[ashwatch_military]
+id = "ashwatch_military"
+name = "Ashwatch Military"
+region = "deadmarsh"
+description = "The military force maintaining the fortress that holds back the magical corruption."
+default_reputation = 0
+
+[[ashwatch_military.goals]]
+id = "hold_the_line"
+description = "Prevent corrupted creatures from breaching the wasteland perimeter"
+check_interval = 15
+success_chance = 0.6
+success_event = "Marshal Drake's forces repelled a major incursion from the corruption zone."
+failure_event = "Corrupted creatures breached the outer perimeter near Driftwood."
+success_effects = []
+failure_effects = []
+
+[mage_researcher_corps]
+id = "mage_researcher_corps"
+name = "Mage Researcher Corps"
+region = "deadmarsh"
+description = "Mages studying the magical catastrophe in hopes of understanding and reversing it."
+default_reputation = 0
+
+[[mage_researcher_corps.goals]]
+id = "study_catastrophe"
+description = "Conduct research into the source and nature of the magical corruption"
+check_interval = 20
+success_chance = 0.5
+success_event = "Mage Cassandra's team made a breakthrough in understanding the blast's origin."
+failure_event = "A research probe into the corruption zone triggered a dangerous magical surge."
+success_effects = [{type = "faction_rep", faction_id = "ashwatch_military", delta = 2}]
+failure_effects = [{type = "faction_rep", faction_id = "ashwatch_military", delta = -3}]
+
+[driftwood_scavengers]
+id = "driftwood_scavengers"
+name = "Driftwood Scavengers"
+region = "deadmarsh"
+description = "Fortune-seekers who brave the wasteland for crystallized magic and pre-catastrophe artifacts."
+default_reputation = 0
+
+[[driftwood_scavengers.goals]]
+id = "crystal_harvest"
+description = "Gather crystallized magic from the fields and sell it"
+check_interval = 15
+success_chance = 0.5
+success_event = "Scavenger Boss Wreck's team brought back a haul of quality crystals."
+failure_event = "A scavenger team was lost in the glass desert."
+success_effects = []
+failure_effects = []
+
+# === EMBERCROWN (T4) ===
+
+[embercrown_senate]
+id = "embercrown_senate"
+name = "Embercrown Senate"
+region = "embercrown"
+description = "The governing body of Embercrown, balancing the interests of fire smiths, priests, and military."
+default_reputation = 0
+
+[[embercrown_senate.goals]]
+id = "govern_caldera"
+description = "Maintain order and manage volcanic resources"
+check_interval = 20
+success_chance = 0.6
+success_event = "Senator Moltara brokered a deal between the Fire Smiths and the Phoenix Guard."
+failure_event = "A dispute over forge access escalated into a confrontation in the Furnace District."
+success_effects = []
+failure_effects = []
+
+[fire_smiths_guild]
+id = "fire_smiths_guild"
+name = "Fire Smiths Guild"
+region = "embercrown"
+description = "Master smiths who use volcanic energy to forge legendary weapons and armor."
+default_reputation = 0
+
+[[fire_smiths_guild.goals]]
+id = "legendary_forge"
+description = "Create legendary-quality weapons using the Magma Forge"
+check_interval = 25
+success_chance = 0.4
+success_event = "Guildmaster Pyraxis completed a masterwork blade at the Magma Forge."
+failure_event = "A volcanic surge ruined a batch of enchanted weapons at the forge."
+success_effects = [{type = "faction_rep", faction_id = "embercrown_senate", delta = 3}]
+failure_effects = []
+
+[phoenix_guard]
+id = "phoenix_guard"
+name = "Phoenix Guard"
+region = "embercrown"
+description = "Embercrown's elite military force, trained to fight in extreme volcanic conditions."
+default_reputation = 0
+
+[[phoenix_guard.goals]]
+id = "hunt_cultists"
+description = "Track and eliminate Fire Giant cultists"
+check_interval = 15
+success_chance = 0.5
+success_event = "Cult Hunter Cinder dismantled a cultist cell in the mining tunnels."
+failure_event = "Cultists performed a forbidden ritual deep in the caldera."
+success_effects = [{type = "faction_rep", faction_id = "embercrown_senate", delta = 3}]
+failure_effects = [{type = "faction_rep", faction_id = "embercrown_senate", delta = -5}]
+
+# === FROSTMERE (T4) ===
+
+[frostmere_council]
+id = "frostmere_council"
+name = "Frostmere Council"
+region = "frostmere"
+description = "The governing body of Frostmere, balancing city interests with northern tribal relations."
+default_reputation = 0
+
+[[frostmere_council.goals]]
+id = "maintain_peace"
+description = "Keep peace between the city and northern tribes"
+check_interval = 20
+success_chance = 0.6
+success_event = "Ice Queen Solara renewed the trade pact with the northern tribes."
+failure_event = "A misunderstanding at the tribal camp nearly sparked a diplomatic crisis."
+success_effects = [{type = "faction_rep", faction_id = "northern_tribes", delta = 3}]
+failure_effects = [{type = "faction_rep", faction_id = "northern_tribes", delta = -5}]
+
+[northern_tribes]
+id = "northern_tribes"
+name = "Northern Tribes"
+region = "frostmere"
+description = "The nomadic tribes of the frozen north who trade with Frostmere but maintain independence."
+default_reputation = 0
+
+[[northern_tribes.goals]]
+id = "honor_traditions"
+description = "Maintain sacred sites and ancient customs"
+check_interval = 25
+success_chance = 0.7
+success_event = "The tribes completed the sacred winter hunt in the mammoth graveyard."
+failure_event = "Frostmere prospectors disturbed a sacred tribal site."
+success_effects = []
+failure_effects = [{type = "faction_rep", faction_id = "frostmere_council", delta = -3}]
+
+# === CROWNHOLD (T4) ===
+
+[crown_court]
+id = "crown_court"
+name = "Crown Court"
+region = "crownhold"
+description = "The supreme governing body of the realm, ruling from the Royal Palace in Crownhold."
+default_reputation = 0
+
+[[crown_court.goals]]
+id = "rule_justly"
+description = "Maintain the realm's laws and resolve inter-regional disputes"
+check_interval = 25
+success_chance = 0.6
+success_event = "The Monarch resolved a trade dispute between Kingsward and Silverpeak."
+failure_event = "Political factions in the court blocked a critical infrastructure decree."
+success_effects = []
+failure_effects = []
+
+[grand_guild_council]
+id = "grand_guild_council"
+name = "Grand Guild Council"
+region = "crownhold"
+description = "The council of all major guilds, coordinating commerce, craft, and adventure across the realm."
+default_reputation = 0
+
+[[grand_guild_council.goals]]
+id = "coordinate_guilds"
+description = "Resolve inter-guild disputes and set trade standards"
+check_interval = 20
+success_chance = 0.6
+success_event = "The Grand Guild Council approved new quality standards for enchanted goods."
+failure_event = "Competing guild interests deadlocked the council for weeks."
+success_effects = [{type = "faction_rep", faction_id = "crown_court", delta = 2}]
+failure_effects = [{type = "faction_rep", faction_id = "crown_court", delta = -2}]
+
+[undercity_syndicate]
+id = "undercity_syndicate"
+name = "Undercity Syndicate"
+region = "crownhold"
+description = "The organized criminal network operating beneath Crownhold's streets."
+default_reputation = -10
+
+[[undercity_syndicate.goals]]
+id = "expand_influence"
+description = "Extend syndicate control into new districts"
+check_interval = 18
+success_chance = 0.5
+success_event = "The Undercity Lords quietly took control of another warehouse district."
+failure_event = "Imperial guards raided a syndicate operation, capturing several lieutenants."
+success_effects = [{type = "faction_rep", faction_id = "crown_court", delta = -3}]
+failure_effects = [{type = "faction_rep", faction_id = "crown_court", delta = 3}]
+
+# === DRAKE WASTES (T5) ===
+
+[dragon_courts]
+id = "dragon_courts"
+name = "Dragon Courts"
+region = "drake_wastes"
+description = "The ancient dragon hierarchy that rules the Drake Wastes through power and tradition."
+default_reputation = 0
+
+[[dragon_courts.goals]]
+id = "maintain_dominion"
+description = "Enforce dragon law over the wastes"
+check_interval = 30
+success_chance = 0.8
+success_event = "The Dragon Courts resolved a territorial dispute between rival wyrms."
+failure_event = "A rogue dragon challenged the court's authority, causing chaos."
+success_effects = []
+failure_effects = []
+
+[dragonborn_clans]
+id = "dragonborn_clans"
+name = "Dragonborn Clans"
+region = "drake_wastes"
+description = "Dragonborn who serve and honor the dragon lords while maintaining their own culture."
+default_reputation = 0
+
+[[dragonborn_clans.goals]]
+id = "serve_dragons"
+description = "Fulfill obligations to the dragon lords while preserving clan identity"
+check_interval = 20
+success_chance = 0.6
+success_event = "Chief Skarrath's clan completed a great service for the Dragon Courts."
+failure_event = "A clan dispute weakened the dragonborn's standing with the dragons."
+success_effects = [{type = "faction_rep", faction_id = "dragon_courts", delta = 2}]
+failure_effects = [{type = "faction_rep", faction_id = "dragon_courts", delta = -2}]
+
+[dragon_slayer_order]
+id = "dragon_slayer_order"
+name = "Dragon Slayer Order"
+region = "drake_wastes"
+description = "An order of warriors dedicated to hunting dangerous dragons and protecting civilized lands."
+default_reputation = 0
+
+[[dragon_slayer_order.goals]]
+id = "slay_threats"
+description = "Eliminate hostile dragons threatening inhabited regions"
+check_interval = 25
+success_chance = 0.3
+success_event = "The Order slew a rampaging wyrm near the border, earning fame."
+failure_event = "An expedition into the wastes was wiped out by a dragon ambush."
+success_effects = [{type = "faction_rep", faction_id = "dragon_courts", delta = -5}]
+failure_effects = []
+
+# === THE VEIL (T5) ===
+
+[planar_watchers]
+id = "planar_watchers"
+name = "Planar Watchers"
+region = "the_veil"
+description = "An order dedicated to monitoring and maintaining the barriers between planes."
+default_reputation = 0
+
+[[planar_watchers.goals]]
+id = "maintain_barriers"
+description = "Repair tears in reality and prevent planar incursions"
+check_interval = 20
+success_chance = 0.5
+success_event = "The Watchers sealed a dangerous rift between the Shadowfell and the material world."
+failure_event = "A new planar breach opened, spilling elemental creatures into the Veil."
+success_effects = []
+failure_effects = []
+
+[fey_court_faction]
+id = "fey_court_faction"
+name = "Fey Court"
+region = "the_veil"
+description = "The court of the Fey, whose politics are as beautiful and deadly as their realm."
+default_reputation = 0
+
+[[fey_court_faction.goals]]
+id = "expand_influence"
+description = "Extend fey influence through the thinning Veil"
+check_interval = 25
+success_chance = 0.6
+success_event = "The Fey Court established a new embassy in the mortal-adjacent fragment."
+failure_event = "Shadow forces pushed back the fey presence in a contested region."
+success_effects = [{type = "faction_rep", faction_id = "planar_watchers", delta = -2}]
+failure_effects = [{type = "faction_rep", faction_id = "planar_watchers", delta = 2}]

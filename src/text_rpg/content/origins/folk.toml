@@ -1,0 +1,231 @@
+# Folk origins — common people shaped by hardship, fate, or circumstance
+
+[[origins]]
+id = "folk_hero"
+name = "Folk Hero"
+category = "folk"
+summary = "You rose from humble roots to defend your community, and now the road calls you onward."
+prologue = """You remember the day the wolves came down from the Whisperwood — a dozen of them, gaunt and desperate, tearing through the livestock pens while the village watch cowered behind the barricade. Nobody moved. Nobody except you.
+
+You grabbed old Harren's shovel from the fence post and charged into the fray, swinging wildly, screaming loud enough to wake the dead. You took a bite on your forearm that still aches in cold weather, but by dawn the wolves were scattered and three lambs were saved. The village celebrated for a week. They carved your name into the milestone at the crossroads.
+
+But the milestone felt more like a gravestone. The village was safe, and suddenly too small. So you packed your things, said your farewells, and walked through the gate at Thornfield Village with the shovel still slung across your back. Somewhere out there, something bigger needs doing."""
+ability_choices = ["strength", "constitution", "charisma"]
+skill_proficiencies = ["animal_handling", "survival"]
+starting_equipment = ["shovel", "common_clothes"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Rustic Hospitality"
+feature_description = "Common folk recognize your humble bearing and will offer you shelter and a meal. You gain advantage on Persuasion checks when seeking aid from farmers, laborers, and villagers."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "urchin"
+name = "Urchin"
+category = "folk"
+summary = "You grew up in the gutters of a port city, surviving by wit and quick fingers."
+prologue = """The docks at Saltmere never sleep, and neither did you — not properly. You learned early that sleep was a luxury, that a doorway could be a bedroom and a stolen apple could be a feast. The older kids taught you the trade: how to cut a purse without breaking stride, how to vanish into an alley before the mark turned around, how to tell a city guard from a plainclothes watchman by the way they walked.
+
+You were good at it. Better than most. But the older kids grew up into harder people, and the jobs they wanted you to run stopped being about survival and started being about cruelty. A knife in someone's ribs isn't the same as lifting a coin purse. You knew the difference, even if they didn't.
+
+So you slipped away one fog-thick morning, stowed aboard a fishing vessel, and ended up here at the Saltmere docks with nothing but a small knife and the clothes on your back. The air smells like salt and tar and opportunity. You've started over before. You can do it again."""
+ability_choices = ["dexterity", "wisdom", "constitution"]
+skill_proficiencies = ["sleight_of_hand", "stealth"]
+starting_equipment = ["small_knife", "common_clothes"]
+bonus_gold = 2
+starting_region = "iron_coast"
+starting_location = "saltmere_docks"
+feature_name = "City Secrets"
+feature_description = "You know the hidden passages and back alleys of urban areas. When in a settlement, you can find shortcuts and hidden routes that others would miss."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "orphan"
+name = "Orphan"
+category = "folk"
+summary = "Left on the steps of a village temple as an infant, you have always wondered where you truly belong."
+prologue = """They found you wrapped in a wool blanket on the temple steps during the first frost of the year, barely a month old, with no note and no name. Sister Maren took you in because that's what Sister Maren did — she took in every stray, every broken thing, every creature the world forgot about. She gave you a name, a bed, and a purpose: sweep the floors, tend the garden, say your prayers.
+
+You grew up watching other children through the temple windows. They had families, histories, surnames that meant something. You had questions. Who left you here? Why? The lucky coin you were found clutching — was it a gift or an afterthought?
+
+Now you're old enough to seek your own answers. Sister Maren pressed the coin back into your palm the morning you left and said, "The gods put you here for a reason, child. Go find out what it is." Thornfield Village is small, but every road leads somewhere. You intend to follow them all until one leads home."""
+ability_choices = ["wisdom", "dexterity", "constitution"]
+skill_proficiencies = ["perception", "stealth"]
+starting_equipment = ["common_clothes", "lucky_coin"]
+bonus_gold = 2
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Nobody's Child"
+feature_description = "Having grown up without a family name, you are difficult to trace or identify. You gain advantage on checks to conceal your identity or avoid being recognized."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "refugee"
+name = "Refugee"
+category = "folk"
+summary = "You fled a homeland ravaged by war or disaster and now seek safety in unfamiliar lands."
+prologue = """The smoke was the last thing you saw of home — a black column rising above the treeline, fed by everything you'd ever known. Your village, your neighbors' houses, the mill where your father worked, the garden where your mother grew herbs that smelled like summer. All of it burning.
+
+You walked for days. Then weeks. You crossed rivers swollen with spring melt, slept under hedgerows, bartered labor for bread at farmsteads that eyed you with suspicion. Other refugees joined you on the road — hollow-eyed families pushing carts, soldiers with no army left to serve. One by one they peeled away to wherever fate or desperation took them.
+
+You kept walking until the land turned wet and strange, until the trees grew from standing water and the air tasted of peat and rot. A trading post materialized from the mist: Murkfen, they called it. Not much to look at, but the people here don't ask where you came from. That's enough, for now."""
+ability_choices = ["constitution", "wisdom", "dexterity"]
+skill_proficiencies = ["survival", "insight"]
+starting_equipment = ["bedroll", "waterskin"]
+bonus_gold = 3
+starting_region = "sunken_reach"
+starting_location = "murkfen_trading_post"
+feature_name = "Hardened Resolve"
+feature_description = "Having survived the worst the world can offer, you are resistant to despair. You gain advantage on saving throws against being frightened."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "indentured_servant"
+name = "Indentured Servant"
+category = "folk"
+summary = "You served years under a cruel master to pay a family debt, and now your bond is finally fulfilled."
+prologue = """Seven years. Two thousand five hundred and fifty-five days of scrubbing floors, hauling grain, mending fences, and swallowing your pride along with whatever thin gruel the master's kitchen saw fit to provide. Your parents sold your labor to pay a debt they couldn't afford — a healer's fee for your younger sister, who lived because of it. You don't begrudge the choice. You begrudge the man who profited from it.
+
+Master Torwin was not cruel in the way of villains in stories. He didn't beat you or starve you. He simply treated you as furniture — something to be used, maintained at minimal cost, and replaced when worn out. The other servants learned not to look him in the eye. You never did learn that particular lesson.
+
+This morning he pressed a document into your hands — your writ of release, signed and sealed — and pointed at the door without a word. You walked out into the market square at Thornfield with nothing but the clothes on your back and a belt pouch containing your final wages. The sun felt different on your face. Sharper. The air tasted like freedom, which turns out tastes a lot like uncertainty."""
+ability_choices = ["constitution", "strength", "wisdom"]
+skill_proficiencies = ["athletics", "insight"]
+starting_equipment = ["common_clothes", "belt_pouch"]
+bonus_gold = 2
+starting_region = "verdant_reach"
+starting_location = "thornfield_market"
+feature_name = "Unbreakable Spirit"
+feature_description = "Years of servitude taught you to endure. Once per long rest, when you would be reduced to 0 hit points, you may instead be reduced to 1 hit point."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "plague_survivor"
+name = "Plague Survivor"
+category = "folk"
+summary = "You survived a terrible plague that killed most of your community, leaving you changed."
+prologue = """The Ashbloom Fever came in autumn, carried on spore-laden winds from somewhere deep in the wetlands. It started with a cough. Then the black spots appeared — blooming across the skin like dark flowers, each one a death sentence. Your village of two hundred was a village of thirty by midwinter.
+
+You should have died. The fever took you for nine days, and the healer — herself half-dead — had given up and moved on to patients she thought she could save. But on the tenth morning, you opened your eyes. The spots had faded to silver scars that still mottle your skin. Your body had fought the plague and won, though the victory left its marks: a persistent awareness of mortality, a nose that could smell sickness on the wind, and hands that learned to mix poultices out of pure necessity.
+
+You left the remnants of your village carrying the healer's kit she'd bequeathed you before the end. The bog trails of the Sunken Reach are lonely and damp, but the herbs that grow here are potent, and the isolation suits someone who has learned that the world can empty itself of people overnight."""
+ability_choices = ["constitution", "wisdom", "intelligence"]
+skill_proficiencies = ["medicine", "survival"]
+starting_equipment = ["herbalism_kit", "common_clothes"]
+bonus_gold = 3
+starting_region = "sunken_reach"
+starting_location = "bog_trails"
+feature_name = "Fever-Forged Constitution"
+feature_description = "Your body carries antibodies from surviving the plague. You have advantage on saving throws against disease and poison."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "war_orphan"
+name = "War Orphan"
+category = "folk"
+summary = "The border wars took your family and your childhood; the road has been your only home since."
+prologue = """You don't remember your parents' faces anymore. You remember sounds — your mother's scream, the crash of the door splintering inward, the thunder of hooves on packed earth. You were five, maybe six. A soldier pulled you from the wreckage of your home, set you on the road with a hundred other children, and pointed east. "Walk," he said. "Don't stop."
+
+So you walked. Through the Ashen Highlands, where the air smelled like sulfur and the ground was warm underfoot. Through refugee camps that were little better than open-air prisons. You learned to sleep with a knife in your hand and to never trust anyone who smiled too easily. The other children formed packs, and the packs had leaders, and the leaders were always the ones willing to do what others wouldn't. You survived by being useful — a lookout, a scout, a shadow that slipped between tents and came back with food.
+
+Now you're old enough that no one calls you a child anymore. The highland road stretches in both directions, and for the first time in your life, the choice of which way to walk is entirely your own."""
+ability_choices = ["dexterity", "constitution", "wisdom"]
+skill_proficiencies = ["stealth", "survival"]
+starting_equipment = ["small_knife", "bedroll"]
+bonus_gold = 2
+starting_region = "ashen_highlands"
+starting_location = "highland_road"
+feature_name = "War-Hardened Instincts"
+feature_description = "Growing up in conflict zones sharpened your reflexes. You cannot be surprised while conscious, and you gain a +2 bonus to initiative."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "amnesiac"
+name = "Amnesiac"
+category = "folk"
+summary = "You awoke with no memory of your past, carrying only a cryptic note and unanswered questions."
+prologue = """You wake face-down in tall grass, dew soaking through your clothes. Your head throbs with a pain that has no origin you can name. When you sit up, the world lurches sideways before settling into focus — a field, farmland, a village in the distance catching the morning sun.
+
+You reach for your name and find it. But everything else — where you came from, why you're here, the years that should stretch behind you like a road — is gone. A void where memory should be. You know things: the weight of a weapon, the taste of ale, the constellations overhead. Skills without stories. Knowledge without context. Your hands know how to do things your mind can't explain.
+
+Your pack lies nearby, carefully placed rather than dropped. In one pocket, a folded note in handwriting you don't recognize: "Trust no one. Find the tower. Remember." The ink is fresh. The paper is expensive. Someone wanted you to find this. You pocket the note, stand on unsteady legs, and start walking toward Thornfield Village. Somewhere in this world, your past is waiting. And someone, it seems, doesn't want you to find it."""
+ability_choices = ["intelligence", "wisdom", "charisma"]
+skill_proficiencies = ["investigation", "insight"]
+starting_equipment = ["mysterious_note", "common_clothes"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Fragmented Recall"
+feature_description = "Flashes of lost memory surface at unexpected moments. Once per long rest, you may gain proficiency in any one skill for a single check as a forgotten talent resurfaces."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "wandering_traveler"
+name = "Wandering Traveler"
+category = "folk"
+summary = "You have walked the roads for years, collecting stories and seeking a place to call your own."
+prologue = """The road behind you stretches for miles through rolling farmland and distant hills. You've walked for weeks now — through rain-soaked villages, past abandoned roadside shrines, and along trade routes thick with merchants and brigands alike. You've slept under bridges and in haylofts, shared fires with strangers who became friends for a night and were gone by morning. The road is the only constant.
+
+You don't run from anything. You never have. You simply haven't found the place that makes you want to stop. Every village has its charm — the baker who gives away yesterday's bread, the old woman who reads fortunes in tea leaves, the children who chase each other through market stalls. But by the second or third day, the itch returns. The horizon whispers. Your feet answer.
+
+Now, as the sun begins to dip below the treeline, the cobblestone roofs of Thornfield Village rise from the landscape ahead. Smoke curls from chimneys, and the scent of bread and woodsmoke carries on the evening breeze. You hitch your pack higher on your shoulders and step through the village gate. Maybe this time will be different. Maybe this is where the road was leading all along."""
+ability_choices = ["constitution", "wisdom", "charisma"]
+skill_proficiencies = ["survival", "persuasion"]
+starting_equipment = ["travelers_clothes", "bedroll", "waterskin"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Wanderer's Intuition"
+feature_description = "Years on the road have given you an instinct for safe paths and hidden dangers. You gain advantage on Survival checks to navigate unfamiliar terrain and avoid natural hazards."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "lost_child_of_prophecy"
+name = "Lost Child of Prophecy"
+category = "folk"
+summary = "An ancient prophecy speaks of a chosen one, and the signs point uncomfortably at you."
+prologue = """The dreams started when you were young — visions of a silver tower wreathed in light, a voice calling a name that might have been yours, symbols burning themselves into your eyelids that you could still trace in the morning. Your parents dismissed them as nightmares. The village priest did not. He went pale the first time you described them and spent three days locked in the temple archives before emerging with a scroll so old it crumbled at the edges.
+
+"The Luminarch Codex," he whispered, reading aloud in a language you shouldn't have understood but did. It spoke of a child born under a dead star, marked by dreams of silver, who would stand at the threshold between ages. The priest looked at you with an expression that was equal parts awe and pity. "You need to go to Thornfield," he said. "To the temple there. They'll know what to do."
+
+You traveled for days, the holy symbol the priest gave you clutched in your hand like a talisman. Now you stand before the Temple of Light in Thornfield, its white stone gleaming in the afternoon sun. You don't feel chosen. You feel tired and frightened and very, very young. But the dreams have stopped since you arrived, replaced by a quiet certainty that settles in your chest like a stone. Whatever this prophecy demands, it begins here."""
+ability_choices = ["charisma", "wisdom", "intelligence"]
+skill_proficiencies = ["insight", "religion"]
+starting_equipment = ["holy_symbol", "common_clothes"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "thornfield_temple"
+feature_name = "Prophetic Visions"
+feature_description = "Fragments of prophecy surface in your dreams. Once per long rest, you may ask the DM one yes-or-no question about an upcoming danger, receiving a cryptic but truthful vision."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []

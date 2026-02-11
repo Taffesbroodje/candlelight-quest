@@ -1,0 +1,401 @@
+# Stormhaven — weathered coastal town, L4-8
+
+[[locations]]
+id = "stormhaven_harbor"
+name = "Stormhaven Harbor"
+region_id = "stormhaven"
+description = "A bustling natural harbor sheltered by tall cliffs. Fishing boats and trade vessels rock at their moorings while dockworkers haul crates and barrels. The air tastes of salt and fish, and gulls wheel overhead."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "stormhaven_market"
+direction = "north"
+description = "Stone steps climb from the harbor to the market above."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "the_drowning_man"
+direction = "west"
+description = "A weathered tavern sign creaks in the wind."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "privateer_dock"
+direction = "east"
+description = "A separate pier extends to the eastern end of the harbor."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "sea_wall"
+direction = "south"
+description = "The stone sea wall stretches along the harbor's outer edge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "fishers_quarter"
+direction = "southwest"
+description = "Narrow lanes wind into the fishers' quarter."
+is_locked = false
+
+[[locations]]
+id = "stormhaven_market"
+name = "Stormhaven Market"
+region_id = "stormhaven"
+description = "An open-air market on the cliff above the harbor. Stalls sell fresh fish, whale oil, exotic imports, and nautical supplies. The wind whips awnings and sends loose papers flying."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "stormhaven_harbor"
+direction = "south"
+description = "Steps descend to the harbor below."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "harpooners_hall"
+direction = "east"
+description = "A large stone building with a harpoon-and-whale emblem."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "chandler_shop"
+direction = "west"
+description = "A well-stocked ship's chandlery occupies the market's west end."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "stormhaven_chapel"
+direction = "north"
+description = "A white chapel perches on the highest point of the cliff."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "stormhaven_north_road"
+direction = "northeast"
+description = "The north road climbs inland along the coast."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "stormhaven_east_road"
+direction = "east"
+description = "The east road heads toward the mountain coast."
+is_locked = false
+
+[[locations]]
+id = "harpooners_hall"
+name = "Harpooner's Hall"
+region_id = "stormhaven"
+description = "The imposing headquarters of the Harpooner's Guild, built from ship timbers and decorated with whale bones. Maps of hunting grounds cover the walls, and the smell of whale oil permeates everything."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "stormhaven_market"
+direction = "west"
+description = "The market sprawls outside the hall's entrance."
+is_locked = false
+
+[[locations]]
+id = "the_drowning_man"
+name = "The Drowning Man Tavern"
+region_id = "stormhaven"
+description = "A dark, smoky tavern built into the cliff face, its floor sticky with spilled grog. Sailors, fishermen, and less reputable sorts crowd the bar. A stuffed shark hangs above the fireplace."
+location_type = "tavern"
+
+[[locations.connections]]
+target_location_id = "stormhaven_harbor"
+direction = "east"
+description = "The tavern door opens onto the harbor docks."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "fishers_quarter"
+direction = "south"
+description = "A back door leads into the fishers' quarter."
+is_locked = false
+
+[[locations]]
+id = "stormhaven_chapel"
+name = "Chapel of the Storm"
+region_id = "stormhaven"
+description = "A white stone chapel on the highest cliff, dedicated to the god of seas and storms. Sailors pray here before voyages, leaving offerings of shells and coins. The wind howls constantly."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "stormhaven_market"
+direction = "south"
+description = "Steps descend to the market."
+is_locked = false
+
+[[locations]]
+id = "sea_wall"
+name = "Stormhaven Sea Wall"
+region_id = "stormhaven"
+description = "A massive stone wall protecting the harbor from the worst storms. Waves crash against its outer face, sending spray high into the air. Lookouts watch for approaching ships from the wall's towers."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "stormhaven_harbor"
+direction = "north"
+description = "The wall connects back to the harbor."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "stormhaven_lighthouse"
+direction = "west"
+description = "The wall extends toward the lighthouse on the western point."
+is_locked = false
+
+[[locations]]
+id = "privateer_dock"
+name = "Privateer's Dock"
+region_id = "stormhaven"
+description = "A separate pier at the harbor's eastern end, where faster, sleeker ships are moored. The crews here are better armed than typical sailors, and they watch strangers with suspicious eyes."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "stormhaven_harbor"
+direction = "west"
+description = "The main harbor lies to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "coral_caves"
+direction = "south"
+description = "A hidden path descends to sea-level caves."
+is_locked = false
+
+[[locations]]
+id = "net_menders_row"
+name = "Net Mender's Row"
+region_id = "stormhaven"
+description = "A long stretch of dockside where fishermen repair nets, mend sails, and swap stories. Colorful nets hang drying in the wind, and the smell of tar and twine is thick."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "fishers_quarter"
+direction = "north"
+description = "The row connects to the fishers' quarter."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "whale_beach"
+direction = "south"
+description = "A sandy path leads down to the whale processing beach."
+is_locked = false
+
+[[locations]]
+id = "stormhaven_lighthouse"
+name = "Stormhaven Lighthouse"
+region_id = "stormhaven"
+description = "A tall lighthouse on the western promontory, its beacon visible for miles. The keeper maintains it alone, and the isolation has made them eccentric. Storm petrels nest in the rocks below."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "sea_wall"
+direction = "east"
+description = "The sea wall connects back to the harbor."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "shipwreck_coast"
+direction = "south"
+description = "A treacherous path descends to the wreck-strewn coast."
+is_locked = false
+
+[[locations]]
+id = "whale_beach"
+name = "Whale Beach"
+region_id = "stormhaven"
+description = "A wide beach where whales are hauled ashore for processing. The stench is extraordinary. Blubber rendering fires burn in stone pits, and the sand is permanently stained dark."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "net_menders_row"
+direction = "north"
+description = "A sandy path leads back up to the docks."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "tidal_pools"
+direction = "east"
+description = "Rocky outcrops lead to tide pools around the point."
+is_locked = false
+
+[[locations]]
+id = "coral_caves"
+name = "Coral Caves"
+region_id = "stormhaven"
+description = "A network of sea caves at the base of the eastern cliffs, their walls encrusted with colorful coral and barnacles. At low tide, the caves are accessible on foot. At high tide, only by boat."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "privateer_dock"
+direction = "north"
+description = "A hidden path climbs back up to the privateer dock."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "kelp_forest"
+direction = "south"
+description = "The caves open to a submerged kelp forest at their deepest point."
+is_locked = false
+
+[[locations]]
+id = "shipwreck_coast"
+name = "Shipwreck Coast"
+region_id = "stormhaven"
+description = "A jagged stretch of coast littered with the remains of ships dashed against the rocks. Broken hulls and scattered cargo offer scavenging opportunities, but the currents are deadly."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "stormhaven_lighthouse"
+direction = "north"
+description = "A dangerous climb leads back up to the lighthouse."
+is_locked = false
+
+[[locations]]
+id = "old_fort"
+name = "Old Fort Stormwatch"
+region_id = "stormhaven"
+description = "The crumbling remains of an ancient coastal fortress, its walls eaten by salt wind and time. Smugglers and vagrants sometimes shelter here, and locals say it's haunted."
+location_type = "ruins"
+
+[[locations.connections]]
+target_location_id = "stormhaven_north_road"
+direction = "south"
+description = "A path leads back to the north road."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "storm_point"
+direction = "east"
+description = "A windswept trail leads to the furthest point of land."
+is_locked = false
+
+[[locations]]
+id = "stormhaven_north_road"
+name = "North Coast Road"
+region_id = "stormhaven"
+description = "A road following the coast northward, carved into the cliffside in places. The sea roars far below, and the wind tries to push travelers over the edge."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "stormhaven_market"
+direction = "southwest"
+description = "The road leads back down to Stormhaven's market."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "old_fort"
+direction = "north"
+description = "The road passes the ruins of the old fort."
+is_locked = false
+
+[locations.properties]
+border_region = "iron_coast"
+border_direction = "north"
+
+[[locations]]
+id = "stormhaven_east_road"
+name = "Mountain Coast Road"
+region_id = "stormhaven"
+description = "A road climbing east along the coast toward the mountains. The terrain grows rockier and the wind colder. Mountain goats watch from ledges above."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "stormhaven_market"
+direction = "west"
+description = "The road leads back to Stormhaven."
+is_locked = false
+
+[locations.properties]
+border_region = "silverpeak"
+border_direction = "east"
+
+[[locations]]
+id = "fishers_quarter"
+name = "Fisher's Quarter"
+region_id = "stormhaven"
+description = "A maze of narrow streets and cramped houses where the fishing families live. Nets hang from every balcony, and cats prowl the alleys. The community is tight-knit and wary of outsiders."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "stormhaven_harbor"
+direction = "northeast"
+description = "Lanes wind up to the main harbor."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "the_drowning_man"
+direction = "north"
+description = "The tavern's back door is nearby."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "net_menders_row"
+direction = "south"
+description = "Steps lead down to the net mending area."
+is_locked = false
+
+[[locations]]
+id = "chandler_shop"
+name = "Griff's Ship Chandlery"
+region_id = "stormhaven"
+description = "A well-stocked shop selling everything a ship needs — rope, tar, canvas, nails, lanterns, and navigational instruments. Barrels and coils of line fill every corner."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "stormhaven_market"
+direction = "east"
+description = "The shop opens onto the market square."
+is_locked = false
+
+[[locations]]
+id = "tidal_pools"
+name = "Tidal Pools"
+region_id = "stormhaven"
+description = "Rocky platforms exposed at low tide, filled with shallow pools teeming with anemones, starfish, crabs, and small fish. Beautiful but slippery — and sometimes hiding larger creatures."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "whale_beach"
+direction = "west"
+description = "The rocky shore leads back to Whale Beach."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "kelp_forest"
+direction = "south"
+description = "At low tide, a passage leads to the kelp forest caves."
+is_locked = false
+
+[[locations]]
+id = "storm_point"
+name = "Storm Point"
+region_id = "stormhaven"
+description = "The furthest point of land jutting into the sea, constantly battered by waves and wind. Standing here feels like standing at the edge of the world. Lightning strikes the rocks during storms."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "old_fort"
+direction = "west"
+description = "A windswept trail leads back toward the old fort."
+is_locked = false
+
+[[locations]]
+id = "kelp_forest"
+name = "Sunken Kelp Forest"
+region_id = "stormhaven"
+description = "A submerged forest of giant kelp visible through crystal-clear water. The fronds sway in the current like green ghosts, and strange bioluminescent creatures flicker in the depths."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "coral_caves"
+direction = "north"
+description = "The kelp thins near the coral cave entrance."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "tidal_pools"
+direction = "north"
+description = "Shallow passages connect to the tidal pools."
+is_locked = false

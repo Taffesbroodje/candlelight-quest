@@ -1,0 +1,243 @@
+# =============================================================================
+# Arcane Origins — Those shaped by magic, mystery, and forces beyond mortal ken
+# =============================================================================
+
+[[origins]]
+id = "hedge_witch"
+name = "Hedge Witch"
+category = "arcane"
+summary = "A solitary practitioner of folk magic who tends to the thin places between civilization and the wild."
+prologue = """
+The smell of dried yarrow and foxglove still clings to your fingers. For as long as you can remember, the old ways came naturally to you — the whispered cantrips over a simmering pot, the reading of bird flights at dusk, the patient gathering of roots by moonlight. You never studied in any tower or academy. The land itself was your teacher, and the creatures that crept through the briars were your only classmates.
+
+The folk of Briarhaven have always regarded you with a mixture of gratitude and unease. They come to your door when fevers strike or when a birthing goes wrong, pressing copper coins into your palm with averted eyes. But they also cross the road when they see you coming, and children dare each other to touch your gate. You have made your peace with this. The hedge between the tame world and the wild one is where you belong, and someone must tend it.
+
+Now something stirs in the deep thickets — a wrongness that makes the birds fall silent and the foxes pace in circles. The old ways are whispering warnings you cannot ignore, and for the first time in years, you must leave the safety of your threshold and walk the wilder paths beyond."""
+ability_choices = ["wisdom", "intelligence", "charisma"]
+skill_proficiencies = ["arcana", "medicine"]
+starting_equipment = ["herbalism_kit", "crystal_focus"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "briarhaven_village"
+feature_name = "Hedge Wisdom"
+feature_description = "Your knowledge of folk remedies and natural magic grants advantage on checks to identify herbs, poisons, and minor enchantments found in the wild."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "cursed_one"
+name = "Cursed One"
+category = "arcane"
+summary = "A soul marked by a dark enchantment that grants terrible insight at a terrible cost."
+prologue = """
+You do not remember the moment it took hold — only the aftermath. Perhaps it was a bargain struck in desperation, a relic touched without caution, or a hex laid upon your bloodline generations before you drew breath. What you know is this: the curse lives beneath your skin like a second heartbeat, cold and persistent. Some days it is quiet. Other days it whispers things you wish you did not know — the secret shames of strangers, the rot beneath bright smiles, the exact moment a candle flame will gutter and die.
+
+The priests at Murkfen Shrine have studied you with equal parts pity and fascination. They have tried their blessings, their holy water, their earnest prayers. Nothing takes. The curse is woven too deeply, tangled with your own life force in ways that defy clean separation. One old priestess, braver or more honest than the rest, finally told you the truth: whatever did this to you intended it as a gift. That thought haunts you more than the curse itself.
+
+You have learned to endure. The dark sight comes and goes, and you have trained yourself to sift useful knowledge from the noise of suffering. But lately the curse has grown louder, more insistent, pulling your attention south and east toward something ancient stirring in the sunken places. You suspect the source of your affliction is awakening — and that it expects you to answer."""
+ability_choices = ["constitution", "wisdom", "charisma"]
+skill_proficiencies = ["arcana", "insight"]
+starting_equipment = ["crystal_focus", "common_clothes"]
+bonus_gold = 3
+starting_region = "sunken_reach"
+starting_location = "murkfen_shrine"
+feature_name = "Curse Sight"
+feature_description = "Your affliction lets you sense magical auras and hidden enchantments nearby, granting advantage on Arcana checks to detect active magic or identify cursed objects."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "planar_touched"
+name = "Planar Touched"
+category = "arcane"
+summary = "Born near a rift between worlds, your very essence carries the residue of another plane."
+prologue = """
+Your mother tells the story differently depending on who asks. To neighbors she says it was a difficult birth and leaves it at that. To the midwife who was there — the one who saw the light that wasn't firelight, who felt the floor tremble, who watched the shadows in the room reach toward your crib — she says nothing at all. You have pieced the truth together over the years from overheard whispers and your own strange nature: you were born at the Fey Crossing on the night the veil thinned, and something from the other side touched you before you even opened your eyes.
+
+The evidence is subtle but undeniable. Flowers lean toward you when you pass. Small animals watch you with an intelligence that unsettles other people. Your dreams are not dreams at all but visits to places with too many colors and skies that sing. Sometimes you catch yourself humming melodies that no mortal composer ever wrote, and the air around you shimmers faintly, like heat haze on a winter day.
+
+The Crossing calls to you still. You have stood at its edge a hundred times, feeling the pull in your chest like a hook behind your sternum. You have always turned back — until now. The boundary is weakening, and things are slipping through that should not be here. You are the only one who can feel it, and perhaps the only one who can close what is opening."""
+ability_choices = ["charisma", "intelligence", "constitution"]
+skill_proficiencies = ["arcana", "religion"]
+starting_equipment = ["crystal_focus", "incense_sticks"]
+bonus_gold = 8
+starting_region = "thornwild"
+starting_location = "fey_crossing"
+feature_name = "Between Worlds"
+feature_description = "Your planar heritage lets you sense rifts, portals, and extraplanar entities within a short distance, and you have advantage on saving throws against being banished or teleported against your will."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "failed_apprentice"
+name = "Failed Apprentice"
+category = "arcane"
+summary = "Once the student of a proper wizard, you were cast out before completing your training — but not before learning enough to be dangerous."
+prologue = """
+The letter of dismissal still sits folded in the bottom of your pack, the ink long since faded but the words burned into memory. "Lacks discipline. Prone to improvisation. Dangerous to self and others." Your master — a precise, humorless woman who believed magic was architecture, not art — had no patience for a student who asked "what if" instead of "how exactly." The final straw was the incident with the summoning circle, the one that scorched the ceiling of her study and left her familiar bald for a month. You maintain it was a breakthrough. She called it grounds for expulsion.
+
+So you returned to Thornfield with half an education and a spellbook missing its last forty pages. The villagers, who had been so proud when you left to study the arcane arts, now regard you with the particular disappointment reserved for those who almost amounted to something. You work odd jobs, mend things with cantrips when no one is looking, and spend your evenings poring over your incomplete notes, trying to reconstruct what you were never allowed to finish learning.
+
+But incomplete knowledge has its own kind of power. You learned just enough theory to understand the gaps, and your improvisational instincts — the very thing that got you expelled — have led you to solutions no proper wizard would ever attempt. When strange lights began appearing over the old ruins north of town, the village council did not send for your former master. They came to you. And despite everything, you said yes."""
+ability_choices = ["intelligence", "dexterity", "wisdom"]
+skill_proficiencies = ["arcana", "investigation"]
+starting_equipment = ["spellbook_fragment", "ink_and_quill"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Improvised Cantrips"
+feature_description = "Your incomplete but creative training lets you attempt unorthodox magical solutions — you gain advantage on Arcana checks when trying to jury-rig or adapt a spell for an unintended purpose."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "dream_walker"
+name = "Dream Walker"
+category = "arcane"
+summary = "You walk the borderland between sleep and waking, drawing visions and power from the realm of dreams."
+prologue = """
+Sleep has never been rest for you. Since childhood, your nights have been journeys — vast, vivid wanderings through landscapes that feel more real than the waking world. You have walked cities of glass beneath violet skies, spoken with figures who claim to be the dreaming echoes of the dead, and mapped coastlines that exist in no atlas. For years you believed everyone dreamed this way. The look on your mother's face when you described your nightly travels told you otherwise.
+
+The hermit on the island took you in when no one else understood. An old mystic who had spent decades studying the boundary between consciousness and the deeper dark, she recognized what you were immediately. "Dream Walker," she said, as though naming a species. She taught you to navigate deliberately, to carry intentions into sleep like a lantern, and to bring things back — knowledge, warnings, fragments of prophecy. She also taught you the dangers: the things that live in the deep dream, the ones that wear familiar faces and whisper invitations to stay forever.
+
+Last night's dream was different. The landscapes you know so well were crumbling, dissolving into a static grey nothing that swallowed everything it touched. At the center of the void stood a door you had never seen before, and behind it you heard a sound like a world holding its breath. You woke with the certainty that the dream realm is dying, and that whatever waits behind that door is the cause — or the cure."""
+ability_choices = ["wisdom", "charisma", "intelligence"]
+skill_proficiencies = ["arcana", "insight"]
+starting_equipment = ["dream_catcher", "incense_sticks"]
+bonus_gold = 5
+starting_region = "sunken_reach"
+starting_location = "hermit_island"
+feature_name = "Lucid Visions"
+feature_description = "During long rests, you may glean cryptic hints about nearby dangers or hidden opportunities through your dreams, granting occasional prophetic insight at the DM's discretion."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "witch_hunter"
+name = "Witch Hunter"
+category = "arcane"
+summary = "Trained to track and neutralize rogue spellcasters, you wield knowledge of magic as a weapon against it."
+prologue = """
+The order found you young. A child in Cinderhold with an unusual resistance to enchantment, who could look at a glamoured coin and see the copper beneath the illusion. They tested you — cold iron, true silver, the recitation of twelve binding names — and when you passed, they took you from your family with promises of purpose and pay. The training was brutal: years of studying every school of magic not to practice it, but to dismantle it. You learned to read the gestures of a casting wizard the way a soldier reads an enemy's footwork. You memorized the verbal components of a hundred spells so you could interrupt them mid-syllable.
+
+You were good at the work. Perhaps too good. The order's mandate was clear — hunt those who use magic to harm the innocent — but the line between "rogue spellcaster" and "village healer who knows a few cantrips" proved thinner than your superiors admitted. The last assignment broke something in you: a girl of sixteen, barely able to light a candle with her mind, denounced by a neighbor with a grudge. Your handler called her a threat. You called it murder. You walked away that night and did not look back.
+
+Now you carry the order's training without its convictions, a weapon without a wielder. You have settled near the gate at Cinderhold, keeping watch on the mountain passes where dark things sometimes descend. The order considers you a deserter. The people here consider you a guardian. You are still deciding which word fits better."""
+ability_choices = ["wisdom", "intelligence", "strength"]
+skill_proficiencies = ["arcana", "investigation"]
+starting_equipment = ["holy_symbol", "manacles"]
+bonus_gold = 10
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_gate"
+feature_name = "Spell Sense"
+feature_description = "Your training lets you identify when a creature within close range is casting a spell or concentrating on one, and you can attempt to determine the spell's school of magic."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "awakened"
+name = "Awakened"
+category = "arcane"
+summary = "Once magically inert, a sudden and unexplained awakening flooded you with arcane awareness overnight."
+prologue = """
+For twenty-three years you were ordinary. You could not have told a cantrip from a card trick, and magic was something that happened to other people — the gifted, the bloodlined, the studious. You were none of these things. You kept bees. You mended fences. You lived a life of honest, unremarkable labor at the edge of the Thornwild, and you were content. Then one autumn evening, as you walked the trail near the Fey Crossing, the world cracked open and poured itself into your skull.
+
+You woke three days later in a stranger's home with no memory of how you arrived. But everything was different. You could see the threads of magic woven through the air like cobwebs catching light. The hum of enchantment in old wood, the pulse of life force in living things, the faint geometric patterns that underlay reality itself — all of it suddenly, overwhelmingly visible. The old journal you found clutched in your hand was not yours, yet it was written in your handwriting, filled with diagrams and formulae you do not remember learning.
+
+The druids of the Thornwild say your awakening was natural, the rare blooming of a latent gift triggered by proximity to the Crossing. The scholars you have consulted disagree — they say it was too sudden, too complete, and that something chose to open a door in your mind. You spend your days now learning to control what was given to you, and your nights wondering who — or what — gave it, and what it expects in return."""
+ability_choices = ["intelligence", "wisdom", "charisma"]
+skill_proficiencies = ["arcana", "nature"]
+starting_equipment = ["crystal_focus", "old_journal"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "fey_crossing"
+feature_name = "Raw Perception"
+feature_description = "Your sudden awakening left your magical senses unnaturally sharp — you can perceive faint magical residue on objects and locations, granting advantage on Arcana checks to detect lingering enchantments."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "rune_scriber"
+name = "Rune Scriber"
+category = "arcane"
+summary = "A meticulous artisan of magical inscription, you bind power into carved stone and inked vellum."
+prologue = """
+The dwarven runesmiths of Cinderhold Forge will tell anyone who listens that rune magic is the oldest and purest form of the art — magic made permanent, made solid, hammered into stone and steel where it cannot lie or twist. You believe them. You spent seven years as an apprentice in the deep workshops beneath the forge, learning to carve sigils so precise that a single misplaced stroke could turn a ward into a bomb. Your hands bear the tiny scars of a hundred such lessons, and your eyes have the permanent squint of someone who has spent too many hours working by lamplight on details finer than a hair.
+
+Your specialty was always transcription — the painstaking art of copying ancient runes from crumbling originals onto fresh stone without losing a whisper of their power. It was in this work that you made the discovery that changed everything. A set of tablets recovered from a collapsed mine shaft bore runes in no known system, predating even the oldest dwarven inscriptions by millennia. When you traced them with your stylus, you felt something answer — a resonance in the stone itself, as though the runes were not merely symbols but sleeping voices waiting to be spoken.
+
+The master runesmiths dismissed your findings. Ancient runes are always being discovered, they said, and they always turn out to be decorative. But you know what you felt. You have spent every spare hour since then studying the unknown script, and you have begun to reproduce it — carefully, in controlled conditions, with extensive notes. The runes work. They do things no known system can do. And the deeper you dig into their grammar, the more you suspect they were left here deliberately, waiting for someone patient enough to read them."""
+ability_choices = ["intelligence", "dexterity", "wisdom"]
+skill_proficiencies = ["arcana", "history"]
+starting_equipment = ["rune_stones", "ink_and_quill"]
+bonus_gold = 10
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_forge"
+feature_name = "Runic Fluency"
+feature_description = "You can read and identify magical runes, glyphs, and inscriptions with ease, gaining advantage on checks to decipher arcane writing or detect glyph-based traps."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "spirit_medium"
+name = "Spirit Medium"
+category = "arcane"
+summary = "A conduit between the living and the dead, you hear the whispers of spirits others cannot perceive."
+prologue = """
+The dead talk to you. They always have. As a child you thought the pale figures at the edges of rooms were simply shy relatives, and you could never understand why the adults became upset when you relayed their messages. By the time you were old enough to understand the difference between the living and the dead, the boundary had already blurred beyond recovery. Spirits drift toward you like moths to a lantern — the confused, the angry, the lonely, the ones with unfinished business that pins them to the mortal world like nails through a hem.
+
+The priests at Murkfen Shrine recognized your gift and gave you a place among them. In the swamp-damp silence of the shrine, surrounded by candles and old bones and the heavy smell of temple incense, you learned to manage the flood of spectral voices. You learned to set boundaries, to open and close the door at will rather than standing helpless as the dead poured through. The priests taught you the rites of passage — the prayers and rituals that ease a spirit's crossing to whatever waits beyond — and you discovered a vocation in the work. You are a ferryman of sorts, helping the stranded dead find their way home.
+
+But not all spirits wish to leave, and not all of them are kind. Lately the dead at Murkfen have grown agitated, speaking over each other in a rising babble of warnings you cannot parse. Something is disturbing the rest of the departed — something old and hungry that moves through the sunken places below the shrine. The living cannot hear it. The dead are screaming about it. And you stand, as always, in between."""
+ability_choices = ["wisdom", "charisma", "intelligence"]
+skill_proficiencies = ["insight", "religion"]
+starting_equipment = ["incense_sticks", "holy_symbol"]
+bonus_gold = 5
+starting_region = "sunken_reach"
+starting_location = "murkfen_shrine"
+feature_name = "Spirit Whispers"
+feature_description = "You can sense the presence of undead and lingering spirits nearby, and you have advantage on checks to communicate with or gain information from incorporeal entities."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "wild_magic_survivor"
+name = "Wild Magic Survivor"
+category = "arcane"
+summary = "You survived a catastrophic wild magic surge that left you changed, unstable, and crackling with unpredictable power."
+prologue = """
+The explosion that destroyed the overgrown ruins was not your fault. Or rather, it was your fault in the way that stepping on a buried landmine is your fault — you did not place it there, but you were the one who set it off. The old stones had been saturated with wild magic for centuries, layer upon layer of unstable enchantment left behind by whoever built the place and whatever destroyed them. All it took was one careless spark from your campfire, one stray wisp of ambient magic drawn to the flame, and the entire hillside detonated in a column of prismatic light visible from three villages away.
+
+You should have died. Everyone says so. The blast crater is forty feet across and still hums with residual energy that makes compasses spin and milk curdle. Instead, you woke at the edge of the destruction without a scratch on you, your hair standing on end and your blood singing with a power that was not there before. The wild magic did not kill you — it chose you, or perhaps simply spilled into the nearest available vessel. Either way, you are now a living reservoir of chaotic arcane energy that surges and crackles at the worst possible moments.
+
+You have tried to control it. Meditation helps, sometimes. Distance from other magic sources helps more. But the power has a mind of its own, manifesting in small, startling ways — flowers blooming from your footprints, your shadow moving independently, the occasional involuntary levitation during strong emotions. You have returned to the ruins seeking answers, camping at their edge, studying the residual patterns for some clue to what was stored here and why it bonded to you. The answers, you suspect, will not be comforting."""
+ability_choices = ["constitution", "charisma", "intelligence"]
+skill_proficiencies = ["arcana", "survival"]
+starting_equipment = ["crystal_focus", "common_clothes"]
+bonus_gold = 3
+starting_region = "thornwild"
+starting_location = "overgrown_ruins"
+feature_name = "Chaotic Resilience"
+feature_description = "Your body has adapted to wild magic surges, granting you advantage on saving throws against random or chaotic magical effects and resistance to the first instance of force damage each day."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []

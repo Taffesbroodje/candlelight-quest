@@ -1,0 +1,6 @@
+id = "sunken_reach"
+name = "The Sunken Reach"
+description = "A vast swamp delta where murky waterways wind between islands of sodden earth and rotting trees. The Sunken Reach was once home to a great civilization, but their temples and monuments have long since sunk into the mire. Dangerous creatures lurk beneath the brackish water, and the few inhabitants cling to stilt-houses above the muck."
+level_range_min = 1
+level_range_max = 5
+climate = "swamp"

@@ -1,0 +1,319 @@
+# Embercrown encounters — L10-16
+
+[[encounters]]
+id = "fire_elementals"
+name = "Fire Elementals"
+location_ids = ["fire_elemental_nexus", "volcanic_vents", "lava_falls"]
+encounter_chance = 0.30
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.5},
+]
+gold_min = 10
+gold_max = 30
+
+[[encounters.entities]]
+id = "fire_elemental"
+name = "Fire Elemental"
+entity_type = "enemy"
+description = "A roiling mass of living flame that surges forward with crackling intensity. The air around it shimmers and warps, and anything flammable nearby ignites instantly."
+level = 8
+hp_max = 45
+ac = 13
+count_min = 2
+count_max = 4
+xp_value = 150
+
+[encounters.entities.ability_scores]
+strength = 14
+dexterity = 16
+constitution = 14
+intelligence = 5
+wisdom = 10
+charisma = 6
+
+[[encounters.entities.attacks]]
+name = "Fire Touch"
+damage_dice = "2d6"
+damage_bonus = 3
+damage_type = "fire"
+
+[[encounters]]
+id = "fire_giant_revenants"
+name = "Fire Giant Revenants"
+location_ids = ["fire_giant_ruins", "giant_burial_ground"]
+encounter_chance = 0.25
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "iron_ingot", chance = 0.4},
+    {id = "soul_gem", chance = 0.15},
+    {id = "healing_potion", chance = 0.3},
+]
+gold_min = 30
+gold_max = 70
+
+[[encounters.entities]]
+id = "fire_giant_revenant"
+name = "Fire Giant Revenant"
+entity_type = "enemy"
+description = "The undead remnant of a Fire Giant warrior, still burning with the fury of its ancient kingdom. Molten cracks run through its stone-like skin, and its eyes glow with hateful fire."
+level = 10
+hp_max = 65
+ac = 16
+count_min = 1
+count_max = 2
+xp_value = 300
+
+[encounters.entities.ability_scores]
+strength = 20
+dexterity = 8
+constitution = 18
+intelligence = 6
+wisdom = 10
+charisma = 5
+
+[[encounters.entities.attacks]]
+name = "Giant Fist"
+damage_dice = "3d8"
+damage_bonus = 5
+damage_type = "bludgeoning"
+
+[[encounters]]
+id = "magma_drakes"
+name = "Magma Drakes"
+location_ids = ["deep_caldera", "crystal_caverns"]
+encounter_chance = 0.25
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "dragon_scale_fragment", chance = 0.2},
+    {id = "beast_hide", chance = 0.4},
+]
+gold_min = 20
+gold_max = 50
+
+[[encounters.entities]]
+id = "magma_drake"
+name = "Magma Drake"
+entity_type = "enemy"
+description = "A reptilian predator with scales of cooled obsidian and veins of molten rock. It prowls the deep caldera, hunting anything foolish enough to venture near its territory."
+level = 9
+hp_max = 52
+ac = 15
+count_min = 1
+count_max = 3
+xp_value = 200
+
+[encounters.entities.ability_scores]
+strength = 16
+dexterity = 14
+constitution = 16
+intelligence = 5
+wisdom = 12
+charisma = 8
+
+[[encounters.entities.attacks]]
+name = "Fire Breath"
+damage_dice = "2d8"
+damage_bonus = 0
+damage_type = "fire"
+
+[[encounters.entities.attacks]]
+name = "Bite"
+damage_dice = "1d10"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[encounters]]
+id = "cult_raid"
+name = "Cult Raid"
+location_ids = ["cultist_hideout", "mining_tunnels_east"]
+encounter_chance = 0.30
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.4},
+    {id = "nightshade", chance = 0.2},
+    {id = "healing_potion", chance = 0.2},
+]
+gold_min = 15
+gold_max = 40
+
+[[encounters.entities]]
+id = "fire_cultist"
+name = "Fire Cultist"
+entity_type = "enemy"
+description = "A robed figure bearing the brand of the sleeping Fire Giant king. Their eyes glow with fanatical devotion, and they wield fire magic with reckless abandon."
+level = 8
+hp_max = 38
+ac = 14
+count_min = 3
+count_max = 5
+xp_value = 150
+
+[encounters.entities.ability_scores]
+strength = 12
+dexterity = 14
+constitution = 13
+intelligence = 14
+wisdom = 12
+charisma = 14
+
+[[encounters.entities.attacks]]
+name = "Fire Bolt"
+damage_dice = "2d10"
+damage_bonus = 0
+damage_type = "fire"
+
+[[encounters.entities.attacks]]
+name = "Ritual Dagger"
+damage_dice = "1d4"
+damage_bonus = 2
+damage_type = "piercing"
+
+# -- Puzzle Encounters --
+
+[[encounters]]
+id = "volcanic_hazards"
+name = "Volcanic Hazards"
+location_ids = ["volcanic_vents", "sulfur_flats"]
+encounter_chance = 0.20
+fight_type = "puzzle"
+description = "The ground shakes and cracks appear, releasing jets of superheated steam. A path through exists, but you must read the patterns of steam release to time your crossing."
+
+[encounters.puzzle]
+puzzle_type = "trap"
+dc = 15
+trap_damage = "4d6"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.4},
+]
+gold_min = 10
+gold_max = 30
+
+[[encounters]]
+id = "mine_collapse"
+name = "Mine Collapse"
+location_ids = ["mining_tunnels_east", "crystal_caverns"]
+encounter_chance = 0.20
+fight_type = "puzzle"
+description = "Supports crack and the tunnel begins to collapse. Dust fills the air as rocks fall. You need to brace the ceiling, find an alternate route, or outrun the collapse."
+
+[encounters.puzzle]
+puzzle_type = "trap"
+dc = 16
+trap_damage = "4d8"
+
+[encounters.loot]
+items = [
+    {id = "iron_ingot", chance = 0.5},
+    {id = "arcane_dust", chance = 0.3},
+]
+gold_min = 15
+gold_max = 40
+
+# -- Boss Encounters --
+
+[[encounters]]
+id = "arena_challenges"
+name = "Arena Challenges"
+location_ids = ["embercrown_arena"]
+encounter_chance = 0.20
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "healing_potion", chance = 0.6},
+    {id = "longsword", chance = 0.2},
+    {id = "chain_mail", chance = 0.1},
+]
+gold_min = 50
+gold_max = 150
+
+[[encounters.entities]]
+id = "arena_gladiator"
+name = "Arena Gladiator"
+entity_type = "enemy"
+description = "A seasoned arena fighter clad in fire-blackened armor, wielding a flamberge wreathed in magical flame. They fight with the brutal efficiency of one who has survived a hundred bouts."
+level = 10
+hp_max = 70
+ac = 17
+count_min = 1
+count_max = 1
+xp_value = 500
+
+[encounters.entities.ability_scores]
+strength = 18
+dexterity = 16
+constitution = 16
+intelligence = 10
+wisdom = 12
+charisma = 14
+
+[[encounters.entities.attacks]]
+name = "Flamberge"
+damage_dice = "2d6"
+damage_bonus = 4
+damage_type = "fire"
+
+[[encounters.entities.attacks]]
+name = "Shield Bash"
+damage_dice = "1d8"
+damage_bonus = 4
+damage_type = "bludgeoning"
+
+[[encounters]]
+id = "phoenix_encounter"
+name = "Phoenix Encounter"
+location_ids = ["phoenix_roost"]
+encounter_chance = 0.10
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.8},
+    {id = "soul_gem", chance = 0.3},
+    {id = "healing_potion", chance = 0.6},
+]
+gold_min = 80
+gold_max = 200
+
+[[encounters.entities]]
+id = "phoenix"
+name = "Phoenix"
+entity_type = "enemy"
+description = "A magnificent bird of pure fire, its wingspan vast enough to cast shadows across the caldera. Sacred to Embercrown, it is as beautiful as it is deadly. Its death is never permanent."
+level = 14
+hp_max = 120
+ac = 16
+count_min = 1
+count_max = 1
+xp_value = 1000
+
+[encounters.entities.ability_scores]
+strength = 14
+dexterity = 18
+constitution = 16
+intelligence = 14
+wisdom = 16
+charisma = 20
+
+[[encounters.entities.attacks]]
+name = "Fire Burst"
+damage_dice = "4d8"
+damage_bonus = 0
+damage_type = "fire"
+
+[[encounters.entities.attacks]]
+name = "Wing Buffet"
+damage_dice = "2d10"
+damage_bonus = 3
+damage_type = "bludgeoning"

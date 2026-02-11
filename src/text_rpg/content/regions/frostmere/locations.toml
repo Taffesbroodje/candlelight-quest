@@ -1,0 +1,535 @@
+# Frostmere — frozen lake city, L10-16
+
+[[locations]]
+id = "frostmere_gate"
+name = "Frostmere Gate"
+region_id = "frostmere"
+description = "The main gate of Frostmere, carved from a glacier. Ice walls shimmer with protective enchantments. Guards in fur-lined armor stamp their feet against the cold."
+location_type = "town"
+
+[[locations.connections]]
+target_location_id = "ice_palace"
+direction = "north"
+description = "A broad avenue of packed snow leads north to the gleaming Ice Palace."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "frost_market"
+direction = "east"
+description = "The sounds of merchants and the clinking of coin drift from the frost market."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "longhouse_quarter"
+direction = "west"
+description = "Smoke rises from longhouse chimneys to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "blizzard_pass"
+direction = "south"
+description = "The southern road descends into a narrow mountain pass frequently shrouded in blizzards."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "northern_road"
+direction = "north"
+description = "A well-worn road leads north into the frozen wilderness."
+is_locked = false
+
+[[locations]]
+id = "ice_palace"
+name = "Ice Palace"
+region_id = "frostmere"
+description = "The seat of Frostmere's governance, a palace sculpted entirely from enchanted ice. Light refracts through the walls, casting rainbow patterns on every surface."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "frostmere_gate"
+direction = "south"
+description = "The main avenue leads south back to the city gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "aurora_temple"
+direction = "east"
+description = "A crystal-paved path leads east to the Aurora Temple."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "frostmere_arena"
+direction = "west"
+description = "The roar of the crowd echoes from the arena to the west."
+is_locked = false
+
+[[locations]]
+id = "frozen_lake_surface"
+name = "Frozen Lake Surface"
+region_id = "frostmere"
+description = "The vast frozen lake that gives the city its name. Ice fishers drill holes, sleds cross between settlements, and on clear days you can see the ruins beneath."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "frostmere_gate"
+direction = "south"
+description = "The city gate is visible across the ice to the south."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ice_fishing_village"
+direction = "east"
+description = "Smoke from fishing huts rises to the east."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "shipwreck_coast_north"
+direction = "west"
+description = "Broken masts and frozen hulls dot the western coastline."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "frozen_waterfall"
+direction = "north"
+description = "A wall of frozen cascade glimmers in the distance to the north."
+is_locked = false
+
+[[locations]]
+id = "under_ice_city"
+name = "Under-Ice City"
+region_id = "frostmere"
+description = "An ancient city visible through the clear ice, now accessible through cracks that have appeared. The architecture is alien and the water impossibly cold."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "frozen_lake_surface"
+direction = "up"
+description = "Cracks in the ice above lead back to the frozen lake surface."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "buried_ruins"
+direction = "south"
+description = "A flooded passage descends deeper into the buried ruins."
+is_locked = false
+
+[[locations]]
+id = "aurora_temple"
+name = "Aurora Temple"
+region_id = "frostmere"
+description = "A temple where priests commune with the northern lights. The aurora borealis is visible inside at all times, and the air tingles with divine energy."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "ice_palace"
+direction = "west"
+description = "The crystal path leads west back to the Ice Palace."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "enchanter_spire"
+direction = "south"
+description = "A stairway of blue ice descends to the Enchanter's Spire."
+is_locked = false
+
+[[locations]]
+id = "frost_market"
+name = "Frost Market"
+region_id = "frostmere"
+description = "An outdoor market where goods are preserved by the perpetual cold. Furs, ice-enchanted items, northern herbs, and tribal crafts are traded alongside southern luxuries."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "frostmere_gate"
+direction = "west"
+description = "The main road leads west back to the city gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ranger_fort"
+direction = "east"
+description = "A fortified path leads east to the Northern Ranger outpost."
+is_locked = false
+
+[[locations]]
+id = "longhouse_quarter"
+name = "Longhouse Quarter"
+region_id = "frostmere"
+description = "A district of traditional longhouses where Frostmere's oldest families live. Fires burn constantly, and the smell of cooking meat fills the air."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "frostmere_gate"
+direction = "east"
+description = "The main road leads east back to the city gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hot_springs_refuge"
+direction = "south"
+description = "A winding path through snow leads to the warm glow of the hot springs."
+is_locked = false
+
+[[locations]]
+id = "ranger_fort"
+name = "Northern Ranger Fort"
+region_id = "frostmere"
+description = "A military outpost of the Northern Rangers who patrol the tundra. Maps of the wilderness cover every wall, and rangers come and go at all hours."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "frost_market"
+direction = "west"
+description = "The fortified path leads west back to the Frost Market."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "tundra_wastes"
+direction = "east"
+description = "The outpost gate opens east onto the vast frozen tundra."
+is_locked = false
+
+[[locations]]
+id = "frozen_harbor"
+name = "Frozen Harbor"
+region_id = "frostmere"
+description = "A harbor where ships are frozen in place during winter. In the brief summer thaw, it becomes the busiest port for hundreds of miles."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "frostmere_gate"
+direction = "south"
+description = "The harbor road leads south back to the city gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "shipwreck_coast_north"
+direction = "west"
+description = "The coastline stretches west past crushed and frozen ship hulls."
+is_locked = false
+
+[[locations]]
+id = "tundra_wastes"
+name = "Tundra Wastes"
+region_id = "frostmere"
+description = "Endless frozen plains stretching to the horizon. The wind cuts like a blade, and visibility drops to nothing during storms. Yetis and winter wolves hunt here."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "ranger_fort"
+direction = "west"
+description = "The ranger outpost is a welcome sight to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "yeti_territory"
+direction = "north"
+description = "The wastes grow even more desolate to the north, where yeti tracks are common."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "wolf_den"
+direction = "east"
+description = "Howling echoes from a cave system to the east."
+is_locked = false
+
+[[locations]]
+id = "ice_cave_network"
+name = "Ice Cave Network"
+region_id = "frostmere"
+description = "A vast network of ice caves beneath the glacier, their walls glowing with trapped light. Some tunnels lead to the under-ice city, others to worse places."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "frozen_waterfall"
+direction = "south"
+description = "A passage of blue ice leads south behind the frozen waterfall."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "glacial_rift"
+direction = "east"
+description = "The caves narrow into a deep crack in the glacier to the east."
+is_locked = false
+
+[[locations]]
+id = "northern_tribal_camp"
+name = "Northern Tribal Camp"
+region_id = "frostmere"
+description = "A seasonal camp of northern tribes who trade furs, bone carvings, and shamanic services. Their relationship with Frostmere is complex — trading partners but never subjects."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "northern_road"
+direction = "south"
+description = "The northern road leads south back toward Frostmere."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mammoth_graveyard"
+direction = "east"
+description = "A trail of enormous bones leads east to the mammoth graveyard."
+is_locked = false
+
+[[locations]]
+id = "mammoth_graveyard"
+name = "Mammoth Graveyard"
+region_id = "frostmere"
+description = "A vast field of mammoth bones, some partially frozen in the permafrost. The bones are sacred to the northern tribes and carry residual primal magic."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "northern_tribal_camp"
+direction = "west"
+description = "The bone trail leads west back to the tribal camp."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "tundra_wastes"
+direction = "south"
+description = "The frozen plains stretch south toward the tundra wastes."
+is_locked = false
+
+[[locations]]
+id = "glacial_rift"
+name = "Glacial Rift"
+region_id = "frostmere"
+description = "A deep crack in the glacier leading down to caverns of ancient ice. Frost giants once used these passages, and their abandoned outposts remain."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "ice_cave_network"
+direction = "west"
+description = "The rift narrows and connects to the ice cave network to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "frost_giant_outpost"
+direction = "north"
+description = "Enormous footprints in the ice lead north to an ancient outpost."
+is_locked = false
+
+[[locations]]
+id = "hot_springs_refuge"
+name = "Hot Springs Refuge"
+region_id = "frostmere"
+description = "Natural hot springs surrounded by the frozen landscape, providing warmth and healing. A popular gathering spot and the closest thing to comfort in the north."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "longhouse_quarter"
+direction = "north"
+description = "The path climbs north back to the Longhouse Quarter."
+is_locked = false
+
+[[locations]]
+id = "frostmere_arena"
+name = "Frostmere Arena"
+region_id = "frostmere"
+description = "An arena of packed snow and ice where warriors prove their worth in combat. Victory brings honor, warm furs, and the right to join elite expeditions."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "ice_palace"
+direction = "east"
+description = "The arena exit leads east back to the Ice Palace."
+is_locked = false
+
+[[locations]]
+id = "enchanter_spire"
+name = "Enchanter's Spire"
+region_id = "frostmere"
+description = "A tower of blue ice where enchanters specializing in frost magic work. Ice-enchanted weapons and cold-weather protective gear are crafted here."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "aurora_temple"
+direction = "north"
+description = "The ice stairway ascends north to the Aurora Temple."
+is_locked = false
+
+[[locations]]
+id = "blizzard_pass"
+name = "Blizzard Pass"
+region_id = "frostmere"
+description = "The southern road out of Frostmere, frequently blocked by blizzards. Only experienced travelers with cold-weather gear should attempt the crossing."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "frostmere_gate"
+direction = "north"
+description = "The pass climbs north back to the Frostmere gate."
+is_locked = false
+
+[locations.properties]
+border_region = "silverpeak"
+border_direction = "south"
+
+[[locations]]
+id = "wolf_den"
+name = "Wolf Den"
+region_id = "frostmere"
+description = "A cave system used as a den by an enormous pack of winter wolves. Their leader is said to be intelligent enough to speak."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "tundra_wastes"
+direction = "west"
+description = "The cave mouth opens west onto the frozen tundra."
+is_locked = false
+
+[[locations]]
+id = "aurora_observatory"
+name = "Aurora Observatory"
+region_id = "frostmere"
+description = "A high tower where astronomers and mystics study the aurora borealis. The lights here are brightest and most active, and some claim to see visions in them."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "ice_palace"
+direction = "east"
+description = "A skybridge of enchanted ice connects east to the Ice Palace."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "aurora_temple"
+direction = "south"
+description = "Steps descend south to the Aurora Temple below."
+is_locked = false
+
+[[locations]]
+id = "ice_fishing_village"
+name = "Ice Fishing Village"
+region_id = "frostmere"
+description = "A small village on the frozen lake where ice fishers live year-round. Their catches include mundane fish and occasional magical creatures from the ruins below."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "frozen_lake_surface"
+direction = "west"
+description = "The open expanse of the frozen lake stretches to the west."
+is_locked = false
+
+[[locations]]
+id = "shipwreck_coast_north"
+name = "Shipwreck Coast"
+region_id = "frostmere"
+description = "A coastline littered with ships crushed by ice. Their frozen cargo can be salvaged, but ice elementals guard the wrecks."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "frozen_lake_surface"
+direction = "east"
+description = "The frozen lake surface extends to the east."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "frozen_harbor"
+direction = "east"
+description = "The coastline curves east toward the frozen harbor."
+is_locked = false
+
+[[locations]]
+id = "frozen_waterfall"
+name = "Frozen Waterfall"
+region_id = "frostmere"
+description = "A massive waterfall frozen in mid-cascade, creating a wall of ice hundreds of feet high. Behind it, hidden caves lead deeper underground."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "frozen_lake_surface"
+direction = "south"
+description = "The frozen lake stretches south from the base of the waterfall."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ice_cave_network"
+direction = "north"
+description = "A hidden passage behind the ice wall leads north into a network of caves."
+is_locked = false
+
+[[locations]]
+id = "crystal_grove"
+name = "Crystal Grove"
+region_id = "frostmere"
+description = "A grove of ice-crystal trees that chime in the wind. The crystals are natural but enhanced by magic, and they glow with captured starlight."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "aurora_temple"
+direction = "south"
+description = "A shimmering trail leads south back to the Aurora Temple."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "frozen_waterfall"
+direction = "east"
+description = "The crystal trees thin out as the frozen waterfall comes into view to the east."
+is_locked = false
+
+[[locations]]
+id = "yeti_territory"
+name = "Yeti Territory"
+region_id = "frostmere"
+description = "The domain of yeti clans in the high frozen wastes. They are territorial but not mindlessly aggressive — some can be negotiated with."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "tundra_wastes"
+direction = "south"
+description = "The wastes stretch south toward more traveled lands."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mammoth_graveyard"
+direction = "east"
+description = "Giant bones are visible through the snow to the east."
+is_locked = false
+
+[[locations]]
+id = "frost_giant_outpost"
+name = "Frost Giant Outpost"
+region_id = "frostmere"
+description = "An abandoned frost giant outpost now used as a way station by adventurers. The furniture is enormous, and frost giant runes cover the walls."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "glacial_rift"
+direction = "south"
+description = "The enormous doorway opens south into the glacial rift."
+is_locked = false
+
+[[locations]]
+id = "buried_ruins"
+name = "Buried Ruins"
+region_id = "frostmere"
+description = "Deeper sections of the under-ice city, accessible only through dangerous underwater passages. Ancient technology and magic await those brave enough to explore."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "under_ice_city"
+direction = "north"
+description = "The flooded passage leads north back to the upper sections of the under-ice city."
+is_locked = false
+
+[[locations]]
+id = "northern_road"
+name = "Northern Road"
+region_id = "frostmere"
+description = "The road heading north into the frozen wilderness toward the tribal lands and beyond."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "frostmere_gate"
+direction = "south"
+description = "The road leads south back to the Frostmere gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "northern_tribal_camp"
+direction = "north"
+description = "The road continues north into tribal territory."
+is_locked = false
+
+[locations.properties]
+border_region = "drake_wastes"
+border_direction = "north"

@@ -1,0 +1,188 @@
+# =============================================================================
+# Bard Origins — Stories told and songs sung shape the world as surely as swords
+# =============================================================================
+
+[[origins]]
+id = "wandering_minstrel"
+name = "Wandering Minstrel"
+category = "bard"
+summary = "A traveling musician who trades songs for supper and collects stories like currency."
+prologue = """
+The road has been your home since you were old enough to carry a lute. Your mother \
+was a minstrel before you — one of the traveling kind who moved from inn to inn \
+along the coastal road, earning just enough coin to eat and just enough reputation \
+to be welcomed back. She taught you three chords before she taught you your letters, \
+and by the time you were ten you could hold a taproom's attention through a full \
+evening set.
+
+She died in Saltmere during a winter fever, and the innkeeper was kind enough to \
+let you stay through the season. When spring came, you picked up her lute and \
+walked out the same door she had always walked out of, heading for the next town \
+and the next song. You have been walking ever since.
+
+Every inn is a library. Every drunk is a storyteller. You collect tales the way \
+merchants collect coin — compulsively, indiscriminately, because you never know \
+which story will save your life or open a door. Your fingers know a hundred songs, \
+and your tongue knows a hundred more, and the road ahead stretches like an \
+unfinished verse waiting for its final rhyme."""
+ability_choices = ["charisma", "dexterity", "wisdom"]
+skill_proficiencies = ["performance", "persuasion"]
+starting_equipment = ["musical_instrument", "travelers_clothes"]
+bonus_gold = 10
+starting_region = "iron_coast"
+starting_location = "saltmere_market"
+feature_name = "Traveler's Network"
+feature_description = "Your years of performing have built a network of contacts in taverns and inns. You can always find a friendly face willing to share rumors, granting advantage on Investigation checks to gather information in settlements."
+required_races = []
+excluded_races = []
+required_classes = ["bard"]
+excluded_classes = []
+
+[[origins]]
+id = "court_poet"
+name = "Court Poet"
+category = "bard"
+summary = "A formally trained wordsmith who left the gilded cage of noble patronage."
+prologue = """
+The guildhall in Saltmere employed you for three years as court poet to the Harbor \
+Master — a position that sounds grander than it was. Your duties included composing \
+flattering verses for trade ceremonies, memorizing the genealogies of visiting \
+merchants, and occasionally playing background music at dinners where no one \
+listened. The pay was excellent. The creative fulfillment was not.
+
+You had been trained at the College of Eloquence — a real college, with stone walls \
+and dusty lecture halls and professors who could parse the metrical structure of \
+an ancient epic while simultaneously critiquing your lute technique. They taught \
+you that words have power. Literal power. The right phrase, delivered with the \
+right intent, can mend a wound or shatter a wall. You believed them. The Harbor \
+Master did not.
+
+When your contract expired, you declined renewal. You packed your formal robes, \
+your annotated songbooks, and the small crystal focus they had given you at \
+graduation, and you walked out through the guildhall's front door for the last \
+time. The college taught you that art is magic. The court taught you that magic \
+wasted on flattery is no magic at all. Somewhere out there, your words can matter."""
+ability_choices = ["charisma", "intelligence", "wisdom"]
+skill_proficiencies = ["history", "persuasion"]
+starting_equipment = ["fine_clothes", "ink_and_quill"]
+bonus_gold = 20
+starting_region = "iron_coast"
+starting_location = "saltmere_guildhall"
+feature_name = "Courtly Grace"
+feature_description = "Your formal training in etiquette and rhetoric grants you advantage on Charisma checks when dealing with nobles, officials, or anyone who values educated speech."
+required_races = []
+excluded_races = []
+required_classes = ["bard"]
+excluded_classes = []
+
+[[origins]]
+id = "battle_hymn_singer"
+name = "Battle Hymn Singer"
+category = "bard"
+summary = "A war-chanter who discovered that songs can turn the tide of battle."
+prologue = """
+The Thornfield Guard did not advertise for a bard. You simply showed up during a \
+skirmish on the farm road — bandits from the Whisperwood, the usual trouble — and \
+started singing. Not a battle cry, not a war shout. A song. An old one, the kind \
+your grandmother hummed while sharpening kitchen knives. The guards who heard it \
+fought harder. The bandits who heard it hesitated. When the dust settled, the \
+sergeant asked your name and offered you a meal.
+
+You never officially enlisted. You walked alongside the patrols, singing when \
+they marched, singing when they fought, singing when they buried their dead. The \
+guards started calling you "Hymn" and treating you like a mascot — until the night \
+ambush near the old ruins, when your voice cracked the air like thunder and three \
+bandits dropped their weapons and ran. After that, they treated you like a weapon.
+
+But weapons get pointed at things, and the guard captain started pointing you at \
+problems you had no business facing. When the orders came to march on the bandit \
+camp with you at the front as a "morale officer," you packed your drum and left \
+before dawn. Your voice is not a weapon to be aimed. It is a gift to be given \
+freely, and you intend to choose your own battles."""
+ability_choices = ["charisma", "constitution", "strength"]
+skill_proficiencies = ["performance", "intimidation"]
+starting_equipment = ["drum", "common_clothes"]
+bonus_gold = 10
+starting_region = "verdant_reach"
+starting_location = "thornfield_inn"
+feature_name = "War Chant"
+feature_description = "Your battle songs can steel the nerves of allies. Once per short rest, you can sing a war chant to grant one ally advantage on their next attack roll or saving throw."
+required_races = []
+excluded_races = []
+required_classes = ["bard"]
+excluded_classes = []
+
+[[origins]]
+id = "lore_keeper_apprentice"
+name = "Lore Keeper Apprentice"
+category = "bard"
+summary = "An apprentice archivist who learned that the oldest stories hold the deepest truths."
+prologue = """
+The shrine at Murkfen is older than the swamp. The priests who tend it will tell \
+you that the building sank into the bog over centuries, and they are probably right, \
+but the archives in its lowest level contain scrolls that predate the written \
+history of every kingdom you can name. You were sent there as an apprentice at \
+twelve — your parents hoped you would become a priest. Instead, you became a \
+reader.
+
+The scrolls spoke of things the modern world has forgotten. Songs that could \
+reshape stone. Words that could bind oaths across death itself. The head archivist \
+taught you the old languages, the pronunciation marks that transformed mere \
+syllables into something that resonated with the fabric of reality. You practiced \
+in the flooded lower chambers where no one could hear you, and the first time your \
+voice made the water ripple without wind, you knew the scrolls were telling the \
+truth.
+
+The archivist released you from your apprenticeship on your twentieth birthday \
+with a warning: the old magic is real, but it is not safe. He gave you a copy \
+of the foundational canticle and told you to learn restraint before you learned \
+power. You are still working on the first part."""
+ability_choices = ["intelligence", "charisma", "wisdom"]
+skill_proficiencies = ["arcana", "history"]
+starting_equipment = ["old_journal", "ink_and_quill"]
+bonus_gold = 8
+starting_region = "sunken_reach"
+starting_location = "murkfen_shrine"
+feature_name = "Ancient Lore"
+feature_description = "Your study of forgotten archives has given you knowledge others lack. Once per long rest, you can recall an obscure fact about a creature, location, or artifact, granting advantage on an Intelligence check related to it."
+required_races = []
+excluded_races = []
+required_classes = ["bard"]
+excluded_classes = []
+
+[[origins]]
+id = "tavern_legend"
+name = "Tavern Legend"
+category = "bard"
+summary = "A larger-than-life personality whose reputation fills every room before they enter it."
+prologue = """
+The story about the dragon is not true. Neither is the one about the pirate fleet, \
+or the haunted lighthouse, or the time you supposedly seduced a duchess with a \
+single ballad. But the stories exist, and they travel faster than you do, and by \
+the time you arrive in a new town your reputation has already bought you the best \
+seat at the bar and a free meal.
+
+The truth is simpler and, you think, more interesting. You are a very good liar \
+who happens to also be a very good musician. You started telling tall tales in the \
+Thornfield Inn to impress a barmaid, and the tales took on a life of their own. \
+Each retelling added details you never included. Each new town inflated the stakes. \
+By the time you reached the coast, you had apparently slain creatures that do not \
+exist in species that have not been discovered.
+
+You lean into it. Why not? The world wants heroes, and you are happy to play the \
+part while the real heroes do whatever real heroes do. But lately the stories have \
+started attracting attention from people who believe them — people who want you \
+to do the things they have heard you already did. And there is a small, terrified \
+part of you that wonders if maybe you should start living up to your own legend."""
+ability_choices = ["charisma", "dexterity", "intelligence"]
+skill_proficiencies = ["deception", "performance"]
+starting_equipment = ["fine_clothes", "gambling_set"]
+bonus_gold = 15
+starting_region = "verdant_reach"
+starting_location = "thornfield_inn"
+feature_name = "Larger Than Life"
+feature_description = "Your inflated reputation precedes you. When meeting NPCs for the first time, they assume you are more powerful and important than you are, granting advantage on first-impression Charisma checks."
+required_races = []
+excluded_races = []
+required_classes = ["bard"]
+excluded_classes = []

@@ -1,0 +1,417 @@
+[[locations]]
+id = "dusthollow_main"
+name = "Dusthollow Main Street"
+region_id = "dusthollow"
+description = "The main street of Dusthollow, a frontier town of wooden buildings and hitching posts. Dust swirls in the hot wind, and the distant lowing of cattle carries from the range."
+location_type = "town"
+
+[[locations.connections]]
+target_location_id = "dusthollow_saloon"
+direction = "north"
+description = "Swinging doors lead into the two-story saloon, piano music drifting out."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "dusthollow_spring"
+direction = "east"
+description = "A path leads east toward the natural spring that gave the town its name."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "dusthollow_general"
+direction = "west"
+description = "The general store sits across the street, its porch lined with barrels and crates."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "dusthollow_sheriff"
+direction = "south"
+description = "The squat stone sheriff's office stands at the south end of the street."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ranch_road"
+direction = "southeast"
+description = "A dusty trail leads southeast toward the open cattle range."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "dusthollow_east_road"
+direction = "east"
+description = "The east road heads toward increasingly rough terrain and the badlands beyond."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "dusthollow_west_road"
+direction = "west"
+description = "The west road climbs toward the Ashen Highlands, the air growing cooler."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "dusthollow_north_road"
+direction = "north"
+description = "The north road leads out into the open plains where nomadic tribes roam."
+is_locked = false
+
+[[locations]]
+id = "dusthollow_saloon"
+name = "Dusthollow Saloon"
+region_id = "dusthollow"
+description = "A two-story saloon with swinging doors and a long wooden bar. A piano plays in the corner, card games run all hours, and fights break out weekly."
+location_type = "tavern"
+
+[[locations.connections]]
+target_location_id = "dusthollow_main"
+direction = "south"
+description = "The swinging doors lead back out to the main street."
+is_locked = false
+
+[[locations]]
+id = "dusthollow_spring"
+name = "Dusthollow Spring"
+region_id = "dusthollow"
+description = "The natural spring that gave Dusthollow its name — a reliable water source in an otherwise dry land. Stone troughs and irrigation channels feed the town."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "dusthollow_main"
+direction = "west"
+description = "A path leads back west to the main street of Dusthollow."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "water_tower"
+direction = "east"
+description = "The irrigation channels lead east to the tall water tower and pump station."
+is_locked = false
+
+[[locations]]
+id = "dusthollow_stable"
+name = "Dusthollow Stable"
+region_id = "dusthollow"
+description = "A large corral and stable complex where horses are bred, trained, and sold. The finest mounts on the plains come from this stable."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "dusthollow_main"
+direction = "north"
+description = "A short walk north leads back to the main street."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ranch_road"
+direction = "south"
+description = "The corral opens onto the ranch road heading south into open range."
+is_locked = false
+
+[[locations]]
+id = "dusthollow_general"
+name = "Dusthollow General Store"
+region_id = "dusthollow"
+description = "A well-stocked general store carrying everything a frontier settler needs — tools, rope, dried goods, ammunition, and medicine."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "dusthollow_main"
+direction = "east"
+description = "The porch steps lead back out to the main street."
+is_locked = false
+
+[[locations]]
+id = "dusthollow_sheriff"
+name = "Sheriff's Office"
+region_id = "dusthollow"
+description = "The sheriff's office and jail, a squat stone building that's the most solid structure in town. Wanted posters paper the walls."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "dusthollow_main"
+direction = "north"
+description = "The heavy wooden door opens back onto the main street."
+is_locked = false
+
+[[locations]]
+id = "ranch_road"
+name = "Ranch Road"
+region_id = "dusthollow"
+description = "A dusty trail leading south from town into the open range where cattle ranches sprawl across the plains."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "dusthollow_main"
+direction = "north"
+description = "The road leads back north into Dusthollow proper."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "dusthollow_stable"
+direction = "north"
+description = "The stable and corral complex sits just off the road to the north."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "cattle_range"
+direction = "south"
+description = "The road opens onto vast grassland where herds of cattle graze under the wide sky."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "stampede_flats"
+direction = "southeast"
+description = "A wide, flat stretch of prairie scarred with hoof prints lies to the southeast."
+is_locked = false
+
+[[locations]]
+id = "windmill_hill"
+name = "Windmill Hill"
+region_id = "dusthollow"
+description = "A hill topped by a creaking windmill that pumps water from a deep well. A few homesteads cluster around it for the reliable water."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "dusthollow_main"
+direction = "east"
+description = "A path leads east back toward the main street of Dusthollow."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "old_homestead"
+direction = "south"
+description = "A trail leads south to an abandoned farmstead, its buildings visible in the distance."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "prairie_shrine"
+direction = "west"
+description = "A worn footpath heads west across the grassland toward a weathered stone shrine."
+is_locked = false
+
+[[locations]]
+id = "cattle_range"
+name = "Cattle Range"
+region_id = "dusthollow"
+description = "Vast open grassland where herds of cattle graze under the watch of mounted ranchers. Hawks circle overhead, and the horizon stretches forever."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "ranch_road"
+direction = "north"
+description = "The ranch road leads back north toward Dusthollow."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "stampede_flats"
+direction = "east"
+description = "The grassland opens onto a wide, flat stretch of prairie to the east."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "bone_ridge"
+direction = "south"
+description = "A ridge of bleached white stone rises to the south, resembling enormous bones."
+is_locked = false
+
+[[locations]]
+id = "badlands_edge"
+name = "Badlands Edge"
+region_id = "dusthollow"
+description = "Where the plains give way to eroded buttes, mesas, and red-rock canyons. The terrain is treacherous and full of hiding places for those who don't want to be found."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "dusthollow_east_road"
+direction = "west"
+description = "The east road leads back west toward Dusthollow."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "outlaw_canyon"
+direction = "south"
+description = "A narrow path descends into a red-rock canyon, the smell of old campfire smoke drifting up."
+is_locked = false
+
+[[locations]]
+id = "outlaw_canyon"
+name = "Outlaw Canyon"
+region_id = "dusthollow"
+description = "A narrow red-rock canyon used by outlaws as a hideout. Crude shelters, stolen goods, and campfire remains litter the canyon floor."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "badlands_edge"
+direction = "north"
+description = "The canyon narrows and climbs back up to the badlands edge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "bone_ridge"
+direction = "west"
+description = "A rough trail leads west through rocky terrain to Bone Ridge."
+is_locked = false
+
+[[locations]]
+id = "nomad_camp"
+name = "Nomad Camp"
+region_id = "dusthollow"
+description = "A circle of colorful tents and fire pits where nomadic plainspeople make seasonal camp. They trade furs, herbs, and stories."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "dusthollow_north_road"
+direction = "south"
+description = "The north road leads back south toward Dusthollow."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "prairie_shrine"
+direction = "east"
+description = "A footpath crosses the grassland east to a weathered stone shrine."
+is_locked = false
+
+[[locations]]
+id = "prairie_shrine"
+name = "Prairie Shrine"
+region_id = "dusthollow"
+description = "A weathered stone shrine on the open plains, sacred to both settlers and nomads. Offerings of food, feathers, and carved tokens surround the altar."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "nomad_camp"
+direction = "west"
+description = "A footpath leads west to the nomadic camp, colorful tents visible in the distance."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "windmill_hill"
+direction = "east"
+description = "A worn path heads east toward the creaking windmill on the hill."
+is_locked = false
+
+[[locations]]
+id = "dusthollow_east_road"
+name = "East Road"
+region_id = "dusthollow"
+description = "The road heading east from Dusthollow into increasingly rough terrain toward the badlands."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "dusthollow_main"
+direction = "west"
+description = "The road leads back west into Dusthollow's main street."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "badlands_edge"
+direction = "east"
+description = "The road grows rougher as it approaches the eroded buttes of the badlands."
+is_locked = false
+
+[[locations]]
+id = "dusthollow_west_road"
+name = "West Road"
+region_id = "dusthollow"
+description = "The road west from Dusthollow climbing toward the Ashen Highlands. The air grows cooler and the ground rockier."
+location_type = "road"
+
+[locations.properties]
+border_region = "ashen_highlands"
+border_direction = "west"
+
+[[locations.connections]]
+target_location_id = "dusthollow_main"
+direction = "east"
+description = "The road leads back east into Dusthollow."
+is_locked = false
+
+[[locations]]
+id = "old_homestead"
+name = "Old Homestead"
+region_id = "dusthollow"
+description = "An abandoned farmstead, its buildings collapsed and fields gone wild. Something drove the family away in a hurry — their belongings still lie scattered."
+location_type = "ruins"
+
+[[locations.connections]]
+target_location_id = "windmill_hill"
+direction = "north"
+description = "A trail leads north back up to the windmill on the hill."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "cattle_range"
+direction = "west"
+description = "The overgrown fields give way to open grassland to the west."
+is_locked = false
+
+[[locations]]
+id = "bone_ridge"
+name = "Bone Ridge"
+region_id = "dusthollow"
+description = "A ridge of bleached white stone that resembles enormous bones. Fossils of ancient creatures protrude from the rock, and the wind howls through the formations."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "cattle_range"
+direction = "north"
+description = "The ridge slopes down to the open grassland of the cattle range."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "outlaw_canyon"
+direction = "east"
+description = "A rough trail leads east through rocky terrain into the red-rock canyon."
+is_locked = false
+
+[[locations]]
+id = "stampede_flats"
+name = "Stampede Flats"
+region_id = "dusthollow"
+description = "A wide, flat stretch of prairie where herds sometimes stampede. The ground is scarred with hoof prints, and experienced ranchers give this area wide berth during storm season."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "ranch_road"
+direction = "northwest"
+description = "The ranch road lies to the northwest, leading back toward Dusthollow."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "cattle_range"
+direction = "west"
+description = "The open grassland of the cattle range stretches to the west."
+is_locked = false
+
+[[locations]]
+id = "water_tower"
+name = "Water Tower"
+region_id = "dusthollow"
+description = "A tall wooden water tower and associated pump station that serves Dusthollow's irrigation needs. The tower is the tallest structure for miles."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "dusthollow_spring"
+direction = "west"
+description = "The irrigation channels lead back west to the natural spring."
+is_locked = false
+
+[[locations]]
+id = "dusthollow_north_road"
+name = "North Road"
+region_id = "dusthollow"
+description = "The north road heading toward the open plains where nomadic tribes roam."
+location_type = "road"
+
+[locations.properties]
+border_region = "greenvale"
+border_direction = "north"
+
+[[locations.connections]]
+target_location_id = "dusthollow_main"
+direction = "south"
+description = "The road leads back south into Dusthollow."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "nomad_camp"
+direction = "north"
+description = "The road continues north to the seasonal nomad encampment."
+is_locked = false

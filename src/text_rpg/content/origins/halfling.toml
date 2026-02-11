@@ -1,0 +1,162 @@
+# Halfling-specific origins — small folk, big hearts, and an uncanny knack for being in the right place
+
+[[origins]]
+id = "lucky_wanderer"
+name = "Lucky Wanderer"
+category = "halfling"
+summary = "Fortune seems to follow you like a loyal hound — or perhaps you simply have a talent for stumbling into opportunity."
+prologue = """You have never had a plan. This is not an admission of failure but a statement of philosophy. Plans are for people who do not trust the road, and you have always trusted the road. It brought you safely through the Verdant Reach when a sudden fog rolled in and every other traveler got hopelessly lost. It placed you at the exact crossroads where a merchant's wagon threw a wheel, earning you a free ride and a hot meal for helping with repairs. It deposited you at Thornfield Inn on the very evening that a bard was performing a song about a halfling adventurer, which you took as a sign.
+
+Other folk call it luck. Your grandmother called it "the Wanderer's Blessing" — a halfling knack for being exactly where you need to be, even when you did not know you needed to be there. She had it too. Walked barefoot from one end of the realm to the other, twice, and never once slept hungry or cold. "The world provides," she would say, flipping her lucky coin, "but only if you keep moving."
+
+You flip your own lucky coin now, sitting at the bar of Thornfield Inn, listening to the locals gossip about trouble in the Whisperwood and opportunities for capable folk. The coin lands heads-up, as it usually does. You finish your ale, shoulder your pack, and follow the road to wherever it wants to take you next."""
+ability_choices = ["charisma", "dexterity", "wisdom"]
+skill_proficiencies = ["persuasion", "perception"]
+starting_equipment = ["lucky_coin", "travelers_clothes"]
+bonus_gold = 8
+starting_region = "verdant_reach"
+starting_location = "thornfield_inn"
+feature_name = "Wanderer's Blessing"
+feature_description = "Fortune favors you in small but consistent ways. Once per long rest, when you fail a non-combat ability check by 1 or 2, you may reroll it."
+required_races = ["halfling"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "pantry_raider"
+name = "Pantry Raider"
+category = "halfling"
+summary = "You have a gift for acquiring things that technically belong to other people, usually food, and usually without getting caught."
+prologue = """It started with pies. Specifically, Widow Applebottom's blackberry pies, which she left cooling on her windowsill every Sunsday afternoon. You were seven years old, small even for a halfling child, and the gap between her fence slats was exactly the right width. The pie was extraordinary. The guilt was minimal. A tradition was born.
+
+Over the years, your talents expanded beyond pastry theft. You developed an instinct for unlocked larders, unattended market stalls, and the precise moment when a shopkeeper turns to reach for a high shelf. You are not a thief — you are very particular about this distinction. Thieves take valuables. You take snacks, the occasional cooking implement, and once a wheel of cheese so magnificent that you still dream about it. The village folk of Thornfield know you by reputation, if not by name. Pantries are checked more frequently since you arrived. Locks have been purchased. You consider this a compliment.
+
+Your sack is pleasantly full and your conscience pleasantly clear as you survey the village from your favorite perch atop a garden wall. There is talk of adventure in the air — ruins to explore, creatures to outwit, treasure to redistribute. You crack your knuckles, pop a pilfered scone into your mouth, and consider your options. The world is a very large pantry, and you have barely gotten started."""
+ability_choices = ["dexterity", "constitution", "charisma"]
+skill_proficiencies = ["sleight_of_hand", "stealth"]
+starting_equipment = ["cooks_utensils", "sack"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Nimble Fingers"
+feature_description = "Your hands work with a speed and precision born of years of practice. You gain advantage on Sleight of Hand checks involving food, keys, and small objects."
+required_races = ["halfling"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "halfling_messenger"
+name = "Halfling Messenger"
+category = "halfling"
+summary = "You carry letters and parcels between villages, running the farm roads with tireless halfling legs and an unshakable sense of duty."
+prologue = """Rain or shine, mud or frost, the mail goes through. This is the oath of the Verdant Reach Messenger Service — a loose network of halfling runners who carry letters, small parcels, and urgent news between the scattered villages and farmsteads of the region. You joined at sixteen, drawn by the promise of fresh air, a modest wage, and the freedom of the open road. Twelve years later, the wage is still modest, the air is still fresh, and you know every shortcut, ford, and farmer's dog between Thornfield and the coast.
+
+The work has made you fast, resilient, and surprisingly well-connected. Every farmstead knows you by name. Every innkeeper saves you a seat by the fire. You have delivered marriage proposals, business contracts, love letters, threats, apologies, and once a very angry badger in a wicker cage that you do not care to discuss further. The letter of introduction in your pocket is from the Postmaster General herself — a formidable halfling woman named Beryl Thistledown — recommending you for "tasks requiring discretion, endurance, and an ability to talk one's way past hostile dogs."
+
+The farm road stretches ahead of you, familiar as your own front door. But today there is no delivery waiting at the end of it — or rather, there is a delivery of a different kind. The Postmaster's last letter mentioned trouble on the routes: missing runners, roads gone silent, villages that should have sent word but have not. She asked you to look into it. Discreetly. You adjust your pack, check your boots, and set off at a pace that would leave most humans breathless."""
+ability_choices = ["dexterity", "constitution", "charisma"]
+skill_proficiencies = ["athletics", "persuasion"]
+starting_equipment = ["travelers_clothes", "letter_of_introduction"]
+bonus_gold = 8
+starting_region = "verdant_reach"
+starting_location = "farm_road"
+feature_name = "Fleet-Footed Courier"
+feature_description = "Years of running messages have built your endurance. You can travel at a fast pace for twice as long as normal before suffering exhaustion."
+required_races = ["halfling"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "village_elders_child"
+name = "Village Elder's Child"
+category = "halfling"
+summary = "Your parent leads Thornfield's halfling quarter, and you grew up learning to listen, mediate, and understand people."
+prologue = """Your mother, Sage Willowmere, has served as Elder of Thornfield's halfling quarter for twenty-three years. In that time she has settled more disputes than any magistrate, organized more festivals than any event planner, and consumed more tea than seems medically advisable. You grew up in her parlor, surrounded by the low murmur of negotiations: farmers arguing over fence lines, young couples seeking blessing for their unions, merchants haggling over market stall placement, and the occasional delegation from the human or dwarven communities seeking halfling cooperation on some civic matter.
+
+You learned early that leadership, for halflings, is not about authority. It is about listening until you understand what people actually want — which is rarely what they say they want — and then finding the path that leaves everyone feeling heard. Your mother calls it "the Long Ear." You have it. You know because people tell you things they do not tell others: their fears, their hopes, the small shames they carry like stones in their pockets. You have heard enough confessions to fill a library and kept every one.
+
+But the parlor is growing small. Your mother is grooming you for succession, and the thought fills you with a restlessness you cannot name. You respect the role — you simply are not certain you want to inherit it before you have seen what lies beyond the village gate. Your journal is filled with questions that Thornfield cannot answer. The world beyond the Verdant Reach is vast, complicated, and full of people who need to be heard. You pocket the journal, kiss your mother goodbye, and step through the gate."""
+ability_choices = ["wisdom", "charisma", "intelligence"]
+skill_proficiencies = ["insight", "persuasion"]
+starting_equipment = ["common_clothes", "old_journal"]
+bonus_gold = 10
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "The Long Ear"
+feature_description = "People instinctively trust you with their problems. NPCs are more likely to share personal information and confide their troubles when speaking with you."
+required_races = ["halfling"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "river_rover"
+name = "River Rover"
+category = "halfling"
+summary = "You grew up on the waterways, poling a flatboat through reed-choked channels where the maps run out."
+prologue = """The rivers of the Sunken Reach do not behave like proper rivers. They split, merge, loop back on themselves, and occasionally vanish into sinkholes only to resurface a mile downstream. The locals call the waterways "the Tangle," and navigating them requires either a lifetime of experience or the particular brand of cheerful stubbornness that halflings are known for. You have both.
+
+Your family has worked the Tangle for three generations — poling flatboats through channels so narrow that the reeds brush both gunwales, ferrying goods between the scattered trading posts and fishing camps that dot the marshland. You learned to read the water before you learned to read letters: the color that means shallows, the ripple pattern that warns of submerged logs, the way the current shifts when rain is coming upriver. Your boat is your home, your livelihood, and your best friend — a flat-bottomed craft of weathered oak that responds to your pole the way a horse responds to a good rider.
+
+Last month, something changed in the Tangle. A channel you have navigated a thousand times was blocked — not by debris, but by stone. Ancient stone, carved with symbols, rising from the riverbed as though the water level had dropped. But the water level had not dropped. The stone had risen. You tied your boat to a cypress root, ran your hand along the carved surface, and felt warmth beneath your fingers. The river has secrets it has been keeping for a very long time. Your fishing tackle and rope are packed. Time to see what else is surfacing."""
+ability_choices = ["dexterity", "constitution", "wisdom"]
+skill_proficiencies = ["athletics", "nature"]
+starting_equipment = ["fishing_tackle", "hempen_rope"]
+bonus_gold = 5
+starting_region = "sunken_reach"
+starting_location = "river_docks"
+feature_name = "Water Reader"
+feature_description = "You can read currents, tides, and water conditions instinctively. You gain advantage on checks to navigate waterways and detect underwater hazards."
+required_races = ["halfling"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "hearthkeeper"
+name = "Hearthkeeper"
+category = "halfling"
+summary = "You are the one who tends the sick, mends the broken, and keeps the village whole when the world tries to pull it apart."
+prologue = """Every halfling village has a Hearthkeeper — the one who remembers the old remedies, who sits with the dying, who brews the tea that eases grief and the poultice that draws out infection. In Thornfield, that person is you. The role was not appointed or elected; it was simply recognized, the way a village recognizes that one particular well has the sweetest water. People started coming to your door, and you started answering.
+
+Your kitchen is your apothecary. Bundles of dried herbs hang from the ceiling beams — chamomile for sleep, yarrow for fever, comfrey for bones. Your shelves hold tinctures, salves, and three jars of honey infused with medicinal flowers that you guard more jealously than gold. You know which mushrooms heal and which kill, which roots ease pain and which cause it, and exactly how much valerian to add to a cup of warm milk to make a restless child sleep through the night without making them sleep through the morning as well.
+
+But the ailments reaching your door have grown stranger of late. A farmer's son with a fever that no herb can break. A woodcutter whose wound will not close despite your best poultice. A traveling merchant who speaks in his sleep in a language no one recognizes. Something is wrong — not with your remedies, but with the world itself. The old balance between hearth and wild is shifting, and a Hearthkeeper who cannot identify the sickness cannot cure it. You pack your kit, leave instructions with your apprentice, and set out to find the source of what ails the land."""
+ability_choices = ["wisdom", "charisma", "constitution"]
+skill_proficiencies = ["medicine", "insight"]
+starting_equipment = ["cooks_utensils", "herbalism_kit"]
+bonus_gold = 8
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Hearthkeeper's Touch"
+feature_description = "Your knowledge of folk remedies is instinctive and practiced. When you use a healing kit or administer medicine, you restore one additional hit point."
+required_races = ["halfling"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "big_world_dreamer"
+name = "Big-World Dreamer"
+category = "halfling"
+summary = "While other halflings dream of second breakfast, you dream of dragon hoards, ancient ruins, and the far side of the horizon."
+prologue = """The other halfling children wanted to be bakers, gardeners, and innkeepers. You wanted to be a dragon slayer. This was considered a phase. When you were still talking about it at twenty, it was considered eccentric. When you started collecting maps, interviewing every traveler who passed through Thornfield, and filling journal after journal with sketches of distant lands you had never seen, it was considered a problem. Your family staged an intervention. They sat you down with tea and biscuits and gently suggested that perhaps you might consider a nice, respectable career in jam-making.
+
+You love your family. You also love the stories — the real ones, told by scarred adventurers over watered ale at the inn, not the sanitized versions in the chapbooks. Stories of cities carved from living crystal, of forests where the trees walk, of underground kingdoms lit by rivers of molten gold. Every story added a new line to the map in your head, a map that grows larger and more detailed with each passing year while the village around you stays exactly, comfortably, suffocatingly the same.
+
+Tonight, you sit in Thornfield Inn with your journal open and your ale untouched, listening to a group of travelers discuss the old ruins in the Whisperwood. Your heart hammers in your chest the way it always does when the world outside reaches in and taps you on the shoulder. Your journal is full. Your pack is ready. It has been ready for three years. The only thing missing is the courage to walk through the door and not look back. You close the journal, finish the ale in one long swallow, and stand up. Tonight, the door."""
+ability_choices = ["charisma", "intelligence", "wisdom"]
+skill_proficiencies = ["performance", "history"]
+starting_equipment = ["old_journal", "travelers_clothes"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "thornfield_inn"
+feature_name = "Dreamer's Courage"
+feature_description = "Your boundless imagination prepares you for the impossible. You gain advantage on saving throws against being frightened by creatures or locations you have never encountered before."
+required_races = ["halfling"]
+excluded_races = []
+required_classes = []
+excluded_classes = []

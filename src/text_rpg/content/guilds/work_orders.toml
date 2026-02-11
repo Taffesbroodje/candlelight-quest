@@ -1,0 +1,290 @@
+# Work order templates — repeatable profession tasks.
+# Each template generates specific work orders based on player rank and region.
+
+# ============ GATHER ORDERS (Initiate+) ============
+
+[[orders]]
+id = "gather_iron_ingots"
+guild_id = "smiths_guild"
+order_type = "gather"
+name = "Iron Requisition"
+description = "The forge needs raw iron. Gather ingots from local mines or merchants."
+min_rank = "initiate"
+requirements = {iron_ingot = 5}
+reward_gold_min = 15
+reward_gold_max = 25
+reward_xp = 30
+reward_rep = 3
+cooldown_turns = 10
+
+[[orders]]
+id = "gather_healing_herbs"
+guild_id = "herbalists_guild"
+order_type = "gather"
+name = "Herb Collection"
+description = "The grove's stores are running low. Gather fresh healing herbs."
+min_rank = "initiate"
+requirements = {healing_herb = 8}
+reward_gold_min = 10
+reward_gold_max = 20
+reward_xp = 25
+reward_rep = 3
+cooldown_turns = 10
+
+[[orders]]
+id = "gather_alchemical_reagents"
+guild_id = "alchemists_guild"
+order_type = "gather"
+name = "Reagent Procurement"
+description = "The laboratory requires fresh alchemical reagents for ongoing experiments."
+min_rank = "initiate"
+requirements = {alchemical_reagent = 5}
+reward_gold_min = 15
+reward_gold_max = 25
+reward_xp = 30
+reward_rep = 3
+cooldown_turns = 10
+
+[[orders]]
+id = "gather_arcane_dust"
+guild_id = "enchanters_guild"
+order_type = "gather"
+name = "Arcane Dust Collection"
+description = "Enchantments require arcane dust. Gather it from magical creatures or ancient ruins."
+min_rank = "initiate"
+requirements = {arcane_dust = 4}
+reward_gold_min = 20
+reward_gold_max = 30
+reward_xp = 35
+reward_rep = 3
+cooldown_turns = 10
+
+[[orders]]
+id = "gather_cooking_ingredients"
+guild_id = "cooks_guild"
+order_type = "gather"
+name = "Kitchen Supplies"
+description = "The hearth needs fresh ingredients. Bring back provisions for the Fellowship."
+min_rank = "initiate"
+requirements = {rations = 10}
+reward_gold_min = 8
+reward_gold_max = 15
+reward_xp = 20
+reward_rep = 3
+cooldown_turns = 10
+
+# ============ CRAFT ORDERS (Apprentice+) ============
+
+[[orders]]
+id = "craft_daggers"
+guild_id = "smiths_guild"
+order_type = "craft"
+name = "Arms Commission"
+description = "The town guard needs a batch of daggers. Forge them to guild standard."
+min_rank = "apprentice"
+requirements = {forge_dagger = 3}
+reward_gold_min = 30
+reward_gold_max = 50
+reward_xp = 60
+reward_rep = 5
+cooldown_turns = 15
+
+[[orders]]
+id = "craft_healing_potions"
+guild_id = "alchemists_guild"
+order_type = "craft"
+name = "Potion Supply Contract"
+description = "The guild hospital needs healing potions. Brew them carefully."
+min_rank = "apprentice"
+requirements = {brew_healing_potion = 3}
+reward_gold_min = 25
+reward_gold_max = 45
+reward_xp = 55
+reward_rep = 5
+cooldown_turns = 15
+
+[[orders]]
+id = "craft_herbal_salves"
+guild_id = "herbalists_guild"
+order_type = "craft"
+name = "Salve Preparation"
+description = "Rangers need healing salves for patrol. Prepare a batch."
+min_rank = "apprentice"
+requirements = {craft_herbal_salve = 3}
+reward_gold_min = 20
+reward_gold_max = 40
+reward_xp = 50
+reward_rep = 5
+cooldown_turns = 15
+
+[[orders]]
+id = "craft_enchanted_rings"
+guild_id = "enchanters_guild"
+order_type = "craft"
+name = "Ring Enchantment Order"
+description = "A noble has commissioned enchanted rings. Infuse them with magic."
+min_rank = "apprentice"
+requirements = {enchant_ring = 2}
+reward_gold_min = 40
+reward_gold_max = 65
+reward_xp = 65
+reward_rep = 5
+cooldown_turns = 15
+
+[[orders]]
+id = "craft_travel_rations"
+guild_id = "cooks_guild"
+order_type = "craft"
+name = "Caravan Provisions"
+description = "A merchant caravan needs trail rations. Cook hearty travel food."
+min_rank = "apprentice"
+requirements = {cook_trail_rations = 4}
+reward_gold_min = 15
+reward_gold_max = 30
+reward_xp = 45
+reward_rep = 5
+cooldown_turns = 15
+
+# ============ DELIVERY ORDERS (Journeyman+) ============
+
+[[orders]]
+id = "deliver_weapons"
+guild_id = "smiths_guild"
+order_type = "delivery"
+name = "Arms Delivery"
+description = "Deliver a shipment of weapons to the garrison in a neighboring region."
+min_rank = "journeyman"
+requirements = {iron_ingot = 3}
+reward_gold_min = 50
+reward_gold_max = 80
+reward_xp = 80
+reward_rep = 7
+cooldown_turns = 20
+
+[[orders]]
+id = "deliver_potions"
+guild_id = "alchemists_guild"
+order_type = "delivery"
+name = "Potion Distribution"
+description = "Deliver alchemical supplies to an outpost in need."
+min_rank = "journeyman"
+requirements = {healing_potion = 3}
+reward_gold_min = 45
+reward_gold_max = 75
+reward_xp = 75
+reward_rep = 7
+cooldown_turns = 20
+
+[[orders]]
+id = "deliver_herbs"
+guild_id = "herbalists_guild"
+order_type = "delivery"
+name = "Herb Shipment"
+description = "Transport medicinal herbs to a remote village healer."
+min_rank = "journeyman"
+requirements = {healing_herb = 6}
+reward_gold_min = 40
+reward_gold_max = 70
+reward_xp = 70
+reward_rep = 7
+cooldown_turns = 20
+
+[[orders]]
+id = "deliver_enchantments"
+guild_id = "enchanters_guild"
+order_type = "delivery"
+name = "Enchantment Courier"
+description = "Deliver enchanted items to a collector in another region."
+min_rank = "journeyman"
+requirements = {arcane_dust = 3}
+reward_gold_min = 55
+reward_gold_max = 90
+reward_xp = 85
+reward_rep = 7
+cooldown_turns = 20
+
+[[orders]]
+id = "deliver_feast_supplies"
+guild_id = "cooks_guild"
+order_type = "delivery"
+name = "Festival Catering"
+description = "Supply food for a festival in a neighboring town."
+min_rank = "journeyman"
+requirements = {rations = 8}
+reward_gold_min = 35
+reward_gold_max = 60
+reward_xp = 65
+reward_rep = 7
+cooldown_turns = 20
+
+# ============ SERVICE ORDERS (Expert+) ============
+
+[[orders]]
+id = "service_repair_equipment"
+guild_id = "smiths_guild"
+order_type = "service"
+name = "Equipment Overhaul"
+description = "The garrison's equipment is falling apart. Repair and temper their armor."
+min_rank = "expert"
+requirements = {forge_dagger = 2, iron_ingot = 5}
+reward_gold_min = 80
+reward_gold_max = 120
+reward_xp = 120
+reward_rep = 10
+cooldown_turns = 25
+
+[[orders]]
+id = "service_brew_antidotes"
+guild_id = "alchemists_guild"
+order_type = "service"
+name = "Plague Response"
+description = "A plague threatens the region. Brew powerful antidotes for the afflicted."
+min_rank = "expert"
+requirements = {brew_antidote = 3, brew_healing_potion = 2}
+reward_gold_min = 75
+reward_gold_max = 115
+reward_xp = 115
+reward_rep = 10
+cooldown_turns = 25
+
+[[orders]]
+id = "service_restore_grove"
+guild_id = "herbalists_guild"
+order_type = "service"
+name = "Grove Restoration"
+description = "A sacred grove has been defiled. Use your herbalism mastery to restore it."
+min_rank = "expert"
+requirements = {healing_herb = 10, craft_herbal_salve = 3}
+reward_gold_min = 70
+reward_gold_max = 110
+reward_xp = 110
+reward_rep = 10
+cooldown_turns = 25
+
+[[orders]]
+id = "service_ward_fortress"
+guild_id = "enchanters_guild"
+order_type = "service"
+name = "Fortress Warding"
+description = "A border fortress requires magical protections. Enchant its defenses."
+min_rank = "expert"
+requirements = {enchant_ring = 2, arcane_dust = 6}
+reward_gold_min = 90
+reward_gold_max = 130
+reward_xp = 130
+reward_rep = 10
+cooldown_turns = 25
+
+[[orders]]
+id = "service_royal_banquet"
+guild_id = "cooks_guild"
+order_type = "service"
+name = "Royal Banquet"
+description = "A noble lord demands a banquet worthy of royalty. Prepare a magnificent feast."
+min_rank = "expert"
+requirements = {cook_trail_rations = 5, rations = 10}
+reward_gold_min = 65
+reward_gold_max = 100
+reward_xp = 100
+reward_rep = 10
+cooldown_turns = 25

@@ -1,0 +1,6 @@
+id = "crownhold"
+name = "Crownhold"
+description = "The true capital of the realm, home to half a million souls. The Royal Palace crowns a hill overlooking a city of grand avenues, towering academies, and teeming markets. Every major guild maintains its headquarters here. Beneath the gleaming surface, a vast undercity harbors thieves, cults, and secrets. Political intrigue is as deadly as any blade."
+level_range_min = 11
+level_range_max = 16
+climate = "temperate_grand"

@@ -1,0 +1,353 @@
+# Kingsward encounters — L7-12
+
+[[encounters]]
+id = "guard_patrol"
+name = "City Guard Patrol"
+location_ids = ["slums_district", "sewers"]
+encounter_chance = 0.3
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "healing_potion", chance = 0.3},
+    {id = "rations", chance = 0.4},
+]
+gold_min = 10
+gold_max = 30
+
+[[encounters.entities]]
+id = "city_guard"
+name = "Kingsward City Guard"
+entity_type = "enemy"
+description = "A well-trained guard in polished chain mail bearing the royal crest. They patrol in pairs and call for backup at the first sign of trouble."
+level = 6
+hp_max = 38
+ac = 16
+count_min = 3
+count_max = 5
+xp_value = 100
+
+[encounters.entities.ability_scores]
+strength = 14
+dexterity = 12
+constitution = 14
+intelligence = 11
+wisdom = 12
+charisma = 10
+
+[[encounters.entities.attacks]]
+name = "Longsword"
+damage_dice = "1d8"
+damage_bonus = 2
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Heavy Crossbow"
+damage_dice = "1d10"
+damage_bonus = 1
+damage_type = "piercing"
+
+[[encounters]]
+id = "sewer_ghouls"
+name = "Sewer Ghouls"
+location_ids = ["sewers"]
+encounter_chance = 0.4
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "healing_herb", chance = 0.3},
+    {id = "arcane_dust", chance = 0.2},
+    {id = "soul_gem", chance = 0.05},
+]
+gold_min = 10
+gold_max = 30
+
+[[encounters.entities]]
+id = "sewer_ghoul"
+name = "Sewer Ghoul"
+entity_type = "enemy"
+description = "A rotting undead that feeds on corpses in the city's sewers. Its claws drip with paralytic toxin, and its hollow eyes glow with hunger."
+level = 6
+hp_max = 36
+ac = 12
+count_min = 3
+count_max = 5
+xp_value = 100
+
+[encounters.entities.ability_scores]
+strength = 15
+dexterity = 14
+constitution = 12
+intelligence = 6
+wisdom = 10
+charisma = 5
+
+[[encounters.entities.attacks]]
+name = "Paralyzing Claws"
+damage_dice = "2d6"
+damage_bonus = 3
+damage_type = "necrotic"
+
+[[encounters]]
+id = "arena_challenge"
+name = "Arena Champion"
+location_ids = ["kingsward_arena"]
+encounter_chance = 0.3
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "healing_potion", chance = 0.6},
+    {id = "longsword", chance = 0.2},
+    {id = "chain_mail", chance = 0.1},
+]
+gold_min = 50
+gold_max = 150
+
+[[encounters.entities]]
+id = "arena_champion"
+name = "Arena Champion"
+entity_type = "enemy"
+description = "A veteran gladiator in ornate armor, scarred from a hundred battles. The crowd roars as they raise their weapon in salute before the fight begins."
+level = 9
+hp_max = 72
+ac = 17
+count_min = 1
+count_max = 1
+xp_value = 500
+
+[encounters.entities.ability_scores]
+strength = 18
+dexterity = 16
+constitution = 16
+intelligence = 10
+wisdom = 12
+charisma = 14
+
+[[encounters.entities.attacks]]
+name = "Champion's Greatsword"
+damage_dice = "2d6"
+damage_bonus = 5
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Shield Bash"
+damage_dice = "1d6"
+damage_bonus = 4
+damage_type = "bludgeoning"
+
+[[encounters]]
+id = "thieves_ambush"
+name = "Thieves' Ambush"
+location_ids = ["slums_district", "the_old_quarter"]
+encounter_chance = 0.3
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "dagger", chance = 0.4},
+    {id = "healing_potion", chance = 0.2},
+    {id = "thieves_tools", chance = 0.1},
+]
+gold_min = 20
+gold_max = 50
+
+[[encounters.entities]]
+id = "kingsward_thief"
+name = "Kingsward Thief"
+entity_type = "enemy"
+description = "A shadow-cloaked figure who strikes from dark alleys. Quick, quiet, and deadly — they take your purse and your life with equal ease."
+level = 7
+hp_max = 32
+ac = 15
+count_min = 2
+count_max = 4
+xp_value = 150
+
+[encounters.entities.ability_scores]
+strength = 10
+dexterity = 18
+constitution = 12
+intelligence = 14
+wisdom = 12
+charisma = 10
+
+[[encounters.entities.attacks]]
+name = "Poisoned Dagger"
+damage_dice = "1d4"
+damage_bonus = 4
+damage_type = "piercing"
+
+[[encounters.entities.attacks]]
+name = "Sneak Attack"
+damage_dice = "2d6"
+damage_bonus = 4
+damage_type = "piercing"
+
+[[encounters]]
+id = "sewer_otyugh"
+name = "Sewer Otyugh"
+location_ids = ["sewers"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.4},
+    {id = "healing_potion", chance = 0.5},
+    {id = "soul_gem", chance = 0.1},
+]
+gold_min = 30
+gold_max = 80
+
+[[encounters.entities]]
+id = "otyugh"
+name = "Otyugh"
+entity_type = "enemy"
+description = "A massive, tentacled aberration that wallows in filth. Its gaping maw is ringed with teeth, and its two tentacles end in spiked pads that grab and crush prey."
+level = 8
+hp_max = 68
+ac = 14
+count_min = 1
+count_max = 1
+xp_value = 450
+
+[encounters.entities.ability_scores]
+strength = 18
+dexterity = 8
+constitution = 18
+intelligence = 6
+wisdom = 13
+charisma = 6
+
+[[encounters.entities.attacks]]
+name = "Tentacle Slam"
+damage_dice = "2d8"
+damage_bonus = 4
+damage_type = "bludgeoning"
+
+[[encounters.entities.attacks]]
+name = "Bite"
+damage_dice = "2d6"
+damage_bonus = 4
+damage_type = "piercing"
+
+[[encounters]]
+id = "cultist_cell"
+name = "Cultist Cell"
+location_ids = ["sewers", "the_old_quarter"]
+encounter_chance = 0.2
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.5},
+    {id = "nightshade", chance = 0.3},
+    {id = "soul_gem", chance = 0.1},
+    {id = "healing_potion", chance = 0.3},
+]
+gold_min = 15
+gold_max = 45
+
+[[encounters.entities]]
+id = "cultist"
+name = "Dark Cultist"
+entity_type = "enemy"
+description = "A robed figure chanting in an unknown tongue, their eyes glowing with unholy light. Dark energy crackles around their hands."
+level = 7
+hp_max = 35
+ac = 13
+count_min = 3
+count_max = 5
+xp_value = 150
+
+[encounters.entities.ability_scores]
+strength = 10
+dexterity = 12
+constitution = 12
+intelligence = 14
+wisdom = 14
+charisma = 14
+
+[[encounters.entities.attacks]]
+name = "Dark Bolt"
+damage_dice = "2d6"
+damage_bonus = 2
+damage_type = "necrotic"
+
+[[encounters.entities.attacks]]
+name = "Ritual Dagger"
+damage_dice = "1d4"
+damage_bonus = 1
+damage_type = "piercing"
+
+[[encounters]]
+id = "noble_duel"
+name = "Noble's Duel"
+location_ids = ["noble_quarter", "training_grounds"]
+encounter_chance = 0.2
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "rapier", chance = 0.2},
+    {id = "healing_potion", chance = 0.4},
+]
+gold_min = 30
+gold_max = 80
+
+[[encounters.entities]]
+id = "noble_duelist"
+name = "Noble Duelist"
+entity_type = "enemy"
+description = "A haughty noble in fine clothing, offended by some perceived slight. They draw a gleaming rapier with practiced ease — clearly no stranger to the blade."
+level = 7
+hp_max = 38
+ac = 16
+count_min = 1
+count_max = 1
+xp_value = 200
+
+[encounters.entities.ability_scores]
+strength = 12
+dexterity = 18
+constitution = 12
+intelligence = 14
+wisdom = 10
+charisma = 16
+
+[[encounters.entities.attacks]]
+name = "Rapier"
+damage_dice = "1d8"
+damage_bonus = 4
+damage_type = "piercing"
+
+[[encounters.entities.attacks]]
+name = "Riposte"
+damage_dice = "1d8"
+damage_bonus = 4
+damage_type = "piercing"
+
+[[encounters]]
+id = "haunted_archive"
+name = "Haunted Archive"
+location_ids = ["university_quarter"]
+encounter_chance = 0.15
+fight_type = "puzzle"
+description = "A section of the university library has become animated by a poltergeist. Books fly off shelves, ink bottles shatter, and ghostly writing appears on the walls. The spirit seems to be trying to communicate a forgotten message."
+
+[encounters.puzzle]
+puzzle_type = "riddle"
+dc = 15
+riddle_question = "The ghost writes frantically: 'I am the beginning of everything, the end of everywhere. I am the beginning of eternity, the end of time and space. What am I?'"
+riddle_answer = "the letter e"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.7},
+    {id = "soul_gem", chance = 0.2},
+    {id = "healing_potion", chance = 0.4},
+]
+gold_min = 30
+gold_max = 70

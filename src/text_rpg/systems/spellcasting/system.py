@@ -6,6 +6,7 @@ from typing import Any
 
 from text_rpg.content.loader import load_all_spells
 from text_rpg.mechanics.ability_scores import modifier
+from text_rpg.mechanics.elements import get_effective_damage
 from text_rpg.mechanics.spellcasting import (
     SPELLCASTING_ABILITY,
     calculate_healing,
@@ -58,6 +59,27 @@ class SpellcastingSystem(GameSystem):
             self._all_spells = load_all_spells()
         return self._all_spells
 
+    def _get_all_spells_for_context(self, context: GameContext) -> dict[str, dict]:
+        """Merge TOML spells with player-created custom spells."""
+        base = dict(self._get_spells())
+        repos = self._repos or {}
+        spell_creation_repo = repos.get("spell_creation")
+        if spell_creation_repo:
+            customs = spell_creation_repo.get_custom_spells(context.game_id, context.character["id"])
+            for cs in customs:
+                base[cs["id"]] = {
+                    "id": cs["id"],
+                    "name": cs["name"],
+                    "level": cs["level"],
+                    "school": cs.get("school", "evocation"),
+                    "description": cs["description"],
+                    "mechanics": cs.get("mechanics", {}),
+                    "elements": cs.get("elements", []),
+                    "classes": [],  # Custom spells are class-agnostic for creator
+                    "is_custom": True,
+                }
+        return base
+
     def _resolve_cast_spell(self, action: Action, context: GameContext) -> ActionResult:
         char = context.character
         char_id = char["id"]
@@ -79,7 +101,7 @@ class SpellcastingSystem(GameSystem):
                 outcome_description="Cast what? Specify a spell name, e.g. 'cast fire bolt at goblin'.",
             )
 
-        all_spells = self._get_spells()
+        all_spells = self._get_all_spells_for_context(context)
         spell = self._find_spell(spell_name_input, all_spells)
         if not spell:
             return ActionResult(
@@ -275,16 +297,27 @@ class SpellcastingSystem(GameSystem):
 
             if hit:
                 dmg_result = calculate_spell_damage(damage_dice, critical)
+
+                # Apply target resistance/vulnerability/immunity
+                t_props = safe_json(target_entity.get("properties"), {}) or {}
+                eff_dmg, eff_label = get_effective_damage(
+                    dmg_result.total, damage_type,
+                    t_props.get("resistances", []),
+                    t_props.get("vulnerabilities", []),
+                    t_props.get("immunities", []),
+                )
+
                 dice_rolls.append(DiceRoll(
                     dice_expression=damage_dice, rolls=dmg_result.individual_rolls,
-                    modifier=0, total=dmg_result.total,
+                    modifier=0, total=eff_dmg,
                     purpose=f"{damage_type} damage" + (" (CRITICAL!)" if critical else ""),
                 ))
-                total_damage += dmg_result.total
+                total_damage += eff_dmg
+                resist_note = f" ({eff_label})" if eff_label != "normal" else ""
                 if critical:
-                    parts.append(f"Critical hit for {dmg_result.total} {damage_type} damage!")
+                    parts.append(f"Critical hit for {eff_dmg} {damage_type} damage!{resist_note}")
                 else:
-                    parts.append(f"Hit for {dmg_result.total} {damage_type} damage.")
+                    parts.append(f"Hit for {eff_dmg} {damage_type} damage.{resist_note}")
             else:
                 parts.append("Miss!")
 
@@ -344,40 +377,54 @@ class SpellcastingSystem(GameSystem):
                 purpose=f"{target_name} {save_ability[:3].upper()} save (DC {spell_dc})",
             ))
 
+            # Get target's resistance properties
+            sv_props = safe_json(target_entity.get("properties"), {}) or {}
+            sv_resists = sv_props.get("resistances", [])
+            sv_vulns = sv_props.get("vulnerabilities", [])
+            sv_immunes = sv_props.get("immunities", [])
+
             if saved:
                 if damage_dice:
                     # Most save spells do half damage on save
                     dmg_result = calculate_spell_damage(damage_dice)
                     half_damage = max(1, dmg_result.total // 2)
+                    eff_half, eff_half_label = get_effective_damage(
+                        half_damage, damage_type, sv_resists, sv_vulns, sv_immunes,
+                    )
                     dice_rolls.append(DiceRoll(
                         dice_expression=damage_dice, rolls=dmg_result.individual_rolls,
-                        modifier=0, total=half_damage,
+                        modifier=0, total=eff_half,
                         purpose=f"{damage_type} damage (save: half)",
                     ))
                     old_hp = target_entity.get("hp_current", 10)
-                    new_hp = max(0, old_hp - half_damage)
+                    new_hp = max(0, old_hp - eff_half)
                     mutations.append(StateMutation(
                         target_type="entity", target_id=target_id,
                         field="hp_current", old_value=old_hp, new_value=new_hp,
                     ))
-                    summary = f"You cast {spell_name} at {target_name}. They save but take {half_damage} {damage_type} damage."
+                    resist_note = f" ({eff_half_label})" if eff_half_label != "normal" else ""
+                    summary = f"You cast {spell_name} at {target_name}. They save but take {eff_half} {damage_type} damage.{resist_note}"
                 else:
                     summary = f"You cast {spell_name} at {target_name}. They resist the effect!"
             else:
                 if damage_dice:
                     dmg_result = calculate_spell_damage(damage_dice)
+                    eff_full, eff_full_label = get_effective_damage(
+                        dmg_result.total, damage_type, sv_resists, sv_vulns, sv_immunes,
+                    )
                     dice_rolls.append(DiceRoll(
                         dice_expression=damage_dice, rolls=dmg_result.individual_rolls,
-                        modifier=0, total=dmg_result.total,
+                        modifier=0, total=eff_full,
                         purpose=f"{damage_type} damage",
                     ))
                     old_hp = target_entity.get("hp_current", 10)
-                    new_hp = max(0, old_hp - dmg_result.total)
+                    new_hp = max(0, old_hp - eff_full)
                     mutations.append(StateMutation(
                         target_type="entity", target_id=target_id,
                         field="hp_current", old_value=old_hp, new_value=new_hp,
                     ))
-                    summary = f"You cast {spell_name} at {target_name}. They fail the save and take {dmg_result.total} {damage_type} damage!"
+                    resist_note = f" ({eff_full_label})" if eff_full_label != "normal" else ""
+                    summary = f"You cast {spell_name} at {target_name}. They fail the save and take {eff_full} {damage_type} damage!{resist_note}"
                 elif effect:
                     summary = f"You cast {spell_name} at {target_name}. They fail the save! Effect: {effect}."
                 else:
@@ -484,6 +531,13 @@ class SpellcastingSystem(GameSystem):
             "actor_id": char_id,
             "mechanical_details": {"spell": spell["id"], "healed": healed},
         })
+        if healed > 0:
+            events.append({
+                "event_type": "HEAL",
+                "description": f"Healed {healed} HP with {spell_name}.",
+                "actor_id": char_id,
+                "mechanical_details": {"amount": healed, "source": spell["id"]},
+            })
         return summary
 
     def _resolve_buff_spell(

@@ -1,0 +1,6 @@
+id = "stormhaven"
+name = "Stormhaven"
+description = "A weathered coastal town built around a natural harbor battered by frequent storms. Stormhaven is a hub for deep-sea fishing, whaling, and trade, where the Harpooner's Guild competes with privateers for control of the waters. Salt-crusted buildings cling to the cliffsides above crashing waves."
+level_range_min = 4
+level_range_max = 8
+climate = "maritime_stormy"

@@ -1,0 +1,290 @@
+# =============================================================================
+# Transmutation Spells — Transformation, enhancement, and physical manipulation
+# =============================================================================
+
+# Cantrips
+
+[[spells]]
+id = "shillelagh"
+name = "Shillelagh"
+level = 0
+school = "transmutation"
+classes = ["druid"]
+casting_time = "bonus_action"
+range = 0
+duration = "1 minute"
+components = ["V", "S"]
+description = "The wood of a club or quarterstaff you are holding is imbued with nature's power. It uses your spellcasting ability for attack and damage rolls, and the damage die becomes 1d8."
+[spells.mechanics]
+type = "buff"
+effect = "shillelagh"
+
+[[spells]]
+id = "mending"
+name = "Mending"
+level = 0
+school = "transmutation"
+classes = ["wizard", "bard", "cleric", "druid", "sorcerer"]
+casting_time = "action"
+range = 0
+duration = "instantaneous"
+components = ["V", "S"]
+description = "This spell repairs a single break or tear in an object you touch."
+[spells.mechanics]
+type = "utility"
+
+[[spells]]
+id = "message"
+name = "Message"
+level = 0
+school = "transmutation"
+classes = ["bard", "sorcerer", "wizard"]
+casting_time = "action"
+range = 120
+duration = "1 round"
+components = ["V", "S"]
+description = "You point your finger toward a creature within range and whisper a message. The target hears the message and can reply in a whisper."
+[spells.mechanics]
+type = "utility"
+
+# 1st Level
+
+[[spells]]
+id = "longstrider"
+name = "Longstrider"
+level = 1
+school = "transmutation"
+classes = ["bard", "druid", "ranger", "wizard"]
+casting_time = "action"
+range = 0
+duration = "1 hour"
+components = ["V", "S"]
+description = "You touch a creature. The target's speed increases by 10 feet until the spell ends."
+[spells.mechanics]
+type = "buff"
+effect = "speed_bonus"
+
+[[spells]]
+id = "thunderous_smite"
+name = "Thunderous Smite"
+level = 1
+school = "transmutation"
+classes = ["paladin"]
+casting_time = "bonus_action"
+range = 0
+duration = "1 minute"
+concentration = true
+components = ["V"]
+description = "The first time you hit with a melee weapon attack, your weapon rings with thunder. The attack deals an extra 2d6 thunder damage and the target must make a Strength save or be pushed 10 feet and knocked prone."
+[spells.mechanics]
+type = "buff"
+effect = "smite"
+damage_dice = "2d6"
+damage_type = "thunder"
+
+[[spells]]
+id = "feather_fall"
+name = "Feather Fall"
+level = 1
+school = "transmutation"
+classes = ["bard", "sorcerer", "wizard"]
+casting_time = "reaction"
+range = 60
+duration = "1 minute"
+components = ["V"]
+description = "Choose up to five falling creatures within range. A falling creature's rate of descent slows to 60 feet per round until the spell ends."
+[spells.mechanics]
+type = "utility"
+effect = "feather_fall"
+
+# 2nd Level
+
+[[spells]]
+id = "heat_metal"
+name = "Heat Metal"
+level = 2
+school = "transmutation"
+classes = ["bard", "druid"]
+casting_time = "action"
+range = 60
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "Choose a manufactured metal object. Any creature in physical contact with the object takes 2d8 fire damage."
+[spells.mechanics]
+type = "auto_hit"
+damage_dice = "2d8"
+damage_type = "fire"
+
+[[spells]]
+id = "enlarge_reduce"
+name = "Enlarge/Reduce"
+level = 2
+school = "transmutation"
+classes = ["sorcerer", "wizard"]
+casting_time = "action"
+range = 30
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "You cause a creature or object to grow larger or smaller. Enlarge: advantage on Strength checks, +1d4 weapon damage. Reduce: disadvantage on Strength checks, -1d4 weapon damage."
+[spells.mechanics]
+type = "buff"
+effect = "enlarge"
+bonus_dice = "1d4"
+
+[[spells]]
+id = "barkskin"
+name = "Barkskin"
+level = 2
+school = "transmutation"
+classes = ["druid", "ranger"]
+casting_time = "action"
+range = 0
+duration = "1 hour"
+concentration = true
+components = ["V", "S"]
+description = "You touch a willing creature. Until the spell ends, the target's skin becomes bark-like and its AC can't be less than 16."
+[spells.mechanics]
+type = "buff"
+effect = "barkskin"
+ac_base = 16
+
+# 3rd Level
+
+[[spells]]
+id = "haste"
+name = "Haste"
+level = 3
+school = "transmutation"
+classes = ["sorcerer", "wizard"]
+casting_time = "action"
+range = 30
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "Choose a willing creature. Until the spell ends, the target's speed is doubled, it gains +2 AC, advantage on Dexterity saves, and an additional action each turn."
+[spells.mechanics]
+type = "buff"
+effect = "haste"
+ac_bonus = 2
+
+[[spells]]
+id = "fly"
+name = "Fly"
+level = 3
+school = "transmutation"
+classes = ["sorcerer", "warlock", "wizard"]
+casting_time = "action"
+range = 0
+duration = "10 minutes"
+concentration = true
+components = ["V", "S"]
+description = "You touch a willing creature. The target gains a flying speed of 60 feet for the duration."
+[spells.mechanics]
+type = "buff"
+effect = "fly"
+
+[[spells]]
+id = "blinding_smite"
+name = "Blinding Smite"
+level = 3
+school = "transmutation"
+classes = ["paladin"]
+casting_time = "bonus_action"
+range = 0
+duration = "1 minute"
+concentration = true
+components = ["V"]
+description = "The next time you hit a creature with a melee weapon attack, your weapon flares with bright light. The attack deals an extra 3d8 radiant damage, and the target must make a Constitution save or be blinded."
+[spells.mechanics]
+type = "buff"
+effect = "smite"
+damage_dice = "3d8"
+damage_type = "radiant"
+
+# 4th Level
+
+[[spells]]
+id = "polymorph"
+name = "Polymorph"
+level = 4
+school = "transmutation"
+classes = ["bard", "druid", "sorcerer", "wizard"]
+casting_time = "action"
+range = 60
+duration = "1 hour"
+concentration = true
+components = ["V", "S"]
+description = "This spell transforms a creature into a new form. An unwilling creature must make a Wisdom save. The target assumes the statistics of the new form."
+[spells.mechanics]
+type = "save"
+save_ability = "wisdom"
+effect = "polymorph"
+
+[[spells]]
+id = "stoneskin"
+name = "Stoneskin"
+level = 4
+school = "transmutation"
+classes = ["druid", "ranger", "sorcerer", "wizard"]
+casting_time = "action"
+range = 0
+duration = "1 hour"
+concentration = true
+components = ["V", "S"]
+description = "This spell turns the flesh of a willing creature as hard as stone. The target has resistance to nonmagical bludgeoning, piercing, and slashing damage."
+[spells.mechanics]
+type = "buff"
+effect = "damage_resistance"
+
+# 5th Level
+
+[[spells]]
+id = "awaken"
+name = "Awaken"
+level = 5
+school = "transmutation"
+classes = ["bard", "druid"]
+casting_time = "action"
+range = 0
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You touch a huge or smaller beast or plant. The target gains an Intelligence of 10 and the ability to speak one language you know."
+[spells.mechanics]
+type = "utility"
+effect = "awaken"
+
+# 6th Level
+
+[[spells]]
+id = "flesh_to_stone"
+name = "Flesh to Stone"
+level = 6
+school = "transmutation"
+classes = ["warlock", "wizard"]
+casting_time = "action"
+range = 60
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "You attempt to turn one creature that you can see into stone. The target must make a Constitution save. On failure, it is restrained as its flesh begins to harden."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+effect = "petrified"
+
+[[spells]]
+id = "wind_walk"
+name = "Wind Walk"
+level = 6
+school = "transmutation"
+classes = ["druid"]
+casting_time = "action"
+range = 30
+duration = "8 hours"
+components = ["V", "S"]
+description = "You and up to ten willing creatures assume a gaseous form for the duration, gaining a flying speed of 300 feet."
+[spells.mechanics]
+type = "utility"
+effect = "gaseous_form"

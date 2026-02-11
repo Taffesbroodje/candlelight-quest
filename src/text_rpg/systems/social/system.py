@@ -280,6 +280,7 @@ class SocialSystem(GameSystem):
         base_dc = 15
         dc = max(8, base_dc - trust)
 
+        persuasion_skill = "persuasion" if "persuasion" in skill_profs else "deception"
         success, roll_result = skill_check(cha_score, prof_bonus, is_prof, dc)
 
         dice_rolls = [DiceRoll(
@@ -289,6 +290,16 @@ class SocialSystem(GameSystem):
             total=roll_result.total,
             purpose=f"persuasion_check (DC {dc})",
         )]
+
+        self._persuasion_skill_event = {
+            "event_type": "SKILL_CHECK",
+            "description": f"{persuasion_skill} check (DC {dc}) — {'success' if success else 'failure'}",
+            "actor_id": char.get("id", ""),
+            "mechanical_details": {
+                "skill": persuasion_skill, "dc": dc,
+                "success": success, "roll": roll_result.total,
+            },
+        }
 
         # Ask LLM to evaluate the negotiation
         from text_rpg.systems.director.generators import negotiate_quest
@@ -330,19 +341,22 @@ class SocialSystem(GameSystem):
                 action_id=action.id, success=True,
                 outcome_description=f"You negotiate with {npc['name']}.",
                 dice_rolls=dice_rolls,
-                events=[{
-                    "event_type": "QUEST_NEGOTIATION",
-                    "description": f"Successfully negotiated quest terms with {npc['name']}.",
-                    "actor_id": context.character.get("id"),
-                    "target_id": npc["id"],
-                    "mechanical_details": {
-                        "npc_name": npc["name"],
-                        "npc_response": npc_response,
-                        "quest_name": target_quest.get("name", ""),
-                        "accepted": True,
-                        "player_input": action.raw_input,
+                events=[
+                    self._persuasion_skill_event,
+                    {
+                        "event_type": "QUEST_NEGOTIATION",
+                        "description": f"Successfully negotiated quest terms with {npc['name']}.",
+                        "actor_id": context.character.get("id"),
+                        "target_id": npc["id"],
+                        "mechanical_details": {
+                            "npc_name": npc["name"],
+                            "npc_response": npc_response,
+                            "quest_name": target_quest.get("name", ""),
+                            "accepted": True,
+                            "player_input": action.raw_input,
+                        },
                     },
-                }],
+                ],
             )
         else:
             # Negotiation failed
@@ -352,19 +366,22 @@ class SocialSystem(GameSystem):
                 action_id=action.id, success=False,
                 outcome_description=f"You try to negotiate with {npc['name']}, but they aren't convinced.",
                 dice_rolls=dice_rolls,
-                events=[{
-                    "event_type": "QUEST_NEGOTIATION",
-                    "description": f"Failed to negotiate quest terms with {npc['name']}.",
-                    "actor_id": context.character.get("id"),
-                    "target_id": npc["id"],
-                    "mechanical_details": {
-                        "npc_name": npc["name"],
-                        "npc_response": npc_response,
-                        "quest_name": target_quest.get("name", ""),
-                        "accepted": False,
-                        "player_input": action.raw_input,
+                events=[
+                    self._persuasion_skill_event,
+                    {
+                        "event_type": "QUEST_NEGOTIATION",
+                        "description": f"Failed to negotiate quest terms with {npc['name']}.",
+                        "actor_id": context.character.get("id"),
+                        "target_id": npc["id"],
+                        "mechanical_details": {
+                            "npc_name": npc["name"],
+                            "npc_response": npc_response,
+                            "quest_name": target_quest.get("name", ""),
+                            "accepted": False,
+                            "player_input": action.raw_input,
+                        },
                     },
-                }],
+                ],
             )
 
     def _adjust_disposition(self, npc: dict, change: int) -> None:

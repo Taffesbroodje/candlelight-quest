@@ -1,0 +1,254 @@
+# Scholarly origins — those who pursued knowledge, faith, and understanding
+
+[[origins]]
+id = "sage"
+name = "Sage"
+category = "scholarly"
+summary = "You spent years in libraries and archives, accumulating vast knowledge and an insatiable curiosity about the world."
+prologue = """The smell of old parchment is more familiar to you than fresh air. For years you studied in the great libraries — cross-referencing histories, translating dead languages, cataloging artifacts that most scholars only read about. You earned your place among the learned through relentless inquiry and a memory that borders on the uncanny.
+
+But knowledge has a way of leading you to questions that libraries can't answer. A reference in a crumbling text — a mention of the Whisperwood ruins and a power sealed beneath them — sent you on a journey that no amount of reading could have prepared you for.
+
+You arrived at the temple in Thornfield Village, hoping to access their archives. What you found instead were worried priests, frightened villagers, and a mystery that demands a scholar's mind and a braver heart than you thought you possessed."""
+ability_choices = ["intelligence", "wisdom", "charisma"]
+skill_proficiencies = ["arcana", "history"]
+starting_equipment = ["ink_and_quill", "old_journal"]
+bonus_gold = 10
+starting_region = "verdant_reach"
+starting_location = "thornfield_temple"
+feature_name = "Researcher"
+feature_description = "When you cannot recall a piece of information, you know exactly where and from whom you can obtain it, halving the time needed to research lore in libraries or archives."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "acolyte"
+name = "Acolyte"
+category = "scholarly"
+summary = "You served in a temple, tending to the faithful and studying sacred texts until a calling drew you beyond the cloister walls."
+prologue = """You knelt on cold stone floors before dawn, chanting prayers by candlelight while the world outside slept. The temple raised you — or near enough. Whether you came to the faith as a child or found it later in life, the routines of devotion shaped you: morning rites, evening vespers, hours of meditation between. You learned the sacred texts until you could recite them from memory, and you tended the sick and weary who came to the temple seeking comfort.
+
+But faith is not a quiet thing. The visions began three months ago — flashes of a ruined place wreathed in pale light, a presence that called without words. Your superiors recognized the signs. "You are being summoned," the high priest said, pressing a holy symbol into your hands. "Go to Thornfield. The temple there will shelter you while you seek understanding."
+
+You stand now in the modest temple of Thornfield Village, your travel-stained robes drawing curious glances from the local clergy. The visions have quieted since your arrival, but the sense of purpose remains — a certainty that your faith has led you here for a reason that transcends prayer."""
+ability_choices = ["wisdom", "intelligence", "charisma"]
+skill_proficiencies = ["insight", "religion"]
+starting_equipment = ["holy_symbol", "prayer_book"]
+bonus_gold = 10
+starting_region = "verdant_reach"
+starting_location = "thornfield_temple"
+feature_name = "Shelter of the Faithful"
+feature_description = "Temples and religious communities will provide you with food, shelter, and healing, and followers of your faith will support you as long as your requests are reasonable."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "scribe"
+name = "Scribe"
+category = "scholarly"
+summary = "You copied texts and recorded official proceedings, developing a sharp eye for detail and a deep love of the written word."
+prologue = """Your fingers are permanently stained with ink — a mark of your trade that no amount of scrubbing removes. For years you served as a scribe in the administrative halls, copying legal documents, transcribing testimonies, and recording the minutes of council meetings. The work was tedious to some, but you found satisfaction in precision: each letter formed with care, each margin measured, each page a small monument to order.
+
+It was during the copying of a seized estate's inventory that you found it — a journal hidden between the pages of a mundane ledger, written in a cipher you didn't recognize. You spent weeks decoding it in secret, and what you found was a detailed account of expeditions into ruins that officially don't exist, cataloging discoveries that powerful people wanted buried.
+
+The journal led you to Thornfield Village, where the author had spent their final years. You arrived with your supplies and your questions, posing as a traveling copyist looking for work. The village is small and its records modest, but somewhere in this place are answers to what the journal's author discovered — and why they stopped writing."""
+ability_choices = ["intelligence", "dexterity", "wisdom"]
+skill_proficiencies = ["history", "investigation"]
+starting_equipment = ["calligraphers_supplies", "ink_and_quill"]
+bonus_gold = 10
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Eye for Detail"
+feature_description = "Your trained eye catches inconsistencies in written documents instantly, granting advantage on Investigation checks to detect forgeries, hidden messages, or altered texts."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "alchemist_origin"
+name = "Alchemist"
+category = "scholarly"
+summary = "You studied the transmutation of substances and the brewing of potions, chasing the boundary between science and magic."
+prologue = """The line between chemistry and sorcery is thinner than most scholars admit, and you've spent your career walking it. In the forges and laboratories of Cinderhold, where volcanic heat provides natural crucibles and rare minerals seep from the earth, you studied the art of transmutation — turning base metals toward noble ones, distilling curative elixirs from toxic fungi, and pursuing the grand theories that the academic establishment dismisses as fantasy.
+
+Your work drew attention: some admiring, some suspicious. The alchemists' guild tolerated your experiments as long as they produced sellable potions, but your real research — the theoretical work on elemental binding and material transformation — made them nervous. When an experiment destabilized and took out a wall of the shared laboratory, the guild used it as an excuse to revoke your bench privileges.
+
+You've relocated to the forge district's outer workshops, where the supervision is lighter and the mineral deposits richer. Your supplies are limited but your theories are sound. All you need is the right catalyst — and the freedom to pursue your work without bureaucrats looking over your shoulder."""
+ability_choices = ["intelligence", "wisdom", "dexterity"]
+skill_proficiencies = ["arcana", "nature"]
+starting_equipment = ["alchemists_supplies", "old_journal"]
+bonus_gold = 12
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_forge"
+feature_name = "Alchemical Intuition"
+feature_description = "Your deep understanding of reagents and reactions allows you to identify potions by smell and appearance alone, and you can determine the properties of unknown alchemical substances without risking consumption."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "librarian"
+name = "Librarian"
+category = "scholarly"
+summary = "You curated a vast collection of books and scrolls, serving as a guardian of knowledge both mundane and forbidden."
+prologue = """The library was your world — a cathedral of bound knowledge stretching three stories high, its shelves holding texts in seventeen languages spanning two thousand years of recorded history. You cataloged, preserved, and protected them all. You knew every volume by location, every scroll by condition, every restricted text by the lock that sealed its case. Scholars came to you when they needed something found, because you could locate any work in the collection faster than they could describe it.
+
+It was in the restricted wing that you found the manuscript — water-damaged, partially illegible, but unmistakable in its subject matter. It described a repository of knowledge predating the current kingdom, sealed beneath ruins in a region the text called the "Verdant Reach." The implications were staggering: an entire archive of pre-kingdom scholarship, untouched and unlooted.
+
+You requested a leave of absence, packed your research tools, and traveled to the village nearest the described location. Thornfield is a humble place with no library to speak of, but the ruins in the nearby Whisperwood match the manuscript's descriptions with unsettling precision. If the repository exists, finding it could rewrite the history books — your history books."""
+ability_choices = ["intelligence", "wisdom", "charisma"]
+skill_proficiencies = ["history", "investigation"]
+starting_equipment = ["ink_and_quill", "magnifying_glass"]
+bonus_gold = 8
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Cataloger's Memory"
+feature_description = "You have an exceptional memory for written information, allowing you to recall key details from any text you've read in the past month with near-perfect accuracy."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "astronomer"
+name = "Astronomer"
+category = "scholarly"
+summary = "You charted the heavens from a remote observatory, reading portents in the movement of stars and the wandering of moons."
+prologue = """The stars speak to those patient enough to listen. From the Obsidian Plateau — where the air is thin, the skies are clear, and the volcanic glass reflects the heavens like a dark mirror — you've spent years mapping celestial movements that most scholars ignore. The wandering stars, the comet cycles, the slow precession of constellations that mark the turning of ages. Your charts are meticulous. Your predictions are uncanny. And lately, they've been troubling.
+
+Something is wrong in the sky. A constellation that ancient texts call the Warden has shifted — not in the gradual way of natural precession, but abruptly, as if something knocked it askew. Your calculations suggest the shift corresponds to a location on the surface: a convergence point where celestial and terrestrial forces align. The coordinates point to a region of dense forest and old ruins, far from your mountain observatory.
+
+You descended from the plateau with your charts and your instruments, following the numbers to wherever they lead. The highlands give way to lowlands, and the stars wheel overhead in patterns you've spent a lifetime decoding. Whatever is causing the anomaly, you intend to find it — because an astronomer who ignores the sky's warnings is no astronomer at all."""
+ability_choices = ["intelligence", "wisdom", "dexterity"]
+skill_proficiencies = ["arcana", "nature"]
+starting_equipment = ["star_chart", "spyglass"]
+bonus_gold = 10
+starting_region = "ashen_highlands"
+starting_location = "obsidian_plateau"
+feature_name = "Star Reader"
+feature_description = "You can read celestial signs to determine direction, time, and approaching weather with exceptional accuracy, and you gain advantage on Navigation checks made under open sky at night."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "archaeologist"
+name = "Archaeologist"
+category = "scholarly"
+summary = "You excavated ancient sites with scholarly rigor, uncovering lost civilizations buried beneath centuries of earth and silence."
+prologue = """Where tomb robbers see treasure, you see context. Every artifact tells a story, but only if you read the soil layers, the architectural style, the placement of objects in relation to each other. You've spent years in the field — excavating burial mounds, mapping collapsed temple complexes, painstakingly brushing dirt from pottery shards that rewrite the histories the universities teach. Your knees ache, your back protests, and your hands are calloused from the shovel, but there is no finer feeling than being the first person in a thousand years to touch something made by hands long turned to dust.
+
+The Sunken Reach has haunted academic circles for decades. A pre-kingdom civilization — sophisticated, literate, and utterly vanished — left structures here that the bog has been slowly swallowing for centuries. Previous expeditions mapped the upper chambers but never breached the lower levels, driven back by flooding, structural collapse, and what one journal politely described as "atmospheric disturbances."
+
+You've secured modest funding and traveled to the sunken temple site with your tools, your journal, and a determination that borders on obsession. The locals think the ruins are cursed. You think they're the most important archaeological find in a generation. You intend to prove it."""
+ability_choices = ["intelligence", "wisdom", "strength"]
+skill_proficiencies = ["history", "investigation"]
+starting_equipment = ["shovel", "old_journal", "lantern"]
+bonus_gold = 10
+starting_region = "sunken_reach"
+starting_location = "sunken_temple"
+feature_name = "Historical Expertise"
+feature_description = "Your extensive field experience allows you to identify the age, origin, and cultural significance of ruins and artifacts on inspection, providing advantage on History checks related to ancient civilizations."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "naturalist"
+name = "Naturalist"
+category = "scholarly"
+summary = "You studied the living world with obsessive devotion, cataloging creatures, plants, and ecosystems in the wild places of the realm."
+prologue = """The libraries hold knowledge, but the forest holds truth. You've always believed that, and you've built your life around proving it. While other scholars debated taxonomy from the comfort of reading rooms, you were in the field — belly-down in the undergrowth watching a giant spider construct its web, cataloging the medicinal properties of ferns that grow only in fey-touched soil, sketching the migratory patterns of griffons from a hide you'd spent three days building.
+
+The Thornwild drew you like a moth to flame. It's one of the last great wild places — an ancient forest ecosystem where the boundary between the natural and the supernatural is paper-thin. Fey crossings, awakened beasts, plant species found nowhere else in the known world. Your herbalism kit has never been so full, and your journal has never filled so quickly.
+
+You've made camp near the Briarhaven grove, where the druids tolerate your presence as long as you respect the forest's rules. Your research is groundbreaking, but it's also drawing you deeper into the Thornwild than any naturalist has gone in living memory. The creatures here are more unusual — and more dangerous — the further you go."""
+ability_choices = ["wisdom", "intelligence", "constitution"]
+skill_proficiencies = ["nature", "survival"]
+starting_equipment = ["herbalism_kit", "old_journal"]
+bonus_gold = 8
+starting_region = "thornwild"
+starting_location = "briarhaven_grove"
+feature_name = "Field Naturalist"
+feature_description = "Your extensive study of flora and fauna allows you to identify any natural creature or plant on sight and recall useful information about its behavior, diet, and vulnerabilities."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "cartographer"
+name = "Cartographer"
+category = "scholarly"
+summary = "You mapped uncharted territories for guild and crown, trading the safety of civilization for the thrill of blank spaces on the map."
+prologue = """There is a particular joy in being the first to put pen to parchment and give shape to a place that has never been drawn. You've spent years in service to the Mapmaker's Guild, charting trade routes, surveying borders, and filling in the empty spaces at the edges of the known world. Your maps are prized for their accuracy — every contour line measured, every landmark verified, every distance paced out on foot.
+
+But it's the blank spaces that call to you. The guild's master map has regions marked only with old notations: "unexplored," "disputed," "here be dangers." The Verdant Reach is one such region — partially mapped along its trade roads but largely uncharted beyond the village boundaries. The Whisperwood, in particular, is a cartographic void. No reliable map of its interior exists.
+
+You arrived in Thornfield with your tools and a commission from the guild to produce a definitive survey of the region. The villagers were helpful with local landmarks but vague about the deeper forest. "The woods shift," one farmer told you, which is exactly the kind of unscientific nonsense that a proper cartographer can disprove — or, more interestingly, confirm."""
+ability_choices = ["intelligence", "wisdom", "dexterity"]
+skill_proficiencies = ["nature", "survival"]
+starting_equipment = ["cartographers_tools", "compass"]
+bonus_gold = 12
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Wayfinder"
+feature_description = "Your cartographic training makes you nearly impossible to lose in terrain you've traversed before, granting advantage on checks to navigate or recall the layout of areas you've previously explored."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "theologian"
+name = "Theologian"
+category = "scholarly"
+summary = "You devoted your life to studying the nature of the divine, debating doctrine and seeking proof of the gods' designs."
+prologue = """Faith is common. Understanding is rare. While acolytes pray and priests perform rites, you have spent your life asking the harder questions: Why do the gods intervene when they do? What is the nature of divine power, and how does it differ from arcane magic? Are the gods truly immortal, or are they simply beings of such vast power that mortal lifespans cannot witness their decline? These questions earned you respect in academic circles and suspicion in religious ones.
+
+Your research led you to the Murkfen shrine — an ancient holy site predating the organized temples, where pilgrims once came to commune with a divine presence that no modern theology can identify. The shrine's inscriptions have resisted translation for centuries, but your comparative analysis of pre-kingdom religious texts suggests a connection to a forgotten deity — one whose worship was deliberately erased from the historical record.
+
+The shrine sits half-submerged in the Sunken Reach, tended by a single elderly keeper who speaks little but watches everything. You've set up your study in the dry upper chambers, surrounded by inscriptions that may hold the key to understanding something the established churches would prefer to remain forgotten. The work is slow, the conditions miserable, and the theological implications terrifying. You wouldn't be anywhere else."""
+ability_choices = ["wisdom", "intelligence", "charisma"]
+skill_proficiencies = ["religion", "insight"]
+starting_equipment = ["prayer_book", "ink_and_quill"]
+bonus_gold = 8
+starting_region = "sunken_reach"
+starting_location = "murkfen_shrine"
+feature_name = "Divine Theorist"
+feature_description = "Your deep study of divine mechanics allows you to identify the source and nature of divine magic on sight, granting advantage on Arcana or Religion checks to analyze holy or unholy phenomena."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "historian"
+name = "Historian"
+category = "scholarly"
+summary = "You chronicled the rise and fall of kingdoms, driven by the conviction that the past holds warnings the present ignores."
+prologue = """History is not a list of dates and names — it's a pattern, a cycle of ambition, hubris, and collapse that repeats with depressing regularity. You've spent your career documenting these cycles, tracing the threads that connect a kingdom's founding myths to its eventual decline. Your published works are well-regarded in academic circles, though your insistence that "the past is prologue to disaster" has made you unpopular at court functions.
+
+A pattern in your research brought you to Thornfield. You'd been studying the pre-kingdom civilizations — the ones that built the ruins scattered across the Verdant Reach before vanishing so completely that even their name is lost. The standard histories say they simply declined and were absorbed by successor cultures. But the archaeological record tells a different story: a sudden end, a catastrophic collapse, and evidence of something that the contemporary accounts describe only as "the Unmaking."
+
+You've come to Thornfield to access local records and interview villagers whose families have lived in the shadow of these ruins for generations. Oral histories often preserve what written records sanitize. If the pre-kingdom civilization was destroyed rather than absorbed, understanding how it happened might be the most important work of your career — because the patterns you're seeing suggest it could happen again."""
+ability_choices = ["intelligence", "wisdom", "charisma"]
+skill_proficiencies = ["history", "insight"]
+starting_equipment = ["old_journal", "ink_and_quill"]
+bonus_gold = 10
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Lessons of the Past"
+feature_description = "Your knowledge of historical precedent allows you to recognize recurring political, military, and social patterns, granting advantage on Insight checks when assessing the motivations of rulers, factions, and institutions."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []

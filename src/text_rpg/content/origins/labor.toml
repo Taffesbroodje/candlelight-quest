@@ -1,0 +1,474 @@
+# =============================================================================
+# Labor Origins — Backgrounds rooted in physical work, trade skills, and toil
+# =============================================================================
+
+[[origins]]
+id = "farmer"
+name = "Farmer"
+category = "labor"
+summary = "Raised on the land, hardened by seasons, and wise in the ways of soil and sky."
+prologue = """
+The farm road south of Thornfield is rutted deep by generations of cart wheels, and \
+your boots have worn their own groove into it. You know every stone, every puddle \
+that forms after rain, every bend where the wind shifts and carries the smell of \
+turned earth. The farm was your father's before you, and his mother's before him, \
+and the soil remembers their hands as surely as it knows yours.
+
+You rose before dawn and worked until the light failed. Planting, harvesting, \
+mending fences, chasing crows, pulling stones from fields that seemed to grow them \
+like crops. Your hands are maps of labor — calloused palms, a crooked finger that \
+healed wrong after a kicked gate, dirt under your nails that no amount of scrubbing \
+ever fully removes. It was honest work, and you were proud of it.
+
+But the blight came with the autumn rains. Black rot crept through the wheat, \
+spread to the barley, and by the first frost, the harvest was a fraction of what \
+you needed. The debts mounted. The farm could not sustain you through winter, and \
+you would not watch your family starve while you clung to pride. You sharpened your \
+shovel, packed what provisions remained, and set out along the farm road — this \
+time walking away from everything you knew, toward whatever might save it."""
+ability_choices = ["strength", "constitution", "wisdom"]
+skill_proficiencies = ["animal_handling", "nature"]
+starting_equipment = ["shovel", "common_clothes"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "farm_road"
+feature_name = "Salt of the Earth"
+feature_description = "Your agrarian roots earn the trust of rural folk. You gain advantage on persuasion checks with farmers, villagers, and common laborers."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "blacksmith"
+name = "Blacksmith"
+category = "labor"
+summary = "Forged in the heat of the furnace, shaping metal and destiny with every strike."
+prologue = """
+Cinderhold's forges never sleep. The mountain city breathes smoke and rings with \
+hammers at every hour, its foundries fed by veins of ore that run through the rock \
+like dark arteries. You apprenticed in the lower forges where the heat was fiercest \
+and the masters were hardest, learning to read the color of heated steel the way \
+a scholar reads text — cherry red for bending, white for welding, the faintest \
+blue that warns of brittleness.
+
+Your arms grew thick from the work, your lungs accustomed to the acrid air, your \
+ears tuned to the pitch of a hammer strike that tells you whether the metal will \
+hold or shatter. You forged nails by the thousand, then hinges, then blades. Each \
+piece carried your mark — a small notch on the tang that the masters taught you to \
+be proud of, because a blacksmith who will not sign their work does not trust it.
+
+But the deep mines have grown dangerous. Ore shipments slowed, then stopped. The \
+forges that once blazed around the clock now stand cold for hours at a time, and \
+the younger smiths have begun drifting away to seek work elsewhere. You could stay \
+and wait for the ore to return. Instead, you packed your tools and descended the \
+highland road, carrying the forge's heat in your blood and its discipline in your \
+bones. Whatever lies ahead, you will shape it to your will."""
+ability_choices = ["strength", "constitution", "intelligence"]
+skill_proficiencies = ["athletics", "perception"]
+starting_equipment = ["smiths_tools", "common_clothes"]
+bonus_gold = 10
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_forge"
+feature_name = "Forgeborn Intuition"
+feature_description = "You can assess the quality and origin of metalwork by touch and sight. You gain advantage on checks to appraise, identify, or repair metal weapons and armor."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "sailor"
+name = "Sailor"
+category = "labor"
+summary = "Seasoned by salt spray and storm, equally at home on deck or in a dockside brawl."
+prologue = """
+The Iron Coast earned its name from the color of its cliffs, but you know a truer \
+reason — the sea here is iron-hard and iron-cold, and it hammers everything it \
+touches into unyielding shape. You signed on to your first crew at fourteen, a \
+scrawny thing hauling rope on a merchant vessel that ran the coastal routes between \
+Saltmere and ports you have since forgotten. The sea did not care that you were \
+young. It taught you balance, strength, and the absolute necessity of trusting the \
+person beside you when a storm turns the world to chaos.
+
+You learned to read the sky like a letter — high cirrus for fair weather, a green \
+tinge on the horizon for trouble, the particular stillness before a squall that \
+makes experienced sailors check the rigging without a word. Your hands know every \
+knot. Your feet know every pitch and roll. You have been thrown overboard twice and \
+survived both times, which earns a kind of respect among sailors that no title can \
+match.
+
+But the last voyage ended badly. The ship struck something — rock, reef, or \
+something worse — and went down in the tide caves south of Saltmere. You swam to \
+shore with nothing but the rope on your belt and the navigator's tools you grabbed \
+as the deck tilted. Now you stand on the docks, dripping and determined, ready to \
+find your next heading."""
+ability_choices = ["strength", "dexterity", "constitution"]
+skill_proficiencies = ["athletics", "perception"]
+starting_equipment = ["hempen_rope", "navigators_tools"]
+bonus_gold = 10
+starting_region = "iron_coast"
+starting_location = "saltmere_docks"
+feature_name = "Sea Legs"
+feature_description = "Your years aboard ship grant preternatural balance. You gain advantage on athletics and acrobatics checks to maintain footing on unstable or slippery terrain."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "fisher"
+name = "Fisher"
+category = "labor"
+summary = "Patient and perceptive, trained by the tides to wait for the right moment to act."
+prologue = """
+Fisher's Cove is a crescent of grey sand sheltered from the worst of the Iron \
+Coast's storms by a natural breakwater of tumbled stone. You have launched your \
+boat from this beach more times than you can count, rowing out before dawn into \
+water the color of pewter, setting your lines where the currents converge and the \
+fish school thick beneath the surface. The cove taught you patience — the deep, \
+bone-still patience of someone who knows that the sea gives when it chooses, not \
+when you demand.
+
+You learned the water's moods. The tides that bring schools of silver-sided bass, \
+the currents that pull jellyfish inshore, the rare days when the water clears \
+enough to see the kelp forests swaying twenty feet below your hull. You read the \
+surface for the dimples that betray feeding fish and the sky for the birds that \
+mark where the shoals run.
+
+But the fish have been thinning. Each season the catch is smaller, the good spots \
+farther from shore, the competition among the cove's fishers sharper and less \
+friendly. Last week you hauled your nets and found them full of nothing but weed \
+and a strange, pale mud that smelled of rot. Something has changed in the waters, \
+and the old fishers mutter about the sunken temple to the south. You mended your \
+nets one final time, stored your boat, and turned your back on the cove to find \
+answers — or at least a living — on dry land."""
+ability_choices = ["wisdom", "dexterity", "constitution"]
+skill_proficiencies = ["survival", "perception"]
+starting_equipment = ["fishing_tackle", "common_clothes"]
+bonus_gold = 5
+starting_region = "iron_coast"
+starting_location = "fishers_cove"
+feature_name = "Tidewater Patience"
+feature_description = "Your practiced stillness grants advantage on perception checks while stationary and on survival checks related to water, weather, or foraging near bodies of water."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "miner"
+name = "Miner"
+category = "labor"
+summary = "Shaped by darkness and stone, at home in places where the sun never reaches."
+prologue = """
+The deep mines beneath the Ashen Highlands are older than Cinderhold itself. The \
+earliest shafts were carved by hands that left no other record — only tunnels so \
+precisely cut that modern miners still follow them, marveling at the geometry. You \
+have spent years in those tunnels, chipping ore from seams of copper and iron, \
+breathing dust that coats your lungs and grits between your teeth. The darkness \
+down there is absolute, a weight you can feel against your skin, and your lantern \
+is your most precious possession.
+
+You learned to read the stone the way surface folk read weather — the sound of a \
+tap that warns of hollow ground, the mineral streaks that promise rich veins, the \
+subtle shifts in air pressure that mean a passage connects to something larger. \
+Your pick found more than ore. You uncovered fossils pressed into the rock like \
+prayers, veins of crystal that hummed when struck, and once, a sealed chamber \
+filled with air so cold your lantern nearly died.
+
+That chamber is what drove you to the surface. What you saw inside — the carvings, \
+the symbols, the thing resting on its pedestal — was not meant for a miner's eyes. \
+You reported it to the foreman, who reported it to the guild, who sealed the shaft \
+and told you to forget. But you cannot forget. The symbols glow behind your closed \
+eyes at night, and the pick in your hand feels less like a tool and more like a key."""
+ability_choices = ["strength", "constitution", "wisdom"]
+skill_proficiencies = ["athletics", "survival"]
+starting_equipment = ["miners_pick", "lantern"]
+bonus_gold = 8
+starting_region = "ashen_highlands"
+starting_location = "deep_mines"
+feature_name = "Darksense"
+feature_description = "Years underground sharpened your spatial awareness in darkness. You suffer no disadvantage on perception checks in dim light and can navigate underground passages from memory."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "woodcutter"
+name = "Woodcutter"
+category = "labor"
+summary = "A solitary worker of the forest, wise to its rhythms and its hidden dangers."
+prologue = """
+The Thornwild does not welcome visitors, but it tolerates those who understand it. \
+You learned its language young — the creak of a healthy trunk versus the groan of \
+rot, the difference between wind in the canopy and something moving through it, the \
+tracks that mean deer and the tracks that mean you should turn back. Your axe has \
+felled oaks that were old when your grandparents were born, and each one taught you \
+something: where to cut, when to step clear, how to read the lean.
+
+The trails through the Thornwild were your daily commute. You walked them in fog \
+and rain, in the green haze of summer and the skeletal grey of winter. You know \
+which clearings catch the morning light and which hollows stay damp enough to \
+cultivate mushrooms. The forest provided everything — timber for trade, kindling \
+for warmth, game when the hunting was good, and silence when you needed it most.
+
+But the forest has been restless lately. Trees you marked for felling have vanished \
+overnight, their stumps smooth as if they were never cut. The trails shift when \
+you are not watching. Last month, you found your axe marks on a tree you had never \
+touched, deep cuts healed over with new bark that should have taken years to grow. \
+The Thornwild is changing, and you would rather face whatever is causing it than \
+wait for it to come to you."""
+ability_choices = ["strength", "constitution", "dexterity"]
+skill_proficiencies = ["athletics", "nature"]
+starting_equipment = ["woodcarvers_tools", "common_clothes"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "thornwild_trails"
+feature_name = "Timber Sense"
+feature_description = "You instinctively assess natural structures for stability and danger. You gain advantage on survival checks in forested areas and on checks to detect natural traps or hazards."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "stable_hand"
+name = "Stable Hand"
+category = "labor"
+summary = "A quiet worker with an uncanny bond to beasts and a keen eye for trouble."
+prologue = """
+The stables behind the Thornfield Inn are larger than most travelers expect — twelve \
+stalls, a tack room, a hay loft where you slept on warm nights, and a paddock where \
+the merchant horses stretched their legs between journeys. You arrived looking for \
+any work at all and discovered a gift you never knew you had: animals trusted you. \
+Skittish mares calmed under your hand. Ill-tempered stallions ate from your palm. \
+The stable master noticed, and within a season, you were handling every horse that \
+passed through Thornfield.
+
+You learned to read animals the way their owners wished they could — the ear \
+position that warns of a kick, the restless circling that means colic, the way a \
+horse's eyes widen just before it bolts. You could calm a panicked animal in a \
+thunderstorm, diagnose a limp by watching a trot, and predict the weather by \
+which corner of the paddock the old grey mare chose to stand in.
+
+But last week a merchant's horse arrived lathered and wild-eyed, its rider missing, \
+its saddlebags slashed open and emptied. The animal bore claw marks on its flank \
+that you could not identify — too wide for a wolf, too clean for a bear. You \
+treated the wounds, soothed the horse, and lay awake that night listening to the \
+wind beyond the stable walls. The roads are growing dangerous. The animals know it \
+before anyone. And you trust the animals."""
+ability_choices = ["wisdom", "strength", "dexterity"]
+skill_proficiencies = ["animal_handling", "athletics"]
+starting_equipment = ["common_clothes", "hempen_rope"]
+bonus_gold = 3
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Beast Whisperer"
+feature_description = "Animals instinctively trust you and rarely show aggression. You gain advantage on animal handling checks and can attempt to calm hostile beasts before combat begins."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "tanner"
+name = "Tanner"
+category = "labor"
+summary = "A craftsperson of leather and hide, accustomed to the grim work others avoid."
+prologue = """
+The tannery sits downwind of Thornfield Market for a reason. The smell — a rich, \
+gagging blend of lime, dung, and animal fat — follows you like a loyal dog, \
+announcing your presence long before you arrive. You stopped noticing it years ago. \
+What you notice instead is the quality of a hide: its thickness, its grain, the way \
+it takes to the tanning liquor. A good tanner can turn a raw pelt into leather that \
+will outlast the animal it came from by a century, and you are a very good tanner.
+
+The work is unglamorous and endless. Scraping flesh, soaking hides, stretching and \
+drying and oiling until your arms ache and your fingers prune. But there is a \
+satisfaction in it — in watching a stiff, bloody skin transform into something \
+supple and strong, something that will become a belt, a boot, armor that might save \
+a life. You know the hides of every animal in the region by touch alone, and the \
+hunters who supply you trust your assessment of their pelts more than their own.
+
+Business has shifted recently. The hunters bring fewer pelts and stranger stories — \
+creatures in the Whisperwood that leave hides no one can identify, tracks in the \
+mud that match nothing in your experience. One hunter brought you a scrap of hide \
+so tough your best blade could not score it. You kept that scrap. Something in the \
+wilds is changing, and your trade has put you closer to the evidence than anyone \
+realizes."""
+ability_choices = ["dexterity", "constitution", "strength"]
+skill_proficiencies = ["nature", "survival"]
+starting_equipment = ["leatherworkers_tools", "common_clothes"]
+bonus_gold = 8
+starting_region = "verdant_reach"
+starting_location = "thornfield_market"
+feature_name = "Hide Knowledge"
+feature_description = "You can identify creatures by their pelts, tracks, and remains. You gain advantage on nature checks to identify beasts and monstrosities, and can assess leather armor quality."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "brewer"
+name = "Brewer"
+category = "labor"
+summary = "A master of fermentation and flavor, whose ales unlock tongues and forge friendships."
+prologue = """
+The tavern in Cinderhold sits at the junction of three mine roads, which means it \
+never lacks for thirsty customers. You came to the city as an apprentice to the old \
+brewmaster, a woman whose ales were famous from the highlands to the coast. She \
+taught you that brewing is alchemy for practical folk — the right grain, the right \
+water, the right yeast, and the patience to let time do its work while you resist \
+the urge to meddle.
+
+You experimented endlessly. Highland barley steeped with juniper berries. A dark \
+stout aged in barrels that once held sulfur spring water, giving it a mineral bite \
+that miners craved after long shifts underground. A honey mead so smooth that the \
+Cinderhold forgemasters used it to seal trade deals, claiming no one could argue \
+after a second cup. Your recipes filled a leather-bound notebook that you guard \
+more carefully than gold.
+
+The old brewmaster passed last winter, and the tavern's new owner has different \
+ideas about the craft — cheaper ingredients, faster batches, quantity over quality. \
+You argued. You lost. You packed your notebook, your supplies, and your dignity, \
+and walked out of the tavern where you had spent the best years of your life. The \
+road stretches ahead, and every town has a tavern. Somewhere out there is a place \
+that deserves your best recipe — the one the old woman whispered to you on her \
+last night, the one you have never brewed because you have not yet found water \
+pure enough to do it justice."""
+ability_choices = ["intelligence", "constitution", "wisdom"]
+skill_proficiencies = ["nature", "persuasion"]
+starting_equipment = ["brewers_supplies", "common_clothes"]
+bonus_gold = 10
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_tavern"
+feature_name = "Tavernkeeper's Welcome"
+feature_description = "Fellow brewers and innkeepers treat you as a colleague. You gain advantage on persuasion checks in taverns and can identify potions and alchemical substances by smell and taste."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "mason"
+name = "Mason"
+category = "labor"
+summary = "A builder in stone, equally skilled at raising walls and understanding what lies within them."
+prologue = """
+Cinderhold's walls have stood for three hundred years, and every mason in the city \
+can tell you which sections were built by masters and which were patched by amateurs. \
+You learned to see the difference as a young apprentice, running your fingers along \
+the seams between blocks, feeling for the precision that separates craft from mere \
+construction. The stone of the Ashen Highlands is volcanic — hard, dark, and \
+unforgiving of mistakes. You broke a dozen chisels before you learned to let the \
+stone guide the cut rather than forcing your will upon it.
+
+Your hands built the new gatehouse at Cinderhold Gate, fitted so tightly that a \
+knife blade cannot slip between the joints. You repaired the ancient stairs to the \
+Obsidian Plateau, matching the original work so closely that the guild inspector \
+could not find the seam. Your eye for structural integrity is unerring — one glance \
+at a wall tells you whether it will stand another century or collapse next winter.
+
+But the recent tremors from the deep mines have cracked foundations that should have \
+been unbreakable. You were called to assess the damage and found something disturbing: \
+the cracks follow patterns too regular to be natural. They trace lines through the \
+stone like writing in a language you almost recognize. The guild dismissed your \
+concerns. You could not dismiss them yourself. With your tools on your back and \
+questions burning in your mind, you left Cinderhold to find someone who can read \
+what the stone is trying to say."""
+ability_choices = ["strength", "intelligence", "constitution"]
+skill_proficiencies = ["athletics", "investigation"]
+starting_equipment = ["masons_tools", "common_clothes"]
+bonus_gold = 10
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_gate"
+feature_name = "Structural Insight"
+feature_description = "You can assess the stability and age of any stone construction at a glance. You gain advantage on investigation checks when examining buildings, ruins, or underground structures."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "shepherd"
+name = "Shepherd"
+category = "labor"
+summary = "A solitary guardian of flocks, wise to the land and wary of what stalks the edges."
+prologue = """
+The pastures south of Thornfield roll like a green sea, broken by hedgerows and the \
+occasional weathered standing stone that nobody remembers raising. You have walked \
+these fields since you could walk at all, your flock flowing around you like a wool \
+cloud, your whistle carrying across the hillsides in a language the dogs understand \
+better than any human speech. A shepherd's life is solitary, and you learned to find \
+company in the rhythm of the seasons — lambing in spring, shearing in summer, the \
+long watches of autumn when the predators grow bold.
+
+You know every hollow where a ewe might lamb in secret, every stream crossing safe \
+for the flock, every ridge where the wind carries sounds from miles away. Your ears \
+are tuned to the alarm calls of birds, the distant howl that means wolves, the \
+silence that means something worse. You have faced down foxes with your crook and \
+stared wolves into retreat, standing between your flock and the darkness with \
+nothing but stubbornness and a whistle.
+
+But this past season, the losses have been different. Sheep vanishing without blood, \
+without tracks, without the wool-snagged-on-brambles trail that even the cleverest \
+predator leaves behind. Three ewes gone from a flock you watched all night, as if \
+the hillside simply swallowed them. The other shepherds are frightened. You are \
+frightened too, but fear in a shepherd manifests as action — you gave your remaining \
+flock to a neighbor, pocketed your whistle, and set out to find what has been taking \
+them."""
+ability_choices = ["wisdom", "constitution", "dexterity"]
+skill_proficiencies = ["animal_handling", "survival"]
+starting_equipment = ["common_clothes", "whistle"]
+bonus_gold = 3
+starting_region = "verdant_reach"
+starting_location = "farm_road"
+feature_name = "Watchful Guardian"
+feature_description = "Your long vigils have sharpened your senses against ambush. You cannot be surprised while conscious, and you gain advantage on perception checks during night watches."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "servant"
+name = "Servant"
+category = "labor"
+summary = "Unseen and underestimated, trained by a lifetime of quiet observation and careful discretion."
+prologue = """
+The great house in Thornfield employed fourteen servants, and you were the most \
+invisible of them all. That was not an insult — it was a skill, cultivated over \
+years of practice until you could enter a room, lay a fire, pour wine, clear a \
+table, and leave without anyone registering your presence. The lords and ladies \
+spoke freely around you, as if you were furniture. They discussed debts, affairs, \
+plots, and promises with the confidence of people who believed the walls had no ears. \
+The walls did not. But you did.
+
+You learned the household's secrets the way water learns the shape of a stone — \
+slowly, inevitably, completely. Who owed what to whom. Which alliances were genuine \
+and which were theater. The locked drawer in the study that the lord opened only \
+when he thought the house was empty. You never used this knowledge. A good servant \
+is discreet, and discretion was the only currency you possessed.
+
+Then the household dissolved — a scandal, a bankruptcy, the usual story of wealth \
+undone by its own appetites. The other servants scattered to find new positions. \
+You could have done the same. Instead, you pocketed the small purse of severance \
+coin, straightened your clothes, and walked out the front door for the first time \
+in your life. The world beyond the servants' entrance is louder, brighter, and \
+more dangerous than you expected. But you have spent a lifetime watching dangerous \
+people, and that education is worth more than any master ever paid you."""
+ability_choices = ["dexterity", "wisdom", "charisma"]
+skill_proficiencies = ["insight", "stealth"]
+starting_equipment = ["common_clothes", "belt_pouch"]
+bonus_gold = 2
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Invisible Presence"
+feature_description = "You are practiced at going unnoticed. You gain advantage on stealth checks in populated areas and can eavesdrop on conversations without arousing suspicion."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []

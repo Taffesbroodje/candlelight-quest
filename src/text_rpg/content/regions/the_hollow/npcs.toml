@@ -1,0 +1,347 @@
+# The Hollow NPCs — haunted swamp
+
+[[npcs]]
+id = "innkeeper_mercy"
+name = "Innkeeper Mercy"
+entity_type = "npc"
+profession = "innkeeper"
+description = "A gaunt woman with hollow eyes and a perpetual look of vigilance. She runs the Last Light Inn with grim efficiency, keeping the doors barred and the fires burning. She's lost more patrons to the swamp than she cares to count."
+location_id = "hollows_inn"
+dialogue_tags = ["greeting", "rumors", "shop_supplies", "lore", "warnings"]
+behaviors = ["grim", "merchant", "information"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 30
+hp_max = 30
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 14
+constitution = 13
+intelligence = 12
+wisdom = 15
+charisma = 14
+
+[npcs.schedule]
+dawn = "hollows_inn"
+morning = "hollows_inn"
+midday = "hollows_gate"
+afternoon = "hollows_inn"
+evening = "hollows_inn"
+night = "hollows_inn"
+late_night = "hollows_inn"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_potion", "antidote"]
+disliked_gifts = ["nightshade", "soul_gem"]
+
+[[npcs.attacks]]
+name = "Crossbow"
+damage_dice = "1d8"
+damage_type = "piercing"
+
+[[npcs]]
+id = "priestess_vesper"
+name = "Priestess Vesper"
+entity_type = "npc"
+profession = "priestess"
+description = "A pale woman in white robes marked with silver funerary symbols. Her voice carries a calm that can soothe even the most restless spirit. She tends the Shrine of Peaceful Passage and blesses the dead so they stay dead."
+location_id = "hollows_shrine"
+dialogue_tags = ["greeting", "healing", "blessing", "lore", "quest_info"]
+behaviors = ["devout", "healer", "protector"]
+is_hostile = false
+is_alive = true
+level = 8
+hp_current = 45
+hp_max = 45
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 12
+constitution = 13
+intelligence = 14
+wisdom = 19
+charisma = 16
+
+[npcs.schedule]
+dawn = "hollows_shrine"
+morning = "hollows_shrine"
+midday = "hollows_shrine"
+afternoon = "hollows_shrine"
+evening = "hollows_shrine"
+night = "hollows_shrine"
+late_night = "hollows_shrine"
+
+[npcs.properties]
+preferred_gifts = ["holy_symbol", "moonpetal", "healing_herb"]
+disliked_gifts = ["nightshade", "soul_gem", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Turn Undead"
+damage_dice = "2d8"
+damage_type = "radiant"
+
+[[npcs]]
+id = "the_bog_witch"
+name = "The Bog Witch"
+entity_type = "npc"
+profession = "witch"
+description = "An ageless woman with tangled black hair and eyes that shift between green and violet. She speaks in riddles, laughs at inappropriate moments, and brews potions that are either miraculous or lethal — sometimes both."
+location_id = "witch_tower"
+dialogue_tags = ["greeting", "lore", "shop_supplies", "quest_info", "warnings"]
+behaviors = ["mysterious", "merchant", "dangerous"]
+is_hostile = false
+is_alive = true
+level = 9
+hp_current = 42
+hp_max = 42
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 14
+constitution = 12
+intelligence = 18
+wisdom = 17
+charisma = 16
+
+[npcs.schedule]
+dawn = "witch_tower"
+morning = "witch_tower"
+midday = "witch_tower"
+afternoon = "witch_tower"
+evening = "witch_tower"
+night = "fog_garden"
+late_night = "witch_tower"
+
+[npcs.properties]
+preferred_gifts = ["nightshade", "moonpetal", "arcane_dust", "soul_gem"]
+disliked_gifts = ["holy_symbol", "rations", "torch"]
+
+[[npcs.attacks]]
+name = "Hex Bolt"
+damage_dice = "2d8"
+damage_type = "necrotic"
+
+[[npcs]]
+id = "scavenger_muck"
+name = "Scavenger King Muck"
+entity_type = "npc"
+profession = "scavenger"
+description = "A wiry man caked in dried mud and swamp filth who wears a crown of bone fragments. He leads the scavengers who venture into the swamp for salvage and knows every safe path — and every deadly one."
+location_id = "hollows_market"
+dialogue_tags = ["greeting", "shop_supplies", "rumors", "quest_info", "warnings"]
+behaviors = ["cunning", "merchant", "survivor"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 35
+hp_max = 35
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 16
+constitution = 14
+intelligence = 12
+wisdom = 13
+charisma = 10
+
+[npcs.schedule]
+dawn = "hollows_market"
+morning = "hollows_market"
+midday = "hollows_market"
+afternoon = "hollows_market"
+evening = "hollow_crossroads"
+night = "hollows_inn"
+late_night = "hollows_market"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "antidote", "lantern"]
+disliked_gifts = ["holy_symbol", "moonpetal"]
+
+[[npcs.attacks]]
+name = "Rusty Blade"
+damage_dice = "1d6"
+damage_bonus = 2
+damage_type = "slashing"
+
+[[npcs]]
+id = "sergeant_hale"
+name = "Guard Sergeant Doomed Hale"
+entity_type = "npc"
+profession = "guard"
+description = "A broad-shouldered man in dented plate armor with a thousand-yard stare. He earned the nickname 'Doomed' because every patrol he leads comes back — but he always expects the next one won't. He's the last line of defense for Hollow's Gate."
+location_id = "hollows_gate"
+dialogue_tags = ["greeting", "guard_info", "quest_info", "rumors", "warnings"]
+behaviors = ["grim", "protector", "dutiful"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 48
+hp_max = 48
+ac = 17
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 12
+constitution = 15
+intelligence = 11
+wisdom = 14
+charisma = 12
+
+[npcs.schedule]
+dawn = "hollows_gate"
+morning = "hollows_gate"
+midday = "hollows_gate"
+afternoon = "hollows_gate"
+evening = "hollows_gate"
+night = "hollow_crossroads"
+late_night = "hollows_gate"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "rations", "antidote"]
+disliked_gifts = ["nightshade", "soul_gem", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Halberd"
+damage_dice = "1d10"
+damage_bonus = 3
+damage_type = "slashing"
+
+[[npcs]]
+id = "alchemist_verdis"
+name = "Alchemist Verdis"
+entity_type = "npc"
+profession = "alchemist"
+description = "A jittery halfling with stained fingers and a leather apron covered in burn marks. He came to the Hollow for its unique ingredients and stayed because no one else is mad enough to harvest them. His potions are potent, if unpredictable."
+location_id = "alchemist_grove"
+dialogue_tags = ["greeting", "shop_supplies", "lore", "craft_info", "quest_info"]
+behaviors = ["eccentric", "merchant", "knowledgeable"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 28
+hp_max = 28
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 14
+constitution = 12
+intelligence = 18
+wisdom = 16
+charisma = 10
+
+[npcs.schedule]
+dawn = "alchemist_grove"
+morning = "alchemist_grove"
+midday = "alchemist_grove"
+afternoon = "alchemist_grove"
+evening = "hollows_market"
+night = "hollows_inn"
+late_night = "alchemist_grove"
+
+[npcs.properties]
+preferred_gifts = ["moonpetal", "nightshade", "healing_herb", "herbalism_kit"]
+disliked_gifts = ["holy_symbol", "iron_ingot"]
+
+[[npcs.attacks]]
+name = "Acid Flask"
+damage_dice = "1d8"
+damage_type = "acid"
+
+[[npcs]]
+id = "spirit_speaker_ash"
+name = "Spirit Speaker Ash"
+entity_type = "npc"
+profession = "spirit_speaker"
+description = "A gaunt figure of indeterminate age wrapped in tattered grey robes, with ash-white hair and eyes that seem to look through you rather than at you. They commune with the dead and serve as a bridge between the living and the spirits of the Hollow."
+location_id = "spirit_mound"
+dialogue_tags = ["greeting", "lore", "quest_info", "rumors", "warnings"]
+behaviors = ["mysterious", "information", "spiritual"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 30
+hp_max = 30
+ac = 13
+unavailable_periods = []
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 12
+constitution = 10
+intelligence = 16
+wisdom = 20
+charisma = 15
+
+[npcs.schedule]
+dawn = "spirit_mound"
+morning = "spirit_mound"
+midday = "spirit_mound"
+afternoon = "spirit_mound"
+evening = "spirit_mound"
+night = "bone_marsh"
+late_night = "spirit_mound"
+
+[npcs.properties]
+preferred_gifts = ["soul_gem", "moonpetal", "arcane_dust"]
+disliked_gifts = ["rations", "torch", "iron_ingot"]
+
+[[npcs.attacks]]
+name = "Spirit Touch"
+damage_dice = "1d8"
+damage_type = "necrotic"
+
+[[npcs]]
+id = "plague_doctor_crow"
+name = "Plague Doctor Crow"
+entity_type = "npc"
+profession = "plague_doctor"
+description = "A tall, thin figure in a long waxed coat and a beaked mask stuffed with herbs. Their voice is muffled and clinical, and they treat patients with a detachment that borders on unsettling. They never remove the mask."
+location_id = "plague_camp"
+dialogue_tags = ["greeting", "healing", "lore", "quest_info", "warnings"]
+behaviors = ["clinical", "healer", "aloof"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 32
+hp_max = 32
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 14
+constitution = 14
+intelligence = 17
+wisdom = 16
+charisma = 8
+
+[npcs.schedule]
+dawn = "plague_camp"
+morning = "plague_camp"
+midday = "plague_camp"
+afternoon = "plague_camp"
+evening = "plague_camp"
+night = "hollows_shrine"
+late_night = "plague_camp"
+
+[npcs.properties]
+preferred_gifts = ["antidote", "healing_herb", "healing_potion"]
+disliked_gifts = ["nightshade", "poison_vial", "soul_gem"]
+
+[[npcs.attacks]]
+name = "Plague Staff"
+damage_dice = "1d6"
+damage_type = "poison"

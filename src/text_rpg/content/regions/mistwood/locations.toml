@@ -1,0 +1,361 @@
+[[locations]]
+id = "mistwood_gate"
+name = "Mistwood Gate"
+region_id = "mistwood"
+description = "A ranger checkpoint at the forest's edge, where travelers are warned of the dangers within. A signpost lists the missing — the list is long."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "silverleaf_village"
+direction = "east"
+description = "A cobblestone path disappears into the mist toward the elven settlement."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "fog_trails"
+direction = "south"
+description = "Winding trails vanish into the perpetual fog of the forest interior."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mistwood_south_road"
+direction = "southwest"
+description = "A road leads southwest, the mist thinning as trees give way to open land."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mistwood_west_path"
+direction = "west"
+description = "A narrow path heads west through thinning forest toward darker woods."
+is_locked = false
+
+[[locations]]
+id = "silverleaf_village"
+name = "Silverleaf Village"
+region_id = "mistwood"
+description = "An elven settlement of graceful treehouses and rope bridges high in ancient oaks. Soft lantern light filters through the canopy, and the air smells of pine and wildflowers."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "mistwood_gate"
+direction = "west"
+description = "The path leads west through thinning mist to the ranger checkpoint."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "silverleaf_hall"
+direction = "north"
+description = "A spiraling staircase carved into the largest tree ascends to the council hall."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mistwood_apothecary"
+direction = "east"
+description = "A rope bridge sways gently toward a hollow tree filled with the scent of herbs."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "silverleaf_bowyer"
+direction = "south"
+description = "Wooden steps descend to an open-air workshop beneath the canopy."
+is_locked = false
+
+[[locations]]
+id = "silverleaf_hall"
+name = "Silverleaf Hall"
+region_id = "mistwood"
+description = "The council hall of Silverleaf, built into the largest tree. Carved with scenes of forest history, it serves as court, meeting place, and archive."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "silverleaf_village"
+direction = "south"
+description = "The spiraling staircase descends back to the village platforms below."
+is_locked = false
+
+[[locations]]
+id = "mistwood_apothecary"
+name = "Mistwood Apothecary"
+region_id = "mistwood"
+description = "A shop nestled in a hollow tree, filled with rare forest herbs, fungal remedies, and potions brewed from mist-gathered dew."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "silverleaf_village"
+direction = "west"
+description = "The rope bridge leads back across to the main village platforms."
+is_locked = false
+
+[[locations]]
+id = "silverleaf_bowyer"
+name = "Silverleaf Bowyer"
+region_id = "mistwood"
+description = "An open-air workshop where an elven craftsman shapes longbows from ancient wood. Arrows fletched with owl feathers line the racks."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "silverleaf_village"
+direction = "north"
+description = "Wooden steps climb back up to the village platforms above."
+is_locked = false
+
+[[locations]]
+id = "mistwood_shrine"
+name = "Mistwood Shrine"
+region_id = "mistwood"
+description = "A stone circle deep in the woods where druids honor the forest spirits. Mushrooms grow in perfect rings, and the mist parts around the sacred ground."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "fog_trails"
+direction = "north"
+description = "The mist closes in again as a trail winds north toward the main paths."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "deep_mistwood"
+direction = "east"
+description = "The trees grow darker and closer together as the path leads into the deep forest."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ancient_tree"
+direction = "south"
+description = "A mossy trail leads to an impossibly vast tree visible even through the fog."
+is_locked = false
+
+[[locations]]
+id = "fog_trails"
+name = "Fog Trails"
+region_id = "mistwood"
+description = "Winding paths through the perpetual mist. Trail markers are the only guide — many have been moved by mischievous fey. Visibility is poor, and sounds carry strangely."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "mistwood_gate"
+direction = "north"
+description = "The trail leads north toward the ranger checkpoint at the forest's edge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mistwood_shrine"
+direction = "south"
+description = "The mist parts slightly as standing stones appear along the path ahead."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ranger_outpost"
+direction = "east"
+description = "A hidden trail marked with ranger signs leads to an outpost in the rocks."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "deep_mistwood"
+direction = "southeast"
+description = "The fog thickens and the light dims as the path descends into the deep forest."
+is_locked = false
+
+[[locations]]
+id = "deep_mistwood"
+name = "Deep Mistwood"
+region_id = "mistwood"
+description = "The heart of the ancient forest where the mist is thickest and the trees oldest. The canopy blocks all light, and strange shapes move at the edge of vision."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "fog_trails"
+direction = "northwest"
+description = "The fog lightens slightly as the trail climbs toward the main forest paths."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mistwood_shrine"
+direction = "west"
+description = "Sacred stones emerge from the mist as the path leads to the druid shrine."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "corrupted_grove"
+direction = "south"
+description = "The trees ahead are twisted and black, an unnatural cold seeping from the south."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "shadow_hollow"
+direction = "east"
+description = "The shadows deepen unnaturally toward a depression in the forest floor."
+is_locked = false
+
+[[locations]]
+id = "corrupted_grove"
+name = "Corrupted Grove"
+region_id = "mistwood"
+description = "A section of forest where the trees have turned black and twisted. Dark sap oozes from bark, animals flee the area, and an unnatural cold hangs in the air."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "deep_mistwood"
+direction = "north"
+description = "The corruption fades as the path leads north into the deep forest."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "spider_silk_bridge"
+direction = "west"
+description = "Thick webs begin to appear between the trees toward a ravine to the west."
+is_locked = false
+
+[[locations]]
+id = "shadow_hollow"
+name = "Shadow Hollow"
+region_id = "mistwood"
+description = "A depression in the deep forest where shadows move independently of their sources. The darkness here seems alive and hungry."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "deep_mistwood"
+direction = "west"
+description = "The shadows release their grip as the path climbs west into the deep forest."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "owl_bear_den"
+direction = "south"
+description = "A reek of musk and the sound of heavy breathing drift from a cave to the south."
+is_locked = false
+
+[[locations]]
+id = "ancient_tree"
+name = "Ancient Tree"
+region_id = "mistwood"
+description = "A tree so old and vast that a village could fit inside its hollow trunk. Carvings in its bark date back thousands of years, and the tree itself seems aware."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "mistwood_shrine"
+direction = "north"
+description = "A mossy trail leads north to the druid stone circle."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "fey_hollow"
+direction = "east"
+description = "The air shimmers and colors intensify along a path leading east."
+is_locked = false
+
+[[locations]]
+id = "spider_silk_bridge"
+name = "Spider Silk Bridge"
+region_id = "mistwood"
+description = "A bridge of impossibly strong spider silk spanning a deep ravine. It sways and bounces but holds any weight. Giant spiders watch from above."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "corrupted_grove"
+direction = "east"
+description = "The webs thicken as the path crosses back toward the corrupted trees."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "woodcutter_clearing"
+direction = "west"
+description = "The silk bridge ends at a clearing dotted with old tree stumps."
+is_locked = false
+
+[[locations]]
+id = "woodcutter_clearing"
+name = "Woodcutter's Clearing"
+region_id = "mistwood"
+description = "A clearing where woodcutters once worked, now abandoned. Stumps dot the ground, and regrowth is slow. The forest seems resentful here."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "spider_silk_bridge"
+direction = "east"
+description = "Thick spider silk stretches across a ravine to the east."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ranger_outpost"
+direction = "north"
+description = "Ranger trail markers lead north toward a rocky overhang."
+is_locked = false
+
+[[locations]]
+id = "ranger_outpost"
+name = "Ranger Outpost"
+region_id = "mistwood"
+description = "A hidden outpost of the Mistwood Rangers, built into a rocky overhang. Maps of the forest cover every surface, and patrol routes are planned here."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "fog_trails"
+direction = "west"
+description = "The hidden trail leads west back to the main fog-shrouded paths."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "woodcutter_clearing"
+direction = "south"
+description = "A path descends south to an abandoned clearing full of old stumps."
+is_locked = false
+
+[[locations]]
+id = "fey_hollow"
+name = "Fey Hollow"
+region_id = "mistwood"
+description = "An enchanted hollow where the boundary between worlds is thin. Flowers glow, water runs uphill, and time moves strangely. Fey creatures gather here to dance."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "ancient_tree"
+direction = "west"
+description = "The enchantment fades as the path returns to the vast ancient tree."
+is_locked = false
+
+[[locations]]
+id = "mistwood_south_road"
+name = "Mistwood South Road"
+region_id = "mistwood"
+description = "A road heading south out of the Mistwood, the mist thinning as the trees give way to open land toward Greenvale."
+location_type = "road"
+
+[locations.properties]
+border_region = "greenvale"
+border_direction = "south"
+
+[[locations.connections]]
+target_location_id = "mistwood_gate"
+direction = "northeast"
+description = "The road leads northeast back into the mist-shrouded forest."
+is_locked = false
+
+[[locations]]
+id = "mistwood_west_path"
+name = "Mistwood West Path"
+region_id = "mistwood"
+description = "A narrow path heading west through thinning forest toward the darker woods of Thornwild."
+location_type = "road"
+
+[locations.properties]
+border_region = "thornwild"
+border_direction = "west"
+
+[[locations.connections]]
+target_location_id = "mistwood_gate"
+direction = "east"
+description = "The path leads east back to the ranger checkpoint at the Mistwood's edge."
+is_locked = false
+
+[[locations]]
+id = "owl_bear_den"
+name = "Owlbear Den"
+region_id = "mistwood"
+description = "A cave lair reeking of musk and scattered with bones. Massive claw marks score the walls. The owlbear pair that lives here is fiercely territorial."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "shadow_hollow"
+direction = "north"
+description = "The cave opens north into the shadow-haunted depression above."
+is_locked = false

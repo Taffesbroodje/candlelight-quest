@@ -1,0 +1,259 @@
+# Crownhold shops — the true capital
+
+[[shops]]
+id = "legendary_weapons"
+owner_entity_id = "grand_guild_master"
+location_id = "merchants_mile"
+shop_type = "smithy"
+
+[[shops.stock]]
+item_id = "longsword"
+quantity = 5
+base_price = 15
+base_stock = 5
+
+[[shops.stock]]
+item_id = "rapier"
+quantity = 3
+base_price = 25
+base_stock = 3
+
+[[shops.stock]]
+item_id = "greataxe"
+quantity = 3
+base_price = 30
+base_stock = 3
+
+[[shops.stock]]
+item_id = "chain_mail"
+quantity = 3
+base_price = 75
+base_stock = 3
+
+[[shops.stock]]
+item_id = "scale_mail"
+quantity = 2
+base_price = 50
+base_stock = 2
+
+[[shops.stock]]
+item_id = "shield"
+quantity = 5
+base_price = 10
+base_stock = 5
+
+[[shops]]
+id = "master_enchanting"
+owner_entity_id = "court_wizard"
+location_id = "grand_academy"
+shop_type = "general"
+
+[[shops.stock]]
+item_id = "arcane_dust"
+quantity = 20
+base_price = 10
+base_stock = 20
+
+[[shops.stock]]
+item_id = "soul_gem"
+quantity = 5
+base_price = 50
+base_stock = 5
+
+[[shops.stock]]
+item_id = "moonpetal"
+quantity = 10
+base_price = 8
+base_stock = 10
+
+[[shops.stock]]
+item_id = "spellbook"
+quantity = 3
+base_price = 50
+base_stock = 3
+
+[[shops]]
+id = "rare_scrolls"
+owner_entity_id = "academy_headmaster"
+location_id = "grand_library"
+shop_type = "general"
+
+[[shops.stock]]
+item_id = "arcane_dust"
+quantity = 15
+base_price = 10
+base_stock = 15
+
+[[shops.stock]]
+item_id = "moonpetal"
+quantity = 8
+base_price = 8
+base_stock = 8
+
+[[shops.stock]]
+item_id = "spellbook"
+quantity = 2
+base_price = 50
+base_stock = 2
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 5
+base_price = 50
+base_stock = 5
+
+[[shops]]
+id = "exotic_imports"
+owner_entity_id = "foreign_ambassador"
+location_id = "foreign_quarter"
+shop_type = "general"
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 10
+base_price = 50
+base_stock = 10
+
+[[shops.stock]]
+item_id = "antidote"
+quantity = 8
+base_price = 15
+base_stock = 8
+
+[[shops.stock]]
+item_id = "rations"
+quantity = 25
+base_price = 1
+base_stock = 25
+
+[[shops.stock]]
+item_id = "beast_hide"
+quantity = 10
+base_price = 5
+base_stock = 10
+
+[[shops]]
+id = "undercity_black_market"
+owner_entity_id = "undercity_lord_shadow"
+location_id = "undercity_market"
+shop_type = "general"
+
+[[shops.stock]]
+item_id = "dagger"
+quantity = 10
+base_price = 2
+base_stock = 10
+
+[[shops.stock]]
+item_id = "thieves_tools"
+quantity = 5
+base_price = 20
+base_stock = 5
+
+[[shops.stock]]
+item_id = "nightshade"
+quantity = 8
+base_price = 10
+base_stock = 8
+
+[[shops.stock]]
+item_id = "poison_vial"
+quantity = 5
+base_price = 30
+base_stock = 5
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 8
+base_price = 40
+base_stock = 8
+
+[[shops]]
+id = "noble_fashion"
+owner_entity_id = "master_merchant_silk"
+location_id = "merchants_mile"
+shop_type = "general"
+
+[[shops.stock]]
+item_id = "leather_armor"
+quantity = 3
+base_price = 10
+base_stock = 3
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 5
+base_price = 50
+base_stock = 5
+
+[[shops.stock]]
+item_id = "moonpetal"
+quantity = 5
+base_price = 8
+base_stock = 5
+
+[[shops]]
+id = "military_contracts"
+owner_entity_id = "military_commander"
+location_id = "military_academy"
+shop_type = "general"
+
+[[shops.stock]]
+item_id = "longsword"
+quantity = 5
+base_price = 15
+base_stock = 5
+
+[[shops.stock]]
+item_id = "chain_mail"
+quantity = 3
+base_price = 75
+base_stock = 3
+
+[[shops.stock]]
+item_id = "shield"
+quantity = 5
+base_price = 10
+base_stock = 5
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 8
+base_price = 50
+base_stock = 8
+
+[[shops.stock]]
+item_id = "rations"
+quantity = 20
+base_price = 1
+base_stock = 20
+
+[[shops]]
+id = "academic_services"
+owner_entity_id = "academy_headmaster"
+location_id = "university_campus_ch"
+shop_type = "general"
+
+[[shops.stock]]
+item_id = "spellbook"
+quantity = 3
+base_price = 50
+base_stock = 3
+
+[[shops.stock]]
+item_id = "arcane_dust"
+quantity = 10
+base_price = 10
+base_stock = 10
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 5
+base_price = 50
+base_stock = 5
+
+[[shops.stock]]
+item_id = "moonpetal"
+quantity = 5
+base_price = 8
+base_stock = 5

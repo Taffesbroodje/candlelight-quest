@@ -1,0 +1,349 @@
+# Drake Wastes NPCs — dragon territory, L14-20
+
+[[npcs]]
+id = "dragon_oracle"
+name = "The Dragon Oracle"
+entity_type = "npc"
+profession = "oracle"
+description = "An ancient dragon of immense wisdom, its scales shimmering with every color of the spectrum. It speaks in riddles and prophecy, its voice resonating through the crystal cave like a chorus of chimes. Its eyes contain galaxies of knowledge."
+location_id = "dragon_oracle_cave"
+dialogue_tags = ["greeting", "lore", "prophecy", "quest_info", "secrets"]
+behaviors = ["ancient", "mysterious", "omniscient"]
+is_hostile = false
+is_alive = true
+level = 18
+hp_current = 120
+hp_max = 120
+ac = 20
+unavailable_periods = []
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 12
+constitution = 18
+intelligence = 22
+wisdom = 24
+charisma = 20
+
+[npcs.schedule]
+dawn = "dragon_oracle_cave"
+morning = "dragon_oracle_cave"
+midday = "dragon_oracle_cave"
+afternoon = "dragon_oracle_cave"
+evening = "dragon_oracle_cave"
+night = "dragon_oracle_cave"
+late_night = "dragon_oracle_cave"
+
+[npcs.properties]
+preferred_gifts = ["soul_gem", "arcane_dust"]
+disliked_gifts = ["rations", "torch"]
+
+[[npcs.attacks]]
+name = "Prismatic Breath"
+damage_dice = "5d10"
+damage_type = "force"
+
+[[npcs]]
+id = "dragonborn_chief_skarrath"
+name = "Dragonborn Chief Skarrath"
+entity_type = "npc"
+profession = "chief"
+description = "A towering dragonborn with scales of burnished bronze and eyes like molten gold. Battle scars crisscross his arms and chest, each one a story of honor. He carries a greatsword forged from dragon steel and speaks with the authority of one who has earned every breath."
+location_id = "dragonborn_village"
+dialogue_tags = ["greeting", "quest_info", "lore", "politics", "trade"]
+behaviors = ["proud", "honorable", "fierce"]
+is_hostile = false
+is_alive = true
+level = 14
+hp_current = 90
+hp_max = 90
+ac = 18
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 20
+dexterity = 14
+constitution = 18
+intelligence = 12
+wisdom = 16
+charisma = 16
+
+[npcs.schedule]
+dawn = "dragonborn_village"
+morning = "obsidian_fortress"
+midday = "scale_market"
+afternoon = "dragonborn_village"
+evening = "dragonborn_village"
+night = "obsidian_fortress"
+late_night = "dragonborn_village"
+
+[npcs.properties]
+preferred_gifts = ["beast_hide", "dragon_scale_fragment"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Dragon Greatsword"
+damage_dice = "2d8"
+damage_bonus = 5
+damage_type = "slashing"
+
+[[npcs]]
+id = "surviving_guide"
+name = "Surviving Adventurer Guide"
+entity_type = "npc"
+profession = "guide"
+description = "A weathered human with hollow eyes and more scars than unmarked skin. Every movement is deliberate, every glance a threat assessment. She has survived the Drake Wastes longer than anyone thought possible, and her advice is worth its weight in dragon scales."
+location_id = "survivor_camp"
+dialogue_tags = ["greeting", "quest_info", "rumors", "guide_info", "warnings"]
+behaviors = ["cautious", "experienced", "helpful"]
+is_hostile = false
+is_alive = true
+level = 10
+hp_current = 55
+hp_max = 55
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 16
+constitution = 14
+intelligence = 14
+wisdom = 16
+charisma = 12
+
+[npcs.schedule]
+dawn = "survivor_camp"
+morning = "dragon_gate"
+midday = "survivor_camp"
+afternoon = "bone_bridge"
+evening = "survivor_camp"
+night = "survivor_camp"
+late_night = "survivor_camp"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "rations"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Longbow"
+damage_dice = "1d8"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[npcs]]
+id = "ancient_gold_dragon"
+name = "Ancient Gold Dragon"
+entity_type = "npc"
+profession = "dragon"
+description = "A dragon of incomprehensible age and majesty, its golden scales dulled to a deep amber by millennia. It reclines upon a mountain of treasure, each coin placed with deliberate care. When it speaks, the cavern trembles, and its breath smells of ozone and eternity."
+location_id = "ancient_dragon_lair"
+dialogue_tags = ["greeting", "lore", "quest_info", "trade", "prophecy", "secrets"]
+behaviors = ["wise", "ancient", "imposing"]
+is_hostile = false
+is_alive = true
+level = 20
+hp_current = 200
+hp_max = 200
+ac = 22
+unavailable_periods = []
+
+[npcs.ability_scores]
+strength = 26
+dexterity = 10
+constitution = 24
+intelligence = 18
+wisdom = 20
+charisma = 22
+
+[npcs.schedule]
+dawn = "ancient_dragon_lair"
+morning = "ancient_dragon_lair"
+midday = "ancient_dragon_lair"
+afternoon = "treasure_hoard_cavern"
+evening = "ancient_dragon_lair"
+night = "ancient_dragon_lair"
+late_night = "ancient_dragon_lair"
+
+[npcs.properties]
+preferred_gifts = ["soul_gem", "arcane_dust"]
+disliked_gifts = ["dagger", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Claw"
+damage_dice = "4d6"
+damage_bonus = 8
+damage_type = "slashing"
+
+[[npcs]]
+id = "red_dragon_negotiable"
+name = "Scarlethorn the Red"
+entity_type = "npc"
+profession = "dragon"
+description = "A massive red dragon whose scales gleam like fresh blood in firelight. Scarlethorn is vain, greedy, and cunning — but not mindless. It hoards treasure with obsessive precision and will bargain if the price is right, though betrayal is always on the table."
+location_id = "wyrm_spire"
+dialogue_tags = ["greeting", "trade", "threats", "lore", "quest_info"]
+behaviors = ["arrogant", "greedy", "cunning"]
+is_hostile = false
+is_alive = true
+level = 16
+hp_current = 150
+hp_max = 150
+ac = 19
+unavailable_periods = []
+
+[npcs.ability_scores]
+strength = 24
+dexterity = 10
+constitution = 22
+intelligence = 16
+wisdom = 14
+charisma = 18
+
+[npcs.schedule]
+dawn = "wyrm_spire"
+morning = "wyrm_spire"
+midday = "sky_bridge_dw"
+afternoon = "wyrm_spire"
+evening = "wyrm_spire"
+night = "storm_peak"
+late_night = "wyrm_spire"
+
+[npcs.properties]
+preferred_gifts = ["soul_gem", "dragon_scale_fragment"]
+disliked_gifts = ["holy_symbol", "torch"]
+
+[[npcs.attacks]]
+name = "Fire Breath"
+damage_dice = "6d8"
+damage_type = "fire"
+
+[[npcs]]
+id = "dragon_cult_leader"
+name = "Dragon Cult Leader Ashscale"
+entity_type = "npc"
+profession = "cult_leader"
+description = "A dragonborn with ash-grey scales and eyes that burn with fanatical devotion. Ashscale leads the Dragon Cult from within the obsidian fortress, preaching the supremacy of dragonkind and the coming age of fire. Charismatic and dangerous in equal measure."
+location_id = "obsidian_fortress"
+dialogue_tags = ["greeting", "lore", "quest_info", "threats", "recruitment"]
+behaviors = ["fanatical", "charismatic", "dangerous"]
+is_hostile = false
+is_alive = true
+level = 12
+hp_current = 60
+hp_max = 60
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 14
+constitution = 14
+intelligence = 16
+wisdom = 14
+charisma = 18
+
+[npcs.schedule]
+dawn = "obsidian_fortress"
+morning = "obsidian_fortress"
+midday = "dragonborn_village"
+afternoon = "obsidian_fortress"
+evening = "obsidian_fortress"
+night = "war_camp"
+late_night = "obsidian_fortress"
+
+[npcs.properties]
+preferred_gifts = ["dragon_scale_fragment", "arcane_dust"]
+disliked_gifts = ["holy_symbol", "healing_herb"]
+
+[[npcs.attacks]]
+name = "Dragon Fire"
+damage_dice = "3d8"
+damage_type = "fire"
+
+[[npcs]]
+id = "arcane_researcher_dw"
+name = "Arcane Researcher Vex"
+entity_type = "npc"
+profession = "researcher"
+description = "A wiry half-elf with wild hair singed at the tips and ink-stained fingers that never stop twitching. Vex came to the Drake Wastes to study draconic magic and has stayed far longer than anyone advised. Her excitement about every discovery borders on reckless."
+location_id = "draconic_library"
+dialogue_tags = ["greeting", "lore", "quest_info", "shop_arcane", "research"]
+behaviors = ["academic", "excited", "reckless"]
+is_hostile = false
+is_alive = true
+level = 9
+hp_current = 38
+hp_max = 38
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 12
+constitution = 10
+intelligence = 20
+wisdom = 16
+charisma = 12
+
+[npcs.schedule]
+dawn = "draconic_library"
+morning = "draconic_library"
+midday = "draconic_library"
+afternoon = "forgotten_temple_dw"
+evening = "draconic_library"
+night = "survivor_camp"
+late_night = "draconic_library"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "spellbook"]
+disliked_gifts = ["rations", "bedroll"]
+
+[[npcs.attacks]]
+name = "Force Bolt"
+damage_dice = "2d8"
+damage_type = "force"
+
+[[npcs]]
+id = "legendary_dragon_smith"
+name = "Legendary Dragon-Smith Ignar"
+entity_type = "npc"
+profession = "master_smith"
+description = "A massive dragonborn with scales of deep crimson and hands scarred by decades at the forge. Ignar crafts weapons and armor from dragon materials with a skill that borders on the supernatural. He speaks little, works constantly, and judges others by the quality of their steel."
+location_id = "scale_market"
+dialogue_tags = ["greeting", "shop_weapons", "shop_armor", "craft_info", "trade"]
+behaviors = ["intense", "craftsman", "proud"]
+is_hostile = false
+is_alive = true
+level = 12
+hp_current = 68
+hp_max = 68
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 18
+dexterity = 12
+constitution = 16
+intelligence = 16
+wisdom = 14
+charisma = 10
+
+[npcs.schedule]
+dawn = "scale_market"
+morning = "scale_market"
+midday = "dragonborn_village"
+afternoon = "scale_market"
+evening = "scale_market"
+night = "obsidian_fortress"
+late_night = "scale_market"
+
+[npcs.properties]
+preferred_gifts = ["dragon_scale_fragment", "iron_ingot"]
+disliked_gifts = ["nightshade", "rations"]
+
+[[npcs.attacks]]
+name = "Dragon-Forged Hammer"
+damage_dice = "2d8"
+damage_bonus = 4
+damage_type = "bludgeoning"

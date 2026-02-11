@@ -1,0 +1,270 @@
+# Half-Orc Origins
+# Category: half_orc — origins exclusive to half-orc characters
+
+[[origins]]
+id = "tribal_outcast"
+name = "Tribal Outcast"
+category = "half_orc"
+summary = "Exiled from your tribe for reasons spoken only in whispers, you survive alone in the thornwild."
+prologue = """
+The elders painted the exile mark across your brow before dawn, while the fires still crackled \
+low and the rest of the tribe pretended to sleep. You had broken no law they could name aloud — \
+your crime was simpler than that. You were too human for the war-songs, too orcish for the \
+peace-prayers. The shaman pressed a beast trophy into your hand, the jawbone of the dire wolf \
+you felled at thirteen summers. "Remember what you are," she said. You are still deciding what \
+that means.
+
+The thornwild trails have been your home since. You sleep in the hollows between gnarled roots, \
+drink from streams that taste of iron and moss, and speak to no one for days at a stretch. The \
+forest tests you constantly — poisonous thorns, territorial beasts, ground that shifts beneath \
+your feet — but it never judges you. Out here, strength and cunning are the only currencies \
+that matter. You have plenty of both.
+
+Lately the trails have grown stranger. Tracks you cannot identify press deep into the mud. \
+Birds fall silent in places where silence has no business being. Something is changing in the \
+thornwild, and you feel it in your bones the way you once felt the tribe's war-drums through \
+the earth. Whatever comes, you will face it as you have faced everything else — alone, and \
+without flinching."""
+ability_choices = ["strength", "constitution", "wisdom"]
+skill_proficiencies = ["survival", "intimidation"]
+starting_equipment = ["beast_trophy", "common_clothes"]
+bonus_gold = 3
+starting_region = "thornwild"
+starting_location = "thornwild_trails"
+feature_name = "Feral Instinct"
+feature_description = "Years alone in the wild have sharpened your senses to a razor's edge. You gain advantage on Wisdom (Survival) checks to track creatures and cannot be surprised while conscious."
+required_races = ["half_orc"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "pit_champion"
+name = "Pit Champion"
+category = "half_orc"
+summary = "You clawed your way to fame in Saltmere's brutal fighting pits, where blood buys glory and glory buys freedom."
+prologue = """
+They dragged you into the pits when you were barely old enough to hold a weapon. Some debt your \
+mother owed, some arrangement made in desperation — the details blur together now beneath the \
+weight of a hundred fights. What you remember is the roar. That sound, rising from the throats \
+of sailors and merchants and thieves packed shoulder to shoulder around the sand circle, became \
+the only applause you ever needed. You learned to fight not with the disciplined forms of a \
+soldier, but with the savage creativity of someone who understands that losing means dying.
+
+The trophy medal hanging from your neck is tin and copper, worth almost nothing, but it marks \
+you as the last undefeated champion of the Saltmere dockside pits. You won it by defeating a \
+scarred bugbear called Gorethusk in a match that lasted nearly an hour. When you finally stood \
+over his broken body, chest heaving, blood running from a dozen wounds, the pit-master offered \
+you a contract. More fights. More gold. More glory. You walked out instead. Freedom, you \
+decided, was worth more than fame.
+
+Now you wander the docks of Saltmere, a free half-orc with a reputation that precedes you into \
+every tavern. Some want to hire your fists. Others want to test them. The salt wind carries the \
+smell of opportunity, and for the first time in your life, you get to choose which doors to \
+walk through."""
+ability_choices = ["strength", "constitution", "charisma"]
+skill_proficiencies = ["athletics", "intimidation"]
+starting_equipment = ["trophy_medal", "common_clothes"]
+bonus_gold = 12
+starting_region = "iron_coast"
+starting_location = "saltmere_docks"
+feature_name = "Crowd Fury"
+feature_description = "The energy of spectators fuels your aggression. When you land a critical hit in combat with witnesses present, you may make one additional unarmed strike as a bonus action."
+required_races = ["half_orc"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "bridge_between_worlds"
+name = "Bridge Between Worlds"
+category = "half_orc"
+summary = "Raised at the crossroads of orc and human culture, you have learned to speak the language of both worlds."
+prologue = """
+Your mother was human, a diplomat's daughter who fell in love with an orc chieftain during a \
+treaty negotiation that was never meant to produce anything lasting. But you lasted. You grew \
+up splitting your years between your mother's quiet stone house in Thornfield and your father's \
+hide tent in the war-camps to the north, learning to hold a quill in one hand and a javelin in \
+the other. Neither world fully accepted you, but both needed you. When tensions rose, when the \
+old hatreds flared between orc and human, they sent for you. The half-blood. The one who could \
+see both sides.
+
+You wear an amulet of passage around your neck, a disc of carved bone and hammered silver that \
+bears both the orcish rune for "kin" and the human seal of Thornfield. Your father made the \
+bone half; your mother commissioned the silver. It marks you as welcome in places where most \
+half-orcs would be met with drawn swords. More than that, it reminds you of what you represent: \
+the fragile possibility that these two peoples might someday see each other clearly.
+
+You have returned to Thornfield now, drawn by rumors of new conflicts brewing in the \
+surrounding wilds. The village is smaller than you remember, its people more frightened. They \
+look at you with a mixture of hope and suspicion that you have learned to read as fluently as \
+any language. There is work to be done here — the work that only someone who belongs to both \
+worlds, and therefore neither, can do."""
+ability_choices = ["charisma", "wisdom", "strength"]
+skill_proficiencies = ["persuasion", "insight"]
+starting_equipment = ["travelers_clothes", "amulet_of_passage"]
+bonus_gold = 8
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Cultural Fluency"
+feature_description = "Your dual upbringing grants you an intuitive grasp of social dynamics across cultures. You gain advantage on Charisma checks when mediating disputes or negotiating between hostile groups."
+required_races = ["half_orc"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "war_shaman_apprentice"
+name = "War Shaman Apprentice"
+category = "half_orc"
+summary = "Chosen by the tribe's war shaman to learn the old spirit-ways, you walk the line between healer and destroyer."
+prologue = """
+The war shaman chose you on the night of the blood moon, when the spirits pressed close to the \
+world and the boundary between flesh and ghost grew thin as smoke. You were twelve, gangly and \
+unsure of your own strength, when the old orc pointed one gnarled finger at you across the \
+fire and spoke the words of binding. Your parents wept — whether from pride or grief, you never \
+asked. From that night forward, you belonged to the spirits.
+
+The training was brutal and strange. You learned to set bones and brew poultices from roots \
+that grew only in places where blood had been spilled. You learned the names of the ancestor \
+spirits and the precise offerings each demanded. You learned to read the future in the patterns \
+of cracked bones and spilled entrails, and to call upon the old powers when the tribe rode to \
+war. The war shaman taught you that healing and violence are not opposites but partners — that \
+the same hand must know how to mend a wound and how to inflict one.
+
+Your master is dead now, taken by a fever that even the spirits could not cure. Before the end, \
+she sent you south to Briarhaven Grove, where the boundary between worlds is thinnest and the \
+old powers still linger in the roots of ancient trees. "Finish your training," she rasped, \
+pressing her herbalism kit into your hands. "The spirits have plans for you that even I cannot \
+see." You kneel among the twisted roots and listen for their voices."""
+ability_choices = ["wisdom", "strength", "constitution"]
+skill_proficiencies = ["medicine", "religion"]
+starting_equipment = ["herbalism_kit", "holy_symbol"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "briarhaven_grove"
+feature_name = "Spirit Sight"
+feature_description = "Your training has opened your eyes to the unseen world. Once per long rest, you can sense the presence of undead, fiends, or celestials within 60 feet, though not their exact location."
+required_races = ["half_orc"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "redeemed_raider"
+name = "Redeemed Raider"
+category = "half_orc"
+summary = "Once part of a warband that terrorized the frontier, you abandoned the raider's life after witnessing an act of cruelty you could not stomach."
+prologue = """
+You rode with the Blackfang warband for three years, long enough for the smoke of burning \
+homesteads to stop bothering your eyes and the screaming to fade into background noise. You \
+told yourself it was survival. You told yourself the humans would do the same if they had the \
+strength. You told yourself a lot of things in those years, and most of them were lies. The \
+truth caught up with you on a cold autumn night when the warband chief ordered the execution of \
+prisoners — farmers, mostly, and their children. Something inside you, something you thought \
+the raids had killed, refused.
+
+You fought your way out. The scars on your back are from orcish blades, not human ones. You \
+ran south through the night with nothing but the clothes on your back and a military insignia \
+torn from the warband chief's tent — proof, if you ever needed it, of what you had been part \
+of. For weeks you wandered, sleeping in ditches, flinching at every sound. The Blackfangs \
+would kill you on sight. Most human settlements would do the same, seeing only the green skin \
+and the tusks and assuming the worst.
+
+Thornfield Inn took you in. The innkeeper, a grizzled veteran who had seen enough of the world \
+to judge people by their actions rather than their blood, offered you a room in exchange for \
+work. You chop wood, haul kegs, and break up the occasional bar fight. The regulars have grown \
+used to you, though trust comes slowly. You do not blame them. Trust should come slowly. You \
+are still earning yours."""
+ability_choices = ["strength", "wisdom", "charisma"]
+skill_proficiencies = ["athletics", "insight"]
+starting_equipment = ["common_clothes", "military_insignia"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "thornfield_inn"
+feature_name = "Haunted Resolve"
+feature_description = "The weight of your past steels you against manipulation. You have advantage on saving throws against being charmed and on Wisdom (Insight) checks to detect deception."
+required_races = ["half_orc"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "bloodsworn_protector"
+name = "Bloodsworn Protector"
+category = "half_orc"
+summary = "Bound by a blood oath to defend the mountain holds, you stand as a living wall between the deep dark and the people above."
+prologue = """
+The blood oath was your choice, though some would call it madness. When the dwarf-lords of \
+Cinderhold called for volunteers to seal the breach in the deep mines — the one that had been \
+vomiting creatures from the underdark for three straight months — you stepped forward. Not for \
+gold. Not for glory. Because someone had to, and you were tired of watching smaller, frailer \
+people throw themselves into the dark while you stood safely behind the gate. The ritual was \
+ancient, older than the hold itself: a cut across both palms, blood mingled with the mountain's \
+iron-rich water, and words spoken in a language that made your teeth ache. When it was done, you \
+could feel the mountain's heartbeat in your bones.
+
+You held that breach for eleven days. Eleven days of darkness and screaming and things with too \
+many legs pressing against your shield. The dwarves fought beside you — brave, stubborn, \
+relentless — and slowly you earned something that half-orcs rarely receive from the mountain \
+folk: respect. When the breach was finally sealed with molten slag and divine wards, the \
+hold-master clasped your arm and called you kin. It was the first time anyone had used that \
+word without it feeling like a lie.
+
+Now you stand watch at Cinderhold's gate, a length of hempen rope coiled at your belt for the \
+climbs between guard posts, your eyes always turned toward the dark. The breach is sealed, but \
+the mountain remembers what came through it. And you have sworn — in blood, in iron, in the \
+old words — that nothing will breach these walls again while you still draw breath."""
+ability_choices = ["constitution", "strength", "wisdom"]
+skill_proficiencies = ["athletics", "perception"]
+starting_equipment = ["hempen_rope", "common_clothes"]
+bonus_gold = 8
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_gate"
+feature_name = "Immovable Sentinel"
+feature_description = "Your blood oath to the mountain strengthens your resolve in defense. When you take the Dodge action, you also gain temporary hit points equal to your Constitution modifier (minimum 1)."
+required_races = ["half_orc"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "rage_channeler"
+name = "Rage Channeler"
+category = "half_orc"
+summary = "Where others fear the orcish fury in your blood, you have learned to harness it as a weapon and a meditation."
+prologue = """
+The rages started when you were young — blinding, volcanic eruptions of fury that left you \
+standing in the wreckage of whatever you had just destroyed, shaking and sick with shame. Your \
+human neighbors called you a monster. Your orcish kin called you blessed. Neither understood \
+what it felt like from the inside: the fire in your skull, the way the world narrowed to a red \
+tunnel, the terrifying joy of absolute destruction. You hurt people you loved. You broke things \
+that could not be mended. By the time you were sixteen, you had resigned yourself to a life \
+spent either in chains or alone on the road.
+
+Then you found the highland hermit. An ancient half-orc covered in ritual tattoos, living in a \
+cave above the sulfur springs where the air tasted of brimstone and old magic. She took one \
+look at you and laughed — a sound like rocks grinding together. "You think the rage is your \
+enemy," she said, heating her tattoo needles over the fire. "It is not. It is you. The part of \
+you that refuses to be small." She taught you the channeling ways: breathing patterns that \
+could bank the fire without extinguishing it, meditation forms that let you touch the edge of \
+fury without falling in, and the sacred tattoos that served as anchors for the spirit when the \
+rage threatened to sweep everything else away.
+
+The hermit is gone now, vanished into the highlands as suddenly as she appeared. She left you \
+her tattoo needles and a beast trophy — the skull-cap of a highland ram she killed with her \
+bare hands in her hundredth year. You walk the highland road with the rage coiled inside you \
+like a banked furnace, controlled but never tamed. You do not fear it anymore. You have learned \
+that the fire does not need to consume you. It can illuminate instead."""
+ability_choices = ["strength", "constitution", "wisdom"]
+skill_proficiencies = ["intimidation", "athletics"]
+starting_equipment = ["beast_trophy", "tattoo_needles"]
+bonus_gold = 5
+starting_region = "ashen_highlands"
+starting_location = "highland_road"
+feature_name = "Controlled Burn"
+feature_description = "You have mastered the art of channeling your fury with precision. When you drop to half hit points or below, you may enter a focused fury as a bonus action, granting +1 to melee damage rolls for 3 rounds without suffering exhaustion."
+required_races = ["half_orc"]
+excluded_races = []
+required_classes = []
+excluded_classes = []

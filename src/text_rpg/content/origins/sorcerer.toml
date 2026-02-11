@@ -1,0 +1,192 @@
+# =============================================================================
+# Sorcerer Origins — Power born in the blood, awakened by crisis or fate
+# =============================================================================
+
+[[origins]]
+id = "storm_born"
+name = "Storm-Born"
+category = "sorcerer"
+summary = "Born during a lightning storm, you carry the fury of the tempest in your veins."
+prologue = """
+Your mother tells the story the same way every time: the night you were born, \
+lightning struck the Storm Point lighthouse three times in succession, and the \
+midwife swore your first cry sounded like thunder. She thought it was a good omen. \
+The priests were less certain. Children born during storms are watched closely on \
+the Iron Coast — an old superstition that turned out, in your case, to be \
+completely justified.
+
+The sparks started when you were seven. Small things at first — static that \
+followed you like a pet, candle flames that leaned toward you when you walked past. \
+By twelve, you could make your hair stand on end at will. By fifteen, you could \
+make other people's hair stand on end without meaning to, which made you unpopular \
+at school and very popular during thunderstorms, when the fishermen wanted you on \
+the dock because lightning never struck near you. It struck everywhere else.
+
+The control came slowly and is still imperfect. Emotion feeds the storm inside \
+you — anger calls lightning to your fingertips, joy makes the air crackle, fear \
+makes it rain in a ten-foot radius centered on your head. You have learned to \
+breathe through the surges, to channel rather than suppress, but you are a long \
+way from mastery. The storm is patient. You are learning to be."""
+ability_choices = ["charisma", "constitution", "dexterity"]
+skill_proficiencies = ["arcana", "intimidation"]
+starting_equipment = ["crystal_focus", "common_clothes"]
+bonus_gold = 8
+starting_region = "iron_coast"
+starting_location = "storm_point_lighthouse"
+feature_name = "Storm's Child"
+feature_description = "Your innate connection to storms gives you resistance to lightning damage and allows you to predict weather changes 12 hours in advance."
+required_races = []
+excluded_races = []
+required_classes = ["sorcerer"]
+excluded_classes = []
+
+[[origins]]
+id = "dragon_blood_awakened"
+name = "Dragon Blood Awakened"
+category = "sorcerer"
+summary = "Ancient draconic heritage stirred to life, granting power that grows with each use."
+prologue = """
+The scales appeared on your sixteenth birthday. Small ones, barely visible, running \
+along the backs of your hands like a fine metallic rash. Your family physician \
+called it a skin condition. Your grandmother called it the blood waking up. She \
+had always claimed the family line traced back to a union between a human ancestor \
+and a brass dragon — a story everyone dismissed as senile fantasy until your hands \
+started glinting gold in the sunlight.
+
+The power followed the scales. Fire, mostly — a warmth that built in your palms \
+until you had to release it or burn. You set the family stable on fire the first \
+time, which was an accident. The second time was also an accident. The third time, \
+you were aiming at a practice target and hit it dead center from thirty paces, \
+which was when your grandmother said "I told you so" and your father said "please \
+leave before you burn down the house."
+
+You walk the highlands now with scales on your hands and fire in your blood, \
+learning through trial and error what your ancestors knew instinctively. The \
+draconic heritage is awakening in stages — each new ability arriving unannounced \
+and requiring urgent mastery before it masters you. Somewhere in the world, there \
+must be someone who understands this gift. Until you find them, you practice."""
+ability_choices = ["charisma", "constitution", "strength"]
+skill_proficiencies = ["arcana", "persuasion"]
+starting_equipment = ["crystal_focus", "fine_clothes"]
+bonus_gold = 12
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_tavern"
+feature_name = "Dragon Scales"
+feature_description = "Faint draconic scales cover parts of your body, granting you resistance to the damage type associated with your draconic ancestry. Your AC cannot be lower than 13 + DEX modifier while unarmored."
+required_races = []
+excluded_races = []
+required_classes = ["sorcerer"]
+excluded_classes = []
+
+[[origins]]
+id = "chaos_touched"
+name = "Chaos Touched"
+category = "sorcerer"
+summary = "Exposed to raw wild magic as a child, reality bends unpredictably around you."
+prologue = """
+Nobody knows what the thing in the old ruins was. The scholars called it a "wild \
+magic nexus" — a tear in the fabric of reality where raw, unfiltered magical energy \
+bleeds into the physical world. You called it "the shiny thing in the basement," \
+because you were eight years old and it was glowing and you touched it before \
+anyone could stop you.
+
+The next three days are a blur. Your parents describe flying furniture, color-changing \
+walls, gravity reversing in the kitchen, and a memorable incident where the family \
+cat temporarily became a small tree. You remember none of it. What you remember is \
+waking up in your bed with the taste of copper in your mouth and the certain \
+knowledge that the world was not as solid as everyone pretended.
+
+The chaos has become manageable. Mostly. You have learned to direct the wild magic \
+rather than simply emit it, though there are still moments when your spells do \
+something unexpected — a fire bolt that turns blue, a shield spell that makes \
+flowers grow, a healing touch that leaves the patient's hair a different color. \
+The unpredictability is the price. The power is the payment. You are learning to \
+accept both."""
+ability_choices = ["charisma", "dexterity", "intelligence"]
+skill_proficiencies = ["arcana", "deception"]
+starting_equipment = ["crystal_focus", "lucky_coin"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "old_ruins"
+feature_name = "Wild Surge"
+feature_description = "Raw magic flows unpredictably through you. When you cast a spell of 1st level or higher, there is a small chance of a random magical effect occurring — sometimes helpful, sometimes merely strange."
+required_races = []
+excluded_races = []
+required_classes = ["sorcerer"]
+excluded_classes = []
+
+[[origins]]
+id = "elemental_conduit"
+name = "Elemental Conduit"
+category = "sorcerer"
+summary = "A living channel for elemental energy, torn between the material world and the planes."
+prologue = """
+The deep mines beneath Cinderhold touch places that are not entirely part of this \
+world. The miners know it — they speak of warm spots where the rock pulses like a \
+heartbeat, and cold spots where your breath freezes in midsummer. You were born \
+in the mining settlement, daughter of a foreman and a cook, and you grew up \
+playing in tunnels that stretched down to where the elemental planes press \
+against the skin of reality.
+
+The first time you pulled fire from the air without a spark or a gesture, you were \
+thirteen and standing in one of those warm spots. The fire did not burn you. It \
+circled your hand like a tame animal, responding to your will with an eagerness \
+that bordered on affection. You tried it with the cold spots next. Ice formed \
+between your fingers, crackling and blue and absolutely obedient.
+
+The miners' guild asked you to leave after you accidentally collapsed a tunnel \
+by pulling too much thermal energy from the surrounding rock. The stone became \
+brittle with cold and the ceiling came down. No one was hurt, but the message \
+was clear: your gift and their livelihood are not compatible. You walk the \
+highlands with elemental fire in one hand and elemental cold in the other, \
+seeking balance between forces that do not naturally coexist."""
+ability_choices = ["constitution", "charisma", "wisdom"]
+skill_proficiencies = ["arcana", "insight"]
+starting_equipment = ["miners_pick", "common_clothes"]
+bonus_gold = 10
+starting_region = "ashen_highlands"
+starting_location = "deep_mines"
+feature_name = "Elemental Attunement"
+feature_description = "Your connection to the elemental planes allows you to sense planar disturbances within 60 feet. You can determine the elemental composition of objects by touch."
+required_races = []
+excluded_races = []
+required_classes = ["sorcerer"]
+excluded_classes = []
+
+[[origins]]
+id = "latent_power_unleashed"
+name = "Latent Power Unleashed"
+category = "sorcerer"
+summary = "A crisis unlocked magic you never knew you had, and now you must learn to wield it."
+prologue = """
+You were nobody. A fishmonger's assistant in Saltmere, scaling cod and haggling \
+over prices and dreaming of nothing more ambitious than owning your own stall \
+someday. Magic was something wizards did — people who spent decades in towers \
+reading books you could not afford. It had nothing to do with you.
+
+Then the wave hit. A rogue swell during what should have been a calm morning, \
+tall enough to swallow the docks whole. You saw it coming. You saw the children \
+playing on the pier. And something inside you — something that had been sleeping \
+since birth, coiled in your chest like a dormant seed — erupted. You raised your \
+hands and the wave split around the pier like a river around a stone. The children \
+were dry. The dock was dry. You collapsed and woke up three days later with a \
+nosebleed and a crowd of people who wanted to know how you did it.
+
+You do not know how you did it. The power is still there — you can feel it \
+humming behind your breastbone, eager and terrifying and utterly without \
+instruction. No one in Saltmere can teach you to control it. The wizards' guild \
+wants to study you like a specimen. The only sensible option is to find someone \
+who understands what you are before you accidentally split something larger than \
+a wave."""
+ability_choices = ["charisma", "wisdom", "constitution"]
+skill_proficiencies = ["persuasion", "insight"]
+starting_equipment = ["common_clothes", "fishing_tackle"]
+bonus_gold = 8
+starting_region = "iron_coast"
+starting_location = "saltmere_docks"
+feature_name = "Crisis Surge"
+feature_description = "Your magic responds to danger. When you are reduced to half hit points or below for the first time in a combat, you regain one expended sorcery point (if you have any)."
+required_races = []
+excluded_races = []
+required_classes = ["sorcerer"]
+excluded_classes = []

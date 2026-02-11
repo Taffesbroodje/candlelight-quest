@@ -1,0 +1,300 @@
+[[npcs]]
+id = "elder_aelindra"
+name = "Elder Aelindra"
+entity_type = "npc"
+profession = "council_elder"
+description = "An ancient elf with silver hair flowing to her waist and eyes that reflect starlight. She has led the Silverleaf Council for centuries and remembers when the forest was young."
+location_id = "silverleaf_hall"
+dialogue_tags = ["greeting", "lore", "quest_info", "politics"]
+behaviors = ["wise", "quest_giver", "regal"]
+is_hostile = false
+is_alive = true
+level = 8
+hp_current = 40
+hp_max = 40
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 14
+constitution = 12
+intelligence = 18
+wisdom = 20
+charisma = 17
+
+[npcs.schedule]
+dawn = "silverleaf_hall"
+morning = "silverleaf_hall"
+midday = "silverleaf_hall"
+afternoon = "silverleaf_hall"
+evening = "silverleaf_village"
+night = "silverleaf_hall"
+late_night = "silverleaf_hall"
+
+[npcs.properties]
+preferred_gifts = ["moonpetal", "arcane_dust", "enchanted_thread"]
+disliked_gifts = ["iron_ingot", "beast_hide"]
+
+[[npcs.attacks]]
+name = "Moonbeam"
+damage_dice = "2d10"
+damage_type = "radiant"
+
+[[npcs]]
+id = "bowyer_thalion"
+name = "Bowyer Thalion"
+entity_type = "npc"
+profession = "bowyer"
+description = "A lean elf with steady hands and perfect vision. He crafts bows that sing when drawn and arrows that fly true in any wind."
+location_id = "silverleaf_bowyer"
+dialogue_tags = ["greeting", "shop_weapons", "craft_info"]
+behaviors = ["focused", "merchant", "craftsman"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 30
+hp_max = 30
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 18
+constitution = 11
+intelligence = 14
+wisdom = 14
+charisma = 11
+
+[npcs.schedule]
+dawn = "silverleaf_bowyer"
+morning = "silverleaf_bowyer"
+midday = "silverleaf_bowyer"
+afternoon = "silverleaf_bowyer"
+evening = "silverleaf_bowyer"
+night = "silverleaf_village"
+late_night = "silverleaf_bowyer"
+
+[npcs.properties]
+preferred_gifts = ["beast_hide", "healing_herb"]
+disliked_gifts = ["nightshade", "iron_ingot"]
+
+[[npcs.attacks]]
+name = "Longbow"
+damage_dice = "1d8"
+damage_type = "piercing"
+
+[[npcs]]
+id = "herbalist_yavanna"
+name = "Herbalist Yavanna"
+entity_type = "npc"
+profession = "herbalist"
+description = "A wood elf with bark-like skin and moss growing in her hair. She speaks to plants and they seem to answer. Her remedies use ingredients no other healer can find."
+location_id = "mistwood_apothecary"
+dialogue_tags = ["greeting", "shop_potions", "lore", "quest_info"]
+behaviors = ["gentle", "merchant", "nature_lover"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 28
+hp_max = 28
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 14
+constitution = 12
+intelligence = 16
+wisdom = 18
+charisma = 13
+
+[npcs.schedule]
+dawn = "mistwood_apothecary"
+morning = "mistwood_apothecary"
+midday = "mistwood_apothecary"
+afternoon = "deep_mistwood"
+evening = "silverleaf_village"
+night = "mistwood_apothecary"
+late_night = "mistwood_apothecary"
+
+[npcs.properties]
+preferred_gifts = ["healing_herb", "moonpetal"]
+disliked_gifts = ["nightshade", "iron_ingot"]
+
+[[npcs.attacks]]
+name = "Thorn Whip"
+damage_dice = "1d6"
+damage_type = "piercing"
+
+[[npcs]]
+id = "ranger_silvan"
+name = "Ranger Captain Silvan"
+entity_type = "npc"
+profession = "ranger_captain"
+description = "A half-elf with a scar across one cheek and eyes that miss nothing. He commands the Mistwood Rangers and knows every trail, tree, and danger in the forest."
+location_id = "ranger_outpost"
+dialogue_tags = ["greeting", "quest_info", "guard_info", "lore"]
+behaviors = ["vigilant", "quest_giver", "protector"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 50
+hp_max = 50
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 18
+constitution = 14
+intelligence = 13
+wisdom = 16
+charisma = 12
+
+[npcs.schedule]
+dawn = "ranger_outpost"
+morning = "ranger_outpost"
+midday = "fog_trails"
+afternoon = "fog_trails"
+evening = "ranger_outpost"
+night = "ranger_outpost"
+late_night = "ranger_outpost"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_potion"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Twin Shortswords"
+damage_dice = "2d6"
+damage_type = "slashing"
+
+[[npcs]]
+id = "moon_priestess"
+name = "Moon Priestess Celebrian"
+entity_type = "npc"
+profession = "priestess"
+description = "An elf draped in moonlit robes that seem to glow. She tends the stone circle and intercedes with the forest spirits on behalf of all who live here."
+location_id = "mistwood_shrine"
+dialogue_tags = ["greeting", "healing", "blessing", "lore"]
+behaviors = ["serene", "healer", "spiritual"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 34
+hp_max = 34
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 12
+constitution = 12
+intelligence = 15
+wisdom = 18
+charisma = 16
+
+[npcs.schedule]
+dawn = "mistwood_shrine"
+morning = "mistwood_shrine"
+midday = "mistwood_shrine"
+afternoon = "mistwood_shrine"
+evening = "mistwood_shrine"
+night = "ancient_tree"
+late_night = "mistwood_shrine"
+
+[npcs.properties]
+preferred_gifts = ["moonpetal", "holy_symbol", "enchanted_thread"]
+disliked_gifts = ["nightshade", "iron_ingot"]
+
+[[npcs.attacks]]
+name = "Moonfire"
+damage_dice = "2d6"
+damage_type = "radiant"
+
+[[npcs]]
+id = "fog_walker"
+name = "The Fog Walker"
+entity_type = "npc"
+profession = "hermit"
+description = "A mysterious figure in tattered grey robes who appears and vanishes in the mist. No one knows their race, age, or origin. They offer cryptic warnings and occasionally guide lost travelers."
+location_id = "deep_mistwood"
+dialogue_tags = ["greeting", "lore", "quest_info", "rumors"]
+behaviors = ["mysterious", "information", "cryptic"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 28
+hp_max = 28
+ac = 16
+unavailable_periods = []
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 16
+constitution = 10
+intelligence = 17
+wisdom = 18
+charisma = 14
+
+[npcs.schedule]
+dawn = "deep_mistwood"
+morning = "deep_mistwood"
+midday = "deep_mistwood"
+afternoon = "deep_mistwood"
+evening = "deep_mistwood"
+night = "deep_mistwood"
+late_night = "deep_mistwood"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "moonpetal", "soul_gem"]
+disliked_gifts = ["torch", "lantern"]
+
+[[npcs.attacks]]
+name = "Mist Touch"
+damage_dice = "1d8"
+damage_type = "cold"
+
+[[npcs]]
+id = "shadow_sentinel"
+name = "Shadow Sentinel Kael"
+entity_type = "npc"
+profession = "sentinel"
+description = "A dark elf exile who guards the boundary between the forest's light and dark halves. He trusts no one but respects strength and conviction."
+location_id = "shadow_hollow"
+dialogue_tags = ["greeting", "guard_info", "lore", "quest_info"]
+behaviors = ["stern", "protector", "mysterious"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 42
+hp_max = 42
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 17
+constitution = 13
+intelligence = 13
+wisdom = 15
+charisma = 10
+
+[npcs.schedule]
+dawn = "shadow_hollow"
+morning = "shadow_hollow"
+midday = "shadow_hollow"
+afternoon = "shadow_hollow"
+evening = "deep_mistwood"
+night = "shadow_hollow"
+late_night = "shadow_hollow"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "antidote"]
+disliked_gifts = ["holy_symbol", "torch"]
+
+[[npcs.attacks]]
+name = "Shadow Blade"
+damage_dice = "1d8"
+damage_type = "necrotic"

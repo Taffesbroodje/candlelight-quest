@@ -1,0 +1,391 @@
+[[locations]]
+id = "cinderhold_gate"
+name = "Cinderhold Gate"
+region_id = "ashen_highlands"
+description = "A fortified stone gatehouse carved into the mountainside, its iron portcullis blackened by centuries of volcanic ash. Guards in soot-stained armor check travelers and wagons entering the mining town. The clang of distant hammers echoes from within."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "cinderhold_forge"
+direction = "north"
+description = "A cobblestone road leads uphill past smelting workshops toward the glow of the master forge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "cinderhold_tavern"
+direction = "east"
+description = "A carved stone archway leads to a tavern built into the rock face, its chimney belching warm smoke."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "highland_road"
+direction = "south"
+description = "The mountain road winds down through switchbacks toward the lowlands."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "cinderhold_barracks"
+direction = "north"
+description = "Stone steps climb toward the militia barracks carved into the mountainside above."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "miner_quarters"
+direction = "east"
+description = "A worn path leads to the cramped dormitories near the mine entrance."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "cinderhold_shrine"
+direction = "south"
+description = "A short passage leads to a dwarven shrine, the glow of an eternal flame visible within."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "western_descent"
+direction = "southwest"
+description = "A steep trail descends the western face of the highlands toward the dusty lowlands."
+is_locked = false
+
+[[locations]]
+id = "cinderhold_forge"
+name = "Cinderhold Forge"
+region_id = "ashen_highlands"
+description = "A massive open-air smithy built over a natural volcanic vent that provides an inexhaustible source of heat. The forge burns day and night, and the ring of hammer on metal never ceases. Weapons and tools of exceptional quality hang from iron racks along the soot-blackened walls."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "cinderhold_gate"
+direction = "south"
+description = "The cobblestone road leads back downhill to the town gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "deep_mines"
+direction = "east"
+description = "A reinforced tunnel mouth gapes in the rock face, mine carts on rusted rails disappearing into the darkness below."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "cinderhold_barracks"
+direction = "east"
+description = "A side path leads to the militia barracks where the sound of sparring drifts on the smoky air."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "cinderhold_shrine"
+direction = "south"
+description = "Hammered copper reliefs frame the entrance to a small shrine dedicated to the Forge Father."
+is_locked = false
+
+[[locations]]
+id = "cinderhold_tavern"
+name = "The Ember Rest"
+region_id = "ashen_highlands"
+description = "A sprawling tavern carved directly into the volcanic rock, its walls warm to the touch from the geothermal heat. Miners crowd the long stone bar after their shifts, swapping stories over mugs of dark ale brewed with mountain spring water. A fire pit in the center fills the cavern with a ruddy glow."
+location_type = "tavern"
+
+[[locations.connections]]
+target_location_id = "cinderhold_gate"
+direction = "west"
+description = "The stone archway leads back out to the town gate."
+is_locked = false
+
+[[locations]]
+id = "deep_mines"
+name = "Deep Mines"
+region_id = "ashen_highlands"
+description = "A network of tunnels bored deep into the volcanic mountain, supported by timber beams and iron braces. Lanterns flicker at intervals along the main shaft, but many side passages descend into total darkness. Strange chittering echoes from the lower levels, and the air grows hotter the deeper one goes."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "cinderhold_forge"
+direction = "west"
+description = "The mine tunnel opens back out into daylight at the forge works."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "lava_tubes"
+direction = "south"
+description = "A side passage descends into ancient lava tubes, the air growing oppressively hot."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "old_mine_shaft"
+direction = "south"
+description = "A sealed-off passage marked with warning signs leads to the old mine shaft."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "miner_quarters"
+direction = "north"
+description = "The main tunnel slopes upward toward the miners' dormitories near the entrance."
+is_locked = false
+
+[[locations]]
+id = "obsidian_plateau"
+name = "Obsidian Plateau"
+region_id = "ashen_highlands"
+description = "A windswept plateau of black volcanic glass that glitters like a dark mirror under the sun. The ground is treacherous, with razor-sharp edges hidden beneath thin layers of ash. Ancient stone cairns dot the landscape, their purpose long forgotten."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "highland_road"
+direction = "south"
+description = "A rough trail descends from the plateau back to the main mountain road."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "sulfur_springs"
+direction = "east"
+description = "Wisps of steam rise from beyond a ridge of volcanic rock to the east, carrying the sharp smell of sulfur."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ash_wastes"
+direction = "south"
+description = "The obsidian gives way to a desolate expanse of grey volcanic ash stretching to the horizon."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ashfall_pass"
+direction = "east"
+description = "A narrow mountain pass winds eastward, choked with volcanic ash and howling wind."
+is_locked = false
+
+[[locations]]
+id = "sulfur_springs"
+name = "Sulfur Springs"
+region_id = "ashen_highlands"
+description = "A series of natural hot springs nestled in a sheltered valley between volcanic ridges. The mineral-rich waters bubble and steam, staining the surrounding rocks vivid shades of yellow and orange. Despite the acrid smell, the springs are said to have remarkable healing properties."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "obsidian_plateau"
+direction = "west"
+description = "A rocky path climbs back up to the glittering expanse of the obsidian plateau."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ash_wastes"
+direction = "east"
+description = "The springs give way to a barren landscape of wind-sculpted volcanic ash."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hot_springs_camp"
+direction = "south"
+description = "A well-worn trail leads to a prospector encampment clustered around steaming hot springs."
+is_locked = false
+
+[[locations]]
+id = "highland_road"
+name = "Highland Road"
+region_id = "ashen_highlands"
+description = "A winding mountain road carved into the volcanic slopes, its surface blackened with ash and pocked with old lava flows. Switchbacks climb steeply toward Cinderhold, offering dramatic views of the ashen valleys below. Rockfalls are a constant danger."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "cinderhold_gate"
+direction = "north"
+description = "The road climbs up through a series of switchbacks toward the fortified gates of Cinderhold."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "obsidian_plateau"
+direction = "west"
+description = "A rough trail branches off the road and climbs to a high plateau of dark volcanic glass."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ashfall_pass"
+direction = "north"
+description = "A narrow path branches northward into a mountain pass thick with volcanic ash."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "western_descent"
+direction = "west"
+description = "A steep trail descends the western face of the highlands, the air growing dusty."
+is_locked = false
+
+# ---- New Locations ----
+
+[[locations]]
+id = "cinderhold_barracks"
+name = "Cinderhold Barracks"
+region_id = "ashen_highlands"
+description = "Guard and militia quarters carved into the mountainside, with arrow slits overlooking the road below. Weapon racks line the corridors and a training yard occupies a natural ledge."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "cinderhold_gate"
+direction = "south"
+description = "Stone steps descend back toward the town gate below."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "cinderhold_forge"
+direction = "west"
+description = "A side path leads to the forge, the ring of hammers growing louder."
+is_locked = false
+
+[[locations]]
+id = "miner_quarters"
+name = "Miner Quarters"
+region_id = "ashen_highlands"
+description = "Cramped dormitories near the mine entrance, smelling of sweat and lamp oil. Miners' personal effects hang from pegs — canteens, lucky charms, worn boots."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "deep_mines"
+direction = "south"
+description = "The dormitory passage slopes downward into the main mine tunnels."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "cinderhold_gate"
+direction = "west"
+description = "A worn path leads back to the town gate."
+is_locked = false
+
+[[locations]]
+id = "lava_tubes"
+name = "Lava Tubes"
+region_id = "ashen_highlands"
+description = "Ancient tunnels formed by flowing lava, now cooled into smooth glassy corridors. The oppressive heat intensifies deeper in, and orange light glows from cracks in the floor."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "deep_mines"
+direction = "north"
+description = "The lava tubes connect back to the main mine network above."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "old_mine_shaft"
+direction = "east"
+description = "A narrow passage leads to the sealed-off old mine shaft."
+is_locked = false
+
+[[locations]]
+id = "ashfall_pass"
+name = "Ashfall Pass"
+region_id = "ashen_highlands"
+description = "A narrow mountain pass dusted with volcanic ash. The wind howls through the gap, carrying fine grey particles that sting exposed skin. Cairns mark the path."
+location_type = "road"
+
+[locations.properties]
+border_region = "cragmoor"
+border_direction = "north"
+
+[[locations.connections]]
+target_location_id = "highland_road"
+direction = "south"
+description = "The pass descends southward back to the main highland road."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "obsidian_plateau"
+direction = "west"
+description = "A trail leads west across the windswept obsidian plateau."
+is_locked = false
+
+[[locations]]
+id = "old_mine_shaft"
+name = "Old Mine Shaft"
+region_id = "ashen_highlands"
+description = "A collapsed section of the old mines, officially sealed off. Strange tapping sounds echo from behind the cave-in, rhythmic and deliberate — not natural."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "lava_tubes"
+direction = "west"
+description = "A narrow passage leads back to the lava tubes."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "deep_mines"
+direction = "north"
+description = "A partially blocked tunnel connects back to the main mine network."
+is_locked = false
+
+[[locations]]
+id = "cinderhold_shrine"
+name = "Cinderhold Shrine"
+region_id = "ashen_highlands"
+description = "A dwarven shrine near the forge dedicated to the Forge Father. An eternal flame burns in a stone brazier, and the walls bear hammered copper reliefs of creation myths."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "cinderhold_forge"
+direction = "east"
+description = "The shrine opens back out toward the great forge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "cinderhold_gate"
+direction = "north"
+description = "A short passage leads back to the town gate."
+is_locked = false
+
+[[locations]]
+id = "ash_wastes"
+name = "Ash Wastes"
+region_id = "ashen_highlands"
+description = "A desolate expanse of volcanic ash stretching to the horizon. Nothing grows here. Wind sculpts the ash into dunes and ridges, and the ground sometimes gives way to hidden sinkholes."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "obsidian_plateau"
+direction = "north"
+description = "The ash gives way to the glittering black surface of the obsidian plateau."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "sulfur_springs"
+direction = "west"
+description = "The acrid smell of sulfur grows stronger as steam rises from springs to the west."
+is_locked = false
+
+[[locations]]
+id = "hot_springs_camp"
+name = "Hot Springs Camp"
+region_id = "ashen_highlands"
+description = "A prospector encampment clustered around natural sulfur hot springs. Steam rises constantly, and the mineral-rich water has reputed healing properties despite its foul smell."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "sulfur_springs"
+direction = "north"
+description = "A trail leads north toward the main sulfur springs."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ash_wastes"
+direction = "east"
+description = "The camp gives way to the barren ash wastes to the east."
+is_locked = false
+
+[[locations]]
+id = "western_descent"
+name = "Western Descent"
+region_id = "ashen_highlands"
+description = "A steep trail descending the western face of the highlands. The volcanic rock gives way to cracked dry earth, and the air grows dusty. The lowlands spread out below."
+location_type = "road"
+
+[locations.properties]
+border_region = "dusthollow"
+border_direction = "west"
+
+[[locations.connections]]
+target_location_id = "highland_road"
+direction = "east"
+description = "The trail climbs back up toward the main highland road."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "cinderhold_gate"
+direction = "northeast"
+description = "A steep path ascends toward the fortified gates of Cinderhold."
+is_locked = false

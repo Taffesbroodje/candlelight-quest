@@ -1,0 +1,142 @@
+# Shops in Saltmere and the Iron Coast
+
+[[shops]]
+id = "kael_supplies"
+owner_entity_id = "harbormaster_kael"
+location_id = "saltmere_docks"
+shop_type = "general"
+
+[[shops.stock]]
+item_id = "hempen_rope"
+quantity = 10
+base_price = 1
+base_stock = 10
+
+[[shops.stock]]
+item_id = "rations"
+quantity = 15
+base_price = 1
+base_stock = 15
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 3
+base_price = 50
+base_stock = 3
+
+[[shops.stock]]
+item_id = "navigators_tools"
+quantity = 1
+base_price = 25
+base_stock = 1
+
+[[shops.stock]]
+item_id = "lantern"
+quantity = 3
+base_price = 5
+base_stock = 3
+
+[[shops.stock]]
+item_id = "waterskin"
+quantity = 5
+base_price = 2
+base_stock = 5
+
+
+[[shops]]
+id = "mora_exotic"
+owner_entity_id = "captain_mora"
+location_id = "saltmere_docks"
+shop_type = "general"
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 5
+base_price = 50
+base_stock = 5
+
+[[shops.stock]]
+item_id = "spyglass"
+quantity = 1
+base_price = 1000
+base_stock = 1
+
+[[shops.stock]]
+item_id = "compass"
+quantity = 2
+base_price = 25
+base_stock = 2
+
+[[shops.stock]]
+item_id = "sea_chart"
+quantity = 1
+base_price = 10
+base_stock = 1
+
+
+[[shops]]
+id = "sal_bar"
+owner_entity_id = "barkeep_sal"
+location_id = "saltmere_tavern"
+shop_type = "tavern"
+
+[[shops.stock]]
+item_id = "rations"
+quantity = 15
+base_price = 1
+base_stock = 15
+
+[[shops.stock]]
+item_id = "cooked_meal"
+quantity = 5
+base_price = 3
+base_stock = 5
+
+[[shops.stock]]
+item_id = "hearty_stew"
+quantity = 3
+base_price = 6
+base_stock = 3
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 2
+base_price = 50
+base_stock = 2
+
+[[shops.stock]]
+item_id = "waterskin"
+quantity = 5
+base_price = 2
+base_stock = 5
+
+
+[[shops]]
+id = "nessa_shipwright"
+owner_entity_id = "shipwright_nessa"
+location_id = "shipwright_yard"
+shop_type = "general"
+
+[[shops.stock]]
+item_id = "hempen_rope"
+quantity = 10
+base_price = 1
+base_stock = 10
+
+[[shops.stock]]
+item_id = "lantern"
+quantity = 3
+base_price = 5
+base_stock = 3
+
+[[shops.stock]]
+item_id = "iron_ingot"
+quantity = 5
+base_price = 5
+base_stock = 5
+
+[[shops.stock]]
+item_id = "handaxe"
+quantity = 2
+base_price = 5
+base_stock = 2

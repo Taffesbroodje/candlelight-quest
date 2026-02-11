@@ -1,0 +1,194 @@
+# =============================================================================
+# Warlock Origins — Power borrowed, bargains struck, prices yet to be paid
+# =============================================================================
+
+[[origins]]
+id = "reluctant_pactmaker"
+name = "Reluctant Pactmaker"
+category = "warlock"
+summary = "You made a pact to save someone you loved, and now the entity collects its due."
+prologue = """
+Your sister was dying. The fever that swept through the Verdant Reach spared most \
+but destroyed the weakest, and your sister — gentle, bookish, and constitutionally \
+fragile — was among them. The temple healers exhausted their magic. The herbalists \
+shook their heads. On the third night, when her breathing became a rasp and her \
+skin turned the color of old parchment, you walked into the Whisperwood and \
+screamed into the darkness. You did not care what answered, as long as something \
+did.
+
+Something answered. A voice like smoke and honey, coming from everywhere and \
+nowhere, offering exactly what you needed. Your sister would live. In exchange, \
+you would serve. Not immediately, not constantly, but when called upon, you would \
+act as the entity's agent in the material world. The terms were maddeningly vague. \
+You agreed without hesitation.
+
+Your sister recovered overnight. The fever broke like a snapped twig, and by \
+morning she was sitting up and asking for soup. The entity has been quiet since — \
+no commands, no contact, just the occasional sensation of being watched and the \
+arcane power that flows through your veins like borrowed lightning. You know the \
+bill is coming. You also know that you would make the same choice again without \
+a moment's pause."""
+ability_choices = ["charisma", "wisdom", "constitution"]
+skill_proficiencies = ["arcana", "deception"]
+starting_equipment = ["arcane_focus", "family_locket"]
+bonus_gold = 8
+starting_region = "verdant_reach"
+starting_location = "whisperwood_edge"
+feature_name = "Patron's Mark"
+feature_description = "Your patron's mark is visible to those with magical sight. Once per long rest, you can invoke your patron's name to gain advantage on an Intimidation check against creatures that can sense your otherworldly connection."
+required_races = []
+excluded_races = []
+required_classes = ["warlock"]
+excluded_classes = []
+
+[[origins]]
+id = "power_seeker"
+name = "Power Seeker"
+category = "warlock"
+summary = "You sought forbidden power deliberately, and you found exactly what you were looking for."
+prologue = """
+The wizards would not teach you. Three applications to the arcane academy, three \
+rejections, each more politely dismissive than the last. Insufficient aptitude, \
+they said. Insufficient discipline. Insufficient whatever quality they had decided \
+you lacked. The truth, which you eventually forced from a sympathetic professor \
+over drinks, was simpler: you had too much raw talent and not enough patience to \
+channel it safely. They were afraid of what you might become.
+
+So you became exactly what they feared. The texts in the restricted section of the \
+Saltmere guildhall described rituals for contacting extraplanar entities — beings \
+of immense power who would share their knowledge in exchange for service. The \
+warnings were explicit. The consequences were detailed. You read every word and \
+performed the ritual anyway, because power that comes with conditions is still \
+power, and power without conditions does not exist.
+
+The entity that answered was not what you expected. It was older, vaster, and more \
+patient than any demon the texts described. It offered knowledge freely and asked \
+only that you use it — that you push the boundaries of what mortal magic can \
+achieve, and report what you discover. A patron that wants you to learn. It sounds \
+too good to be true, and you are wise enough to know that it probably is."""
+ability_choices = ["charisma", "intelligence", "constitution"]
+skill_proficiencies = ["arcana", "investigation"]
+starting_equipment = ["arcane_focus", "old_journal"]
+bonus_gold = 12
+starting_region = "iron_coast"
+starting_location = "saltmere_guildhall"
+feature_name = "Forbidden Knowledge"
+feature_description = "Your patron grants you fragments of otherworldly knowledge. Once per long rest, you can tap this knowledge to gain advantage on an Arcana or Investigation check."
+required_races = []
+excluded_races = []
+required_classes = ["warlock"]
+excluded_classes = []
+
+[[origins]]
+id = "accidental_summoner"
+name = "Accidental Summoner"
+category = "warlock"
+summary = "You accidentally contacted an otherworldly being, and now you are bound whether you like it or not."
+prologue = """
+You were reading a book. That is the absurd, infuriating truth — you were reading \
+a book in the Murkfen shrine's archive, practicing your pronunciation of an \
+ancient text for a translation exercise, and you accidentally spoke the words of \
+a binding ritual that had been transcribed alongside a religious hymn by a scribe \
+who clearly did not understand what they were copying.
+
+The shrine's basement flooded with green light. The pages of the book turned to \
+ash in your hands. And a voice — cultured, amused, and profoundly inhuman — said: \
+"Finally. That took four hundred years. I was beginning to think the language had \
+died." The entity did not ask permission. It did not offer terms. It simply \
+declared that since you had completed the ritual, the pact was sealed, and you \
+should expect certain changes.
+
+The changes arrived over the following week. Visions of distant planes during \
+sleep. The ability to see in darkness. An instinctive knowledge of spells you had \
+never studied. And, most unsettlingly, a new voice in the back of your mind — not \
+controlling, not commanding, just present. Watching. Occasionally commenting. \
+You did not choose this power. You were not brave or foolish enough to seek it. \
+You pronounced a word correctly, and the universe decided that was sufficient."""
+ability_choices = ["charisma", "intelligence", "wisdom"]
+skill_proficiencies = ["arcana", "history"]
+starting_equipment = ["arcane_focus", "spellbook_fragment"]
+bonus_gold = 5
+starting_region = "sunken_reach"
+starting_location = "murkfen_shrine"
+feature_name = "Accidental Insight"
+feature_description = "Your patron occasionally shares observations unbidden. Once per long rest, you receive a cryptic hint about a current challenge, granting advantage on your next Intelligence-based check."
+required_races = []
+excluded_races = []
+required_classes = ["warlock"]
+excluded_classes = []
+
+[[origins]]
+id = "debt_collector"
+name = "Debt Collector"
+category = "warlock"
+summary = "Your patron granted power to collect what is owed — souls, favors, and broken promises."
+prologue = """
+The entity contacted you, not the other way around. You were a debt collector \
+for the merchant guild in Saltmere — the mundane kind, who knocks on doors and \
+delivers stern letters and occasionally persuades reluctant debtors through the \
+force of personality rather than the threat of violence. You were good at it. \
+Excellent, actually. Your record of collections was the highest in the guild, \
+achieved through a combination of charm, persistence, and an almost supernatural \
+ability to find people who did not want to be found.
+
+The entity noticed. It appeared in your dreams first — a silhouette of smoke and \
+flame, offering an upgrade. Your talent for tracking debts could be applied to \
+a different kind of obligation: broken pacts, unfulfilled promises, bargains \
+sealed in the old ways that stretched back centuries. The material world was full \
+of outstanding debts, and the entity needed an agent with feet on the ground.
+
+The power came with the agreement. You can feel the debts now — they register as \
+a faint pull, like a compass needle, pointing toward promises that remain \
+unfulfilled. The entity does not care about gold or goods. It cares about \
+balance. Every broken promise is a crack in the fabric of the world, and you \
+have been deputized to seal them. The pay is supernatural power. The work is \
+dangerous. The retirement plan is unclear."""
+ability_choices = ["charisma", "wisdom", "dexterity"]
+skill_proficiencies = ["intimidation", "investigation"]
+starting_equipment = ["fine_clothes", "merchant_ledger"]
+bonus_gold = 15
+starting_region = "iron_coast"
+starting_location = "saltmere_market"
+feature_name = "Debt Sense"
+feature_description = "You can sense when someone near you is bound by a broken oath or unfulfilled promise. This grants advantage on Insight checks to detect when someone is being dishonest about their obligations."
+required_races = []
+excluded_races = []
+required_classes = ["warlock"]
+excluded_classes = []
+
+[[origins]]
+id = "otherworldly_refugee"
+name = "Otherworldly Refugee"
+category = "warlock"
+summary = "A fragment of an otherworldly entity merged with you, granting power and a passenger in your mind."
+prologue = """
+The sunken temple in the Reach was supposed to be empty. The archaeological team \
+that hired you as a guide said it had been abandoned for centuries — just old stone \
+and stagnant water and the occasional bat. They were wrong about the empty part. \
+Something was waiting in the lowest chamber, behind a door that should not have \
+opened but did when you touched it.
+
+The entity was dying. Not a demon, not a devil — something else entirely, from a \
+plane the scholars do not have a name for. It was vast and luminous and fading, \
+and it spoke directly into your mind with a desperation that bypassed language \
+entirely. It needed a host. A vessel. A place to shelter while it recovered \
+enough strength to survive on its own. In exchange, it would share its power.
+
+You said yes because it was dying, and because something about its desperation \
+felt genuine, and because you have always had a weakness for things that need \
+help. The merger was instantaneous and overwhelming — knowledge flooding in like \
+water through a broken dam, arcane power burning along your nerve endings, and a \
+presence settling into the back of your mind like a guest who intends to stay \
+awhile. You are no longer alone in your own head. You are not sure you mind."""
+ability_choices = ["charisma", "constitution", "intelligence"]
+skill_proficiencies = ["arcana", "religion"]
+starting_equipment = ["arcane_focus", "lantern"]
+bonus_gold = 5
+starting_region = "sunken_reach"
+starting_location = "sunken_temple"
+feature_name = "Shared Consciousness"
+feature_description = "The entity within you occasionally processes information you miss. You cannot be surprised while conscious, and you have advantage on Perception checks while in darkened or underground environments."
+required_races = []
+excluded_races = []
+required_classes = ["warlock"]
+excluded_classes = []

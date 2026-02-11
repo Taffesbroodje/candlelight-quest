@@ -1,0 +1,6 @@
+id = "the_hollow"
+name = "The Hollow"
+description = "A vast haunted swamp south of Kingsward where the dead do not rest. Necromancers practice forbidden arts in ruined towers, witch covens brew dark potions in hidden bogs, and undead shamble through perpetual mist. Yet the swamp also holds rare alchemical ingredients found nowhere else."
+level_range_min = 7
+level_range_max = 12
+climate = "swamp_dark"

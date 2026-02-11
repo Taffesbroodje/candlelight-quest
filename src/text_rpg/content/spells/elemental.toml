@@ -1,0 +1,349 @@
+# =============================================================================
+# Elemental Spells — Water, Earth, Wind, and Acid
+# =============================================================================
+
+# ---- Cantrips ----
+
+[[spells]]
+id = "water_bolt"
+name = "Water Bolt"
+level = 0
+school = "evocation"
+classes = ["wizard", "sorcerer", "druid"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V", "S"]
+description = "A pressurized jet of water streaks toward a creature."
+[spells.mechanics]
+type = "attack"
+damage_dice = "1d8"
+damage_type = "water"
+
+[[spells]]
+id = "stone_fist"
+name = "Stone Fist"
+level = 0
+school = "evocation"
+classes = ["wizard", "sorcerer", "druid"]
+casting_time = "action"
+range = 0
+duration = "instantaneous"
+components = ["V", "S"]
+description = "Your fist hardens to stone as you strike, delivering a crushing blow."
+[spells.mechanics]
+type = "attack"
+damage_dice = "1d10"
+damage_type = "earth"
+
+[[spells]]
+id = "gust_slash"
+name = "Gust Slash"
+level = 0
+school = "evocation"
+classes = ["wizard", "sorcerer", "druid"]
+casting_time = "action"
+range = 30
+duration = "instantaneous"
+components = ["V", "S"]
+description = "A razor-sharp blade of compressed air slashes toward a creature."
+[spells.mechanics]
+type = "attack"
+damage_dice = "1d6"
+damage_type = "wind"
+
+[[spells]]
+id = "acid_splash_enhanced"
+name = "Acid Splash"
+level = 0
+school = "conjuration"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You hurl a bubble of acid. It can hit up to two adjacent creatures."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "1d6"
+damage_type = "acid"
+
+# ---- Level 1 ----
+
+[[spells]]
+id = "tidal_push"
+name = "Tidal Push"
+level = 1
+school = "evocation"
+classes = ["wizard", "sorcerer", "druid"]
+casting_time = "action"
+range = 30
+duration = "instantaneous"
+components = ["V", "S"]
+description = "A surging wave of water crashes into a creature, shoving it backward."
+[spells.mechanics]
+type = "save"
+save_ability = "strength"
+damage_dice = "2d6"
+damage_type = "water"
+
+[[spells]]
+id = "tremor"
+name = "Tremor"
+level = 1
+school = "evocation"
+classes = ["wizard", "druid"]
+casting_time = "action"
+range = 30
+duration = "instantaneous"
+components = ["V", "S", "M"]
+description = "The ground shakes violently beneath a creature's feet."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "2d8"
+damage_type = "earth"
+
+[[spells]]
+id = "cutting_wind"
+name = "Cutting Wind"
+level = 1
+school = "evocation"
+classes = ["wizard", "sorcerer", "druid", "ranger"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V", "S"]
+description = "A howling blade of wind slices through the air toward a target."
+[spells.mechanics]
+type = "attack"
+damage_dice = "2d8"
+damage_type = "wind"
+
+[[spells]]
+id = "corrosive_touch"
+name = "Corrosive Touch"
+level = 1
+school = "evocation"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 0
+duration = "instantaneous"
+components = ["V", "S"]
+description = "Acid coats your hand as you reach out to corrode flesh and armor."
+[spells.mechanics]
+type = "attack"
+damage_dice = "3d6"
+damage_type = "acid"
+
+# ---- Level 2 ----
+
+[[spells]]
+id = "geyser"
+name = "Geyser"
+level = 2
+school = "evocation"
+classes = ["wizard", "sorcerer", "druid"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V", "S", "M"]
+description = "A column of superheated water erupts from the ground beneath a creature."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "3d8"
+damage_type = "water"
+
+[[spells]]
+id = "earthen_wall"
+name = "Earthen Wall"
+level = 2
+school = "conjuration"
+classes = ["wizard", "druid"]
+casting_time = "action"
+range = 30
+duration = "10 minutes"
+components = ["V", "S", "M"]
+concentration = true
+description = "A wall of packed earth rises from the ground, providing cover."
+[spells.mechanics]
+type = "buff"
+effect = "earthen_wall"
+
+[[spells]]
+id = "gale_force"
+name = "Gale Force"
+level = 2
+school = "evocation"
+classes = ["wizard", "sorcerer", "druid"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V", "S"]
+description = "A concentrated blast of hurricane-force wind hammers a creature."
+[spells.mechanics]
+type = "save"
+save_ability = "strength"
+damage_dice = "3d8"
+damage_type = "wind"
+
+[[spells]]
+id = "acid_arrow"
+name = "Acid Arrow"
+level = 2
+school = "evocation"
+classes = ["wizard"]
+casting_time = "action"
+range = 90
+duration = "instantaneous"
+components = ["V", "S", "M"]
+description = "A shimmering green arrow streaks toward a target and bursts in acid."
+[spells.mechanics]
+type = "attack"
+damage_dice = "4d4"
+damage_type = "acid"
+
+# ---- Level 3 ----
+
+[[spells]]
+id = "tidal_wave"
+name = "Tidal Wave"
+level = 3
+school = "conjuration"
+classes = ["wizard", "druid"]
+casting_time = "action"
+range = 120
+duration = "instantaneous"
+components = ["V", "S", "M"]
+description = "A massive wave of water surges forward, sweeping creatures off their feet."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "4d8"
+damage_type = "water"
+
+[[spells]]
+id = "earthquake_tremor"
+name = "Earthquake Tremor"
+level = 3
+school = "evocation"
+classes = ["wizard", "druid", "sorcerer"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V", "S", "M"]
+description = "The earth cracks and heaves violently in a localized quake."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "5d6"
+damage_type = "earth"
+
+[[spells]]
+id = "cyclone"
+name = "Cyclone"
+level = 3
+school = "evocation"
+classes = ["wizard", "sorcerer", "druid"]
+casting_time = "action"
+range = 90
+duration = "instantaneous"
+components = ["V", "S"]
+description = "A swirling vortex of wind engulfs a creature, battering it from all sides."
+[spells.mechanics]
+type = "save"
+save_ability = "strength"
+damage_dice = "5d6"
+damage_type = "wind"
+
+[[spells]]
+id = "caustic_deluge"
+name = "Caustic Deluge"
+level = 3
+school = "conjuration"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V", "S", "M"]
+description = "A torrent of caustic acid rains down on a targeted area."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "5d6"
+damage_type = "acid"
+
+# ---- Level 4 ----
+
+[[spells]]
+id = "maelstrom"
+name = "Maelstrom"
+level = 4
+school = "evocation"
+classes = ["wizard", "druid"]
+casting_time = "action"
+range = 120
+duration = "1 minute"
+components = ["V", "S", "M"]
+concentration = true
+description = "A churning vortex of water drags creatures toward its center."
+[spells.mechanics]
+type = "save"
+save_ability = "strength"
+damage_dice = "6d6"
+damage_type = "water"
+
+[[spells]]
+id = "stone_prison"
+name = "Stone Prison"
+level = 4
+school = "conjuration"
+classes = ["wizard", "druid"]
+casting_time = "action"
+range = 60
+duration = "1 minute"
+components = ["V", "S", "M"]
+concentration = true
+description = "Pillars of stone erupt around a creature, trapping it in a rocky cage."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "4d8"
+damage_type = "earth"
+
+[[spells]]
+id = "hurricane"
+name = "Hurricane"
+level = 4
+school = "evocation"
+classes = ["wizard", "sorcerer", "druid"]
+casting_time = "action"
+range = 120
+duration = "1 minute"
+components = ["V", "S"]
+concentration = true
+description = "A devastating storm of wind engulfs an area, hurling creatures about."
+[spells.mechanics]
+type = "save"
+save_ability = "strength"
+damage_dice = "6d6"
+damage_type = "wind"
+
+[[spells]]
+id = "vitriol_storm"
+name = "Vitriol Storm"
+level = 4
+school = "evocation"
+classes = ["wizard", "sorcerer"]
+casting_time = "action"
+range = 90
+duration = "instantaneous"
+components = ["V", "S", "M"]
+description = "A swirling cloud of corrosive acid descends on a wide area."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "6d6"
+damage_type = "acid"

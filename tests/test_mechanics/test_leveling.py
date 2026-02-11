@@ -86,7 +86,21 @@ class TestRollHitPointsOnLevelUp:
             hp = roll_hit_points_on_level_up("wizard", -3)
             assert hp >= 1  # minimum 1
 
-    def test_unknown_class_defaults_d8(self, seeded_rng):
+    def test_barbarian_d12(self, seeded_rng):
         for _ in range(50):
             hp = roll_hit_points_on_level_up("barbarian", 0)
+            assert 1 <= hp <= 12
+
+    @pytest.mark.parametrize("cls, max_roll", [
+        ("barbarian", 12), ("bard", 8), ("druid", 8), ("monk", 8),
+        ("paladin", 10), ("ranger", 10), ("sorcerer", 6), ("warlock", 8),
+    ])
+    def test_new_class_hit_dice(self, cls, max_roll, seeded_rng):
+        for _ in range(50):
+            hp = roll_hit_points_on_level_up(cls, 0)
+            assert 1 <= hp <= max_roll
+
+    def test_unknown_class_defaults_d8(self, seeded_rng):
+        for _ in range(50):
+            hp = roll_hit_points_on_level_up("unknown_class", 0)
             assert 1 <= hp <= 8

@@ -1,0 +1,232 @@
+[[encounters]]
+id = "swamp_goblins"
+name = "Swamp Goblins"
+location_ids = ["bog_trails", "sunken_temple"]
+encounter_chance = 0.35
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "dagger", chance = 0.3},
+    {id = "rations", chance = 0.4},
+    {id = "healing_herb", chance = 0.2},
+]
+gold_min = 2
+gold_max = 10
+
+[[encounters.entities]]
+id = "swamp_goblin"
+name = "Swamp Goblin"
+entity_type = "enemy"
+description = "A small, wiry goblin caked in mud, with bulging yellow eyes and a crude scimitar. It reeks of swamp water and malice."
+level = 1
+hp_max = 7
+ac = 12
+count_min = 3
+count_max = 5
+xp_value = 25
+
+[encounters.entities.ability_scores]
+strength = 8
+dexterity = 14
+constitution = 10
+intelligence = 10
+wisdom = 8
+charisma = 8
+
+[[encounters.entities.attacks]]
+name = "Rusty Scimitar"
+damage_dice = "1d6"
+damage_bonus = 1
+damage_type = "slashing"
+
+[[encounters]]
+id = "giant_snake"
+name = "Giant Snake"
+location_ids = ["bog_trails", "hermit_island"]
+encounter_chance = 0.25
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "antidote", chance = 0.4},
+    {id = "beast_hide", chance = 0.3},
+]
+gold_min = 0
+gold_max = 5
+
+[[encounters.entities]]
+id = "giant_snake"
+name = "Giant Snake"
+entity_type = "enemy"
+description = "A mottled brown serpent as thick as a man's thigh, coiled among the reeds. Its forked tongue flickers as it tastes the air."
+level = 2
+hp_max = 16
+ac = 13
+count_min = 1
+count_max = 2
+xp_value = 50
+
+[encounters.entities.ability_scores]
+strength = 14
+dexterity = 16
+constitution = 12
+intelligence = 1
+wisdom = 10
+charisma = 3
+
+[[encounters.entities.attacks]]
+name = "Bite"
+damage_dice = "1d8"
+damage_bonus = 2
+damage_type = "piercing"
+
+# -- Puzzle encounters --
+
+[[encounters]]
+id = "sunken_puzzle"
+name = "Sunken Temple Puzzle"
+location_ids = ["sunken_temple"]
+encounter_chance = 0.3
+fight_type = "puzzle"
+description = "A massive stone door blocks the inner sanctum, sealed by an elemental ward. Scorch marks on the floor suggest fire once burned here as part of a ritual. The ward pulses with cold energy, waiting for the opposing element."
+
+[encounters.puzzle]
+puzzle_type = "elemental"
+dc = 15
+required_spell = "fire_bolt"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.7},
+    {id = "soul_gem", chance = 0.2},
+    {id = "healing_potion", chance = 0.5},
+]
+gold_min = 20
+gold_max = 50
+
+[[encounters]]
+id = "bog_witch"
+name = "Bog Witch"
+location_ids = ["bog_trails", "sunken_temple"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "nightshade", chance = 0.8},
+    {id = "arcane_dust", chance = 0.5},
+    {id = "healing_potion", chance = 0.4},
+    {id = "moonpetal", chance = 0.3},
+]
+gold_min = 15
+gold_max = 40
+
+[[encounters.entities]]
+id = "bog_witch"
+name = "Bog Witch"
+entity_type = "enemy"
+description = "A hunched figure draped in tattered robes of woven reeds, her fingers crackling with sickly green energy. Her face is half-hidden by a mask of bark and bone, and the swamp itself seems to recoil from her presence."
+level = 4
+hp_max = 36
+ac = 13
+count_min = 1
+count_max = 1
+xp_value = 150
+
+[encounters.entities.ability_scores]
+strength = 8
+dexterity = 12
+constitution = 14
+intelligence = 16
+wisdom = 15
+charisma = 14
+
+[[encounters.entities.attacks]]
+name = "Hex Bolt"
+damage_dice = "2d6"
+damage_bonus = 0
+damage_type = "necrotic"
+
+[[encounters]]
+id = "will_o_wisps"
+name = "Will-o'-Wisps"
+location_ids = ["will_o_wisp_marsh", "drowned_village"]
+encounter_chance = 0.30
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.5},
+    {id = "moonpetal", chance = 0.3},
+    {id = "soul_gem", chance = 0.1},
+]
+gold_min = 10
+gold_max = 25
+
+[[encounters.entities]]
+id = "will_o_wisp"
+name = "Will-o'-Wisp"
+entity_type = "enemy"
+description = "A flickering ball of pale light that drifts silently above the marsh. It pulses with malevolent intelligence, luring the unwary into bottomless sinkholes."
+level = 3
+hp_max = 22
+ac = 16
+count_min = 2
+count_max = 3
+xp_value = 50
+
+[encounters.entities.ability_scores]
+strength = 1
+dexterity = 18
+constitution = 10
+intelligence = 13
+wisdom = 14
+charisma = 11
+
+[[encounters.entities.attacks]]
+name = "Shock"
+damage_dice = "2d6"
+damage_bonus = 0
+damage_type = "lightning"
+
+[[encounters]]
+id = "drowned_dead"
+name = "Drowned Dead"
+location_ids = ["drowned_village", "will_o_wisp_marsh"]
+encounter_chance = 0.25
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "healing_herb", chance = 0.3},
+    {id = "dagger", chance = 0.2},
+]
+gold_min = 2
+gold_max = 10
+
+[[encounters.entities]]
+id = "drowned_dead"
+name = "Drowned Dead"
+entity_type = "enemy"
+description = "A bloated, waterlogged corpse that shambles from the murky depths. Its skin is pale and puckered, and dark water seeps from its mouth with every lurching step."
+level = 2
+hp_max = 15
+ac = 11
+count_min = 3
+count_max = 5
+xp_value = 25
+
+[encounters.entities.ability_scores]
+strength = 14
+dexterity = 6
+constitution = 14
+intelligence = 3
+wisdom = 6
+charisma = 5
+
+[[encounters.entities.attacks]]
+name = "Waterlogged Slam"
+damage_dice = "1d8"
+damage_bonus = 2
+damage_type = "bludgeoning"

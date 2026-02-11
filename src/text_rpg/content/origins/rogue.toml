@@ -1,0 +1,211 @@
+# =============================================================================
+# Rogue Origins — Backgrounds shaped by shadows, cunning, and sharp wits
+# =============================================================================
+
+[[origins]]
+id = "master_thiefs_protege"
+name = "Master Thief's Protege"
+category = "rogue"
+summary = "Trained by a legendary burglar who vanished without a trace, leaving only lessons and questions."
+prologue = """
+You never learned her real name. She went by the Moth — because she was drawn to \
+valuable things and moved without sound. For three years she was your teacher, your \
+mentor, and the closest thing to family you had found since the orphanage released \
+you at sixteen. She plucked you from a street corner in Saltmere where you were \
+picking pockets with more enthusiasm than skill, looked at your hands, and said, \
+"Those are good hands. You're wasting them."
+
+The education that followed was rigorous, private, and entirely illegal. Lockpicking \
+by candlelight. Rooftop traversal in the rain. The art of reading a room — counting \
+exits, identifying the guard rotation, spotting the safe behind the portrait before \
+you cross the threshold. She taught you that a true thief never hurries, never \
+panics, and never takes more than the job requires. Greed, she said, is the only \
+lock that cannot be picked.
+
+One morning you woke to find her gone. No note. No forwarding address. Only the \
+crowbar she had carried since before you met, laid across your pillow like a \
+graduation gift. The Saltmere underworld whispers theories — she was arrested, she \
+retired, she pulled one last legendary job and vanished into the wealth. You do not \
+know. You know only that she left you with a set of skills, a code of conduct, and \
+an unanswered question: what was she preparing you for? You walk the docks where \
+she found you, crowbar in hand, and wait for the answer to find you."""
+ability_choices = ["dexterity", "intelligence", "charisma"]
+skill_proficiencies = ["sleight_of_hand", "stealth"]
+starting_equipment = ["crowbar", "common_clothes"]
+bonus_gold = 10
+starting_region = "iron_coast"
+starting_location = "saltmere_docks"
+feature_name = "Moth's Lessons"
+feature_description = "Your mentor's training honed your instincts for security. You gain advantage on checks to identify traps, alarms, and hidden locks in buildings and vaults."
+required_races = []
+excluded_races = []
+required_classes = ["rogue"]
+excluded_classes = []
+
+[[origins]]
+id = "double_agent"
+name = "Double Agent"
+category = "rogue"
+summary = "A spy who served two masters until both discovered the betrayal."
+prologue = """
+The art of the double agent is not deception — anyone can lie. It is compartmentalization: \
+the ability to believe two contradictory truths simultaneously, to serve two masters \
+with genuine loyalty while betraying both with clinical precision. You managed it for \
+four years, feeding intelligence from the Thornfield guard to an outside interest \
+while simultaneously reporting on that interest to the guard's intelligence officer. \
+Both sides believed they owned you. Neither suspected they shared you.
+
+The work required a wardrobe of identities. Fine clothes for the officer's briefings. \
+Common garb for the dead drops. A disguise kit for the nights when you needed to be \
+no one at all. You moved between worlds like water between vessels, adapting your \
+accent, your posture, your very mannerisms to match the expectations of whichever \
+handler you faced. The pay was extraordinary. The paranoia was worse.
+
+It unraveled, as these things do, through a coincidence too small to have anticipated. \
+A guardsman recognized your voice in a tavern where you should not have been. The \
+dominoes fell in both directions simultaneously. You had perhaps six hours between \
+the first suspicious glance and the warrants being signed. You used them well — \
+collecting your emergency funds, donning your most convincing persona, and \
+disappearing into the Thornfield Inn under a name that neither master had ever heard. \
+The inn is crowded enough to hide in, and the road out of town is close. You sit \
+with your back to the wall, watching both doors, and consider your next move with \
+the calm of someone who has been planning exits since before they entered the room."""
+ability_choices = ["charisma", "dexterity", "intelligence"]
+skill_proficiencies = ["deception", "insight"]
+starting_equipment = ["disguise_kit", "fine_clothes"]
+bonus_gold = 15
+starting_region = "verdant_reach"
+starting_location = "thornfield_inn"
+feature_name = "Compartmentalized Mind"
+feature_description = "Your trained ability to maintain multiple identities grants you advantage on saving throws against magical effects that would compel you to reveal the truth or read your thoughts."
+required_races = []
+excluded_races = []
+required_classes = ["rogue"]
+excluded_classes = []
+
+[[origins]]
+id = "urban_shadow"
+name = "Urban Shadow"
+category = "rogue"
+summary = "A ghost of the city's rooftops and alleyways, unseen and uninvited."
+prologue = """
+You learned to climb before you learned to read. The rooftops of Saltmere were your \
+playground, your highway, and your hiding place — a world above the streets where \
+the city watch never looked and the rain pooled in lead gutters that you navigated \
+by memory in total darkness. By fifteen you could cross the dockside district from \
+the fishmonger's chimney to the harbormaster's roof without touching the ground. \
+By eighteen you had mapped every alley, every drainage grate, every shadow deep \
+enough to disappear into between one heartbeat and the next.
+
+The skill set found its own market. You never needed to advertise. People who needed \
+things observed, things delivered, or things retrieved from difficult places found \
+their way to you through whispered referrals. You took no sides, harbored no \
+loyalties, and maintained a professional silence that your clients valued more than \
+the services themselves. You were not a thief — you were infrastructure, as essential \
+and invisible as the sewer system beneath the cobblestones.
+
+But invisibility is not invincibility. A new gang moved into the dockside district \
+last season, and their methods are less refined than yours — more violence, less \
+finesse, a willingness to burn what they cannot control. They have been absorbing \
+or eliminating the independent operators one by one. You are independent. You \
+received the invitation to join. You declined. The second message was less polite. \
+You have moved to a different safehouse, packed light, and acquired a grappling \
+hook for the routes you have not yet memorized. The shadows of Saltmere are \
+getting crowded, and you may need to find new ones."""
+ability_choices = ["dexterity", "wisdom", "intelligence"]
+skill_proficiencies = ["stealth", "perception"]
+starting_equipment = ["common_clothes", "grappling_hook"]
+bonus_gold = 8
+starting_region = "iron_coast"
+starting_location = "saltmere_docks"
+feature_name = "Rooftop Runner"
+feature_description = "Years of urban traversal grant you superior climbing ability. You gain advantage on athletics and acrobatics checks related to climbing, jumping between buildings, or navigating urban terrain."
+required_races = []
+excluded_races = []
+required_classes = ["rogue"]
+excluded_classes = []
+
+[[origins]]
+id = "information_broker"
+name = "Information Broker"
+category = "rogue"
+summary = "A dealer in secrets who knows that the right whisper is worth more than a chest of gold."
+prologue = """
+Gold is crude. Gold can be stolen, counterfeited, or inflated into worthlessness by \
+a king with a printing press. Information, on the other hand, only appreciates. You \
+understood this principle before you understood arithmetic, and you built your career \
+on it. From a quiet corner of the Saltmere Guildhall, you brokered the invisible \
+currency that makes the visible economy function — who owes whom, who sleeps with \
+whom, which merchant's ships are insured and which are not, which guild master has \
+a second family in the highlands.
+
+Your methods are civilized. You do not threaten. You do not steal. You listen, you \
+remember, you connect disparate facts into patterns that others cannot see, and you \
+sell those patterns to people who find them useful. Your ink and quill have recorded \
+more consequential truths than any court scribe's, and your ledger of debts and \
+favors is a weapon more potent than any blade in Saltmere.
+
+The problem with trading in secrets is that you inevitably learn one that someone \
+will kill to protect. The entry in your ledger is coded, of course — you are not \
+a fool — but the interested party knows you have it, and their recent overtures \
+have shifted from generous offers to pointed warnings. You have relocated to a \
+more defensible position within the guildhall and begun the delicate process of \
+establishing insurance: copies of the information placed with trusted associates, \
+to be released in the event of your untimely disappearance. It is an old game. \
+You have played it before. But the stakes have never been quite this high, and \
+you find, to your surprise, that the thrill has not diminished."""
+ability_choices = ["charisma", "intelligence", "wisdom"]
+skill_proficiencies = ["investigation", "persuasion"]
+starting_equipment = ["ink_and_quill", "merchant_ledger"]
+bonus_gold = 15
+starting_region = "iron_coast"
+starting_location = "saltmere_guildhall"
+feature_name = "Web of Whispers"
+feature_description = "Your network of contacts provides a steady stream of intelligence. When entering a new settlement, you automatically learn one rumor or secret about the local power structure."
+required_races = []
+excluded_races = []
+required_classes = ["rogue"]
+excluded_classes = []
+
+[[origins]]
+id = "locksmith_turned_crook"
+name = "Locksmith Turned Crook"
+category = "rogue"
+summary = "A master locksmith whose intimate knowledge of security became the perfect tool for circumventing it."
+prologue = """
+You were the best locksmith in Thornfield, and that is not boasting — it is the \
+professional assessment of every merchant, homeowner, and guild officer who hired \
+you over seven years of honest trade. Your locks were elegant: pin tumblers machined \
+to tolerances that made other smiths squint in disbelief, ward patterns of your own \
+design that resisted every picking technique in the standard manuals. You understood \
+security the way a poet understands language — not just the rules, but the spaces \
+between them, the weaknesses inherent in every mechanism, the fundamental truth that \
+every lock is a promise and every promise can be broken.
+
+The turn came gradually. A merchant asked you to open a competitor's strongbox — just \
+to check the mechanism, he said, for a patent dispute. The fee was four times your \
+weekly earnings. You told yourself it was a one-time exception. It was not. Each job \
+was easier than the last, each justification thinner, each payout larger. You opened \
+safes, bypassed ward-locks, defeated mechanisms that you yourself had installed. The \
+irony was not lost on you. The guilt, such as it was, dissolved in the satisfaction \
+of solving each new puzzle.
+
+Then a job went wrong — an alarm you had not anticipated, a guard rotation that did \
+not match the schedule you were given. You escaped cleanly, but your face was seen, \
+and in a town as small as Thornfield, a face is all it takes. You closed your shop, \
+packed your tools, and moved to the market district where reputation is purchased \
+rather than earned. Your crowbar feels heavier than your lockpicks, but it opens \
+doors just the same. And somewhere in this town, there are locks you have not yet \
+met."""
+ability_choices = ["dexterity", "intelligence", "wisdom"]
+skill_proficiencies = ["sleight_of_hand", "investigation"]
+starting_equipment = ["crowbar", "common_clothes"]
+bonus_gold = 8
+starting_region = "verdant_reach"
+starting_location = "thornfield_market"
+feature_name = "Lockbreaker's Intuition"
+feature_description = "Your deep understanding of locking mechanisms grants you advantage on checks to pick locks, disable mechanical traps, or assess the quality and weaknesses of a security system."
+required_races = []
+excluded_races = []
+required_classes = ["rogue"]
+excluded_classes = []

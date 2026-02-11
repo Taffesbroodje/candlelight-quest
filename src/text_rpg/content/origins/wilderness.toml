@@ -1,0 +1,407 @@
+# =============================================================================
+# Wilderness Origins — Backgrounds shaped by nature, isolation, and survival
+# =============================================================================
+
+[[origins]]
+id = "hermit"
+name = "Hermit"
+category = "wilderness"
+summary = "A recluse who spent years in solitary contemplation far from civilization."
+prologue = """
+You left the world behind — its noise, its cruelty, its endless petty demands. You walked \
+into the Thornwild with nothing but a satchel of herbs and a desperate need for silence, \
+and the forest accepted you. For years you lived alone among the ancient trees, learning \
+the language of moss and rainfall, studying the medicinal properties of every root and \
+flower, and sitting in meditations so deep that the animals forgot to fear you.
+
+In that solitude, something shifted. Call it enlightenment, call it madness — the boundary \
+is thinner than most people realize. You began to see patterns in the growth of lichen on \
+stone, to hear whispers in the wind that might have been the voice of something vast and \
+patient. You wrote your revelations on bark with charcoal, filling the walls of your \
+shelter with cramped, feverish notes that you alone could decipher.
+
+Now something has drawn you back toward the world of people. A vision, perhaps, or simply \
+the realization that a truth kept in isolation helps no one. The grove near Briarhaven is \
+as close to civilization as you are willing to venture for now — close enough to observe, \
+far enough to retreat. You carry your herbalism kit and your hard-won wisdom, blinking in \
+the unfamiliar light of human company."""
+ability_choices = ["wisdom", "constitution", "intelligence"]
+skill_proficiencies = ["medicine", "religion"]
+starting_equipment = ["herbalism_kit", "common_clothes"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "briarhaven_grove"
+feature_name = "Discovery"
+feature_description = "Your long isolation led to a unique insight or revelation. You occasionally perceive truths that others overlook, granting flashes of intuition about the natural world."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "outlander"
+name = "Outlander"
+category = "wilderness"
+summary = "A rugged survivor who grew up far from settled lands and knows the wild intimately."
+prologue = """
+You were born beyond the borders of civilization, in a place where the map simply reads \
+"here be monsters." Your family — if you had one — lived off the land, migrating with the \
+seasons, hunting what the forest provided, and sheltering in caves when the storms came. \
+You learned to track before you could read. You could start a fire with wet wood and \
+build a shelter from pine boughs before you were ten years old.
+
+The wild is not cruel, not kind — it simply is. It has tried to kill you a hundred times \
+through exposure, starvation, predators, and flash floods, and each time you survived by \
+being tougher, smarter, or luckier than the thing trying to end you. You wear the lessons \
+on your skin: the frostbite scars on your fingers, the claw marks on your shoulder, the \
+permanent squint from a lifetime of scanning horizons.
+
+The Thornwild trails feel like home — tangled, dangerous, and honest. You came to the \
+edges of settled land because the deep wilderness is growing strange. Animal migrations are \
+shifting. Predators are moving into territories they have never claimed before. Something \
+is wrong in the wild places, and you mean to find out what."""
+ability_choices = ["strength", "constitution", "wisdom"]
+skill_proficiencies = ["athletics", "survival"]
+starting_equipment = ["bedroll", "hunting_trap"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "thornwild_trails"
+feature_name = "Wanderer"
+feature_description = "You have an excellent memory for terrain and can always recall the general layout of places you have visited. You can forage food and fresh water for yourself and up to five others each day."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "hunter"
+name = "Hunter"
+category = "wilderness"
+summary = "A skilled tracker and marksman who provides for communities through the hunt."
+prologue = """
+Patience. That is the hunter's first and greatest virtue. You have lain motionless in \
+undergrowth for hours, barely breathing, waiting for the heartbeat when a stag steps into \
+the clearing. You have followed deer trails through dense forest for days, reading bent \
+twigs and scuffed earth like pages of a book. The kill, when it comes, is almost an \
+afterthought — the culmination of a long, quiet conversation between predator and prey.
+
+Your traps are works of art — snares set with mathematical precision, deadfalls balanced \
+so delicately that a rabbit's footstep triggers them. You know which bait draws which \
+quarry, which trails are active by season, which watering holes the elk favor when the \
+mountain streams run dry. The forest is your larder, and you have never gone hungry.
+
+The Rangers' Lodge welcomed you as one of their own. Hunters are respected here in the \
+Thornwild — providers, not sport-killers. Your rope and your traps are the tools of a \
+trade you have practiced since childhood, and the forest around the lodge is rich with \
+game. But lately, the animals have been skittish. Something is disturbing the old patterns, \
+and a hunter's instinct tells you that whatever it is, it's no ordinary predator."""
+ability_choices = ["dexterity", "wisdom", "strength"]
+skill_proficiencies = ["survival", "stealth"]
+starting_equipment = ["hunting_trap", "hempen_rope"]
+bonus_gold = 8
+starting_region = "thornwild"
+starting_location = "rangers_lodge"
+feature_name = "Tracker's Eye"
+feature_description = "Your experience reading tracks and signs gives you advantage on checks to follow a creature's trail, even in poor conditions."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "ranger_of_wild"
+name = "Ranger of the Wild"
+category = "wilderness"
+summary = "A sworn warden who patrols the borderlands between civilization and the untamed wilds."
+prologue = """
+The oath you swore was not to a king or a lord, but to the land itself. You are a ranger — \
+one of the thin green line that stands between settled folk and the horrors that lurk in \
+the deep woods. You patrol the border trails alone, marking safe passages, clearing monster \
+dens, and leaving warnings carved into trees for those who might wander too far from the \
+firelight.
+
+It is thankless work. The villages you protect barely know you exist. You pass through \
+like a shadow, leaving nothing but boot prints and the occasional slain goblin on their \
+doorstep. When a farmer's livestock stops disappearing, he thanks the gods, not the ranger \
+who tracked the worg to its lair and put an arrow through its eye at forty paces. You \
+have made your peace with anonymity. The compass guides your path, and the wild is your \
+only witness.
+
+The Rangers' Lodge is the closest thing you have to a home — a rough-hewn outpost where \
+wardens gather to share intelligence and resupply before melting back into the forest. You \
+arrived yesterday with troubling news: the fey crossing to the north is growing active, \
+and strange creatures have been sighted on trails that were safe a month ago. The other \
+rangers listen grimly. Something is stirring."""
+ability_choices = ["dexterity", "wisdom", "constitution"]
+skill_proficiencies = ["nature", "survival"]
+starting_equipment = ["compass", "travelers_clothes"]
+bonus_gold = 8
+starting_region = "thornwild"
+starting_location = "rangers_lodge"
+feature_name = "Warden's Vigil"
+feature_description = "Your patrols have given you deep familiarity with borderland terrain. You can identify unnatural disturbances in the wilderness and sense when an area has been touched by dark magic or fey influence."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "herbalist_origin"
+name = "Herbalist"
+category = "wilderness"
+summary = "A village healer and botanist who knows the medicinal secrets of every plant."
+prologue = """
+Your grandmother taught you the names of herbs before you could write your own name. \
+Feverfew for headaches, willow bark for pain, comfrey for broken bones — the green \
+pharmacy of the forest, available to anyone with the knowledge to harvest it. You spent \
+your childhood grinding poultices and brewing bitter teas in her cottage, learning which \
+roots to dig by moonlight and which mushrooms would kill with a single bite.
+
+When she died, the village turned to you. Farmers' wives brought feverish children to your \
+door. Woodcutters arrived with infected wounds. You treated them all — sometimes with herbs, \
+sometimes with honey and clean bandages, and sometimes with nothing but reassuring words \
+when the sickness was beyond your skill. You were no miracle worker, but you were all they \
+had, and you took that responsibility as seriously as any oath.
+
+Briarhaven's fields and forests are rich with medicinal plants, many of which you have \
+never seen before. The village welcomed you warmly — a traveling herbalist is always needed \
+where healers are scarce. Your kit is well-stocked, your belt pouch heavy with dried \
+specimens, and your curiosity is insatiable. Every new plant is a potential remedy, and \
+the Thornwild is full of secrets waiting to be cataloged."""
+ability_choices = ["wisdom", "intelligence", "constitution"]
+skill_proficiencies = ["medicine", "nature"]
+starting_equipment = ["herbalism_kit", "belt_pouch"]
+bonus_gold = 8
+starting_region = "thornwild"
+starting_location = "briarhaven_village"
+feature_name = "Apothecary's Knowledge"
+feature_description = "You can identify medicinal and poisonous plants on sight. When foraging for herbs, you find double the usual quantity of useful specimens."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "nomad"
+name = "Nomad"
+category = "wilderness"
+summary = "A wanderer from a traveling people who follows the seasons and ancient migration routes."
+prologue = """
+Your people have no word for "home" — or rather, every place is home and none is. You were \
+born in a tent pitched on windswept plains, raised on the back of a wagon rolling between \
+summer pastures and winter camps. Your tribe follows routes older than any kingdom, carved \
+into collective memory through songs and stories passed down through generations. You know \
+which valleys flood in spring, which mountain passes close in winter, and which watering \
+holes never run dry.
+
+The settled folk call your people vagrants, thieves, trespassers. They build their stone \
+walls and plant their fence posts and pretend they own the earth. You pity them. They \
+have traded freedom for the illusion of security, chained themselves to a single patch of \
+dirt, and called it civilization. Your people understand what they have forgotten: the \
+world is vast, and it belongs to those brave enough to walk it.
+
+The highland road through the Ashen Highlands is one of the old routes — your grandmother \
+sang of it when you were small. But your clan scattered last winter after a dispute with a \
+local baron, and now you walk the ancient path alone. Your bedroll, your waterskin, and \
+your tinderbox are all you need. The road provides for those who know how to listen to it."""
+ability_choices = ["constitution", "wisdom", "dexterity"]
+skill_proficiencies = ["survival", "nature"]
+starting_equipment = ["bedroll", "waterskin", "tinderbox"]
+bonus_gold = 3
+starting_region = "ashen_highlands"
+starting_location = "highland_road"
+feature_name = "Eternal Wanderer"
+feature_description = "Your nomadic upbringing lets you find shelter and safe campsites in any terrain. You require less food and water than most due to a lifetime of lean travel."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "swamp_dweller"
+name = "Swamp Dweller"
+category = "wilderness"
+summary = "A resourceful survivor who grew up in the treacherous marshlands and bogs."
+prologue = """
+The swamp is not a wasteland — it is a world unto itself, teeming with life that the \
+drylanders never see. You grew up ankle-deep in black water, navigating by the tilt of \
+cypress trees and the smell of the wind. You know which patches of solid-looking ground \
+are actually bottomless muck, which lily pads hide venomous serpents, and which still pools \
+are safe to drink and which will twist your guts into knots.
+
+Outsiders fear the marsh. They see rot, disease, and desolation. You see abundance. The \
+swamp gives catfish and crawfish, tubers that grow thick in the mud, medicinal mosses that \
+no apothecary could afford. It gives alligator hide for boots, reed for baskets, and peat \
+for fuel. You have never gone hungry, never gone cold, and never envied the comfortable \
+ignorance of people who live on solid ground.
+
+The bog trails of the Sunken Reach are your domain — a labyrinth of waterways and \
+hammocks that would swallow an outsider whole. Your fishing tackle keeps you fed, your \
+herbalism kit lets you treat the fevers and infections that the marsh breeds, and your \
+knowledge of the terrain is worth more than gold. But the water has been rising lately, \
+and things have been surfacing from the sunken places that should have stayed buried."""
+ability_choices = ["constitution", "wisdom", "strength"]
+skill_proficiencies = ["survival", "nature"]
+starting_equipment = ["fishing_tackle", "herbalism_kit"]
+bonus_gold = 3
+starting_region = "sunken_reach"
+starting_location = "bog_trails"
+feature_name = "Marsh Walker"
+feature_description = "You move through swamps and bogs without penalty and can instinctively identify safe paths through treacherous wetland terrain."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "mountain_guide"
+name = "Mountain Guide"
+category = "wilderness"
+summary = "An experienced alpinist who leads expeditions through perilous mountain passes."
+prologue = """
+The mountains do not forgive mistakes. A misplaced foot on a scree slope, a wrong turn in \
+a whiteout, a failure to read the weather signs before a storm — any one of these will \
+kill you as surely as a sword through the chest. You learned this truth young, growing up \
+in a highland village where the peaks were not scenery but a daily test of survival. You \
+became a guide because you were good at staying alive in places that tried very hard to \
+make you dead.
+
+Merchants, pilgrims, and adventurers have paid well for your expertise. You have led \
+caravans over passes that would have buried them in avalanches without your guidance. You \
+have pulled climbers from crevasses with nothing but rope and raw strength. You know every \
+handhold on the cliff faces, every shelter cave where a party can wait out a blizzard, \
+every treacherous ice bridge that looks solid but will crack under the weight of a loaded \
+mule.
+
+The Ashen Highlands are your mountains — volcanic, unstable, and magnificent. The highland \
+road that winds through them is safer than the cliff paths you prefer, but it brings you \
+within reach of Cinderhold and its trade. Your climbing kit is well-worn, your rope has \
+saved a dozen lives including your own, and your legs carry the iron strength of a lifetime \
+spent going uphill."""
+ability_choices = ["constitution", "strength", "wisdom"]
+skill_proficiencies = ["athletics", "survival"]
+starting_equipment = ["climbers_kit", "hempen_rope"]
+bonus_gold = 8
+starting_region = "ashen_highlands"
+starting_location = "highland_road"
+feature_name = "Sure-Footed"
+feature_description = "Your mountain experience grants you natural stability on difficult terrain. You are far less likely to slip, fall, or lose your footing on steep or uneven ground."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "beast_tamer"
+name = "Beast Tamer"
+category = "wilderness"
+summary = "A patient soul who communicates with wild creatures through instinct and empathy."
+prologue = """
+You have always heard what others cannot — the low rumble of a wolf's contentment, the \
+anxious chatter of a squirrel warning its colony, the precise difference between a bear's \
+bluff charge and its killing charge. Animals are not mysterious to you. Their language is \
+simpler and more honest than any human tongue: hunger, fear, territory, affection. You \
+learned to speak it through years of patient observation, sitting motionless in the wild \
+until the creatures forgot you were not one of them.
+
+Your gift has practical applications. You have calmed panicked horses, coaxed venomous \
+snakes away from campsites, and once convinced a territorial owlbear to relocate its den \
+rather than eat a logging crew. People call it magic, but it isn't — it is empathy and \
+patience, the willingness to see the world through eyes that are not your own. The trophy \
+you carry is a fang shed by a dire wolf you befriended, a reminder that even the most \
+dangerous creatures respond to understanding.
+
+The beast den in the Thornwild draws you with its concentration of wildlife — creatures of \
+every kind, some natural, some decidedly not. The rope at your hip is for gentle restraint, \
+not binding. Something is agitating the animals in this region, driving them to aggression \
+and strange behavior. You intend to find out what, and you will let the beasts themselves \
+tell you."""
+ability_choices = ["wisdom", "charisma", "strength"]
+skill_proficiencies = ["animal_handling", "nature"]
+starting_equipment = ["beast_trophy", "hempen_rope"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "beast_den"
+feature_name = "Animal Empathy"
+feature_description = "You can read the emotional state and intentions of beasts with remarkable accuracy. Wild animals are less likely to attack you unprovoked."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "forager"
+name = "Forager"
+category = "wilderness"
+summary = "A quiet woodlander who sustains themselves entirely from what the forest provides."
+prologue = """
+The forest is a table laid with an endless feast, if you know where to look. Chanterelles \
+push through leaf litter after autumn rains. Wild garlic carpets the riverbanks in spring. \
+Hazelnuts ripen in late summer, and if you are quick, you can gather them before the \
+squirrels strip the branches bare. You know all of this because the forest raised you — \
+not with the comfort of a hearth and home, but with the slow, patient generosity of a \
+world that rewards attention.
+
+You have never been wealthy. You have never needed to be. Your herbalism kit contains \
+dried specimens of every useful plant within a day's walk, and your sack is perpetually \
+heavy with roots, berries, bark, and fungi. Village folk trade you bread and tools for \
+your findings — the rare herbs that cure fevers, the truffles that flavor a noble's feast, \
+the dye-plants that color their wool. It is a quiet life, an invisible life, but it is \
+entirely your own.
+
+The edge of Whisperwood is your territory — the liminal space where farmland gives way to \
+forest, where cultivated fields dissolve into wild abundance. You know every game trail, \
+every mushroom log, every blackberry thicket for miles. But this season something is off. \
+Familiar plants are growing in strange patterns. Mushrooms are appearing in places they \
+have never grown before. The forest is changing, and you cannot yet tell whether for \
+better or worse."""
+ability_choices = ["wisdom", "constitution", "dexterity"]
+skill_proficiencies = ["nature", "survival"]
+starting_equipment = ["herbalism_kit", "sack"]
+bonus_gold = 3
+starting_region = "verdant_reach"
+starting_location = "whisperwood_edge"
+feature_name = "Nature's Bounty"
+feature_description = "Your foraging expertise lets you find edible plants and clean water in almost any natural environment. You can sustain yourself without spending gold on food."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "castaway"
+name = "Castaway"
+category = "wilderness"
+summary = "A shipwreck survivor who washed ashore with nothing but grit and desperation."
+prologue = """
+The storm came from nowhere — a wall of black cloud and shrieking wind that turned the sea \
+into a churning nightmare. The ship broke apart in minutes, timbers snapping like bones. \
+You remember the water closing over your head, the burning in your lungs, and then — \
+somehow — sand under your fingers and air in your chest. You crawled onto a rocky shore \
+more dead than alive, coughing seawater and wondering why the gods had bothered to spare \
+you.
+
+Days blurred together. You ate shellfish pried from rocks with bleeding fingers. You drank \
+rainwater collected in a hollow stone. You built a fire with trembling hands and a stolen \
+minute of sunshine through a cracked lens. The rope you salvaged from the wreckage became \
+your most precious possession — shelter cordage, fishing line, snare wire, tourniquet. You \
+carved a crude knife from a shard of the ship's hull and learned that survival is not a \
+skill but a decision, made fresh every morning.
+
+Fishers from the cove found you weeks later — sun-blackened, half-starved, and feral as a \
+cat. They brought you to their village and fed you broth until your hands stopped shaking. \
+Fisher's Cove is simple, rough, and honest — qualities you have come to value above all \
+others. You carry almost nothing. But you carry yourself with the quiet confidence of a \
+person who has already survived the worst the world can throw at them."""
+ability_choices = ["constitution", "strength", "wisdom"]
+skill_proficiencies = ["survival", "athletics"]
+starting_equipment = ["hempen_rope", "small_knife"]
+bonus_gold = 2
+starting_region = "iron_coast"
+starting_location = "fishers_cove"
+feature_name = "Survivor's Grit"
+feature_description = "Having survived the worst, you refuse to give up. When reduced to critically low health, your sheer will to live grants you resilience against further damage."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []

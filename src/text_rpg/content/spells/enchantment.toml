@@ -1,0 +1,266 @@
+# =============================================================================
+# Enchantment Spells — Mind-affecting magic, charms, and compulsions
+# =============================================================================
+
+# Cantrips
+
+[[spells]]
+id = "vicious_mockery"
+name = "Vicious Mockery"
+level = 0
+school = "enchantment"
+classes = ["bard"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V"]
+description = "You unleash a string of insults laced with subtle enchantments at a creature. It must succeed on a Wisdom save or take psychic damage and have disadvantage on its next attack."
+[spells.mechanics]
+type = "save"
+save_ability = "wisdom"
+damage_dice = "1d4"
+damage_type = "psychic"
+
+[[spells]]
+id = "friends"
+name = "Friends"
+level = 0
+school = "enchantment"
+classes = ["bard", "sorcerer", "warlock", "wizard"]
+casting_time = "action"
+range = 0
+duration = "1 minute"
+concentration = true
+components = ["S"]
+description = "For the duration, you have advantage on all Charisma checks directed at one creature of your choice that isn't hostile toward you."
+[spells.mechanics]
+type = "buff"
+effect = "friends"
+
+# 1st Level
+
+[[spells]]
+id = "dissonant_whispers"
+name = "Dissonant Whispers"
+level = 1
+school = "enchantment"
+classes = ["bard"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V"]
+description = "You whisper a discordant melody that only one creature can hear, wracking it with terrible pain."
+[spells.mechanics]
+type = "save"
+save_ability = "wisdom"
+damage_dice = "3d6"
+damage_type = "psychic"
+
+[[spells]]
+id = "hex"
+name = "Hex"
+level = 1
+school = "enchantment"
+classes = ["warlock"]
+casting_time = "bonus_action"
+range = 90
+duration = "1 hour"
+concentration = true
+components = ["V", "S"]
+description = "You place a curse on a creature. Until the spell ends, you deal an extra 1d6 necrotic damage each time you hit it with an attack."
+[spells.mechanics]
+type = "buff"
+effect = "hex"
+damage_dice = "1d6"
+damage_type = "necrotic"
+
+[[spells]]
+id = "charm_person"
+name = "Charm Person"
+level = 1
+school = "enchantment"
+classes = ["bard", "druid", "sorcerer", "warlock", "wizard"]
+casting_time = "action"
+range = 30
+duration = "1 hour"
+components = ["V", "S"]
+description = "You attempt to charm a humanoid. It must succeed on a Wisdom save or be charmed by you."
+[spells.mechanics]
+type = "save"
+save_ability = "wisdom"
+effect = "charmed"
+
+[[spells]]
+id = "sleep"
+name = "Sleep"
+level = 1
+school = "enchantment"
+classes = ["bard", "sorcerer", "wizard"]
+casting_time = "action"
+range = 90
+duration = "1 minute"
+components = ["V", "S"]
+description = "This spell sends creatures into a magical slumber. Roll 5d8; the total is the HP of creatures this spell can affect."
+[spells.mechanics]
+type = "utility"
+effect = "sleep"
+
+[[spells]]
+id = "heroism"
+name = "Heroism"
+level = 1
+school = "enchantment"
+classes = ["bard", "paladin"]
+casting_time = "action"
+range = 0
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "A willing creature you touch is imbued with bravery. It is immune to being frightened and gains temporary HP equal to your spellcasting modifier at the start of each turn."
+[spells.mechanics]
+type = "buff"
+effect = "heroism"
+
+# 2nd Level
+
+[[spells]]
+id = "calm_emotions"
+name = "Calm Emotions"
+level = 2
+school = "enchantment"
+classes = ["bard", "cleric"]
+casting_time = "action"
+range = 60
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "You attempt to suppress strong emotions in a group of people. Each humanoid in a 20-foot radius must make a Charisma save."
+[spells.mechanics]
+type = "save"
+save_ability = "charisma"
+effect = "calm"
+
+[[spells]]
+id = "suggestion"
+name = "Suggestion"
+level = 2
+school = "enchantment"
+classes = ["bard", "sorcerer", "warlock", "wizard"]
+casting_time = "action"
+range = 30
+duration = "8 hours"
+concentration = true
+components = ["V"]
+description = "You suggest a course of activity to a creature that can hear and understand you. The suggestion must sound reasonable."
+[spells.mechanics]
+type = "save"
+save_ability = "wisdom"
+effect = "suggestion"
+
+[[spells]]
+id = "enhance_ability"
+name = "Enhance Ability"
+level = 2
+school = "enchantment"
+classes = ["bard", "cleric", "druid", "ranger", "sorcerer"]
+casting_time = "action"
+range = 0
+duration = "1 hour"
+concentration = true
+components = ["V", "S"]
+description = "You touch a creature and bestow upon it a magical enhancement. Choose one ability — the target has advantage on ability checks using that ability."
+[spells.mechanics]
+type = "buff"
+effect = "enhance_ability"
+
+# 3rd Level
+
+[[spells]]
+id = "hypnotic_pattern"
+name = "Hypnotic Pattern"
+level = 3
+school = "enchantment"
+classes = ["bard", "sorcerer", "warlock", "wizard"]
+casting_time = "action"
+range = 120
+duration = "1 minute"
+concentration = true
+components = ["S"]
+description = "You create a twisting pattern of colors that weaves through the air. Each creature in a 30-foot cube must make a Wisdom save or become charmed and incapacitated."
+[spells.mechanics]
+type = "save"
+save_ability = "wisdom"
+effect = "incapacitated"
+
+# 4th Level
+
+[[spells]]
+id = "compulsion"
+name = "Compulsion"
+level = 4
+school = "enchantment"
+classes = ["bard"]
+casting_time = "action"
+range = 30
+duration = "1 minute"
+concentration = true
+components = ["V"]
+description = "Creatures of your choice that can hear you must make a Wisdom save. On a failure, they must use their movement to move in a direction you choose."
+[spells.mechanics]
+type = "save"
+save_ability = "wisdom"
+effect = "compulsion"
+
+# 5th Level
+
+[[spells]]
+id = "hold_monster"
+name = "Hold Monster"
+level = 5
+school = "enchantment"
+classes = ["wizard", "bard", "sorcerer", "warlock"]
+casting_time = "action"
+range = 90
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "Choose a creature you can see. The target must succeed on a Wisdom save or be paralyzed."
+[spells.mechanics]
+type = "save"
+save_ability = "wisdom"
+effect = "paralyzed"
+
+[[spells]]
+id = "synaptic_static"
+name = "Synaptic Static"
+level = 5
+school = "enchantment"
+classes = ["bard", "sorcerer", "warlock", "wizard"]
+casting_time = "action"
+range = 120
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You choose a point within range and cause psychic energy to explode there. Each creature in a 20-foot radius must make an Intelligence save."
+[spells.mechanics]
+type = "save"
+save_ability = "intelligence"
+damage_dice = "8d6"
+damage_type = "psychic"
+
+# 6th Level
+
+[[spells]]
+id = "mass_suggestion"
+name = "Mass Suggestion"
+level = 6
+school = "enchantment"
+classes = ["bard", "sorcerer", "warlock", "wizard"]
+casting_time = "action"
+range = 60
+duration = "24 hours"
+components = ["V"]
+description = "You suggest a course of activity to up to twelve creatures of your choice that you can see within range."
+[spells.mechanics]
+type = "save"
+save_ability = "wisdom"
+effect = "suggestion"

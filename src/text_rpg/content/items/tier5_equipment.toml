@@ -1,0 +1,133 @@
+# Tier 5 Equipment (L14-20 endgame regions: Drake Wastes, The Veil)
+# Legendary artifacts
+
+# --- Weapons ---
+
+[[items]]
+id = "holy_avenger"
+name = "Holy Avenger"
+description = "The most sacred weapon a paladin can wield, radiating divine power."
+item_type = "weapon"
+weight = 6.0
+value_gp = 25000
+rarity = "legendary"
+weapon_type = "martial_melee"
+damage_dice = "2d6+3"
+damage_type = "slashing/radiant"
+properties = ["versatile"]
+
+[[items]]
+id = "blackrazor"
+name = "Blackrazor"
+description = "A sentient greatsword of living shadow that devours souls."
+item_type = "weapon"
+weight = 6.0
+value_gp = 20000
+rarity = "legendary"
+weapon_type = "martial_melee"
+damage_dice = "2d6+3"
+damage_type = "slashing/necrotic"
+properties = ["heavy", "two_handed"]
+
+[[items]]
+id = "staff_of_the_magi"
+name = "Staff of the Magi"
+description = "The most powerful staff ever created, containing vast stores of magical energy."
+item_type = "weapon"
+weight = 4.0
+value_gp = 30000
+rarity = "legendary"
+weapon_type = "simple_melee"
+damage_dice = "1d6+3"
+damage_type = "bludgeoning/force"
+properties = ["versatile"]
+
+[[items]]
+id = "luck_blade"
+name = "Luck Blade"
+description = "A rapier that bends fate, granting wishes to its wielder."
+item_type = "weapon"
+weight = 2.0
+value_gp = 15000
+rarity = "legendary"
+weapon_type = "martial_melee"
+damage_dice = "1d8+2"
+damage_type = "piercing"
+properties = ["finesse"]
+
+[[items]]
+id = "moonbow"
+name = "Moonbow"
+description = "A bow carved from the World Tree, firing arrows of pure moonlight."
+item_type = "weapon"
+weight = 2.0
+value_gp = 20000
+rarity = "legendary"
+weapon_type = "martial_ranged"
+damage_dice = "1d8+3"
+damage_type = "radiant"
+properties = ["ammunition", "two_handed"]
+
+# --- Armor ---
+
+[[items]]
+id = "armor_of_invulnerability"
+name = "Armor of Invulnerability"
+description = "Legendary plate that grants immunity to non-magical damage."
+item_type = "armor"
+weight = 65.0
+value_gp = 25000
+rarity = "legendary"
+armor_type = "heavy"
+ac_base = 18
+max_dex_bonus = 0
+stealth_disadvantage = true
+strength_requirement = 15
+
+[[items]]
+id = "robe_of_stars"
+name = "Robe of Stars"
+description = "A robe woven from starlight, allowing travel to the Astral Plane."
+item_type = "armor"
+weight = 4.0
+value_gp = 20000
+rarity = "legendary"
+armor_type = "light"
+ac_base = 14
+max_dex_bonus = 99
+stealth_disadvantage = false
+strength_requirement = 0
+
+[[items]]
+id = "shield_of_the_ancients"
+name = "Shield of the Ancients"
+description = "A shield forged by the gods, reflecting spells back at attackers."
+item_type = "armor"
+weight = 6.0
+value_gp = 15000
+rarity = "legendary"
+armor_type = "shield"
+ac_base = 3
+max_dex_bonus = 0
+stealth_disadvantage = false
+strength_requirement = 0
+
+# --- Potions ---
+
+[[items]]
+id = "elixir_of_immortality"
+name = "Elixir of Immortality"
+description = "A golden liquid that permanently increases one ability score by 2."
+item_type = "potion"
+weight = 0.5
+value_gp = 10000
+rarity = "legendary"
+
+[[items]]
+id = "potion_of_invulnerability"
+name = "Potion of Invulnerability"
+description = "Grants resistance to all damage for 1 minute."
+item_type = "potion"
+weight = 0.5
+value_gp = 5000
+rarity = "legendary"

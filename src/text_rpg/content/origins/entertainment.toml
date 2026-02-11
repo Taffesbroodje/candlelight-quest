@@ -1,0 +1,219 @@
+# =============================================================================
+# Entertainment Origins — Performers, fighters, and showfolk of every stripe
+# =============================================================================
+
+[[origins]]
+id = "entertainer"
+name = "Entertainer"
+category = "entertainment"
+summary = "A versatile performer who has spent years delighting crowds in taverns, courts, and market squares."
+prologue = """
+The roar of a crowd is the closest thing to magic you have ever known. Not the polite applause of a noble's dinner party — that thin, measured clapping that means "you may continue existing in my presence" — but the full-throated howl of a packed tavern when you hit the high note, stick the landing, or deliver the punchline that makes a grown dwarf spit ale through his nose. That sound is your currency, your validation, and if you are honest with yourself, your addiction.
+
+You arrived at the Thornfield Inn three seasons ago with a borrowed lute, two coppers, and the unshakable conviction that talent would see you through. It nearly didn't. The first weeks were lean — performing for supper, sleeping in the stable, learning the hard way that a provincial audience wants drinking songs, not the art ballads you spent years perfecting. But you adapted, because that is what performers do. You learned to read a room the way a hunter reads tracks, adjusting your act on the fly until the coins flowed freely and the innkeeper gave you a proper room.
+
+But the inn has grown small. You have played every song in your repertoire twice over, and the regulars can mouth along to your banter. The road calls — new audiences, new stories to collect and retell, new stages waiting to be conquered. When a merchant caravan offered passage in exchange for entertainment, you packed your things before they finished the sentence. The world is a stage, and you have barely seen the wings."""
+ability_choices = ["charisma", "dexterity", "intelligence"]
+skill_proficiencies = ["performance", "acrobatics"]
+starting_equipment = ["musical_instrument", "costume_clothes"]
+bonus_gold = 10
+starting_region = "verdant_reach"
+starting_location = "thornfield_inn"
+feature_name = "Crowd Reader"
+feature_description = "Years of performing have given you an instinct for reading the mood of a group — you gain advantage on Insight checks to gauge the temperament or intentions of a crowd or audience."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "gladiator"
+name = "Gladiator"
+category = "entertainment"
+summary = "A veteran of the fighting pits who turned bloodshed into spectacle and survived to tell the tale."
+prologue = """
+The pit at Saltmere smells of old sand and copper. You know this because you spent four years breathing it, night after night, while crowds above howled for blood and bookmakers adjusted their odds between bouts. You were not born to the fighting pits — no one is. You arrived in Saltmere with nothing, and the pit was hiring. The recruiter looked at your build, your scars, the particular emptiness behind your eyes that comes from having nothing left to lose, and handed you a wooden training sword. "You start tomorrow," he said. "Try not to die on your first night. It's bad for business."
+
+You did not die. In fact, you thrived. Not because you were the strongest or the fastest — the pits always had someone bigger, someone meaner — but because you understood something the brutes and brawlers never grasped: the crowd is the weapon. You learned to fight beautifully, to turn a simple disarm into a flourish, to roar your defiance at exactly the right moment to make five hundred people roar with you. The audience fell in love with you, and that love translated into better contracts, better equipment, and opponents who hesitated just a fraction of a second when they heard the crowd chanting your name.
+
+You left the pits undefeated, though not unscathed. The trophy medal you carry was presented by the pit master himself, a grudging acknowledgment that you had outgrown his arena. Now you walk the streets of Saltmere as a free fighter, recognized by dock workers and merchants alike. But the cheering still echoes in your dreams, and you wonder whether the world beyond the pit will offer anything half as vivid as the roar of a crowd that wants to see you win."""
+ability_choices = ["strength", "constitution", "charisma"]
+skill_proficiencies = ["athletics", "performance"]
+starting_equipment = ["trophy_medal", "common_clothes"]
+bonus_gold = 12
+starting_region = "iron_coast"
+starting_location = "saltmere_market"
+feature_name = "Pit Presence"
+feature_description = "Your experience commanding the attention of hostile crowds grants advantage on Intimidation checks made during combat or when confronting an opponent in front of witnesses."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "traveling_bard"
+name = "Traveling Bard"
+category = "entertainment"
+summary = "A wandering musician and tale-spinner who collects stories the way others collect coins."
+prologue = """
+You have been walking for so long that your boots have become a kind of autobiography — resoled in Cinderhold, patched in Briarhaven, the left heel replaced entirely by a cobbler in a village so small it didn't have a name. Each mile is a story, and each story is a song waiting to be written. That is the creed of the traveling bard: go everywhere, see everything, and sing it back to the people who cannot. You are a living newspaper, a one-person archive, a mirror held up to the world and angled to catch the light.
+
+The road between towns is where you do your best thinking. The rhythm of walking loosens something in the mind, lets melodies surface from wherever melodies come from. You compose as you travel, humming fragments that you scribble down during rest stops, layering verses like a mason laying bricks. By the time you reach the next tavern you have a new song ready, tailored to the local audience — their heroes, their scandals, their private jokes set to a tune catchy enough to survive the telling and retelling that carries a song from province to province.
+
+Thornfield Inn has become your seasonal anchor, the place you return to when the roads grow cold and the audiences thin. The innkeeper keeps a corner stool warm for you, and the regulars greet you like a returning friend. But this winter's stay has stretched longer than planned, because the stories drifting in from the east are troubling — missing travelers, silenced villages, roads that lead somewhere different than they used to. A bard who ignores a story that good would be a poor bard indeed. Tomorrow, you head east."""
+ability_choices = ["charisma", "dexterity", "wisdom"]
+skill_proficiencies = ["performance", "persuasion"]
+starting_equipment = ["musical_instrument", "travelers_clothes"]
+bonus_gold = 10
+starting_region = "verdant_reach"
+starting_location = "thornfield_inn"
+feature_name = "Bardic Network"
+feature_description = "Your wide travels and fellow performers form an informal network of contacts — you gain advantage on checks to gather rumors, local news, or information about distant events in any settlement."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "jester"
+name = "Jester"
+category = "entertainment"
+summary = "A sharp-witted fool who hides dangerous perception behind painted smiles and pratfalls."
+prologue = """
+The secret of the jester's trade is this: no one guards their tongue around a fool. Lords discuss treason over dinner while you juggle in the corner, because what could the funny little person in the motley possibly understand about politics? Merchants brag about their frauds while you tumble across the floor, because surely the one with bells on their hat poses no threat to a serious business arrangement. You have heard more secrets in your career than any spymaster, and all it cost you was your dignity — a price you were never particularly attached to in the first place.
+
+You served in a minor noble's court for three years, perfecting the art of seeming harmless while absorbing everything. The acrobatics were real enough — you are genuinely gifted at falling without injury, at contorting yourself into improbable positions, at the precise physical comedy that turns a simple stumble into a work of art. But the foolishness was always a mask, and the mask slipped one evening when you let a lord know, in front of his guests, that you were aware of his embezzlement. You delivered the accusation as a joke, of course. The guests laughed. The lord did not.
+
+You left that night, one step ahead of a very unamused nobleman's guard, and you have not stopped moving since. Thornfield is far enough from your former employer's reach to allow you to breathe, and the inn's patrons are appreciative of your talents. But a jester without a court is just a vagabond in a funny hat, and you find yourself restless for a new game — something more dangerous and more rewarding than making drunks laugh for copper."""
+ability_choices = ["charisma", "dexterity", "wisdom"]
+skill_proficiencies = ["performance", "acrobatics"]
+starting_equipment = ["costume_clothes", "gambling_set"]
+bonus_gold = 8
+starting_region = "verdant_reach"
+starting_location = "thornfield_inn"
+feature_name = "Fool's Privilege"
+feature_description = "Your reputation as a harmless entertainer lets you get away with pointed questions and bold statements that would draw suspicion from anyone else — you gain advantage on Deception checks to appear non-threatening."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "storyteller"
+name = "Storyteller"
+category = "entertainment"
+summary = "A keeper of oral histories and legends who weaves truth, myth, and cautionary tale into a single compelling thread."
+prologue = """
+The old stories are not just entertainment. They are the memory of the world, passed from tongue to ear across generations like a flame cupped against the wind. You understood this before you could read — sitting at your grandmother's knee while she recited the Saga of the Drowned Kingdom from memory, word-perfect, the same way her grandmother had recited it to her. The chain of telling stretches back beyond reckoning, and you are its newest link. Every story you carry is a responsibility, a piece of living history that dies if you fail to pass it on.
+
+You came to the Murkfen Trading Post because the swamp-folk remember things the rest of the world has forgotten. Their isolation has preserved stories that vanished from the wider culture centuries ago — creation myths, hero cycles, cautionary tales about creatures whose very names have been lost to time. You have spent months here with your journal open, transcribing every tale the locals will share, cross-referencing variants, piecing together the original narratives beneath layers of embellishment and corruption. The work is painstaking and deeply satisfying, like restoring a faded painting stroke by careful stroke.
+
+But the oldest stories — the ones the elders will only whisper after dark, and only to someone they trust — all converge on the same warning. Something sleeps beneath the sunken places, and the stories say it wakes in cycles. The signs they describe — the silencing of frogs, the greening of the water, the dreams that come to sensitive souls — match what you have observed in recent weeks with unsettling precision. You are a storyteller, not a hero. But every hero in every story was once just someone who noticed the signs and refused to look away."""
+ability_choices = ["charisma", "wisdom", "intelligence"]
+skill_proficiencies = ["performance", "history"]
+starting_equipment = ["old_journal", "travelers_clothes"]
+bonus_gold = 8
+starting_region = "sunken_reach"
+starting_location = "murkfen_trading_post"
+feature_name = "Lore Keeper"
+feature_description = "Your vast repository of legends and oral histories grants advantage on History checks related to local myths, ancient events, or the origins of named creatures and locations."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "acrobat"
+name = "Acrobat"
+category = "entertainment"
+summary = "A gravity-defying performer whose body is their instrument, trained in tumbling, balance, and breathtaking aerial feats."
+prologue = """
+You remember the exact moment you fell in love with the air. Seven years old, watching a traveling troupe perform in the Saltmere market square, and a woman in silver leotard walked a rope strung between two buildings four stories above the street. No net. No harness. Just her and the wind and the absolute, terrifying certainty of her balance. When she finished, landing on the far rooftop with a bow that sent the crowd into hysterics, you knew with the unshakeable conviction of childhood that you would learn to do that. Everything else — school, chores, your parents' plan for you to join the fishing fleet — became noise.
+
+The training nearly broke you. Flexibility came first, then strength, then the endless repetition of basic forms until your body could execute them without conscious thought. Falls were frequent and painful. Your instructor, a retired acrobat with crooked fingers and an unforgiving eye, believed that fear of falling was the only real obstacle, and that the fastest way to conquer fear was to fall until it bored you. By your third year you had broken your wrist twice, cracked two ribs, and could execute a standing backflip on a surface no wider than your palm. The falls stopped bothering you. The heights never did — not because you conquered the fear, but because you learned to love it.
+
+Now you perform solo in the Saltmere markets, drawing crowds with routines that make grown sailors cover their eyes. The hat fills quickly, and the offers come regularly — merchant ships wanting entertainment for their crews, nobles seeking spectacle for their feasts. But you have grown restless with performance for its own sake. Your skills translate to places no ordinary person can reach, and lately you have been wondering what waits at the top of the places no one has thought to climb."""
+ability_choices = ["dexterity", "strength", "charisma"]
+skill_proficiencies = ["acrobatics", "performance"]
+starting_equipment = ["costume_clothes", "hempen_rope"]
+bonus_gold = 8
+starting_region = "iron_coast"
+starting_location = "saltmere_market"
+feature_name = "Perfect Balance"
+feature_description = "Your training grants advantage on Acrobatics checks involving balance, landing from falls, or moving across narrow or unstable surfaces."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "pit_fighter"
+name = "Pit Fighter"
+category = "entertainment"
+summary = "A brutal, unsanctioned brawler who fights bare-knuckled in the unlicensed rings beneath the docks."
+prologue = """
+The pits beneath Saltmere Docks are not the same as the sanctioned arena in the market square. There are no referees, no rules about killing blows, and the only trophy is walking out on your own legs. The crowd down here doesn't cheer — they snarl, they curse, they throw things when the fight goes against their bet. The floor is packed earth stained dark with things you try not to think about. You fight in these pits because the sanctioned arena wouldn't have you — no training, no sponsor, no name worth putting on a handbill. Down here, all you need is a willingness to bleed.
+
+You have bled plenty. Your nose has been broken so many times it has given up trying to heal straight. Your knuckles are a topography of scar tissue, and you carry a beast trophy from the night they threw you in against a half-starved wolf and you came out holding one of its teeth. That was the night the regulars started remembering your name, started placing bets in your favor, started treating you with the grudging respect that passes for affection in the underworld of bare-knuckle fighting.
+
+But the body keeps a ledger of its injuries, and yours is filling up. Each morning is stiffer than the last, each fight takes longer to recover from. You are still in your prime, but the window is closing, and you are smart enough to know it. The dock fighters who don't leave on their own terms leave on stretchers. You have saved a small stake of coin, enough to outfit yourself for the road, and you have decided that whatever waits beyond the docks cannot be worse than what waits in the pit if you stay too long."""
+ability_choices = ["strength", "constitution", "dexterity"]
+skill_proficiencies = ["athletics", "intimidation"]
+starting_equipment = ["common_clothes", "beast_trophy"]
+bonus_gold = 10
+starting_region = "iron_coast"
+starting_location = "saltmere_docks"
+feature_name = "Brawler's Instinct"
+feature_description = "Years of unregulated combat have sharpened your reflexes — you gain advantage on Initiative rolls when combat begins in close quarters or confined spaces."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "carnival_worker"
+name = "Carnival Worker"
+category = "entertainment"
+summary = "A jack-of-all-trades from a traveling carnival, skilled in misdirection, quick hands, and the art of the hustle."
+prologue = """
+The carnival taught you everything worth knowing: how to palm a coin so smoothly the mark thanks you for the lesson, how to guess a stranger's profession from their calluses and tan lines, how to set up a stage in twenty minutes and vanish an entire tent in ten. You grew up among the wagons, the child of two performers who couldn't agree on what to teach you and so taught you everything. Card tricks from your mother, fire-eating from your father, and the unspoken curriculum that every carnival child absorbs through osmosis — the gentle, profitable art of separating fools from their money while leaving them smiling.
+
+The carnival disbanded two years ago when the old ringmaster died and his heirs sold the wagons. The performers scattered to the winds, each carrying their particular slice of the show to whatever venue would have them. You drifted to the Thornfield market, where your skills found a natural home among the merchants and traders. A little close-up magic to draw a crowd, a rigged game of cups for those feeling lucky, the occasional honest performance when guilt or artistry demanded it. The market folk tolerate you because you bring customers to their stalls, and because you have an uncanny talent for spotting actual thieves — it takes one to know one, though you prefer the term "redistributor."
+
+But market life is a pale shadow of the carnival. You miss the road, the nightly reinvention, the freedom of a life that packs into a wagon and goes wherever the wind blows. When you heard rumors of strange happenings in the surrounding countryside — the kind of strange that draws curious crowds and opens curious purses — you recognized an opportunity your old ringmaster would have seized without hesitation. Adventure is, after all, just showmanship with higher stakes."""
+ability_choices = ["charisma", "dexterity", "intelligence"]
+skill_proficiencies = ["sleight_of_hand", "performance"]
+starting_equipment = ["costume_clothes", "gambling_set"]
+bonus_gold = 8
+starting_region = "verdant_reach"
+starting_location = "thornfield_market"
+feature_name = "Quick Hands"
+feature_description = "Your carnival training in misdirection and sleight of hand grants advantage on checks to palm small objects, plant items on someone, or perform close-up tricks under observation."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "street_musician"
+name = "Street Musician"
+category = "entertainment"
+summary = "A self-taught musician who plays for coins on busy corners, surviving on talent, charm, and the kindness of strangers."
+prologue = """
+The pan flute was a gift from a dying busker who heard you humming in the Saltmere alleyways and recognized something worth preserving. "You've got the ear," he said, pressing the battered instrument into your hands with fingers that trembled from more than age. "Don't waste it playing other people's songs." You took his advice perhaps too literally — you have never learned a single tune as written, preferring instead to listen to the city itself and play what you hear. The rhythm of the docks, the melody of market haggling, the counterpoint of gulls and wind and distant thunder. Saltmere has a music all its own, and you are its only faithful transcriber.
+
+The income is unreliable. Some days the hat fills with silver and you eat like a merchant. Other days the wind blows wrong, or the guard chases you off a prime corner, or the crowds simply aren't in the mood, and you go to bed with nothing but the memory of your own music for company. You have learned to read the tides of generosity — literally, since the docks pay best when the fishing boats come in flush with a good catch, and worst when the storms keep them in harbor. Survival as a street musician is its own kind of performance, a daily improvisation in the key of hunger and hope.
+
+But you have noticed something lately that troubles you. Your music is changing. Melodies surface unbidden, complex and strange, in keys you don't recognize and rhythms that feel older than the city itself. When you play them, the air thickens and the listeners go quiet in a way that has nothing to do with appreciation. A fortune-teller on the corner of Dock Street listened to you play last week and went pale. "That's not your song," she said. "That's something else playing through you." You don't know what she meant, but the music keeps coming, and it is growing louder."""
+ability_choices = ["charisma", "dexterity", "wisdom"]
+skill_proficiencies = ["performance", "persuasion"]
+starting_equipment = ["pan_flute", "common_clothes"]
+bonus_gold = 5
+starting_region = "iron_coast"
+starting_location = "saltmere_market"
+feature_name = "Busker's Intuition"
+feature_description = "Your years reading crowds from street level grant you advantage on Perception checks to notice pickpockets, concealed weapons, or individuals who are watching you with unusual intent."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []

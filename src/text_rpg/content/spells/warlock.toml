@@ -1,0 +1,149 @@
+# =============================================================================
+# Warlock-Specific Spells — Pact magic, eldritch power, and dark bargains
+# =============================================================================
+
+# 1st Level
+
+[[spells]]
+id = "hellish_rebuke"
+name = "Hellish Rebuke"
+level = 1
+school = "evocation"
+classes = ["warlock"]
+casting_time = "reaction"
+range = 60
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You point your finger and the creature that damaged you is momentarily surrounded by hellish flames. It must make a Dexterity save, taking 2d10 fire damage on a failure."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "2d10"
+damage_type = "fire"
+
+[[spells]]
+id = "arms_of_hadar"
+name = "Arms of Hadar"
+level = 1
+school = "conjuration"
+classes = ["warlock"]
+casting_time = "action"
+range = 0
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You invoke the power of Hadar. Tendrils of dark energy erupt from you. Each creature within 10 feet must make a Strength save or take 2d6 necrotic damage."
+[spells.mechanics]
+type = "save"
+save_ability = "strength"
+damage_dice = "2d6"
+damage_type = "necrotic"
+
+# 2nd Level
+
+[[spells]]
+id = "crown_of_madness"
+name = "Crown of Madness"
+level = 2
+school = "enchantment"
+classes = ["bard", "sorcerer", "warlock", "wizard"]
+casting_time = "action"
+range = 120
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "One humanoid of your choice must succeed on a Wisdom save or become charmed. A twisted crown of jagged iron appears on its head and a madness glows in its eyes."
+[spells.mechanics]
+type = "save"
+save_ability = "wisdom"
+effect = "charmed"
+
+# 3rd Level
+
+[[spells]]
+id = "hunger_of_hadar"
+name = "Hunger of Hadar"
+level = 3
+school = "conjuration"
+classes = ["warlock"]
+casting_time = "action"
+range = 150
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "You open a gateway to the dark between the stars. A 20-foot-radius sphere of blackness and bitter cold appears. Creatures that start their turn in the area take 2d6 cold damage. Creatures that end their turn there must make a Dexterity save or take 2d6 acid damage."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+damage_dice = "2d6"
+damage_type = "cold"
+
+# 4th Level
+
+[[spells]]
+id = "shadow_of_moil"
+name = "Shadow of Moil"
+level = 4
+school = "necromancy"
+classes = ["warlock"]
+casting_time = "action"
+range = 0
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "Flame-like shadows wreathe your body. You are heavily obscured to others. When a creature within 10 feet hits you with an attack, the shadows lash out, dealing 2d8 necrotic damage."
+[spells.mechanics]
+type = "buff"
+effect = "shadow_of_moil"
+damage_dice = "2d8"
+damage_type = "necrotic"
+
+# 5th Level
+
+[[spells]]
+id = "negative_energy_flood"
+name = "Negative Energy Flood"
+level = 5
+school = "necromancy"
+classes = ["warlock", "wizard"]
+casting_time = "action"
+range = 60
+duration = "instantaneous"
+components = ["V"]
+description = "You send ribbons of negative energy at one creature. The target must make a Constitution save, taking 5d12 necrotic damage on a failure, or half on a success. A non-undead killed by this damage rises as a zombie."
+[spells.mechanics]
+type = "save"
+save_ability = "constitution"
+damage_dice = "5d12"
+damage_type = "necrotic"
+
+# 6th Level
+
+[[spells]]
+id = "create_undead"
+name = "Create Undead"
+level = 6
+school = "necromancy"
+classes = ["cleric", "warlock", "wizard"]
+casting_time = "action"
+range = 10
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You can cast this spell only at night. Choose up to three corpses of Medium or Small humanoids within range. Each corpse becomes a ghoul under your control."
+[spells.mechanics]
+type = "utility"
+effect = "create_undead"
+
+[[spells]]
+id = "soul_cage"
+name = "Soul Cage"
+level = 6
+school = "necromancy"
+classes = ["warlock", "wizard"]
+casting_time = "reaction"
+range = 60
+duration = "8 hours"
+components = ["V", "S"]
+description = "This spell snatches the soul of a humanoid as it dies and traps it inside a tiny cage. You can exploit the trapped soul to heal 2d8 HP, ask it questions, or gain advantage on certain checks."
+[spells.mechanics]
+type = "utility"
+effect = "soul_cage"

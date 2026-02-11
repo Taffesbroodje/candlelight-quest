@@ -1,0 +1,343 @@
+[[npcs]]
+id = "elder_thorn"
+name = "Elder Thorn"
+entity_type = "npc"
+profession = "druid"
+description = "An ancient elven druid with bark-like skin and eyes that glow faintly green. Moss grows in patches along his arms and shoulders, and small birds perch on him without fear. He speaks slowly and deliberately, as though listening to the forest between each word."
+location_id = "briarhaven_grove"
+dialogue_tags = ["greeting", "lore", "quest_info", "nature_wisdom", "blessing"]
+behaviors = ["wise", "spiritual", "quest_giver"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 38
+hp_max = 38
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 12
+constitution = 14
+intelligence = 14
+wisdom = 18
+charisma = 15
+
+[npcs.schedule]
+dawn = "briarhaven_grove"
+morning = "briarhaven_grove"
+midday = "briarhaven_village"
+afternoon = "briarhaven_grove"
+evening = "briarhaven_grove"
+night = "briarhaven_grove"
+late_night = "briarhaven_grove"
+
+[npcs.properties]
+preferred_gifts = ["moonpetal", "healing_herb", "enchanted_thread"]
+disliked_gifts = ["iron_ingot", "beast_hide"]
+
+[[npcs.attacks]]
+name = "Shillelagh"
+damage_dice = "1d8"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "warden_lirael"
+name = "Warden Lirael"
+entity_type = "npc"
+profession = "ranger"
+description = "A sharp-eyed half-elf woman in a green cloak, her longbow always within arm's reach. A pair of scars run across her left cheek from a close call with a dire wolf. She leads the Thornwild rangers with quiet competence and a dry sense of humor."
+location_id = "rangers_lodge"
+dialogue_tags = ["greeting", "quest_info", "rumors", "patrol_report", "combat_advice"]
+behaviors = ["stern", "protector", "quest_giver", "information"]
+is_hostile = false
+is_alive = true
+level = 4
+hp_current = 34
+hp_max = 34
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 17
+constitution = 13
+intelligence = 12
+wisdom = 16
+charisma = 11
+
+[npcs.schedule]
+dawn = "thornwild_trails"
+morning = "rangers_lodge"
+midday = "briarhaven_village"
+afternoon = "rangers_lodge"
+evening = "rangers_lodge"
+night = "rangers_lodge"
+late_night = "rangers_lodge"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_potion", "shortbow"]
+disliked_gifts = ["arcane_dust", "nightshade"]
+
+[[npcs.attacks]]
+name = "Longbow"
+damage_dice = "1d8"
+damage_type = "piercing"
+
+[[npcs]]
+id = "herbalist_moss"
+name = "Herbalist Moss"
+entity_type = "npc"
+profession = "herbalist"
+description = "A stout gnome woman with wild green hair and dirt permanently embedded under her fingernails. She chatters constantly about plants, fungi, and remedies, often interrupting herself to point out a rare specimen growing on a nearby branch."
+location_id = "briarhaven_village"
+dialogue_tags = ["greeting", "shop_herbs", "craft_info", "rumors", "plant_lore"]
+behaviors = ["friendly", "merchant", "information", "eccentric"]
+is_hostile = false
+is_alive = true
+level = 3
+hp_current = 20
+hp_max = 20
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 13
+constitution = 14
+intelligence = 16
+wisdom = 15
+charisma = 13
+
+[npcs.schedule]
+dawn = "briarhaven_grove"
+morning = "briarhaven_village"
+midday = "briarhaven_village"
+afternoon = "thornwild_trails"
+evening = "briarhaven_village"
+night = "briarhaven_village"
+late_night = "briarhaven_village"
+
+[npcs.properties]
+preferred_gifts = ["healing_herb", "moonpetal", "herbalism_kit"]
+disliked_gifts = ["dagger", "iron_ingot"]
+
+[[npcs.attacks]]
+name = "Thorn Whip"
+damage_dice = "1d6"
+damage_type = "piercing"
+
+[[npcs]]
+id = "fey_sprite_whisper"
+name = "Whisper"
+entity_type = "npc"
+profession = "fey_guide"
+description = "A tiny fey sprite no larger than a hand, with iridescent dragonfly wings and a mischievous grin. Whisper speaks in riddles and half-truths, giggling at confusion but occasionally revealing genuinely useful secrets about the forest and the Feywild beyond."
+location_id = "fey_crossing"
+dialogue_tags = ["greeting", "riddles", "lore", "fey_secrets", "quest_info"]
+behaviors = ["trickster", "information", "mysterious"]
+is_hostile = false
+is_alive = true
+level = 3
+hp_current = 10
+hp_max = 10
+ac = 15
+unavailable_periods = ["morning", "midday"]
+
+[npcs.ability_scores]
+strength = 3
+dexterity = 18
+constitution = 8
+intelligence = 14
+wisdom = 13
+charisma = 17
+
+[npcs.schedule]
+dawn = "fey_crossing"
+morning = "fey_crossing"
+midday = "fey_crossing"
+afternoon = "fey_crossing"
+evening = "fey_crossing"
+night = "briarhaven_grove"
+late_night = "fey_crossing"
+
+[npcs.properties]
+preferred_gifts = ["moonpetal", "enchanted_thread", "arcane_dust"]
+disliked_gifts = ["iron_ingot", "chain_mail", "shield"]
+
+[[npcs.attacks]]
+name = "Fey Spark"
+damage_dice = "1d4"
+damage_type = "radiant"
+
+[[npcs]]
+id = "old_hunter_bram"
+name = "Old Hunter Bram"
+entity_type = "npc"
+profession = "hunter"
+description = "A grizzled human man with a weathered face and a missing ring finger. He wears a battered leather vest covered in animal teeth and claws collected over decades of hunting. His stories of the forest's dangers are equal parts warning and boast."
+location_id = "rangers_lodge"
+dialogue_tags = ["greeting", "shop_supplies", "rumors", "hunting_tales", "beast_lore"]
+behaviors = ["gruff", "merchant", "information"]
+is_hostile = false
+is_alive = true
+level = 3
+hp_current = 24
+hp_max = 24
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 15
+constitution = 13
+intelligence = 10
+wisdom = 14
+charisma = 10
+
+[npcs.schedule]
+dawn = "thornwild_trails"
+morning = "thornwild_trails"
+midday = "rangers_lodge"
+afternoon = "rangers_lodge"
+evening = "rangers_lodge"
+night = "rangers_lodge"
+late_night = "rangers_lodge"
+
+[npcs.properties]
+preferred_gifts = ["rations", "beast_hide", "healing_potion"]
+disliked_gifts = ["arcane_dust", "enchanted_thread"]
+
+[[npcs.attacks]]
+name = "Hunting Bow"
+damage_dice = "1d6"
+damage_type = "piercing"
+
+[[npcs]]
+id = "foreman_aldric"
+name = "Foreman Aldric"
+entity_type = "npc"
+profession = "woodcutter"
+description = "A barrel-chested human with tree-trunk arms and a voice that carries across the camp. Sawdust perpetually dusts his thick beard. He runs a tight operation."
+location_id = "woodcutter_camp"
+dialogue_tags = ["greeting", "shop_supplies", "rumors", "lore"]
+behaviors = ["gruff", "merchant", "hardworking"]
+is_hostile = false
+is_alive = true
+level = 3
+hp_current = 26
+hp_max = 26
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 10
+constitution = 14
+intelligence = 10
+wisdom = 12
+charisma = 13
+
+[npcs.schedule]
+dawn = "woodcutter_camp"
+morning = "woodcutter_camp"
+midday = "woodcutter_camp"
+afternoon = "woodcutter_camp"
+evening = "briarhaven_village"
+night = "woodcutter_camp"
+late_night = "woodcutter_camp"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_potion"]
+disliked_gifts = ["arcane_dust", "spider_silk"]
+
+[[npcs.attacks]]
+name = "Woodcutter's Axe"
+damage_dice = "1d8"
+damage_type = "slashing"
+
+[[npcs]]
+id = "druid_willowsong"
+name = "Druid Willowsong"
+entity_type = "npc"
+profession = "druid"
+description = "An ancient elf draped in living moss and flowering vines. Her eyes shimmer with silver light, and small woodland creatures follow in her wake. She speaks in riddles as often as plain speech."
+location_id = "moonwell"
+dialogue_tags = ["greeting", "lore", "blessing", "quest_info"]
+behaviors = ["wise", "spiritual", "mysterious"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 35
+hp_max = 35
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 12
+constitution = 13
+intelligence = 15
+wisdom = 19
+charisma = 14
+
+[npcs.schedule]
+dawn = "moonwell"
+morning = "moonwell"
+midday = "moonwell"
+afternoon = "moonwell"
+evening = "moonwell"
+night = "briarhaven_grove"
+late_night = "moonwell"
+
+[npcs.properties]
+preferred_gifts = ["moonpetal", "healing_herb", "enchanted_thread"]
+disliked_gifts = ["iron_ingot", "dagger"]
+
+[[npcs.attacks]]
+name = "Thorn Strike"
+damage_dice = "1d8"
+damage_type = "piercing"
+
+[[npcs]]
+id = "spinner_grix"
+name = "Spinner Grix"
+entity_type = "npc"
+profession = "goblin_trader"
+description = "A wiry goblin in a patchwork coat, carrying a pack three times his size. He claims to collect \"curiosities\" from the forest — spider silk, rare mushrooms, strange bones — and sells them at a premium."
+location_id = "thornwild_edge_road"
+dialogue_tags = ["greeting", "shop_supplies", "rumors"]
+behaviors = ["crafty", "merchant", "opportunist"]
+is_hostile = false
+is_alive = true
+level = 2
+hp_current = 12
+hp_max = 12
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 15
+constitution = 10
+intelligence = 14
+wisdom = 11
+charisma = 14
+
+[npcs.schedule]
+dawn = "thornwild_edge_road"
+morning = "thornwild_edge_road"
+midday = "thornwild_edge_road"
+afternoon = "woodcutter_camp"
+evening = "briarhaven_village"
+night = "briarhaven_village"
+late_night = "thornwild_edge_road"
+
+[npcs.properties]
+preferred_gifts = ["spider_silk", "arcane_dust", "moonpetal"]
+disliked_gifts = ["holy_symbol", "healing_potion"]
+
+[[npcs.attacks]]
+name = "Rusty Knife"
+damage_dice = "1d4"
+damage_type = "slashing"

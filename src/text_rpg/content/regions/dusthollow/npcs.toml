@@ -1,0 +1,300 @@
+[[npcs]]
+id = "sheriff_duna"
+name = "Sheriff Duna"
+entity_type = "npc"
+profession = "sheriff"
+description = "A tall, steely-eyed human woman with a tin star pinned to her duster. She keeps order with a quick draw and a quicker wit. The outlaws in the canyon are her personal obsession."
+location_id = "dusthollow_sheriff"
+dialogue_tags = ["greeting", "quest_info", "guard_info", "rumors"]
+behaviors = ["authoritative", "quest_giver", "protector"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 52
+hp_max = 52
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 18
+constitution = 14
+intelligence = 12
+wisdom = 15
+charisma = 14
+
+[npcs.schedule]
+dawn = "dusthollow_sheriff"
+morning = "dusthollow_sheriff"
+midday = "dusthollow_sheriff"
+afternoon = "dusthollow_main"
+evening = "dusthollow_saloon"
+night = "dusthollow_sheriff"
+late_night = "dusthollow_sheriff"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "rations"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Revolver"
+damage_dice = "1d10"
+damage_type = "piercing"
+
+[[npcs]]
+id = "barkeep_cactus"
+name = "Cactus Jack"
+entity_type = "npc"
+profession = "barkeep"
+description = "A scarred half-orc with a gold tooth and a prickly cactus tattooed on each forearm. He tends bar with surprising grace and breaks up fights with less grace."
+location_id = "dusthollow_saloon"
+dialogue_tags = ["greeting", "rumors", "shop_food", "quest_info"]
+behaviors = ["tough", "merchant", "information"]
+is_hostile = false
+is_alive = true
+level = 4
+hp_current = 34
+hp_max = 34
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 12
+constitution = 15
+intelligence = 10
+wisdom = 12
+charisma = 13
+
+[npcs.schedule]
+dawn = "dusthollow_saloon"
+morning = "dusthollow_saloon"
+midday = "dusthollow_saloon"
+afternoon = "dusthollow_saloon"
+evening = "dusthollow_saloon"
+night = "dusthollow_saloon"
+late_night = "dusthollow_saloon"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_potion"]
+disliked_gifts = ["arcane_dust", "holy_symbol"]
+
+[[npcs.attacks]]
+name = "Bar Stool"
+damage_dice = "1d6"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "horse_master_kato"
+name = "Horse Master Kato"
+entity_type = "npc"
+profession = "horse_breeder"
+description = "A quiet, patient human man with deep knowledge of horses. He can calm any animal with a whisper and breed mounts that outrun the wind."
+location_id = "dusthollow_stable"
+dialogue_tags = ["greeting", "shop_supplies", "lore", "rumors"]
+behaviors = ["calm", "merchant", "nature_lover"]
+is_hostile = false
+is_alive = true
+level = 4
+hp_current = 28
+hp_max = 28
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 15
+constitution = 12
+intelligence = 13
+wisdom = 17
+charisma = 14
+
+[npcs.schedule]
+dawn = "dusthollow_stable"
+morning = "dusthollow_stable"
+midday = "dusthollow_stable"
+afternoon = "dusthollow_stable"
+evening = "cattle_range"
+night = "dusthollow_saloon"
+late_night = "dusthollow_stable"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_herb"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Riding Crop"
+damage_dice = "1d4"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "shopkeeper_mirren"
+name = "Shopkeeper Mirren"
+entity_type = "npc"
+profession = "merchant"
+description = "A shrewd dwarven woman who runs the general store with precise inventory and hard bargaining. She knows the value of everything and the cost of nothing."
+location_id = "dusthollow_general"
+dialogue_tags = ["greeting", "shop_supplies", "rumors"]
+behaviors = ["shrewd", "merchant", "practical"]
+is_hostile = false
+is_alive = true
+level = 3
+hp_current = 22
+hp_max = 22
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 12
+constitution = 14
+intelligence = 16
+wisdom = 14
+charisma = 13
+
+[npcs.schedule]
+dawn = "dusthollow_general"
+morning = "dusthollow_general"
+midday = "dusthollow_general"
+afternoon = "dusthollow_general"
+evening = "dusthollow_general"
+night = "dusthollow_saloon"
+late_night = "dusthollow_general"
+
+[npcs.properties]
+preferred_gifts = ["iron_ingot", "healing_potion"]
+disliked_gifts = ["nightshade", "spider_silk"]
+
+[[npcs.attacks]]
+name = "Hidden Crossbow"
+damage_dice = "1d8"
+damage_type = "piercing"
+
+[[npcs]]
+id = "elder_wind"
+name = "Elder Wind-That-Speaks"
+entity_type = "npc"
+profession = "nomad_elder"
+description = "An ancient half-elf with wind-carved features and eyes that see further than the horizon. The nomadic plainspeople honor their elder's wisdom and prophecies."
+location_id = "nomad_camp"
+dialogue_tags = ["greeting", "lore", "quest_info", "blessing"]
+behaviors = ["wise", "spiritual", "mysterious"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 30
+hp_max = 30
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 12
+constitution = 12
+intelligence = 14
+wisdom = 19
+charisma = 16
+
+[npcs.schedule]
+dawn = "nomad_camp"
+morning = "nomad_camp"
+midday = "nomad_camp"
+afternoon = "nomad_camp"
+evening = "prairie_shrine"
+night = "nomad_camp"
+late_night = "nomad_camp"
+
+[npcs.properties]
+preferred_gifts = ["moonpetal", "healing_herb"]
+disliked_gifts = ["iron_ingot", "chain_mail"]
+
+[[npcs.attacks]]
+name = "Spirit Staff"
+damage_dice = "1d6"
+damage_type = "force"
+
+[[npcs]]
+id = "ranch_boss_mae"
+name = "Ranch Boss Big Mae"
+entity_type = "npc"
+profession = "rancher"
+description = "A massive human woman who can wrestle a steer to the ground bare-handed. She runs the largest ranch and doesn't suffer fools, rustlers, or anyone who mistreats animals."
+location_id = "cattle_range"
+dialogue_tags = ["greeting", "quest_info", "rumors", "lore"]
+behaviors = ["tough", "quest_giver", "practical"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 42
+hp_max = 42
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 18
+dexterity = 12
+constitution = 16
+intelligence = 10
+wisdom = 13
+charisma = 12
+
+[npcs.schedule]
+dawn = "cattle_range"
+morning = "cattle_range"
+midday = "cattle_range"
+afternoon = "cattle_range"
+evening = "dusthollow_saloon"
+night = "dusthollow_saloon"
+late_night = "cattle_range"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_potion"]
+disliked_gifts = ["arcane_dust", "nightshade"]
+
+[[npcs.attacks]]
+name = "Lasso"
+damage_dice = "1d4"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "priest_zephan"
+name = "Traveling Priest Zephan"
+entity_type = "npc"
+profession = "priest"
+description = "A young human man in dusty robes who tends the prairie shrine and offers healing to all who pass — settler and nomad alike. His faith is quiet but unwavering."
+location_id = "prairie_shrine"
+dialogue_tags = ["greeting", "healing", "blessing", "lore"]
+behaviors = ["kind", "healer", "spiritual"]
+is_hostile = false
+is_alive = true
+level = 4
+hp_current = 26
+hp_max = 26
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 12
+constitution = 13
+intelligence = 13
+wisdom = 17
+charisma = 14
+
+[npcs.schedule]
+dawn = "prairie_shrine"
+morning = "prairie_shrine"
+midday = "prairie_shrine"
+afternoon = "nomad_camp"
+evening = "dusthollow_main"
+night = "prairie_shrine"
+late_night = "prairie_shrine"
+
+[npcs.properties]
+preferred_gifts = ["holy_symbol", "healing_herb", "moonpetal"]
+disliked_gifts = ["nightshade", "poison_vial", "dagger"]
+
+[[npcs.attacks]]
+name = "Sacred Flame"
+damage_dice = "1d8"
+damage_type = "radiant"

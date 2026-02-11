@@ -1,0 +1,6 @@
+id = "iron_coast"
+name = "The Iron Coast"
+description = "A rugged stretch of windswept coastline dominated by the bustling port town of Saltmere. Merchant vessels from distant lands crowd the harbor, while smugglers exploit the network of tidal caves beneath the cliffs. The salty air carries the cries of gulls and the shouts of dockworkers, and fortunes are made and lost with every tide."
+level_range_min = 1
+level_range_max = 5
+climate = "maritime"

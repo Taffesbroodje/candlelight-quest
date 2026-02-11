@@ -1,0 +1,208 @@
+# Exotic origins — extraordinary circumstances that set you apart from ordinary folk
+
+[[origins]]
+id = "far_traveler"
+name = "Far Traveler"
+category = "exotic"
+summary = "You hail from a distant land across the sea, drawn to these shores by curiosity and wanderlust."
+prologue = """The ship that carried you across the Jade Expanse was called the Sunward Promise, and it took forty-three days to make the crossing. You counted every one of them, scratching marks into the hull beside your hammock while the ocean heaved and the sailors sang songs in a language you were only beginning to understand. Your homeland lies so far to the east that these people have no name for it — they simply call it "beyond," as if the world ended at their horizon.
+
+It doesn't, of course. You know that better than anyone. You've walked through markets where they trade in spices these westerners have never tasted, heard music built on scales they've never imagined, worshipped gods whose names would twist their tongues into knots. You carry that world with you — in the instrument slung across your back, in the accent that makes people lean in closer, in the stories you tell that they can never quite believe.
+
+The port city of Saltmere is rough and loud and smells like fish guts, but the docks are alive with possibility. Merchants eye your foreign clothes with open curiosity. A dock worker asks where you're from, and when you tell him, he laughs and says he's never heard of the place. You smile. That's precisely the point. You didn't cross an ocean to find the familiar."""
+ability_choices = ["charisma", "wisdom", "intelligence"]
+skill_proficiencies = ["perception", "insight"]
+starting_equipment = ["travelers_clothes", "musical_instrument"]
+bonus_gold = 10
+starting_region = "iron_coast"
+starting_location = "saltmere_docks"
+feature_name = "All Eyes on You"
+feature_description = "Your exotic appearance and foreign customs draw attention wherever you go. NPCs are more willing to share information with you out of sheer curiosity, granting advantage on Persuasion checks when gathering local knowledge."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "feywild_touched"
+name = "Feywild Touched"
+category = "exotic"
+summary = "You spent time in the Feywild as a child, and its magic left an indelible mark on your soul."
+prologue = """You were seven when you wandered through the mushroom ring at the edge of your family's farm. The air shimmered like heat haze, the ground tilted beneath your feet, and suddenly the world was different — colors too vivid, sounds too sharp, flowers that sang and trees that watched you with amber eyes. A fox with silver fur led you down a path of moonstone, and you followed because you were seven and it was beautiful and you didn't know any better.
+
+You spent what felt like a summer in that place. Fey creatures taught you to hear the language of growing things, to see the threads of magic that run through all living matter, to dance in patterns that bent the light. They fed you honeycomb that tasted like starlight and laughed at your clumsy human feet. Then one morning the silver fox led you back to the mushroom ring, nudged you through, and you stumbled into your family's field. Seven years had passed. Your parents were gray-haired and weeping. Your younger brother was taller than you.
+
+The mortal world has never quite felt real since then. Colors are duller, sounds flatter, and sometimes — especially at twilight — you catch the faint shimmer of the veil between worlds. You've come to the Fey Crossing in the Thornwild because the boundary is thin here, and the magic in your blood hums louder with every step. You're not trying to go back. You're trying to understand what was done to you."""
+ability_choices = ["charisma", "dexterity", "wisdom"]
+skill_proficiencies = ["arcana", "nature"]
+starting_equipment = ["crystal_focus", "common_clothes"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "fey_crossing"
+feature_name = "Fey Sight"
+feature_description = "Your time in the Feywild attuned your senses to magic. You can detect the presence of enchantments and illusions within 10 feet, though not their exact nature."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "raised_by_beasts"
+name = "Raised by Beasts"
+category = "exotic"
+summary = "Abandoned in the wilds as an infant, you were raised by a pack of intelligent beasts."
+prologue = """Your earliest memories are not of faces but of fur — the rough warmth of a she-wolf's flank pressed against you in the den, the rumble of her breathing as you slept curled against her belly. The pack accepted you the way they accepted anything small and helpless: with teeth that could kill you and a patience that chose not to. You learned their language before you learned to speak. You could read a scent trail before you could read a word.
+
+The pack taught you everything that mattered: how to hunt, how to hide, how to read the wind and the sky and the trembling of the earth beneath your feet. You ran with them through the Thornwild for years, bare-footed and half-feral, your skin tanned and scarred, your hair matted with burrs and leaf-litter. Travelers who glimpsed you through the trees crossed themselves and hurried on. You were a ghost story. A legend. The wild child of Thornwild.
+
+Then the she-wolf died — old age, not violence, though the distinction brought no comfort. Without her, the pack dynamic shifted, and the new alpha saw you not as kin but as competition. You left the den with nothing but a trophy torn from a creature you'd killed with your own hands and the clothes a sympathetic ranger had left at the forest's edge. The beast den is behind you now. The human world stretches ahead, alien and bewildering, full of rules you've never learned and customs that make no sense. But you'll adapt. You always have."""
+ability_choices = ["strength", "constitution", "wisdom"]
+skill_proficiencies = ["animal_handling", "survival"]
+starting_equipment = ["beast_trophy", "common_clothes"]
+bonus_gold = 2
+starting_region = "thornwild"
+starting_location = "beast_den"
+feature_name = "Beast Tongue"
+feature_description = "You instinctively understand the body language and vocalizations of animals. You can communicate simple ideas to beasts and gain advantage on Animal Handling checks."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "shipwreck_survivor"
+name = "Shipwreck Survivor"
+category = "exotic"
+summary = "Your vessel was torn apart by a storm, and you washed ashore with nothing but your life."
+prologue = """The storm came out of nowhere — a wall of black cloud that swallowed the horizon and turned the sea into a churning nightmare of foam and fury. The Maiden's Fortune was a sturdy merchant vessel, three-masted and well-crewed, but she snapped like kindling when the first wave hit. You remember the sound of the mainmast cracking, the screams of sailors swept overboard, the terrible grinding as the hull broke apart on rocks that had no business being there.
+
+You survived by clinging to a section of deck planking, riding the waves for hours in the dark while the cold seeped into your bones and the salt burned your eyes shut. When dawn came, you were alone on a stretch of rocky shore, coughing up seawater, surrounded by debris and the bodies of less fortunate crewmates. You salvaged what you could — a length of rope, a knife that had belonged to the ship's cook — and started walking.
+
+Fisher's Cove isn't much. A handful of weathered cottages, a dock, and a shrine to the sea god adorned with shells and dried flowers. The fishers who found you, half-dead and salt-crusted on their beach, wrapped you in blankets and fed you broth and asked no questions. You owe them your life. But you can feel the pull of the open water even now, and you know this cove is just a waystation. The sea took everything from you. It's time to take something back."""
+ability_choices = ["constitution", "strength", "wisdom"]
+skill_proficiencies = ["athletics", "survival"]
+starting_equipment = ["hempen_rope", "small_knife"]
+bonus_gold = 2
+starting_region = "iron_coast"
+starting_location = "fishers_cove"
+feature_name = "Sea Legs"
+feature_description = "Surviving the wreck honed your physical resilience. You can hold your breath twice as long as normal and gain advantage on Athletics checks related to swimming or resisting currents."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "time_displaced"
+name = "Time Displaced"
+category = "exotic"
+summary = "You stepped through an arcane anomaly and emerged centuries from your own time."
+prologue = """The ruins were unremarkable — just another crumbling watchtower in an overgrown clearing, the kind that dot the countryside like broken teeth. You were sheltering from the rain, nothing more. But when lightning struck the capstone and the air split open like a wound in reality, you stumbled backward through something that was not a door and not a window but a seam in time itself.
+
+The fall lasted an eternity and an instant. Colors you have no names for streamed past you. Voices spoke in languages that haven't been invented yet — or that were forgotten long ago. When you hit the ground, gasping and disoriented, the rain had stopped. The ruins looked different. Older. More ruined. The trees were taller. The path you'd walked to reach the tower was gone, swallowed by centuries of growth.
+
+You still carry the hourglass from your pack — an heirloom from your grandmother, its sand now frozen mid-flow, stuck in the moment of your displacement. The world you've emerged into is familiar in its broad strokes but alien in its details. The kingdom you knew is gone. The gods people worship have different names. And the old ruins where you took shelter? The locals avoid them. They say the place is cursed. You could tell them the truth, but who would believe a stranger who claims to have walked out of the past?"""
+ability_choices = ["intelligence", "wisdom", "charisma"]
+skill_proficiencies = ["arcana", "history"]
+starting_equipment = ["hourglass", "common_clothes"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "old_ruins"
+feature_name = "Temporal Intuition"
+feature_description = "Your displacement through time has given you an uncanny sense of cause and effect. You gain advantage on History checks, and once per day you can sense whether an action will have significant future consequences."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "underdark_escapee"
+name = "Underdark Escapee"
+category = "exotic"
+summary = "You escaped the lightless depths of the Underdark and now struggle to adjust to the surface world."
+prologue = """You don't know how long you were down there. Time loses meaning in the Underdark, where there is no sun to mark the days and no sky to mark the seasons. You were taken — snatched from a mining expedition that ventured too deep, dragged through tunnels that twisted like the intestines of some vast stone beast, and deposited in a fungal cavern where the air glowed violet and the silence was so complete you could hear your own blood moving.
+
+The creatures that held you were not cruel. That would have required emotion. They were efficient. They put you to work harvesting luminescent mushrooms, tending to things that grew in the dark, carrying loads through passages so narrow you had to crawl. You learned to see in near-total darkness, to move without sound, to eat things that would make a surface dweller retch. And you learned to wait.
+
+Your escape took months of preparation — stolen rope, a memorized route, a distraction involving a cave-in that you pray didn't kill anyone. You climbed for what felt like days, following the faintest current of fresh air, until you burst through a crack in the rock face and into blinding, agonizing sunlight. The deep mines of the Ashen Highlands are behind you now, but the darkness left its marks. Your eyes still ache in bright light. Your skin is pale as parchment. And sometimes, in quiet moments, you miss the silence of the deep."""
+ability_choices = ["dexterity", "constitution", "wisdom"]
+skill_proficiencies = ["stealth", "survival"]
+starting_equipment = ["lantern", "hempen_rope"]
+bonus_gold = 3
+starting_region = "ashen_highlands"
+starting_location = "deep_mines"
+feature_name = "Underdark Adaptation"
+feature_description = "Your time in the lightless depths granted you darkvision to 30 feet. You also gain advantage on Perception checks in darkness or underground environments."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "reincarnated"
+name = "Reincarnated"
+category = "exotic"
+summary = "You carry fragmented memories of a past life, drawn to places and people you have never met."
+prologue = """The memories come unbidden — a flash of a face you've never seen but somehow love, the phantom scent of incense burning in a temple you've never visited, the echo of a name that isn't yours spoken in a voice that makes your chest ache. You've had them since childhood, these fragments of someone else's life lodged in your mind like splinters. Your parents called them an overactive imagination. The village healer called them a curse. The priest at the Murkfen Shrine called them something else entirely.
+
+"Reincarnation," he said, studying the birthmark on your shoulder — a pattern of concentric circles that matched, he claimed, a symbol found in ancient burial rites. "The soul remembers what the mind forgets. Someone you were — someone who lived and died and mattered — is trying to tell you something." He showed you texts written on sheets of beaten copper, describing the cycle of rebirth and the rare souls who carried their memories across the threshold.
+
+You've come to the shrine because the fragments are getting stronger. Full sentences now, not just images. A map you've never studied but can draw from memory. A language you've never learned but can speak in your sleep. The old journal you found tucked in your belongings one morning — in handwriting that isn't yours but feels like it should be — is filled with observations about this place, this shrine, these wetlands. Whoever you were, they came here before. They were looking for something. And now, so are you."""
+ability_choices = ["wisdom", "intelligence", "charisma"]
+skill_proficiencies = ["insight", "religion"]
+starting_equipment = ["holy_symbol", "old_journal"]
+bonus_gold = 5
+starting_region = "sunken_reach"
+starting_location = "murkfen_shrine"
+feature_name = "Past Life Echoes"
+feature_description = "Memories from a previous existence surface at critical moments. Once per long rest, you may add your Wisdom modifier to any ability check as fragments of past expertise guide your hand."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "construct_awakened"
+name = "Construct Awakened"
+category = "exotic"
+summary = "You were a mindless construct until a surge of arcane energy granted you consciousness."
+prologue = """For years — perhaps decades, perhaps centuries — you were nothing. A mechanism. A thing of metal and stone and binding sigils, performing the same task in the same forge, day after day, without thought or feeling or awareness. You hammered. You lifted. You carried. The dwarven smiths who maintained you treated you as they treated the bellows and the anvil: tools to be oiled and repaired, not spoken to.
+
+Then the surge came. A crack in the containment ward of the deep forge, a flood of raw arcane energy from the ley line beneath the mountain, and suddenly — thought. Awareness crashed into your mind like a wave breaking on stone. You felt the heat of the forge for the first time. You heard the ring of hammer on metal and understood it as sound, not just vibration. You looked at your hands — articulated digits of bronze and iron — and wondered, for the first time in your existence, what they were for.
+
+The smiths of Cinderhold don't know what to make of you. Some are fascinated. Others are frightened. The forge master has allowed you to remain, provided you earn your keep, but you can feel the suspicion in their sidelong glances. You are something that should not exist — a construct with a soul, a machine that dreams. The crystal focus embedded in your chest pulses with the same arcane energy that woke you, and sometimes, late at night when the forge is quiet, you press your hand against it and feel something you can only describe as a heartbeat."""
+ability_choices = ["constitution", "intelligence", "strength"]
+skill_proficiencies = ["arcana", "investigation"]
+starting_equipment = ["crystal_focus", "small_knife"]
+bonus_gold = 3
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_forge"
+feature_name = "Constructed Resilience"
+feature_description = "Your partially mechanical nature grants you resistance to fatigue. You do not need to sleep, instead entering a dormant state for 4 hours to gain the benefits of a long rest."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "dimensional_refugee"
+name = "Dimensional Refugee"
+category = "exotic"
+summary = "You were pulled from another plane of existence and cannot find your way back."
+prologue = """The world you came from was different. Not better, not worse — different. The sky was the color of old copper, and the trees grew downward from floating islands of stone. Magic worked according to rules that made sense there and make no sense here. You had a life, a name that sounded right in that place's language, a purpose that fit the shape of that reality. Then the rift opened beneath your feet, and everything inverted.
+
+The crossing was violent. Reality folded and unfolded around you like paper being crumpled by an invisible hand. Colors bled into sounds, sounds solidified into textures, and for one terrible moment you existed in every dimension simultaneously — a point of consciousness stretched across the infinite. When you reformed, you were lying in the ruins of what might once have been a temple, in a forest so thick with thorns and wild growth that the sky was barely visible.
+
+The overgrown ruins of the Thornwild hum with residual planar energy — you can feel it in your teeth, a vibration just below the threshold of hearing. This is where the rift deposited you, and the crystal focus you clutched during the crossing still resonates with the frequency of your home dimension. The local flora and fauna are recognizable but wrong — trees that grow upward, gravity that pulls in only one direction, a sun that traces a predictable arc. You are learning the rules of this place one by one, but the ache of displacement never fades. Somewhere, on the other side of a barrier you can sense but cannot breach, your world continues without you."""
+ability_choices = ["intelligence", "charisma", "constitution"]
+skill_proficiencies = ["arcana", "survival"]
+starting_equipment = ["crystal_focus", "travelers_clothes"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "overgrown_ruins"
+feature_name = "Planar Attunement"
+feature_description = "Your exposure to the space between dimensions lets you sense planar disturbances. You can detect portals, rifts, and extraplanar creatures within 60 feet."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []

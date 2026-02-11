@@ -295,10 +295,17 @@ class InventorySystem(GameSystem):
                 target_type="inventory", target_id=char["id"],
                 field="items_remove_one", old_value=None, new_value=item_id,
             ))
+            actual_healed = new_hp - old_hp
             events.append({
                 "event_type": "ITEM_USE",
-                "description": f"Used {item_id}. Healed {new_hp - old_hp} HP.",
+                "description": f"Used {item_id}. Healed {actual_healed} HP.",
                 "actor_id": char["id"],
+            })
+            events.append({
+                "event_type": "HEAL",
+                "description": f"Healed {actual_healed} HP from {item_id}.",
+                "actor_id": char["id"],
+                "mechanical_details": {"amount": actual_healed, "source": item_id},
             })
 
         # Apply survival need effects

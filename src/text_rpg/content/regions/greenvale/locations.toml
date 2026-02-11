@@ -1,0 +1,481 @@
+# Greenvale — prosperous farming valley, L4-8
+
+[[locations]]
+id = "millhaven_square"
+name = "Millhaven Town Square"
+region_id = "greenvale"
+description = "The bustling heart of Millhaven, where cobblestone streets converge around a central fountain topped with a bronze sheaf of wheat. Market stalls line the square, and the sounds of haggling, laughter, and rolling cart wheels fill the air."
+location_type = "town"
+
+[[locations.connections]]
+target_location_id = "millhaven_inn"
+direction = "north"
+description = "A painted sign of a golden grain stalk marks the inn entrance."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "millhaven_bridge"
+direction = "east"
+description = "The wide stone bridge spans the Greenflow River."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "millhaven_temple"
+direction = "west"
+description = "A white stone temple with a green copper roof stands at the square's west end."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "millhaven_smithy"
+direction = "south"
+description = "The smithy's forge glow is visible down the lane."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "millhaven_warehouse"
+direction = "southwest"
+description = "A large timber warehouse with the Cooperative's wheat-sheaf emblem."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "greenflow_south_road"
+direction = "south"
+description = "The south road leads toward open farmland and the Verdant Reach beyond."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "greenflow_west_road"
+direction = "northwest"
+description = "A well-maintained road heads west into rolling hills."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "greenflow_east_road"
+direction = "northeast"
+description = "The eastern trade road leads toward Kingsward."
+is_locked = false
+
+[[locations]]
+id = "millhaven_inn"
+name = "The Golden Grain Inn"
+region_id = "greenvale"
+description = "A large, well-appointed inn with polished oak floors and a roaring hearth. The smell of fresh bread and roasted meat draws travelers from miles around. Rooms upstairs overlook the town square."
+location_type = "tavern"
+
+[[locations.connections]]
+target_location_id = "millhaven_square"
+direction = "south"
+description = "Steps lead down to the town square."
+is_locked = false
+
+[[locations]]
+id = "millhaven_bridge"
+name = "Millhaven Bridge"
+region_id = "greenvale"
+description = "A broad stone bridge arching over the Greenflow River. Fishermen lean against the railings, and merchants pay a small toll to cross with their carts. The river below is wide and slow-moving."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "millhaven_square"
+direction = "west"
+description = "The bridge leads back into the town square."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "greenflow_docks"
+direction = "south"
+description = "Stone steps descend to the riverside docks."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "orchard_hill"
+direction = "east"
+description = "The road crosses the bridge and climbs toward orchards on the eastern bank."
+is_locked = false
+
+[[locations]]
+id = "millhaven_temple"
+name = "Temple of the Harvest"
+region_id = "greenvale"
+description = "A serene temple dedicated to the goddess of the harvest. Wreaths of dried flowers adorn the pillars, and the altar is laden with offerings of grain, fruit, and honey. A healing garden grows in the courtyard."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "millhaven_square"
+direction = "east"
+description = "The temple doors open onto the town square."
+is_locked = false
+
+[[locations]]
+id = "millhaven_warehouse"
+name = "Cooperative Warehouse"
+region_id = "greenvale"
+description = "A massive timber warehouse where the Farmers' Cooperative stores grain, produce, and trade goods. Workers haul sacks and crates while clerks tally ledgers. The smell of stored grain is overwhelming."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "millhaven_square"
+direction = "northeast"
+description = "A short walk leads back to the town square."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "greenflow_docks"
+direction = "east"
+description = "A loading ramp leads down to the river docks."
+is_locked = false
+
+[[locations]]
+id = "millhaven_smithy"
+name = "Barnabas's Forge"
+region_id = "greenvale"
+description = "A well-equipped smithy where a broad-shouldered man hammers plowshares, horseshoes, and the occasional sword with equal skill. The forge burns hot, and the anvil rings from dawn to dusk."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "millhaven_square"
+direction = "north"
+description = "The lane leads back to the town square."
+is_locked = false
+
+[[locations]]
+id = "millhaven_apothecary"
+name = "Nettie's Apothecary"
+region_id = "greenvale"
+description = "A cramped shop overflowing with dried herbs, bottled tinctures, and strange roots hanging from the ceiling. The air is thick with the mingled scents of lavender, mint, and something sharper beneath."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "millhaven_square"
+direction = "south"
+description = "A narrow alley connects back to the square."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "millhaven_temple"
+direction = "west"
+description = "A garden path leads to the temple courtyard."
+is_locked = false
+
+[[locations]]
+id = "greenflow_docks"
+name = "Greenflow River Docks"
+region_id = "greenvale"
+description = "Wooden docks stretching along the riverbank where flat-bottomed barges load and unload goods. Fishermen mend nets, and the river carries the scent of mud and fresh water."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "millhaven_bridge"
+direction = "north"
+description = "Stone steps climb up to the bridge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "millhaven_warehouse"
+direction = "west"
+description = "A loading ramp leads up to the warehouse."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "riverside_camp"
+direction = "south"
+description = "A muddy path follows the riverbank downstream."
+is_locked = false
+
+[[locations]]
+id = "orchard_hill"
+name = "Orchard Hill"
+region_id = "greenvale"
+description = "Terraced hillside covered in apple, pear, and cherry orchards. Blossoms in spring, fruit in autumn, and always a stunning view of the valley below. Beehives line the edges."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "millhaven_bridge"
+direction = "west"
+description = "The road descends back toward the bridge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "honey_farm"
+direction = "east"
+description = "A path winds through the orchards to a farmstead."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "greenflow_east_road"
+direction = "north"
+description = "The east trade road passes along the hilltop."
+is_locked = false
+
+[[locations]]
+id = "wheat_fields"
+name = "Greenvale Wheat Fields"
+region_id = "greenvale"
+description = "Endless golden wheat fields stretching to the horizon, rippling like an ocean in the breeze. Scarecrows stand at intervals, and irrigation channels crisscross between the plots."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "greenflow_south_road"
+direction = "north"
+description = "The south road runs along the field's edge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "blighted_fields"
+direction = "west"
+description = "The wheat thins and darkens toward the western fields."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "greenflow_ford"
+direction = "south"
+description = "A cart track leads to a shallow river crossing."
+is_locked = false
+
+[[locations]]
+id = "old_battlefield"
+name = "The Old Battlefield"
+region_id = "greenvale"
+description = "A scarred stretch of earth where a great battle was fought generations ago. Rusted weapons still surface after heavy rains, and nothing grows right in the soil. Locals avoid this place after dark."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "blighted_fields"
+direction = "east"
+description = "The blight seems to spread from here toward the farmland."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "greenflow_west_road"
+direction = "north"
+description = "The west road skirts the battlefield's northern edge."
+is_locked = false
+
+[[locations]]
+id = "greenflow_falls"
+name = "Greenflow Falls"
+region_id = "greenvale"
+description = "A beautiful waterfall where the Greenflow River tumbles over a rocky ledge into a deep pool. Mist hangs in the air, and rainbows appear on sunny days. A popular spot for locals on warm afternoons."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "riverside_camp"
+direction = "north"
+description = "A path follows the river upstream."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hidden_grove"
+direction = "east"
+description = "A barely visible trail disappears into thick foliage."
+is_locked = false
+
+[[locations]]
+id = "bandit_hills"
+name = "Bandit Hills"
+region_id = "greenvale"
+description = "Scrubby hillside riddled with caves and hidden camps. Bandits use the terrain to ambush travelers on the west road. Smoke from their cook fires is sometimes visible at dawn."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "greenflow_west_road"
+direction = "east"
+description = "A scramble down the hillside reaches the west road."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "old_battlefield"
+direction = "south"
+description = "The hills descend toward the old battlefield."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hillcrest_watchtower"
+direction = "north"
+description = "A steep climb leads to a watchtower on the highest hill."
+is_locked = false
+
+[[locations]]
+id = "hillcrest_watchtower"
+name = "Hillcrest Watchtower"
+region_id = "greenvale"
+description = "A stone watchtower on the highest hill west of town, manned by the Millhaven Militia. From here, guards scan for bandit activity and signal the town with mirror flashes."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "bandit_hills"
+direction = "south"
+description = "The path descends into the scrubby hills."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "greenflow_west_road"
+direction = "east"
+description = "A maintained path leads down to the west road."
+is_locked = false
+
+[[locations]]
+id = "greenflow_east_road"
+name = "Eastern Trade Road"
+region_id = "greenvale"
+description = "A well-paved road heading east toward the great city of Kingsward. Merchant caravans travel in groups for safety, and milestones mark the distance."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "millhaven_square"
+direction = "southwest"
+description = "The road leads back into Millhaven."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "orchard_hill"
+direction = "south"
+description = "The road passes the orchards on the eastern bank."
+is_locked = false
+
+[locations.properties]
+border_region = "kingsward"
+border_direction = "east"
+
+[[locations]]
+id = "greenflow_west_road"
+name = "Western Hill Road"
+region_id = "greenvale"
+description = "A road winding through increasingly hilly terrain to the west. Bandit lookouts watch from the ridgeline, and militia patrols grow less frequent the further west you travel."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "millhaven_square"
+direction = "southeast"
+description = "The road descends back into Millhaven."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "bandit_hills"
+direction = "west"
+description = "The hills close in on either side of the road."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hillcrest_watchtower"
+direction = "northwest"
+description = "A militia path climbs to the hilltop watchtower."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "old_battlefield"
+direction = "south"
+description = "The road skirts past the old battlefield."
+is_locked = false
+
+[[locations]]
+id = "greenflow_south_road"
+name = "Southern Farm Road"
+region_id = "greenvale"
+description = "A dirt road running south through farmland toward the Verdant Reach. Farm carts trundle along it loaded with produce heading to market. The countryside is peaceful but increasingly wild."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "millhaven_square"
+direction = "north"
+description = "The road leads into Millhaven."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "wheat_fields"
+direction = "east"
+description = "Wheat fields stretch along the road's eastern side."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "greenflow_ford"
+direction = "south"
+description = "The road continues to a river ford at the valley's edge."
+is_locked = false
+
+[locations.properties]
+border_region = "verdant_reach"
+border_direction = "south"
+
+[[locations]]
+id = "blighted_fields"
+name = "Blighted Fields"
+region_id = "greenvale"
+description = "Once-fertile farmland now withered and grey. Crops rot in the ground, and a sickly sweet smell hangs in the air. The blight spreads a little further each season, and no one knows its cause."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "wheat_fields"
+direction = "east"
+description = "The healthy fields begin where the blight ends."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "old_battlefield"
+direction = "west"
+description = "The blight grows thicker toward the old battlefield."
+is_locked = false
+
+[[locations]]
+id = "riverside_camp"
+name = "Riverside Camp"
+region_id = "greenvale"
+description = "A flat stretch of riverbank where travelers make camp. Fire rings and trampled grass show frequent use. The river is shallow enough to wade here, and fish are plentiful."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "greenflow_docks"
+direction = "north"
+description = "A path follows the river upstream to the docks."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "greenflow_falls"
+direction = "south"
+description = "The sound of rushing water grows louder downstream."
+is_locked = false
+
+[[locations]]
+id = "honey_farm"
+name = "Blossom's Honey Farm"
+region_id = "greenvale"
+description = "A cheerful farmstead surrounded by rows of painted beehives. Lavender and wildflowers grow everywhere, and the air buzzes with bees. Jars of golden honey line the farmhouse shelves."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "orchard_hill"
+direction = "west"
+description = "The path winds back through the orchards."
+is_locked = false
+
+[[locations]]
+id = "hidden_grove"
+name = "Hidden Grove"
+region_id = "greenvale"
+description = "A secluded grove behind the waterfall, where ancient stones form a natural circle. Moss covers carved runes, and the air tingles with residual magic. Druids once gathered here."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "greenflow_falls"
+direction = "west"
+description = "The trail leads back to the waterfall."
+is_locked = false
+
+[[locations]]
+id = "greenflow_ford"
+name = "Greenflow Ford"
+region_id = "greenvale"
+description = "A shallow river crossing marked by flat stones placed generations ago. The water rarely rises above knee height here, making it the safest crossing south of the bridge."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "greenflow_south_road"
+direction = "north"
+description = "The farm road continues north toward Millhaven."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "wheat_fields"
+direction = "north"
+description = "A cart track leads through the wheat fields."
+is_locked = false

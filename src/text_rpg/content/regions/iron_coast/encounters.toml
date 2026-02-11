@@ -1,0 +1,251 @@
+[[encounters]]
+id = "sea_raiders"
+name = "Sea Raiders"
+location_ids = ["tide_caves", "coastal_road"]
+encounter_chance = 0.35
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "dagger", chance = 0.3},
+    {id = "rations", chance = 0.4},
+    {id = "healing_potion", chance = 0.15},
+]
+gold_min = 5
+gold_max = 20
+
+[[encounters.entities]]
+id = "pirate"
+name = "Pirate"
+entity_type = "enemy"
+description = "A scar-faced rogue in a salt-stained coat, armed with a cutlass and a cruel sneer. Gold earrings glint in the torchlight."
+level = 2
+hp_max = 13
+ac = 12
+count_min = 2
+count_max = 3
+xp_value = 50
+
+[encounters.entities.ability_scores]
+strength = 12
+dexterity = 14
+constitution = 12
+intelligence = 10
+wisdom = 10
+charisma = 10
+
+[[encounters.entities.attacks]]
+name = "Cutlass"
+damage_dice = "1d6"
+damage_bonus = 2
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Flintlock Pistol"
+damage_dice = "1d10"
+damage_bonus = 0
+damage_type = "piercing"
+
+[[encounters]]
+id = "giant_crab"
+name = "Giant Crab"
+location_ids = ["fishers_cove", "tide_caves"]
+encounter_chance = 0.3
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "rations", chance = 0.4},
+    {id = "healing_herb", chance = 0.3},
+]
+gold_min = 0
+gold_max = 5
+
+[[encounters.entities]]
+id = "giant_crab"
+name = "Giant Crab"
+entity_type = "enemy"
+description = "A massive crustacean the size of a barrel, its chitinous shell encrusted with barnacles. It clicks its heavy pincers menacingly as it scuttles sideways across the rocks."
+level = 1
+hp_max = 13
+ac = 15
+count_min = 1
+count_max = 2
+xp_value = 25
+
+[encounters.entities.ability_scores]
+strength = 13
+dexterity = 8
+constitution = 14
+intelligence = 1
+wisdom = 9
+charisma = 3
+
+[[encounters.entities.attacks]]
+name = "Claw"
+damage_dice = "1d6"
+damage_bonus = 1
+damage_type = "bludgeoning"
+
+# -- Puzzle encounter --
+
+[[encounters]]
+id = "smuggler_cache"
+name = "Smuggler's Cache"
+location_ids = ["tide_caves"]
+encounter_chance = 0.25
+fight_type = "puzzle"
+description = "A heavy iron chest is wedged into a crevice in the cave wall, secured with an intricate mechanical lock. Scratch marks on the stone suggest someone visits regularly to check on its contents."
+
+[encounters.puzzle]
+puzzle_type = "lock"
+dc = 14
+required_item = "thieves_tools"
+
+[encounters.loot]
+items = [
+    {id = "healing_potion", chance = 0.7},
+    {id = "dagger", chance = 0.4},
+    {id = "arcane_dust", chance = 0.2},
+]
+gold_min = 20
+gold_max = 50
+
+[[encounters]]
+id = "coastal_wolves"
+name = "Coastal Wolves"
+location_ids = ["coastal_road", "storm_point_lighthouse"]
+encounter_chance = 0.3
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "beast_hide", chance = 0.4},
+    {id = "healing_herb", chance = 0.3},
+]
+gold_min = 0
+gold_max = 3
+
+[[encounters.entities]]
+id = "coastal_wolf"
+name = "Coastal Wolf"
+entity_type = "enemy"
+description = "A lean, grey-furred wolf with pale eyes, adapted to the windswept cliffs. It hunts in packs along the road, picking off unwary travelers."
+level = 1
+hp_max = 11
+ac = 13
+count_min = 2
+count_max = 3
+xp_value = 25
+
+[encounters.entities.ability_scores]
+strength = 12
+dexterity = 15
+constitution = 12
+intelligence = 3
+wisdom = 12
+charisma = 6
+
+[[encounters.entities.attacks]]
+name = "Bite"
+damage_dice = "2d4"
+damage_bonus = 2
+damage_type = "piercing"
+
+[[encounters]]
+id = "smuggler_ambush"
+name = "Smuggler Ambush"
+location_ids = ["smuggler_den", "beach_camp"]
+encounter_chance = 0.35
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "dagger", chance = 0.3},
+    {id = "healing_potion", chance = 0.2},
+    {id = "rations", chance = 0.4},
+]
+gold_min = 10
+gold_max = 30
+
+[[encounters.entities]]
+id = "smuggler"
+name = "Smuggler"
+entity_type = "enemy"
+description = "A wiry figure in dark leathers with a scarf pulled over the nose, eyes darting nervously. They fight dirty and flee when cornered."
+level = 3
+hp_max = 16
+ac = 13
+count_min = 2
+count_max = 4
+xp_value = 50
+
+[encounters.entities.ability_scores]
+strength = 12
+dexterity = 15
+constitution = 12
+intelligence = 11
+wisdom = 10
+charisma = 10
+
+[[encounters.entities.attacks]]
+name = "Cutlass"
+damage_dice = "1d6"
+damage_bonus = 2
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Throwing Knife"
+damage_dice = "1d4"
+damage_bonus = 2
+damage_type = "piercing"
+
+# -- Boss encounter --
+
+[[encounters]]
+id = "tidal_horror"
+name = "Tidal Horror"
+location_ids = ["oyster_beds", "beach_camp"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "healing_potion", chance = 0.4},
+    {id = "arcane_dust", chance = 0.3},
+    {id = "beast_hide", chance = 0.6},
+]
+gold_min = 20
+gold_max = 50
+
+[[encounters.entities]]
+id = "tidal_horror"
+name = "Tidal Horror"
+entity_type = "enemy"
+description = "A monstrous aberration dredged from the deep — a mass of slimy tentacles and gnashing teeth that emerges from the surf with terrifying speed. Its barnacle-encrusted hide glistens with brine."
+level = 4
+hp_max = 42
+ac = 14
+count_min = 1
+count_max = 1
+xp_value = 200
+
+[encounters.entities.ability_scores]
+strength = 18
+dexterity = 8
+constitution = 16
+intelligence = 4
+wisdom = 10
+charisma = 3
+
+[[encounters.entities.attacks]]
+name = "Tentacle Slam"
+damage_dice = "2d8"
+damage_bonus = 4
+damage_type = "bludgeoning"
+
+[[encounters.entities.attacks]]
+name = "Crushing Grip"
+damage_dice = "1d10"
+damage_bonus = 4
+damage_type = "bludgeoning"

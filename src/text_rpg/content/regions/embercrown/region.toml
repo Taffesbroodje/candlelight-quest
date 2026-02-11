@@ -1,0 +1,6 @@
+id = "embercrown"
+name = "Embercrown"
+description = "A volcanic caldera city built atop the ruins of a Fire Giant kingdom. Dwarves, tieflings, and fire genasi harness volcanic energy to forge the finest steel and fire-enchanted weapons in the realm. Deep beneath, a Fire Giant king stirs in his ancient throne room, and cultists work to awaken him."
+level_range_min = 10
+level_range_max = 16
+climate = "volcanic"

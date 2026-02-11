@@ -1,0 +1,231 @@
+[[encounters]]
+id = "fire_beetles"
+name = "Fire Beetles"
+location_ids = ["deep_mines"]
+encounter_chance = 0.35
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "healing_herb", chance = 0.3},
+    {id = "iron_ingot", chance = 0.2},
+]
+gold_min = 0
+gold_max = 5
+
+[[encounters.entities]]
+id = "fire_beetle"
+name = "Fire Beetle"
+entity_type = "enemy"
+description = "A dog-sized beetle with a carapace that glows with inner heat. Twin glands above its eyes emit a reddish light, and its mandibles can sear flesh on contact."
+level = 1
+hp_max = 8
+ac = 13
+count_min = 2
+count_max = 4
+xp_value = 25
+
+[encounters.entities.ability_scores]
+strength = 8
+dexterity = 10
+constitution = 12
+intelligence = 1
+wisdom = 7
+charisma = 3
+
+[[encounters.entities.attacks]]
+name = "Burning Bite"
+damage_dice = "1d4"
+damage_bonus = 1
+damage_type = "fire"
+
+# -- Puzzle encounter --
+
+[[encounters]]
+id = "rock_slide_trap"
+name = "Rock Slide Trap"
+location_ids = ["deep_mines", "highland_road"]
+encounter_chance = 0.2
+fight_type = "puzzle"
+description = "The ground trembles and loose stones begin to cascade from the tunnel ceiling above. A keen eye might spot the trigger mechanism — a tripwire stretched across the path — before it is too late."
+
+[encounters.puzzle]
+puzzle_type = "trap"
+dc = 13
+trap_damage = "2d6"
+
+[encounters.loot]
+items = [
+    {id = "healing_herb", chance = 0.5},
+]
+gold_min = 0
+gold_max = 5
+
+[[encounters]]
+id = "highland_bandits"
+name = "Highland Bandits"
+location_ids = ["highland_road", "obsidian_plateau"]
+encounter_chance = 0.3
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "dagger", chance = 0.25},
+    {id = "rations", chance = 0.5},
+    {id = "healing_potion", chance = 0.15},
+]
+gold_min = 5
+gold_max = 15
+
+[[encounters.entities]]
+id = "highland_bandit"
+name = "Highland Bandit"
+entity_type = "enemy"
+description = "A wiry, soot-smeared outlaw wrapped in stolen mining gear, wielding a crude axe. Highland bandits prey on ore shipments and unwary travelers along the mountain roads."
+level = 2
+hp_max = 11
+ac = 12
+count_min = 2
+count_max = 3
+xp_value = 50
+
+[encounters.entities.ability_scores]
+strength = 12
+dexterity = 13
+constitution = 12
+intelligence = 10
+wisdom = 10
+charisma = 9
+
+[[encounters.entities.attacks]]
+name = "Handaxe"
+damage_dice = "1d6"
+damage_bonus = 1
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Sling"
+damage_dice = "1d4"
+damage_bonus = 1
+damage_type = "bludgeoning"
+
+[[encounters]]
+id = "magma_mephit"
+name = "Magma Mephit"
+location_ids = ["deep_mines", "sulfur_springs"]
+encounter_chance = 0.2
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.6},
+    {id = "healing_potion", chance = 0.3},
+    {id = "dragon_scale_fragment", chance = 0.1},
+]
+gold_min = 15
+gold_max = 40
+
+[[encounters.entities]]
+id = "magma_mephit"
+name = "Magma Mephit"
+entity_type = "enemy"
+description = "A small elemental creature of living molten rock, its body glowing cherry-red and dripping liquid fire. It cackles with a high-pitched, crackling voice as heat shimmers around it, melting stone where it stands."
+level = 3
+hp_max = 22
+ac = 11
+count_min = 1
+count_max = 1
+xp_value = 100
+
+[encounters.entities.ability_scores]
+strength = 8
+dexterity = 12
+constitution = 12
+intelligence = 7
+wisdom = 10
+charisma = 10
+
+[[encounters.entities.attacks]]
+name = "Claws"
+damage_dice = "1d4"
+damage_bonus = 2
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Fire Breath"
+damage_dice = "2d6"
+damage_bonus = 0
+damage_type = "fire"
+
+# -- Cave-In Puzzle Encounter --
+
+[[encounters]]
+id = "cave_in_escape"
+name = "Cave-In Escape"
+location_ids = ["old_mine_shaft", "lava_tubes"]
+encounter_chance = 0.3
+fight_type = "puzzle"
+description = "The tunnel shudders and rocks begin to fall. Dust fills the air as the ceiling cracks. You need to find the structurally sound path through before the whole section collapses."
+
+[encounters.puzzle]
+puzzle_type = "trap"
+dc = 14
+trap_damage = "3d6"
+
+[encounters.loot]
+items = [
+    {id = "iron_ingot", chance = 0.5},
+    {id = "healing_potion", chance = 0.4},
+]
+gold_min = 10
+gold_max = 25
+
+# -- Ash Wraith Boss Encounter --
+
+[[encounters]]
+id = "ash_wraith"
+name = "Ash Wraith"
+location_ids = ["ash_wastes", "obsidian_plateau"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.7},
+    {id = "soul_gem", chance = 0.2},
+    {id = "healing_potion", chance = 0.4},
+]
+gold_min = 20
+gold_max = 50
+
+[[encounters.entities]]
+id = "ash_wraith"
+name = "Ash Wraith"
+entity_type = "enemy"
+description = "A spectral figure of swirling volcanic ash and ember, its hollow eyes burning with pale fire. It drifts silently across the wastes, consuming the warmth of anything living it touches."
+level = 4
+hp_max = 40
+ac = 13
+count_min = 1
+count_max = 1
+xp_value = 200
+
+[encounters.entities.ability_scores]
+strength = 6
+dexterity = 16
+constitution = 14
+intelligence = 10
+wisdom = 12
+charisma = 14
+
+[[encounters.entities.attacks]]
+name = "Ashen Touch"
+damage_dice = "2d8"
+damage_bonus = 0
+damage_type = "necrotic"
+
+[[encounters.entities.attacks]]
+name = "Ash Cloud"
+damage_dice = "1d6"
+damage_bonus = 0
+damage_type = "necrotic"

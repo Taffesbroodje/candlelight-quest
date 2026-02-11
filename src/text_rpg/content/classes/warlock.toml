@@ -1,0 +1,43 @@
+id = "warlock"
+name = "Warlock"
+description = "A wielder of magic derived from a bargain with an extraplanar entity."
+hit_die = "1d8"
+primary_ability = "charisma"
+saving_throw_proficiencies = ["wisdom", "charisma"]
+armor_proficiencies = ["light"]
+weapon_proficiencies = ["simple"]
+starting_gold = 110
+skill_choices = 2
+available_skills = ["arcana", "deception", "history", "intimidation", "investigation", "nature", "religion"]
+spellcasting_ability = "charisma"
+cantrips_known = 2
+
+[starting_equipment]
+weapons = ["quarterstaff"]
+armor = ["leather_armor"]
+items = ["scholar_pack", "arcane_focus"]
+
+[[features]]
+level = 1
+name = "Pact Magic"
+description = "You can cast warlock spells using Pact Magic. You have 1 spell slot that is always cast at the highest level you can cast. Pact Magic slots recharge on a short or long rest, unlike other casters."
+
+[[features]]
+level = 1
+name = "Otherworldly Patron"
+description = "You have struck a bargain with an otherworldly being: The Fiend. When you reduce a hostile creature to 0 hit points, you gain temporary hit points equal to your Charisma modifier + your warlock level (minimum 1)."
+
+[[features]]
+level = 2
+name = "Eldritch Invocations"
+description = "You gain two eldritch invocations — fragments of forbidden knowledge. Choose from: Agonizing Blast (add CHA mod to eldritch blast damage), Devil's Sight (120 ft darkvision in magical darkness), Armor of Shadows (cast mage armor at will), Repelling Blast (push target 10 ft on eldritch blast hit)."
+
+[[features]]
+level = 3
+name = "Pact Boon"
+description = "Your otherworldly patron bestows a gift: Pact of the Blade. You can use your action to conjure a melee weapon in your empty hand. You are proficient with it and can use Charisma for its attack and damage rolls."
+
+[[features]]
+level = 4
+name = "Ability Score Improvement"
+description = "You can increase one ability score by 2, or two ability scores by 1 each."

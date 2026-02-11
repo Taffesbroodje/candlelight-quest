@@ -16,7 +16,8 @@ _CONVERSATION_EXIT = re.compile(
 # Action types that break out of conversation mode (non-dialogue actions).
 _CONVERSATION_BREAK_ACTIONS = frozenset({
     "move", "attack", "use_item", "equip", "unequip", "rest", "dodge", "dash", "hide",
-    "disengage", "talk", "cast_spell", "flee", "combat_item", "combat_spell",
+    "disengage", "talk", "cast_spell", "flee", "combat_item", "combat_spell", "class_ability",
+    "combine_spell", "invent_spell",
 })
 
 # Order matters — more specific patterns must come before greedy ones like "look" and "search".
@@ -33,6 +34,7 @@ PATTERNS: list[tuple[str, str, re.Pattern]] = [
     ("reputation", "meta", re.compile(r"^(?:reputation|rep|standing|standings|factions?)$", re.I)),
     ("bounty", "meta", re.compile(r"^(?:bounty|bounties|wanted)$", re.I)),
     ("stories", "meta", re.compile(r"^(?:stories|story|arcs?|campaigns?)$", re.I)),
+    ("traits", "meta", re.compile(r"^(?:traits?|perks?|passive(?:s|\\s+abilities)?)$", re.I)),
     ("map", "meta", re.compile(r"^(?:map|world\s*map)$", re.I)),
     ("rewind", "meta", re.compile(r"^(?:rewind|go\s+back|time\s*travel|undo)$", re.I)),
 
@@ -48,7 +50,16 @@ PATTERNS: list[tuple[str, str, re.Pattern]] = [
     ("buy", "buy", re.compile(r"^(?:buy|purchase)\s+(.+)$", re.I)),
     ("sell", "sell", re.compile(r"^(?:sell)\s+(.+)$", re.I)),
     ("browse", "browse", re.compile(r"^(?:browse|shop|store|wares|merchandise)$", re.I)),
-    ("craft", "craft", re.compile(r"^(?:craft|brew|forge|cook|make|create)\s+(.+)$", re.I)),
+    ("craft", "craft", re.compile(r"^(?:craft|brew|forge|cook|make)\s+(.+)$", re.I)),
+    ("combine_spell", "combine_spell", re.compile(r"^(?:combine|merge|fuse|blend)\s+(.+?)\s+(?:and|with|\+)\s+(.+?)$", re.I)),
+    ("invent_spell", "invent_spell", re.compile(r"^(?:invent|create|design|research)\s+(?:a\s+)?(?:spell|magic)\s+(?:that\s+|to\s+|of\s+)?(.+)$", re.I)),
+    ("combinations", "meta", re.compile(r"^(?:combinations|combos?|discovered\s+spells?|custom\s+spells?|inventions?)$", re.I)),
+    ("guild_info", "meta", re.compile(r"^(?:guild|guilds?|profession|professions?)(?:\s+(?:info|status|rank))?$", re.I)),
+    ("job_board", "meta", re.compile(r"^(?:jobs?|work\s*orders?|contracts?|commissions?|job\s*board)$", re.I)),
+    ("join_guild", "join_guild", re.compile(r"^(?:join|enroll|register)\s+(?:the\s+)?(?:guild|order|circle)\s*(.*)$", re.I)),
+    ("accept_job", "accept_job", re.compile(r"^(?:accept|take)\s+(?:job|order|contract)\s*(.+)?$", re.I)),
+    ("submit_job", "submit_job", re.compile(r"^(?:submit|turn\s+in|deliver)\s+(?:job|order|contract)\s*(.+)?$", re.I)),
+    ("abandon_job", "abandon_job", re.compile(r"^(?:abandon|cancel|drop)\s+(?:job|order|contract)\s*(.+)?$", re.I)),
     ("cast_spell", "cast_spell", re.compile(r"^(?:cast)\s+(.+?)(?:\s+(?:on|at|against)\s+(.+))?$", re.I)),
     ("train", "train", re.compile(r"^(?:train|learn|study)\s+(.+)$", re.I)),
     ("spells", "meta", re.compile(r"^(?:spells?|spellbook|(?:(?:show|view|check)\s+(?:my\s+)?(?:spells?|spellbook)))$", re.I)),
@@ -70,12 +81,16 @@ PATTERNS: list[tuple[str, str, re.Pattern]] = [
     ("flee", "combat", re.compile(r"^(?:flee|escape|retreat)$", re.I)),
     ("disengage", "disengage", re.compile(r"^(?:disengage|withdraw)$", re.I)),
 
-    # Numbered combat choices (1-5)
+    # Numbered combat choices (1-6)
     ("attack", "combat", re.compile(r"^1$")),
     ("combat_spell", "combat", re.compile(r"^2$")),
     ("combat_item", "combat", re.compile(r"^3$")),
     ("flee", "combat", re.compile(r"^4$")),
     ("dodge", "combat", re.compile(r"^5$")),
+    ("class_ability", "combat", re.compile(r"^6$")),
+
+    # Class ability keywords
+    ("class_ability", "combat", re.compile(r"^(?:rage|flurry|flurry\s+of\s+blows|stunning\s+strike|lay\s+on\s+hands|wild\s+shape|inspire|bardic\s+inspiration)$", re.I)),
 
     # Greedy patterns last — these will match almost anything starting with "look" or "search"
     ("look", "look", re.compile(r"^(?:look|examine|inspect|observe)(?:\s+(?:at|around)\s*)?(.*)$", re.I)),
@@ -105,6 +120,14 @@ class InputHandler:
                 if action_name == "rest":
                     parameters["rest_type"] = (target or "short").lower()
                     target = None
+                elif action_name == "combine_spell":
+                    # target = element_a (group 1), element_b = group 2
+                    element_b = match.group(2).strip() if match.lastindex and match.lastindex >= 2 and match.group(2) else None
+                    parameters["element_a"] = target or ""
+                    parameters["element_b"] = element_b or ""
+                elif action_name == "invent_spell":
+                    # target = spell_concept (group 1)
+                    parameters["spell_concept"] = target or ""
                 elif action_name == "cast_spell":
                     # target = spell name (group 1), spell_target = group 2
                     spell_target = match.group(2).strip() if match.lastindex and match.lastindex >= 2 and match.group(2) else None

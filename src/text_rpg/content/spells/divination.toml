@@ -1,0 +1,217 @@
+# =============================================================================
+# Divination Spells — Knowledge, foresight, and revelation
+# =============================================================================
+
+# Cantrips
+
+[[spells]]
+id = "druidcraft"
+name = "Druidcraft"
+level = 0
+school = "divination"
+classes = ["druid"]
+casting_time = "action"
+range = 30
+duration = "instantaneous"
+components = ["V", "S"]
+description = "Whispering to the spirits of nature, you create one of several minor effects: predict weather, make a flower bloom, create a sensory effect, or snuff a candle."
+[spells.mechanics]
+type = "utility"
+
+[[spells]]
+id = "true_strike"
+name = "True Strike"
+level = 0
+school = "divination"
+classes = ["wizard", "bard", "sorcerer", "warlock"]
+casting_time = "action"
+range = 30
+duration = "1 round"
+concentration = true
+components = ["S"]
+description = "You extend your hand and point a finger at a target. Your magic grants you a brief insight into the target's defenses."
+[spells.mechanics]
+type = "buff"
+effect = "true_strike"
+
+# 1st Level
+
+[[spells]]
+id = "detect_magic"
+name = "Detect Magic"
+level = 1
+school = "divination"
+classes = ["wizard", "cleric", "bard", "druid", "paladin", "ranger", "sorcerer"]
+casting_time = "action"
+range = 0
+duration = "10 minutes"
+concentration = true
+components = ["V", "S"]
+description = "For the duration, you sense the presence of magic within 30 feet of you."
+[spells.mechanics]
+type = "utility"
+effect = "detect_magic"
+
+[[spells]]
+id = "hunters_mark"
+name = "Hunter's Mark"
+level = 1
+school = "divination"
+classes = ["ranger"]
+casting_time = "bonus_action"
+range = 90
+duration = "1 hour"
+concentration = true
+components = ["V"]
+description = "You choose a creature you can see. Until the spell ends, you deal an extra 1d6 damage each time you hit it with a weapon attack."
+[spells.mechanics]
+type = "buff"
+effect = "hunters_mark"
+damage_dice = "1d6"
+
+[[spells]]
+id = "speak_with_animals"
+name = "Speak with Animals"
+level = 1
+school = "divination"
+classes = ["bard", "druid", "ranger"]
+casting_time = "action"
+range = 0
+duration = "10 minutes"
+components = ["V", "S"]
+description = "You gain the ability to comprehend and verbally communicate with beasts for the duration."
+[spells.mechanics]
+type = "utility"
+
+# 2nd Level
+
+[[spells]]
+id = "augury"
+name = "Augury"
+level = 2
+school = "divination"
+classes = ["cleric"]
+casting_time = "action"
+range = 0
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You receive an omen about the results of a specific course of action within the next 30 minutes."
+[spells.mechanics]
+type = "utility"
+effect = "divination"
+
+[[spells]]
+id = "see_invisibility"
+name = "See Invisibility"
+level = 2
+school = "divination"
+classes = ["wizard", "bard", "sorcerer"]
+casting_time = "action"
+range = 0
+duration = "1 hour"
+components = ["V", "S"]
+description = "For the duration, you see invisible creatures and objects as if they were visible."
+[spells.mechanics]
+type = "buff"
+effect = "see_invisible"
+
+# 3rd Level
+
+[[spells]]
+id = "clairvoyance"
+name = "Clairvoyance"
+level = 3
+school = "divination"
+classes = ["wizard", "cleric", "bard", "sorcerer"]
+casting_time = "action"
+range = 0
+duration = "10 minutes"
+concentration = true
+components = ["V", "S"]
+description = "You create an invisible sensor within range in a location familiar to you. You can see or hear through the sensor."
+[spells.mechanics]
+type = "utility"
+effect = "scrying"
+
+# 4th Level
+
+[[spells]]
+id = "divination"
+name = "Divination"
+level = 4
+school = "divination"
+classes = ["cleric"]
+casting_time = "action"
+range = 0
+duration = "instantaneous"
+components = ["V", "S"]
+description = "Your magic and an offering put you in contact with a god or servant. You ask a single question and receive a truthful reply."
+[spells.mechanics]
+type = "utility"
+effect = "divination"
+
+[[spells]]
+id = "guardian_of_nature"
+name = "Guardian of Nature"
+level = 4
+school = "divination"
+classes = ["druid", "ranger"]
+casting_time = "bonus_action"
+range = 0
+duration = "1 minute"
+concentration = true
+components = ["V"]
+description = "A nature spirit answers your call. Choose Primal Beast (speed+10, advantage on STR attacks, 1d6 force damage) or Great Tree (+10 temp HP, advantage on CON saves, advantage on DEX/WIS attacks)."
+[spells.mechanics]
+type = "buff"
+effect = "guardian_of_nature"
+
+# 5th Level
+
+[[spells]]
+id = "commune_with_nature"
+name = "Commune with Nature"
+level = 5
+school = "divination"
+classes = ["druid", "ranger"]
+casting_time = "action"
+range = 0
+duration = "instantaneous"
+components = ["V", "S"]
+description = "You briefly become one with nature and gain knowledge of the surrounding territory within 3 miles."
+[spells.mechanics]
+type = "utility"
+effect = "divination"
+
+[[spells]]
+id = "scrying"
+name = "Scrying"
+level = 5
+school = "divination"
+classes = ["wizard", "cleric", "bard", "druid", "warlock"]
+casting_time = "action"
+range = 0
+duration = "10 minutes"
+concentration = true
+components = ["V", "S"]
+description = "You can see and hear a particular creature you choose that is on the same plane of existence as you."
+[spells.mechanics]
+type = "utility"
+effect = "scrying"
+
+# 6th Level
+
+[[spells]]
+id = "true_seeing"
+name = "True Seeing"
+level = 6
+school = "divination"
+classes = ["wizard", "cleric", "bard", "sorcerer", "warlock"]
+casting_time = "action"
+range = 0
+duration = "1 hour"
+components = ["V", "S"]
+description = "You touch a willing creature and give it the ability to see things as they actually are. Truesight out to 120 feet."
+[spells.mechanics]
+type = "buff"
+effect = "truesight"

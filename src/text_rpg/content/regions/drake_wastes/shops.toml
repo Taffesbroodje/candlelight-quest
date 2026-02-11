@@ -1,0 +1,103 @@
+# Drake Wastes shops — dragon territory trade
+
+[[shops]]
+id = "dragonborn_trade"
+owner_entity_id = "dragonborn_chief_skarrath"
+location_id = "scale_market"
+shop_type = "general"
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 8
+base_price = 50
+base_stock = 8
+
+[[shops.stock]]
+item_id = "rations"
+quantity = 15
+base_price = 1
+base_stock = 15
+
+[[shops.stock]]
+item_id = "beast_hide"
+quantity = 10
+base_price = 5
+base_stock = 10
+
+[[shops.stock]]
+item_id = "dragon_scale_fragment"
+quantity = 3
+base_price = 100
+base_stock = 3
+
+[[shops.stock]]
+item_id = "antidote"
+quantity = 5
+base_price = 15
+base_stock = 5
+
+[[shops]]
+id = "dragon_smithing"
+owner_entity_id = "legendary_dragon_smith"
+location_id = "scale_market"
+shop_type = "smithy"
+
+[[shops.stock]]
+item_id = "longsword"
+quantity = 3
+base_price = 15
+base_stock = 3
+
+[[shops.stock]]
+item_id = "greataxe"
+quantity = 2
+base_price = 30
+base_stock = 2
+
+[[shops.stock]]
+item_id = "chain_mail"
+quantity = 2
+base_price = 75
+base_stock = 2
+
+[[shops.stock]]
+item_id = "iron_ingot"
+quantity = 20
+base_price = 5
+base_stock = 20
+
+[[shops.stock]]
+item_id = "shield"
+quantity = 3
+base_price = 10
+base_stock = 3
+
+[[shops]]
+id = "oracle_knowledge"
+owner_entity_id = "arcane_researcher_dw"
+location_id = "draconic_library"
+shop_type = "general"
+
+[[shops.stock]]
+item_id = "arcane_dust"
+quantity = 20
+base_price = 10
+base_stock = 20
+
+[[shops.stock]]
+item_id = "soul_gem"
+quantity = 5
+base_price = 50
+base_stock = 5
+
+[[shops.stock]]
+item_id = "moonpetal"
+quantity = 10
+base_price = 8
+base_stock = 10
+
+[[shops.stock]]
+item_id = "spellbook"
+quantity = 2
+base_price = 50
+base_stock = 2

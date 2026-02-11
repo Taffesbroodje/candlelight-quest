@@ -1,0 +1,411 @@
+[[locations]]
+id = "briarhaven_village"
+name = "Briarhaven Village"
+region_id = "thornwild"
+description = "A hidden village of rangers and druids nestled among ancient trees. Homes are built into the trunks of massive oaks, connected by rope bridges and winding wooden staircases. The air smells of pine resin and wildflowers."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "briarhaven_grove"
+direction = "north"
+description = "A mossy path winds uphill through towering oaks toward the sacred grove."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "rangers_lodge"
+direction = "east"
+description = "A well-worn trail leads through the trees to the Ranger's Lodge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "thornwild_trails"
+direction = "south"
+description = "Thorny undergrowth closes in as the trail descends into the dense forest."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "thornwild_edge_road"
+direction = "south"
+description = "A worn cart track leads south to where the forest meets open farmland."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "woodcutter_camp"
+direction = "southwest"
+description = "The sound of chopping axes drifts from a logging camp to the southwest."
+is_locked = false
+
+[[locations]]
+id = "briarhaven_grove"
+name = "Briarhaven Grove"
+region_id = "thornwild"
+description = "A sacred grove where druids commune with nature spirits. Ancient standing stones encircle a pool of still, silver water that reflects the sky even through the thick canopy. Soft chanting can sometimes be heard on the wind."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "briarhaven_village"
+direction = "south"
+description = "The path descends back toward the treehouses of Briarhaven."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "fey_crossing"
+direction = "east"
+description = "A faint trail marked by glowing mushrooms leads deeper into the forest."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "moonwell"
+direction = "east"
+description = "A hidden path through ancient trees leads to a sacred pool deep in the forest."
+is_locked = false
+
+[[locations]]
+id = "rangers_lodge"
+name = "Ranger's Lodge"
+region_id = "thornwild"
+description = "A sturdy timber lodge serving as the base for the forest rangers. Trophy antlers and pelts adorn the walls, and a large map of the Thornwild is pinned above the central hearth. The smell of cured leather and wood smoke fills the room."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "briarhaven_village"
+direction = "west"
+description = "The trail heads west through the trees back to Briarhaven."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "thornwild_trails"
+direction = "south"
+description = "A steep path drops down to the main forest trails."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hollow_tree"
+direction = "north"
+description = "A narrow game trail leads to an enormous ancient oak visible above the canopy."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "east_thornwild_path"
+direction = "east"
+description = "A winding trail pushes east through thinning forest toward open country."
+is_locked = false
+
+[[locations]]
+id = "thornwild_trails"
+name = "Thornwild Trails"
+region_id = "thornwild"
+description = "Winding paths through dense, thorny undergrowth that tears at clothing and flesh alike. Birdsong mixes with the rustle of unseen creatures in the brush. Faded trail markers carved into tree trunks are the only guide through the tangled maze."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "briarhaven_village"
+direction = "north"
+description = "The trail climbs upward through thinning brush toward Briarhaven."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "rangers_lodge"
+direction = "northeast"
+description = "A steep path leads up to the Ranger's Lodge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "beast_den"
+direction = "east"
+description = "Animal tracks converge on a path leading toward a rocky hillside."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "overgrown_ruins"
+direction = "south"
+description = "The trail grows fainter as crumbling stone walls appear through the foliage."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "thornwild_edge_road"
+direction = "southwest"
+description = "The path widens as it approaches the forest's southern border."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mushroom_hollow"
+direction = "east"
+description = "A faint blue-green glow beckons from a damp depression among the trees."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "thornwild_stream"
+direction = "southeast"
+description = "The sound of running water draws you toward a forest stream."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "east_thornwild_path"
+direction = "east"
+description = "A trail heads east through gradually thinning trees."
+is_locked = false
+
+[[locations]]
+id = "fey_crossing"
+name = "Fey Crossing"
+region_id = "thornwild"
+description = "A shimmering clearing where the boundary between worlds grows thin. The colors here seem more vivid, the air sweeter, and time itself feels uncertain. Tiny motes of golden light drift lazily through the air like luminous dandelion seeds."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "briarhaven_grove"
+direction = "west"
+description = "The glowing mushroom trail leads back toward the sacred grove."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mushroom_hollow"
+direction = "south"
+description = "The eerie glow of bioluminescent fungi pulses from a hollow below."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hollow_tree"
+direction = "east"
+description = "A faint trail leads to an enormous hollow oak used by the rangers."
+is_locked = false
+
+[[locations]]
+id = "beast_den"
+name = "Beast Den"
+region_id = "thornwild"
+description = "A network of animal dens carved into a mossy hillside. Bones and scraps of fur litter the entrance, and a low growling echoes from within the dark tunnels. The stench of musk and old blood hangs heavy in the air."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "thornwild_trails"
+direction = "west"
+description = "The animal tracks lead back to the main forest trails."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "thornwild_stream"
+direction = "west"
+description = "Animal tracks lead down to a forest stream at a shallow crossing."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "spider_nest"
+direction = "south"
+description = "Thick webs cling to dead trees at the entrance to dark tunnels below."
+is_locked = false
+
+[[locations]]
+id = "overgrown_ruins"
+name = "Overgrown Ruins"
+region_id = "thornwild"
+description = "Ancient stone structures reclaimed by the forest over centuries. Massive roots split cracked walls, and vines hang like curtains from what were once grand archways. Carved symbols of a forgotten civilization are barely visible beneath the moss."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "thornwild_trails"
+direction = "north"
+description = "The trail leads back through the undergrowth to the main paths."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "spider_nest"
+direction = "west"
+description = "Web-choked tunnels gape beneath a cluster of dead trees to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "bramble_gate"
+direction = "west"
+description = "A natural archway of twisted thorns marks the boundary to the deep forest."
+is_locked = false
+
+# -- New Thornwild Expansion Locations --
+
+[[locations]]
+id = "thornwild_edge_road"
+name = "Thornwild Edge Road"
+region_id = "thornwild"
+description = "A narrow dirt track running along the forest's southern border, where golden farmland meets dark tangled woodland. Wagon ruts suggest traders pass this way cautiously."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "briarhaven_village"
+direction = "north"
+description = "The cart track leads north into the shade of the forest toward Briarhaven."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "thornwild_trails"
+direction = "northeast"
+description = "A rough trail veers northeast into the dense thorny undergrowth."
+is_locked = false
+
+[[locations]]
+id = "mushroom_hollow"
+name = "Mushroom Hollow"
+region_id = "thornwild"
+description = "A damp depression thick with bioluminescent fungi casting eerie blue-green light. The air is heavy with spores and the ground squelches underfoot. Rare alchemical mushrooms grow here."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "thornwild_trails"
+direction = "west"
+description = "The glow fades as the path climbs back to the main forest trails."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "fey_crossing"
+direction = "north"
+description = "The fungal glow gives way to golden motes of light near the Fey Crossing."
+is_locked = false
+
+[[locations]]
+id = "woodcutter_camp"
+name = "Woodcutter's Camp"
+region_id = "thornwild"
+description = "A logging camp at the forest's western edge, where massive felled trees are stripped and loaded onto ox-carts. The ring of axes never stops during daylight hours."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "thornwild_edge_road"
+direction = "east"
+description = "A rutted wagon path leads east along the forest's southern border."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "briarhaven_village"
+direction = "northeast"
+description = "A trail winds northeast through the trees toward the hidden village."
+is_locked = false
+
+[[locations]]
+id = "moonwell"
+name = "Moonwell"
+region_id = "thornwild"
+description = "A hidden sacred pool deep in the forest, its surface perfectly still and reflecting the sky even through the canopy. Druids gather here for ceremonies under the full moon."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "briarhaven_grove"
+direction = "west"
+description = "The path leads west through ancient trees back to the sacred grove."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mushroom_hollow"
+direction = "south"
+description = "The trail descends into a damp hollow glowing with strange fungi."
+is_locked = false
+
+[[locations]]
+id = "thornwild_stream"
+name = "Thornwild Stream"
+region_id = "thornwild"
+description = "A clear forest stream winding between mossy banks. Animal tracks crisscross at the shallow crossings — deer, wolves, and something much larger with clawed feet."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "thornwild_trails"
+direction = "north"
+description = "The trail follows the stream bank north to the main forest paths."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "beast_den"
+direction = "east"
+description = "Heavy paw prints in the mud lead east toward a rocky hillside."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "bramble_gate"
+direction = "south"
+description = "The stream narrows as twisted thorns close in around a natural archway."
+is_locked = false
+
+[[locations]]
+id = "spider_nest"
+name = "Spider Nest"
+region_id = "thornwild"
+description = "Web-choked tunnels beneath a cluster of dead trees. Cocoons hang from sticky threads, and the clicking of many legs echoes from the darkness. The air reeks of venom."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "overgrown_ruins"
+direction = "east"
+description = "The webs thin out as crumbling stone walls appear through the trees."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "beast_den"
+direction = "north"
+description = "The tunnels open onto a hillside scarred with animal dens."
+is_locked = false
+
+[[locations]]
+id = "hollow_tree"
+name = "Hollow Tree"
+region_id = "thornwild"
+description = "An enormous ancient oak, so old its trunk has hollowed out into a room-sized cavity. Rangers use it as a message drop, leaving coded marks on the inner bark."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "rangers_lodge"
+direction = "south"
+description = "The game trail leads south back to the Ranger's Lodge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "fey_crossing"
+direction = "west"
+description = "Golden motes of light drift through the trees to the west."
+is_locked = false
+
+[[locations]]
+id = "east_thornwild_path"
+name = "East Thornwild Path"
+region_id = "thornwild"
+description = "A winding trail pushing east through thinning forest toward open country. The trees grow smaller and the air drier — a different land lies ahead."
+location_type = "road"
+
+[locations.properties]
+border_region = "mistwood"
+border_direction = "east"
+
+[[locations.connections]]
+target_location_id = "thornwild_trails"
+direction = "west"
+description = "The trail heads west back into the dense Thornwild forest."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "rangers_lodge"
+direction = "northwest"
+description = "A path leads northwest up to the Ranger's Lodge."
+is_locked = false
+
+[[locations]]
+id = "bramble_gate"
+name = "Bramble Gate"
+region_id = "thornwild"
+description = "A natural archway of twisted thorns marks the boundary between the safe outer forest and the dangerous inner depths. Beyond, the trees grow closer and the shadows deeper."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "thornwild_stream"
+direction = "north"
+description = "The stream flows north from beneath the tangle of thorns."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "overgrown_ruins"
+direction = "east"
+description = "Crumbling stone walls and vine-draped archways lie to the east."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "spider_nest"
+direction = "south"
+description = "Thick webs stretch between dead trees to the south, leading underground."
+is_locked = false

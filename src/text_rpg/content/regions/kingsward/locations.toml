@@ -1,0 +1,599 @@
+# Kingsward — the great walled city, L7-12
+
+[[locations]]
+id = "kingsward_gate"
+name = "Kingsward City Gate"
+region_id = "kingsward"
+description = "Massive iron-banded gates set into walls forty feet high. Guards in polished armor check travelers while a line of merchants, pilgrims, and adventurers waits to enter. The city's towers rise beyond."
+location_type = "town"
+
+[[locations.connections]]
+target_location_id = "kingsward_square"
+direction = "north"
+description = "The main boulevard leads into the city's central square."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "royal_road_west"
+direction = "west"
+description = "The western road leads out toward Greenvale and Cragmoor."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "royal_road_south"
+direction = "south"
+description = "The southern road heads toward The Hollow."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "royal_road_east"
+direction = "east"
+description = "The eastern road leads toward Deadmarsh."
+is_locked = false
+
+[[locations]]
+id = "kingsward_square"
+name = "King's Square"
+region_id = "kingsward"
+description = "The great central square of Kingsward, dominated by a towering statue of the city's founder. Crowds stream between the surrounding districts — merchants, soldiers, scholars, and pickpockets alike."
+location_type = "town"
+
+[[locations.connections]]
+target_location_id = "kingsward_gate"
+direction = "south"
+description = "The main boulevard leads back to the city gates."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "market_quarter"
+direction = "east"
+description = "The sounds and smells of the market draw you eastward."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "guild_district"
+direction = "west"
+description = "Grand guild halls line the western avenue."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "castle_approach"
+direction = "north"
+description = "A wide processional road climbs toward the Royal Castle."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "temple_district"
+direction = "northeast"
+description = "White spires mark the temple district."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "the_old_quarter"
+direction = "southeast"
+description = "Narrow lanes wind into the oldest part of the city."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "slums_district"
+direction = "southwest"
+description = "The streets grow narrower and dirtier to the southwest."
+is_locked = false
+
+[[locations]]
+id = "castle_approach"
+name = "Castle Approach"
+region_id = "kingsward"
+description = "A wide, cobbled road lined with banners climbing steeply toward the Royal Castle. Guards stand at attention every twenty paces, and the castle's battlements loom overhead."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "kingsward_square"
+direction = "south"
+description = "The road descends back to King's Square."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "royal_castle"
+direction = "north"
+description = "The castle gates stand ahead, flanked by towers."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "noble_quarter"
+direction = "east"
+description = "A gated lane leads to the noble estates."
+is_locked = false
+
+[[locations]]
+id = "royal_castle"
+name = "Royal Castle"
+region_id = "kingsward"
+description = "The seat of the Crown, a massive fortress of grey stone with soaring towers and flying buttresses. The great hall echoes with the business of governance, and the throne room lies beyond guarded doors."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "castle_approach"
+direction = "south"
+description = "The castle gates open to the approach road."
+is_locked = false
+
+[[locations]]
+id = "market_quarter"
+name = "Market Quarter"
+region_id = "kingsward"
+description = "A sprawling district of shops, stalls, and warehouses where anything can be bought for the right price. The noise is deafening — hawkers shout, carts rattle, and coins clink endlessly."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "kingsward_square"
+direction = "west"
+description = "The main square lies to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "the_bazaar"
+direction = "east"
+description = "The Grand Bazaar occupies the quarter's heart."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "docks_district"
+direction = "south"
+description = "Lanes descend toward the river docks."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "merchant_guild_hq"
+direction = "north"
+description = "The Merchants' Guild headquarters dominates the northern end."
+is_locked = false
+
+[[locations]]
+id = "guild_district"
+name = "Guild District"
+region_id = "kingsward"
+description = "A prestigious avenue of grand guild halls, each trying to outdo the others in architectural splendor. Banners bearing guild emblems hang from every building."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "kingsward_square"
+direction = "east"
+description = "The avenue leads back to King's Square."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "adventurers_guild"
+direction = "north"
+description = "A building with crossed swords above the door."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mages_tower"
+direction = "west"
+description = "A tall, spiraling tower of blue-white stone."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "university_quarter"
+direction = "northwest"
+description = "The university campus sprawls beyond the guilds."
+is_locked = false
+
+[[locations]]
+id = "adventurers_guild"
+name = "Adventurers' Guild Hall"
+region_id = "kingsward"
+description = "A large, battle-scarred building where adventurers register, form parties, take contracts, and celebrate victories. A massive job board covers one wall, and trophies from legendary hunts decorate the rafters."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "guild_district"
+direction = "south"
+description = "Steps lead back to the Guild District."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "training_grounds"
+direction = "north"
+description = "A back door opens to the training yards."
+is_locked = false
+
+[[locations]]
+id = "mages_tower"
+name = "Mages' Collective Tower"
+region_id = "kingsward"
+description = "A spiraling tower of enchanted stone that seems to shift colors in the light. The headquarters of the Mages' Collective hums with arcane energy, and floating lights drift in the stairwells."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "guild_district"
+direction = "east"
+description = "The tower entrance opens onto the guild avenue."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ink_and_scroll"
+direction = "south"
+description = "A scholarly supply shop sits at the tower's base."
+is_locked = false
+
+[[locations]]
+id = "temple_district"
+name = "Temple District"
+region_id = "kingsward"
+description = "A quiet district of white stone temples, shrines, and holy gardens. Incense drifts from open doors, and the sound of chanting mingles with birdsong. Multiple faiths are represented here."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "kingsward_square"
+direction = "southwest"
+description = "Lanes lead back to King's Square."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "grand_cathedral"
+direction = "north"
+description = "The Grand Cathedral dominates the district's center."
+is_locked = false
+
+[[locations]]
+id = "grand_cathedral"
+name = "The Grand Cathedral"
+region_id = "kingsward"
+description = "An awe-inspiring cathedral of soaring arches, stained glass, and a vaulted ceiling painted with celestial scenes. The high altar gleams with gold, and the faithful kneel in long rows of pews."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "temple_district"
+direction = "south"
+description = "The cathedral doors open to the temple district."
+is_locked = false
+
+[[locations]]
+id = "noble_quarter"
+name = "Noble Quarter"
+region_id = "kingsward"
+description = "A district of grand townhouses, manicured gardens, and private carriages. Guards patrol the clean, wide streets, and servants hurry between estates. Entry requires either wealth or an invitation."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "castle_approach"
+direction = "west"
+description = "The lane connects to the castle approach."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "noble_estates"
+direction = "north"
+description = "The grandest estates lie deeper within the quarter."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "court_of_justice"
+direction = "east"
+description = "The High Court building stands at the district's edge."
+is_locked = false
+
+[[locations]]
+id = "slums_district"
+name = "The Slums"
+region_id = "kingsward"
+description = "The underbelly of Kingsward — cramped tenements, open sewers, and desperate faces. Crime thrives here, but so does community. The city watch rarely patrols these streets."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "kingsward_square"
+direction = "northeast"
+description = "The streets improve as you head toward the square."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "thieves_den"
+direction = "south"
+description = "A hidden passage behind a false wall."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "sewers"
+direction = "down"
+description = "A grate in the alley leads to the sewers below."
+is_locked = false
+
+[[locations]]
+id = "thieves_den"
+name = "The Thieves' Den"
+region_id = "kingsward"
+description = "A hidden underground tavern and black market accessed through secret passages in the Slums. Stolen goods change hands, contracts are taken, and information is the most valuable currency."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "slums_district"
+direction = "north"
+description = "The hidden passage leads back to the Slums."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "sewers"
+direction = "down"
+description = "A tunnel connects to the city sewers."
+is_locked = false
+
+[[locations]]
+id = "docks_district"
+name = "River Docks"
+region_id = "kingsward"
+description = "The city's river port, where barges and trade ships load and unload cargo. Warehouses line the waterfront, and the smell of fish and tar hangs over everything."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "market_quarter"
+direction = "north"
+description = "Lanes climb up to the Market Quarter."
+is_locked = false
+
+[[locations]]
+id = "university_quarter"
+name = "University Quarter"
+region_id = "kingsward"
+description = "A district of lecture halls, libraries, and student lodgings surrounding the Royal University. Scholars debate in courtyards, and the smell of old books permeates the air."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "guild_district"
+direction = "southeast"
+description = "The avenue leads back to the Guild District."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mages_tower"
+direction = "east"
+description = "The Mages' Tower rises nearby."
+is_locked = false
+
+[[locations]]
+id = "military_quarter"
+name = "Military Quarter"
+region_id = "kingsward"
+description = "The garrison district where the Royal Army is headquartered. Soldiers drill in formation, armories store weapons by the thousand, and officers plan campaigns in war rooms."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "kingsward_gate"
+direction = "south"
+description = "The quarter overlooks the main gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "training_grounds"
+direction = "east"
+description = "Open training fields stretch behind the barracks."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "prison_tower"
+direction = "north"
+description = "A grim tower stands at the quarter's edge."
+is_locked = false
+
+[[locations]]
+id = "kingsward_arena"
+name = "The Grand Arena"
+region_id = "kingsward"
+description = "A massive stone coliseum where gladiatorial combat, tournaments, and monster hunts draw cheering crowds. Sand covers the fighting floor, and bloodstains that no amount of cleaning can remove."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "training_grounds"
+direction = "west"
+description = "A tunnel connects to the training grounds."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "market_quarter"
+direction = "south"
+description = "The arena's public entrance faces the market."
+is_locked = false
+
+[[locations]]
+id = "prison_tower"
+name = "Iron Crown Prison"
+region_id = "kingsward"
+description = "A forbidding tower of black stone where criminals, political prisoners, and dangerous creatures are held. The walls are warded against magic, and escape is virtually unheard of."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "military_quarter"
+direction = "south"
+description = "The prison connects to the military quarter."
+is_locked = false
+
+[[locations]]
+id = "the_bazaar"
+name = "The Grand Bazaar"
+region_id = "kingsward"
+description = "An enormous covered marketplace where exotic goods from every corner of the realm are sold. Silk canopies shade hundreds of stalls, and the air is thick with spices, perfumes, and the sound of haggling."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "market_quarter"
+direction = "west"
+description = "The bazaar opens onto the Market Quarter."
+is_locked = false
+
+[[locations]]
+id = "royal_road_west"
+name = "Western Royal Road"
+region_id = "kingsward"
+description = "The broad, paved road heading west from Kingsward through rolling countryside. Milestone markers count the leagues, and inns appear at regular intervals."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "kingsward_gate"
+direction = "east"
+description = "The road leads back to the city gates."
+is_locked = false
+
+[locations.properties]
+border_region = "greenvale"
+border_direction = "west"
+
+[[locations]]
+id = "royal_road_north"
+name = "Northern Royal Road"
+region_id = "kingsward"
+description = "The north road climbing toward the mountains. The terrain grows hilly and the air cooler. Merchant caravans are frequent, bringing ore from Silverpeak and Cragmoor."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "kingsward_gate"
+direction = "south"
+description = "The road leads back to the city."
+is_locked = false
+
+[locations.properties]
+border_region = "silverpeak"
+border_direction = "north"
+
+[[locations]]
+id = "royal_road_south"
+name = "Southern Royal Road"
+region_id = "kingsward"
+description = "The south road descending into marshy lowlands. The road is well-maintained but the surrounding terrain grows progressively more swampy and unsettling."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "kingsward_gate"
+direction = "north"
+description = "The road climbs back toward Kingsward."
+is_locked = false
+
+[locations.properties]
+border_region = "the_hollow"
+border_direction = "south"
+
+[[locations]]
+id = "royal_road_east"
+name = "Eastern Royal Road"
+region_id = "kingsward"
+description = "The east road heading into increasingly desolate terrain. The vegetation thins and the sky takes on a hazy quality. Patrols from Ashwatch Fortress pass regularly."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "kingsward_gate"
+direction = "west"
+description = "The road leads back to the city."
+is_locked = false
+
+[locations.properties]
+border_region = "deadmarsh"
+border_direction = "east"
+
+[[locations]]
+id = "noble_estates"
+name = "Noble Estates"
+region_id = "kingsward"
+description = "The grandest houses in Kingsward — palatial mansions with private gardens, stables, and even small chapels. Each belongs to a powerful noble family with deep political connections."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "noble_quarter"
+direction = "south"
+description = "The lane leads back through the Noble Quarter."
+is_locked = false
+
+[[locations]]
+id = "training_grounds"
+name = "Training Grounds"
+region_id = "kingsward"
+description = "Open fields and covered arenas where soldiers, adventurers, and arena fighters train. Weapon racks line the perimeter, and practice dummies bear the scars of countless strikes."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "adventurers_guild"
+direction = "south"
+description = "A path leads back to the Adventurers' Guild."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "military_quarter"
+direction = "west"
+description = "The military quarter lies adjacent."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "kingsward_arena"
+direction = "east"
+description = "A tunnel connects to the arena."
+is_locked = false
+
+[[locations]]
+id = "the_old_quarter"
+name = "The Old Quarter"
+region_id = "kingsward"
+description = "The oldest part of the city, where crooked timber buildings lean against ancient stone walls. Antique shops, curiosity dealers, and fortune tellers cluster in narrow lanes."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "kingsward_square"
+direction = "northwest"
+description = "Winding lanes lead back to King's Square."
+is_locked = false
+
+[[locations]]
+id = "ink_and_scroll"
+name = "Ink and Scroll"
+region_id = "kingsward"
+description = "A scholarly shop dealing in magical scrolls, spell components, rare books, and enchanted inks. The shelves reach the ceiling and a perpetual smell of old parchment fills the air."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "mages_tower"
+direction = "north"
+description = "The shop sits at the base of the Mages' Tower."
+is_locked = false
+
+[[locations]]
+id = "court_of_justice"
+name = "Court of Justice"
+region_id = "kingsward"
+description = "A grand stone building where the High Court sits in judgment. Lawyers argue cases before stern judges, and the accused await verdict in holding cells below."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "noble_quarter"
+direction = "west"
+description = "The court faces the Noble Quarter."
+is_locked = false
+
+[[locations]]
+id = "merchant_guild_hq"
+name = "Merchants' Guild Headquarters"
+region_id = "kingsward"
+description = "An opulent building where the wealthiest merchants conduct business. The trading floor is a chaos of shouted bids and frantically waving hands. Fortunes are made and lost here daily."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "market_quarter"
+direction = "south"
+description = "The headquarters overlooks the Market Quarter."
+is_locked = false
+
+[[locations]]
+id = "sewers"
+name = "Kingsward Sewers"
+region_id = "kingsward"
+description = "A labyrinth of dank tunnels beneath the city, carrying waste to the river. Rats, worse things, and those who wish to move unseen make their home here. The smell is unforgettable."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "slums_district"
+direction = "up"
+description = "A grate opens up to the Slums."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "thieves_den"
+direction = "up"
+description = "A hidden passage connects to the Thieves' Den."
+is_locked = false

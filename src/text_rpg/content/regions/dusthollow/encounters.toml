@@ -1,0 +1,203 @@
+[[encounters]]
+id = "outlaw_gang"
+name = "Outlaw Gang"
+location_ids = ["outlaw_canyon", "badlands_edge"]
+encounter_chance = 0.4
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "dagger", chance = 0.25},
+    {id = "rations", chance = 0.5},
+    {id = "healing_potion", chance = 0.15},
+]
+gold_min = 15
+gold_max = 40
+
+[[encounters.entities]]
+id = "outlaw"
+name = "Outlaw"
+entity_type = "enemy"
+description = "A sun-burned desperado in a dusty duster, armed and dangerous. Outlaws prey on travelers and ranch hands, holing up in the badlands canyons between raids."
+level = 5
+hp_max = 26
+ac = 13
+count_min = 3
+count_max = 5
+xp_value = 75
+
+[encounters.entities.ability_scores]
+strength = 13
+dexterity = 15
+constitution = 12
+intelligence = 10
+wisdom = 10
+charisma = 10
+
+[[encounters.entities.attacks]]
+name = "Revolver"
+damage_dice = "1d10"
+damage_bonus = 2
+damage_type = "piercing"
+
+[[encounters.entities.attacks]]
+name = "Bowie Knife"
+damage_dice = "1d6"
+damage_bonus = 2
+damage_type = "slashing"
+
+[[encounters]]
+id = "prairie_wolves"
+name = "Prairie Wolves"
+location_ids = ["cattle_range", "stampede_flats", "bone_ridge"]
+encounter_chance = 0.3
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "beast_hide", chance = 0.5},
+    {id = "healing_herb", chance = 0.3},
+]
+gold_min = 0
+gold_max = 5
+
+[[encounters.entities]]
+id = "prairie_wolf"
+name = "Prairie Wolf"
+entity_type = "enemy"
+description = "A lean, tawny wolf adapted to the open plains. Prairie wolves hunt in coordinated packs, circling prey and striking from multiple directions."
+level = 3
+hp_max = 16
+ac = 13
+count_min = 3
+count_max = 6
+xp_value = 50
+
+[encounters.entities.ability_scores]
+strength = 14
+dexterity = 15
+constitution = 12
+intelligence = 3
+wisdom = 12
+charisma = 6
+
+[[encounters.entities.attacks]]
+name = "Bite"
+damage_dice = "2d4"
+damage_bonus = 3
+damage_type = "piercing"
+
+# -- Boss Encounter --
+
+[[encounters]]
+id = "dust_devil_elemental"
+name = "Dust Devil Elemental"
+location_ids = ["stampede_flats", "bone_ridge"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.7},
+    {id = "soul_gem", chance = 0.15},
+    {id = "healing_potion", chance = 0.4},
+]
+gold_min = 25
+gold_max = 60
+
+[[encounters.entities]]
+id = "dust_devil"
+name = "Dust Devil"
+entity_type = "enemy"
+description = "A towering vortex of sand, dust, and howling wind given malevolent purpose. It scours the plains, stripping flesh from bone and hurling debris with devastating force."
+level = 6
+hp_max = 52
+ac = 14
+count_min = 1
+count_max = 1
+xp_value = 300
+
+[encounters.entities.ability_scores]
+strength = 16
+dexterity = 16
+constitution = 14
+intelligence = 5
+wisdom = 10
+charisma = 6
+
+[[encounters.entities.attacks]]
+name = "Dust Slam"
+damage_dice = "2d8"
+damage_bonus = 3
+damage_type = "bludgeoning"
+
+[[encounters.entities.attacks]]
+name = "Sandblast"
+damage_dice = "2d6"
+damage_bonus = 0
+damage_type = "slashing"
+
+# -- Puzzle Encounter --
+
+[[encounters]]
+id = "cattle_stampede"
+name = "Cattle Stampede"
+location_ids = ["stampede_flats", "cattle_range"]
+encounter_chance = 0.2
+fight_type = "puzzle"
+description = "The ground trembles as a herd of panicked cattle charges directly toward you. Hundreds of hooves thunder across the plain — you need to find cover, redirect them, or get out of the way fast."
+
+[encounters.puzzle]
+puzzle_type = "trap"
+dc = 14
+trap_damage = "3d6"
+
+[encounters.loot]
+items = [
+    {id = "beast_hide", chance = 0.6},
+    {id = "rations", chance = 0.4},
+]
+gold_min = 5
+gold_max = 15
+
+[[encounters]]
+id = "rattlesnake_nest"
+name = "Rattlesnake Nest"
+location_ids = ["badlands_edge", "old_homestead", "bone_ridge"]
+encounter_chance = 0.25
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "antidote", chance = 0.4},
+    {id = "healing_herb", chance = 0.3},
+    {id = "beast_hide", chance = 0.2},
+]
+gold_min = 0
+gold_max = 5
+
+[[encounters.entities]]
+id = "giant_rattlesnake"
+name = "Giant Rattlesnake"
+entity_type = "enemy"
+description = "A massive rattlesnake as thick as a man's thigh, its diamond-patterned scales blending perfectly with the dry terrain. Its venomous bite can drop a grown horse."
+level = 3
+hp_max = 18
+ac = 13
+count_min = 2
+count_max = 4
+xp_value = 50
+
+[encounters.entities.ability_scores]
+strength = 12
+dexterity = 16
+constitution = 12
+intelligence = 2
+wisdom = 10
+charisma = 3
+
+[[encounters.entities.attacks]]
+name = "Venomous Bite"
+damage_dice = "1d6"
+damage_bonus = 2
+damage_type = "piercing"

@@ -1,0 +1,216 @@
+# Stormhaven encounters — L4-8
+
+[[encounters]]
+id = "sahuagin_raiders"
+name = "Sahuagin Raiders"
+location_ids = ["coral_caves", "kelp_forest", "tidal_pools"]
+encounter_chance = 0.3
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "dagger", chance = 0.3},
+    {id = "healing_herb", chance = 0.4},
+    {id = "arcane_dust", chance = 0.15},
+]
+gold_min = 10
+gold_max = 30
+
+[[encounters.entities]]
+id = "sahuagin_raider"
+name = "Sahuagin Raider"
+entity_type = "enemy"
+description = "A fish-like humanoid with webbed claws, gills, and razor-sharp teeth. Its scales glisten with seawater as it lunges from the shadows."
+level = 4
+hp_max = 22
+ac = 13
+count_min = 3
+count_max = 5
+xp_value = 50
+
+[encounters.entities.ability_scores]
+strength = 13
+dexterity = 14
+constitution = 12
+intelligence = 8
+wisdom = 10
+charisma = 6
+
+[[encounters.entities.attacks]]
+name = "Coral Trident"
+damage_dice = "1d6"
+damage_bonus = 2
+damage_type = "piercing"
+
+[[encounters.entities.attacks]]
+name = "Bite"
+damage_dice = "1d4"
+damage_bonus = 1
+damage_type = "piercing"
+
+[[encounters]]
+id = "smuggler_gang"
+name = "Smuggler Gang"
+location_ids = ["shipwreck_coast", "old_fort"]
+encounter_chance = 0.35
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "dagger", chance = 0.3},
+    {id = "rations", chance = 0.5},
+    {id = "healing_potion", chance = 0.2},
+]
+gold_min = 15
+gold_max = 40
+
+[[encounters.entities]]
+id = "stormhaven_smuggler"
+name = "Stormhaven Smuggler"
+entity_type = "enemy"
+description = "A weather-hardened criminal in dark oilskins, armed to the teeth. These smugglers protect their routes with lethal force."
+level = 5
+hp_max = 28
+ac = 14
+count_min = 2
+count_max = 4
+xp_value = 75
+
+[encounters.entities.ability_scores]
+strength = 13
+dexterity = 16
+constitution = 12
+intelligence = 12
+wisdom = 11
+charisma = 10
+
+[[encounters.entities.attacks]]
+name = "Cutlass"
+damage_dice = "1d6"
+damage_bonus = 3
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Hand Crossbow"
+damage_dice = "1d6"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[encounters]]
+id = "giant_octopus"
+name = "Giant Octopus"
+location_ids = ["kelp_forest", "coral_caves"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.5},
+    {id = "healing_potion", chance = 0.4},
+    {id = "beast_hide", chance = 0.6},
+]
+gold_min = 30
+gold_max = 70
+
+[[encounters.entities]]
+id = "giant_octopus"
+name = "Giant Octopus"
+entity_type = "enemy"
+description = "A massive octopus with tentacles thick as tree trunks and a beak that can shatter bone. Its skin shifts colors as it moves through the water."
+level = 6
+hp_max = 52
+ac = 13
+count_min = 1
+count_max = 1
+xp_value = 300
+
+[encounters.entities.ability_scores]
+strength = 17
+dexterity = 14
+constitution = 13
+intelligence = 6
+wisdom = 10
+charisma = 4
+
+[[encounters.entities.attacks]]
+name = "Tentacle Crush"
+damage_dice = "2d8"
+damage_bonus = 3
+damage_type = "bludgeoning"
+
+[[encounters.entities.attacks]]
+name = "Beak"
+damage_dice = "2d6"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[encounters]]
+id = "coastal_drakes"
+name = "Coastal Drakes"
+location_ids = ["storm_point", "shipwreck_coast", "stormhaven_lighthouse"]
+encounter_chance = 0.25
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "beast_hide", chance = 0.5},
+    {id = "dragon_scale_fragment", chance = 0.1},
+    {id = "healing_potion", chance = 0.2},
+]
+gold_min = 10
+gold_max = 25
+
+[[encounters.entities]]
+id = "coastal_drake"
+name = "Coastal Drake"
+entity_type = "enemy"
+description = "A small, aggressive drake with blue-grey scales and vestigial wings. It hunts fish and seabirds from the cliffs but will attack anything that enters its territory."
+level = 4
+hp_max = 26
+ac = 14
+count_min = 2
+count_max = 3
+xp_value = 75
+
+[encounters.entities.ability_scores]
+strength = 14
+dexterity = 15
+constitution = 13
+intelligence = 4
+wisdom = 12
+charisma = 6
+
+[[encounters.entities.attacks]]
+name = "Bite"
+damage_dice = "1d8"
+damage_bonus = 2
+damage_type = "piercing"
+
+[[encounters.entities.attacks]]
+name = "Lightning Spit"
+damage_dice = "1d6"
+damage_bonus = 0
+damage_type = "lightning"
+
+[[encounters]]
+id = "haunted_wreck"
+name = "Haunted Wreck"
+location_ids = ["shipwreck_coast"]
+encounter_chance = 0.2
+fight_type = "puzzle"
+description = "The hulk of a wrecked galleon groans in the surf. At night, ghostly lights flicker in its portholes and spectral sailors walk its tilted decks. Their captain holds something he won't release — perhaps he can be reasoned with."
+
+[encounters.puzzle]
+puzzle_type = "riddle"
+dc = 14
+riddle_question = "The ghost captain rasps: 'I carried everything but could hold nothing. I went everywhere but moved nowhere. What was I?'"
+riddle_answer = "a map"
+
+[encounters.loot]
+items = [
+    {id = "healing_potion", chance = 0.5},
+    {id = "soul_gem", chance = 0.2},
+    {id = "arcane_dust", chance = 0.4},
+]
+gold_min = 25
+gold_max = 60

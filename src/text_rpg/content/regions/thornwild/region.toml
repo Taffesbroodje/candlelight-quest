@@ -1,0 +1,6 @@
+id = "thornwild"
+name = "The Thornwild"
+description = "An ancient primordial forest where fey magic seeps through the roots and branches. The Thornwild is a place of wild beauty and hidden danger, where druids keep vigil over sacred groves and rangers patrol winding trails choked with thorny undergrowth. Strange lights dance among the trees at night, and the boundary between the mortal world and the Feywild grows thin in certain clearings."
+level_range_min = 1
+level_range_max = 5
+climate = "temperate_wild"

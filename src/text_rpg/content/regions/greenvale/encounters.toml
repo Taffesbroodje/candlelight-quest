@@ -1,0 +1,231 @@
+# Greenvale encounters — L4-8
+
+[[encounters]]
+id = "hill_bandits"
+name = "Hill Bandits"
+location_ids = ["bandit_hills", "greenflow_west_road"]
+encounter_chance = 0.4
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "shortsword", chance = 0.2},
+    {id = "rations", chance = 0.5},
+    {id = "healing_potion", chance = 0.2},
+    {id = "leather_armor", chance = 0.1},
+]
+gold_min = 10
+gold_max = 35
+
+[[encounters.entities]]
+id = "hill_bandit"
+name = "Hill Bandit"
+entity_type = "enemy"
+description = "A hardened outlaw in patched leather armor, eyes sharp with desperation. These bandits know every hiding spot in the hills."
+level = 4
+hp_max = 22
+ac = 13
+count_min = 3
+count_max = 5
+xp_value = 50
+
+[encounters.entities.ability_scores]
+strength = 13
+dexterity = 14
+constitution = 12
+intelligence = 10
+wisdom = 11
+charisma = 10
+
+[[encounters.entities.attacks]]
+name = "Shortsword"
+damage_dice = "1d6"
+damage_bonus = 2
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Shortbow"
+damage_dice = "1d6"
+damage_bonus = 2
+damage_type = "piercing"
+
+[[encounters]]
+id = "crop_blight_shambler"
+name = "Crop Blight Shambler"
+location_ids = ["blighted_fields", "old_battlefield"]
+encounter_chance = 0.2
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.6},
+    {id = "healing_potion", chance = 0.4},
+    {id = "moonpetal", chance = 0.3},
+    {id = "soul_gem", chance = 0.1},
+]
+gold_min = 25
+gold_max = 60
+
+[[encounters.entities]]
+id = "blight_shambler"
+name = "Blight Shambler"
+entity_type = "enemy"
+description = "A hulking mass of rotting vegetation animated by dark magic, oozing black sap. Withered crops and dead earth mark its path."
+level = 6
+hp_max = 55
+ac = 12
+count_min = 1
+count_max = 1
+xp_value = 300
+
+[encounters.entities.ability_scores]
+strength = 18
+dexterity = 6
+constitution = 16
+intelligence = 3
+wisdom = 8
+charisma = 3
+
+[[encounters.entities.attacks]]
+name = "Rotting Slam"
+damage_dice = "2d8"
+damage_bonus = 4
+damage_type = "bludgeoning"
+
+[[encounters.entities.attacks]]
+name = "Blight Spores"
+damage_dice = "2d6"
+damage_bonus = 0
+damage_type = "poison"
+
+[[encounters]]
+id = "river_trollkin"
+name = "River Trollkin"
+location_ids = ["greenflow_ford", "riverside_camp", "greenflow_falls"]
+encounter_chance = 0.3
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "healing_herb", chance = 0.4},
+    {id = "beast_hide", chance = 0.3},
+    {id = "healing_potion", chance = 0.15},
+]
+gold_min = 5
+gold_max = 20
+
+[[encounters.entities]]
+id = "river_trollkin"
+name = "River Trollkin"
+entity_type = "enemy"
+description = "A squat, green-skinned creature with webbed fingers and a mouth full of needle-like teeth. It lurks in river shallows, waiting to drag prey underwater."
+level = 4
+hp_max = 28
+ac = 13
+count_min = 2
+count_max = 3
+xp_value = 75
+
+[encounters.entities.ability_scores]
+strength = 15
+dexterity = 13
+constitution = 14
+intelligence = 6
+wisdom = 10
+charisma = 5
+
+[[encounters.entities.attacks]]
+name = "Claws"
+damage_dice = "1d6"
+damage_bonus = 2
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Bite"
+damage_dice = "1d8"
+damage_bonus = 2
+damage_type = "piercing"
+
+[[encounters]]
+id = "greenvale_wolves"
+name = "Timber Wolves"
+location_ids = ["greenflow_south_road", "wheat_fields", "greenflow_ford"]
+encounter_chance = 0.3
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "beast_hide", chance = 0.4},
+    {id = "healing_herb", chance = 0.3},
+]
+gold_min = 0
+gold_max = 5
+
+[[encounters.entities]]
+id = "timber_wolf"
+name = "Timber Wolf"
+entity_type = "enemy"
+description = "A large grey wolf, bigger and more aggressive than common wolves. These pack hunters have grown bold from preying on livestock."
+level = 3
+hp_max = 16
+ac = 13
+count_min = 3
+count_max = 5
+xp_value = 50
+
+[encounters.entities.ability_scores]
+strength = 14
+dexterity = 15
+constitution = 12
+intelligence = 3
+wisdom = 12
+charisma = 6
+
+[[encounters.entities.attacks]]
+name = "Bite"
+damage_dice = "2d4"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[encounters]]
+id = "ancient_soldier_spirits"
+name = "Ancient Soldier Spirits"
+location_ids = ["old_battlefield"]
+encounter_chance = 0.2
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "longsword", chance = 0.3},
+    {id = "chain_mail", chance = 0.1},
+    {id = "soul_gem", chance = 0.2},
+    {id = "healing_potion", chance = 0.4},
+]
+gold_min = 30
+gold_max = 75
+
+[[encounters.entities]]
+id = "soldier_spirit"
+name = "Soldier Spirit"
+entity_type = "enemy"
+description = "The translucent shade of a fallen warrior, still clad in rusted armor and wielding a spectral blade. Its hollow eyes burn with unfinished purpose."
+level = 5
+hp_max = 32
+ac = 14
+count_min = 2
+count_max = 3
+xp_value = 150
+
+[encounters.entities.ability_scores]
+strength = 14
+dexterity = 14
+constitution = 12
+intelligence = 10
+wisdom = 12
+charisma = 8
+
+[[encounters.entities.attacks]]
+name = "Spectral Blade"
+damage_dice = "2d6"
+damage_bonus = 2
+damage_type = "necrotic"

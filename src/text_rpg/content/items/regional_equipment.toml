@@ -1,0 +1,137 @@
+# Regional Equipment
+# Specialized gear for different environments and exploration
+
+[[items]]
+id = "cold_weather_gear"
+name = "Cold Weather Gear"
+description = "Heavy furs, insulated boots, and face wrap. Required for arctic survival."
+item_type = "misc"
+weight = 8.0
+value_gp = 10
+rarity = "common"
+
+[[items]]
+id = "desert_survival_kit"
+name = "Desert Survival Kit"
+description = "Sun shade, water purification tablet, and heat-reflecting cloak."
+item_type = "misc"
+weight = 5.0
+value_gp = 15
+rarity = "common"
+
+[[items]]
+id = "mining_pick"
+name = "Mining Pick"
+description = "A sturdy pick for extracting ore from rock."
+item_type = "tool"
+weight = 10.0
+value_gp = 2
+rarity = "common"
+
+[[items]]
+id = "regional_fishing_tackle"
+name = "Fishing Tackle"
+description = "Hooks, line, sinkers, and a collapsible rod."
+item_type = "tool"
+weight = 4.0
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "climbing_kit"
+name = "Climbing Kit"
+description = "Pitons, boot tips, gloves, and a harness for scaling cliffs."
+item_type = "tool"
+weight = 12.0
+value_gp = 25
+rarity = "common"
+
+[[items]]
+id = "regional_herbalism_kit"
+name = "Herbalism Kit"
+description = "Pouches, clippers, mortar and pestle for gathering and preparing herbs."
+item_type = "tool"
+weight = 3.0
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "navigator_tools"
+name = "Navigator's Tools"
+description = "Compass, charts, and sextant for overland and sea navigation."
+item_type = "tool"
+weight = 2.0
+value_gp = 25
+rarity = "common"
+
+[[items]]
+id = "diving_gear"
+name = "Diving Gear"
+description = "Waterproof goggles, weighted boots, and an air bladder for underwater exploration."
+item_type = "misc"
+weight = 15.0
+value_gp = 50
+rarity = "uncommon"
+
+[[items]]
+id = "fire_resistant_cloak"
+name = "Fire-Resistant Cloak"
+description = "A cloak treated with alchemical fire retardant, reducing fire damage taken."
+item_type = "misc"
+weight = 3.0
+value_gp = 100
+rarity = "uncommon"
+
+[[items]]
+id = "swamp_boots"
+name = "Swamp Boots"
+description = "Waterproof high boots with grippy soles for traversing bogs and marshes."
+item_type = "misc"
+weight = 4.0
+value_gp = 15
+rarity = "common"
+
+[[items]]
+id = "beast_lure"
+name = "Beast Lure"
+description = "Pheromone-infused bait that attracts wild animals."
+item_type = "misc"
+weight = 0.5
+value_gp = 5
+rarity = "common"
+
+[[items]]
+id = "regional_grappling_hook"
+name = "Grappling Hook"
+description = "A four-pronged iron hook for anchoring ropes."
+item_type = "misc"
+weight = 4.0
+value_gp = 2
+rarity = "common"
+
+[[items]]
+id = "signal_whistle"
+name = "Signal Whistle"
+description = "A shrill whistle that can be heard from great distances."
+item_type = "misc"
+weight = 0.1
+value_gp = 1
+rarity = "common"
+
+[[items]]
+id = "alchemist_supplies"
+name = "Alchemist's Supplies"
+description = "Glass vials, a small burner, and various chemical reagents."
+item_type = "tool"
+weight = 8.0
+value_gp = 50
+rarity = "common"
+
+[[items]]
+id = "cartographer_tools"
+name = "Cartographer's Tools"
+description = "Parchment, quill, ink, ruler, and compass for map-making."
+item_type = "tool"
+weight = 6.0
+value_gp = 15
+rarity = "common"

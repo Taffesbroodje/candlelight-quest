@@ -1,0 +1,418 @@
+# =============================================================================
+# Military Origins — Backgrounds forged in warfare, discipline, and service
+# =============================================================================
+
+[[origins]]
+id = "soldier"
+name = "Soldier"
+category = "military"
+summary = "A rank-and-file warrior trained in formation fighting and military discipline."
+prologue = """
+You remember the day the recruiting sergeant came to your village — the gleam of his \
+breastplate, the promise of coin and glory. You were young, strong, and foolish enough \
+to believe him. Boot camp stripped you of softness. Forced marches, drill formations at \
+dawn, the sergeant's boot connecting with your ribs when you stumbled. You learned to \
+fight not as an individual, but as a cog in an iron machine.
+
+The wars came and went. You stood in shield walls while arrows darkened the sky. You \
+held the line when the man beside you fell screaming. You survived — not through heroism, \
+but through discipline, endurance, and a refusal to die in the mud for someone else's \
+ambitions.
+
+Now mustered out, you carry your military insignia and little else. Thornfield is quiet — \
+a village far from the frontlines. But old instincts die hard. You still wake before dawn. \
+You still scan treelines for movement. And you know, with the certainty of a veteran, \
+that peace never lasts."""
+ability_choices = ["strength", "constitution", "dexterity"]
+skill_proficiencies = ["athletics", "intimidation"]
+starting_equipment = ["military_insignia", "common_clothes"]
+bonus_gold = 10
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Military Discipline"
+feature_description = "Years of drill have conditioned your body and mind. You gain advantage on saving throws against being frightened."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "knight"
+name = "Knight"
+category = "military"
+summary = "A sworn knight bound by oath and honor to protect the realm."
+prologue = """
+You knelt on cold stone in a candle-lit chapel, the flat of a blade touching each shoulder \
+as the words of investiture echoed off vaulted ceilings. You swore oaths — to defend the \
+weak, to uphold justice, to serve a cause greater than yourself. When you rose, you were \
+no longer a squire. You were a knight, and the weight of that title settled on you heavier \
+than any armor.
+
+For years you served faithfully. You jousted in tournaments, rode with honor guards, and \
+dispensed justice in your liege's name. But the realm's politics grew tangled and bitter. \
+Your lord fell from favor, your house's lands were seized, and the oaths you swore became \
+chains binding you to a cause that no longer existed.
+
+You ride into Thornfield with your signet ring and your honor — the only possessions that \
+cannot be taken from you. The fine clothes are threadbare now, but you wear them with the \
+bearing of one who has known nobility. Perhaps here, far from courtly intrigues, you can \
+find a cause truly worth serving."""
+ability_choices = ["strength", "charisma", "constitution"]
+skill_proficiencies = ["athletics", "persuasion"]
+starting_equipment = ["fine_clothes", "signet_ring"]
+bonus_gold = 20
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Knight's Honor"
+feature_description = "Your noble bearing and sworn oath command respect. Common folk and minor officials are more likely to offer you hospitality and aid."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "caravan_guard"
+name = "Caravan Guard"
+category = "military"
+summary = "A road-hardened protector who has escorted countless wagons through dangerous territory."
+prologue = """
+The road is your home — a thousand miles of rutted tracks, muddy passes, and sun-bleached \
+highways stretching between cities you never stay in long enough to know. You have guarded \
+merchant caravans through bandit country, driven off wolves in the mountain passes, and \
+slept with one eye open in roadside camps where the firelight barely held back the dark.
+
+You have seen the worst the roads have to offer: highwaymen with crossbows in the trees, \
+goblin ambushes at narrow bridges, and once, a hill giant that scattered an entire wagon \
+train like kindling. You survived because you learned to read the road — the broken \
+branch that signals an ambush, the too-quiet forest that means predators are near, the \
+dust cloud on the horizon that could be merchants or marauders.
+
+The caravan master paid you off at the farm road outside Thornfield, your contract \
+fulfilled. You have a length of rope, the clothes on your back, and a soldier's instincts. \
+The next caravan won't leave for weeks. Might as well see what trouble this quiet stretch \
+of country has to offer."""
+ability_choices = ["strength", "dexterity", "constitution"]
+skill_proficiencies = ["perception", "athletics"]
+starting_equipment = ["hempen_rope", "common_clothes"]
+bonus_gold = 10
+starting_region = "verdant_reach"
+starting_location = "farm_road"
+feature_name = "Road Sense"
+feature_description = "Long experience guarding caravans gives you an instinct for ambushes. You are harder to surprise on roads and open terrain."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "mercenary"
+name = "Mercenary"
+category = "military"
+summary = "A sellsword who fights for coin, loyalty be damned."
+prologue = """
+You have no flag, no lord, no cause — only a price. You have fought on both sides of \
+wars you didn't understand, guarded people you despised, and killed people who probably \
+deserved better. The mercenary life is honest in its dishonesty: everyone knows exactly \
+where they stand, and it's right next to whoever's paying.
+
+You have run with a dozen different companies over the years. The Red Falcons, who broke \
+during the Siege of Karvast. The Iron Tide, who were massacred to the last man at \
+Drowner's Ford — except for you, because you had the good sense to run. You learned early \
+that loyalty is a luxury and survival is a skill.
+
+Saltmere's docks are full of mercenaries between contracts — scarred men and women \
+drinking away their pay, waiting for the next war, the next job, the next excuse to do \
+what they do best. You fit right in. But the gambling debts are piling up, and work has \
+been thin. When opportunity knocks, you answer — as long as the coin is good."""
+ability_choices = ["strength", "dexterity", "constitution"]
+skill_proficiencies = ["athletics", "intimidation"]
+starting_equipment = ["gambling_set", "common_clothes"]
+bonus_gold = 12
+starting_region = "iron_coast"
+starting_location = "saltmere_docks"
+feature_name = "Sellsword's Reputation"
+feature_description = "Your reputation as a mercenary precedes you. Shady employers and criminal contacts are more willing to offer you work."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "deserter"
+name = "Deserter"
+category = "military"
+summary = "A fugitive who fled military service and now lives in hiding."
+prologue = """
+You remember the moment you decided to run — standing in the pre-dawn darkness, your unit \
+sleeping around dying campfires, the order for tomorrow's suicidal charge still ringing in \
+your ears. The generals were going to spend your life like a copper coin, and you decided \
+your life was worth more than that. You dropped your shield, picked up your pack, and \
+walked into the forest.
+
+They called it desertion. They called it cowardice. You called it the only sane decision \
+anyone in that army ever made. But deserters hang, and the military police have long \
+memories. You cut your hair, changed your name, and kept moving — always moving, always \
+watching for the patrol that might recognize your face from a wanted poster.
+
+The Thornwild swallowed you whole, and you were grateful. The trails here are tangled and \
+treacherous, the kind of country that swallows pursuit. You have learned to live lean, to \
+build fires that make no smoke, to sleep in thickets where no tracker can follow. It is a \
+hunted life, but it is a life — and that is more than the army would have given you."""
+ability_choices = ["dexterity", "constitution", "wisdom"]
+skill_proficiencies = ["stealth", "survival"]
+starting_equipment = ["common_clothes", "tinderbox"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "thornwild_trails"
+feature_name = "Fugitive's Instinct"
+feature_description = "A life on the run has sharpened your senses. You can detect when you are being watched or followed more easily than most."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "siege_engineer"
+name = "Siege Engineer"
+category = "military"
+summary = "A military specialist trained in fortification, demolition, and the engines of war."
+prologue = """
+While the infantry charged and the cavalry flanked, you worked with calculations and \
+counterweights. You built trebuchets that could hurl a stone three hundred yards with \
+devastating precision. You dug sapping tunnels under fortress walls and packed them with \
+alchemist's fire. You understood what most soldiers never grasp — that wars are won not by \
+the strongest arm, but by the sharpest mind.
+
+The army valued your skills enormously and respected you not at all. Engineers are not \
+glamorous. No one writes ballads about the woman who reinforced the gate hinges or the man \
+who calculated the correct angle for the siege ramp. But when the walls came down, everyone \
+knew whose work had done it.
+
+Cinderhold's forges drew you here — the finest metalwork in the highlands, they said, and \
+workshops where a mechanically-minded person could find both work and materials. You arrived \
+at the gate with your smith's tools and your tinderbox, your mind already turning over the \
+possibilities. Every structure you see, you evaluate: load-bearing walls, structural weak \
+points, lines of fire. Old habits."""
+ability_choices = ["intelligence", "strength", "constitution"]
+skill_proficiencies = ["investigation", "athletics"]
+starting_equipment = ["smiths_tools", "tinderbox"]
+bonus_gold = 12
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_gate"
+feature_name = "Structural Analysis"
+feature_description = "Your engineering expertise lets you identify weak points in structures and fortifications, granting insight into breaching or reinforcing them."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "scout"
+name = "Scout"
+category = "military"
+summary = "A military scout trained to move unseen through hostile territory and report enemy movements."
+prologue = """
+You were always the one sent ahead — alone, lightly armed, moving through territory that \
+might be crawling with enemies. While the army marched in formation with banners and drums, \
+you crept through undergrowth and climbed ridgelines, counting enemy campfires and mapping \
+patrol routes. If you were caught, there would be no rescue. Scouts who were taken alive \
+envied the ones who weren't.
+
+You learned to read the land like a book. Boot prints in soft earth told you troop numbers \
+and direction. Broken spider webs at head height meant someone had passed within hours. \
+The behavior of birds revealed hidden positions — a flock of starlings that refuses to \
+settle marks the spot where soldiers are concealed below. Your compass was your most \
+trusted companion, more reliable than any human ally.
+
+The Rangers' Lodge in the Thornwild has become your new home — a gathering place for those \
+who prefer the company of trees to people. Your military days are behind you, but the \
+skills remain. You still move through the forest like a ghost, still catalog every sound \
+and scent, still sleep lightly with your hand on your weapon."""
+ability_choices = ["dexterity", "wisdom", "constitution"]
+skill_proficiencies = ["stealth", "perception"]
+starting_equipment = ["compass", "travelers_clothes"]
+bonus_gold = 8
+starting_region = "thornwild"
+starting_location = "rangers_lodge"
+feature_name = "Pathfinder"
+feature_description = "Your scouting experience makes you exceptionally skilled at navigating unfamiliar terrain. You are less likely to become lost or trigger environmental hazards."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "war_veteran"
+name = "War Veteran"
+category = "military"
+summary = "A grizzled survivor of a terrible war, carrying both scars and hard-won wisdom."
+prologue = """
+The war took everything — your youth, your friends, your faith in the goodness of the \
+world. You went in bright-eyed and came out hollowed, a walking collection of scars and \
+nightmares. You have seen things that no amount of ale can wash from your memory: the \
+field hospital after the Battle of Ashenmoor, where the screaming never stopped; the \
+village that was already burning when your company arrived too late to save it.
+
+But the war also gave you something — a granite resilience, a bone-deep understanding of \
+what truly matters and what is merely noise. You have held dying soldiers in your arms and \
+learned to bind wounds by necessity. You have stared death in the face so many times that \
+its gaze no longer unsettles you. There is a strength that only comes from surviving what \
+should have killed you.
+
+Thornfield's inn is quiet, warm, and mercifully free of memories. You sit by the fire with \
+your bedroll at your feet and your military insignia in your pocket — the only proof that \
+any of it was real. The innkeeper doesn't ask questions. That's why you like it here. But \
+restlessness gnaws at you. Peace is harder than war, in its own way."""
+ability_choices = ["constitution", "strength", "wisdom"]
+skill_proficiencies = ["intimidation", "medicine"]
+starting_equipment = ["military_insignia", "bedroll"]
+bonus_gold = 10
+starting_region = "verdant_reach"
+starting_location = "thornfield_inn"
+feature_name = "Hardened Survivor"
+feature_description = "The horrors of war have steeled your nerve. You are resistant to fear effects and can function calmly in situations that would panic others."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "arena_champion"
+name = "Arena Champion"
+category = "military"
+summary = "A celebrated gladiator who won fame and fortune in the fighting pits."
+prologue = """
+The roar of the crowd is a drug more potent than any alchemist's brew. You have tasted it \
+— thousands of voices screaming your name as you stood over a fallen opponent, blood on \
+your fists and victory singing in your veins. The arena made you famous. It made you rich. \
+It made you into something more than human in the eyes of the mob, a living legend forged \
+in sand and sweat and spectacle.
+
+But behind the glory lies a simpler truth: the arena is a business, and you were its \
+product. Promoters decided your fights. Odds-makers set your matches. The crowds loved you \
+only so long as you kept winning, and every champion eventually meets a younger, hungrier \
+fighter. You saw it happen to your predecessors — the slow decline, the rigged losses, the \
+quiet retirement to obscurity. You chose to leave while the legend was still intact.
+
+Saltmere's market square still buzzes with your name. Merchants recognize your face; \
+children beg to see the trophy medal you carry. The fame is flattering but hollow. You \
+came here seeking something the arena could never provide — a fight that actually matters, \
+against an enemy that isn't chained to the same stage as you."""
+ability_choices = ["strength", "constitution", "charisma"]
+skill_proficiencies = ["athletics", "performance"]
+starting_equipment = ["trophy_medal", "common_clothes"]
+bonus_gold = 15
+starting_region = "iron_coast"
+starting_location = "saltmere_market"
+feature_name = "Crowd Favorite"
+feature_description = "Your arena fame makes you recognizable in settled areas. Common folk may offer favors, and you can sometimes find free lodging in exchange for stories of your fights."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "drill_instructor"
+name = "Drill Instructor"
+category = "military"
+summary = "A feared taskmaster responsible for turning raw recruits into capable soldiers."
+prologue = """
+You have broken a thousand recruits and rebuilt them as soldiers. It was never kind work. \
+You screamed until your voice cracked, forced marches through freezing rain, and made grown \
+adults weep with exhaustion — because you knew that a recruit who collapses in training is \
+alive, while one who collapses in battle is dead. Every bruise you gave was a lesson. Every \
+insult was a chisel, chipping away weakness to reveal the warrior underneath.
+
+Your superiors valued you because your companies had the lowest casualty rates in the \
+regiment. Your recruits hated you with a passion that, in time, quietly transformed into \
+grudging respect and then fierce loyalty. Some of them sought you out years later, grizzled \
+veterans now, to thank you for being the hardest bastard they ever met — because that \
+hardness kept them alive.
+
+Cinderhold's garrison requested an experienced instructor, and the highland air suits you \
+better than the lowland camps. You stand at the gate with your insignia and your whistle, \
+watching the local militia drill with the critical eye of a professional. Sloppy footwork. \
+Weak shield arms. They need you, whether they know it yet or not."""
+ability_choices = ["strength", "charisma", "constitution"]
+skill_proficiencies = ["intimidation", "athletics"]
+starting_equipment = ["military_insignia", "whistle"]
+bonus_gold = 10
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_gate"
+feature_name = "Commanding Presence"
+feature_description = "Your booming voice and authoritative bearing can rally allies and cow enemies. You can issue orders that untrained NPCs will instinctively follow in moments of crisis."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "squire"
+name = "Squire"
+category = "military"
+summary = "A young attendant in training to become a knight, recently released from service."
+prologue = """
+You polished armor until your fingers bled. You mucked out war horses at dawn and practiced \
+sword forms until your arms shook. You carried your knight's shield into tournament grounds \
+and watched, wide-eyed, as the greatest warriors of the realm clashed in a thunder of steel \
+and splintering lances. Someday, you told yourself. Someday that would be you.
+
+But your knight fell — not gloriously in battle, but to a wasting sickness that no healer \
+could cure. With your master dead, your training was cut short. No other knight would take \
+on another's half-finished squire, and the order released you from service with a handshake \
+and hollow wishes for your future. You were not yet a knight, but you were no longer a \
+servant. You were something in between, unfinished and uncertain.
+
+Thornfield is where your knight first earned his spurs, decades ago. It seemed a fitting \
+place to begin your own journey — to finish what your training started, not in a lord's \
+service, but on your own terms. You are young, eager, and rougher around the edges than \
+you'd like to admit. But the fire is there. It only needs the right spark."""
+ability_choices = ["strength", "dexterity", "charisma"]
+skill_proficiencies = ["athletics", "animal_handling"]
+starting_equipment = ["common_clothes", "belt_pouch"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Knight's Training"
+feature_description = "Your incomplete but genuine knightly education grants you familiarity with heraldry, courtly etiquette, and mounted combat basics."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "quartermaster"
+name = "Quartermaster"
+category = "military"
+summary = "A meticulous military logistician who kept armies supplied and organized."
+prologue = """
+Armies march on their stomachs, and you were the one who kept those stomachs full. While \
+generals drew arrows on maps and captains shouted orders, you counted barrels of salt pork, \
+tracked boot requisitions, and calculated how many days of grain remained before the supply \
+train arrived. Unglamorous work, invisible work — but without you, the entire war machine \
+ground to a halt within a week.
+
+You developed a reputation for two things: absolute precision and terrifying efficiency. \
+Your ledgers were immaculate. Your supply caches were always where they were supposed to \
+be. And any soldier caught stealing rations learned very quickly that the quiet \
+quartermaster with the ink-stained fingers had the authority to make their life profoundly \
+miserable. You knew every regulation, every requisition form, every loophole — and you \
+knew exactly who owed what to whom.
+
+The Saltmere Guildhall offered you a position managing trade logistics, and you accepted \
+gratefully. Military service was a young person's game, and your talents translate perfectly \
+to civilian commerce. Your ledger is balanced, your quill is sharp, and your eye for detail \
+remains as merciless as ever. Numbers don't lie — it's the people behind them you have to \
+watch."""
+ability_choices = ["intelligence", "wisdom", "constitution"]
+skill_proficiencies = ["investigation", "persuasion"]
+starting_equipment = ["merchant_ledger", "ink_and_quill"]
+bonus_gold = 15
+starting_region = "iron_coast"
+starting_location = "saltmere_guildhall"
+feature_name = "Logistical Mind"
+feature_description = "Your experience managing military supplies gives you an edge when negotiating bulk purchases and identifying fair prices. Merchants find it harder to overcharge you."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []

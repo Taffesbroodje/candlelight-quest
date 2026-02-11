@@ -1,0 +1,573 @@
+# Drake Wastes — dragon territory, L14-20
+
+[[locations]]
+id = "dragon_gate"
+name = "Dragon Gate"
+region_id = "drake_wastes"
+description = "A fortified outpost at the edge of dragon territory. The last point of civilization before the wastes, manned by the Dragon Slayer Order and desperate merchants."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "acid_lake"
+direction = "east"
+description = "A scorched trail leads toward a shimmering haze of corrosive mist."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "glass_plains"
+direction = "south"
+description = "The road ends abruptly where the ground turns to mirror-smooth glass."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "dragonborn_village"
+direction = "west"
+description = "A path marked with draconic sigils leads toward distant stone buildings."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "bone_bridge"
+direction = "north"
+description = "A canyon opens ahead, spanned by a bridge of colossal bones."
+is_locked = false
+
+[[locations]]
+id = "acid_lake"
+name = "Acid Lake"
+region_id = "drake_wastes"
+description = "A vast lake of corrosive acid, its shores littered with dissolved bones. Acidic mist rises from the surface, and only creatures immune to acid survive near its banks."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "dragon_gate"
+direction = "west"
+description = "The fortified outpost is visible through the thinning acid haze."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "petrified_forest"
+direction = "south"
+description = "Stone trees are visible on the horizon beyond the acid shore."
+is_locked = false
+
+[[locations]]
+id = "glass_plains"
+name = "Glass Plains"
+region_id = "drake_wastes"
+description = "Sand fused to mirror-smooth glass by ancient dragon fire. The plains reflect the sky and create disorienting mirages. Heat shimmers make navigation treacherous."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "dragon_gate"
+direction = "north"
+description = "The fortified outpost rises from the glass like a dark island."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "elemental_nexus_dw"
+direction = "east"
+description = "The glass cracks and warps as elemental energies intensify ahead."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "lava_river"
+direction = "south"
+description = "An orange glow and waves of heat mark the lava river ahead."
+is_locked = false
+
+[[locations]]
+id = "petrified_forest"
+name = "Petrified Forest"
+region_id = "drake_wastes"
+description = "A forest turned to stone by a dragon's petrification breath. Stone trees stand in eternal silence, and petrified creatures are frozen in postures of flight."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "acid_lake"
+direction = "north"
+description = "The acid lake's caustic mist drifts through the stone trunks."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "dragon_egg_nest"
+direction = "east"
+description = "A narrow path winds through petrified trunks toward a hidden clearing."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "wyrmling_territory"
+direction = "south"
+description = "Claw marks scar the stone trees where young dragons have passed."
+is_locked = false
+
+[[locations]]
+id = "dragon_oracle_cave"
+name = "Dragon Oracle Cave"
+region_id = "drake_wastes"
+description = "A crystal cave deep in the mountains where the Dragon Oracle — an ancient dragon of immense wisdom — dwells. The crystals show visions of past, present, and future."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "wyrm_spire"
+direction = "south"
+description = "A winding descent leads toward the towering stone spire."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "portal_stone"
+direction = "east"
+description = "A crystal-lined tunnel opens onto a plateau with a massive standing stone."
+is_locked = false
+
+[[locations]]
+id = "wyrm_spire"
+name = "Wyrm Spire"
+region_id = "drake_wastes"
+description = "A massive natural stone spire where dragons roost. The interior is hollowed out by centuries of habitation, and treasure glints in every crevice."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "dragon_oracle_cave"
+direction = "north"
+description = "A steep climb leads to the crystal cave above."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "sky_bridge_dw"
+direction = "west"
+description = "A natural stone arch spans the chasm to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ancient_dragon_lair"
+direction = "south"
+description = "The air grows heavy with the scent of sulfur and ancient power."
+is_locked = false
+
+[[locations]]
+id = "ancient_dragon_lair"
+name = "Ancient Dragon Lair"
+region_id = "drake_wastes"
+description = "The lair of an impossibly ancient dragon, filled with centuries of accumulated treasure. The dragon may negotiate — or may not."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "wyrm_spire"
+direction = "north"
+description = "The spire looms overhead through the cavern's opening."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "treasure_hoard_cavern"
+direction = "east"
+description = "A narrow passage glitters with reflected gold light."
+is_locked = false
+
+[[locations]]
+id = "sky_bridge_dw"
+name = "Sky Bridge"
+region_id = "drake_wastes"
+description = "A natural stone arch spanning a mile-wide chasm. Dragons use it as a flight landmark, and travelers crossing it are terribly exposed."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "wyrm_spire"
+direction = "east"
+description = "The massive stone spire rises on the far side of the chasm."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "storm_peak"
+direction = "north"
+description = "Lightning flickers atop the highest peak to the north."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "war_camp"
+direction = "south"
+description = "Military tents and banners are visible below the bridge's southern end."
+is_locked = false
+
+[[locations]]
+id = "elemental_nexus_dw"
+name = "Elemental Nexus"
+region_id = "drake_wastes"
+description = "A convergence of elemental energies where fire, lightning, and raw magic swirl. Reality is unstable here, and elemental creatures manifest spontaneously."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "glass_plains"
+direction = "west"
+description = "The glass plains stretch westward, their surface rippling with residual energy."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "dragon_graveyard"
+direction = "north"
+description = "Enormous bone silhouettes are visible through the swirling energy."
+is_locked = false
+
+[[locations]]
+id = "dragon_graveyard"
+name = "Dragon Graveyard"
+region_id = "drake_wastes"
+description = "A valley where dragons come to die. Enormous skeletons dot the landscape, and the bones themselves radiate residual magic. Disturbing the dead is extremely unwise."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "elemental_nexus_dw"
+direction = "south"
+description = "Elemental energies crackle and intensify to the south."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "crystal_prison"
+direction = "east"
+description = "Crystalline formations jut from the earth between the dragon bones."
+is_locked = false
+
+[[locations]]
+id = "crystal_prison"
+name = "Crystal Prison"
+region_id = "drake_wastes"
+description = "A prison of enchanted crystal where ancient entities are sealed. Some crystals have cracked, and their prisoners stir within."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "dragon_graveyard"
+direction = "west"
+description = "Dragon skeletons loom in the valley to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "forgotten_temple_dw"
+direction = "south"
+description = "Ancient stonework emerges from the crystal formations below."
+is_locked = false
+
+[[locations]]
+id = "forgotten_temple_dw"
+name = "Forgotten Temple"
+region_id = "drake_wastes"
+description = "A temple predating the dragons themselves, built by a forgotten civilization. Its purpose and builders are unknown, but its wards still function."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "crystal_prison"
+direction = "north"
+description = "Crystal formations grow denser toward the prison above."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "draconic_library"
+direction = "west"
+description = "A paved road of impossible age leads toward a distant stone building."
+is_locked = false
+
+[[locations]]
+id = "survivor_camp"
+name = "Survivor Camp"
+region_id = "drake_wastes"
+description = "A camp of adventurers and researchers who have survived the wastes. They share information, supplies, and stories — those who make it here earn respect."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "dragon_gate"
+direction = "south"
+description = "The fortified outpost is a short trek south along the canyon rim."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "bone_bridge"
+direction = "east"
+description = "The colossal bone bridge spans the canyon to the east."
+is_locked = false
+
+[[locations]]
+id = "dragon_egg_nest"
+name = "Dragon Egg Nest"
+region_id = "drake_wastes"
+description = "A hidden nesting ground where dragons lay their eggs. The area is fiercely guarded, and approaching uninvited is essentially suicide."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "petrified_forest"
+direction = "west"
+description = "Stone trees mark the edge of the petrified forest to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "wyrmling_territory"
+direction = "south"
+description = "Young dragons circle in the skies above the territory below."
+is_locked = false
+
+[[locations]]
+id = "wyrmling_territory"
+name = "Wyrmling Territory"
+region_id = "drake_wastes"
+description = "Territory patrolled by young dragons learning to hunt. Less powerful than adults but faster, more numerous, and eager to prove themselves."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "petrified_forest"
+direction = "north"
+description = "The petrified forest's stone canopy rises to the north."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "dragon_egg_nest"
+direction = "north"
+description = "The nesting grounds are fiercely guarded just to the north."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ancient_battlefield_dw"
+direction = "east"
+description = "Scarred, cratered earth stretches toward an ancient battlefield."
+is_locked = false
+
+[[locations]]
+id = "obsidian_fortress"
+name = "Obsidian Fortress"
+region_id = "drake_wastes"
+description = "A fortress of volcanic glass built by dragonborn warriors. It serves as both a military outpost and a center of draconic culture."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "dragonborn_village"
+direction = "north"
+description = "A wide road of packed volcanic ash leads to the dragonborn village."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "war_camp"
+direction = "east"
+description = "Military banners and the smell of forge smoke mark the war camp ahead."
+is_locked = false
+
+[[locations]]
+id = "treasure_hoard_cavern"
+name = "Treasure Hoard Cavern"
+region_id = "drake_wastes"
+description = "A cavern glittering with gold, gems, and magical artifacts — the overflow from the ancient dragon's hoard. Taking anything may attract unwanted attention."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "ancient_dragon_lair"
+direction = "west"
+description = "The main lair lies through the passage to the west."
+is_locked = false
+
+[[locations]]
+id = "draconic_library"
+name = "Draconic Library"
+region_id = "drake_wastes"
+description = "A library maintained by scholarly dragonborn, containing texts written in Draconic about dragon history, magic, and prophecy."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "forgotten_temple_dw"
+direction = "east"
+description = "An ancient paved road leads toward the forgotten temple."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "dragonborn_village"
+direction = "south"
+description = "The village's stone rooftops are visible down the slope."
+is_locked = false
+
+[[locations]]
+id = "sky_island"
+name = "Sky Island"
+region_id = "drake_wastes"
+description = "A chunk of land torn from the earth by ancient magic and left floating above the wastes. It can only be reached by flight or teleportation."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "storm_peak"
+direction = "south"
+description = "The lightning-wreathed peak is visible far below through the clouds."
+is_locked = false
+
+[[locations]]
+id = "storm_peak"
+name = "Storm Peak"
+region_id = "drake_wastes"
+description = "The highest peak in the Drake Wastes, perpetually shrouded in lightning storms. Blue dragons favor this perch, and the static electricity is palpable."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "sky_bridge_dw"
+direction = "south"
+description = "The stone arch of the sky bridge is visible far below."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "sky_island"
+direction = "north"
+description = "A floating island drifts above, crackling with the same storm energy."
+is_locked = false
+
+[[locations]]
+id = "lava_river"
+name = "Lava River"
+region_id = "drake_wastes"
+description = "A river of molten lava flowing through a channel carved by millennia of heat. Bridges of cooled obsidian span it at irregular intervals."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "glass_plains"
+direction = "north"
+description = "The glass plains shimmer to the north as the heat diminishes."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ancient_battlefield_dw"
+direction = "east"
+description = "Melted rock and craters mark the ancient battlefield to the east."
+is_locked = false
+
+[[locations]]
+id = "bone_bridge"
+name = "Bone Bridge"
+region_id = "drake_wastes"
+description = "A bridge constructed from the bones of a colossal dragon, spanning a deep canyon. The bones creak underfoot but hold firm."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "dragon_gate"
+direction = "south"
+description = "The fortified outpost guards the canyon's southern approach."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "survivor_camp"
+direction = "west"
+description = "Campfire smoke rises from the survivor camp along the canyon rim."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "the_abyss_edge"
+direction = "north"
+description = "The land grows darker and stranger toward the edge of the known world."
+is_locked = false
+
+[[locations]]
+id = "dragonborn_village"
+name = "Dragonborn Village"
+region_id = "drake_wastes"
+description = "A village of dragonborn who serve and honor the dragon lords. They are suspicious of outsiders but can be won over through deeds of valor."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "dragon_gate"
+direction = "east"
+description = "The fortified outpost lies to the east along a marked trail."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "obsidian_fortress"
+direction = "south"
+description = "The black glass fortress rises to the south like a dark mirror."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "draconic_library"
+direction = "north"
+description = "A scholarly path leads uphill to the library."
+is_locked = false
+
+[[locations]]
+id = "scale_market"
+name = "Scale Market"
+region_id = "drake_wastes"
+description = "A market within the dragonborn village where dragon-related materials — scales, teeth, enchanted items — are traded. Prices are measured in deeds as often as gold."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "dragonborn_village"
+direction = "east"
+description = "The village's main road is just a few steps east."
+is_locked = false
+
+[[locations]]
+id = "war_camp"
+name = "War Camp"
+region_id = "drake_wastes"
+description = "A military encampment of the Dragon Slayer Order, preparing for expeditions deeper into the wastes. Grim veterans plan their next assault."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "sky_bridge_dw"
+direction = "north"
+description = "The sky bridge arches overhead to the north."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "obsidian_fortress"
+direction = "west"
+description = "The obsidian fortress gleams darkly to the west."
+is_locked = false
+
+[[locations]]
+id = "ancient_battlefield_dw"
+name = "Ancient Battlefield"
+region_id = "drake_wastes"
+description = "A scarred landscape where dragons fought a great war ages ago. Craters, melted rock, and residual magic make the terrain hazardous and unpredictable."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "wyrmling_territory"
+direction = "west"
+description = "Young dragons patrol the territory to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "lava_river"
+direction = "west"
+description = "The lava river's glow is visible through the scorched terrain."
+is_locked = false
+
+[[locations]]
+id = "portal_stone"
+name = "Portal Stone"
+region_id = "drake_wastes"
+description = "A massive standing stone inscribed with draconic runes that occasionally activates, creating a portal to unknown destinations. Its pattern is being studied."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "dragon_oracle_cave"
+direction = "west"
+description = "A crystal-lined tunnel leads back to the oracle's cave."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "the_abyss_edge"
+direction = "east"
+description = "The land drops away into darkness at the world's edge."
+is_locked = false
+
+[[locations]]
+id = "the_abyss_edge"
+name = "The Abyss Edge"
+region_id = "drake_wastes"
+description = "The very edge of the known world, where the land falls away into an endless void. Strange lights flicker in the darkness below, and the barrier between planes is paper-thin."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "bone_bridge"
+direction = "south"
+description = "The bone bridge spans the canyon back toward safer ground."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "portal_stone"
+direction = "west"
+description = "The rune-carved standing stone pulses faintly to the west."
+is_locked = false
+
+[locations.properties]
+border_region = "the_veil"
+border_direction = "east"

@@ -41,6 +41,24 @@ direction = "northeast"
 description = "A short path leads to a stone cottage with a 'FOR SALE' sign."
 is_locked = false
 
+[[locations.connections]]
+target_location_id = "thornfield_market_well"
+direction = "north"
+description = "The lane widens toward the old market well and its notice boards."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "west_road"
+direction = "west"
+description = "The main trade road heads west, wagon ruts leading toward the distant coast."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "millpond"
+direction = "east"
+description = "A short walk east brings you to the watermill on the stream."
+is_locked = false
+
 [[locations]]
 id = "thornfield_inn"
 name = "The Bramble and Boar Inn"
@@ -80,6 +98,12 @@ direction = "east"
 description = "The temple doors open back to the village square."
 is_locked = false
 
+[[locations.connections]]
+target_location_id = "thornfield_cemetery"
+direction = "east"
+description = "A narrow path behind the temple leads to a quiet, iron-fenced graveyard."
+is_locked = false
+
 [[locations]]
 id = "whisperwood_edge"
 name = "Edge of the Whisperwood"
@@ -97,6 +121,24 @@ is_locked = false
 target_location_id = "whisperwood_depths"
 direction = "east"
 description = "The trail plunges deeper into the dark, ancient forest."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hunter_camp"
+direction = "north"
+description = "A worn trail leads to a clearing where woodsmoke rises above the trees."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "verdant_bridge"
+direction = "east"
+description = "A footpath follows the stream east toward a moss-covered stone bridge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "south_crossroads"
+direction = "west"
+description = "A path heads west to a signpost where the south road meets the east trail."
 is_locked = false
 
 [[locations]]
@@ -149,6 +191,18 @@ direction = "southeast"
 description = "The road descends back toward the safety of Thornfield."
 is_locked = false
 
+[[locations.connections]]
+target_location_id = "hunter_camp"
+direction = "west"
+description = "A rough trail cuts west through the trees toward a hunter's clearing."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "west_road"
+direction = "south"
+description = "The road curves south, joining the main westbound trade route."
+is_locked = false
+
 [[locations]]
 id = "old_ruins"
 name = "The Old Watchtower Ruins"
@@ -160,4 +214,193 @@ location_type = "dungeon"
 target_location_id = "whisperwood_depths"
 direction = "south"
 description = "A path leads back into the dense forest."
+is_locked = false
+
+[[locations]]
+id = "thornfield_market_well"
+name = "Thornfield Market Well"
+region_id = "verdant_reach"
+description = "Village square with a deep stone well and notice boards covered in handwritten requests and local gossip. Children splash in the water trough while merchants rest."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "thornfield_village"
+direction = "south"
+description = "The lane leads back down to the main village square."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "greenhollow_farm"
+direction = "east"
+description = "A dirt track heads east through open fields toward a large farmstead."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "south_crossroads"
+direction = "southeast"
+description = "A path cuts southeast to the signpost at the south crossroads."
+is_locked = false
+
+[[locations]]
+id = "greenhollow_farm"
+name = "Greenhollow Farm"
+region_id = "verdant_reach"
+description = "A large farmstead of golden barley and wheat fields stretching to the horizon. A root cellar beneath the main barn stores the season's harvest."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "thornfield_market_well"
+direction = "west"
+description = "The track leads west back to the village market well."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "shepherds_rest"
+direction = "south"
+description = "A grassy path winds south over the hills toward sheep pastures."
+is_locked = false
+
+[[locations]]
+id = "south_crossroads"
+name = "South Crossroads"
+region_id = "verdant_reach"
+description = "A weathered signpost marks the junction of the south road heading toward the dark eaves of Thornwild and an east trail winding into open country. Cart ruts show regular traffic."
+location_type = "road"
+
+[locations.properties]
+border_region = "thornwild"
+border_direction = "south"
+
+[[locations.connections]]
+target_location_id = "thornfield_market_well"
+direction = "northwest"
+description = "The path heads northwest back to the market well."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "thornfield_village"
+direction = "north"
+description = "The main road leads north into Thornfield."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "whisperwood_edge"
+direction = "east"
+description = "The east trail winds toward the dark treeline of the Whisperwood."
+is_locked = false
+
+[[locations]]
+id = "millpond"
+name = "Millpond"
+region_id = "verdant_reach"
+description = "A sturdy watermill spans a clear-running stream, its great wheel turning steadily. Sacks of grain line the entrance, and the smell of fresh flour fills the air."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "thornfield_village"
+direction = "east"
+description = "The path leads east back to the village."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "verdant_bridge"
+direction = "south"
+description = "Following the stream south, you reach an old stone bridge."
+is_locked = false
+
+[[locations]]
+id = "shepherds_rest"
+name = "Shepherd's Rest"
+region_id = "verdant_reach"
+description = "Rolling hillside pastures dotted with grazing sheep. A lone shepherd's hut sits atop the highest hill, offering sweeping views of the Verdant Reach."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "greenhollow_farm"
+direction = "north"
+description = "The grassy path descends north toward the golden fields of Greenhollow Farm."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "south_crossroads"
+direction = "west"
+description = "A trail leads west to the signpost at the south crossroads."
+is_locked = false
+
+[[locations]]
+id = "verdant_bridge"
+name = "Verdant Bridge"
+region_id = "verdant_reach"
+description = "An old moss-covered stone bridge spans a gentle river. Wildflowers grow along the banks, and the bridge marks the eastern boundary of settled farmland."
+location_type = "road"
+
+[locations.properties]
+border_region = "thornwild"
+border_direction = "east"
+
+[[locations.connections]]
+target_location_id = "millpond"
+direction = "north"
+description = "The stream path leads north to the watermill."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "whisperwood_edge"
+direction = "west"
+description = "A trail heads west toward the edge of the Whisperwood."
+is_locked = false
+
+[[locations]]
+id = "thornfield_cemetery"
+name = "Thornfield Cemetery"
+region_id = "verdant_reach"
+description = "A quiet graveyard behind the temple, enclosed by a low iron fence. Ancient headstones lean at odd angles, and locals whisper of pale blue lights drifting among the graves after midnight."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "thornfield_temple"
+direction = "west"
+description = "The narrow path leads back to the Temple of the Dawn."
+is_locked = false
+
+[[locations]]
+id = "hunter_camp"
+name = "Hunter's Camp"
+region_id = "verdant_reach"
+description = "A clearing in the woods with a stone fire pit, wooden drying rack for pelts, and straw target range. The camp is well-maintained and smells of woodsmoke and leather."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "whisperwood_edge"
+direction = "south"
+description = "The trail leads south back to the forest edge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ironridge_road"
+direction = "east"
+description = "A rough trail heads east to the mountain road."
+is_locked = false
+
+[[locations]]
+id = "west_road"
+name = "West Trade Road"
+region_id = "verdant_reach"
+description = "The main trade road heading west from Thornfield. Merchant caravans travel this route regularly, their wagon wheels wearing deep ruts in the packed earth. The road stretches toward the distant salt-tinged air of the coast."
+location_type = "road"
+
+[locations.properties]
+border_region = "iron_coast"
+border_direction = "west"
+
+[[locations.connections]]
+target_location_id = "thornfield_village"
+direction = "east"
+description = "The road leads east back to Thornfield."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ironridge_road"
+direction = "north"
+description = "The road curves north, climbing toward the Ironridge Mountain road."
 is_locked = false

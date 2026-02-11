@@ -1,0 +1,189 @@
+# =============================================================================
+# Illusion Spells — Deception, misdirection, and phantasmal creations
+# =============================================================================
+
+# 1st Level
+
+[[spells]]
+id = "disguise_self"
+name = "Disguise Self"
+level = 1
+school = "illusion"
+classes = ["bard", "sorcerer", "wizard"]
+casting_time = "action"
+range = 0
+duration = "1 hour"
+components = ["V", "S"]
+description = "You make yourself look different. You can change your appearance including clothing, armor, and equipment."
+[spells.mechanics]
+type = "buff"
+effect = "disguise"
+
+[[spells]]
+id = "faerie_fire"
+name = "Faerie Fire"
+level = 1
+school = "illusion"
+classes = ["bard", "druid"]
+casting_time = "action"
+range = 60
+duration = "1 minute"
+concentration = true
+components = ["V"]
+description = "Each object in a 20-foot cube is outlined in blue, green, or violet light. Any creature in the area must succeed on a Dexterity save or be outlined. Attack rolls against affected creatures have advantage."
+[spells.mechanics]
+type = "save"
+save_ability = "dexterity"
+effect = "faerie_fire"
+
+[[spells]]
+id = "silent_image"
+name = "Silent Image"
+level = 1
+school = "illusion"
+classes = ["bard", "sorcerer", "wizard"]
+casting_time = "action"
+range = 60
+duration = "10 minutes"
+concentration = true
+components = ["V", "S"]
+description = "You create the image of an object, a creature, or some other visible phenomenon no larger than a 15-foot cube."
+[spells.mechanics]
+type = "utility"
+effect = "illusion"
+
+# 2nd Level
+
+[[spells]]
+id = "invisibility"
+name = "Invisibility"
+level = 2
+school = "illusion"
+classes = ["bard", "sorcerer", "warlock", "wizard"]
+casting_time = "action"
+range = 0
+duration = "1 hour"
+concentration = true
+components = ["V", "S"]
+description = "A creature you touch becomes invisible. The spell ends if the target attacks or casts a spell."
+[spells.mechanics]
+type = "buff"
+effect = "invisible"
+
+[[spells]]
+id = "mirror_image"
+name = "Mirror Image"
+level = 2
+school = "illusion"
+classes = ["sorcerer", "warlock", "wizard"]
+casting_time = "action"
+range = 0
+duration = "1 minute"
+components = ["V", "S"]
+description = "Three illusory duplicates of yourself appear in your space. Each duplicate has an AC of 10 + your DEX modifier."
+[spells.mechanics]
+type = "buff"
+effect = "mirror_image"
+
+[[spells]]
+id = "darkness"
+name = "Darkness"
+level = 2
+school = "illusion"
+classes = ["sorcerer", "warlock", "wizard"]
+casting_time = "action"
+range = 60
+duration = "10 minutes"
+concentration = true
+components = ["V"]
+description = "Magical darkness spreads from a point you choose within range to fill a 15-foot-radius sphere."
+[spells.mechanics]
+type = "utility"
+effect = "darkness"
+
+[[spells]]
+id = "silence"
+name = "Silence"
+level = 2
+school = "illusion"
+classes = ["bard", "cleric", "ranger"]
+casting_time = "action"
+range = 120
+duration = "10 minutes"
+concentration = true
+components = ["V", "S"]
+description = "For the duration, no sound can be created within or pass through a 20-foot-radius sphere centered on a point you choose. Creatures in the area are immune to thunder damage and cannot cast spells with verbal components."
+[spells.mechanics]
+type = "utility"
+effect = "silence"
+
+# 3rd Level
+
+[[spells]]
+id = "major_image"
+name = "Major Image"
+level = 3
+school = "illusion"
+classes = ["bard", "sorcerer", "warlock", "wizard"]
+casting_time = "action"
+range = 120
+duration = "10 minutes"
+concentration = true
+components = ["V", "S"]
+description = "You create the image of an object, creature, or other visible phenomenon no larger than a 20-foot cube. It seems completely real, including sounds, smells, and temperature."
+[spells.mechanics]
+type = "utility"
+effect = "illusion"
+
+# 4th Level
+
+[[spells]]
+id = "greater_invisibility"
+name = "Greater Invisibility"
+level = 4
+school = "illusion"
+classes = ["bard", "sorcerer", "wizard"]
+casting_time = "action"
+range = 0
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "A creature you touch becomes invisible. Unlike normal invisibility, the spell doesn't end when the target attacks or casts a spell."
+[spells.mechanics]
+type = "buff"
+effect = "invisible"
+
+[[spells]]
+id = "phantasmal_killer"
+name = "Phantasmal Killer"
+level = 4
+school = "illusion"
+classes = ["wizard"]
+casting_time = "action"
+range = 120
+duration = "1 minute"
+concentration = true
+components = ["V", "S"]
+description = "You tap into the nightmares of a creature and create an illusory manifestation of its deepest fears. The target must make a Wisdom save or become frightened and take 4d10 psychic damage at the end of each turn."
+[spells.mechanics]
+type = "save"
+save_ability = "wisdom"
+damage_dice = "4d10"
+damage_type = "psychic"
+
+# 6th Level
+
+[[spells]]
+id = "programmed_illusion"
+name = "Programmed Illusion"
+level = 6
+school = "illusion"
+classes = ["bard", "wizard"]
+casting_time = "action"
+range = 120
+duration = "permanent"
+components = ["V", "S"]
+description = "You create an illusion that activates when a specific condition occurs. It can include sound, temperature, smell, and visual elements."
+[spells.mechanics]
+type = "utility"
+effect = "illusion"

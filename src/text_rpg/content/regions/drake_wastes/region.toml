@@ -1,0 +1,6 @@
+id = "drake_wastes"
+name = "Drake Wastes"
+description = "Territory ruled by dragonkind, a vast expanse of glass deserts, acid lakes, and petrified forests scarred by dragon fire. Ancient dragons slumber in mountain lairs, wyrmling servants patrol the skies, and the Dragon Oracle in its crystal cave knows the future. Only the brave or foolish enter these lands."
+level_range_min = 14
+level_range_max = 20
+climate = "volcanic_wasteland"

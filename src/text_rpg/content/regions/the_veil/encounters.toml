@@ -1,0 +1,296 @@
+# The Veil encounters — L16-20
+
+# -- Attrition Encounters --
+
+[[encounters]]
+id = "planar_entities"
+name = "Planar Entities"
+location_ids = ["feywild_fragment", "shadowfell_fragment", "astral_drift"]
+encounter_chance = 0.25
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.6},
+    {id = "soul_gem", chance = 0.15},
+]
+gold_min = 30
+gold_max = 70
+
+[[encounters.entities]]
+id = "planar_entity"
+name = "Planar Entity"
+entity_type = "enemy"
+description = "A being of raw planar energy, its form flickering between shapes borrowed from the planes it drifts between. One moment it resembles a fey dancer, the next a shadow wraith, the next a crystalline construct of pure force."
+level = 14
+hp_max = 65
+ac = 16
+count_min = 2
+count_max = 4
+xp_value = 400
+
+[encounters.entities.ability_scores]
+strength = 14
+dexterity = 16
+constitution = 14
+intelligence = 12
+wisdom = 14
+charisma = 12
+
+[[encounters.entities.attacks]]
+name = "Planar Strike"
+damage_dice = "2d8"
+damage_bonus = 3
+damage_type = "force"
+
+[[encounters.entities.attacks]]
+name = "Phase Shift"
+damage_dice = "2d6"
+damage_bonus = 0
+damage_type = "psychic"
+
+[[encounters]]
+id = "shadow_assassins"
+name = "Shadow Assassins"
+location_ids = ["shadow_fortress", "shadowfell_fragment", "nightmare_realm"]
+encounter_chance = 0.25
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.4},
+    {id = "soul_gem", chance = 0.15},
+]
+gold_min = 25
+gold_max = 60
+
+[[encounters.entities]]
+id = "shadow_assassin"
+name = "Shadow Assassin"
+entity_type = "enemy"
+description = "A humanoid shape cut from living shadow, moving with fluid, predatory grace. Its blades are extensions of its body — darkness sharpened to a killing edge. It makes no sound, casts no reflection, and leaves no trace."
+level = 14
+hp_max = 58
+ac = 17
+count_min = 2
+count_max = 4
+xp_value = 400
+
+[encounters.entities.ability_scores]
+strength = 12
+dexterity = 20
+constitution = 12
+intelligence = 14
+wisdom = 14
+charisma = 10
+
+[[encounters.entities.attacks]]
+name = "Shadow Blade"
+damage_dice = "2d8"
+damage_bonus = 5
+damage_type = "necrotic"
+
+[[encounters.entities.attacks]]
+name = "Shadow Step"
+damage_dice = "2d6"
+damage_bonus = 0
+damage_type = "necrotic"
+
+# -- Puzzle Encounters --
+
+[[encounters]]
+id = "reality_warp_puzzles"
+name = "Reality Warp Puzzles"
+location_ids = ["crystal_sphere", "time_displaced_city", "echo_chamber"]
+encounter_chance = 0.20
+fight_type = "puzzle"
+description = "Reality fractures around you. Three versions of yourself appear, each claiming to be real. They speak in unison: 'One of us always lies, one always speaks truth, one speaks only in questions. Which of us is you?'"
+
+[encounters.puzzle]
+puzzle_type = "riddle"
+dc = 17
+riddle_question = "Reality fractures around you. Three versions of yourself appear, each claiming to be real. They speak in unison: 'One of us always lies, one always speaks truth, one speaks only in questions. Which of us is you?'"
+riddle_answer = "the one who asks"
+
+[encounters.loot]
+items = [
+    {id = "soul_gem", chance = 0.3},
+    {id = "arcane_dust", chance = 0.6},
+]
+gold_min = 40
+gold_max = 100
+
+[[encounters]]
+id = "fey_court_politics"
+name = "Fey Court Politics"
+location_ids = ["fey_court_embassy", "feywild_fragment"]
+encounter_chance = 0.20
+fight_type = "puzzle"
+description = "A fey noble challenges you to a game of riddles. If you win, you gain a boon. If you lose, you owe a favor — and fey favors are never simple. The noble asks: 'What can fill a room but takes no space?'"
+
+[encounters.puzzle]
+puzzle_type = "riddle"
+dc = 15
+riddle_question = "A fey noble challenges you to a game of riddles. If you win, you gain a boon. If you lose, you owe a favor — and fey favors are never simple. The noble asks: 'What can fill a room but takes no space?'"
+riddle_answer = "light"
+
+[encounters.loot]
+items = [
+    {id = "moonpetal", chance = 0.5},
+    {id = "enchanted_thread", chance = 0.3},
+    {id = "arcane_dust", chance = 0.4},
+]
+gold_min = 25
+gold_max = 60
+
+# -- Boss Encounters --
+
+[[encounters]]
+id = "convergence_challenge"
+name = "Convergence Challenge"
+location_ids = ["the_convergence", "the_final_threshold"]
+encounter_chance = 0.10
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "soul_gem", chance = 0.6},
+    {id = "arcane_dust", chance = 0.8},
+    {id = "healing_potion", chance = 0.6},
+]
+gold_min = 200
+gold_max = 500
+
+[[encounters.entities]]
+id = "convergence_avatar"
+name = "Convergence Avatar"
+entity_type = "enemy"
+description = "An avatar of the Convergence itself — a titanic figure assembled from fragments of every plane. One arm is living flame, the other is solid shadow. Its torso is crystal and stone, its head is a vortex of astral energy. It exists to test those who dare approach the center of all things."
+level = 20
+hp_max = 200
+ac = 20
+count_min = 1
+count_max = 1
+xp_value = 3000
+
+[encounters.entities.ability_scores]
+strength = 24
+dexterity = 16
+constitution = 24
+intelligence = 20
+wisdom = 20
+charisma = 20
+
+[[encounters.entities.attacks]]
+name = "Reality Shatter"
+damage_dice = "5d12"
+damage_bonus = 0
+damage_type = "force"
+
+[[encounters.entities.attacks]]
+name = "Planar Collapse"
+damage_dice = "4d10"
+damage_bonus = 0
+damage_type = "psychic"
+
+[[encounters.entities.attacks]]
+name = "Existence Drain"
+damage_dice = "3d8"
+damage_bonus = 0
+damage_type = "necrotic"
+
+[[encounters]]
+id = "elemental_titans"
+name = "Elemental Titans"
+location_ids = ["elemental_fire_pocket", "elemental_earth_pocket", "elemental_water_pocket", "elemental_air_pocket"]
+encounter_chance = 0.10
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.7},
+    {id = "soul_gem", chance = 0.25},
+    {id = "healing_potion", chance = 0.4},
+]
+gold_min = 60
+gold_max = 150
+
+[[encounters.entities]]
+id = "elemental_titan"
+name = "Elemental Titan"
+entity_type = "enemy"
+description = "A colossal being of pure elemental force — a primordial fragment given terrible purpose. It towers over mortals like a mountain given legs, its body a churning mass of its native element compressed into a vaguely humanoid shape."
+level = 16
+hp_max = 120
+ac = 18
+count_min = 1
+count_max = 1
+xp_value = 1000
+
+[encounters.entities.ability_scores]
+strength = 22
+dexterity = 10
+constitution = 22
+intelligence = 8
+wisdom = 14
+charisma = 8
+
+[[encounters.entities.attacks]]
+name = "Primal Slam"
+damage_dice = "4d8"
+damage_bonus = 6
+damage_type = "bludgeoning"
+
+[[encounters.entities.attacks]]
+name = "Elemental Burst"
+damage_dice = "3d10"
+damage_bonus = 0
+damage_type = "force"
+
+[[encounters]]
+id = "dream_nightmares"
+name = "Dream Nightmares"
+location_ids = ["dream_palace", "nightmare_realm"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "soul_gem", chance = 0.2},
+    {id = "arcane_dust", chance = 0.5},
+    {id = "moonpetal", chance = 0.3},
+]
+gold_min = 40
+gold_max = 100
+
+[[encounters.entities]]
+id = "nightmare_entity"
+name = "Nightmare Entity"
+entity_type = "enemy"
+description = "A manifestation of pure terror given form — it appears differently to each who sees it, wearing the shape of their deepest fear. Its body shifts constantly, sprouting claws, teeth, eyes, and appendages in horrifying combinations."
+level = 15
+hp_max = 90
+ac = 16
+count_min = 1
+count_max = 1
+xp_value = 800
+
+[encounters.entities.ability_scores]
+strength = 16
+dexterity = 16
+constitution = 16
+intelligence = 16
+wisdom = 10
+charisma = 18
+
+[[encounters.entities.attacks]]
+name = "Fear Projection"
+damage_dice = "3d10"
+damage_bonus = 0
+damage_type = "psychic"
+
+[[encounters.entities.attacks]]
+name = "Nightmare Claws"
+damage_dice = "2d8"
+damage_bonus = 3
+damage_type = "necrotic"

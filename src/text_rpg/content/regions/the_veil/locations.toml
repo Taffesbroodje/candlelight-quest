@@ -1,0 +1,522 @@
+# The Veil — planar boundary region, L16-20
+
+[[locations]]
+id = "planar_gate"
+name = "Planar Gate"
+region_id = "the_veil"
+description = "A fortified gateway maintained by the Planar Watchers, the last outpost of mortal reality. Beyond, the rules of the world no longer apply. Massive stone pillars covered in ward-glyphs frame a shimmering curtain of energy, and sentinels stand eternal watch."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "feywild_fragment"
+direction = "north"
+description = "The air brightens with impossible colors as you step toward the Feywild fragment."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "shadowfell_fragment"
+direction = "east"
+description = "Darkness creeps in at the edges as the path leads toward the Shadowfell fragment."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "void_bridge"
+direction = "south"
+description = "A bridge extends over absolute nothingness, the last route back to the mortal world."
+is_locked = false
+
+[[locations]]
+id = "feywild_fragment"
+name = "Feywild Fragment"
+region_id = "the_veil"
+description = "A patch of the Feywild that has bled through — eternal twilight, impossibly vivid colors, flowers that sing, and trees that walk. Time moves differently here. Minutes may pass as hours, or hours as moments."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "planar_gate"
+direction = "south"
+description = "The colors fade and reality steadies as you head back toward the Planar Gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "fey_court_embassy"
+direction = "east"
+description = "Crystal spires of moonlight mark the Fey Court Embassy ahead."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "memory_garden"
+direction = "north"
+description = "Luminous petals drift on the breeze from the Memory Garden beyond."
+is_locked = false
+
+[[locations]]
+id = "shadowfell_fragment"
+name = "Shadowfell Fragment"
+region_id = "the_veil"
+description = "A fragment of the Shadowfell — perpetual darkness, muted colors, and a crushing sense of despair. Shadows move independently and whisper forgotten names. The ground is cold ash, and the sky is an endless grey void."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "planar_gate"
+direction = "west"
+description = "A thin line of light marks the path back toward the Planar Gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "shadow_fortress"
+direction = "south"
+description = "A fortress of solidified shadow looms in the perpetual gloom ahead."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "echo_chamber"
+direction = "east"
+description = "A distant cacophony of layered sounds draws you toward the Echo Chamber."
+is_locked = false
+
+[[locations]]
+id = "elemental_fire_pocket"
+name = "Elemental Fire Pocket"
+region_id = "the_veil"
+description = "A bubble of the Elemental Plane of Fire. The ground is molten, the air is flame, and fire elementals dance in eternal celebration. Heat distortion makes distances impossible to judge, and rivers of magma carve through obsidian plains."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "elemental_water_pocket"
+direction = "east"
+description = "Steam billows where fire meets water at the boundary between elemental pockets."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "elemental_earth_pocket"
+direction = "south"
+description = "The molten ground cools and solidifies into living stone as you approach the Earth Pocket."
+is_locked = false
+
+[[locations]]
+id = "elemental_water_pocket"
+name = "Elemental Water Pocket"
+region_id = "the_veil"
+description = "A sphere of the Elemental Plane of Water. Breathable water fills the space, and currents carry travelers in unpredictable directions. Bioluminescent creatures drift past, and coral structures grow with impossible speed."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "elemental_fire_pocket"
+direction = "west"
+description = "The water grows warmer and begins to boil near the Fire Pocket boundary."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "elemental_air_pocket"
+direction = "north"
+description = "The water thins to mist, then gives way entirely to the Air Pocket above."
+is_locked = false
+
+[[locations]]
+id = "elemental_earth_pocket"
+name = "Elemental Earth Pocket"
+region_id = "the_veil"
+description = "A chunk of the Elemental Plane of Earth. Living stone shifts and reshapes, tunnels open and close, and precious gems grow like fruit on crystalline branches. The ground rumbles with a deep, slow heartbeat."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "elemental_fire_pocket"
+direction = "north"
+description = "The stone grows hot and begins to glow as you approach the Fire Pocket."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "the_convergence"
+direction = "east"
+description = "The stone fractures into prismatic shards as reality grows increasingly unstable toward the Convergence."
+is_locked = false
+
+[[locations]]
+id = "elemental_air_pocket"
+name = "Elemental Air Pocket"
+region_id = "the_veil"
+description = "A fragment of the Elemental Plane of Air. There is no ground — only endless sky, floating islands, and winds that carry travelers between them. Lightning arcs between cloud formations, and the horizon stretches infinitely in every direction."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "elemental_water_pocket"
+direction = "south"
+description = "The air grows thick with moisture as you descend toward the Water Pocket."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "celestial_overlook"
+direction = "north"
+description = "Golden light filters down from above, marking the Celestial Overlook."
+is_locked = false
+
+[[locations]]
+id = "astral_drift"
+name = "Astral Drift"
+region_id = "the_veil"
+description = "A section of the Astral Sea where silvery mist stretches in all directions. Thought becomes movement, and the memories of dead gods drift past like islands. Color pools shimmer with portals to unknown realms, and psychic echoes whisper ancient truths."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "celestial_overlook"
+direction = "south"
+description = "Golden radiance pierces the silver mist, marking the Celestial Overlook below."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "the_convergence"
+direction = "east"
+description = "The silver mist churns with chaotic energy as the Convergence pulls at reality."
+is_locked = false
+
+[[locations]]
+id = "the_convergence"
+name = "The Convergence"
+region_id = "the_veil"
+description = "The center of The Veil, where all planes meet in a maelstrom of energy. Reality is completely fluid here. Fire becomes water becomes stone becomes air becomes thought. This is the ultimate challenge — the boundary of mortal existence."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "elemental_earth_pocket"
+direction = "west"
+description = "Solid stone anchors itself against the chaos, forming a path to the Earth Pocket."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "astral_drift"
+direction = "west"
+description = "Silver mist curls at the edge of the maelstrom, leading to the Astral Drift."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "dream_palace"
+direction = "north"
+description = "Shimmering doorways of opalescent light lead toward the Dream Palace."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "nightmare_realm"
+direction = "south"
+description = "Darkness writhes and screams at the southern edge, marking the Nightmare Realm."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "the_final_threshold"
+direction = "east"
+description = "Reality itself seems to end at the eastern edge. Beyond lies the Final Threshold."
+is_locked = false
+
+[[locations]]
+id = "celestial_overlook"
+name = "Celestial Overlook"
+region_id = "the_veil"
+description = "A platform of golden light where celestial beings observe the mortal world. The view encompasses all of creation, and the air hums with divine energy. Warmth suffuses every breath, and wounds feel lighter here."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "elemental_air_pocket"
+direction = "south"
+description = "The golden light fades into open sky as you descend toward the Air Pocket."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "astral_drift"
+direction = "north"
+description = "Silver mist replaces golden light as the Astral Drift opens above."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "angel_waystation"
+direction = "east"
+description = "A path of solidified radiance leads to the Angel Waystation."
+is_locked = false
+
+[[locations]]
+id = "abyssal_rift"
+name = "Abyssal Rift"
+region_id = "the_veil"
+description = "A tear in reality opening onto the Abyss. Demonic energy pours through, and lesser demons constantly attempt to widen the breach. The air reeks of sulfur and despair, and the ground trembles with the footsteps of things best left unnamed."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "shadow_fortress"
+direction = "east"
+description = "Shadows thicken into the walls of the Shadow Fortress to the east."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "demon_gate"
+direction = "south"
+description = "The rift deepens into a sealed gate crackling with failing wards."
+is_locked = false
+
+[[locations]]
+id = "fey_court_embassy"
+name = "Fey Court Embassy"
+region_id = "the_veil"
+description = "A permanent embassy of the Fey Court, built from living crystal and moonlight. Fey nobles conduct business with mortal visitors — always at a cost. Every surface reflects impossible scenes, and the architecture defies geometry."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "feywild_fragment"
+direction = "west"
+description = "The crystal walls dissolve into the wild colors of the Feywild Fragment."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "memory_garden"
+direction = "north"
+description = "Crystal paths wind north through luminous hedgerows to the Memory Garden."
+is_locked = false
+
+[[locations]]
+id = "shadow_fortress"
+name = "Shadow Fortress"
+region_id = "the_veil"
+description = "A fortress of solidified shadow, home to a Shadow Lord who rules this fragment of the Shadowfell. Its corridors shift and rearrange with every blink, and the walls drink light. Torches gutter and die within seconds of being lit."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "shadowfell_fragment"
+direction = "north"
+description = "The fortress walls thin to mere shadow, opening onto the Shadowfell Fragment."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "abyssal_rift"
+direction = "west"
+description = "The shadows peel away to reveal the burning wound of the Abyssal Rift."
+is_locked = false
+
+[[locations]]
+id = "titan_ruins"
+name = "Titan Ruins"
+region_id = "the_veil"
+description = "The remains of a structure built by titans — beings who existed before the gods. The scale is incomprehensible, and the ruins pulse with primordial power. A single doorframe stands taller than a castle, and carved glyphs the size of fields still glow with ancient purpose."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "the_convergence"
+direction = "south"
+description = "The primordial energy gives way to the chaotic maelstrom of the Convergence."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "world_tree_root"
+direction = "east"
+description = "An impossibly vast root emerges from beneath the titan stonework."
+is_locked = false
+
+[[locations]]
+id = "angel_waystation"
+name = "Angel Waystation"
+region_id = "the_veil"
+description = "A celestial waystation where angels rest between missions. Mortals who reach here are either welcomed as champions or gently turned away. The architecture is pure white marble that radiates warmth, and soft hymns drift from nowhere."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "celestial_overlook"
+direction = "west"
+description = "The path of light leads back to the Celestial Overlook."
+is_locked = false
+
+[[locations]]
+id = "demon_gate"
+name = "Demon Gate"
+region_id = "the_veil"
+description = "A gate to the lower planes, sealed with powerful wards that are slowly failing. Demons whisper promises of power through the cracks. The wards glow red-hot, and each day another rune flickers and dies. Something enormous presses against the other side."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "abyssal_rift"
+direction = "north"
+description = "The sealed gate opens onto the wider Abyssal Rift above."
+is_locked = false
+
+[[locations]]
+id = "time_displaced_city"
+name = "Time-Displaced City"
+region_id = "the_veil"
+description = "A city caught between moments in time. Its inhabitants live the same day eternally, unaware of their predicament. Visitors experience time normally but can interact with the frozen world. Clocks run backward, and conversations repeat with eerie precision."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "memory_garden"
+direction = "east"
+description = "The frozen streets give way to a garden where time flows as memory."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "crystal_sphere"
+direction = "south"
+description = "The city's edge dissolves into void, revealing an enormous crystal sphere below."
+is_locked = false
+
+[[locations]]
+id = "memory_garden"
+name = "Memory Garden"
+region_id = "the_veil"
+description = "A garden where memories take physical form — blooming as flowers that replay scenes from the past when touched. Some memories are beautiful, others terrible. Petals of light drift upward, each containing a fragment of someone's life."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "feywild_fragment"
+direction = "south"
+description = "The memory-flowers give way to the wild, singing blooms of the Feywild."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "fey_court_embassy"
+direction = "south"
+description = "Crystal paths wind south toward the gleaming Fey Court Embassy."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "time_displaced_city"
+direction = "west"
+description = "The garden fades into frozen streets where time stands still."
+is_locked = false
+
+[[locations]]
+id = "void_bridge"
+name = "Void Bridge"
+region_id = "the_veil"
+description = "A bridge spanning absolute nothingness. There is no up, down, or horizon — only the bridge itself. Looking over the edge invites madness. The bridge appears to be made of solidified thought, translucent and humming with quiet purpose."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "planar_gate"
+direction = "north"
+description = "The bridge leads back to the safety of the Planar Gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "crystal_sphere"
+direction = "east"
+description = "An enormous crystal sphere hangs in the void at the bridge's far end."
+is_locked = false
+
+[locations.properties]
+border_region = "drake_wastes"
+border_direction = "south"
+
+[[locations]]
+id = "crystal_sphere"
+name = "Crystal Sphere"
+region_id = "the_veil"
+description = "An enormous crystal sphere floating in the void, containing a miniature universe. Looking within shows alternate realities and possible futures. The surface is warm to the touch and hums with the energy of countless unborn possibilities."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "void_bridge"
+direction = "west"
+description = "The Void Bridge stretches back into nothingness."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "time_displaced_city"
+direction = "north"
+description = "The sphere's surface reflects a frozen city suspended above."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "world_tree_root"
+direction = "east"
+description = "A vast root of the World Tree emerges from the void beside the sphere."
+is_locked = false
+
+[[locations]]
+id = "world_tree_root"
+name = "World Tree Root"
+region_id = "the_veil"
+description = "An exposed root of the World Tree, vast enough to walk upon like a road. The bark hums with the life force of all creation, and sap flows like golden rivers. Tiny ecosystems grow in the bark's crevices — forests of moss, lakes of amber resin."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "crystal_sphere"
+direction = "west"
+description = "The root arcs over the void toward the Crystal Sphere."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "titan_ruins"
+direction = "west"
+description = "The root burrows beneath titan stonework, connecting to the ancient ruins."
+is_locked = false
+
+[[locations]]
+id = "dream_palace"
+name = "Dream Palace"
+region_id = "the_veil"
+description = "A palace that exists only in dreams, now made partially real by the Veil's thinning. Its rooms reshape based on the dreamer's subconscious. Walls shift between marble, cloud, and starlight. Doors open onto rooms that should not exist."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "the_convergence"
+direction = "south"
+description = "The dream dissolves into the raw chaos of the Convergence."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "nightmare_realm"
+direction = "east"
+description = "The palace darkens. Pleasant dreams curdle into nightmares ahead."
+is_locked = false
+
+[[locations]]
+id = "nightmare_realm"
+name = "Nightmare Realm"
+region_id = "the_veil"
+description = "The dark mirror of the Dream Palace, where nightmares become solid. Fears manifest as physical threats, and the realm feeds on terror. The ground is made of teeth, the sky is a watching eye, and everything is wrong in ways that defy description."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "the_convergence"
+direction = "north"
+description = "The nightmares thin as the Convergence's chaos overwhelms even fear."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "dream_palace"
+direction = "west"
+description = "The darkness lightens as nightmares give way to mere dreams."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "echo_chamber"
+direction = "north"
+description = "Screams merge with an endless cacophony echoing from a vast chamber beyond."
+is_locked = false
+
+[[locations]]
+id = "echo_chamber"
+name = "Echo Chamber"
+region_id = "the_veil"
+description = "A vast chamber where every sound ever made echoes eternally. The cacophony can drive mortals mad, but within it lies the secret of true silence — a weapon against the planes. Layers upon layers of sound form visible waves in the air."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "shadowfell_fragment"
+direction = "west"
+description = "The echoes fade into the oppressive silence of the Shadowfell Fragment."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "nightmare_realm"
+direction = "south"
+description = "The echoes twist into screams as the Nightmare Realm opens below."
+is_locked = false
+
+[[locations]]
+id = "the_final_threshold"
+name = "The Final Threshold"
+region_id = "the_veil"
+description = "The absolute edge of existence. Beyond this point, there is nothing — not darkness, not void, but the absence of everything. Standing here is to stand at the end of all things. The air itself ends, and sound stops. Only will keeps a mortal tethered to reality."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "the_convergence"
+direction = "west"
+description = "The maelstrom of the Convergence rages behind you — chaotic, but at least it exists."
+is_locked = false

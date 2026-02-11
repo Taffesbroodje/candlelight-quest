@@ -1,0 +1,300 @@
+[[npcs]]
+id = "trader_marsh"
+name = "Trader Marsh"
+entity_type = "npc"
+profession = "merchant"
+description = "A wiry human man with sun-darkened skin and shrewd, calculating eyes. He wears a wide-brimmed hat to keep off the rain and speaks with the rapid-fire patter of a born salesman. Despite the remote location, his stock is surprisingly diverse."
+location_id = "murkfen_trading_post"
+dialogue_tags = ["greeting", "shop_general", "rumors", "trade_info"]
+behaviors = ["friendly", "merchant", "information"]
+is_hostile = false
+is_alive = true
+level = 3
+hp_current = 22
+hp_max = 22
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 14
+constitution = 12
+intelligence = 15
+wisdom = 13
+charisma = 16
+
+[npcs.schedule]
+dawn = "murkfen_trading_post"
+morning = "murkfen_trading_post"
+midday = "river_docks"
+afternoon = "murkfen_trading_post"
+evening = "murkfen_trading_post"
+night = "murkfen_trading_post"
+late_night = "murkfen_trading_post"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "rations", "lantern"]
+disliked_gifts = ["nightshade", "spider_silk"]
+
+[[npcs.attacks]]
+name = "Hand Crossbow"
+damage_dice = "1d6"
+damage_type = "piercing"
+
+[[npcs]]
+id = "priest_hollow"
+name = "Priest Hollow"
+entity_type = "npc"
+profession = "priest"
+description = "A gaunt human man in water-stained grey robes, with deep-set eyes that seem to look through rather than at you. He tends the Murkfen Shrine with solemn devotion to a god whose name has been worn away from the temple stones."
+location_id = "murkfen_shrine"
+dialogue_tags = ["greeting", "healing", "lore", "blessing", "quest_info"]
+behaviors = ["solemn", "healer", "spiritual", "quest_giver"]
+is_hostile = false
+is_alive = true
+level = 4
+hp_current = 28
+hp_max = 28
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 11
+constitution = 13
+intelligence = 14
+wisdom = 17
+charisma = 14
+
+[npcs.schedule]
+dawn = "murkfen_shrine"
+morning = "murkfen_shrine"
+midday = "murkfen_shrine"
+afternoon = "murkfen_trading_post"
+evening = "murkfen_shrine"
+night = "murkfen_shrine"
+late_night = "murkfen_shrine"
+
+[npcs.properties]
+preferred_gifts = ["healing_herb", "moonpetal", "holy_symbol"]
+disliked_gifts = ["nightshade", "poison_vial", "dagger"]
+
+[[npcs.attacks]]
+name = "Sacred Flame"
+damage_dice = "1d8"
+damage_type = "radiant"
+
+[[npcs]]
+id = "ferryman_pike"
+name = "Ferryman Pike"
+entity_type = "npc"
+profession = "ferryman"
+description = "A lanky, quiet man who poles his flat-bottomed boat through the swamp channels with practiced ease. His face is hidden beneath a deep hood, and he speaks only when spoken to, usually in clipped, cryptic sentences. Locals say he knows every waterway in the Reach."
+location_id = "river_docks"
+dialogue_tags = ["greeting", "rumors", "travel_info", "swamp_lore"]
+behaviors = ["taciturn", "information", "guide"]
+is_hostile = false
+is_alive = true
+level = 2
+hp_current = 14
+hp_max = 14
+ac = 12
+unavailable_periods = ["late_night", "night"]
+
+[npcs.ability_scores]
+strength = 13
+dexterity = 14
+constitution = 12
+intelligence = 10
+wisdom = 15
+charisma = 8
+
+[npcs.schedule]
+dawn = "river_docks"
+morning = "river_docks"
+midday = "river_docks"
+afternoon = "river_docks"
+evening = "murkfen_trading_post"
+night = "river_docks"
+late_night = "river_docks"
+
+[npcs.properties]
+preferred_gifts = ["rations", "hempen_rope", "lantern"]
+disliked_gifts = ["arcane_dust", "enchanted_thread"]
+
+[[npcs.attacks]]
+name = "Boat Pole"
+damage_dice = "1d6"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "the_hermit"
+name = "The Hermit"
+entity_type = "npc"
+profession = "hermit"
+description = "An old woman of indeterminate race, her face deeply lined and her white hair wild as Spanish moss. She speaks to the swamp as though it answers back, and perhaps it does. Her knowledge of the old world beneath the waters is unmatched, and she trades secrets for favors."
+location_id = "hermit_island"
+dialogue_tags = ["greeting", "lore", "quest_info", "prophecy", "riddles"]
+behaviors = ["mysterious", "quest_giver", "information", "eccentric"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 35
+hp_max = 35
+ac = 15
+unavailable_periods = []
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 12
+constitution = 13
+intelligence = 18
+wisdom = 19
+charisma = 14
+
+[npcs.schedule]
+dawn = "hermit_island"
+morning = "hermit_island"
+midday = "hermit_island"
+afternoon = "hermit_island"
+evening = "hermit_island"
+night = "hermit_island"
+late_night = "hermit_island"
+
+[npcs.properties]
+preferred_gifts = ["moonpetal", "arcane_dust", "soul_gem"]
+disliked_gifts = ["rations", "iron_ingot", "chain_mail"]
+
+[[npcs.attacks]]
+name = "Witch Bolt"
+damage_dice = "1d10"
+damage_type = "lightning"
+
+[[npcs]]
+id = "mama_gator"
+name = "Mama Gator"
+entity_type = "npc"
+profession = "cook"
+description = "An enormous lizardfolk woman who runs the platform's communal kitchen. She cooks the best catfish stew in the swamp and knows everyone's business through gossip shared over meals."
+location_id = "fisherman_platform"
+dialogue_tags = ["greeting", "rumors", "shop_food", "lore"]
+behaviors = ["maternal", "merchant", "gossip"]
+is_hostile = false
+is_alive = true
+level = 3
+hp_current = 28
+hp_max = 28
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 10
+constitution = 15
+intelligence = 10
+wisdom = 14
+charisma = 13
+
+[npcs.schedule]
+dawn = "fisherman_platform"
+morning = "fisherman_platform"
+midday = "fisherman_platform"
+afternoon = "fisherman_platform"
+evening = "fisherman_platform"
+night = "murkfen_trading_post"
+late_night = "fisherman_platform"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_herb"]
+disliked_gifts = ["poison_vial", "nightshade"]
+
+[[npcs.attacks]]
+name = "Iron Skillet"
+damage_dice = "1d6"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "river_rat_jinx"
+name = "River Rat Jinx"
+entity_type = "npc"
+profession = "smuggler"
+description = "A scrawny halfling with darting eyes, a perpetual nervous grin, and fingers that are never still. He knows every hidden channel in the swamp and fences stolen goods with practiced ease."
+location_id = "smuggler_cove_swamp"
+dialogue_tags = ["greeting", "rumors", "shop_supplies", "quest_info"]
+behaviors = ["crafty", "merchant", "evasive"]
+is_hostile = false
+is_alive = true
+level = 3
+hp_current = 18
+hp_max = 18
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 17
+constitution = 10
+intelligence = 14
+wisdom = 12
+charisma = 14
+
+[npcs.schedule]
+dawn = "smuggler_cove_swamp"
+morning = "smuggler_cove_swamp"
+midday = "smuggler_cove_swamp"
+afternoon = "river_docks"
+evening = "river_docks"
+night = "murkfen_trading_post"
+late_night = "smuggler_cove_swamp"
+
+[npcs.properties]
+preferred_gifts = ["dagger", "healing_potion", "arcane_dust"]
+disliked_gifts = ["holy_symbol", "healing_herb"]
+
+[[npcs.attacks]]
+name = "Hidden Blade"
+damage_dice = "1d4"
+damage_type = "piercing"
+
+[[npcs]]
+id = "stilt_builder_oram"
+name = "Stilt-Builder Oram"
+entity_type = "npc"
+profession = "carpenter"
+description = "A lanky human with permanently waterlogged boots and a measuring rope always draped over one shoulder. He builds and maintains the stilt-houses, and knows the swamp's shifting ground better than anyone."
+location_id = "murkfen_stilthouse"
+dialogue_tags = ["greeting", "rumors", "craft_info"]
+behaviors = ["practical", "hardworking", "helpful"]
+is_hostile = false
+is_alive = true
+level = 2
+hp_current = 16
+hp_max = 16
+ac = 11
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 12
+constitution = 13
+intelligence = 12
+wisdom = 14
+charisma = 10
+
+[npcs.schedule]
+dawn = "murkfen_stilthouse"
+morning = "murkfen_stilthouse"
+midday = "murkfen_stilthouse"
+afternoon = "murkfen_stilthouse"
+evening = "murkfen_trading_post"
+night = "murkfen_trading_post"
+late_night = "murkfen_stilthouse"
+
+[npcs.properties]
+preferred_gifts = ["hempen_rope", "iron_ingot"]
+disliked_gifts = ["arcane_dust", "nightshade"]
+
+[[npcs.attacks]]
+name = "Hammer"
+damage_dice = "1d4"
+damage_type = "bludgeoning"

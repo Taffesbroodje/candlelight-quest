@@ -151,14 +151,18 @@ class TurnLoop:
             except Exception as e:
                 logger.warning(f"Director evaluation failed: {e}")
 
-        # Step 5.6: Auto-snapshot — skip during combat
+        # Step 5.6: Check trait eligibility — skip during combat
+        if not in_combat:
+            self._check_trait_eligibility(context, game_id, turn_number)
+
+        # Step 5.7: Auto-snapshot — skip during combat
         if not in_combat:
             self._maybe_snapshot(result, context, game_id)
 
-        # Step 5.7: Tick survival needs — skip during combat
+        # Step 5.8: Tick survival needs — skip during combat
         needs_warnings = self._tick_survival_needs(context) if not in_combat else []
 
-        # Step 5.8: Tick down weakened condition duration
+        # Step 5.9: Tick down weakened condition duration
         if not in_combat:
             self._tick_weakened_condition(context, game_id)
 
@@ -787,6 +791,85 @@ class TurnLoop:
                 self.repos["character"].update_field(char_id, "wounds", json.dumps(wounds))
         except Exception as e:
             logger.warning(f"Weakened tick failed: {e}")
+
+    # -- Trait eligibility --
+
+    def _check_trait_eligibility(
+        self, context: GameContext, game_id: str, turn_number: int,
+    ) -> None:
+        """Check if any behavior category has crossed its next threshold.
+
+        Traits are earned purely by doing things — no level gates.
+        Each category tracks independently: 10, 25, 50, 100, 200, 400...
+        Multiple traits can be earned per turn if multiple categories cross.
+        """
+        try:
+            from text_rpg.mechanics.behavior_tracker import (
+                check_behavior_thresholds,
+                update_behavior_from_events,
+            )
+            from text_rpg.systems.director.trait_generator import generate_trait
+
+            trait_repo = self.repos.get("trait")
+            if not trait_repo:
+                return
+
+            char = context.character
+            char_id = char.get("id", "")
+            if not char_id:
+                return
+
+            # Get behavior counts (incremental update)
+            current_counts = trait_repo.get_behavior_counts(game_id, char_id)
+            updated_counts = update_behavior_from_events(
+                context.recent_events, current_counts,
+            )
+
+            # Save updated counts
+            for cat, count in updated_counts.items():
+                if count != current_counts.get(cat, 0):
+                    trait_repo.update_behavior_count(
+                        game_id, char_id, cat, count, turn_number,
+                    )
+
+            # Check which categories crossed their next threshold
+            traits_per_cat = trait_repo.count_traits_by_category(game_id, char_id)
+            ready = check_behavior_thresholds(updated_counts, traits_per_cat)
+            if not ready:
+                return
+
+            existing_traits = trait_repo.get_traits(game_id, char_id)
+
+            # Generate one trait per turn (the strongest pattern)
+            category, tier = ready[0]
+            trait_data = generate_trait(
+                self.llm, updated_counts, [category], tier, char, existing_traits,
+            )
+            if not trait_data:
+                return
+
+            # Save trait
+            trait_data["game_id"] = game_id
+            trait_data["character_id"] = char_id
+            trait_data["acquired_turn"] = turn_number
+            trait_repo.save_trait(trait_data)
+
+            # Record event
+            self._record_events([{
+                "event_type": "TRAIT_ACQUIRED",
+                "description": f"A new trait awakens: {trait_data['name']}. {trait_data.get('description', '')}",
+                "actor_id": char_id,
+                "mechanical_details": {
+                    "trait_name": trait_data["name"],
+                    "trait_tier": tier,
+                    "behavior_source": trait_data.get("behavior_source", ""),
+                    "effects": trait_data.get("effects", []),
+                },
+            }], game_id, turn_number, context)
+
+            logger.info(f"Trait acquired: {trait_data['name']} (tier {tier}, category {category})")
+        except Exception as e:
+            logger.warning(f"Trait eligibility check failed: {e}")
 
     # -- Snapshot triggers --
 

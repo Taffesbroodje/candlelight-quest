@@ -1,0 +1,352 @@
+[[locations]]
+id = "murkfen_trading_post"
+name = "Murkfen Trading Post"
+region_id = "sunken_reach"
+description = "A ramshackle collection of stilt-houses serving as the region's only settlement. Rickety boardwalks connect the buildings above the stagnant water below. The smell of fish, damp wood, and peat smoke hangs over everything."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "river_docks"
+direction = "north"
+description = "A sagging boardwalk leads down to the river docks."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "murkfen_shrine"
+direction = "east"
+description = "A narrow path of stepping stones leads to a moss-covered shrine."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "bog_trails"
+direction = "south"
+description = "The boardwalk ends and a muddy trail disappears into the swamp."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "murkfen_stilthouse"
+direction = "north"
+description = "Rope bridges and wooden walkways lead to a cluster of stilt-houses over the water."
+is_locked = false
+
+[[locations]]
+id = "murkfen_shrine"
+name = "Murkfen Shrine"
+region_id = "sunken_reach"
+description = "A moss-covered stone shrine tended by a solitary priest. Ancient carvings of water serpents and crescent moons adorn its weathered walls. Despite its decay, candles burn steadily within, untouched by the damp wind."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "murkfen_trading_post"
+direction = "west"
+description = "The stepping stones lead back to the trading post."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "leech_pool"
+direction = "west"
+description = "A squelching path leads to a stagnant pool ringed by pale cattails."
+is_locked = false
+
+[[locations]]
+id = "river_docks"
+name = "River Docks"
+region_id = "sunken_reach"
+description = "Rotting wooden docks where flat-bottomed boats come and go, carrying trade goods and the occasional desperate traveler. The brown river moves sluggishly, and insects swarm in thick clouds above the water's surface."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "murkfen_trading_post"
+direction = "south"
+description = "The boardwalk leads back up to the trading post."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hermit_island"
+direction = "east"
+description = "A ferryman offers passage across the river to a small dry island."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "murkfen_stilthouse"
+direction = "west"
+description = "Wooden walkways lead west to the residential stilt-houses."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "smuggler_cove_swamp"
+direction = "south"
+description = "A narrow channel disappears behind hanging moss into a concealed inlet."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "north_channel"
+direction = "north"
+description = "A navigable water channel heads north into deeper swamp."
+is_locked = false
+
+[[locations]]
+id = "sunken_temple"
+name = "Sunken Temple"
+region_id = "sunken_reach"
+description = "A partially submerged temple to a forgotten god, its columns rising from black water like the ribs of some great beast. Faded murals depict rituals of fire and purification. The deeper chambers are flooded and shrouded in darkness."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "bog_trails"
+direction = "north"
+description = "Stone steps, slick with algae, climb back up to the bog trails."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "drowned_village"
+direction = "east"
+description = "Waterlogged ruins emerge from the mire to the east, rooftops barely visible above the murk."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ancient_causeway"
+direction = "north"
+description = "A partially submerged stone road stretches north through the deepest marshes."
+is_locked = false
+
+[[locations]]
+id = "bog_trails"
+name = "Bog Trails"
+region_id = "sunken_reach"
+description = "Treacherous paths through knee-deep muck and hanging moss. One wrong step sends a traveler plunging into hidden sinkholes. The croaking of frogs and the buzz of insects is constant, and strange bubbles rise from the murky water."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "murkfen_trading_post"
+direction = "north"
+description = "The trail firms up as it approaches the trading post boardwalks."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "sunken_temple"
+direction = "south"
+description = "The trail descends into standing water, revealing stone ruins ahead."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "crab_flats"
+direction = "east"
+description = "The trail opens onto vast tidal mudflats crawling with massive crabs."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "leech_pool"
+direction = "south"
+description = "A side path leads to a stagnant pool surrounded by pale cattails."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "will_o_wisp_marsh"
+direction = "east"
+description = "The trail fades into treacherous marshland where ghostly lights flicker."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ancient_causeway"
+direction = "east"
+description = "Submerged paving stones mark the start of an ancient road heading east."
+is_locked = false
+
+[[locations]]
+id = "hermit_island"
+name = "Hermit Island"
+region_id = "sunken_reach"
+description = "A small dry island in the swamp, home to a mysterious recluse. A crude hut sits beneath a gnarled cypress tree, surrounded by strange totems and wind chimes made of bone. The air here feels oddly still and watchful."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "river_docks"
+direction = "west"
+description = "The ferryman's boat waits at a small wooden jetty to take you back."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "smuggler_cove_swamp"
+direction = "east"
+description = "A hidden channel weaves through fallen trees to a concealed cove."
+is_locked = false
+
+[[locations]]
+id = "murkfen_stilthouse"
+name = "Murkfen Stilthouse"
+region_id = "sunken_reach"
+description = "Residential stilt-houses connected by rope bridges and wooden walkways above the murky water. Laundry hangs between buildings, and children swing from ropes into the murk below."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "murkfen_trading_post"
+direction = "south"
+description = "Rope bridges lead back south to the trading post."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "river_docks"
+direction = "east"
+description = "A wooden walkway connects east to the river docks."
+is_locked = false
+
+[[locations]]
+id = "crab_flats"
+name = "Crab Flats"
+region_id = "sunken_reach"
+description = "Tidal mudflats stretching endlessly, home to massive freshwater crabs that snap at ankles. The mud sucks at boots, and the crabs grow territorial when the tide rises."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "bog_trails"
+direction = "west"
+description = "The mudflats give way to firmer ground and the bog trails to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "fisherman_platform"
+direction = "north"
+description = "A raised plank path leads north to a large fishing platform."
+is_locked = false
+
+[[locations]]
+id = "leech_pool"
+name = "Leech Pool"
+region_id = "sunken_reach"
+description = "A stagnant pool of dark water ringed by pale cattails. Medicinal leeches thrive here — herbalists prize them, though harvesting requires wading into waist-deep muck."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "bog_trails"
+direction = "north"
+description = "A muddy path climbs north back to the bog trails."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "murkfen_shrine"
+direction = "east"
+description = "A squelching path leads east to the moss-covered shrine."
+is_locked = false
+
+[[locations]]
+id = "smuggler_cove_swamp"
+name = "Smuggler's Cove"
+region_id = "sunken_reach"
+description = "A concealed inlet hidden by hanging moss and fallen trees. River pirates use it to stash contraband — crates stamped with foreign marks line the muddy banks."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "river_docks"
+direction = "south"
+description = "The narrow channel opens up, leading south back to the river docks."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hermit_island"
+direction = "west"
+description = "A hidden waterway threads west through fallen trees to the hermit's island."
+is_locked = false
+
+[[locations]]
+id = "drowned_village"
+name = "Drowned Village"
+region_id = "sunken_reach"
+description = "A settlement that sank into the bog generations ago. Rooftops and chimney tops protrude from the mire, and pale shapes drift beneath the water's surface on moonless nights."
+location_type = "ruins"
+
+[[locations.connections]]
+target_location_id = "sunken_temple"
+direction = "east"
+description = "Sunken stone columns rise from the water to the east, marking the temple."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "will_o_wisp_marsh"
+direction = "south"
+description = "The ruins give way to treacherous marshland where ghostly lights dance."
+is_locked = false
+
+[[locations]]
+id = "fisherman_platform"
+name = "Fisherman's Platform"
+region_id = "sunken_reach"
+description = "A large wooden platform built over a deep channel, where swamp folk cast nets and lines. Catches of catfish and eel hang from drying racks. The platform creaks with every footstep."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "crab_flats"
+direction = "south"
+description = "A plank path leads south across the tidal mudflats."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "murkfen_stilthouse"
+direction = "west"
+description = "A boardwalk heads west toward the residential stilt-houses."
+is_locked = false
+
+[[locations]]
+id = "will_o_wisp_marsh"
+name = "Will-o'-Wisp Marsh"
+region_id = "sunken_reach"
+description = "Ghostly lights dance above bottomless sinkholes in this treacherous stretch of swamp. Many travelers have followed the lights to their doom. The bog is deepest here."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "drowned_village"
+direction = "north"
+description = "The marshland firms slightly to the north, where sunken rooftops emerge."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "bog_trails"
+direction = "west"
+description = "The ghostly lights fade as the trail leads west to firmer ground."
+is_locked = false
+
+[[locations]]
+id = "north_channel"
+name = "North Channel"
+region_id = "sunken_reach"
+description = "A navigable water channel heading north through increasingly deep swamp. The water darkens and the trees press closer. Something watches from the tangled roots."
+location_type = "road"
+
+[locations.properties]
+border_region = "the_hollow"
+border_direction = "north"
+
+[[locations.connections]]
+target_location_id = "river_docks"
+direction = "south"
+description = "The channel widens as it leads south back to the river docks."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "murkfen_stilthouse"
+direction = "west"
+description = "A side channel leads west to the stilt-house settlement."
+is_locked = false
+
+[[locations]]
+id = "ancient_causeway"
+name = "Ancient Causeway"
+region_id = "sunken_reach"
+description = "A partially submerged stone road of ancient construction, its paving stones still visible beneath inches of murky water. It leads north through the deepest marshes."
+location_type = "road"
+
+[locations.properties]
+border_region = "the_hollow"
+border_direction = "north"
+
+[[locations.connections]]
+target_location_id = "sunken_temple"
+direction = "north"
+description = "The ancient road leads north past the sunken temple ruins."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "bog_trails"
+direction = "west"
+description = "The paving stones disappear into mud as the bog trails stretch west."
+is_locked = false

@@ -1,0 +1,443 @@
+# The Hollow — haunted swamp, L7-12
+
+[[locations]]
+id = "hollows_gate"
+name = "Hollow's Gate"
+region_id = "the_hollow"
+description = "A fortified settlement at the swamp's edge, serving as the last outpost of civilization. Wooden palisades and torches hold back the darkness. Scavengers and adventurers stage expeditions from here."
+location_type = "town"
+
+[[locations.connections]]
+target_location_id = "hollows_inn"
+direction = "east"
+description = "A reinforced door leads to the Last Light Inn."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hollows_market"
+direction = "west"
+description = "The scavenger's market sprawls along the western palisade."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hollows_shrine"
+direction = "north"
+description = "A warded path leads to the shrine of peaceful death."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hollow_north_road"
+direction = "north"
+description = "The road north climbs out of the swamp toward Kingsward."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hollow_crossroads"
+direction = "south"
+description = "A muddy path descends into the swamp proper."
+is_locked = false
+
+[[locations]]
+id = "hollows_inn"
+name = "The Last Light Inn"
+region_id = "the_hollow"
+description = "The Last Light Inn, a grim establishment where scavengers drink to forget what they've seen. The windows are barred and the doors reinforced."
+location_type = "tavern"
+
+[[locations.connections]]
+target_location_id = "hollows_gate"
+direction = "west"
+description = "The inn's heavy door opens back toward Hollow's Gate."
+is_locked = false
+
+[[locations]]
+id = "hollows_market"
+name = "Scavenger's Market"
+region_id = "the_hollow"
+description = "A scavenger's market where goods recovered from the swamp are sold — alchemical ingredients, ancient artifacts, and occasionally things that should have stayed buried."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "hollows_gate"
+direction = "east"
+description = "The market connects back to Hollow's Gate."
+is_locked = false
+
+[[locations]]
+id = "hollows_shrine"
+name = "Shrine of Peaceful Passage"
+region_id = "the_hollow"
+description = "A shrine dedicated to the god of passage and peaceful death. Priests here bless the dead and ward against undead. The only truly safe place in the swamp."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "hollows_gate"
+direction = "south"
+description = "The warded path leads back to Hollow's Gate."
+is_locked = false
+
+[[locations]]
+id = "witch_tower"
+name = "The Witch Tower"
+region_id = "the_hollow"
+description = "A crooked tower rising from the bog, home to a coven of witches who walk the line between helpful and sinister. They trade in potions, curses, and forbidden knowledge."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "fog_garden"
+direction = "east"
+description = "A winding trail leads through thick mist to the Fog Garden."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hollow_crossroads"
+direction = "north"
+description = "A path through the bog leads back to the crossroads."
+is_locked = false
+
+[[locations]]
+id = "bone_marsh"
+name = "Bone Marsh"
+region_id = "the_hollow"
+description = "A stretch of swamp where bones protrude from the mud — animal, humanoid, and things less identifiable. The ground shifts and the dead stir at night."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "hollow_crossroads"
+direction = "north"
+description = "A squelching path leads back to the crossroads."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "corpse_bog"
+direction = "east"
+description = "The stench grows worse to the east."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "spirit_mound"
+direction = "south"
+description = "A raised mound is visible through the mist to the south."
+is_locked = false
+
+[[locations]]
+id = "drowned_cathedral"
+name = "The Drowned Cathedral"
+region_id = "the_hollow"
+description = "A massive cathedral that sank into the bog centuries ago. Its spires still protrude above the waterline, and unholy light flickers within."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "corpse_bog"
+direction = "west"
+description = "The bog stretches westward from the cathedral's sunken entrance."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "necromancer_ruins"
+direction = "south"
+description = "A causeway of crumbling stone leads south to dark ruins."
+is_locked = false
+
+[[locations]]
+id = "necromancer_ruins"
+name = "Necromancer's Ruins"
+region_id = "the_hollow"
+description = "The remains of a necromancer's stronghold, partially collapsed into the swamp. Dark magic still pulses from its foundations, and undead servants patrol the perimeter."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "drowned_cathedral"
+direction = "north"
+description = "The crumbling causeway leads north to the Drowned Cathedral."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hollow_east_path"
+direction = "west"
+description = "A path through desolate marshland heads west."
+is_locked = false
+
+[[locations]]
+id = "will_lantern_path"
+name = "Will-o'-Lantern Path"
+region_id = "the_hollow"
+description = "A treacherous path through the deepest swamp, marked only by ghostly lanterns that may or may not lead somewhere safe. Many who follow them are never seen again."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "hollow_crossroads"
+direction = "north"
+description = "The path winds back north to the crossroads."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "bone_marsh"
+direction = "east"
+description = "The ghostly lanterns flicker eastward toward the Bone Marsh."
+is_locked = false
+
+[[locations]]
+id = "hollow_docks"
+name = "Hollow Docks"
+region_id = "the_hollow"
+description = "Rotting wooden docks where flat-bottomed boats navigate the swamp's waterways. The only reliable way to reach the deeper areas."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "hollows_gate"
+direction = "north"
+description = "A boardwalk leads north back to Hollow's Gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hollow_west_waterway"
+direction = "south"
+description = "The waterway heads south and west out of the Hollow."
+is_locked = false
+
+[[locations]]
+id = "alchemist_grove"
+name = "Alchemist's Grove"
+region_id = "the_hollow"
+description = "A grove of twisted trees where rare alchemical ingredients grow — deathcap mushrooms, bog lotus, shadow moss. The plants are valuable but many are toxic."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "fog_garden"
+direction = "north"
+description = "The mist thickens as you head north toward the Fog Garden."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hanging_tree"
+direction = "east"
+description = "A gnarled path leads east toward an enormous dead tree."
+is_locked = false
+
+[[locations]]
+id = "corpse_bog"
+name = "Corpse Bog"
+region_id = "the_hollow"
+description = "A foul stretch of swamp where bodies float to the surface. Some are ancient, some disturbingly fresh. The water bubbles with decomposition gases."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "bone_marsh"
+direction = "west"
+description = "The bog gives way to the bone-strewn marsh to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "drowned_cathedral"
+direction = "east"
+description = "Sunken spires rise from the bog to the east."
+is_locked = false
+
+[[locations]]
+id = "lost_village"
+name = "The Lost Village"
+region_id = "the_hollow"
+description = "An abandoned village half-consumed by the swamp. Buildings lean at crazy angles, and personal belongings lie where they were dropped when the inhabitants fled — or worse."
+location_type = "ruins"
+
+[[locations.connections]]
+target_location_id = "will_lantern_path"
+direction = "north"
+description = "Ghostly lanterns flicker along the path northward."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "plague_camp"
+direction = "west"
+description = "The smell of disease drifts from the west."
+is_locked = false
+
+[[locations]]
+id = "hollow_crossroads"
+name = "Hollow Crossroads"
+region_id = "the_hollow"
+description = "A junction of paths in the swamp, marked by a signpost so weathered the words are barely legible. Each direction leads deeper into different horrors."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "hollows_gate"
+direction = "north"
+description = "The path climbs north toward the safety of Hollow's Gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "bone_marsh"
+direction = "south"
+description = "The ground grows soft and bone-littered to the south."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "will_lantern_path"
+direction = "south"
+description = "Ghostly lanterns beckon along a path to the south."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "witch_tower"
+direction = "south"
+description = "A crooked tower is visible through the fog to the south."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "troll_bridge"
+direction = "east"
+description = "A stone bridge is visible in the distance to the east."
+is_locked = false
+
+[[locations]]
+id = "spirit_mound"
+name = "Spirit Mound"
+region_id = "the_hollow"
+description = "A raised mound in the swamp where spirits gather. On certain nights, translucent figures reenact scenes from their lives. A spirit speaker can communicate with them."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "bone_marsh"
+direction = "north"
+description = "The mound slopes down into the Bone Marsh to the north."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hanging_tree"
+direction = "east"
+description = "A trail of cold mist leads east to the Hanging Tree."
+is_locked = false
+
+[[locations]]
+id = "fog_garden"
+name = "The Fog Garden"
+region_id = "the_hollow"
+description = "A clearing where the fog is so thick you can barely see your own hand. Strange plants grow here that exist nowhere else — luminous flowers that feed on mist."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "witch_tower"
+direction = "west"
+description = "The crooked silhouette of the Witch Tower looms to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "alchemist_grove"
+direction = "south"
+description = "Twisted trees mark the alchemist's grove to the south."
+is_locked = false
+
+[[locations]]
+id = "hollow_north_road"
+name = "North Road"
+region_id = "the_hollow"
+description = "The road heading north out of the Hollow toward the safety of Kingsward. The swamp recedes and the air clears."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "hollows_gate"
+direction = "south"
+description = "The road descends south back into the swamp."
+is_locked = false
+
+[locations.properties]
+border_region = "kingsward"
+border_direction = "north"
+
+[[locations]]
+id = "hollow_east_path"
+name = "Eastern Marsh Path"
+region_id = "the_hollow"
+description = "A path heading east through desolate marshland toward the cursed wastes of Deadmarsh."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "necromancer_ruins"
+direction = "east"
+description = "Dark ruins loom to the east."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "troll_bridge"
+direction = "west"
+description = "A stone bridge spans a deep channel to the west."
+is_locked = false
+
+[locations.properties]
+border_region = "deadmarsh"
+border_direction = "east"
+
+[[locations]]
+id = "hollow_west_waterway"
+name = "Western Waterway"
+region_id = "the_hollow"
+description = "A waterway heading west toward Sunken Reach. The swamp transitions from haunted to merely dangerous."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "hollow_docks"
+direction = "north"
+description = "The waterway leads back north to the Hollow Docks."
+is_locked = false
+
+[locations.properties]
+border_region = "sunken_reach"
+border_direction = "west"
+
+[[locations]]
+id = "plague_camp"
+name = "Plague Camp"
+region_id = "the_hollow"
+description = "A quarantined camp where those afflicted by swamp diseases are treated — or left to die. Plague doctors in beaked masks move between cots."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "lost_village"
+direction = "east"
+description = "The Lost Village sits half-sunken to the east."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "will_lantern_path"
+direction = "north"
+description = "The Will-o'-Lantern Path flickers to the north."
+is_locked = false
+
+[[locations]]
+id = "hanging_tree"
+name = "The Hanging Tree"
+region_id = "the_hollow"
+description = "An enormous dead tree draped with moss and rope. Bodies of criminals were once hung here as warnings. Now the tree itself seems malevolent."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "spirit_mound"
+direction = "west"
+description = "Cold mist drifts westward toward the Spirit Mound."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "alchemist_grove"
+direction = "west"
+description = "Twisted trees mark the path west to the Alchemist's Grove."
+is_locked = false
+
+[[locations]]
+id = "troll_bridge"
+name = "Troll Bridge"
+region_id = "the_hollow"
+description = "A stone bridge over a deep channel, claimed by a territorial troll who demands payment from all who cross. The bridge is the only dry crossing for miles."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "hollow_crossroads"
+direction = "west"
+description = "The path leads west back to the Hollow Crossroads."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hollow_east_path"
+direction = "east"
+description = "The bridge crosses into the eastern marshlands."
+is_locked = false

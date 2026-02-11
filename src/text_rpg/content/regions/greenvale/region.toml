@@ -1,0 +1,6 @@
+id = "greenvale"
+name = "Greenvale"
+description = "A prosperous farming valley centered around the market town of Millhaven, which straddles a wide river crossing. The Farmers' Cooperative controls most trade, but bandits raid from the western hills, and a mysterious blight creeps across fields near an old battlefield where soldiers once fell by the hundreds."
+level_range_min = 4
+level_range_max = 8
+climate = "temperate_fertile"

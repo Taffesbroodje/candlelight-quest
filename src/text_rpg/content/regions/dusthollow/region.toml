@@ -1,0 +1,6 @@
+id = "dusthollow"
+name = "Dusthollow"
+description = "A frontier settlement on the great eastern plains where cattle ranchers, horse breeders, and nomadic tribes come to trade. Tension simmers between settlers and plainspeople, and outlaws hole up in the badlands canyons."
+level_range_min = 4
+level_range_max = 8
+climate = "arid_plains"

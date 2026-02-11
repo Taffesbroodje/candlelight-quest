@@ -1,0 +1,343 @@
+# Cragmoor — harsh mountain mining territory, L4-8
+
+[[locations]]
+id = "hammerfall_gate"
+name = "Hammerfall Gate"
+region_id = "cragmoor"
+description = "The fortified entrance to Hammerfall, a mining town carved into the mountainside. Iron gates and stone walls protect against the bitter wind and occasional monster incursion."
+location_type = "town"
+
+[[locations.connections]]
+target_location_id = "hammerfall_hall"
+direction = "north"
+description = "A stone corridor leads to the council hall."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hammerfall_tavern"
+direction = "east"
+description = "The warm glow and sound of laughter spill from the Mithral Mug."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hammerfall_forge"
+direction = "west"
+description = "The clang of hammers and heat of the forge are unmistakable."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hammerfall_market"
+direction = "south"
+description = "Steps descend toward the underground market cavern."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mountain_trail_south"
+direction = "south"
+description = "A winding trail descends south from the town gates."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mountain_pass_north"
+direction = "north"
+description = "A treacherous path climbs toward the northern peaks."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mountain_pass_east"
+direction = "east"
+description = "The eastern pass road leads through guarded checkpoints."
+is_locked = false
+
+[[locations]]
+id = "hammerfall_hall"
+name = "Hammerfall Council Hall"
+region_id = "cragmoor"
+description = "The council hall where mining clan representatives meet to negotiate claims, settle disputes, and plan operations. Maps of tunnel systems cover every wall."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "hammerfall_gate"
+direction = "south"
+description = "The corridor leads back to the main gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hammerfall_barracks"
+direction = "east"
+description = "A reinforced door connects to the military barracks."
+is_locked = false
+
+[[locations]]
+id = "hammerfall_tavern"
+name = "The Mithral Mug"
+region_id = "cragmoor"
+description = "The Mithral Mug, a warm tavern where miners drink away the cold. A roaring fire, strong ale, and arm-wrestling contests draw crowds every evening."
+location_type = "tavern"
+
+[[locations.connections]]
+target_location_id = "hammerfall_gate"
+direction = "west"
+description = "The tavern door opens back toward the main gate."
+is_locked = false
+
+[[locations]]
+id = "hammerfall_forge"
+name = "Valka's Master Forge"
+region_id = "cragmoor"
+description = "A master forge where the mountain's ore is worked into weapons, armor, and tools. The heat is intense even by dwarven standards, and the quality of work is exceptional."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "hammerfall_gate"
+direction = "east"
+description = "The lane leads back to the main gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "gem_cutter_workshop"
+direction = "south"
+description = "A narrow passage leads to the gem cutter's workshop."
+is_locked = false
+
+[[locations]]
+id = "hammerfall_temple"
+name = "Temple of the Mountain God"
+region_id = "cragmoor"
+description = "A stone temple to the Mountain God, carved deep into solid rock. Eternally burning braziers light the chamber, and the walls echo with chanted prayers."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "hammerfall_gate"
+direction = "south"
+description = "A stone stairway ascends back to the main gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hammerfall_barracks"
+direction = "west"
+description = "A connecting passage leads to the barracks."
+is_locked = false
+
+[[locations]]
+id = "hammerfall_market"
+name = "Hammerfall Underground Market"
+region_id = "cragmoor"
+description = "An underground market where miners sell ore, gems, and artifacts found in the deep tunnels. Rare materials change hands here at premium prices."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "hammerfall_gate"
+direction = "north"
+description = "Steps climb back up to the main gate."
+is_locked = false
+
+[[locations]]
+id = "silver_mines"
+name = "Silver Mines"
+region_id = "cragmoor"
+description = "Active silver mines extending deep into the mountain. Miners work with picks and carts on rails, and the deeper shafts are guarded against creatures from below."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "hammerfall_gate"
+direction = "west"
+description = "The mine entrance tunnel leads back to Hammerfall."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mithral_vein"
+direction = "south"
+description = "A newly opened shaft descends toward the mithral deposits."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "collapsed_tunnel"
+direction = "east"
+description = "Timber supports lean dangerously around a partially collapsed passage."
+is_locked = false
+
+[[locations]]
+id = "mithral_vein"
+name = "Mithral Vein"
+region_id = "cragmoor"
+description = "A recently discovered vein of mithral — the rarest of metals. Access is controlled and contested. Strange humming comes from deeper within."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "silver_mines"
+direction = "north"
+description = "The shaft climbs back to the main silver mines."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mushroom_caverns"
+direction = "east"
+description = "A natural fissure opens into warm, humid caverns."
+is_locked = false
+
+[[locations]]
+id = "mountain_pass_north"
+name = "Northern Mountain Pass"
+region_id = "cragmoor"
+description = "A treacherous mountain pass heading north, often blocked by snow. It leads toward the higher peaks of Silverpeak."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "hammerfall_gate"
+direction = "south"
+description = "The pass descends back toward Hammerfall."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "cliffside_outlook"
+direction = "east"
+description = "A narrow trail branches east toward a rocky ledge."
+is_locked = false
+
+[locations.properties]
+border_region = "silverpeak"
+border_direction = "north"
+
+[[locations]]
+id = "mountain_pass_east"
+name = "Eastern Mountain Pass"
+region_id = "cragmoor"
+description = "An eastern pass through the mountains toward the lands of Kingsward. Better maintained than the northern route, with guard posts along the way."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "hammerfall_gate"
+direction = "west"
+description = "The pass road leads back to Hammerfall."
+is_locked = false
+
+[locations.properties]
+border_region = "kingsward"
+border_direction = "east"
+
+[[locations]]
+id = "cliffside_outlook"
+name = "Cliffside Outlook"
+region_id = "cragmoor"
+description = "A natural ledge offering a breathtaking view of the mountain range. On clear days, you can see four regions from here. Eagles nest on the highest crags."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "mountain_pass_north"
+direction = "west"
+description = "The trail leads back to the northern pass."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "frozen_lake"
+direction = "south"
+description = "A steep path descends toward a frozen mountain lake."
+is_locked = false
+
+[[locations]]
+id = "frozen_lake"
+name = "Frozen Lake"
+region_id = "cragmoor"
+description = "A mountain lake frozen solid for most of the year. The ice is crystal clear, and strange shapes are visible deep below — ruins of something ancient."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "cliffside_outlook"
+direction = "north"
+description = "A steep climb leads back to the cliffside outlook."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mountain_shrine"
+direction = "east"
+description = "A pilgrim path winds upward toward a mountain shrine."
+is_locked = false
+
+[[locations]]
+id = "collapsed_tunnel"
+name = "Collapsed Tunnel"
+region_id = "cragmoor"
+description = "A section of the mines that collapsed, revealing older tunnels beneath — carved by something that wasn't dwarven. Strange glyphs mark the walls."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "silver_mines"
+direction = "west"
+description = "Rubble-strewn passage leads back to the silver mines."
+is_locked = false
+
+[[locations]]
+id = "hammerfall_barracks"
+name = "Ironside Guard Barracks"
+region_id = "cragmoor"
+description = "Military quarters for the Ironside Guard, the force that protects Hammerfall from external threats and patrols the deeper tunnels."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "hammerfall_hall"
+direction = "west"
+description = "A reinforced door leads to the council hall."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "hammerfall_temple"
+direction = "east"
+description = "A connecting passage leads to the temple."
+is_locked = false
+
+[[locations]]
+id = "mountain_trail_south"
+name = "Southern Mountain Trail"
+region_id = "cragmoor"
+description = "A winding trail descending south from Hammerfall toward the volcanic lands of the Ashen Highlands."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "hammerfall_gate"
+direction = "north"
+description = "The trail climbs back up to Hammerfall."
+is_locked = false
+
+[locations.properties]
+border_region = "ashen_highlands"
+border_direction = "south"
+
+[[locations]]
+id = "gem_cutter_workshop"
+name = "Brillia's Gem-Cutting Workshop"
+region_id = "cragmoor"
+description = "A precise workshop where raw gems are cut, polished, and set. Magnifying lenses and delicate tools fill the benches."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "hammerfall_forge"
+direction = "north"
+description = "The passage leads back to the master forge."
+is_locked = false
+
+[[locations]]
+id = "mountain_shrine"
+name = "Mountain Shrine"
+region_id = "cragmoor"
+description = "A small shrine on a mountain peak, open to the sky. Wind-carved stone columns frame a simple altar. Pilgrims leave tokens for safe passage."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "frozen_lake"
+direction = "west"
+description = "The path descends back toward the frozen lake."
+is_locked = false
+
+[[locations]]
+id = "mushroom_caverns"
+name = "Mushroom Caverns"
+region_id = "cragmoor"
+description = "Vast caverns filled with enormous mushrooms — some taller than houses. The air is warm and moist, and the fungi provide food for cave-dwelling creatures."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "mithral_vein"
+direction = "west"
+description = "The natural fissure leads back toward the mithral deposits."
+is_locked = false

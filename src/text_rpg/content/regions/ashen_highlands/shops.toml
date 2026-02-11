@@ -1,0 +1,105 @@
+# Shops in Cinderhold and the Ashen Highlands
+
+[[shops]]
+id = "durgan_smithy"
+owner_entity_id = "forgemaster_durgan"
+location_id = "cinderhold_forge"
+shop_type = "smithy"
+
+[[shops.stock]]
+item_id = "longsword"
+quantity = 2
+base_price = 15
+base_stock = 2
+
+[[shops.stock]]
+item_id = "chain_mail"
+quantity = 1
+base_price = 75
+base_stock = 1
+
+[[shops.stock]]
+item_id = "shield"
+quantity = 2
+base_price = 10
+base_stock = 2
+
+[[shops.stock]]
+item_id = "smiths_tools"
+quantity = 1
+base_price = 20
+base_stock = 1
+
+[[shops.stock]]
+item_id = "miners_pick"
+quantity = 3
+base_price = 2
+base_stock = 3
+
+
+[[shops]]
+id = "hild_tavern"
+owner_entity_id = "tavern_keeper_hild"
+location_id = "cinderhold_tavern"
+shop_type = "tavern"
+
+[[shops.stock]]
+item_id = "rations"
+quantity = 20
+base_price = 1
+base_stock = 20
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 3
+base_price = 50
+base_stock = 3
+
+[[shops.stock]]
+item_id = "bedroll"
+quantity = 2
+base_price = 1
+base_stock = 2
+
+[[shops.stock]]
+item_id = "lantern"
+quantity = 2
+base_price = 5
+base_stock = 2
+
+
+[[shops]]
+id = "foundry_shop"
+owner_entity_id = "brother_foundry"
+location_id = "cinderhold_shrine"
+shop_type = "temple"
+
+[[shops.stock]]
+item_id = "healing_potion"
+quantity = 5
+base_price = 45
+base_stock = 5
+
+[[shops.stock]]
+item_id = "antidote"
+quantity = 3
+base_price = 20
+base_stock = 3
+
+[[shops.stock]]
+item_id = "holy_symbol"
+quantity = 2
+base_price = 5
+base_stock = 2
+
+[[shops.stock]]
+item_id = "healing_herb"
+quantity = 8
+base_price = 3
+base_stock = 8
+
+[[shops.stock]]
+item_id = "torch"
+quantity = 10
+base_price = 1
+base_stock = 10

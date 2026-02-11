@@ -1,0 +1,187 @@
+# =============================================================================
+# Monk Origins — Discipline of body and mind, forged in silence and struggle
+# =============================================================================
+
+[[origins]]
+id = "temple_orphan"
+name = "Temple Orphan"
+category = "monk"
+summary = "Raised in a monastery after being abandoned at its gates, discipline is all you know."
+prologue = """
+The temple at Thornfield took you in on a rainy night when you were small enough \
+to fit in a bread basket — which is, according to the abbot, exactly how you \
+arrived. A basket, a blanket, and a note that said only "please." The monks raised \
+you alongside their prayers and their training forms, and by the time you were old \
+enough to wonder where you came from, you had already become too much a part of \
+the temple to leave.
+
+Brother Cael taught you the open-hand forms. Sister Maren taught you meditation. \
+The abbot taught you that the body is a temple of its own — that every joint and \
+muscle is a prayer waiting to be spoken, and that the discipline to control your \
+own flesh is the first step toward controlling the world around you.
+
+You are not a monk by vow. You are a monk by upbringing, which is both more and \
+less than a vow. The temple asks nothing of you except that you live honestly and \
+return when you can. The abbot pressed a few coins into your hand at the gate and \
+told you that the world outside the walls would teach you things the temple could \
+not. You are not sure you believe him, but you trust him enough to try."""
+ability_choices = ["dexterity", "wisdom", "constitution"]
+skill_proficiencies = ["acrobatics", "religion"]
+starting_equipment = ["common_clothes", "prayer_book"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "thornfield_temple"
+feature_name = "Temple Training"
+feature_description = "Your monastery upbringing gives you perfect posture and unshakeable calm. You have advantage on saving throws against being charmed and can meditate in place of sleeping."
+required_races = []
+excluded_races = []
+required_classes = ["monk"]
+excluded_classes = []
+
+[[origins]]
+id = "wandering_ascetic"
+name = "Wandering Ascetic"
+category = "monk"
+summary = "A traveling philosopher who seeks enlightenment through deprivation and movement."
+prologue = """
+You own nothing. This is not poverty — it is a choice, the most deliberate choice \
+you have ever made. Three years ago you were a merchant's clerk in Saltmere, \
+counting coins and inventorying cargo and slowly drowning in the accumulated weight \
+of things. The breaking point was trivial: a shipping manifest that listed four \
+hundred crates of silk, and the sudden, crystalline realization that not one of \
+those crates would make a single person genuinely happy.
+
+You walked out of the counting house, gave your coat to the first beggar you saw, \
+and kept walking. For three years you have owned only what you wear and what you \
+carry, and you have discovered that the body, unburdened by possessions, becomes \
+something extraordinary. Your feet have hardened to leather. Your reflexes have \
+sharpened beyond anything training could achieve. When you stopped reaching for \
+things, your hands became tools of remarkable precision.
+
+The road teaches a different discipline than any monastery. Every meal is earned. \
+Every shelter is temporary. Every person you meet is a lesson in impermanence. You \
+are lighter now than you have ever been — lighter in body, in mind, in spirit — \
+and the road keeps unrolling ahead of you like a meditation mat without end."""
+ability_choices = ["wisdom", "dexterity", "constitution"]
+skill_proficiencies = ["insight", "stealth"]
+starting_equipment = ["common_clothes", "waterskin"]
+bonus_gold = 0
+starting_region = "iron_coast"
+starting_location = "coastal_road"
+feature_name = "Ascetic's Clarity"
+feature_description = "Your deliberate poverty has sharpened your perception. You cannot be deceived by illusions of wealth or luxury, and you have advantage on Insight checks to detect lies motivated by greed."
+required_races = []
+excluded_races = []
+required_classes = ["monk"]
+excluded_classes = []
+
+[[origins]]
+id = "martial_tournament_victor"
+name = "Martial Tournament Victor"
+category = "monk"
+summary = "An unarmed combat champion who proved that fists can defeat swords."
+prologue = """
+The fighting pits of Saltmere have rules. Not many, but enough: no weapons, no \
+magic, no killing. Everything else is permitted. You entered on a dare from a \
+dockworker who thought your slight frame was funny, and you left with a broken \
+nose, two cracked ribs, and the tournament purse. The dockworker was not laughing \
+when you dropped the pit champion in three moves that nobody in the audience had \
+ever seen.
+
+You trained yourself. No monastery, no master, no ancient tradition — just years \
+of watching, imitating, and refining. You studied the way cats land on their feet \
+and applied it to falling. You watched the way water flows around obstacles and \
+applied it to blocking. The fighting pit regulars called your style "the weird \
+one," which you took as a compliment.
+
+Three tournament wins made you a local celebrity. Four made you a target. The \
+fifth was cancelled after someone tried to poison your water between rounds. You \
+took the hint and left Saltmere with your winnings and your reputation, looking \
+for a place where your skills could be used for something more meaningful than \
+entertainment and gambling odds."""
+ability_choices = ["dexterity", "strength", "charisma"]
+skill_proficiencies = ["acrobatics", "athletics"]
+starting_equipment = ["common_clothes", "trophy_medal"]
+bonus_gold = 15
+starting_region = "iron_coast"
+starting_location = "saltmere_docks"
+feature_name = "Pit Fighter's Instinct"
+feature_description = "Years in the fighting pits have taught you to read opponents. On the first round of combat, you have advantage on attack rolls against any enemy you can see."
+required_races = []
+excluded_races = []
+required_classes = ["monk"]
+excluded_classes = []
+
+[[origins]]
+id = "meditation_hermit"
+name = "Meditation Hermit"
+category = "monk"
+summary = "A solitary contemplative who achieved inner peace and now seeks to share it with a troubled world."
+prologue = """
+The island in the Sunken Reach is too small to have a name and too remote to have \
+visitors. You built your shelter from driftwood and reeds, grew vegetables in the \
+silty soil, and spent five years doing nothing but breathing, thinking, and \
+perfecting the forms your body could achieve when the mind was perfectly still.
+
+The stillness was the goal. Not the absence of thought — the fullness of it. A \
+mind so complete that every sensation was noticed and released without grasping. \
+In the third year, you caught a fly in midair without deciding to catch it. In the \
+fourth year, you dodged a falling branch before you heard it crack. In the fifth \
+year, you sat so still that a family of herons built a nest on your shoulders \
+during a week-long meditation.
+
+The world intruded, as it does. A wounded trader washed up on your island, \
+babbling about bandits and corruption and a darkness spreading through the lowlands. \
+You healed him, fed him, and sent him away. Then you sat with the knowledge he had \
+brought and understood, with perfect clarity, that peace maintained through \
+isolation is not peace at all. It is avoidance. True peace must be carried into \
+the places where it is needed most."""
+ability_choices = ["wisdom", "constitution", "dexterity"]
+skill_proficiencies = ["insight", "religion"]
+starting_equipment = ["incense_sticks", "common_clothes"]
+bonus_gold = 0
+starting_region = "sunken_reach"
+starting_location = "hermit_island"
+feature_name = "Inner Peace"
+feature_description = "Your years of deep meditation have granted you extraordinary mental resilience. You have advantage on saving throws against being frightened and can enter a meditative trance to recover 1 ki point during a short rest."
+required_races = []
+excluded_races = []
+required_classes = ["monk"]
+excluded_classes = []
+
+[[origins]]
+id = "street_fighter_redeemed"
+name = "Street Fighter Redeemed"
+category = "monk"
+summary = "A former brawler who found discipline after a life of violence."
+prologue = """
+The backstreets of Thornfield are not the worst in the world, but they taught you \
+everything you needed to know about hitting and being hit. You ran with a gang of \
+pickpockets and enforcers from the age of twelve, collecting debts with your fists \
+and your reputation. By sixteen you were the best bare-knuckle fighter in the lower \
+quarter, which meant you were also the most feared and the most alone.
+
+The change came after you nearly killed a man over a gambling debt. He was older, \
+slower, and owed less than the cost of the meal you ate afterward. You stood over \
+his bleeding body in an alley and felt something you had not felt in years: shame. \
+Not for the violence — violence was a tool, no different from a hammer. But for \
+the purposelessness of it. You were strong, fast, and skilled, and you were using \
+those gifts to break old men in alleys.
+
+The temple took you in. Not as a convert — you have no faith to speak of — but as \
+a student. The monks there taught you that the same hands that break can also heal, \
+and that the discipline of controlled violence is a thousand times more powerful \
+than the chaos you had mastered. You train now with purpose. The streets made you \
+dangerous. The temple is making you something better."""
+ability_choices = ["dexterity", "constitution", "strength"]
+skill_proficiencies = ["athletics", "stealth"]
+starting_equipment = ["common_clothes", "belt_pouch"]
+bonus_gold = 8
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Street Instincts"
+feature_description = "Your years on the streets have given you an eye for trouble. You cannot be surprised while conscious, and you have advantage on Perception checks in urban environments."
+required_races = []
+excluded_races = []
+required_classes = ["monk"]
+excluded_classes = []

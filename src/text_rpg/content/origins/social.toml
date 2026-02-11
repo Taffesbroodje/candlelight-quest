@@ -1,0 +1,469 @@
+# =============================================================================
+# Social Origins — Backgrounds rooted in politics, wealth, and influence
+# =============================================================================
+
+[[origins]]
+id = "noble"
+name = "Noble"
+category = "social"
+summary = "Born into privilege and trained in the art of courtly command."
+prologue = """
+You were raised behind stone walls draped in silk, where every meal was a negotiation \
+and every smile concealed a blade. The manor overlooking Thornfield Village was your \
+kingdom in miniature — servants answered your call, tutors shaped your mind, and the \
+weight of your family's name opened doors before you ever reached for the handle.
+
+But privilege is a gilded cage. The ledgers your parents pored over told a story of \
+declining fortunes, of debts owed to creditors in distant cities. One evening, you \
+found your mother's study empty, her signet ring left on the desk beside a letter \
+you were never meant to read. The truth it contained set your jaw and steeled your \
+resolve.
+
+You took the ring, dressed in your finest, and walked out through the village gates \
+at dawn. Whatever comes next, you will face it as your family once faced the world — \
+with your chin held high and your name on your lips like a prayer."""
+ability_choices = ["charisma", "intelligence", "wisdom"]
+skill_proficiencies = ["persuasion", "history"]
+starting_equipment = ["fine_clothes", "signet_ring", "scroll_of_pedigree"]
+bonus_gold = 25
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Position of Privilege"
+feature_description = "Common folk and merchants instinctively defer to you. You gain advantage on persuasion checks when invoking your noble lineage in social encounters."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "courtier"
+name = "Courtier"
+category = "social"
+summary = "A practiced navigator of political intrigue and noble courts."
+prologue = """
+The courts of the Verdant Reach taught you that words are sharper than any sword. \
+You learned to read the twitch of an eyebrow, the pause before a lie, the way a \
+noble's hand drifts toward their wine when they are about to concede a point. You \
+were never the one on the throne — you were the one whispering beside it.
+
+Your position demanded elegance and ruthlessness in equal measure. You brokered \
+treaties between feuding families, smoothed over insults that might have started \
+wars, and ensured that the right rumor reached the right ears at precisely the right \
+moment. Your perfume preceded you into every room, and your reputation followed \
+close behind.
+
+Then the court shifted, as courts always do. A new advisor rose, one who saw your \
+talents as a threat rather than an asset. You left Thornfield before the knives \
+came out — not fleeing, you tell yourself, but repositioning. The wider world is \
+simply a larger court, and you intend to master it."""
+ability_choices = ["charisma", "intelligence", "wisdom"]
+skill_proficiencies = ["insight", "persuasion"]
+starting_equipment = ["fine_clothes", "perfume_vial"]
+bonus_gold = 15
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Court Intuition"
+feature_description = "Years of reading courtly subtleties grant you advantage on insight checks to detect lies or hidden motives during social encounters."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "merchant"
+name = "Merchant"
+category = "social"
+summary = "A shrewd trader who knows the value of everything and the cost of ambition."
+prologue = """
+The salt-stained stalls of Saltmere Market were your schoolroom. Before you could \
+read, you could haggle. Before you could write, you could count coin by weight and \
+ring alone. Your family's stall — wedged between a fishmonger and a rope-maker — \
+was where you learned that every person carries something they want to sell and \
+something they are desperate to buy.
+
+You built your ledger one deal at a time. Silks from the south traded for iron from \
+the highlands, potions bartered for passage on coastal ships. The margins were thin, \
+but you were thinner — slipping through the gaps that larger traders overlooked. By \
+twenty, your name was spoken in the Saltmere Guildhall with a mixture of respect \
+and wariness.
+
+But the sea roads grew dangerous, and a shipment you had staked everything on never \
+arrived. The ledger that once recorded your triumphs now tallies your losses. You \
+have your wits, your contacts, and the unshakeable belief that fortune favors the \
+bold. Time to rebuild — and this time, you will not be so easily ruined."""
+ability_choices = ["charisma", "intelligence", "wisdom"]
+skill_proficiencies = ["persuasion", "insight"]
+starting_equipment = ["merchant_ledger", "belt_pouch"]
+bonus_gold = 20
+starting_region = "iron_coast"
+starting_location = "saltmere_market"
+feature_name = "Eye for Value"
+feature_description = "You instinctively appraise goods and detect counterfeits. You receive 10% better prices when buying or selling at shops."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "guild_artisan"
+name = "Guild Artisan"
+category = "social"
+summary = "A skilled craftsperson backed by the resources and reputation of a trade guild."
+prologue = """
+The rhythmic ring of hammer on anvil was the heartbeat of your youth. You apprenticed \
+young, your hands blistered and burned into calluses that you wore with pride. The \
+guild masters of Thornfield Market demanded precision, discipline, and above all, \
+loyalty to the craft. You gave them all three and earned your journeyman's mark \
+before your peers had finished their first commissions.
+
+Your work spoke for itself — hinges that never rusted, locks that never jammed, \
+tools balanced so finely they seemed to anticipate the hand that held them. The \
+guild letter in your pocket is both credential and promise: wherever you travel, \
+the guild's network of artisans will know you as one of their own.
+
+But a journeyman must journey. The guild expects you to travel, to learn techniques \
+from distant forges and foreign workshops, and to return with knowledge that will \
+elevate the craft. You packed your tools, accepted the guild's blessing, and set \
+out from the market square with sawdust still clinging to your boots."""
+ability_choices = ["intelligence", "wisdom", "strength"]
+skill_proficiencies = ["insight", "persuasion"]
+starting_equipment = ["guild_letter", "smiths_tools"]
+bonus_gold = 15
+starting_region = "verdant_reach"
+starting_location = "thornfield_market"
+feature_name = "Guild Membership"
+feature_description = "Fellow guild members provide lodging and tools when available. You can attempt crafting recipes one difficulty tier lower than normal."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "diplomat"
+name = "Diplomat"
+category = "social"
+summary = "A trained envoy skilled in the delicate art of negotiation between powers."
+prologue = """
+You were chosen for the diplomatic corps not for your family name or your wealth, \
+but for a rare gift: the ability to sit between two people who despise each other \
+and make them both feel heard. Your training in Thornfield's council chambers was \
+rigorous — languages, customs, histories, the precise angle of a bow that conveys \
+respect without submission.
+
+Your letters of introduction bear seals from three different courts. You have \
+mediated border disputes in the highlands, trade agreements on the coast, and one \
+particularly delicate matter involving a baron's stolen hounds that nearly escalated \
+into armed conflict. Each success added another line to your credentials and another \
+grey hair to your head.
+
+Now a new assignment calls you beyond the familiar courts. The roads between the \
+regions grow dangerous, old alliances fray, and someone must weave them back \
+together before the threads snap entirely. You adjust your fine clothes, tuck your \
+credentials into your breast pocket, and step into the unknown with a diplomat's \
+most essential tool: a patient smile."""
+ability_choices = ["charisma", "wisdom", "intelligence"]
+skill_proficiencies = ["persuasion", "history"]
+starting_equipment = ["fine_clothes", "letter_of_introduction"]
+bonus_gold = 15
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Diplomatic Immunity"
+feature_description = "Your bearing and credentials grant initial trust from faction leaders. First interactions with new factions start at one reputation tier higher than default."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "inheritor"
+name = "Inheritor"
+category = "social"
+summary = "Burdened with a mysterious family heirloom and the legacy it demands."
+prologue = """
+The locket arrived on your sixteenth birthday, carried by a solicitor who would not \
+meet your eyes. Inside, a miniature portrait of someone you had never seen — and yet \
+their face was unmistakably yours, rendered in pigments that had not faded despite \
+what the solicitor claimed were centuries of age. With it came a scroll of pedigree \
+tracing your bloodline back to names that appear in histories you had dismissed as \
+legend.
+
+You grew up ordinary in Thornfield, or so you believed. But the locket changed \
+things. You began to notice patterns — the way certain old texts seemed to make \
+sense on instinct, the way your dreams mapped corridors you had never walked. The \
+pedigree scroll hints at an inheritance far greater than gold: a legacy of knowledge, \
+of duty, of something ancient that chose your bloodline as its vessel.
+
+The solicitor's final words echo in your mind: "When you are ready, the inheritance \
+will find you." You are not certain you are ready. But the locket grows warm against \
+your chest when you face east, toward the old ruins beyond the Whisperwood, and you \
+have never been one to ignore a summons."""
+ability_choices = ["charisma", "intelligence", "wisdom"]
+skill_proficiencies = ["arcana", "history"]
+starting_equipment = ["family_locket", "scroll_of_pedigree"]
+bonus_gold = 20
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Ancestral Echo"
+feature_description = "Your inherited bloodline resonates with ancient magic. You gain advantage on arcana checks when examining magical artifacts or deciphering old inscriptions."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "wealthy_exile"
+name = "Wealthy Exile"
+category = "social"
+summary = "Cast out from a position of power, but not without resources to reclaim it."
+prologue = """
+The ship that brought you to Saltmere was a merchant brig, not a pleasure yacht, and \
+the distinction still stings. Three months ago you dined on silver plates in a manor \
+house that commanded a view of rolling hills. Now you stand on salt-crusted docks, \
+your remaining wealth sewn into the lining of a coat that is already beginning to \
+smell of fish and brine.
+
+The details of your exile are complicated — a political betrayal, a forged document, \
+allies who proved to be anything but. You replay the final confrontation in your \
+mind during sleepless nights, cataloguing every mistake, every sign you should have \
+read. The anger has cooled into something harder and more useful: resolve.
+
+You still carry yourself like someone who matters, and in Saltmere, where coin speaks \
+louder than pedigree, that counts for something. The dockside traders eye your fine \
+clothes with suspicion and your heavy purse with interest. Let them wonder. You did \
+not survive the fall by being transparent. Every exile is either a tragedy or the \
+first chapter of a comeback, and you have already decided which yours will be."""
+ability_choices = ["charisma", "dexterity", "intelligence"]
+skill_proficiencies = ["deception", "persuasion"]
+starting_equipment = ["fine_clothes", "belt_pouch"]
+bonus_gold = 20
+starting_region = "iron_coast"
+starting_location = "saltmere_docks"
+feature_name = "Old Connections"
+feature_description = "Your former life left you with contacts in unexpected places. Once per long rest, you may attempt a charisma check to call in a minor favor from an NPC in any settlement."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "patron_of_arts"
+name = "Patron of the Arts"
+category = "social"
+summary = "A cultured benefactor of musicians, poets, and performers across the realm."
+prologue = """
+The common room of the Thornfield Inn has hosted bards, troubadours, and storytellers \
+from every corner of the known world, and you have bought drinks for all of them. \
+Your ear for talent is legendary — you discovered the poet Caelen before anyone else \
+recognized her gift, and the song cycle she composed in your honor is still performed \
+at festivals from the coast to the highlands.
+
+Art, you believe, is the truest mirror of civilization. While others hoard gold in \
+vaults, you invest in beauty, in the preservation of stories that might otherwise \
+be lost. Your collection of instruments, manuscripts, and curiosities filled an \
+entire wing of your former residence. You could identify a lute's origin by its \
+wood grain and date a manuscript by its binding technique.
+
+But patronage requires wealth, and wealth, it turns out, requires attention you were \
+too busy giving to artists. The debts accumulated quietly, like dust on a neglected \
+shelf. You sold the collection to cover them — all except one instrument you could \
+not bear to part with. Now you carry it with you, a reminder that beauty endures \
+even when fortunes do not, and you set out to find new wonders worth championing."""
+ability_choices = ["charisma", "intelligence", "wisdom"]
+skill_proficiencies = ["performance", "persuasion"]
+starting_equipment = ["musical_instrument", "fine_clothes"]
+bonus_gold = 20
+starting_region = "verdant_reach"
+starting_location = "thornfield_inn"
+feature_name = "Cultured Reputation"
+feature_description = "Artists, bards, and performers recognize you as a friend of the arts. You gain advantage on persuasion checks with creative NPCs and can gather rumors more easily at taverns."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "tax_collector"
+name = "Tax Collector"
+category = "social"
+summary = "A methodical enforcer of the crown's ledgers, equally feared and indispensable."
+prologue = """
+Nobody loves the tax collector, and you learned to stop caring about love a long \
+time ago. What matters is the ledger — columns balanced, debts recorded, payments \
+verified. You served Thornfield's magistrate with mechanical precision, visiting \
+every farm, shop, and tavern with your inkwell and your quiet, implacable authority. \
+Most paid without argument. The ones who argued learned that you had the full weight \
+of the law behind your quill.
+
+You developed an investigator's eye out of necessity. Farmers who hid grain beneath \
+false floorboards, merchants who kept two sets of books, innkeepers who claimed \
+poverty while wearing new boots — you saw through them all. Your ledger was \
+immaculate, your reputation fearsome, and your conscience surprisingly clear. The \
+roads needed paving, the guards needed wages, and someone had to ensure the coin \
+flowed.
+
+Then the magistrate fell from favor, and his officers fell with him. You were not \
+arrested — your records were too useful for that — but you were quietly released \
+from service with a handshake and a warning not to linger. You took your ledger, \
+your quill, and your hard-earned instincts, and walked out to find a world full \
+of people hiding things they owe."""
+ability_choices = ["intelligence", "wisdom", "charisma"]
+skill_proficiencies = ["intimidation", "investigation"]
+starting_equipment = ["merchant_ledger", "ink_and_quill"]
+bonus_gold = 15
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Ledger Keeper's Eye"
+feature_description = "Your trained eye catches financial discrepancies instantly. You can detect when merchants are overcharging and reveal hidden wealth during investigations."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "betrothed_runaway"
+name = "Betrothed Runaway"
+category = "social"
+summary = "Fled an arranged marriage to forge a life of your own choosing."
+prologue = """
+The wedding was to take place at midsummer. The dress — or the doublet, depending \
+on the telling — had been fitted three times. The guest list filled two scrolls. \
+Your betrothed was wealthy, well-connected, and utterly intolerable, though that \
+last detail concerned no one but you. The union would merge two families, secure a \
+trade route, and settle a generations-old grievance. Your happiness was not a line \
+item in the negotiation.
+
+You smiled through the engagement feast, nodded at the rehearsals, and on the night \
+before the ceremony, you packed a single bag. You left the family locket on your \
+pillow — then thought better of it and took it back. It was yours, after all, \
+whatever they might claim. You slipped out through the servants' entrance and \
+vanished into the darkness beyond the garden wall.
+
+Briarhaven took you in without questions. The village at the edge of the Thornwild \
+is accustomed to people who arrive with no past and no desire to discuss one. You \
+traded your fine clothes for traveler's garb and your old name for silence. But the \
+locket is warm against your skin, a reminder that the life you fled is still out \
+there, and that freedom must be defended as fiercely as it was seized."""
+ability_choices = ["dexterity", "charisma", "wisdom"]
+skill_proficiencies = ["stealth", "persuasion"]
+starting_equipment = ["travelers_clothes", "family_locket"]
+bonus_gold = 10
+starting_region = "thornwild"
+starting_location = "briarhaven_village"
+feature_name = "Desperate Resolve"
+feature_description = "Your refusal to be caged fuels you in dire moments. Once per long rest, when you fail a saving throw against being restrained or charmed, you may reroll it."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "disgraced_heir"
+name = "Disgraced Heir"
+category = "social"
+summary = "Stripped of title and fortune by scandal, left with only cunning and a tarnished name."
+prologue = """
+The fall was spectacular, as falls from great heights tend to be. One season you were \
+the toast of society — heir to an estate, a name that opened every door, a future \
+mapped out in gilt-edged certainty. The next, you were the subject of whispered \
+conversations that stopped when you entered a room. The scandal — whether it was \
+truly your fault is a question you have stopped asking — stripped you of your \
+inheritance, your title, and every fair-weather friend you had ever collected.
+
+Your family's response was swift and surgical. Your name was struck from the \
+register. Your allowance ceased. The signet ring they could not take — it was on \
+your finger when the door closed behind you, and you did not think to return it. \
+Perhaps that was spite. Perhaps it was hope. You wear it still, turned inward \
+against your palm where the crest presses into your skin like a brand.
+
+Saltmere's docks do not care about your past. Here, a strong back and a quick \
+tongue matter more than bloodlines, and the anonymity of the crowd is a comfort \
+you never expected to need. You wear common clothes now, eat common food, and \
+sleep in common rooms. But the ring is always there, cold against your palm, \
+reminding you of everything you lost — and everything you might yet reclaim."""
+ability_choices = ["charisma", "intelligence", "strength"]
+skill_proficiencies = ["deception", "history"]
+starting_equipment = ["common_clothes", "signet_ring"]
+bonus_gold = 5
+starting_region = "iron_coast"
+starting_location = "saltmere_docks"
+feature_name = "Fallen Grace"
+feature_description = "Your noble mannerisms surface under pressure, lending unexpected authority. You gain advantage on intimidation checks against commoners and lower-ranking officials."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "political_hostage"
+name = "Political Hostage"
+category = "social"
+summary = "Held as a guarantee of peace between factions, now navigating a world of captor and kin."
+prologue = """
+You were seven when you were given away. Not sold — your parents were careful to \
+frame it as an honor, a fostering, a diplomatic exchange that would ensure peace \
+between your homeland and the powers of the Verdant Reach. You lived in comfort in \
+Thornfield, tutored alongside children of the local gentry, fed well, clothed well, \
+and watched always. The guards at your door were polite. They were also guards.
+
+The years taught you to read people the way a prisoner reads walls — searching for \
+cracks, for weaknesses, for the moment when attention slips. You learned to smile \
+when you wanted to scream, to offer gratitude for a captivity gilded enough that \
+others envied it. Your captors grew fond of you, in their way. You grew fond of \
+survival, in yours.
+
+Now the political landscape has shifted. The treaty that bound you here has expired, \
+and your hosts have released you with ceremony, a set of common clothes, and a stick \
+of sealing wax as if you might wish to write home. You stand in the village square, \
+free for the first time in your memory, and discover that freedom without direction \
+is its own kind of cage. But you have spent a lifetime watching, waiting, and \
+learning. You will not waste this chance."""
+ability_choices = ["wisdom", "charisma", "intelligence"]
+skill_proficiencies = ["insight", "deception"]
+starting_equipment = ["common_clothes", "sealing_wax"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Survivor's Vigilance"
+feature_description = "Years of captivity sharpened your awareness of threats. You gain advantage on insight checks to detect hostile intent or impending betrayal."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "ambassador"
+name = "Ambassador"
+category = "social"
+summary = "An official envoy entrusted with forging alliances and representing distant powers."
+prologue = """
+The amulet of passage hanging from your neck has carried you across borders that \
+would stop lesser travelers cold. Stamped with the seal of a sovereign whose name \
+commands respect even here on the Iron Coast, it marks you as untouchable — or at \
+least, as someone whose disappearance would provoke uncomfortable questions. You \
+arrived at the Saltmere Guildhall with letters of introduction, a mandate to \
+establish trade relations, and the quiet confidence of someone who has negotiated \
+with far more dangerous people than coastal merchants.
+
+Your career has taken you from highland forges to fenland shrines, and each posting \
+has added another language to your repertoire, another custom to your understanding, \
+another scar to the collection you keep hidden beneath your fine clothes. Diplomacy, \
+you learned early, is not the absence of conflict — it is conflict conducted with \
+better manners and sharper words.
+
+But this posting is different. The guildhall masters are evasive, the trade routes \
+are disrupted, and the intelligence you have gathered suggests that something is \
+moving in the regions beyond the coast — something that treaties and trade agreements \
+cannot address. Your mandate was commerce. Your instinct says survival. You have \
+always trusted your instincts over your mandates."""
+ability_choices = ["charisma", "wisdom", "intelligence"]
+skill_proficiencies = ["persuasion", "insight"]
+starting_equipment = ["fine_clothes", "amulet_of_passage", "letter_of_introduction"]
+bonus_gold = 20
+starting_region = "iron_coast"
+starting_location = "saltmere_guildhall"
+feature_name = "Sovereign Authority"
+feature_description = "Your ambassadorial credentials command respect across all factions. You are immune to the first reputation penalty you would receive with any new faction."
+required_races = []
+excluded_races = []
+required_classes = []
+excluded_classes = []

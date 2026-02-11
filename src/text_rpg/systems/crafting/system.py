@@ -162,8 +162,18 @@ class CraftingSystem(GameSystem):
                 "event_type": "CRAFT_SUCCESS",
                 "description": f"Crafted {recipe.name}",
                 "actor_id": char_id,
-                "mechanical_details": {"recipe": recipe.id, "skill_xp": recipe.xp_reward},
+                "mechanical_details": {
+                    "recipe": recipe.id,
+                    "skill_xp": recipe.xp_reward,
+                    "result_item": recipe.result_item,
+                },
             })
+
+            # Update guild work order progress
+            self._update_work_order_progress(
+                game_id, char_id, "CRAFT_SUCCESS",
+                {"recipe": recipe.id, "result_item": recipe.result_item},
+            )
         else:
             desc = f"Failed! Your attempt to craft {recipe.name} didn't work out. Materials consumed."
             # Still award some XP for trying
@@ -321,6 +331,24 @@ class CraftingSystem(GameSystem):
             new_value=json.dumps({"item_id": scroll_id, "quantity": 1}),
         ))
 
+    def _update_work_order_progress(
+        self, game_id: str, char_id: str,
+        event_type: str, details: dict,
+    ) -> None:
+        """Update progress on active guild work orders after a craft event."""
+        repos = self._repos or {}
+        guild_repo = repos.get("guild")
+        if not guild_repo:
+            return
+
+        from text_rpg.mechanics.guilds import update_work_order_progress
+
+        active_orders = guild_repo.get_active_orders(game_id, char_id)
+        for order in active_orders:
+            new_progress = update_work_order_progress(order, event_type, details)
+            if new_progress != order.get("progress", {}):
+                guild_repo.update_order_progress(order["id"], new_progress)
+
     def _resolve_train(self, action: Action, context: GameContext) -> ActionResult:
         target = (action.target_id or "").lower().strip()
         if not target:
@@ -368,8 +396,23 @@ class CraftingSystem(GameSystem):
                 trainer_name = entity.get("name", "the trainer")
                 break
 
-        # Allow self-teaching at higher cost (no trainer required but costs 2x)
+        # Apply guild training discount
         cost = TRAINING_COST.get(skill_name, 25)
+        guild_repo = repos.get("guild")
+        guild_discount_applied = False
+        if guild_repo:
+            from text_rpg.content.loader import load_all_guilds
+            from text_rpg.mechanics.guilds import training_cost_with_guild
+
+            guilds_data = load_all_guilds()
+            memberships = guild_repo.get_memberships(game_id, char_id)
+            for m in memberships:
+                gdata = guilds_data.get(m["guild_id"], {})
+                if gdata.get("profession") == skill_name:
+                    cost = training_cost_with_guild(cost, True, m.get("rank", "initiate"))
+                    guild_discount_applied = True
+                    break
+
         if not trainer_present:
             cost = cost * 3  # Much more expensive without a trainer
             gold = char.get("gold", 0)

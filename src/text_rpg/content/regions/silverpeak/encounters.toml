@@ -1,0 +1,260 @@
+# Silverpeak encounters — L7-12
+
+[[encounters]]
+id = "ice_elemental"
+name = "Ice Elemental"
+location_ids = ["ice_caves", "avalanche_pass"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.6},
+    {id = "soul_gem", chance = 0.15},
+    {id = "healing_potion", chance = 0.4},
+]
+gold_min = 30
+gold_max = 70
+
+[[encounters.entities]]
+id = "ice_elemental"
+name = "Ice Elemental"
+entity_type = "enemy"
+description = "A towering figure of blue ice and howling wind, its form shifting between solid and vapor. Frost radiates from it in waves, freezing the ground where it steps. Ancient runes flicker within its crystalline core."
+level = 8
+hp_max = 62
+ac = 15
+count_min = 1
+count_max = 1
+xp_value = 400
+
+[encounters.entities.ability_scores]
+strength = 16
+dexterity = 10
+constitution = 18
+intelligence = 5
+wisdom = 10
+charisma = 5
+
+[[encounters.entities.attacks]]
+name = "Frost Slam"
+damage_dice = "2d10"
+damage_bonus = 3
+damage_type = "cold"
+
+[[encounters.entities.attacks]]
+name = "Ice Shards"
+damage_dice = "2d6"
+damage_bonus = 0
+damage_type = "cold"
+
+[[encounters]]
+id = "deep_crawlers_sp"
+name = "Deep Crawlers"
+location_ids = ["silverpeak_deep", "dragon_gate"]
+encounter_chance = 0.30
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "iron_ingot", chance = 0.3},
+    {id = "arcane_dust", chance = 0.2},
+]
+gold_min = 10
+gold_max = 30
+
+[[encounters.entities]]
+id = "deep_crawler"
+name = "Deep Crawler"
+entity_type = "enemy"
+description = "A chitinous insectoid horror from the deepest tunnels beneath Silverpeak, larger and more aggressive than those found in Cragmoor. Its mandibles drip with corrosive acid and its carapace is hardened by the mountain's mineral deposits."
+level = 7
+hp_max = 42
+ac = 14
+count_min = 2
+count_max = 4
+xp_value = 150
+
+[encounters.entities.ability_scores]
+strength = 16
+dexterity = 10
+constitution = 16
+intelligence = 3
+wisdom = 10
+charisma = 3
+
+[[encounters.entities.attacks]]
+name = "Mandible"
+damage_dice = "2d6"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[encounters.entities.attacks]]
+name = "Acid Spit"
+damage_dice = "1d8"
+damage_bonus = 0
+damage_type = "acid"
+
+[[encounters]]
+id = "mountain_lions_sp"
+name = "Mountain Lions"
+location_ids = ["eagle_aerie", "avalanche_pass"]
+encounter_chance = 0.25
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "beast_hide", chance = 0.6},
+    {id = "healing_herb", chance = 0.3},
+]
+gold_min = 0
+gold_max = 10
+
+[[encounters.entities]]
+id = "mountain_lion_sp"
+name = "Mountain Lion"
+entity_type = "enemy"
+description = "A powerful tawny predator perfectly adapted to the high rocky terrain. Its thick fur protects against the alpine cold, and it strikes from above with devastating force."
+level = 6
+hp_max = 34
+ac = 14
+count_min = 1
+count_max = 2
+xp_value = 100
+
+[encounters.entities.ability_scores]
+strength = 16
+dexterity = 17
+constitution = 13
+intelligence = 3
+wisdom = 14
+charisma = 6
+
+[[encounters.entities.attacks]]
+name = "Bite"
+damage_dice = "1d8"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[encounters.entities.attacks]]
+name = "Claws"
+damage_dice = "1d6"
+damage_bonus = 3
+damage_type = "slashing"
+
+# -- Puzzle Encounter --
+
+[[encounters]]
+id = "avalanche"
+name = "Avalanche"
+location_ids = ["avalanche_pass"]
+encounter_chance = 0.20
+fight_type = "puzzle"
+description = "The mountainside groans and a wall of snow and rock breaks loose above. Tons of debris cascade downward — you must find cover or outrun the slide."
+
+[encounters.puzzle]
+puzzle_type = "trap"
+dc = 15
+trap_damage = "4d6"
+
+[encounters.loot]
+items = [
+    {id = "iron_ingot", chance = 0.4},
+]
+gold_min = 5
+gold_max = 20
+
+[[encounters]]
+id = "gem_thieves"
+name = "Gem Thieves"
+location_ids = ["artisan_quarter", "silverpeak_market"]
+encounter_chance = 0.20
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "dagger", chance = 0.3},
+    {id = "healing_potion", chance = 0.2},
+]
+gold_min = 20
+gold_max = 60
+
+[[encounters.entities]]
+id = "gem_thief"
+name = "Gem Thief"
+entity_type = "enemy"
+description = "A hooded figure in dark leather, quick and cunning. These thieves target Silverpeak's gem trade, using smoke bombs and poison blades to strike fast and vanish."
+level = 7
+hp_max = 35
+ac = 15
+count_min = 3
+count_max = 4
+xp_value = 150
+
+[encounters.entities.ability_scores]
+strength = 10
+dexterity = 18
+constitution = 12
+intelligence = 14
+wisdom = 12
+charisma = 10
+
+[[encounters.entities.attacks]]
+name = "Daggers"
+damage_dice = "1d4"
+damage_bonus = 4
+damage_type = "piercing"
+
+[[encounters.entities.attacks]]
+name = "Smoke Bomb"
+damage_dice = "1d6"
+damage_bonus = 0
+damage_type = "poison"
+
+[[encounters]]
+id = "frost_giants"
+name = "Frost Giant"
+location_ids = ["ice_caves", "silverpeak_north_road"]
+encounter_chance = 0.10
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "healing_potion", chance = 0.5},
+    {id = "beast_hide", chance = 0.4},
+    {id = "soul_gem", chance = 0.1},
+]
+gold_min = 50
+gold_max = 120
+
+[[encounters.entities]]
+id = "frost_giant"
+name = "Frost Giant"
+entity_type = "enemy"
+description = "A massive humanoid standing twenty feet tall, its blue skin crusted with ice. It wears crude armor of frozen hide and wields a greataxe that could split a boulder. The ground shakes with each step."
+level = 10
+hp_max = 85
+ac = 16
+count_min = 1
+count_max = 1
+xp_value = 600
+
+[encounters.entities.ability_scores]
+strength = 22
+dexterity = 8
+constitution = 20
+intelligence = 10
+wisdom = 12
+charisma = 10
+
+[[encounters.entities.attacks]]
+name = "Greataxe"
+damage_dice = "3d8"
+damage_bonus = 6
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Rock Throw"
+damage_dice = "2d10"
+damage_bonus = 6
+damage_type = "bludgeoning"

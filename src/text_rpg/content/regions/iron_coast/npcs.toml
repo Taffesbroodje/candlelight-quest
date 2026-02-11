@@ -1,0 +1,343 @@
+[[npcs]]
+id = "harbormaster_kael"
+name = "Harbormaster Kael"
+entity_type = "npc"
+profession = "harbormaster"
+description = "A stocky, sun-weathered human man with a booming voice and a clipboard perpetually tucked under one arm. He knows every ship in the harbor by name and keeps the docks running with iron efficiency, though he is not above bending the rules for a fair price."
+location_id = "saltmere_docks"
+dialogue_tags = ["greeting", "rumors", "quest_info", "shop_supplies"]
+behaviors = ["pragmatic", "merchant", "information"]
+is_hostile = false
+is_alive = true
+level = 4
+hp_current = 30
+hp_max = 30
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 12
+constitution = 14
+intelligence = 13
+wisdom = 15
+charisma = 14
+
+[npcs.schedule]
+dawn = "saltmere_docks"
+morning = "saltmere_docks"
+midday = "saltmere_market"
+afternoon = "saltmere_docks"
+evening = "saltmere_docks"
+night = "saltmere_docks"
+late_night = "saltmere_docks"
+
+[npcs.properties]
+preferred_gifts = ["rations", "hempen_rope", "navigators_tools"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Belaying Pin"
+damage_dice = "1d6"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "captain_mora"
+name = "Captain Mora"
+entity_type = "npc"
+profession = "merchant_captain"
+description = "A tall, sharp-eyed elven woman with silver-streaked dark hair tied back in a sailor's knot. She commands the trading vessel 'The Gilt Serpent' and deals in rare goods from distant shores. Her polite smile rarely reaches her calculating eyes."
+location_id = "saltmere_docks"
+dialogue_tags = ["greeting", "trade", "quest_info", "rumors", "shop_exotic"]
+behaviors = ["cunning", "merchant", "traveler"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 38
+hp_max = 38
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 16
+constitution = 12
+intelligence = 16
+wisdom = 14
+charisma = 15
+
+[npcs.schedule]
+dawn = "saltmere_docks"
+morning = "saltmere_docks"
+midday = "saltmere_market"
+afternoon = "saltmere_docks"
+evening = "saltmere_market"
+night = "saltmere_docks"
+late_night = "saltmere_docks"
+
+[npcs.properties]
+preferred_gifts = ["spyglass", "arcane_dust", "sea_chart"]
+disliked_gifts = ["rations", "torch"]
+
+[[npcs.attacks]]
+name = "Rapier"
+damage_dice = "1d8"
+damage_type = "piercing"
+
+[[npcs]]
+id = "guildmaster_theron"
+name = "Guildmaster Theron"
+entity_type = "npc"
+profession = "guildmaster"
+description = "A portly human man in fine velvet robes, his fingers adorned with gold rings set with sea-green gems. He speaks with the oily charm of a born politician and controls much of the trade flowing through Saltmere. Behind the jovial exterior lies a ruthless mind."
+location_id = "saltmere_guildhall"
+dialogue_tags = ["greeting", "quest_info", "trade", "politics", "bounties"]
+behaviors = ["calculating", "quest_giver", "political"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 35
+hp_max = 35
+ac = 12
+unavailable_periods = ["late_night", "night"]
+
+[npcs.ability_scores]
+strength = 9
+dexterity = 10
+constitution = 11
+intelligence = 17
+wisdom = 16
+charisma = 18
+
+[npcs.schedule]
+dawn = "saltmere_guildhall"
+morning = "saltmere_guildhall"
+midday = "saltmere_market"
+afternoon = "saltmere_guildhall"
+evening = "saltmere_guildhall"
+night = "saltmere_guildhall"
+late_night = "saltmere_guildhall"
+
+[npcs.properties]
+preferred_gifts = ["spyglass", "healing_potion", "sea_chart"]
+disliked_gifts = ["rations", "torch", "dagger"]
+
+[[npcs.attacks]]
+name = "Concealed Dagger"
+damage_dice = "1d4"
+damage_type = "piercing"
+
+[[npcs]]
+id = "old_barnacle"
+name = "Old Barnacle"
+entity_type = "npc"
+profession = "fisherman"
+description = "A grizzled, bow-legged old man whose skin is so tanned and weathered he looks carved from driftwood. He earned his nickname from decades spent hauling nets in all weather. He knows the tides and currents better than anyone alive and tells wild tales of sea monsters."
+location_id = "fishers_cove"
+dialogue_tags = ["greeting", "rumors", "lore", "sea_tales"]
+behaviors = ["eccentric", "storyteller", "information"]
+is_hostile = false
+is_alive = true
+level = 2
+hp_current = 12
+hp_max = 12
+ac = 10
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 11
+dexterity = 10
+constitution = 13
+intelligence = 10
+wisdom = 15
+charisma = 12
+
+[npcs.schedule]
+dawn = "fishers_cove"
+morning = "fishers_cove"
+midday = "fishers_cove"
+afternoon = "fishers_cove"
+evening = "saltmere_docks"
+night = "fishers_cove"
+late_night = "fishers_cove"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_herb", "waterskin"]
+disliked_gifts = ["arcane_dust", "nightshade"]
+
+[[npcs.attacks]]
+name = "Fishing Gaff"
+damage_dice = "1d4"
+damage_type = "piercing"
+
+[[npcs]]
+id = "lighthouse_keeper_senna"
+name = "Lighthouse Keeper Senna"
+entity_type = "npc"
+profession = "keeper"
+description = "A wiry, sharp-featured half-elf woman with windblown copper hair and restless green eyes. She was assigned to maintain the lighthouse but has become obsessed with the strange lights she sees offshore at night. Her manner is jittery, switching between warmth and paranoia."
+location_id = "storm_point_lighthouse"
+dialogue_tags = ["greeting", "rumors", "lore", "quest_info"]
+behaviors = ["nervous", "quest_giver", "watchful"]
+is_hostile = false
+is_alive = true
+level = 3
+hp_current = 20
+hp_max = 20
+ac = 13
+unavailable_periods = []
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 14
+constitution = 12
+intelligence = 14
+wisdom = 16
+charisma = 11
+
+[npcs.schedule]
+dawn = "storm_point_lighthouse"
+morning = "storm_point_lighthouse"
+midday = "coastal_road"
+afternoon = "storm_point_lighthouse"
+evening = "storm_point_lighthouse"
+night = "storm_point_lighthouse"
+late_night = "storm_point_lighthouse"
+
+[npcs.properties]
+preferred_gifts = ["lantern", "healing_potion", "spyglass"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Hand Crossbow"
+damage_dice = "1d6"
+damage_type = "piercing"
+
+[[npcs]]
+id = "barkeep_sal"
+name = "Barkeep Sal"
+entity_type = "npc"
+profession = "barkeep"
+description = "A heavyset human woman with tattoos covering both arms and a voice like gravel. She pours drinks with one hand and keeps a loaded crossbow under the bar with the other."
+location_id = "saltmere_tavern"
+dialogue_tags = ["greeting", "rumors", "shop_food", "quest_info"]
+behaviors = ["tough", "merchant", "information"]
+is_hostile = false
+is_alive = true
+level = 3
+hp_current = 22
+hp_max = 22
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 12
+constitution = 14
+intelligence = 11
+wisdom = 13
+charisma = 14
+
+[npcs.schedule]
+dawn = "saltmere_docks"
+morning = "saltmere_docks"
+midday = "saltmere_tavern"
+afternoon = "saltmere_tavern"
+evening = "saltmere_tavern"
+night = "saltmere_tavern"
+late_night = "saltmere_tavern"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_potion"]
+disliked_gifts = ["arcane_dust", "holy_symbol"]
+
+[[npcs.attacks]]
+name = "Crossbow"
+damage_dice = "1d8"
+damage_type = "piercing"
+
+[[npcs]]
+id = "shipwright_nessa"
+name = "Master Shipwright Nessa"
+entity_type = "npc"
+profession = "shipwright"
+description = "A tall half-elf woman with calloused hands and wood shavings in her braided hair. She builds the finest boats on the coast and has an artist's eye for hull design."
+location_id = "shipwright_yard"
+dialogue_tags = ["greeting", "craft_info", "shop_supplies", "lore"]
+behaviors = ["focused", "craftsman", "merchant"]
+is_hostile = false
+is_alive = true
+level = 4
+hp_current = 28
+hp_max = 28
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 14
+constitution = 12
+intelligence = 16
+wisdom = 13
+charisma = 11
+
+[npcs.schedule]
+dawn = "shipwright_yard"
+morning = "shipwright_yard"
+midday = "shipwright_yard"
+afternoon = "shipwright_yard"
+evening = "saltmere_tavern"
+night = "shipwright_yard"
+late_night = "shipwright_yard"
+
+[npcs.properties]
+preferred_gifts = ["hempen_rope", "iron_ingot"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Caulking Mallet"
+damage_dice = "1d6"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "sergeant_flint"
+name = "Sergeant Flint"
+entity_type = "npc"
+profession = "guard"
+description = "A weathered dwarf with a salt-and-pepper beard and one milky eye from an old sea battle. He runs the port watch with iron discipline and misses nothing that enters the harbor."
+location_id = "saltmere_watchtower"
+dialogue_tags = ["greeting", "guard_info", "quest_info", "rumors"]
+behaviors = ["authoritative", "protector", "vigilant"]
+is_hostile = false
+is_alive = true
+level = 4
+hp_current = 36
+hp_max = 36
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 15
+dexterity = 11
+constitution = 15
+intelligence = 12
+wisdom = 16
+charisma = 12
+
+[npcs.schedule]
+dawn = "saltmere_watchtower"
+morning = "saltmere_watchtower"
+midday = "saltmere_watchtower"
+afternoon = "saltmere_watchtower"
+evening = "saltmere_watchtower"
+night = "saltmere_tavern"
+late_night = "saltmere_watchtower"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "rations"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Halberd"
+damage_dice = "1d10"
+damage_type = "slashing"

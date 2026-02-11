@@ -1,0 +1,283 @@
+# Human Origins
+# Category: human — origins exclusive to human characters
+
+[[origins]]
+id = "jack_of_all_trades"
+name = "Jack of All Trades"
+category = "human"
+summary = "You have never met a skill you couldn't pick up or a trade you couldn't talk your way into, and that restless versatility defines you."
+prologue = """
+Your parents called it a lack of focus. Your teachers called it wasted potential. You call it \
+living. By the time you were twenty, you had apprenticed with a blacksmith (three months), \
+crewed a fishing boat (one season), studied herbalism under a temple acolyte (six weeks), \
+and talked your way into a cartographer's guild without knowing how to draw a straight line. \
+None of it stuck, and all of it stuck. You carry fragments of a dozen trades in your head, \
+enough to be dangerous in any situation and masterful in none.
+
+Thornfield Market is where you feel most alive. The crossroads of the Verdant Reach, where \
+farmers and merchants and adventurers rub shoulders and every conversation is an opportunity to \
+learn something new. You have a traveler's wardrobe and a belt pouch that is heavier with \
+curiosities than coin — a lodestone from the Ashen Highlands, a pressed flower from the \
+Thornwild, a chip of sea-glass from the Iron Coast. Souvenirs of a life spent in constant, \
+restless motion.
+
+Lately you have begun to suspect that your peculiar talent — this ability to adapt, to learn \
+quickly, to find the thread that connects disparate things — might be more than a personality \
+quirk. The world is growing stranger. Ancient ruins stir. Old threats return wearing new faces. \
+The specialists and the experts will have their roles to play, but the coming days may belong \
+to those who can think sideways, improvise under pressure, and refuse to be defined by a single \
+skill. In other words: your kind of days."""
+ability_choices = ["charisma", "intelligence", "wisdom"]
+skill_proficiencies = ["persuasion", "investigation"]
+starting_equipment = ["travelers_clothes", "belt_pouch"]
+bonus_gold = 10
+starting_region = "verdant_reach"
+starting_location = "thornfield_market"
+feature_name = "Quick Study"
+feature_description = "Your restless curiosity lets you adapt to any situation. Once per long rest, you may add half your proficiency bonus (rounded down) to an ability check with a skill in which you are not proficient."
+required_races = ["human"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "self_made_merchant"
+name = "Self-Made Merchant"
+category = "human"
+summary = "Starting with nothing but charm and a head for numbers, you built a trading operation from the docks of Saltmere through sheer force of will."
+prologue = """
+You arrived in Saltmere with two copper pieces and a smile that could sell sand to a desert \
+nomad. That was five years ago. Today you own a modest but growing trade operation that moves \
+goods between the Iron Coast and the interior — spices from the south, ironwork from Cinderhold, \
+timber from the Thornwild. Your ledger is your most prized possession, a leather-bound book \
+filled with columns of figures, contact names, and the elaborate personal shorthand you \
+developed to keep your deals straight. Every entry represents a relationship cultivated, a \
+negotiation won, a risk that paid off.
+
+The merchant's life in Saltmere is not for the faint of heart. The docks are controlled by \
+guilds that view independent operators as either recruits or obstacles. Piracy is a constant \
+threat. And the market itself is a battlefield where information is the sharpest weapon — \
+knowing which ships are delayed, which warehouses are overstocked, which noble houses are \
+quietly desperate for particular goods. You have thrived in this environment because you \
+understand something that old-money traders often forget: commerce is not about goods. It is \
+about people. Read the person, and the deal follows.
+
+But the ledger's margins are filling with troubling notes. Trade routes disrupted by creatures \
+that should not be this far south. Suppliers vanishing without explanation. A creeping unease \
+in the market that even the most optimistic merchants cannot ignore. You have built your \
+fortune on reading the currents of commerce, and every instinct tells you that something is \
+about to shift. The question is whether you will ride the wave or be dragged under by it."""
+ability_choices = ["charisma", "intelligence", "wisdom"]
+skill_proficiencies = ["persuasion", "insight"]
+starting_equipment = ["merchant_ledger", "belt_pouch"]
+bonus_gold = 15
+starting_region = "iron_coast"
+starting_location = "saltmere_market"
+feature_name = "Eye for Value"
+feature_description = "Years of appraising goods have given you an uncanny sense for worth. You can accurately estimate the market value of any non-magical item on sight and receive 10% better prices when selling to merchants."
+required_races = ["human"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "political_revolutionary"
+name = "Political Revolutionary"
+category = "human"
+summary = "You dream of toppling the corrupt guilds that strangle Saltmere's common folk, and your words have already begun to draw a following."
+prologue = """
+The spark was lit the day you watched the guild enforcers drag old Maren — the fishwife who \
+had fed half the dock children from her stall for twenty years — out of the market for failing \
+to pay the new "commerce protection" levy. They broke her cart. They scattered her fish in the \
+mud. And the crowd, your neighbors, your friends, stood and watched in silence because silence \
+was safer than speech. You were not silent. You climbed onto an overturned barrel and said the \
+things everyone was thinking, and by the time the enforcers turned their attention to you, the \
+crowd had grown too large and too angry to disperse quietly.
+
+That was the beginning. Now you hold meetings in back rooms and rented cellars, drafting \
+pamphlets by candlelight with ink-stained fingers, building a network of sympathizers within \
+the guildhall itself. Your movement is still small — a few dozen committed souls and a wider \
+circle of quiet supporters — but it is growing. The common people of Saltmere are tired of \
+watching their labor enrich guild masters who have never hauled a net or swung a hammer. They \
+are ready for change. They just need someone willing to stand on the barrel first.
+
+The guild masters have noticed you. There have been warnings — a broken window, a followed \
+shadow, a note pinned to your door with a fishing knife. You are not naive enough to think \
+that words alone will be sufficient to change the world. The powerful do not relinquish power \
+because someone asks nicely. But you are human, and if there is one thing your race has proven \
+across every age of this world, it is that humans do not accept the shape of things as given. \
+You reshape. You revolt. You build something new from the rubble of the old."""
+ability_choices = ["charisma", "strength", "intelligence"]
+skill_proficiencies = ["persuasion", "intimidation"]
+starting_equipment = ["common_clothes", "ink_and_quill"]
+bonus_gold = 5
+starting_region = "iron_coast"
+starting_location = "saltmere_guildhall"
+feature_name = "Rabble Rouser"
+feature_description = "Your passionate rhetoric can stir emotions in a crowd. Once per long rest, you may make a Charisma (Persuasion) check to shift the attitude of a group of common folk one step in your favor."
+required_races = ["human"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "colonial_settler"
+name = "Colonial Settler"
+category = "human"
+summary = "You left the safety of civilization to carve a homestead from the unforgiving swamplands of the Sunken Reach."
+prologue = """
+The land grant was cheap for a reason. Fifty acres of bog, river mud, and biting insects in \
+the Sunken Reach — territory that the crown was desperate to settle and that no one with better \
+options would touch. You had no better options. The farm back east had failed, the debts had \
+mounted, and the recruiter's promise of "fertile river land and a fresh start" sounded like \
+salvation. You packed your shovel, your bedroll, and your tinderbox, kissed your old life \
+goodbye, and marched south into the swamp.
+
+The reality was harsher than the pamphlets suggested. The "fertile river land" was a maze of \
+waterlogged trails and sucking mud. The trading post at Murkfen was less a settlement than a \
+collection of desperate people clinging to dry ground. But you are human, and humans are \
+nothing if not stubborn. You dug drainage channels until your hands bled. You learned which \
+plants were edible and which would kill you in minutes. You built a shelter that the first \
+storm destroyed, and then you built a better one. Slowly, grudgingly, the swamp began to \
+yield.
+
+Now you stand at the edge of something that might, with enough sweat and luck, become a life. \
+The trading post has grown. Other settlers have followed, drawn by the rumor that the Sunken \
+Reach can be tamed after all. But the swamp holds secrets older than any human claim — sunken \
+temples half-swallowed by the mire, strange lights that drift across the bog at night, and \
+sounds from the deep water that no natural creature should make. You came here to build a \
+home. You may need to defend it from things you do not yet understand."""
+ability_choices = ["constitution", "strength", "wisdom"]
+skill_proficiencies = ["survival", "nature"]
+starting_equipment = ["shovel", "bedroll", "tinderbox"]
+bonus_gold = 8
+starting_region = "sunken_reach"
+starting_location = "murkfen_trading_post"
+feature_name = "Settler's Grit"
+feature_description = "Months of backbreaking labor have hardened you against exhaustion. You require one fewer successful rest check to recover from the exhausted condition, and you have advantage on Constitution checks related to enduring harsh weather."
+required_races = ["human"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "kingdomless_wanderer"
+name = "Kingdomless Wanderer"
+category = "human"
+summary = "You belong to no nation and serve no lord, drifting across the land with only the road for company and the horizon for a destination."
+prologue = """
+You stopped counting the miles years ago. The highland road beneath your boots is just the \
+latest in a chain of roads that stretches back to a village whose name you have trained \
+yourself to forget. There was a fire — or a plague, or a war, or one of the dozen catastrophes \
+that can erase a small human settlement from the map overnight. The details matter less than \
+the result: you walk. You have always walked. The road is the only home that cannot be taken \
+from you.
+
+Your compass is battered and missing its glass cover, but it still points true, and that is \
+more than you can say for most things in this world. You navigate by landmarks and instinct, \
+by the position of the sun and the taste of the wind. Every region has its own character — the \
+Verdant Reach smells of cut hay and woodsmoke, the Iron Coast of brine and tar, the Ashen \
+Highlands of sulfur and hot stone. You have learned to read the land the way scholars read \
+books, and it has taught you lessons that no library contains: where to find clean water, how \
+to read the weather in cloud formations, which strangers can be trusted and which should be \
+given a wide berth.
+
+The Ashen Highlands draw you now, though you cannot say precisely why. Perhaps it is the \
+rumors of strange happenings in the deep mines. Perhaps it is the simple pull of a road not \
+yet walked. You have learned to trust these instincts. The road provides for those who listen \
+to it, and something in the hot highland wind is whispering your name."""
+ability_choices = ["constitution", "wisdom", "charisma"]
+skill_proficiencies = ["survival", "perception"]
+starting_equipment = ["travelers_clothes", "compass"]
+bonus_gold = 5
+starting_region = "ashen_highlands"
+starting_location = "highland_road"
+feature_name = "Roadwise"
+feature_description = "A lifetime on the move has made you preternaturally aware of your surroundings. You cannot become lost except by magical means, and you gain advantage on Wisdom (Perception) checks to detect ambushes while traveling."
+required_races = ["human"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "adopted_by_another_race"
+name = "Adopted by Another Race"
+category = "human"
+summary = "Raised by a non-human family in the heart of the Thornwild, you see the world through eyes shaped by two cultures."
+prologue = """
+You do not remember your birth parents. Your earliest memories are of Briarhaven — the smell \
+of moss and wildflowers, the sound of elven lullabies sung in a language you learned before \
+Common, the gentle hands of the family that found you abandoned at the edge of the grove and \
+chose, against the counsel of their elders, to raise you as their own. You grew up barefoot \
+among the ancient trees, learning to read animal tracks before you learned to read letters, \
+speaking to the forest as though it could hear you. And perhaps it could. In Briarhaven, such \
+things are not impossible.
+
+But you are human, and the differences that your family tried so hard to bridge grew more \
+apparent with every passing year. You aged faster. You grew taller and broader. Your ears \
+remained stubbornly rounded, your lifespan a flickering candle beside their long-burning \
+torches. The village children were kind, mostly, but there was always a distance — a gentle \
+awareness that you were a guest in their world, no matter how deeply you loved it. Your \
+adoptive mother gave you a family locket on your eighteenth birthday, a delicate thing of \
+silver and wood that held a pressed petal from the tree under which they found you. "You are \
+ours," she said. "But you are also yours. Go and find what that means."
+
+Now you walk the trails of the Thornwild as neither fully human nor fully part of the culture \
+that raised you, carrying the wisdom of both worlds and the loneliness that comes with \
+belonging completely to neither. The locket rests warm against your chest. You are beginning \
+to understand that your strange upbringing was not a disadvantage but a gift — the ability to \
+see what others miss, to bridge the gaps that keep the world's peoples apart."""
+ability_choices = ["wisdom", "charisma", "intelligence"]
+skill_proficiencies = ["insight", "history"]
+starting_equipment = ["family_locket", "common_clothes"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "briarhaven_village"
+feature_name = "Outsider's Perspective"
+feature_description = "Growing up between cultures has given you a unique ability to read social situations. You gain advantage on Wisdom (Insight) checks when interacting with non-human races, as you instinctively understand their cultural cues."
+required_races = ["human"]
+excluded_races = []
+required_classes = []
+excluded_classes = []
+
+[[origins]]
+id = "last_survivor"
+name = "Last Survivor"
+category = "human"
+summary = "You are the sole survivor of a settlement swallowed by the Whisperwood, carrying nothing but the will to endure."
+prologue = """
+The village of Ashwick no longer appears on any map. The Whisperwood took it on a night of \
+unnatural fog — a creeping, living darkness that rolled out from the deepest part of the \
+forest and swallowed everything it touched. Houses, livestock, people. You survived because \
+you were on the edge, checking your traps along the tree line, and some instinct — the same \
+stubborn human instinct that has kept your species alive through every apocalypse this world \
+has offered — told you to run. You ran. Behind you, the fog consumed your home, your family, \
+your entire life up to that moment. When dawn came, there was only forest where Ashwick had \
+been. Not ruins. Not wreckage. Just trees, ancient and silent, as though the village had \
+never existed at all.
+
+You lived in the woods for weeks afterward, surviving on what you could trap and forage, \
+sleeping with a small knife clutched in your fist. The bedroll you carry is the same one you \
+grabbed in those panicked first moments, stained and patched but still serviceable. Every \
+night you dreamed of the fog. Every morning you checked to make sure the trees had not crept \
+closer while you slept. Slowly, painfully, you made your way to the Whisperwood's edge, \
+where the trees thin and the grasslands of the Verdant Reach begin.
+
+You camp at the forest's border now, unable to fully leave. Somewhere in there, beneath the \
+canopy that swallowed your world, there are answers. The Whisperwood did not simply destroy \
+Ashwick — it absorbed it, pulled it into itself like a body absorbing a splinter. You are \
+the last survivor, the only living proof that Ashwick existed, and you will not let it be \
+forgotten. But you are also afraid. The forest watches you from the tree line, patient and \
+vast, and you know in your bones that it is not finished."""
+ability_choices = ["constitution", "strength", "wisdom"]
+skill_proficiencies = ["survival", "athletics"]
+starting_equipment = ["bedroll", "small_knife"]
+bonus_gold = 3
+starting_region = "verdant_reach"
+starting_location = "whisperwood_edge"
+feature_name = "Sole Survivor"
+feature_description = "Having endured the unthinkable, your will to live borders on supernatural. When you fail your first death saving throw in combat, you may reroll it once, taking the higher result."
+required_races = ["human"]
+excluded_races = []
+required_classes = []
+excluded_classes = []

@@ -1,0 +1,257 @@
+# Deadmarsh encounters — L8-12
+
+[[encounters]]
+id = "mutant_beasts"
+name = "Mutant Beasts"
+location_ids = ["twisted_forest", "toxic_springs", "glass_desert"]
+encounter_chance = 0.35
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "beast_hide", chance = 0.4},
+    {id = "healing_herb", chance = 0.2},
+]
+gold_min = 5
+gold_max = 20
+
+[[encounters.entities]]
+id = "mutant_beast"
+name = "Mutant Beast"
+entity_type = "enemy"
+description = "A twisted creature warped beyond recognition by magical contamination. Extra limbs sprout at wrong angles, and its eyes glow with unstable arcane energy."
+level = 7
+hp_max = 38
+ac = 13
+count_min = 3
+count_max = 5
+xp_value = 100
+
+[encounters.entities.ability_scores]
+strength = 16
+dexterity = 14
+constitution = 14
+intelligence = 3
+wisdom = 10
+charisma = 3
+
+[[encounters.entities.attacks]]
+name = "Mutated Claws"
+damage_dice = "2d6"
+damage_bonus = 3
+damage_type = "slashing"
+
+[[encounters]]
+id = "crystal_golem"
+name = "Crystal Golem"
+location_ids = ["crystal_fields", "blast_crater"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.7},
+    {id = "soul_gem", chance = 0.2},
+    {id = "healing_potion", chance = 0.4},
+]
+gold_min = 40
+gold_max = 100
+
+[[encounters.entities]]
+id = "crystal_golem"
+name = "Crystal Golem"
+entity_type = "enemy"
+description = "A massive humanoid construct of fused crystal, crackling with raw magical energy. Each step sends tremors through the ground, and shards of crystal orbit its body like deadly satellites."
+level = 10
+hp_max = 80
+ac = 17
+count_min = 1
+count_max = 1
+xp_value = 600
+
+[encounters.entities.ability_scores]
+strength = 20
+dexterity = 6
+constitution = 20
+intelligence = 3
+wisdom = 10
+charisma = 1
+
+[[encounters.entities.attacks]]
+name = "Crystal Fist"
+damage_dice = "3d8"
+damage_bonus = 5
+damage_type = "bludgeoning"
+
+[[encounters.entities.attacks]]
+name = "Shard Burst"
+damage_dice = "2d8"
+damage_bonus = 0
+damage_type = "force"
+
+[[encounters]]
+id = "magical_anomaly"
+name = "Magical Anomaly"
+location_ids = ["blast_crater", "corruption_zone"]
+encounter_chance = 0.2
+fight_type = "puzzle"
+description = "Reality warps around you. The ground becomes the sky, colors invert, and three doorways appear — one showing fire, one showing ice, one showing nothing. A voice demands: 'Choose the door that exists only when closed.'"
+
+[encounters.puzzle]
+puzzle_type = "riddle"
+dc = 15
+riddle_question = "Choose the door that exists only when closed."
+riddle_answer = "the third"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.8},
+    {id = "soul_gem", chance = 0.3},
+]
+gold_min = 30
+gold_max = 80
+
+[[encounters]]
+id = "wasteland_raiders"
+name = "Wasteland Raiders"
+location_ids = ["wasteland_road", "bone_spires", "watchtower_ridge"]
+encounter_chance = 0.3
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "dagger", chance = 0.25},
+    {id = "rations", chance = 0.4},
+    {id = "healing_potion", chance = 0.2},
+]
+gold_min = 15
+gold_max = 40
+
+[[encounters.entities]]
+id = "wasteland_raider"
+name = "Wasteland Raider"
+entity_type = "enemy"
+description = "A desperate scavenger turned bandit, clad in patchwork armor made from salvaged materials. They survive by preying on travelers and prospectors along the wasteland road."
+level = 7
+hp_max = 35
+ac = 14
+count_min = 3
+count_max = 5
+xp_value = 100
+
+[encounters.entities.ability_scores]
+strength = 14
+dexterity = 15
+constitution = 13
+intelligence = 10
+wisdom = 10
+charisma = 8
+
+[[encounters.entities.attacks]]
+name = "Scrap Blade"
+damage_dice = "1d8"
+damage_bonus = 2
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Crossbow"
+damage_dice = "1d8"
+damage_bonus = 2
+damage_type = "piercing"
+
+[[encounters]]
+id = "corrupted_mage"
+name = "Corrupted Mage"
+location_ids = ["ruined_academy", "corruption_zone"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.7},
+    {id = "soul_gem", chance = 0.25},
+    {id = "nightshade", chance = 0.3},
+    {id = "healing_potion", chance = 0.4},
+]
+gold_min = 35
+gold_max = 90
+
+[[encounters.entities]]
+id = "corrupted_mage"
+name = "Corrupted Mage"
+entity_type = "enemy"
+description = "Once a scholar of the academy, now a twisted remnant fused with raw magical corruption. Arcane symbols writhe across their skin, and reality bends around their gestures."
+level = 9
+hp_max = 55
+ac = 15
+count_min = 1
+count_max = 1
+xp_value = 500
+
+[encounters.entities.ability_scores]
+strength = 10
+dexterity = 14
+constitution = 14
+intelligence = 18
+wisdom = 12
+charisma = 8
+
+[[encounters.entities.attacks]]
+name = "Corrupted Bolt"
+damage_dice = "3d8"
+damage_bonus = 0
+damage_type = "force"
+
+[[encounters.entities.attacks]]
+name = "Warp Reality"
+damage_dice = "2d10"
+damage_bonus = 0
+damage_type = "psychic"
+
+[[encounters]]
+id = "bone_horror"
+name = "Bone Horror"
+location_ids = ["bone_spires", "abandoned_mine"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "soul_gem", chance = 0.15},
+    {id = "healing_potion", chance = 0.4},
+    {id = "beast_hide", chance = 0.3},
+]
+gold_min = 30
+gold_max = 70
+
+[[encounters.entities]]
+id = "bone_horror"
+name = "Bone Horror"
+entity_type = "enemy"
+description = "A nightmarish amalgamation of fused bones from dozens of creatures, animated by residual catastrophe magic. It drags itself forward on mismatched limbs, rattling and grinding with every movement."
+level = 9
+hp_max = 68
+ac = 14
+count_min = 1
+count_max = 1
+xp_value = 450
+
+[encounters.entities.ability_scores]
+strength = 18
+dexterity = 10
+constitution = 16
+intelligence = 4
+wisdom = 8
+charisma = 3
+
+[[encounters.entities.attacks]]
+name = "Bone Crush"
+damage_dice = "2d10"
+damage_bonus = 4
+damage_type = "bludgeoning"
+
+[[encounters.entities.attacks]]
+name = "Bone Shards"
+damage_dice = "2d8"
+damage_bonus = 0
+damage_type = "piercing"

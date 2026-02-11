@@ -1,0 +1,330 @@
+# Crownhold encounters — L11-16
+
+[[encounters]]
+id = "political_assassination"
+name = "Political Assassination"
+location_ids = ["noble_heights", "noble_manor_district", "palace_district"]
+encounter_chance = 0.15
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "dagger", chance = 0.4},
+    {id = "healing_potion", chance = 0.3},
+    {id = "thieves_tools", chance = 0.15},
+]
+gold_min = 30
+gold_max = 80
+
+[[encounters.entities]]
+id = "assassin"
+name = "Royal Assassin"
+entity_type = "enemy"
+description = "A shadow-clad figure moving with lethal precision, their blade glistening with poison. They were sent to eliminate a political target, and you are now a witness."
+level = 10
+hp_max = 48
+ac = 17
+count_min = 2
+count_max = 3
+xp_value = 300
+
+[encounters.entities.ability_scores]
+strength = 12
+dexterity = 20
+constitution = 12
+intelligence = 14
+wisdom = 14
+charisma = 10
+
+[[encounters.entities.attacks]]
+name = "Poisoned Blade"
+damage_dice = "2d6"
+damage_bonus = 5
+damage_type = "piercing"
+
+[[encounters.entities.attacks]]
+name = "Shadow Step"
+damage_dice = "1d8"
+damage_type = "necrotic"
+
+[[encounters]]
+id = "arena_tournament"
+name = "Arena Tournament"
+location_ids = ["grand_arena"]
+encounter_chance = 0.2
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "healing_potion", chance = 0.6},
+    {id = "longsword", chance = 0.2},
+    {id = "chain_mail", chance = 0.1},
+]
+gold_min = 60
+gold_max = 180
+
+[[encounters.entities]]
+id = "tournament_fighter"
+name = "Tournament Fighter"
+entity_type = "enemy"
+description = "A seasoned gladiator in ornate tournament armor, their weapon raised in salute. The roar of fifty thousand spectators fills the arena as they charge."
+level = 12
+hp_max = 78
+ac = 18
+count_min = 1
+count_max = 1
+xp_value = 600
+
+[encounters.entities.ability_scores]
+strength = 18
+dexterity = 16
+constitution = 16
+intelligence = 10
+wisdom = 12
+charisma = 14
+
+[[encounters.entities.attacks]]
+name = "Greatsword"
+damage_dice = "2d6"
+damage_bonus = 5
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Shield Bash"
+damage_dice = "1d8"
+damage_bonus = 4
+damage_type = "bludgeoning"
+
+[[encounters]]
+id = "undercity_gang_war"
+name = "Undercity Gang War"
+location_ids = ["undercity_market", "crown_sewers", "thieves_quarter_ch"]
+encounter_chance = 0.3
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "dagger", chance = 0.3},
+    {id = "healing_potion", chance = 0.15},
+]
+gold_min = 15
+gold_max = 40
+
+[[encounters.entities]]
+id = "gang_member"
+name = "Undercity Gang Member"
+entity_type = "enemy"
+description = "A desperate, hardened criminal caught in a turf war between rival factions. They lash out at anyone who stumbles into the crossfire."
+level = 8
+hp_max = 38
+ac = 14
+count_min = 4
+count_max = 6
+xp_value = 100
+
+[encounters.entities.ability_scores]
+strength = 14
+dexterity = 16
+constitution = 12
+intelligence = 10
+wisdom = 10
+charisma = 8
+
+[[encounters.entities.attacks]]
+name = "Short Sword"
+damage_dice = "1d6"
+damage_bonus = 3
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Hand Crossbow"
+damage_dice = "1d6"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[encounters]]
+id = "palace_intrigue"
+name = "Palace Intrigue"
+location_ids = ["royal_palace", "palace_district"]
+encounter_chance = 0.15
+fight_type = "puzzle"
+description = "A courtier approaches in a panic. A poisoned letter has been intercepted, but its code must be broken before the next banquet. The cipher involves: 'The first of kings, the last of queens, the middle of crowns.' What three letters form the key?"
+
+[encounters.puzzle]
+puzzle_type = "riddle"
+dc = 16
+riddle_question = "A courtier approaches in a panic. A poisoned letter has been intercepted, but its code must be broken before the next banquet. The cipher involves: 'The first of kings, the last of queens, the middle of crowns.' What three letters form the key?"
+riddle_answer = "k s w"
+
+[encounters.loot]
+items = [
+    {id = "healing_potion", chance = 0.5},
+    {id = "arcane_dust", chance = 0.4},
+]
+gold_min = 40
+gold_max = 100
+
+[[encounters]]
+id = "academic_disaster"
+name = "Academic Disaster"
+location_ids = ["grand_academy", "grand_library"]
+encounter_chance = 0.15
+fight_type = "puzzle"
+description = "A student's experiment has gone catastrophically wrong. Portals are opening randomly in the library, books are animating, and reality is fraying. You need to find and deactivate the overloaded wardstone before the building collapses."
+
+[encounters.puzzle]
+puzzle_type = "trap"
+dc = 16
+trap_damage = "4d8"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.7},
+    {id = "soul_gem", chance = 0.2},
+    {id = "spellbook", chance = 0.1},
+]
+gold_min = 30
+gold_max = 80
+
+[[encounters]]
+id = "diplomatic_crisis"
+name = "Diplomatic Crisis"
+location_ids = ["embassy_row_ch", "foreign_quarter"]
+encounter_chance = 0.2
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "rapier", chance = 0.15},
+    {id = "healing_potion", chance = 0.25},
+]
+gold_min = 25
+gold_max = 60
+
+[[encounters.entities]]
+id = "rogue_diplomat"
+name = "Rogue Diplomat"
+entity_type = "enemy"
+description = "A disgraced diplomat turned double agent, armed and desperate. They have been exposed and are fighting their way out, willing to kill anyone who stands between them and freedom."
+level = 9
+hp_max = 42
+ac = 15
+count_min = 2
+count_max = 3
+xp_value = 200
+
+[encounters.entities.ability_scores]
+strength = 12
+dexterity = 16
+constitution = 12
+intelligence = 16
+wisdom = 12
+charisma = 16
+
+[[encounters.entities.attacks]]
+name = "Rapier"
+damage_dice = "1d8"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[encounters.entities.attacks]]
+name = "Concealed Crossbow"
+damage_dice = "1d6"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[encounters]]
+id = "cult_infiltration"
+name = "Cult Infiltration"
+location_ids = ["crown_sewers", "undercity_entrance"]
+encounter_chance = 0.25
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.4},
+    {id = "nightshade", chance = 0.3},
+    {id = "soul_gem", chance = 0.1},
+    {id = "healing_potion", chance = 0.2},
+]
+gold_min = 20
+gold_max = 50
+
+[[encounters.entities]]
+id = "cult_infiltrator"
+name = "Cult Infiltrator"
+entity_type = "enemy"
+description = "A robed figure chanting in a forbidden tongue, dark energy swirling around their hands. They serve an entity from beyond, and their rituals threaten to tear a hole in reality beneath the capital."
+level = 9
+hp_max = 40
+ac = 14
+count_min = 3
+count_max = 5
+xp_value = 150
+
+[encounters.entities.ability_scores]
+strength = 10
+dexterity = 14
+constitution = 12
+intelligence = 16
+wisdom = 14
+charisma = 14
+
+[[encounters.entities.attacks]]
+name = "Dark Bolt"
+damage_dice = "2d8"
+damage_type = "necrotic"
+
+[[encounters.entities.attacks]]
+name = "Ritual Dagger"
+damage_dice = "1d4"
+damage_bonus = 2
+damage_type = "piercing"
+
+[[encounters]]
+id = "champion_challenge"
+name = "Champion's Challenge"
+location_ids = ["grand_arena", "training_academy"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "healing_potion", chance = 0.6},
+    {id = "longsword", chance = 0.2},
+    {id = "soul_gem", chance = 0.1},
+]
+gold_min = 80
+gold_max = 200
+
+[[encounters.entities]]
+id = "legendary_champion"
+name = "Legendary Champion"
+entity_type = "enemy"
+description = "A warrior of mythic reputation whose name is spoken with reverence across the realm. They fight with preternatural speed and devastating power, and defeating them would make you a legend."
+level = 14
+hp_max = 95
+ac = 19
+count_min = 1
+count_max = 1
+xp_value = 800
+
+[encounters.entities.ability_scores]
+strength = 20
+dexterity = 18
+constitution = 18
+intelligence = 12
+wisdom = 14
+charisma = 16
+
+[[encounters.entities.attacks]]
+name = "Legendary Blade"
+damage_dice = "2d8"
+damage_bonus = 6
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Whirlwind"
+damage_dice = "3d6"
+damage_bonus = 5
+damage_type = "slashing"

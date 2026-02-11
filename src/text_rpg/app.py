@@ -209,6 +209,9 @@ class GameApp:
         from text_rpg.storage.repos.housing_repo import HousingRepo
         from text_rpg.storage.repos.connection_repo import ConnectionRepo
         from text_rpg.storage.repos.snapshot_repo import SnapshotRepo
+        from text_rpg.storage.repos.trait_repo import TraitRepo
+        from text_rpg.storage.repos.spell_creation_repo import SpellCreationRepo
+        from text_rpg.storage.repos.guild_repo import GuildRepo
 
         return {
             "save_game": SaveGameRepo(self.db),
@@ -226,6 +229,9 @@ class GameApp:
             "housing": HousingRepo(self.db),
             "connection": ConnectionRepo(self.db),
             "snapshot": SnapshotRepo(self.db),
+            "trait": TraitRepo(self.db),
+            "spell_creation": SpellCreationRepo(self.db),
+            "guild": GuildRepo(self.db),
         }
 
     # -- Public interface --
@@ -258,47 +264,54 @@ class GameApp:
 
     def new_game(self) -> None:
         """Start a new game with character creation."""
-        import random
         from text_rpg.cli.character_creator import CharacterCreator
-        from text_rpg.content.loader import load_all_races, load_all_classes, load_region, load_origins
+        from text_rpg.content.loader import load_all_races, load_all_classes, load_all_origins, load_region
         from text_rpg.mechanics.character_creation import create_character
 
-        # Character creation
+        # Character creation — origins are loaded and passed into the creator
         races = load_all_races()
         classes = load_all_classes()
+        all_origins = load_all_origins()
         creator = CharacterCreator()
-        params = creator.run(races, classes)
+        params = creator.run(races, classes, origins=all_origins)
 
-        # Origin selection — show 3 random options (plus always include one)
-        all_origins = load_origins()
-        if all_origins:
-            # Shuffle and pick up to 4
-            random.shuffle(all_origins)
-            shown_origins = all_origins[:4]
-            chosen_origin = self.display.show_origin_selection(shown_origins)
-        else:
-            chosen_origin = None
+        # Extract origin from character creator result
+        chosen_origin = params.get("origin")
 
         # Create game
         self.game_id = str(uuid.uuid4())
         game_cfg = self.config.get("game", {})
-        starting_region = game_cfg.get("starting_region", "verdant_reach")
         if chosen_origin:
+            starting_region = chosen_origin.get("starting_region", game_cfg.get("starting_region", "verdant_reach"))
             starting_location = chosen_origin.get("starting_location", "thornfield_village")
         else:
+            starting_region = game_cfg.get("starting_region", "verdant_reach")
             starting_location = game_cfg.get("starting_location", "thornfield_village")
 
-        # Build character
+        # Build character — include origin bonuses
         cls_data = classes.get(params["char_class"], {})
         starting_gold = cls_data.get("starting_gold", 0)
+        if chosen_origin:
+            starting_gold += chosen_origin.get("bonus_gold", 0)
+
+        # Merge origin skills with class skill choices (deduplicated)
+        skill_choices = list(params["skill_choices"])
+        if chosen_origin:
+            for s in chosen_origin.get("skill_proficiencies", []):
+                if s not in skill_choices:
+                    skill_choices.append(s)
+
         char_dict = create_character(
             name=params["name"],
             race=params["race"],
             char_class=params["char_class"],
             ability_scores=params["ability_scores"],
-            skill_choices=params["skill_choices"],
+            skill_choices=skill_choices,
             game_id=self.game_id,
             starting_gold=starting_gold,
+            origin_id=chosen_origin["id"] if chosen_origin else None,
+            origin_primary=params.get("origin_primary"),
+            origin_secondary=params.get("origin_secondary"),
         )
         self.character = char_dict
 
@@ -430,6 +443,14 @@ class GameApp:
         for item_id in starting_eq.get("items", []):
             if item_id in items:
                 starting_items.append({"item_id": item_id, "quantity": 1})
+        # Add origin starting equipment (deduplicated against class items)
+        if chosen_origin:
+            existing_ids = {si["item_id"] for si in starting_items}
+            for item_id in chosen_origin.get("starting_equipment", []):
+                if item_id in items and item_id not in existing_ids:
+                    starting_items.append({"item_id": item_id, "quantity": 1})
+                    existing_ids.add(item_id)
+
         # Everyone gets a healing potion
         starting_items.append({"item_id": "healing_potion", "quantity": 2})
 
@@ -479,12 +500,16 @@ class GameApp:
         repos["character"].save(char_dict)
         self.character = char_dict
 
-        # Initialize faction reputations from TOML defaults
+        # Initialize faction reputations from TOML defaults + origin adjustments
         from text_rpg.content.loader import load_all_factions
         factions = load_all_factions()
+        origin_faction_reps = {}
+        if chosen_origin:
+            origin_faction_reps = chosen_origin.get("faction_reputation", {})
         for faction_id, faction_data in factions.items():
             default_rep = faction_data.get("default_reputation", 0)
-            repos["reputation"].set_faction_rep(self.game_id, faction_id, default_rep)
+            origin_rep = origin_faction_reps.get(faction_id, 0)
+            repos["reputation"].set_faction_rep(self.game_id, faction_id, default_rep + origin_rep)
 
         # Learn starting spells for spellcasters
         self._learn_starting_spells(char_dict, repos)
@@ -493,7 +518,7 @@ class GameApp:
         self._seed_rag()
 
         # Log game start event
-        origin_name = chosen_origin["name"] if chosen_origin else "wandering traveler"
+        origin_name = chosen_origin["name"] if chosen_origin else "a wandering traveler"
         repos["event_ledger"].append({
             "id": str(uuid.uuid4()),
             "game_id": self.game_id,
@@ -773,6 +798,10 @@ class GameApp:
             "bounty": lambda: self._show_bounty(repos),
             "stories": lambda: self._show_stories(repos),
             "map": lambda: self._show_map(repos),
+            "traits": lambda: self._show_traits(repos),
+            "combinations": lambda: self._show_combinations(repos),
+            "guild_info": lambda: self._show_guild_info(repos),
+            "job_board": lambda: self._show_job_board(repos),
         }
         handler = _simple.get(action_type)
         if handler:
@@ -958,6 +987,231 @@ class GameApp:
             total_locations=len(all_locs),
         )
 
+    def _show_traits(self, repos: dict) -> None:
+        """Show acquired dynamic traits."""
+        from text_rpg.mechanics.trait_effects import format_effect_description
+
+        trait_repo = repos.get("trait")
+        if not trait_repo or not self.character:
+            self.display.show_info("No traits acquired yet.")
+            return
+
+        traits = trait_repo.get_traits(self.game_id, self.character.get("id", ""))
+        if not traits:
+            self.display.show_info("No traits acquired yet. Keep adventuring!")
+            return
+
+        from rich.panel import Panel
+        from rich.text import Text
+        from rich import box
+
+        for trait in traits:
+            content = Text()
+            content.append(f"{trait['name']}", style="bold cyan")
+            content.append(f" (Tier {trait['tier']})\n", style="dim")
+            content.append(f"{trait.get('description', '')}\n\n", style="")
+            for effect in trait.get("effects", []):
+                desc = format_effect_description(effect)
+                content.append(f"  - {desc}\n", style="green")
+            self.display.console.print(Panel(content, border_style="cyan", box=box.ROUNDED))
+
+    def _show_combinations(self, repos: dict) -> None:
+        """Show discovered spell combinations and custom spells."""
+        spell_creation_repo = repos.get("spell_creation")
+        if not spell_creation_repo or not self.character:
+            self.display.show_info("No spell discoveries yet.")
+            return
+
+        char_id = self.character.get("id", "")
+
+        # Discovered combinations
+        combo_ids = spell_creation_repo.get_discovered_combinations(self.game_id, char_id)
+        if combo_ids:
+            from text_rpg.mechanics.spell_combinations import SPELL_COMBINATIONS
+            self.display.show_info("--- Discovered Combinations ---")
+            for cid in combo_ids:
+                combo = SPELL_COMBINATIONS.get(cid)
+                if combo:
+                    self.display.show_info(f"  {combo.name}: {combo.element_a} + {combo.element_b}")
+
+        # Custom spells
+        customs = spell_creation_repo.get_custom_spells(self.game_id, char_id)
+        if customs:
+            self.display.show_info("--- Invented Spells ---")
+            for cs in customs:
+                level_str = f"Level {cs['level']}" if cs["level"] > 0 else "Cantrip"
+                self.display.show_info(f"  {cs['name']} ({level_str} {cs.get('school', 'evocation')}): {cs['description']}")
+
+        if not combo_ids and not customs:
+            self.display.show_info("No spell discoveries yet. Try 'combine fire and wind' or 'invent spell that creates a shield of ice'.")
+
+    def _show_guild_info(self, repos: dict) -> None:
+        """Show guild membership status, ranks, and perks."""
+        if not self.character:
+            return
+
+        guild_repo = repos.get("guild")
+        if not guild_repo:
+            self.display.show_info("Guild system not available.")
+            return
+
+        char_id = self.character.get("id", "")
+        memberships = guild_repo.get_memberships(self.game_id, char_id)
+
+        if not memberships:
+            self.display.show_info("You are not a member of any guild. Find a guild representative to join!")
+            return
+
+        from text_rpg.content.loader import load_all_guilds
+        from text_rpg.mechanics.guilds import get_guild_rank, get_rank_perks
+
+        guilds = load_all_guilds()
+        rep_repo = repos.get("reputation")
+        trade_repo = repos.get("trade_skill")
+
+        from rich.panel import Panel
+        from rich.text import Text
+        from rich import box
+
+        for m in memberships:
+            guild_id = m["guild_id"]
+            guild_data = guilds.get(guild_id, {})
+            guild_name = guild_data.get("name", guild_id)
+            profession = guild_data.get("profession", "unknown")
+            faction_id = guild_data.get("faction_id", "")
+
+            # Get current reputation and trade level
+            rep = 0
+            if rep_repo and faction_id:
+                rep = rep_repo.get_faction_rep(self.game_id, faction_id)
+
+            trade_level = 1
+            if trade_repo and profession:
+                skill = trade_repo.get_skill(self.game_id, char_id, profession)
+                if skill:
+                    trade_level = skill.get("level", 1)
+
+            current_rank = get_guild_rank(rep, trade_level, guild_data.get("ranks", []))
+            perks = get_rank_perks(guild_data, current_rank)
+            primary = " (Primary)" if m.get("is_primary") else ""
+
+            content = Text()
+            content.append(f"{guild_name}{primary}\n", style="bold cyan")
+            content.append(f"Profession: {profession.capitalize()}\n", style="")
+            content.append(f"Rank: {current_rank.capitalize()}\n", style="bold yellow")
+            content.append(f"Reputation: {rep} | Trade Level: {trade_level}\n", style="dim")
+            content.append(f"\nPerks:\n", style="bold")
+            if perks["shop_discount"] > 0:
+                content.append(f"  Shop discount: {int(perks['shop_discount'] * 100)}%\n", style="green")
+            if perks["xp_multiplier"] > 1.0:
+                content.append(f"  Craft XP: x{perks['xp_multiplier']:.1f}\n", style="green")
+            if perks["dc_reduction"] > 0:
+                content.append(f"  DC reduction: -{perks['dc_reduction']}\n", style="green")
+            if perks["crit_chance"] > 0:
+                content.append(f"  Crit chance: {int(perks['crit_chance'] * 100)}%\n", style="green")
+
+            # Show active work orders for this guild
+            orders = guild_repo.get_active_orders_for_guild(self.game_id, char_id, guild_id)
+            if orders:
+                content.append(f"\nActive Orders: {len(orders)}\n", style="bold")
+                for order in orders:
+                    reqs = order.get("requirements", {})
+                    prog = order.get("progress", {})
+                    req_str = ", ".join(
+                        f"{prog.get(k, 0)}/{v} {k.replace('_', ' ')}" for k, v in reqs.items()
+                    )
+                    content.append(f"  - {order.get('description', order['template_id'])}: {req_str}\n", style="")
+
+            completed = guild_repo.get_completed_count(self.game_id, char_id, guild_id)
+            content.append(f"\nCompleted orders: {completed}\n", style="dim")
+
+            self.display.console.print(Panel(content, border_style="cyan", box=box.ROUNDED))
+
+    def _show_job_board(self, repos: dict) -> None:
+        """Show available work orders based on guild membership and rank."""
+        if not self.character:
+            return
+
+        guild_repo = repos.get("guild")
+        if not guild_repo:
+            self.display.show_info("Guild system not available.")
+            return
+
+        char_id = self.character.get("id", "")
+        memberships = guild_repo.get_memberships(self.game_id, char_id)
+
+        if not memberships:
+            self.display.show_info("Join a guild first to see available work orders.")
+            return
+
+        from text_rpg.content.loader import load_all_guilds, load_work_order_templates
+        from text_rpg.mechanics.guilds import get_guild_rank, rank_index
+
+        guilds = load_all_guilds()
+        templates = load_work_order_templates()
+        rep_repo = repos.get("reputation")
+        trade_repo = repos.get("trade_skill")
+
+        lines = ["--- Job Board ---"]
+        count = 0
+
+        for tmpl in templates:
+            tmpl_guild_id = tmpl.get("guild_id", "")
+            membership = next((m for m in memberships if m["guild_id"] == tmpl_guild_id), None)
+            if not membership:
+                continue
+
+            guild_data = guilds.get(tmpl_guild_id, {})
+            faction_id = guild_data.get("faction_id", "")
+            profession = guild_data.get("profession", "")
+
+            rep = 0
+            if rep_repo and faction_id:
+                rep = rep_repo.get_faction_rep(self.game_id, faction_id)
+
+            trade_level = 1
+            if trade_repo and profession:
+                skill = trade_repo.get_skill(self.game_id, char_id, profession)
+                if skill:
+                    trade_level = skill.get("level", 1)
+
+            rank = get_guild_rank(rep, trade_level, guild_data.get("ranks", []))
+            min_rank = tmpl.get("min_rank", "initiate")
+            if rank_index(rank) < rank_index(min_rank):
+                continue
+
+            count += 1
+            req_str = ", ".join(
+                f"{qty}x {item.replace('_', ' ')}" for item, qty in tmpl.get("requirements", {}).items()
+            )
+            lines.append(
+                f"  {count}. [{guild_data.get('name', tmpl_guild_id)}] {tmpl['name']} "
+                f"({tmpl['order_type']}) — {req_str}"
+            )
+            lines.append(f"     {tmpl.get('description', '')}")
+            lines.append(
+                f"     Reward: {tmpl.get('reward_gold_min', 0)}-{tmpl.get('reward_gold_max', 0)} gold, "
+                f"{tmpl.get('reward_xp', 0)} XP, +{tmpl.get('reward_rep', 0)} rep"
+            )
+
+        if count == 0:
+            lines.append("  No orders available for your current ranks.")
+
+        # Show active orders
+        active = guild_repo.get_active_orders(self.game_id, char_id)
+        if active:
+            lines.append(f"\n--- Active Orders ({len(active)}/2) ---")
+            for order in active:
+                reqs = order.get("requirements", {})
+                prog = order.get("progress", {})
+                req_str = ", ".join(
+                    f"{prog.get(k, 0)}/{v} {k.replace('_', ' ')}" for k, v in reqs.items()
+                )
+                lines.append(f"  - {order.get('description', order['template_id'])}: {req_str}")
+
+        lines.append("\nUse 'accept job <number>' to take an order, 'submit job' to turn in.")
+        self.display.show_info("\n".join(lines))
+
     def _show_bounty(self, repos: dict) -> None:
         """Show active bounties."""
         bounties = repos["reputation"].get_all_bounties(self.game_id)
@@ -983,22 +1237,40 @@ class GameApp:
         class_cantrips = [s for s in all_spells.values() if s.get("level") == 0 and char_class in s.get("classes", [])]
         class_level1 = [s for s in all_spells.values() if s.get("level") == 1 and char_class in s.get("classes", [])]
 
+        # Load class data for cantrips_known count
+        from text_rpg.content.loader import load_all_classes
+        classes = load_all_classes()
+        cls_data = classes.get(char_class, {})
+        cantrips_known = cls_data.get("cantrips_known", 3)
+
         if char_class == "wizard":
-            # Wizard: 3 cantrips + 6 level-1 spells, all prepared
-            for cantrip in class_cantrips[:3]:
+            # Wizard: cantrips + 6 level-1 spells (spellbook), all prepared
+            for cantrip in class_cantrips[:cantrips_known]:
                 spell_repo.learn_spell(game_id, char_id, cantrip["id"])
                 spell_repo.prepare_spell(game_id, char_id, cantrip["id"])
             for spell in class_level1[:6]:
                 spell_repo.learn_spell(game_id, char_id, spell["id"])
                 spell_repo.prepare_spell(game_id, char_id, spell["id"])
-        elif char_class == "cleric":
-            # Cleric: 3 cantrips + all level-1 cleric spells, all prepared
-            for cantrip in class_cantrips[:3]:
+        elif char_class in ("cleric", "druid"):
+            # Prepared casters: cantrips + ALL level-1 class spells, all prepared
+            for cantrip in class_cantrips[:cantrips_known]:
                 spell_repo.learn_spell(game_id, char_id, cantrip["id"])
                 spell_repo.prepare_spell(game_id, char_id, cantrip["id"])
             for spell in class_level1:
                 spell_repo.learn_spell(game_id, char_id, spell["id"])
                 spell_repo.prepare_spell(game_id, char_id, spell["id"])
+        elif char_class in ("bard", "sorcerer", "warlock"):
+            # Known casters: cantrips + limited level-1 spells
+            for cantrip in class_cantrips[:cantrips_known]:
+                spell_repo.learn_spell(game_id, char_id, cantrip["id"])
+                spell_repo.prepare_spell(game_id, char_id, cantrip["id"])
+            known_limit = 4 if char_class == "bard" else (2 if char_class == "sorcerer" else 2)
+            for spell in class_level1[:known_limit]:
+                spell_repo.learn_spell(game_id, char_id, spell["id"])
+                spell_repo.prepare_spell(game_id, char_id, spell["id"])
+        elif char_class in ("paladin", "ranger"):
+            # Half casters: no cantrips, no spells at level 1 (gain at level 2)
+            pass
 
     def _show_spells(self, repos: dict) -> None:
         """Show known/prepared spells and spell slot status."""

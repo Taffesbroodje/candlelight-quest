@@ -1,0 +1,184 @@
+# =============================================================================
+# Barbarian Origins — Forged in the wild places where civilization's light fades
+# =============================================================================
+
+[[origins]]
+id = "tribal_warrior"
+name = "Tribal Warrior"
+category = "barbarian"
+summary = "A proud warrior of a highland clan, raised on the edge of the known world."
+prologue = """
+The Ashen Highlands bred you hard. Your clan, the Cindermaw, claimed the volcanic \
+ridges where the air tastes of sulfur and the ground sometimes bleeds heat. You \
+learned to hunt firebirds before you could read — not that the clan placed much \
+value on reading. Strength was the currency. Loyalty was the law. The elders \
+painted your first kill-marks on your shoulders when you were fourteen, and by \
+sixteen you had earned your place in the shield circle.
+
+But clans fracture. The drought that killed the highland game sent your people \
+scattering across the ridges in search of food, and what had been one clan became \
+three bitter fragments. Your chieftain fell in the dispute — a blade in the dark, \
+not the warrior's death she deserved. The fragment you belonged to chose exile \
+over submission to the rivals who killed her.
+
+You walk the highland road now with your axe across your back and the clan marks \
+still bright on your skin. The rage that kept your ancestors alive in the volcanic \
+wastes runs in your blood — a fire that answers when you call it. Somewhere beyond \
+these ash-stained peaks, there is a purpose worthy of that fire."""
+ability_choices = ["strength", "constitution", "dexterity"]
+skill_proficiencies = ["athletics", "survival"]
+starting_equipment = ["beast_trophy", "common_clothes"]
+bonus_gold = 5
+starting_region = "ashen_highlands"
+starting_location = "highland_road"
+feature_name = "Highland Endurance"
+feature_description = "Years in the volcanic highlands have hardened you against the elements. You have advantage on Constitution saving throws against extreme heat and exhaustion from forced marches."
+required_races = []
+excluded_races = []
+required_classes = ["barbarian"]
+excluded_classes = []
+
+[[origins]]
+id = "exile_of_the_wastes"
+name = "Exile of the Wastes"
+category = "barbarian"
+summary = "Banished from your homeland, you wander with nothing but your fury and your will."
+prologue = """
+They threw you out at dawn. No trial, no appeal — just the chief's decree and two \
+warriors at your back making sure you walked past the boundary stones. Your crime \
+was honest: you challenged the chief's son for the right to lead the hunt, and you \
+won. Badly. The chief's son kept his life but lost the use of his shield arm, and \
+the clan decided that your strength was more dangerous than the beasts outside \
+their walls.
+
+The first month alone was the hardest. Not the hunger or the cold — you had trained \
+for those. It was the silence. A lifetime of communal fires and shared songs replaced \
+by the wind and your own breathing. You learned to talk to yourself just to hear \
+a voice, and then you learned to stop needing one.
+
+The Thornwild took you in the way wild places take anyone — indifferently, but \
+honestly. You hunt what you need, sleep where you fall, and carry your rage like \
+a banked coal in your chest. The briarhaven village on the forest's edge is the \
+closest thing you have to a home now. The people there leave food on the boundary \
+stone sometimes, and you leave pelts. It is not friendship. It is enough."""
+ability_choices = ["strength", "constitution", "wisdom"]
+skill_proficiencies = ["survival", "nature"]
+starting_equipment = ["bedroll", "hunting_trap"]
+bonus_gold = 0
+starting_region = "thornwild"
+starting_location = "thornwild_trails"
+feature_name = "Wasteland Survival"
+feature_description = "Living alone in the wilderness has made you self-sufficient. You can always find enough food and water to sustain yourself in the wild, and you have advantage on Survival checks to forage."
+required_races = []
+excluded_races = []
+required_classes = ["barbarian"]
+excluded_classes = []
+
+[[origins]]
+id = "beast_totem_chosen"
+name = "Beast Totem Chosen"
+category = "barbarian"
+summary = "Marked by a spirit beast in a vision quest, you carry its fury within you."
+prologue = """
+The elders sent you into the deep forest on your sixteenth nameday with a waterskin, \
+a knife, and instructions to return only when the spirits had spoken. Three days \
+you wandered the Thornwild, eating bark and mushrooms, sleeping in the hollow \
+trunks of ancient trees. On the fourth night, the fever came — whether from a bad \
+mushroom or genuine spiritual contact, you have never been sure.
+
+The bear came to you in the fever dream. Not a normal bear — something vast and \
+old, with eyes like forest fires and a voice that resonated in your bones rather \
+than your ears. It pressed its forehead to yours, and you felt something break \
+open inside you. A well of fury, deep and hot, connected to something older than \
+the forest itself.
+
+You woke with claw marks on your chest that had not been there before. The elders \
+examined them, consulted their totems, and declared you totem-touched. The marks \
+have never fully healed — they glow faintly when your blood runs hot. You carry \
+the bear's gift in your flesh and its fury in your heart, and you have spent \
+every day since learning to control both."""
+ability_choices = ["strength", "wisdom", "constitution"]
+skill_proficiencies = ["animal_handling", "perception"]
+starting_equipment = ["beast_trophy", "druidic_focus"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "briarhaven_grove"
+feature_name = "Totem Sense"
+feature_description = "Your connection to the spirit beast sharpens your instincts. You can sense the presence of beasts within 60 feet and have advantage on Perception checks in forested areas."
+required_races = []
+excluded_races = []
+required_classes = ["barbarian"]
+excluded_classes = []
+
+[[origins]]
+id = "berserk_survivor"
+name = "Berserk Survivor"
+category = "barbarian"
+summary = "You survived a massacre by losing yourself to rage — and now you struggle to control it."
+prologue = """
+You do not remember the details of the attack. You remember the smell — smoke and \
+iron and something worse — and you remember the screaming. Your village on the \
+coastal road was small, barely a dozen families, and the raiders came at dawn when \
+the fishing boats were out. They burned the thatch roofs first to drive people into \
+the open.
+
+What happened next comes to you in fragments. A red haze descending. The weight of \
+a woodcutting axe in your hands. The sound it made. When the haze cleared, you were \
+standing in the village square surrounded by bodies — some raiders, some not. Your \
+arms were slick to the elbows. The surviving villagers looked at you with something \
+worse than fear.
+
+You left before they could decide what to do with you. The rage that saved your \
+life had also made you a monster in their eyes, and you could not argue. You do \
+not remember killing the raiders. You do not remember stopping. That is the part \
+that frightens you — not the fury itself, but the gap where your mind should be. \
+You have walked the coast road since, looking for someone who can teach you to \
+control the thing inside you before it controls you again."""
+ability_choices = ["strength", "constitution", "charisma"]
+skill_proficiencies = ["athletics", "intimidation"]
+starting_equipment = ["common_clothes", "belt_pouch"]
+bonus_gold = 3
+starting_region = "iron_coast"
+starting_location = "coastal_road"
+feature_name = "Berserker's Reputation"
+feature_description = "Word of your fury precedes you. When you enter a rage in combat, enemies of CR 1 or lower must make a Wisdom save or become frightened for 1 round."
+required_races = []
+excluded_races = []
+required_classes = ["barbarian"]
+excluded_classes = []
+
+[[origins]]
+id = "mountain_fury"
+name = "Mountain Fury"
+category = "barbarian"
+summary = "Raised in the highest peaks, you descend to the lowlands with the force of an avalanche."
+prologue = """
+Above the tree line, where the wind cuts like a blade and the snow never fully \
+melts, your people built their homes into the rock itself. The Stoneblood clan \
+carved dwellings from the mountainside, heated by volcanic vents that ran beneath \
+the obsidian plateau like the veins of a sleeping giant. You grew up scaling cliff \
+faces before breakfast and wrestling mountain goats for sport.
+
+The lowlanders never came up. Why would they? The air was thin, the paths were \
+treacherous, and the Stonebloods were not known for their hospitality. You had \
+everything you needed — meat, warmth, stone, sky, and the deep rumbling of the \
+mountain that your grandmother said was the earth breathing.
+
+Then the vents shifted. The warmth that sustained your homes turned to choking \
+sulfur, and the mountain that had sheltered you became a deathtrap. The clan \
+evacuated down paths they had never intended to use, carrying what they could, \
+leaving behind a lifetime of carved stone. You were sent ahead — the youngest, \
+the fastest, the angriest — to find a new home in the lowlands. The mountain's \
+fury is in your blood, and the lowlands are not ready for what descends."""
+ability_choices = ["constitution", "strength", "dexterity"]
+skill_proficiencies = ["athletics", "nature"]
+starting_equipment = ["climbers_kit", "common_clothes"]
+bonus_gold = 8
+starting_region = "ashen_highlands"
+starting_location = "obsidian_plateau"
+feature_name = "Mountain Born"
+feature_description = "Life at high altitude has given you extraordinary lung capacity. You are unaffected by altitude sickness, have advantage on Athletics checks for climbing, and can hold your breath twice as long as normal."
+required_races = []
+excluded_races = []
+required_classes = ["barbarian"]
+excluded_classes = []

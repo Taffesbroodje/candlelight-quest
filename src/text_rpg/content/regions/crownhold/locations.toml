@@ -1,0 +1,615 @@
+# Crownhold — the true capital, L11-16
+
+[[locations]]
+id = "crownhold_gate"
+name = "The Imperial Gate"
+region_id = "crownhold"
+description = "A triumphal arch flanked by colossal stone lions. Streams of humanity flow through: merchants, soldiers, diplomats, and commoners. The sheer scale of the gate dwarfs anything in lesser cities."
+location_type = "town"
+
+[[locations.connections]]
+target_location_id = "palace_district"
+direction = "north"
+description = "A grand boulevard climbs toward the Palace District."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "merchants_mile"
+direction = "east"
+description = "The sound of commerce draws you east along Merchants' Mile."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "artisan_quarter"
+direction = "west"
+description = "Workshops and studios line the western avenue."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "royal_road_south"
+direction = "south"
+description = "The Imperial Southern Road stretches toward Kingsward."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "imperial_road_north"
+direction = "north"
+description = "The Northern Imperial Road climbs toward the mountains."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "imperial_road_east"
+direction = "east"
+description = "The Eastern Imperial Road heads toward Embercrown."
+is_locked = false
+
+[[locations]]
+id = "palace_district"
+name = "Palace District"
+region_id = "crownhold"
+description = "A district of government buildings, embassies, and stately homes surrounding the Royal Palace hill. Guards patrol in dress armor, and every hedge is trimmed to perfection."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "crownhold_gate"
+direction = "south"
+description = "The boulevard descends to the Imperial Gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "royal_palace"
+direction = "north"
+description = "A processional road climbs to the Royal Palace."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "embassy_row_ch"
+direction = "east"
+description = "Embassy flags line the eastern boulevard."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "noble_heights"
+direction = "west"
+description = "Palatial mansions rise to the west."
+is_locked = false
+
+[[locations]]
+id = "royal_palace"
+name = "Royal Palace"
+region_id = "crownhold"
+description = "An enormous palace of white marble and gold leaf, seat of the Monarch's power. Hundreds of rooms house the court, council chambers, throne room, and royal quarters."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "palace_district"
+direction = "south"
+description = "The palace gates open to the Palace District below."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "imperial_gardens"
+direction = "east"
+description = "Sculpted gardens stretch to the east."
+is_locked = false
+
+[[locations]]
+id = "grand_academy"
+name = "The Grand Academy"
+region_id = "crownhold"
+description = "The greatest center of learning in the realm. Scholars from every discipline study here, and its libraries contain knowledge spanning millennia."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "university_campus_ch"
+direction = "south"
+description = "The campus sprawls to the south."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "grand_library"
+direction = "east"
+description = "The Grand Library's towering doors stand to the east."
+is_locked = false
+
+[[locations]]
+id = "high_temple_quarter"
+name = "High Temple Quarter"
+region_id = "crownhold"
+description = "A district of magnificent temples representing every major deity. The architecture ranges from soaring spires to underground sanctuaries."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "palace_district"
+direction = "south"
+description = "Lanes descend to the Palace District."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "high_cathedral"
+direction = "north"
+description = "The High Cathedral towers above the other temples."
+is_locked = false
+
+[[locations]]
+id = "high_cathedral"
+name = "The High Cathedral"
+region_id = "crownhold"
+description = "The largest and most magnificent cathedral in the realm, where the High Priest presides over state ceremonies. Its stained glass windows tell the history of the world."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "high_temple_quarter"
+direction = "south"
+description = "Steps descend to the Temple Quarter."
+is_locked = false
+
+[[locations]]
+id = "noble_heights"
+name = "Noble Heights"
+region_id = "crownhold"
+description = "The wealthiest residential district, where palatial mansions overlook the city. Private guards, carriages, and exclusive social clubs define life here."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "palace_district"
+direction = "east"
+description = "The boulevard leads east to the Palace District."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "noble_manor_district"
+direction = "north"
+description = "The most exclusive estates lie further north."
+is_locked = false
+
+[[locations]]
+id = "merchants_mile"
+name = "Merchants' Mile"
+region_id = "crownhold"
+description = "A grand boulevard of high-end shops, banking houses, and trading companies. The wealthiest merchants in the realm conduct business here."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "crownhold_gate"
+direction = "west"
+description = "The boulevard leads back to the Imperial Gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "arena_district"
+direction = "north"
+description = "Entertainment venues cluster to the north."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "foreign_quarter"
+direction = "east"
+description = "Exotic scents drift from the Foreign Quarter."
+is_locked = false
+
+[[locations]]
+id = "artisan_quarter"
+name = "Artisan Quarter"
+region_id = "crownhold"
+description = "A vibrant district of workshops, studios, and galleries where master craftspeople create works of extraordinary quality. Every trade imaginable is represented."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "crownhold_gate"
+direction = "east"
+description = "The avenue leads east to the Imperial Gate."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "alchemist_quarter"
+direction = "south"
+description = "Strange smells waft from the alchemists to the south."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "clock_tower_square"
+direction = "north"
+description = "The enchanted clock tower rises to the north."
+is_locked = false
+
+[[locations]]
+id = "military_academy"
+name = "Military Academy"
+region_id = "crownhold"
+description = "The premier military training institution where officers are forged. The grounds include barracks, training fields, and war simulation chambers."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "arena_district"
+direction = "west"
+description = "The arena district lies to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "training_academy"
+direction = "south"
+description = "Training yards stretch to the south."
+is_locked = false
+
+[[locations]]
+id = "arena_district"
+name = "Arena District"
+region_id = "crownhold"
+description = "The entertainment district centered around the Grand Arena. Theaters, gambling houses, and fighting pits cluster around the main venue."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "merchants_mile"
+direction = "south"
+description = "Merchants' Mile lies to the south."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "grand_arena"
+direction = "north"
+description = "The Grand Arena's colossal gates loom ahead."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "military_academy"
+direction = "east"
+description = "The Military Academy stands to the east."
+is_locked = false
+
+[[locations]]
+id = "grand_arena"
+name = "The Grand Arena"
+region_id = "crownhold"
+description = "The largest arena in the realm, capable of holding fifty thousand spectators. Tournament champions become legends, and the arena hosts everything from duels to monster hunts."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "arena_district"
+direction = "south"
+description = "The arena's public entrance opens to the district."
+is_locked = false
+
+[[locations]]
+id = "foreign_quarter"
+name = "Foreign Quarter"
+region_id = "crownhold"
+description = "A diverse district where travelers and immigrants from distant lands maintain communities. Exotic foods, customs, and goods create a vibrant mosaic."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "merchants_mile"
+direction = "west"
+description = "Merchants' Mile runs to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "harbor_district"
+direction = "south"
+description = "The harbor docks lie to the south."
+is_locked = false
+
+[[locations]]
+id = "undercity_entrance"
+name = "Undercity Entrance"
+region_id = "crownhold"
+description = "A guarded entrance to the vast tunnels beneath Crownhold. The city watch maintains a checkpoint here, but the undercity is largely lawless beyond it."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "thieves_quarter_ch"
+direction = "north"
+description = "Steps climb to the Thieves' Quarter above."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "crown_sewers"
+direction = "down"
+description = "A stairwell descends into the sewers below."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "undercity_market"
+direction = "south"
+description = "A tunnel leads deeper to the underground market."
+is_locked = false
+
+[[locations]]
+id = "undercity_market"
+name = "Undercity Market"
+region_id = "crownhold"
+description = "An underground black market where anything illegal is available — poisons, stolen goods, forbidden knowledge, and services no honest person would provide."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "undercity_entrance"
+direction = "north"
+description = "The tunnel leads back toward the entrance checkpoint."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "crown_sewers"
+direction = "east"
+description = "A narrow passage connects to the sewers."
+is_locked = false
+
+[[locations]]
+id = "harbor_district"
+name = "Harbor District"
+region_id = "crownhold"
+description = "Crownhold's massive river harbor, where ships from across the realm dock. Warehouses stretch for miles, and the docks never sleep."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "foreign_quarter"
+direction = "north"
+description = "Lanes climb north to the Foreign Quarter."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "royal_harbor"
+direction = "east"
+description = "The exclusive royal harbor lies to the east."
+is_locked = false
+
+[[locations]]
+id = "royal_harbor"
+name = "Royal Harbor"
+region_id = "crownhold"
+description = "The exclusive section of the harbor reserved for royal and diplomatic vessels. Beautiful ships with gilded prows are moored alongside naval warships."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "harbor_district"
+direction = "west"
+description = "The main harbor docks lie to the west."
+is_locked = false
+
+[[locations]]
+id = "university_campus_ch"
+name = "University Campus"
+region_id = "crownhold"
+description = "A sprawling campus of lecture halls, dormitories, and research facilities. Students and professors debate everything from philosophy to practical magic."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "grand_academy"
+direction = "north"
+description = "The Grand Academy towers to the north."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "grand_library"
+direction = "east"
+description = "The Grand Library stands to the east."
+is_locked = false
+
+[[locations]]
+id = "imperial_gardens"
+name = "Imperial Gardens"
+region_id = "crownhold"
+description = "Vast royal gardens open to the public, with sculpted hedges, flower beds, fountains, and hidden grottos. A peaceful retreat from the city's chaos."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "royal_palace"
+direction = "west"
+description = "The palace lies to the west."
+is_locked = false
+
+[[locations]]
+id = "prison_complex"
+name = "Imperial Prison"
+region_id = "crownhold"
+description = "The Imperial Prison, a fortress within a fortress. The most dangerous criminals in the realm are held here under heavy guard and magical wards."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "military_academy"
+direction = "north"
+description = "The Military Academy lies to the north."
+is_locked = false
+
+[[locations]]
+id = "crown_courthouse"
+name = "High Court of the Realm"
+region_id = "crownhold"
+description = "The High Court of the realm, where the most important legal cases are tried. Law libraries, hearing chambers, and holding cells fill the massive building."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "palace_district"
+direction = "east"
+description = "The Palace District lies to the east."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "noble_heights"
+direction = "south"
+description = "Noble Heights stretches to the south."
+is_locked = false
+
+[[locations]]
+id = "embassy_row_ch"
+name = "Embassy Row"
+region_id = "crownhold"
+description = "A boulevard of embassies representing every major power. Diplomatic immunity makes it a hotbed of espionage and intrigue."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "palace_district"
+direction = "west"
+description = "The Palace District lies to the west."
+is_locked = false
+
+[[locations]]
+id = "grand_library"
+name = "The Grand Library"
+region_id = "crownhold"
+description = "The largest library in existence, containing millions of volumes. Its depths are said to hold forbidden texts and living books that whisper secrets."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "grand_academy"
+direction = "west"
+description = "The Grand Academy lies to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "university_campus_ch"
+direction = "west"
+description = "The university campus sprawls to the west."
+is_locked = false
+
+[[locations]]
+id = "alchemist_quarter"
+name = "Alchemist Quarter"
+region_id = "crownhold"
+description = "A district of alchemical workshops, ingredient shops, and experimental laboratories. Minor explosions and strange smells are a daily occurrence."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "artisan_quarter"
+direction = "north"
+description = "The Artisan Quarter lies to the north."
+is_locked = false
+
+[[locations]]
+id = "royal_road_south"
+name = "Imperial Southern Road"
+region_id = "crownhold"
+description = "The Imperial Southern Road, a broad paved highway heading south toward Kingsward. Merchant caravans and military patrols are a constant presence."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "crownhold_gate"
+direction = "north"
+description = "The road leads back to the Imperial Gate."
+is_locked = false
+
+[locations.properties]
+border_region = "kingsward"
+border_direction = "south"
+
+[[locations]]
+id = "imperial_road_north"
+name = "Northern Imperial Road"
+region_id = "crownhold"
+description = "The Northern Imperial Road climbing toward the mountains and Silverpeak. The air grows cooler and the terrain rises as the road winds upward."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "crownhold_gate"
+direction = "south"
+description = "The road descends back to the capital."
+is_locked = false
+
+[locations.properties]
+border_region = "silverpeak"
+border_direction = "north"
+
+[[locations]]
+id = "imperial_road_east"
+name = "Eastern Imperial Road"
+region_id = "crownhold"
+description = "The Eastern Imperial Road heading toward Embercrown through increasingly hostile terrain. Smoke stains the horizon ahead."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "crownhold_gate"
+direction = "west"
+description = "The road leads back to the capital."
+is_locked = false
+
+[locations.properties]
+border_region = "embercrown"
+border_direction = "east"
+
+[[locations]]
+id = "crown_sewers"
+name = "Crown Sewers"
+region_id = "crownhold"
+description = "Vast sewer tunnels beneath the city, home to rats, ghouls, and entire communities of outcasts. The deeper sections connect to ancient ruins predating the city."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "undercity_entrance"
+direction = "up"
+description = "Stairs ascend to the Undercity Entrance."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "undercity_market"
+direction = "west"
+description = "A passage leads to the underground market."
+is_locked = false
+
+[[locations]]
+id = "noble_manor_district"
+name = "Noble Manor District"
+region_id = "crownhold"
+description = "The most exclusive estates, each a small palace with private grounds, staff, and sometimes private armies. Political marriages and assassination plots brew here."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "noble_heights"
+direction = "south"
+description = "Noble Heights lies to the south."
+is_locked = false
+
+[[locations]]
+id = "training_academy"
+name = "Training Academy"
+region_id = "crownhold"
+description = "A school for aspiring adventurers, soldiers, and guards. Combat training, magical basics, and survival skills are taught."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "military_academy"
+direction = "north"
+description = "The Military Academy lies to the north."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "arena_district"
+direction = "west"
+description = "The Arena District lies to the west."
+is_locked = false
+
+[[locations]]
+id = "clock_tower_square"
+name = "Clock Tower Square"
+region_id = "crownhold"
+description = "A picturesque square dominated by an enormous enchanted clock tower whose chimes can be heard across the city. Cafes and bookshops surround it."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "artisan_quarter"
+direction = "south"
+description = "The Artisan Quarter lies to the south."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "university_campus_ch"
+direction = "east"
+description = "The university campus stretches to the east."
+is_locked = false
+
+[[locations]]
+id = "thieves_quarter_ch"
+name = "Thieves' Quarter"
+region_id = "crownhold"
+description = "The district where the city's criminal underworld operates in plain sight. Everyone knows, but proving anything is another matter entirely."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "undercity_entrance"
+direction = "south"
+description = "A passage leads down to the Undercity Entrance."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "artisan_quarter"
+direction = "east"
+description = "The Artisan Quarter lies to the east."
+is_locked = false

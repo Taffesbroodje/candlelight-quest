@@ -1,0 +1,441 @@
+# Embercrown NPCs — volcanic caldera city and surroundings
+
+[[npcs]]
+id = "fire_guildmaster_pyraxis"
+name = "Fire Guildmaster Pyraxis"
+entity_type = "npc"
+profession = "guildmaster"
+description = "A towering fire genasi with molten veins visible beneath his bronze skin. He runs the Magma Forge with iron discipline and takes immense pride in every weapon that bears his mark. His hair is a crown of flickering flames."
+location_id = "magma_forge"
+dialogue_tags = ["greeting", "shop_weapons", "shop_armor", "craft_info", "lore"]
+behaviors = ["proud", "merchant", "craftsman"]
+is_hostile = false
+is_alive = true
+level = 12
+hp_current = 75
+hp_max = 75
+ac = 17
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 12
+constitution = 18
+intelligence = 16
+wisdom = 14
+charisma = 15
+
+[npcs.schedule]
+dawn = "magma_forge"
+morning = "magma_forge"
+midday = "magma_forge"
+afternoon = "magma_forge"
+evening = "furnace_district"
+night = "magma_forge"
+late_night = "magma_forge"
+
+[npcs.properties]
+preferred_gifts = ["iron_ingot", "dragon_scale_fragment"]
+disliked_gifts = ["nightshade", "rations"]
+
+[[npcs.attacks]]
+name = "Fire-Forged Hammer"
+damage_dice = "2d8"
+damage_bonus = 4
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "master_anvil_heart"
+name = "Master Smith Anvil-Heart"
+entity_type = "npc"
+profession = "master_smith"
+description = "A massive dwarf whose arms are thicker than most warriors' thighs. His beard is singed short from decades at the forge, and his hands are covered in old burn scars he wears like badges of honor. He speaks in short, blunt sentences."
+location_id = "furnace_district"
+dialogue_tags = ["greeting", "craft_info", "shop_weapons", "lore"]
+behaviors = ["focused", "craftsman", "gruff"]
+is_hostile = false
+is_alive = true
+level = 10
+hp_current = 65
+hp_max = 65
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 20
+dexterity = 10
+constitution = 18
+intelligence = 14
+wisdom = 12
+charisma = 10
+
+[npcs.schedule]
+dawn = "furnace_district"
+morning = "furnace_district"
+midday = "magma_forge"
+afternoon = "furnace_district"
+evening = "furnace_district"
+night = "hot_spring_baths"
+late_night = "furnace_district"
+
+[npcs.properties]
+preferred_gifts = ["iron_ingot", "healing_potion"]
+disliked_gifts = ["arcane_dust", "moonpetal"]
+
+[[npcs.attacks]]
+name = "Volcanic Hammer"
+damage_dice = "2d6"
+damage_bonus = 5
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "senator_moltara"
+name = "Tiefling Senator Moltara"
+entity_type = "npc"
+profession = "senator"
+description = "A striking tiefling woman with polished obsidian horns and crimson skin. She wears robes of woven firesilk and commands every room she enters. Her political acumen is matched only by her ambition."
+location_id = "embassy_row"
+dialogue_tags = ["greeting", "politics", "quest_info", "rumors", "shop_supplies"]
+behaviors = ["charismatic", "political", "shrewd"]
+is_hostile = false
+is_alive = true
+level = 8
+hp_current = 40
+hp_max = 40
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 14
+constitution = 12
+intelligence = 18
+wisdom = 16
+charisma = 19
+
+[npcs.schedule]
+dawn = "embassy_row"
+morning = "embassy_row"
+midday = "obsidian_market"
+afternoon = "embassy_row"
+evening = "embassy_row"
+night = "ember_quarter"
+late_night = "embassy_row"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "soul_gem"]
+disliked_gifts = ["rations", "torch"]
+
+[[npcs.attacks]]
+name = "Hellfire Ray"
+damage_dice = "2d6"
+damage_bonus = 0
+damage_type = "fire"
+
+[[npcs]]
+id = "cult_hunter_cinder"
+name = "Cult Hunter Cinder"
+entity_type = "npc"
+profession = "cult_hunter"
+description = "A scarred human woman in scorched leather armor, with one eye replaced by a glowing ember prosthetic. She has dedicated her life to rooting out the cultists who seek to awaken the Fire Giant king. Her intensity is unnerving."
+location_id = "ember_barracks"
+dialogue_tags = ["greeting", "quest_info", "guard_info", "rumors", "lore"]
+behaviors = ["relentless", "quest_giver", "protector"]
+is_hostile = false
+is_alive = true
+level = 10
+hp_current = 68
+hp_max = 68
+ac = 18
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 16
+constitution = 15
+intelligence = 14
+wisdom = 15
+charisma = 12
+
+[npcs.schedule]
+dawn = "ember_barracks"
+morning = "ember_barracks"
+midday = "mining_tunnels_east"
+afternoon = "cultist_hideout"
+evening = "ember_barracks"
+night = "embercrown_gate"
+late_night = "ember_barracks"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "antidote"]
+disliked_gifts = ["nightshade", "arcane_dust"]
+
+[[npcs.attacks]]
+name = "Flame Blade"
+damage_dice = "2d6"
+damage_bonus = 3
+damage_type = "fire"
+
+[[npcs]]
+id = "scholar_basalt"
+name = "Giant-Lore Scholar Basalt"
+entity_type = "npc"
+profession = "scholar"
+description = "A young half-elf with ink-stained fingers and wild hair singed at the tips. He is obsessed with the history of the Fire Giants and spends most of his time in the ruins, often forgetting to eat or sleep. His enthusiasm is infectious."
+location_id = "black_glass_tower"
+dialogue_tags = ["greeting", "lore", "quest_info", "rumors"]
+behaviors = ["academic", "information", "passionate"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 32
+hp_max = 32
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 10
+constitution = 10
+intelligence = 20
+wisdom = 17
+charisma = 12
+
+[npcs.schedule]
+dawn = "black_glass_tower"
+morning = "burning_library"
+midday = "fire_giant_ruins"
+afternoon = "fire_giant_ruins"
+evening = "black_glass_tower"
+night = "burning_library"
+late_night = "black_glass_tower"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "soul_gem"]
+disliked_gifts = ["rations", "torch"]
+
+[[npcs.attacks]]
+name = "Fire Bolt"
+damage_dice = "2d10"
+damage_bonus = 0
+damage_type = "fire"
+
+[[npcs]]
+id = "commander_forge"
+name = "Mercenary Commander Forge"
+entity_type = "npc"
+profession = "mercenary"
+description = "A boisterous goliath mercenary whose laughter echoes through the arena. Covered in tattoos of flames and crossed swords, he fights for glory, gold, and the thrill of combat. He respects strength above all else."
+location_id = "embercrown_arena"
+dialogue_tags = ["greeting", "quest_info", "rumors", "combat_info"]
+behaviors = ["boisterous", "quest_giver", "fighter"]
+is_hostile = false
+is_alive = true
+level = 11
+hp_current = 78
+hp_max = 78
+ac = 18
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 18
+dexterity = 16
+constitution = 16
+intelligence = 12
+wisdom = 13
+charisma = 15
+
+[npcs.schedule]
+dawn = "embercrown_arena"
+morning = "embercrown_arena"
+midday = "embercrown_arena"
+afternoon = "embercrown_arena"
+evening = "furnace_district"
+night = "embercrown_arena"
+late_night = "embercrown_arena"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "longsword"]
+disliked_gifts = ["moonpetal", "holy_symbol"]
+
+[[npcs.attacks]]
+name = "Greatsword"
+damage_dice = "2d6"
+damage_bonus = 5
+damage_type = "slashing"
+
+[[npcs]]
+id = "ash_high_priest"
+name = "Ash Temple High Priest"
+entity_type = "npc"
+profession = "high_priest"
+description = "An ancient fire genasi whose flames have dimmed to a soft amber glow. He speaks with a voice like crackling embers and radiates a profound calm. He has tended the sacred flames for over a century and knows secrets of the caldera that no one else does."
+location_id = "ash_temple"
+dialogue_tags = ["greeting", "healing", "blessing", "lore", "quest_info"]
+behaviors = ["serene", "healer", "spiritual"]
+is_hostile = false
+is_alive = true
+level = 10
+hp_current = 55
+hp_max = 55
+ac = 17
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 10
+constitution = 14
+intelligence = 16
+wisdom = 20
+charisma = 16
+
+[npcs.schedule]
+dawn = "ash_temple"
+morning = "ash_temple"
+midday = "ash_temple"
+afternoon = "ash_temple"
+evening = "ash_temple"
+night = "ember_quarter"
+late_night = "ash_temple"
+
+[npcs.properties]
+preferred_gifts = ["holy_symbol", "healing_herb"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Sacred Flame"
+damage_dice = "3d8"
+damage_bonus = 0
+damage_type = "radiant"
+
+[[npcs]]
+id = "ambassador_ironhide"
+name = "Ambassador Ironhide"
+entity_type = "npc"
+profession = "ambassador"
+description = "A stocky dwarf in impeccable diplomatic attire reinforced with mithral threading. He represents external trade interests in Embercrown and has connections across many regions. His formal manner conceals a sharp wit."
+location_id = "embassy_row"
+dialogue_tags = ["greeting", "politics", "shop_supplies", "rumors", "lore"]
+behaviors = ["diplomatic", "information", "formal"]
+is_hostile = false
+is_alive = true
+level = 8
+hp_current = 48
+hp_max = 48
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 12
+constitution = 15
+intelligence = 14
+wisdom = 14
+charisma = 14
+
+[npcs.schedule]
+dawn = "embassy_row"
+morning = "embassy_row"
+midday = "obsidian_market"
+afternoon = "embassy_row"
+evening = "hot_spring_baths"
+night = "embassy_row"
+late_night = "embassy_row"
+
+[npcs.properties]
+preferred_gifts = ["iron_ingot", "healing_potion"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Longsword"
+damage_dice = "1d8"
+damage_bonus = 3
+damage_type = "slashing"
+
+[[npcs]]
+id = "arena_champion_inferno"
+name = "Arena Champion Inferno"
+entity_type = "npc"
+profession = "champion"
+description = "A towering tiefling warrior draped in trophies from a hundred victories. His skin is deep crimson, and his eyes burn with literal fire. He considers himself the greatest fighter alive and makes sure everyone knows it."
+location_id = "embercrown_arena"
+dialogue_tags = ["greeting", "combat_info", "rumors", "quest_info"]
+behaviors = ["arrogant", "fighter", "dramatic"]
+is_hostile = false
+is_alive = true
+level = 12
+hp_current = 90
+hp_max = 90
+ac = 18
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 20
+dexterity = 16
+constitution = 18
+intelligence = 10
+wisdom = 12
+charisma = 16
+
+[npcs.schedule]
+dawn = "embercrown_arena"
+morning = "embercrown_arena"
+midday = "embercrown_arena"
+afternoon = "embercrown_arena"
+evening = "furnace_district"
+night = "hot_spring_baths"
+late_night = "embercrown_arena"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "dragon_scale_fragment"]
+disliked_gifts = ["rations", "healing_herb"]
+
+[[npcs.attacks]]
+name = "Flamberge"
+damage_dice = "2d6"
+damage_bonus = 6
+damage_type = "fire"
+
+[[npcs]]
+id = "black_glass_sage"
+name = "Black Glass Sage"
+entity_type = "npc"
+profession = "sage"
+description = "A mysterious figure wrapped in dark robes embroidered with glowing runes. Their face is hidden behind a mask of polished obsidian, and their voice carries an otherworldly echo. They collect and trade in forbidden knowledge."
+location_id = "burning_library"
+dialogue_tags = ["greeting", "lore", "shop_supplies", "quest_info", "rumors"]
+behaviors = ["scholarly", "merchant", "mysterious"]
+is_hostile = false
+is_alive = true
+level = 8
+hp_current = 35
+hp_max = 35
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 12
+constitution = 10
+intelligence = 20
+wisdom = 18
+charisma = 12
+
+[npcs.schedule]
+dawn = "burning_library"
+morning = "burning_library"
+midday = "burning_library"
+afternoon = "black_glass_tower"
+evening = "burning_library"
+night = "burning_library"
+late_night = "burning_library"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "soul_gem"]
+disliked_gifts = ["rations", "torch"]
+
+[[npcs.attacks]]
+name = "Fire Bolt"
+damage_dice = "2d10"
+damage_bonus = 0
+damage_type = "fire"

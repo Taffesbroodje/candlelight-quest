@@ -107,6 +107,25 @@ def calculate_flee_dc(enemy_count: int) -> int:
     return 10 + 2 * max(enemy_count, 1)
 
 
+def assess_threat_level(player_level: int, enemy_level: int) -> str:
+    """Assess threat of an enemy relative to the player.
+
+    Returns one of: 'trivial', 'easy', 'normal', 'hard', 'deadly', 'overwhelming'.
+    """
+    diff = enemy_level - player_level
+    if diff <= -5:
+        return "trivial"
+    if diff <= -2:
+        return "easy"
+    if diff <= 1:
+        return "normal"
+    if diff <= 3:
+        return "hard"
+    if diff <= 5:
+        return "deadly"
+    return "overwhelming"
+
+
 def npc_choose_action(npc: dict, targets: list[dict], context: dict | None = None) -> dict:
     """Simple NPC combat AI. Returns action dict.
 

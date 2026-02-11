@@ -1,0 +1,164 @@
+# Tier 4 Equipment (L10-16 regions: Embercrown, Frostmere, Crownhold)
+# Very rare magic weapons and armor
+
+# --- Weapons ---
+
+[[items]]
+id = "flame_tongue"
+name = "Flame Tongue Longsword"
+description = "A longsword that erupts in flame on command, shedding bright light."
+item_type = "weapon"
+weight = 3.0
+value_gp = 5000
+rarity = "very_rare"
+weapon_type = "martial_melee"
+damage_dice = "1d8+2d6"
+damage_type = "slashing/fire"
+properties = ["versatile"]
+
+[[items]]
+id = "frost_brand"
+name = "Frost Brand Greatsword"
+description = "A greatsword wreathed in frost, granting resistance to fire damage."
+item_type = "weapon"
+weight = 6.0
+value_gp = 5000
+rarity = "very_rare"
+weapon_type = "martial_melee"
+damage_dice = "2d6+1d6"
+damage_type = "slashing/cold"
+properties = ["heavy", "two_handed"]
+
+[[items]]
+id = "oathbow"
+name = "Oathbow"
+description = "A longbow that swears vengeance against a chosen foe."
+item_type = "weapon"
+weight = 2.0
+value_gp = 4000
+rarity = "very_rare"
+weapon_type = "martial_ranged"
+damage_dice = "1d8+3d6"
+damage_type = "piercing"
+properties = ["ammunition", "heavy", "two_handed"]
+
+[[items]]
+id = "vorpal_dagger"
+name = "Vorpal Dagger"
+description = "A dagger so sharp it can sever on a perfect strike."
+item_type = "weapon"
+weight = 1.0
+value_gp = 3000
+rarity = "very_rare"
+weapon_type = "simple_melee"
+damage_dice = "1d4+3"
+damage_type = "piercing"
+properties = ["finesse", "light", "thrown"]
+
+[[items]]
+id = "staff_of_power"
+name = "Staff of Power"
+description = "A staff crackling with raw arcane energy, grants +2 to spell attack rolls."
+item_type = "weapon"
+weight = 4.0
+value_gp = 6000
+rarity = "very_rare"
+weapon_type = "simple_melee"
+damage_dice = "1d6+2"
+damage_type = "bludgeoning/force"
+properties = ["versatile"]
+
+[[items]]
+id = "dragon_slayer"
+name = "Dragon Slayer Longsword"
+description = "A sword forged with dragon-slaying enchantments, deals 3d6 extra to dragons."
+item_type = "weapon"
+weight = 3.0
+value_gp = 4000
+rarity = "very_rare"
+weapon_type = "martial_melee"
+damage_dice = "1d8+1"
+damage_type = "slashing"
+properties = ["versatile"]
+
+# --- Armor ---
+
+[[items]]
+id = "plate_armor"
+name = "Full Plate Armor"
+description = "The finest non-magical heavy armor."
+item_type = "armor"
+weight = 65.0
+value_gp = 1500
+rarity = "uncommon"
+armor_type = "heavy"
+ac_base = 18
+max_dex_bonus = 0
+stealth_disadvantage = true
+strength_requirement = 15
+
+[[items]]
+id = "dragon_scale_mail"
+name = "Dragon Scale Mail"
+description = "Armor forged from the scales of a dragon, granting resistance to the dragon's element."
+item_type = "armor"
+weight = 45.0
+value_gp = 5000
+rarity = "very_rare"
+armor_type = "medium"
+ac_base = 16
+max_dex_bonus = 2
+stealth_disadvantage = false
+strength_requirement = 0
+
+[[items]]
+id = "animated_shield"
+name = "Animated Shield"
+description = "A shield that floats beside you, protecting you without occupying a hand."
+item_type = "armor"
+weight = 6.0
+value_gp = 4000
+rarity = "very_rare"
+armor_type = "shield"
+ac_base = 2
+max_dex_bonus = 0
+stealth_disadvantage = false
+strength_requirement = 0
+
+[[items]]
+id = "robe_of_the_archmagi"
+name = "Robe of the Archmagi"
+description = "Shimmering robes that provide AC 15 + Dex modifier to spellcasters."
+item_type = "armor"
+weight = 4.0
+value_gp = 8000
+rarity = "very_rare"
+armor_type = "light"
+ac_base = 15
+max_dex_bonus = 99
+stealth_disadvantage = false
+strength_requirement = 0
+
+# --- Potions ---
+
+[[items]]
+id = "supreme_healing_potion"
+name = "Potion of Supreme Healing"
+description = "An exquisite vial of brilliant ruby liquid that can heal even the most grievous injuries."
+item_type = "potion"
+weight = 0.5
+value_gp = 1000
+rarity = "very_rare"
+
+[items.effects]
+heal_dice = "10d4"
+heal_bonus = 20
+
+[[items]]
+id = "potion_of_giant_strength"
+name = "Potion of Giant Strength"
+description = "Sets your Strength score to 23 for 1 hour."
+item_type = "potion"
+weight = 0.5
+value_gp = 2000
+rarity = "very_rare"

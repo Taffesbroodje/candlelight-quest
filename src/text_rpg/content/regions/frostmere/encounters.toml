@@ -1,0 +1,286 @@
+# Frostmere encounters — L10-16
+
+[[encounters]]
+id = "frost_giants_enc"
+name = "Frost Giants"
+location_ids = ["glacial_rift", "frost_giant_outpost"]
+encounter_chance = 0.20
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "beast_hide", chance = 0.4},
+    {id = "healing_potion", chance = 0.3},
+    {id = "soul_gem", chance = 0.1},
+]
+gold_min = 50
+gold_max = 120
+
+[[encounters.entities]]
+id = "frost_giant"
+name = "Frost Giant"
+entity_type = "enemy"
+description = "A massive humanoid standing twenty feet tall, its blue skin crusted with ice. It wears crude armor of frozen hide and wields a greataxe that could split a boulder. The ground shakes with each step."
+level = 11
+hp_max = 90
+ac = 16
+count_min = 1
+count_max = 2
+xp_value = 500
+
+[encounters.entities.ability_scores]
+strength = 22
+dexterity = 8
+constitution = 20
+intelligence = 10
+wisdom = 12
+charisma = 10
+
+[[encounters.entities.attacks]]
+name = "Greataxe"
+damage_dice = "3d8"
+damage_bonus = 6
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Rock Throw"
+damage_dice = "2d10"
+damage_bonus = 6
+damage_type = "bludgeoning"
+
+[[encounters]]
+id = "ice_elementals_enc"
+name = "Greater Ice Elemental"
+location_ids = ["ice_cave_network", "shipwreck_coast_north"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.6},
+    {id = "soul_gem", chance = 0.15},
+    {id = "healing_potion", chance = 0.4},
+]
+gold_min = 30
+gold_max = 80
+
+[[encounters.entities]]
+id = "greater_ice_elemental"
+name = "Greater Ice Elemental"
+entity_type = "enemy"
+description = "A towering figure of ancient ice and howling wind, far larger and more powerful than a common elemental. Frost radiates from it in lethal waves, and its crystalline core pulses with a cold intelligence."
+level = 10
+hp_max = 72
+ac = 16
+count_min = 1
+count_max = 1
+xp_value = 500
+
+[encounters.entities.ability_scores]
+strength = 18
+dexterity = 10
+constitution = 18
+intelligence = 5
+wisdom = 12
+charisma = 5
+
+[[encounters.entities.attacks]]
+name = "Frost Slam"
+damage_dice = "3d8"
+damage_bonus = 4
+damage_type = "cold"
+
+[[encounters.entities.attacks]]
+name = "Ice Shards"
+damage_dice = "2d8"
+damage_bonus = 0
+damage_type = "cold"
+
+[[encounters]]
+id = "yetis"
+name = "Yetis"
+location_ids = ["yeti_territory", "tundra_wastes"]
+encounter_chance = 0.25
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "beast_hide", chance = 0.6},
+    {id = "healing_potion", chance = 0.2},
+]
+gold_min = 15
+gold_max = 40
+
+[[encounters.entities]]
+id = "yeti"
+name = "Yeti"
+entity_type = "enemy"
+description = "A hulking ape-like creature covered in thick white fur, nearly invisible against the snow. Its massive claws can rend armor, and its chilling gaze can freeze prey in place."
+level = 8
+hp_max = 55
+ac = 12
+count_min = 1
+count_max = 3
+xp_value = 200
+
+[encounters.entities.ability_scores]
+strength = 20
+dexterity = 10
+constitution = 18
+intelligence = 6
+wisdom = 12
+charisma = 6
+
+[[encounters.entities.attacks]]
+name = "Claw"
+damage_dice = "2d6"
+damage_bonus = 5
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Chilling Gaze"
+damage_dice = "2d8"
+damage_bonus = 0
+damage_type = "cold"
+
+[[encounters]]
+id = "winter_wolves"
+name = "Winter Wolves"
+location_ids = ["wolf_den", "tundra_wastes"]
+encounter_chance = 0.30
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "beast_hide", chance = 0.5},
+    {id = "healing_herb", chance = 0.2},
+]
+gold_min = 5
+gold_max = 15
+
+[[encounters.entities]]
+id = "winter_wolf"
+name = "Winter Wolf"
+entity_type = "enemy"
+description = "A wolf the size of a horse with fur like freshly fallen snow and eyes of pale blue ice. It hunts in coordinated packs, and its freezing breath can coat a warrior in ice."
+level = 6
+hp_max = 38
+ac = 13
+count_min = 3
+count_max = 5
+xp_value = 100
+
+[encounters.entities.ability_scores]
+strength = 16
+dexterity = 14
+constitution = 14
+intelligence = 6
+wisdom = 12
+charisma = 8
+
+[[encounters.entities.attacks]]
+name = "Bite"
+damage_dice = "2d6"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[encounters.entities.attacks]]
+name = "Cold Breath"
+damage_dice = "2d8"
+damage_bonus = 0
+damage_type = "cold"
+
+# -- Puzzle Encounters --
+
+[[encounters]]
+id = "blizzard_survival"
+name = "Blizzard Survival"
+location_ids = ["blizzard_pass", "tundra_wastes"]
+encounter_chance = 0.20
+fight_type = "puzzle"
+description = "A sudden blizzard engulfs you. Visibility drops to zero, the wind screams, and the cold cuts to the bone. You need to find or build shelter before the cold takes you."
+
+[encounters.puzzle]
+puzzle_type = "trap"
+dc = 15
+trap_damage = "4d6"
+
+[encounters.loot]
+items = [
+    {id = "healing_herb", chance = 0.4},
+    {id = "rations", chance = 0.3},
+]
+gold_min = 5
+gold_max = 20
+
+[[encounters]]
+id = "underwater_ruins"
+name = "Underwater Ruins"
+location_ids = ["under_ice_city", "buried_ruins"]
+encounter_chance = 0.15
+fight_type = "puzzle"
+description = "Ancient mechanisms activate as you enter the ruins. Water begins to rise, and glowing symbols appear on three pillars. A voice echoes: 'Speak the element that was before all others.' The symbols show fire, water, and void."
+
+[encounters.puzzle]
+puzzle_type = "riddle"
+dc = 16
+riddle_answer = "void"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.7},
+    {id = "soul_gem", chance = 0.25},
+    {id = "healing_potion", chance = 0.5},
+]
+gold_min = 40
+gold_max = 100
+
+# -- Boss Encounter --
+
+[[encounters]]
+id = "awakened_horror"
+name = "Awakened Horror"
+location_ids = ["buried_ruins", "under_ice_city"]
+encounter_chance = 0.10
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "soul_gem", chance = 0.3},
+    {id = "arcane_dust", chance = 0.7},
+    {id = "healing_potion", chance = 0.5},
+]
+gold_min = 60
+gold_max = 150
+
+[[encounters.entities]]
+id = "awakened_horror"
+name = "Awakened Horror"
+entity_type = "enemy"
+description = "A nightmarish entity from the ancient underwater city, now stirring from aeons of slumber. Its form is a mass of writhing tentacles and glowing psychic nodes, and its presence assaults the mind as much as the body."
+level = 13
+hp_max = 100
+ac = 17
+count_min = 1
+count_max = 1
+xp_value = 800
+
+[encounters.entities.ability_scores]
+strength = 20
+dexterity = 12
+constitution = 20
+intelligence = 16
+wisdom = 14
+charisma = 6
+
+[[encounters.entities.attacks]]
+name = "Psychic Scream"
+damage_dice = "3d10"
+damage_bonus = 0
+damage_type = "psychic"
+
+[[encounters.entities.attacks]]
+name = "Tentacle"
+damage_dice = "2d8"
+damage_bonus = 5
+damage_type = "bludgeoning"

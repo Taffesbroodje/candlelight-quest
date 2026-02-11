@@ -1,0 +1,185 @@
+# =============================================================================
+# Paladin Origins — Oaths sworn and burdens carried in the name of righteousness
+# =============================================================================
+
+[[origins]]
+id = "oath_sworn_knight"
+name = "Oath-Sworn Knight"
+category = "paladin"
+summary = "A knight who swore a sacred oath and now seeks to fulfill it in a world that tests faith daily."
+prologue = """
+The ceremony was simple. You knelt in the Thornfield Temple before the altar of \
+light, placed your sword across the stone, and spoke the words that would define \
+the rest of your life. The oath was ancient — older than the temple, older than the \
+village — and the weight of it settled on your shoulders like armor you could never \
+remove. You swore to protect the innocent, to show mercy to the penitent, and to \
+stand between darkness and those who cannot stand for themselves.
+
+The priest who administered the oath was old and tired and honest enough to warn \
+you: the world does not reward righteousness. It punishes it. The oath will demand \
+things of you that no sane person would choose, and it will provide no comfort \
+when the cost grows heavy. But the divine power that flows through sworn paladins \
+is real, and it does not come from the temple or the altar or the words. It comes \
+from meaning them.
+
+You felt the power for the first time when you stood — a warmth in your chest that \
+had nothing to do with the candles, a certainty in your bones that had nothing to \
+do with courage. The oath is your compass now. Everything else — comfort, safety, \
+approval — is secondary."""
+ability_choices = ["strength", "charisma", "constitution"]
+skill_proficiencies = ["religion", "persuasion"]
+starting_equipment = ["holy_symbol", "fine_clothes"]
+bonus_gold = 15
+starting_region = "verdant_reach"
+starting_location = "thornfield_temple"
+feature_name = "Aura of Conviction"
+feature_description = "Your unwavering commitment to your oath radiates outward. Allies within 10 feet of you gain a +1 bonus on saving throws against being frightened."
+required_races = []
+excluded_races = []
+required_classes = ["paladin"]
+excluded_classes = []
+
+[[origins]]
+id = "fallen_templar"
+name = "Fallen Templar"
+category = "paladin"
+summary = "A once-devoted warrior who broke their oath and now seeks redemption through atonement."
+prologue = """
+The order expelled you. Not for cowardice, not for incompetence — for mercy. The \
+prisoner you released was a child, barely thirteen, caught stealing bread from the \
+temple stores. The order's law was clear: theft from sacred ground is punishable by \
+the removal of the offending hand. You looked at the child's thin wrists and the \
+bread crumbs on their lips, and you cut the ropes instead.
+
+The commander called it insubordination. The council called it a violation of \
+sacred trust. You called it the only decision you could live with, and you told \
+them so. They stripped your insignia, confiscated your armor, and walked you to the \
+gate in your underclothes. The child was long gone. You hope they ate well.
+
+The divine power has not left you. This is the part that confuses the theologians — \
+you broke your oath to the order, but the oath to something deeper held. The light \
+still answers when you call it, the healing still flows through your hands, and the \
+certainty in your chest burns as bright as ever. Perhaps the oath was never to the \
+order at all. Perhaps it was to something that values mercy more than law."""
+ability_choices = ["charisma", "wisdom", "strength"]
+skill_proficiencies = ["insight", "medicine"]
+starting_equipment = ["common_clothes", "prayer_book"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "ironridge_road"
+feature_name = "Redemption's Grace"
+feature_description = "Your quest for atonement has taught you to see the best in others. You have advantage on Insight checks to determine if someone is genuinely remorseful."
+required_races = []
+excluded_races = []
+required_classes = ["paladin"]
+excluded_classes = []
+
+[[origins]]
+id = "divine_messenger"
+name = "Divine Messenger"
+category = "paladin"
+summary = "Called by a divine vision to deliver a message to a world that may not want to hear it."
+prologue = """
+The vision came without warning. You were sleeping in your modest room above the \
+Cinderhold forge where you worked as a smith's apprentice, and between one breath \
+and the next, the ceiling dissolved into blinding light. A voice that was not a \
+voice — more like the sound of a cathedral bell filtered through sunlight — told \
+you three things. First, that the world was in danger. Second, that you had been \
+chosen. Third, that the power to act was already inside you.
+
+When you woke, your hands were glowing. The apprentice in the next bed screamed. \
+The smith fired you before breakfast. But when you touched the burn on a stable \
+boy's arm and it healed without a scar, the smith's expression changed from anger \
+to something much more complicated.
+
+You do not know which god chose you. The voice did not identify itself, and the \
+temple scholars you consulted could not agree. What you know is that the power is \
+real, the calling is real, and the danger — whatever it is — is real. You walk the \
+highland road with divine light in your hands and a message you do not fully \
+understand, hoping to find someone who can help you interpret it."""
+ability_choices = ["charisma", "strength", "wisdom"]
+skill_proficiencies = ["religion", "intimidation"]
+starting_equipment = ["holy_symbol", "common_clothes"]
+bonus_gold = 8
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_gate"
+feature_name = "Divine Radiance"
+feature_description = "Your divine calling manifests as a faint glow in your hands. Once per long rest, you can emit bright light in a 20-foot radius as an action, lasting 10 minutes. Undead in the light have disadvantage on attack rolls."
+required_races = []
+excluded_races = []
+required_classes = ["paladin"]
+excluded_classes = []
+
+[[origins]]
+id = "shield_of_the_meek"
+name = "Shield of the Meek"
+category = "paladin"
+summary = "A self-appointed protector of the powerless who draws strength from defending others."
+prologue = """
+You never planned to be a hero. You were a farm hand on the outskirts of the \
+Verdant Reach, strong but unremarkable, content with the rhythm of planting and \
+harvest and the simple satisfaction of honest work. The bandits changed that. They \
+came in autumn, after the harvest, when the granaries were full and the farmers' \
+pockets were not. They took what they wanted and hurt anyone who objected.
+
+You objected. Not with words — with a shovel, and then with a fence post, and \
+then with your bare hands when both of those broke. You stood in the doorway of \
+the widow Maera's farmhouse and refused to move, and something happened that \
+neither you nor the bandits expected. A light gathered around your fists, a \
+warmth that had nothing to do with exertion, and the bandit leader stumbled \
+backward as if you had struck him with a mace instead of a fist.
+
+The bandits ran. The widow blessed you. The village priest examined your hands \
+and said a word you had only heard in sermons: paladin. Not by training, not by \
+ordination, but by the sheer force of your refusal to let harm reach those who \
+cannot prevent it. The power comes from the conviction, and the conviction comes \
+from a simple truth you have never been able to ignore: someone has to stand up."""
+ability_choices = ["strength", "constitution", "charisma"]
+skill_proficiencies = ["athletics", "medicine"]
+starting_equipment = ["common_clothes", "shovel"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "thornfield_village"
+feature_name = "Defender's Instinct"
+feature_description = "Your protective nature activates instinctively. When an ally within 5 feet takes damage, you can use your reaction to reduce that damage by your Charisma modifier (minimum 1) once per short rest."
+required_races = []
+excluded_races = []
+required_classes = ["paladin"]
+excluded_classes = []
+
+[[origins]]
+id = "crusade_veteran"
+name = "Crusade Veteran"
+category = "paladin"
+summary = "A battle-scarred veteran of a holy campaign who questions whether the war was truly righteous."
+prologue = """
+The crusade lasted four years. Four years of marching, fighting, praying, and \
+burying the dead in foreign soil. You joined at eighteen, full of conviction and \
+the certainty that divine purpose guided your blade. The enemy was monstrous — \
+undead legions raised by a necromancer in the far north — and the cause was just. \
+Of that, you have never doubted.
+
+What you doubt is the cost. The villages burned to deny the enemy shelter. The \
+prisoners executed because the army could not spare guards to watch them. The \
+chaplains who blessed each atrocity with the same serene smile they used for \
+morning prayers. You followed orders. You fought with distinction. You earned \
+commendations that you keep folded in your pack but have never displayed.
+
+The crusade ended when the necromancer fell, and the army dissolved, and the \
+soldiers went home to families who could not understand what they had become. You \
+did not go home. Home is a place for people who sleep without screaming. Instead, \
+you walk the roads with your sword and your uncertainty, helping where you can, \
+and hoping that enough small good deeds can balance the ledger against the large \
+ones you can never undo."""
+ability_choices = ["strength", "wisdom", "constitution"]
+skill_proficiencies = ["athletics", "insight"]
+starting_equipment = ["military_insignia", "bedroll"]
+bonus_gold = 12
+starting_region = "ashen_highlands"
+starting_location = "highland_road"
+feature_name = "Veteran's Resolve"
+feature_description = "Your years of campaign have hardened your will. You have advantage on saving throws against being frightened or charmed, and you can go an extra day without food before suffering exhaustion."
+required_races = []
+excluded_races = []
+required_classes = ["paladin"]
+excluded_classes = []

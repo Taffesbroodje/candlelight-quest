@@ -1,0 +1,184 @@
+# =============================================================================
+# Druid Origins — Guardians of the old ways, shaped by the wild places
+# =============================================================================
+
+[[origins]]
+id = "circle_initiate"
+name = "Circle Initiate"
+category = "druid"
+summary = "A newly inducted member of a druidic circle, sent to prove their devotion to the old ways."
+prologue = """
+The Circle of the Thornwild does not accept applicants. They find you, or they \
+do not, and the finding happens in ways that cannot be faked. For you, it was \
+the night you walked into the forest to die. You had lost everything — home, \
+family, purpose — and the ancient trees seemed as good a place as any to let \
+the world have the last word.
+
+The forest had other plans. The trees guided your feet along paths that should \
+not have existed, past groves that glowed with phosphorescent moss and streams \
+that whispered in a language older than words. You walked for three days without \
+hunger or thirst, and on the fourth morning you found the circle — twelve druids \
+seated around a fire that burned without fuel, waiting for you as though you had \
+been expected.
+
+They taught you the old tongue. They taught you to feel the pulse of the earth \
+through your bare feet and to hear the intentions of the wind. After a year of \
+training, the elder pressed a focus into your hands and told you that your \
+initiation required one thing: to walk back into the world you had tried to \
+leave, and to protect it. The circle's magic is strongest when its members are \
+scattered like seeds."""
+ability_choices = ["wisdom", "constitution", "intelligence"]
+skill_proficiencies = ["nature", "religion"]
+starting_equipment = ["druidic_focus", "common_clothes"]
+bonus_gold = 5
+starting_region = "thornwild"
+starting_location = "briarhaven_grove"
+feature_name = "Circle's Blessing"
+feature_description = "Your druidic circle's initiation has attuned you to the natural world. You can sense when natural areas have been corrupted or altered by magic, and plants instinctively part to ease your passage."
+required_races = []
+excluded_races = []
+required_classes = ["druid"]
+excluded_classes = []
+
+[[origins]]
+id = "wildfire_tender"
+name = "Wildfire Tender"
+category = "druid"
+summary = "A druid who understands that destruction and renewal are the same flame."
+prologue = """
+The Ashen Highlands teach a lesson that gentler lands forget: fire is not the \
+enemy of life. It is the prerequisite. The volcanic soil that feeds the highland \
+meadows exists because of eruptions that leveled forests centuries ago. The seeds \
+that sprout after a wildfire grow stronger than anything that came before. You \
+learned this from the highland druids who tend the burn lines — carefully setting \
+controlled fires to renew the land before wildfire can consume it unchecked.
+
+Your mentor was a half-blind woman named Ashara who could read the health of a \
+forest the way a physician reads a pulse. She taught you to ignite and to quench, \
+to judge which trees must burn so that others may live, and to stand in the heart \
+of controlled fire without flinching. The flames do not harm those who serve them \
+honestly.
+
+When the sulfur springs shifted and poisoned the eastern meadows, Ashara sent you \
+west to study the corruption and find its source. She suspected something \
+unnatural — not volcanic activity, but deliberate corruption. You carry her \
+knowledge of fire and renewal in your hands, and her suspicion of unnatural \
+destruction in your mind."""
+ability_choices = ["wisdom", "intelligence", "constitution"]
+skill_proficiencies = ["nature", "survival"]
+starting_equipment = ["tinderbox", "herbalism_kit"]
+bonus_gold = 8
+starting_region = "ashen_highlands"
+starting_location = "sulfur_springs"
+feature_name = "Firewalker"
+feature_description = "Your training with controlled burns has made you resistant to heat. You have resistance to fire damage from natural sources and can handle burning objects without taking damage."
+required_races = []
+excluded_races = []
+required_classes = ["druid"]
+excluded_classes = []
+
+[[origins]]
+id = "swamp_oracle"
+name = "Swamp Oracle"
+category = "druid"
+summary = "A seer of the wetlands who reads the future in still water and rotting wood."
+prologue = """
+The Sunken Reach is not beautiful. The water is dark, the air is thick, and the \
+things that live beneath the surface do not appreciate visitors. But beauty was \
+never the point. The swamp is the oldest living thing you have ever met — a vast, \
+interconnected organism of water, mud, and decay that processes death into life \
+with a patience that makes mountains seem hasty.
+
+Your grandmother taught you to listen to it. She was the swamp oracle before you, \
+and her grandmother before her, stretching back in an unbroken line to a time \
+when the Sunken Reach covered half the continent. The oracle sits at the trading \
+post and reads the water — the color of the algae, the movement of the fish, the \
+direction of the current — and tells the traders what the swamp wants them to know.
+
+The swamp told you to leave. Not in words — in the way the water flowed, in the \
+pattern of the lily pads, in the behavior of the herons that watch the shallows. \
+Something is coming. Something that will need you to be elsewhere when it arrives. \
+You trust the swamp. You have never known it to be wrong."""
+ability_choices = ["wisdom", "charisma", "intelligence"]
+skill_proficiencies = ["insight", "perception"]
+starting_equipment = ["dream_catcher", "incense_sticks"]
+bonus_gold = 5
+starting_region = "sunken_reach"
+starting_location = "murkfen_trading_post"
+feature_name = "Water Reading"
+feature_description = "You can read omens in natural water sources. Once per long rest, you may meditate at a body of water for 10 minutes to gain vague insight about nearby dangers or opportunities."
+required_races = []
+excluded_races = []
+required_classes = ["druid"]
+excluded_classes = []
+
+[[origins]]
+id = "grove_guardian"
+name = "Grove Guardian"
+category = "druid"
+summary = "A sworn protector of a sacred grove, compelled to wander by a threat beyond its borders."
+prologue = """
+The grove at the heart of the Thornwild has no name that human tongues can \
+pronounce. The trees there are older than the forest itself — survivors from a \
+time when the entire continent was woodland, before the axes came and the cities \
+rose. You were chosen as guardian at birth, marked by the elder tree's pollen \
+that drifted through your mother's window on the night you were born.
+
+For twenty years you tended the grove. You knew every root, every branch, every \
+creature that nested in the canopy. The grove spoke to you through the rustle of \
+leaves and the creak of ancient wood, and you answered by pulling invasive weeds, \
+redirecting streams, and gently persuading predators to hunt elsewhere.
+
+Then the blight came. Not from within — the grove's own defenses would have \
+handled that. From somewhere beyond the forest's edge, a corruption crept along \
+underground waterways, turning roots black and leaves to ash. The elder tree \
+told you, in its slow arboreal way, that the source was beyond the grove's \
+borders. Beyond yours, too. But someone must go, and the grove cannot walk."""
+ability_choices = ["wisdom", "strength", "constitution"]
+skill_proficiencies = ["nature", "animal_handling"]
+starting_equipment = ["druidic_focus", "herbalism_kit"]
+bonus_gold = 3
+starting_region = "thornwild"
+starting_location = "briarhaven_grove"
+feature_name = "Nature's Warden"
+feature_description = "Your bond with the natural world makes plants and animals trust you instinctively. Non-hostile beasts will not attack you unless provoked, and you have advantage on Animal Handling checks."
+required_races = []
+excluded_races = []
+required_classes = ["druid"]
+excluded_classes = []
+
+[[origins]]
+id = "storm_caller_apprentice"
+name = "Storm Caller Apprentice"
+category = "druid"
+summary = "A student of the storm druids who channel the fury of wind and lightning."
+prologue = """
+The lighthouse at Storm Point has not needed a keeper in decades. The storms that \
+batter the Iron Coast are managed — not controlled, never controlled, but guided — \
+by the storm callers who live in the keeper's quarters. Your master was one of \
+three, an ancient woman with hair like white lightning who could feel a pressure \
+change three days before the wind arrived.
+
+She taught you that weather is alive. Not sentient, not willful, but alive in \
+the way that fire is alive — it feeds, it grows, it destroys, and it renews. \
+A storm caller does not command the weather. They negotiate. They suggest. They \
+offer the path of least resistance and hope the storm takes it.
+
+Your apprenticeship ended the night a hurricane ignored your master's guidance \
+and drove straight for the fishing fleet. She walked into the storm to redirect \
+it personally, and when morning came, the fleet was safe and your master was gone. \
+The lighthouse stands empty now. The other storm callers dispersed to other coasts. \
+You carry your master's teachings and her final lesson: the storm always wins \
+eventually. The trick is choosing which battles to fight."""
+ability_choices = ["wisdom", "dexterity", "charisma"]
+skill_proficiencies = ["nature", "perception"]
+starting_equipment = ["rune_stones", "travelers_clothes"]
+bonus_gold = 10
+starting_region = "iron_coast"
+starting_location = "storm_point_lighthouse"
+feature_name = "Storm Sense"
+feature_description = "Your training with weather patterns gives you an uncanny ability to predict storms. You can always predict the weather 24 hours in advance and have advantage on saving throws against lightning and thunder damage."
+required_races = []
+excluded_races = []
+required_classes = ["druid"]
+excluded_classes = []

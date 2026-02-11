@@ -28,6 +28,9 @@ _COOLDOWNS: dict[str, int] = {
     "story": 15,
     "faction_goals": 15,
     "world_event": 5,
+    "region": 20,
+    "arcane_location": 25,
+    "guild": 20,
 }
 
 
@@ -109,19 +112,55 @@ class Director:
                     events.append(result)
                     return events
 
-        # 6. Story progression — check story seed beats
+        # 6. Should we reveal a new region?
+        if self._can_generate("region", context.turn_number):
+            result = self._try_reveal_region(context, repos)
+            if result:
+                events.append(result)
+                return events
+
+        # 6b. Should we hint at guild recruitment for skilled crafters?
+        if self._can_generate("guild", context.turn_number):
+            if triggers.should_offer_guild_recruitment(context, repos):
+                self._last_generation["guild"] = context.turn_number
+                events.append({
+                    "event_type": "STORY_BEAT",
+                    "description": (
+                        "Your crafting skill has not gone unnoticed. "
+                        "A guild representative may be looking for talented artisans like you."
+                    ),
+                    "mechanical_details": {"hint": "guild_recruitment_nearby"},
+                })
+                return events
+
+        # 6c. Should we spawn an arcane location for spell inventors?
+        if self._can_generate("arcane_location", context.turn_number):
+            if triggers.should_spawn_arcane_location(context, repos):
+                self._last_generation["arcane_location"] = context.turn_number
+                events.append({
+                    "event_type": "STORY_BEAT",
+                    "description": (
+                        "Your growing mastery of spell creation draws attention. "
+                        "Rumors speak of a hidden arcane tower nearby, where ancient "
+                        "mages once forged spells of incredible power."
+                    ),
+                    "mechanical_details": {"hint": "arcane_location_nearby"},
+                })
+                return events
+
+        # 7. Story progression — check story seed beats
         story_events = self._check_story_progression(context, repos)
         if story_events:
             events.extend(story_events)
 
-        # 7. Faction goals — autonomous faction actions
+        # 8. Faction goals — autonomous faction actions
         if self._can_generate("faction_goals", context.turn_number):
             faction_events = self._check_faction_goals(context, repos)
             if faction_events:
                 events.extend(faction_events)
                 self._last_generation["faction_goals"] = context.turn_number
 
-        # 8. World events — random ambient events
+        # 9. World events — random ambient events
         if self._can_generate("world_event", context.turn_number):
             world_events = self._check_world_events(context, repos)
             if world_events:
@@ -179,6 +218,9 @@ class Director:
         """Generate a new location when the player discovers an unknown path.
 
         Returns the new location dict (already saved to DB) or None on failure.
+        Supports sandbox-style region crossing — when the player has explored
+        deep enough past content boundaries, new locations may belong to a
+        different region.
         """
         from text_rpg.systems.director.generators import generate_location
 
@@ -193,9 +235,15 @@ class Director:
         source_loc_id = context.location.get("id", "")
         new_loc_id = location_data["id"]
 
+        # Determine region — check if we should cross into a new region
+        current_region_id = context.location.get("region_id", "")
+        new_region_id = self._maybe_cross_region(
+            current_region_id, context, repos,
+        )
+
         # Set game_id and region
         location_data["game_id"] = context.game_id
-        location_data["region_id"] = context.location.get("region_id", "")
+        location_data["region_id"] = new_region_id
 
         # Save new location (without embedded connections)
         location_data["connections"] = json.dumps([])
@@ -270,6 +318,9 @@ class Director:
         except Exception as e:
             logger.warning(f"NPC generation failed: {e}")
             return None
+
+        # Scale NPC level to player level ± 2, clamped to region range
+        npc_data = _scale_npc_to_player(npc_data, context)
 
         npc_data["game_id"] = context.game_id
         npc_data["location_id"] = context.location.get("id", "")
@@ -409,6 +460,257 @@ class Director:
 
         self._last_generation["pacing"] = context.turn_number
         return None  # Intents are silent — no event
+
+    def _maybe_cross_region(
+        self,
+        current_region_id: str,
+        context: GameContext,
+        repos: dict[str, Any],
+    ) -> str:
+        """Determine if a newly generated location should be in a different region.
+
+        Returns the region_id to assign. Usually the current region, but may
+        return a different one for sandbox region transitions.
+
+        Crossing happens when:
+        - The player has generated 3+ locations past content boundaries in this region
+        - OR the player level exceeds the current region's level_range_max
+        """
+        import random
+
+        location_repo = repos.get("location")
+        if not location_repo or not current_region_id:
+            return current_region_id
+
+        # Count how many generated (non-content) locations exist in this region
+        try:
+            region_locations = location_repo.get_by_region(context.game_id, current_region_id)
+            generated_count = sum(
+                1 for loc in region_locations
+                if loc.get("generated", False)
+            )
+        except Exception:
+            return current_region_id
+
+        # Check player level vs region max
+        player_level = context.character.get("level", 1)
+        region_max = 5
+        try:
+            from text_rpg.content.loader import load_region
+            region_data = load_region(current_region_id)
+            region_max = region_data.get("level_range_max", 5)
+        except Exception:
+            pass
+
+        # Cross region boundary if: 3+ generated locations OR player outlevels the region
+        should_cross = generated_count >= 3 or player_level > region_max
+
+        if not should_cross:
+            return current_region_id
+
+        # Only cross with 40% probability per attempt (keeps it natural, not every location)
+        if random.random() > 0.4:
+            return current_region_id
+
+        # Find an unvisited content region to transition into
+        try:
+            from text_rpg.content.loader import load_all_regions
+
+            all_regions = load_all_regions()
+            all_game_locations = location_repo.get_all(context.game_id)
+            visited_regions = {
+                loc.get("region_id", "")
+                for loc in all_game_locations
+                if loc.get("visited")
+            }
+
+            # Prefer unvisited content regions
+            unvisited = [
+                rid for rid in all_regions
+                if rid not in visited_regions and rid != current_region_id
+            ]
+            if unvisited:
+                chosen = random.choice(unvisited)
+                logger.info(f"Region crossing: {current_region_id} -> {chosen}")
+                return chosen
+
+            # All content regions visited — this stays in current region
+            # (The _try_reveal_region method handles LLM-generated regions as narrative hooks)
+            return current_region_id
+        except Exception:
+            return current_region_id
+
+    def _try_reveal_region(
+        self, context: GameContext, repos: dict[str, Any]
+    ) -> dict | None:
+        """Check if conditions are right to reveal a new region, and generate one if so."""
+        from text_rpg.content.loader import load_all_regions, load_region
+
+        try:
+            all_regions = load_all_regions()
+        except Exception:
+            return None
+
+        all_region_ids = list(all_regions.keys())
+        if not triggers.should_reveal_new_region(context, repos, all_region_ids):
+            return None
+
+        # Determine target tier based on player level
+        player_level = context.character.get("level", 1)
+        current_region_id = context.location.get("region_id", "")
+
+        try:
+            current_region = load_region(current_region_id)
+        except Exception:
+            return None
+
+        current_max = current_region.get("level_range_max", 5)
+
+        # Check for unvisited content regions first (prefer content over generated)
+        location_repo = repos.get("location")
+        if not location_repo:
+            return None
+
+        all_game_locations = location_repo.get_all(context.game_id)
+        visited_regions = set()
+        for loc in all_game_locations:
+            r = loc.get("region_id", "")
+            if r and loc.get("visited"):
+                visited_regions.add(r)
+
+        # Find an unvisited content region at a higher tier
+        unvisited_content = [
+            r for r in all_region_ids
+            if r not in visited_regions and r != current_region_id
+        ]
+
+        if unvisited_content:
+            # Pick the first unvisited content region and create a narrative hook
+            target_region_id = unvisited_content[0]
+            try:
+                target_region = load_region(target_region_id)
+            except Exception:
+                return None
+
+            self._last_generation["region"] = context.turn_number
+            return {
+                "event_type": "DIRECTOR_REGION_REVEAL",
+                "description": (
+                    f"Travelers speak of lands beyond — {target_region.get('name', 'a distant region')}. "
+                    f"{target_region.get('description', '')[:200]}"
+                ),
+                "location_id": context.location.get("id"),
+                "mechanical_details": {
+                    "region_id": target_region_id,
+                    "region_name": target_region.get("name", ""),
+                    "level_range_min": target_region.get("level_range_min", 1),
+                    "level_range_max": target_region.get("level_range_max", 5),
+                },
+            }
+
+        # All content regions visited — generate a new region via LLM
+        target_min = max(1, current_max - 1)
+        target_max = target_min + 4  # 5-level range
+
+        try:
+            from text_rpg.systems.director.generators import generate_region
+
+            existing_names = [r.get("name", r_id) for r_id, r in all_regions.items()]
+            region_data = generate_region(
+                self.llm, context, current_region,
+                target_min, target_max, existing_names,
+            )
+        except Exception as e:
+            logger.warning(f"Region generation failed: {e}")
+            return None
+
+        # Save region locations and NPCs to DB
+        region_id = region_data["id"]
+        region_data["game_id"] = context.game_id
+
+        # Save each location
+        locations = region_data.get("locations", [])
+        for i, loc in enumerate(locations):
+            loc["game_id"] = context.game_id
+            loc["region_id"] = region_id
+            # Connect locations within the region (linear chain)
+            if i > 0:
+                prev_loc = locations[i - 1]
+                loc.setdefault("connections", [])
+            location_repo.save(_serialize_location(loc))
+
+        # Create inter-location connections within the region
+        conn_repo = repos.get("connection")
+        for i in range(len(locations) - 1):
+            src = locations[i]
+            dst = locations[i + 1]
+            if conn_repo:
+                conn_repo.add_bidirectional(
+                    game_id=context.game_id,
+                    source_id=src["id"],
+                    target_id=dst["id"],
+                    direction="forward",
+                    reverse_direction="back",
+                    description=dst.get("name", "ahead"),
+                    back_description=src.get("name", "back"),
+                )
+
+        # Connect first location of new region to current location
+        if locations:
+            entry_loc = locations[0]
+            if conn_repo:
+                conn_repo.add_bidirectional(
+                    game_id=context.game_id,
+                    source_id=context.location.get("id", ""),
+                    target_id=entry_loc["id"],
+                    direction="beyond",
+                    reverse_direction="back",
+                    description=f"Path to {region_data.get('name', 'new lands')}",
+                    back_description=context.location.get("name", "the way back"),
+                )
+
+        # Save NPCs
+        entity_repo = repos.get("entity")
+        for npc in region_data.get("npcs", []):
+            npc["game_id"] = context.game_id
+            npc["region_id"] = region_id
+            # Place NPC at a location in the region
+            if locations:
+                # Place at town/settlement or first location
+                town_locs = [l for l in locations if l.get("location_type") in ("town", "village", "settlement", "tavern", "shop")]
+                target_loc = town_locs[0] if town_locs else locations[0]
+                npc["location_id"] = target_loc["id"]
+            if entity_repo:
+                entity_repo.save(_serialize_entity(npc))
+
+        # Index to RAG
+        try:
+            self.indexer.index_lore(
+                f"New region discovered: {region_data['name']} — {region_data.get('description', '')}",
+                category="location",
+                tags={"game_id": context.game_id, "region_id": region_id},
+            )
+        except Exception:
+            pass
+
+        self._last_generation["region"] = context.turn_number
+        return {
+            "event_type": "DIRECTOR_REGION_REVEAL",
+            "description": (
+                f"Travelers speak of lands beyond — {region_data.get('name', 'a distant region')}. "
+                f"{region_data.get('description', '')[:200]}"
+            ),
+            "location_id": context.location.get("id"),
+            "mechanical_details": {
+                "region_id": region_id,
+                "region_name": region_data.get("name", ""),
+                "level_range_min": region_data.get("level_range_min", target_min),
+                "level_range_max": region_data.get("level_range_max", target_max),
+                "generated": True,
+                "location_count": len(locations),
+                "npc_count": len(region_data.get("npcs", [])),
+            },
+        }
 
     def _check_faction_goals(
         self, context: GameContext, repos: dict[str, Any]
@@ -767,11 +1069,81 @@ class Director:
                 npc_data = generate_npc(
                     self.llm, context, location_data, {},
                 )
+                npc_data = _scale_npc_to_player(npc_data, context)
                 npc_data["game_id"] = context.game_id
                 npc_data["location_id"] = location_data["id"]
                 repos["entity"].save(_serialize_entity(npc_data))
             except Exception as e:
                 logger.debug(f"Failed to populate new location with NPC: {e}")
+
+
+# -- NPC scaling --
+
+def _scale_npc_to_player(npc_data: dict, context: GameContext) -> dict:
+    """Scale a Director-spawned NPC's level to player_level ± 2, clamped to region range.
+
+    Also adjusts HP and AC proportionally based on level difference.
+
+    Rare event (2%): a vastly overpowered mob spawns (e.g., dragon attack)
+    ignoring the normal scaling — creates dangerous surprise encounters.
+    """
+    import random
+
+    player_level = context.character.get("level", 1)
+    region_id = context.location.get("region_id", "")
+
+    # Rare event: 2% chance to spawn a vastly overpowered mob
+    if random.random() < 0.02:
+        rare_level = max(player_level + 5, 10)
+        npc_data["level"] = rare_level
+        npc_data["hp_max"] = max(npc_data.get("hp_max", 10), rare_level * 8)
+        npc_data["hp_current"] = npc_data["hp_max"]
+        npc_data["ac"] = min(20, max(npc_data.get("ac", 10), 14 + rare_level // 4))
+        npc_data["is_hostile"] = True
+        npc_data.setdefault("properties", {})
+        if isinstance(npc_data["properties"], str):
+            import json
+            npc_data["properties"] = json.loads(npc_data["properties"]) if npc_data["properties"] else {}
+        npc_data["properties"]["rare_spawn"] = True
+        return npc_data
+
+    # Get region level bounds
+    region_min, region_max = 1, 20
+    if region_id:
+        try:
+            from text_rpg.content.loader import load_region
+            region_data = load_region(region_id)
+            region_min = region_data.get("level_range_min", 1)
+            region_max = region_data.get("level_range_max", 20)
+        except Exception:
+            pass
+
+    # Target level: player ± 2, clamped to region range
+    target_min = max(region_min, player_level - 2)
+    target_max = min(region_max, player_level + 2)
+    # Handle edge case where player is above/below region range
+    if target_min > target_max:
+        target_level = target_max if player_level > region_max else target_min
+    else:
+        target_level = random.randint(target_min, target_max)
+
+    old_level = npc_data.get("level", 1)
+    npc_data["level"] = target_level
+
+    # Scale HP proportionally if level changed significantly
+    if old_level > 0 and target_level != old_level:
+        ratio = target_level / old_level
+        old_hp = npc_data.get("hp_max", 10)
+        new_hp = max(4, round(old_hp * ratio))
+        npc_data["hp_max"] = new_hp
+        npc_data["hp_current"] = new_hp
+
+        # Slight AC adjustment for higher levels
+        base_ac = npc_data.get("ac", 10)
+        ac_bonus = max(0, (target_level - old_level) // 3)
+        npc_data["ac"] = min(20, base_ac + ac_bonus)
+
+    return npc_data
 
 
 # -- Serialization helpers --

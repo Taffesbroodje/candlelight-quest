@@ -1,0 +1,319 @@
+# Drake Wastes encounters — L14-20
+
+# -- Boss Encounters --
+
+[[encounters]]
+id = "ancient_dragon_enc"
+name = "Ancient Red Dragon"
+location_ids = ["ancient_dragon_lair", "wyrm_spire"]
+encounter_chance = 0.10
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "dragon_scale_fragment", chance = 0.8},
+    {id = "soul_gem", chance = 0.4},
+    {id = "arcane_dust", chance = 0.6},
+    {id = "healing_potion", chance = 0.6},
+]
+gold_min = 200
+gold_max = 500
+
+[[encounters.entities]]
+id = "ancient_red_dragon"
+name = "Ancient Red Dragon"
+entity_type = "enemy"
+description = "A colossal red dragon whose scales are the color of dried blood, each one as large as a shield. Its eyes burn with ancient malice, and the air itself ignites in its presence. Centuries of accumulated power radiate from every movement."
+level = 18
+hp_max = 180
+ac = 20
+count_min = 1
+count_max = 1
+xp_value = 2000
+
+[encounters.entities.ability_scores]
+strength = 26
+dexterity = 10
+constitution = 24
+intelligence = 16
+wisdom = 14
+charisma = 18
+
+[[encounters.entities.attacks]]
+name = "Fire Breath"
+damage_dice = "6d10"
+damage_bonus = 0
+damage_type = "fire"
+
+[[encounters.entities.attacks]]
+name = "Claw"
+damage_dice = "3d8"
+damage_bonus = 8
+damage_type = "slashing"
+
+[[encounters.entities.attacks]]
+name = "Tail Sweep"
+damage_dice = "2d10"
+damage_bonus = 8
+damage_type = "bludgeoning"
+
+# -- Attrition Encounters --
+
+[[encounters]]
+id = "wyrmling_swarms"
+name = "Wyrmling Swarms"
+location_ids = ["wyrmling_territory", "dragon_egg_nest"]
+encounter_chance = 0.35
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "dragon_scale_fragment", chance = 0.2},
+    {id = "beast_hide", chance = 0.4},
+]
+gold_min = 15
+gold_max = 40
+
+[[encounters.entities]]
+id = "wyrmling"
+name = "Wyrmling"
+entity_type = "enemy"
+description = "A young dragon the size of a large dog, its scales still soft and its wings barely strong enough for sustained flight. What it lacks in power it makes up for in speed, ferocity, and numbers."
+level = 10
+hp_max = 48
+ac = 15
+count_min = 3
+count_max = 5
+xp_value = 200
+
+[encounters.entities.ability_scores]
+strength = 16
+dexterity = 16
+constitution = 14
+intelligence = 8
+wisdom = 10
+charisma = 10
+
+[[encounters.entities.attacks]]
+name = "Fire Breath"
+damage_dice = "2d6"
+damage_bonus = 0
+damage_type = "fire"
+
+[[encounters.entities.attacks]]
+name = "Bite"
+damage_dice = "1d8"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[encounters]]
+id = "dragon_cultists"
+name = "Dragon Cultists"
+location_ids = ["obsidian_fortress", "war_camp"]
+encounter_chance = 0.25
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.3},
+    {id = "healing_potion", chance = 0.2},
+]
+gold_min = 15
+gold_max = 40
+
+[[encounters.entities]]
+id = "dragon_cultist"
+name = "Dragon Cultist"
+entity_type = "enemy"
+description = "A robed fanatic with dragon-scale tattoos covering their face and arms. They channel draconic fire through ritual incantations and fight with the desperate conviction of true believers."
+level = 10
+hp_max = 45
+ac = 14
+count_min = 3
+count_max = 5
+xp_value = 200
+
+[encounters.entities.ability_scores]
+strength = 14
+dexterity = 14
+constitution = 13
+intelligence = 14
+wisdom = 12
+charisma = 14
+
+[[encounters.entities.attacks]]
+name = "Dragon Fire"
+damage_dice = "2d8"
+damage_bonus = 0
+damage_type = "fire"
+
+[[encounters.entities.attacks]]
+name = "Scimitar"
+damage_dice = "1d6"
+damage_bonus = 3
+damage_type = "slashing"
+
+# -- Puzzle Encounters --
+
+[[encounters]]
+id = "elemental_storms"
+name = "Elemental Storms"
+location_ids = ["elemental_nexus_dw", "storm_peak"]
+encounter_chance = 0.20
+fight_type = "puzzle"
+description = "Reality warps as elemental energies collide. Lightning strikes from below, fire rains from above, and the ground becomes liquid. You must find the calm eye of the storm to survive."
+
+[encounters.puzzle]
+puzzle_type = "trap"
+dc = 17
+trap_damage = "5d8"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.6},
+    {id = "soul_gem", chance = 0.2},
+]
+gold_min = 30
+gold_max = 80
+
+[[encounters]]
+id = "reality_warp"
+name = "Reality Warp"
+location_ids = ["crystal_prison", "portal_stone"]
+encounter_chance = 0.15
+fight_type = "puzzle"
+description = "The air fractures like broken glass and you see multiple versions of yourself. Each reflection offers a different path. A voice demands: 'Choose the one that does not exist.'"
+
+[encounters.puzzle]
+puzzle_type = "riddle"
+dc = 17
+riddle_question = "The air fractures like broken glass and you see multiple versions of yourself. Each reflection offers a different path. A voice demands: 'Choose the one that does not exist.'"
+riddle_answer = "none of them"
+
+[encounters.loot]
+items = [
+    {id = "soul_gem", chance = 0.4},
+    {id = "arcane_dust", chance = 0.7},
+]
+gold_min = 40
+gold_max = 100
+
+[[encounters]]
+id = "draconic_puzzles"
+name = "Draconic Puzzles"
+location_ids = ["forgotten_temple_dw", "draconic_library"]
+encounter_chance = 0.20
+fight_type = "puzzle"
+description = "Ancient draconic glyphs activate as you enter. A sequence of colored flames appears — red, blue, green, red, blue, _. The missing flame must be named."
+
+[encounters.puzzle]
+puzzle_type = "riddle"
+dc = 15
+riddle_question = "Ancient draconic glyphs activate as you enter. A sequence of colored flames appears — red, blue, green, red, blue, _. The missing flame must be named."
+riddle_answer = "green"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.5},
+    {id = "healing_potion", chance = 0.3},
+]
+gold_min = 20
+gold_max = 60
+
+# -- Boss Encounters (continued) --
+
+[[encounters]]
+id = "artifact_guardians"
+name = "Artifact Guardians"
+location_ids = ["forgotten_temple_dw", "crystal_prison"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.6},
+    {id = "soul_gem", chance = 0.25},
+    {id = "healing_potion", chance = 0.4},
+]
+gold_min = 50
+gold_max = 120
+
+[[encounters.entities]]
+id = "artifact_guardian"
+name = "Artifact Guardian"
+entity_type = "enemy"
+description = "A towering construct of enchanted stone and crystal, animated by magic older than the dragons. Its body hums with contained energy, and its fists crackle with force that can shatter castle walls."
+level = 14
+hp_max = 95
+ac = 18
+count_min = 1
+count_max = 1
+xp_value = 800
+
+[encounters.entities.ability_scores]
+strength = 20
+dexterity = 10
+constitution = 20
+intelligence = 6
+wisdom = 14
+charisma = 1
+
+[[encounters.entities.attacks]]
+name = "Energy Fist"
+damage_dice = "3d8"
+damage_bonus = 5
+damage_type = "force"
+
+[[encounters.entities.attacks]]
+name = "Beam"
+damage_dice = "3d10"
+damage_bonus = 0
+damage_type = "radiant"
+
+[[encounters]]
+id = "oracle_trials"
+name = "Oracle Trials"
+location_ids = ["dragon_oracle_cave"]
+encounter_chance = 0.10
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "soul_gem", chance = 0.4},
+    {id = "arcane_dust", chance = 0.8},
+    {id = "healing_potion", chance = 0.5},
+]
+gold_min = 80
+gold_max = 200
+
+[[encounters.entities]]
+id = "oracle_guardian"
+name = "Oracle Guardian"
+entity_type = "enemy"
+description = "A spectral dragon formed of living crystal, its body refracting light into blinding prismatic patterns. It guards the Dragon Oracle with unwavering devotion, testing all who seek audience with trials of mind and body."
+level = 16
+hp_max = 110
+ac = 18
+count_min = 1
+count_max = 1
+xp_value = 1000
+
+[encounters.entities.ability_scores]
+strength = 18
+dexterity = 14
+constitution = 18
+intelligence = 18
+wisdom = 18
+charisma = 16
+
+[[encounters.entities.attacks]]
+name = "Prismatic Ray"
+damage_dice = "4d8"
+damage_bonus = 0
+damage_type = "force"
+
+[[encounters.entities.attacks]]
+name = "Time Warp"
+damage_dice = "3d6"
+damage_bonus = 0
+damage_type = "psychic"

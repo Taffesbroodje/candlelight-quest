@@ -1,0 +1,441 @@
+# Deadmarsh — cursed wasteland, L8-12
+
+[[locations]]
+id = "driftwood_town"
+name = "Driftwood Town"
+region_id = "deadmarsh"
+description = "A ramshackle frontier town built from salvaged materials. Every building looks temporary because it is. Crystal prospectors, scavengers, and mercenaries crowd the muddy streets."
+location_type = "town"
+
+[[locations.connections]]
+target_location_id = "driftwood_saloon"
+direction = "north"
+description = "A crooked sign reading 'The Blasted Flask' hangs over a heavy door."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "driftwood_market"
+direction = "east"
+description = "The chaotic noise of the open-air market drifts from the east."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "driftwood_healer"
+direction = "west"
+description = "A makeshift clinic with a stained red cross painted on its door."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "wasteland_road"
+direction = "south"
+description = "The main road stretches south toward Ashwatch Fortress."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "deadmarsh_east_road"
+direction = "east"
+description = "A desolate road heads east into increasingly barren territory."
+is_locked = false
+
+[[locations]]
+id = "driftwood_saloon"
+name = "The Blasted Flask"
+region_id = "deadmarsh"
+description = "A rough saloon where crystal money flows freely. Fights are common, the drinks are strong, and no one asks questions about your past."
+location_type = "tavern"
+
+[[locations.connections]]
+target_location_id = "driftwood_town"
+direction = "south"
+description = "The muddy streets of Driftwood lie beyond the swinging doors."
+is_locked = false
+
+[[locations]]
+id = "driftwood_market"
+name = "Driftwood Market"
+region_id = "deadmarsh"
+description = "A chaotic open-air market where crystallized magic, scavenged artifacts, and survival gear change hands. Prices fluctuate wildly based on supply."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "driftwood_town"
+direction = "west"
+description = "The market opens onto Driftwood's main street."
+is_locked = false
+
+[[locations]]
+id = "ashwatch_fortress"
+name = "Ashwatch Fortress"
+region_id = "deadmarsh"
+description = "A massive military fortress built to contain the corruption zone. Stone walls twenty feet thick, constant patrols, and heavy ballistae pointed at the wasteland."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "wasteland_road"
+direction = "south"
+description = "The main road leads south from the fortress gates."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ashwatch_chapel"
+direction = "east"
+description = "A stone chapel stands within the fortress inner ward."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ashwatch_armory"
+direction = "west"
+description = "The clang of metal on metal echoes from the armory."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "forward_camp"
+direction = "south"
+description = "A fortified path leads to the advance position beyond the walls."
+is_locked = false
+
+[[locations]]
+id = "ashwatch_chapel"
+name = "Ashwatch Chapel"
+region_id = "deadmarsh"
+description = "A chapel within the fortress where soldiers pray before patrol. The priests here specialize in wards against magical corruption."
+location_type = "temple"
+
+[[locations.connections]]
+target_location_id = "ashwatch_fortress"
+direction = "west"
+description = "The chapel doors open onto the fortress courtyard."
+is_locked = false
+
+[[locations]]
+id = "mage_camp"
+name = "Mage Research Camp"
+region_id = "deadmarsh"
+description = "A research encampment of mages studying the catastrophe's effects. Tents surround a central wardstone, and magical instruments hum constantly."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "crystal_fields"
+direction = "south"
+description = "The crystal formations begin just beyond the camp's wards."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "wasteland_road"
+direction = "north"
+description = "A maintained path connects back to the wasteland road."
+is_locked = false
+
+[[locations]]
+id = "crystal_fields"
+name = "Crystal Fields"
+region_id = "deadmarsh"
+description = "Vast fields of crystallized magical energy jutting from the blasted earth like frozen lightning. Beautiful but dangerous — raw magic pulses through the formations."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "mage_camp"
+direction = "north"
+description = "The mage camp's wardstone glows faintly to the north."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "blast_crater"
+direction = "east"
+description = "The crystal formations grow denser toward a massive depression."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "corruption_zone"
+direction = "south"
+description = "Reality shimmers and distorts to the south. The air tastes of ozone."
+is_locked = false
+
+[[locations]]
+id = "blast_crater"
+name = "The Blast Crater"
+region_id = "deadmarsh"
+description = "The epicenter of the ancient catastrophe. A mile-wide crater where reality is thin and the air shimmers with residual magic. Time moves strangely here."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "crystal_fields"
+direction = "west"
+description = "Crystal formations line the crater's western rim."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "corruption_zone"
+direction = "south"
+description = "The crater descends into the most corrupted area."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "glass_desert"
+direction = "east"
+description = "The blasted earth gives way to a mirror-smooth expanse of fused glass."
+is_locked = false
+
+[[locations]]
+id = "corruption_zone"
+name = "Corruption Zone"
+region_id = "deadmarsh"
+description = "An area where the catastrophe's effects are still active. Reality warps, gravity shifts, and magical creatures spawn from nothing. Extremely dangerous."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "crystal_fields"
+direction = "north"
+description = "The crystal fields offer a slightly safer path northward."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "blast_crater"
+direction = "north"
+description = "The crater rim rises to the north."
+is_locked = false
+
+[[locations]]
+id = "ruined_academy"
+name = "Ruined Academy"
+region_id = "deadmarsh"
+description = "The remains of the magical academy whose experiment caused the catastrophe. Collapsed lecture halls and shattered laboratories still contain powerful artifacts."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "corruption_zone"
+direction = "north"
+description = "The corruption zone seethes beyond the academy's shattered walls."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "twisted_forest"
+direction = "west"
+description = "Warped trees encroach on the academy's western wing."
+is_locked = false
+
+[[locations]]
+id = "wasteland_road"
+name = "Wasteland Road"
+region_id = "deadmarsh"
+description = "The main road connecting Driftwood to Ashwatch, constantly maintained against the encroaching wasteland. Patrols are frequent but dangers more so."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "driftwood_town"
+direction = "north"
+description = "The road leads north to the frontier town of Driftwood."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "ashwatch_fortress"
+direction = "north"
+description = "The fortress of Ashwatch looms to the north."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "mage_camp"
+direction = "south"
+description = "A side path leads to the mage research camp."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "scavenger_camp"
+direction = "east"
+description = "A rough trail breaks east toward a cluster of tents."
+is_locked = false
+
+[[locations]]
+id = "scavenger_camp"
+name = "Scavenger Camp"
+region_id = "deadmarsh"
+description = "A camp of professional scavengers who venture into the wasteland for crystal and artifacts. They're tough, pragmatic, and always looking for help."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "wasteland_road"
+direction = "west"
+description = "The trail leads back to the main wasteland road."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "bone_spires"
+direction = "south"
+description = "Eerie bone pillars rise from the earth to the south."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "toxic_springs"
+direction = "east"
+description = "A faint chemical stench drifts from the east."
+is_locked = false
+
+[[locations]]
+id = "bone_spires"
+name = "Bone Spires"
+region_id = "deadmarsh"
+description = "Pillars of fused bone reaching skyward — the remains of creatures caught in the original blast. The formations create an eerie landscape that whistles in the wind."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "scavenger_camp"
+direction = "north"
+description = "The scavenger camp lies to the north."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "watchtower_ridge"
+direction = "east"
+description = "A ridge rises to the east, topped by a signal tower."
+is_locked = false
+
+[[locations]]
+id = "toxic_springs"
+name = "Toxic Springs"
+region_id = "deadmarsh"
+description = "Hot springs contaminated by magical runoff. The water glows faintly and produces noxious fumes. Some alchemists prize the mineral deposits."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "scavenger_camp"
+direction = "west"
+description = "The scavenger camp lies to the west."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "abandoned_mine"
+direction = "south"
+description = "A boarded-up mine entrance gapes in the hillside to the south."
+is_locked = false
+
+[[locations]]
+id = "ashwatch_armory"
+name = "Ashwatch Armory"
+region_id = "deadmarsh"
+description = "The fortress armory, well-stocked with weapons and armor designed for fighting magical threats. Military-grade equipment at military prices."
+location_type = "shop"
+
+[[locations.connections]]
+target_location_id = "ashwatch_fortress"
+direction = "east"
+description = "The armory opens onto the fortress courtyard."
+is_locked = false
+
+[[locations]]
+id = "driftwood_healer"
+name = "Driftwood Clinic"
+region_id = "deadmarsh"
+description = "A makeshift clinic run by a combat healer. Crystal sickness, magical burns, and mundane injuries are all treated here with equal urgency."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "driftwood_town"
+direction = "east"
+description = "The clinic door opens onto Driftwood's main street."
+is_locked = false
+
+[[locations]]
+id = "forward_camp"
+name = "Forward Camp"
+region_id = "deadmarsh"
+description = "An advance military position beyond the main fortress, manned by the bravest (or most foolish) soldiers. The corruption is close enough to touch."
+location_type = "settlement"
+
+[[locations.connections]]
+target_location_id = "ashwatch_fortress"
+direction = "north"
+description = "The fortified path leads back to Ashwatch Fortress."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "crystal_fields"
+direction = "south"
+description = "The crystal fields begin just beyond the camp's perimeter."
+is_locked = false
+
+[[locations]]
+id = "twisted_forest"
+name = "Twisted Forest"
+region_id = "deadmarsh"
+description = "Trees warped by magical contamination into impossible shapes — spirals, loops, and right angles. The wood itself is saturated with residual magic."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "ruined_academy"
+direction = "east"
+description = "The shattered remains of the academy are visible through the warped trees."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "wasteland_road"
+direction = "north"
+description = "A barely passable trail leads north to the wasteland road."
+is_locked = false
+
+[[locations]]
+id = "glass_desert"
+name = "Glass Desert"
+region_id = "deadmarsh"
+description = "Sand fused to glass by the catastrophe's heat. The landscape is a mirror-smooth expanse that reflects the sky, creating disorienting illusions."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "blast_crater"
+direction = "west"
+description = "The blast crater lies to the west, its rim jagged against the sky."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "deadmarsh_east_road"
+direction = "north"
+description = "The east road skirts the glass desert's northern edge."
+is_locked = false
+
+[[locations]]
+id = "abandoned_mine"
+name = "Abandoned Mine"
+region_id = "deadmarsh"
+description = "A pre-catastrophe mine now filled with crystallized magic. The tunnels are unstable and inhabited by creatures mutated by magical exposure."
+location_type = "dungeon"
+
+[[locations.connections]]
+target_location_id = "toxic_springs"
+direction = "north"
+description = "The toxic springs bubble and hiss to the north."
+is_locked = false
+
+[[locations]]
+id = "deadmarsh_east_road"
+name = "Eastern Desolation Road"
+region_id = "deadmarsh"
+description = "The road heading east from Driftwood into increasingly desolate territory toward the volcanic lands of Embercrown."
+location_type = "road"
+
+[[locations.connections]]
+target_location_id = "driftwood_town"
+direction = "west"
+description = "The road leads west back to Driftwood."
+is_locked = false
+
+[[locations.connections]]
+target_location_id = "glass_desert"
+direction = "south"
+description = "The glass desert shimmers to the south."
+is_locked = false
+
+[locations.properties]
+border_region = "embercrown"
+border_direction = "east"
+
+[[locations]]
+id = "watchtower_ridge"
+name = "Watchtower Ridge"
+region_id = "deadmarsh"
+description = "A high ridge offering views of the entire wasteland. Ashwatch maintains a signal tower here to warn of major incursions."
+location_type = "wilderness"
+
+[[locations.connections]]
+target_location_id = "bone_spires"
+direction = "west"
+description = "The bone spires jut from the earth below to the west."
+is_locked = false

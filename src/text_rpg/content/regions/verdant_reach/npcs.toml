@@ -212,3 +212,132 @@ disliked_gifts = ["nightshade", "poison_vial"]
 name = "Longsword"
 damage_dice = "1d8"
 damage_type = "slashing"
+
+[[npcs]]
+id = "miller_gedric"
+name = "Miller Gedric"
+entity_type = "npc"
+profession = "miller"
+description = "A stout human man dusted head to toe in flour, with strong forearms and a booming laugh. He grinds grain for the entire village and knows every farmer's business."
+location_id = "millpond"
+dialogue_tags = ["greeting", "rumors", "shop_supplies"]
+behaviors = ["friendly", "merchant", "gossip"]
+is_hostile = false
+is_alive = true
+level = 2
+hp_current = 14
+hp_max = 14
+ac = 10
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 14
+dexterity = 10
+constitution = 13
+intelligence = 11
+wisdom = 12
+charisma = 13
+
+[npcs.schedule]
+dawn = "millpond"
+morning = "millpond"
+midday = "millpond"
+afternoon = "millpond"
+evening = "thornfield_inn"
+night = "millpond"
+late_night = "millpond"
+
+[npcs.properties]
+preferred_gifts = ["healing_herb", "rations"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Heavy Ladle"
+damage_dice = "1d4"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "shepherd_wynn"
+name = "Shepherd Wynn"
+entity_type = "npc"
+profession = "shepherd"
+description = "A wiry young woman with wind-tangled hair and a crook taller than herself. She knows every hill and hollow in the reach and has an uncanny bond with her flock."
+location_id = "shepherds_rest"
+dialogue_tags = ["greeting", "rumors", "lore"]
+behaviors = ["quiet", "information", "nature_lover"]
+is_hostile = false
+is_alive = true
+level = 1
+hp_current = 9
+hp_max = 9
+ac = 11
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 13
+constitution = 11
+intelligence = 10
+wisdom = 15
+charisma = 12
+
+[npcs.schedule]
+dawn = "shepherds_rest"
+morning = "shepherds_rest"
+midday = "shepherds_rest"
+afternoon = "shepherds_rest"
+evening = "greenhollow_farm"
+night = "thornfield_inn"
+late_night = "shepherds_rest"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_herb"]
+disliked_gifts = ["dagger", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Shepherd's Crook"
+damage_dice = "1d4"
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "huntress_mira"
+name = "Huntress Mira"
+entity_type = "npc"
+profession = "hunter"
+description = "A lean, sharp-eyed half-elf with a longbow slung across her back and a wolf-skin cloak. She tracks game through the Whisperwood and sells pelts and fresh meat."
+location_id = "hunter_camp"
+dialogue_tags = ["greeting", "shop_supplies", "hunt_info", "rumors"]
+behaviors = ["stoic", "merchant", "tracker"]
+is_hostile = false
+is_alive = true
+level = 3
+hp_current = 24
+hp_max = 24
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 16
+constitution = 12
+intelligence = 11
+wisdom = 15
+charisma = 10
+
+[npcs.schedule]
+dawn = "whisperwood_edge"
+morning = "hunter_camp"
+midday = "hunter_camp"
+afternoon = "whisperwood_edge"
+evening = "hunter_camp"
+night = "thornfield_inn"
+late_night = "hunter_camp"
+
+[npcs.properties]
+preferred_gifts = ["beast_hide", "rations"]
+disliked_gifts = ["arcane_dust", "holy_symbol"]
+
+[[npcs.attacks]]
+name = "Longbow"
+damage_dice = "1d8"
+damage_type = "piercing"

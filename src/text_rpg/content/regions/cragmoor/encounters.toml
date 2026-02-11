@@ -1,0 +1,216 @@
+# Cragmoor encounters — L4-8
+
+[[encounters]]
+id = "kobold_mining_party"
+name = "Kobold Mining Party"
+location_ids = ["silver_mines", "collapsed_tunnel"]
+encounter_chance = 0.35
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "iron_ingot", chance = 0.3},
+    {id = "healing_herb", chance = 0.2},
+    {id = "dagger", chance = 0.2},
+]
+gold_min = 5
+gold_max = 15
+
+[[encounters.entities]]
+id = "kobold_miner"
+name = "Kobold Miner"
+entity_type = "enemy"
+description = "A scrappy kobold in a makeshift mining helmet, wielding a sharpened pick. These creatures have carved their own tunnels through the mountain, stealing ore wherever they can."
+level = 3
+hp_max = 12
+ac = 13
+count_min = 4
+count_max = 6
+xp_value = 25
+
+[encounters.entities.ability_scores]
+strength = 8
+dexterity = 15
+constitution = 10
+intelligence = 10
+wisdom = 10
+charisma = 8
+
+[[encounters.entities.attacks]]
+name = "Mining Pick"
+damage_dice = "1d6"
+damage_bonus = 1
+damage_type = "piercing"
+
+[[encounters.entities.attacks]]
+name = "Sling"
+damage_dice = "1d4"
+damage_bonus = 1
+damage_type = "bludgeoning"
+
+[[encounters]]
+id = "mountain_lion"
+name = "Mountain Lion"
+location_ids = ["cliffside_outlook", "mountain_shrine", "mountain_pass_north"]
+encounter_chance = 0.25
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "beast_hide", chance = 0.6},
+    {id = "healing_herb", chance = 0.3},
+]
+gold_min = 0
+gold_max = 10
+
+[[encounters.entities]]
+id = "mountain_lion"
+name = "Mountain Lion"
+entity_type = "enemy"
+description = "A powerful tawny predator perfectly adapted to the rocky terrain. Its pale fur blends with the stone, and it strikes from above with devastating force."
+level = 4
+hp_max = 26
+ac = 14
+count_min = 1
+count_max = 2
+xp_value = 75
+
+[encounters.entities.ability_scores]
+strength = 15
+dexterity = 17
+constitution = 13
+intelligence = 3
+wisdom = 14
+charisma = 6
+
+[[encounters.entities.attacks]]
+name = "Bite"
+damage_dice = "1d8"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[encounters.entities.attacks]]
+name = "Claws"
+damage_dice = "1d6"
+damage_bonus = 3
+damage_type = "slashing"
+
+[[encounters]]
+id = "deep_crawler"
+name = "Deep Crawler"
+location_ids = ["collapsed_tunnel", "mithral_vein"]
+encounter_chance = 0.15
+fight_type = "boss"
+
+[encounters.loot]
+items = [
+    {id = "arcane_dust", chance = 0.5},
+    {id = "iron_ingot", chance = 0.4},
+    {id = "healing_potion", chance = 0.4},
+    {id = "soul_gem", chance = 0.1},
+]
+gold_min = 25
+gold_max = 60
+
+[[encounters.entities]]
+id = "deep_crawler"
+name = "Deep Crawler"
+entity_type = "enemy"
+description = "A massive insectoid horror from the deepest tunnels, its chitinous armor scarred by centuries of burrowing through solid rock. Mandibles the size of swords drip with corrosive acid."
+level = 6
+hp_max = 55
+ac = 15
+count_min = 1
+count_max = 1
+xp_value = 300
+
+[encounters.entities.ability_scores]
+strength = 18
+dexterity = 8
+constitution = 18
+intelligence = 4
+wisdom = 10
+charisma = 3
+
+[[encounters.entities.attacks]]
+name = "Mandible Crush"
+damage_dice = "2d10"
+damage_bonus = 4
+damage_type = "piercing"
+
+[[encounters.entities.attacks]]
+name = "Acid Spit"
+damage_dice = "2d6"
+damage_bonus = 0
+damage_type = "acid"
+
+# -- Puzzle Encounter --
+
+[[encounters]]
+id = "rock_slide_cragmoor"
+name = "Rock Slide"
+location_ids = ["mountain_pass_north", "mountain_trail_south"]
+encounter_chance = 0.2
+fight_type = "puzzle"
+description = "The mountainside rumbles and loose rocks begin to cascade down. Boulders the size of carts tumble toward the path — you need to find shelter or dodge through the gaps."
+
+[encounters.puzzle]
+puzzle_type = "trap"
+dc = 14
+trap_damage = "3d6"
+
+[encounters.loot]
+items = [
+    {id = "iron_ingot", chance = 0.4},
+    {id = "healing_herb", chance = 0.3},
+]
+gold_min = 5
+gold_max = 15
+
+[[encounters]]
+id = "cave_fisher"
+name = "Cave Fisher"
+location_ids = ["mushroom_caverns", "silver_mines"]
+encounter_chance = 0.25
+fight_type = "attrition"
+
+[encounters.loot]
+items = [
+    {id = "beast_hide", chance = 0.4},
+    {id = "spider_silk", chance = 0.3},
+    {id = "healing_herb", chance = 0.2},
+]
+gold_min = 5
+gold_max = 15
+
+[[encounters.entities]]
+id = "cave_fisher"
+name = "Cave Fisher"
+entity_type = "enemy"
+description = "A crab-like predator that clings to cave ceilings, dangling a sticky filament to snare prey below. Its powerful claws can crack bone and shell alike."
+level = 4
+hp_max = 28
+ac = 14
+count_min = 1
+count_max = 2
+xp_value = 75
+
+[encounters.entities.ability_scores]
+strength = 16
+dexterity = 12
+constitution = 14
+intelligence = 2
+wisdom = 10
+charisma = 3
+
+[[encounters.entities.attacks]]
+name = "Filament Snare"
+damage_dice = "1d8"
+damage_bonus = 3
+damage_type = "piercing"
+
+[[encounters.entities.attacks]]
+name = "Claws"
+damage_dice = "1d6"
+damage_bonus = 3
+damage_type = "slashing"

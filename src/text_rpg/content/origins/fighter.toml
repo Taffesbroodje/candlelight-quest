@@ -1,0 +1,201 @@
+# =============================================================================
+# Fighter Origins — Backgrounds forged through martial discipline and combat
+# =============================================================================
+
+[[origins]]
+id = "tournament_champion"
+name = "Tournament Champion"
+category = "fighter"
+summary = "A celebrated arena victor who traded glory for the open road."
+prologue = """
+You remember the roar of the crowd the way other people remember their first kiss — \
+total, overwhelming, a sound that filled your chest and lifted you off the ground. \
+The tournament circuits of the Iron Coast were your stage for three seasons running. \
+You fought with longsword, mace, and bare fists across the salt-stained arenas of \
+Saltmere, collecting medals and broken bones in roughly equal measure. The crowds \
+chanted your name. The bookmakers cursed it.
+
+But tournaments are spectacle, not war, and you always knew the difference. The \
+padded tips and blunted edges kept the kills theoretical. When a real blade found \
+your shoulder in the semifinal at Storm Point — an opponent who forgot the rules, \
+or never cared — the crowd gasped, and you saw their faces change. They wanted \
+blood, but only in the abstract. The wound healed. Your appetite for performing \
+did not.
+
+You pawned your last trophy for road supplies and walked away from the arena \
+district on a market morning, the medal around your neck catching the light one \
+final time. The skills that made you a champion are real. The adoration was not. \
+Somewhere beyond the cheering stands, there are fights that matter — and you intend \
+to find them."""
+ability_choices = ["strength", "constitution", "charisma"]
+skill_proficiencies = ["athletics", "performance"]
+starting_equipment = ["trophy_medal", "fine_clothes"]
+bonus_gold = 15
+starting_region = "iron_coast"
+starting_location = "saltmere_market"
+feature_name = "Crowd Favorite"
+feature_description = "Your fame in the arena precedes you. Common folk in settlements recognize your name, granting advantage on charisma checks when your martial reputation is relevant."
+required_races = []
+excluded_races = []
+required_classes = ["fighter"]
+excluded_classes = []
+
+[[origins]]
+id = "disgraced_bodyguard"
+name = "Disgraced Bodyguard"
+category = "fighter"
+summary = "A sworn protector cast out after failing the one duty that mattered."
+prologue = """
+You stood between your charge and the world for the better part of a decade. \
+Every doorway you entered, you entered first. Every room you left, you left last. \
+Your eyes never rested — scanning rooftops, counting exits, reading the hands of \
+strangers for the telltale drift toward a concealed weapon. You were not a servant. \
+You were a shield made of flesh and reflex, and for years, no harm passed through \
+you.
+
+Then came the night at the river crossing. You had warned your lord about the \
+route, about the broken lanterns on the bridge, about the way the local patrols \
+had thinned. He waved you off. He always waved you off. The ambush came from \
+both banks — crossbow bolts and rushing shadows. You cut down three of them before \
+the fourth put a quarrel through your thigh. When you dragged yourself to where \
+your lord had fallen, he was already gone.
+
+They did not execute you. That would have been kinder. Instead, they stripped your \
+insignia, published your failure in the court record, and turned you out through \
+the servants' gate. You carry the insignia still — you took it from the refuse pile \
+where they threw it. The wound in your leg healed into a limp you barely notice. \
+The wound in your pride has not healed at all. You sit in the Thornfield Inn, \
+nursing an ale and your shame, waiting for the chance to prove that one failure \
+does not define a life."""
+ability_choices = ["strength", "dexterity", "wisdom"]
+skill_proficiencies = ["perception", "intimidation"]
+starting_equipment = ["common_clothes", "military_insignia"]
+bonus_gold = 5
+starting_region = "verdant_reach"
+starting_location = "thornfield_inn"
+feature_name = "Shield Instinct"
+feature_description = "Years of protective service have honed your reflexes. When an ally within 5 feet is targeted by an attack, you may use your reaction to impose disadvantage on the attack roll once per short rest."
+required_races = []
+excluded_races = []
+required_classes = ["fighter"]
+excluded_classes = []
+
+[[origins]]
+id = "weapon_masters_student"
+name = "Weapon Master's Student"
+category = "fighter"
+summary = "A dedicated student of the blade, sent into the world to complete a master's final lesson."
+prologue = """
+The academy at Cinderhold was not a school in any comfortable sense of the word. \
+There were no dormitories, no feast halls, no holidays. There was the training \
+yard — a rectangle of packed volcanic ash surrounded by stone walls scarred with \
+a century of blade marks — and there was Master Voren. She taught you to hold a \
+sword before she taught you to read, and she considered both skills equally vital. \
+You drilled forms at dawn, studied the treatises of legendary duelists by \
+candlelight, and spent your afternoons sparring until your arms felt like lead \
+and your mind felt like glass — clear, sharp, empty of everything except the next \
+strike.
+
+Voren accepted no payment. Her price was obedience and, eventually, excellence. \
+You gave her both, year after year, until the morning she met you at the gate \
+with your pack already assembled and a look on her weathered face that you had \
+never seen before. Pride, perhaps. Or something close to it.
+
+"The yard teaches you to fight," she said. "The world teaches you why." She pressed \
+a sealed letter into your hand — your certification, your letter of passage, your \
+final exam. The instructions were simple: go, test your training against what is \
+real, and return only when you have something to teach her. You bowed, shouldered \
+your pack, and walked through the highland gate without looking back."""
+ability_choices = ["strength", "dexterity", "intelligence"]
+skill_proficiencies = ["athletics", "history"]
+starting_equipment = ["common_clothes", "belt_pouch"]
+bonus_gold = 8
+starting_region = "ashen_highlands"
+starting_location = "cinderhold_gate"
+feature_name = "Studied Technique"
+feature_description = "Your disciplined training allows you to analyze an opponent's fighting style. After observing a creature attack for one round, you gain advantage on your next attack roll against it."
+required_races = []
+excluded_races = []
+required_classes = ["fighter"]
+excluded_classes = []
+
+[[origins]]
+id = "last_stand_survivor"
+name = "Last Stand Survivor"
+category = "fighter"
+summary = "The sole survivor of a doomed battle, carrying the weight of fallen comrades."
+prologue = """
+The highland pass was supposed to hold. Forty soldiers against a raiding party \
+twice their number — bad odds, but the terrain favored defense, and your captain \
+was the best tactician you had ever served under. She positioned the shield wall \
+at the narrowest point, archers on the ridgeline, reserves behind the second \
+barricade. It should have worked. It would have worked, if the enemy had come \
+from only one direction.
+
+They flanked through a goat trail that the scouts had dismissed as impassable. \
+The archers fell first. Then the reserves. Then the shield wall buckled inward \
+like a crushed ribcage, and what had been a disciplined defense became a slaughter. \
+You fought with your back to a boulder, your shield arm numb, your blade chipped \
+to a ragged edge. When the enemy finally withdrew at dusk — not defeated, merely \
+satisfied — you were the only one still standing. The silence that followed was \
+worse than the screaming.
+
+You buried who you could. You took the captain's insignia from her body because \
+someone should carry it, and you could not bear to leave it in the dirt. The \
+highland road stretches before you now, empty and windswept, and every step takes \
+you further from the pass and closer to something you have not yet named. It is \
+not revenge. It is not grief. It is the quiet, immovable certainty that you \
+survived for a reason, and you owe it to the dead to find out what it is."""
+ability_choices = ["constitution", "strength", "wisdom"]
+skill_proficiencies = ["athletics", "survival"]
+starting_equipment = ["bedroll", "military_insignia"]
+bonus_gold = 5
+starting_region = "ashen_highlands"
+starting_location = "highland_road"
+feature_name = "Unbreakable Will"
+feature_description = "Having survived when all others fell, you resist the urge to flee. You have advantage on saving throws against being frightened and cannot be forced to retreat against your will."
+required_races = []
+excluded_races = []
+required_classes = ["fighter"]
+excluded_classes = []
+
+[[origins]]
+id = "frontier_enforcer"
+name = "Frontier Enforcer"
+category = "fighter"
+summary = "A rural lawkeeper who kept order through intimidation and an iron grip."
+prologue = """
+The farmlands outside Thornfield do not have city walls or standing garrisons. \
+They have you — or they had you, until recently. For six years you walked the \
+farm roads with a set of manacles on your belt and a reputation that preceded you \
+by a quarter mile. Cattle thieves, squatters, drunken brawlers, poachers crossing \
+from the Whisperwood — you dealt with them all. Not always gently. Gentleness, \
+you learned early, is a luxury that frontier law cannot afford.
+
+The farmers respected you. The troublemakers feared you. The magistrate in \
+Thornfield tolerated you, mostly because you kept the problems far enough from \
+his door that he could pretend they did not exist. You collected no salary, only \
+a share of recovered goods and the grudging hospitality of the homesteads you \
+protected. It was enough. You slept soundly, knowing the roads were safer for \
+your presence.
+
+Then the magistrate changed, and the new one brought his own enforcers — younger, \
+cheaper, and willing to look the other way when his friends bent the rules you \
+had spent years enforcing. Your services were no longer required. The dismissal \
+was polite. The message was clear. You walk the farm road still, but now as a \
+traveler rather than its guardian. The manacles at your belt feel heavier than \
+they used to. The road feels less like yours. But the instinct to protect — the \
+reflex that makes you scan the tree line and listen for hoofbeats — that has not \
+faded, and you doubt it ever will."""
+ability_choices = ["strength", "constitution", "wisdom"]
+skill_proficiencies = ["intimidation", "perception"]
+starting_equipment = ["manacles", "common_clothes"]
+bonus_gold = 10
+starting_region = "verdant_reach"
+starting_location = "farm_road"
+feature_name = "Law of the Land"
+feature_description = "Your years of rural enforcement give you an authoritative presence. Common folk and petty criminals instinctively comply with your commands, granting advantage on intimidation checks to maintain order."
+required_races = []
+excluded_races = []
+required_classes = ["fighter"]
+excluded_classes = []

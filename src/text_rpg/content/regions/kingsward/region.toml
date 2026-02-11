@@ -1,0 +1,6 @@
+id = "kingsward"
+name = "Kingsward"
+description = "The great walled city of Kingsward, seat of the Royal Court and hub of major guilds. Within its towering walls lie distinct districts — the bustling Market Quarter, the prestigious Guild District, the shadowy Slums, and the imposing Royal Castle. Every faction of note has a presence here, from the Adventurers' Guild to the Thieves' Den beneath the streets."
+level_range_min = 7
+level_range_max = 12
+climate = "temperate"

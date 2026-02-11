@@ -1,0 +1,6 @@
+id = "frostmere"
+name = "Frostmere"
+description = "A frozen city built on the shores of a vast frozen lake, its buildings constructed from enchanted ice that never melts. A major trade hub between the southern civilizations and the northern tribal lands, Frostmere sits atop an ancient underwater city that has begun to awaken beneath the ice."
+level_range_min = 10
+level_range_max = 16
+climate = "arctic"

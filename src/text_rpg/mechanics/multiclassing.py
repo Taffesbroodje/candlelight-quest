@@ -7,12 +7,21 @@ from typing import Any
 from text_rpg.mechanics.leveling import HIT_DICE, proficiency_bonus
 from text_rpg.utils import safe_json
 
-# Primary ability requirement for multiclassing (need 13+ to qualify)
-CLASS_PREREQUISITES: dict[str, str] = {
+# Primary ability requirement for multiclassing (need 13+ to qualify).
+# Value is a single ability string, or a list of abilities (all must be 13+).
+CLASS_PREREQUISITES: dict[str, str | list[str]] = {
     "fighter": "strength",
     "wizard": "intelligence",
     "rogue": "dexterity",
     "cleric": "wisdom",
+    "barbarian": "strength",
+    "bard": "charisma",
+    "druid": "wisdom",
+    "monk": "dexterity",
+    "paladin": ["strength", "charisma"],
+    "ranger": ["dexterity", "wisdom"],
+    "sorcerer": "charisma",
+    "warlock": "charisma",
 }
 
 # Maximum number of classes a character can have
@@ -43,20 +52,25 @@ def can_multiclass(ability_scores: dict, target_class: str, current_classes: dic
     if len(current_classes) >= MAX_CLASSES and target_class not in current_classes:
         return False, f"Maximum {MAX_CLASSES} classes allowed."
 
-    # Check prerequisite ability score
-    required_ability = CLASS_PREREQUISITES.get(target_class)
-    if not required_ability:
+    # Check prerequisite ability score(s)
+    required = CLASS_PREREQUISITES.get(target_class)
+    if not required:
         return False, f"Unknown class: {target_class}"
 
-    score = ability_scores.get(required_ability, 10)
-    if score < 13:
-        return False, f"Need {required_ability.title()} 13+ to multiclass into {target_class.title()} (current: {score})."
+    required_list = required if isinstance(required, list) else [required]
+    for req_ability in required_list:
+        score = ability_scores.get(req_ability, 10)
+        if score < 13:
+            return False, f"Need {req_ability.title()} 13+ to multiclass into {target_class.title()} (current: {score})."
 
     # Also need 13+ in current class primary abilities
     for cls_name in current_classes:
         cls_req = CLASS_PREREQUISITES.get(cls_name)
-        if cls_req and ability_scores.get(cls_req, 10) < 13:
-            return False, f"Need {cls_req.title()} 13+ in your current class {cls_name.title()} to multiclass."
+        if cls_req:
+            cls_req_list = cls_req if isinstance(cls_req, list) else [cls_req]
+            for req_ability in cls_req_list:
+                if ability_scores.get(req_ability, 10) < 13:
+                    return False, f"Need {req_ability.title()} 13+ in your current class {cls_name.title()} to multiclass."
 
     return True, "Meets prerequisites."
 

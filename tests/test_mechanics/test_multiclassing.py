@@ -45,9 +45,45 @@ class TestCanMulticlass:
         assert ok is False
         assert "maximum" in reason.lower()
 
+    def test_bard_charisma_prereq(self):
+        scores = {"charisma": 14, "strength": 14}
+        ok, _ = can_multiclass(scores, "bard", {"fighter": 3})
+        assert ok is True
+
+    def test_bard_charisma_too_low(self):
+        scores = {"charisma": 10, "strength": 14}
+        ok, reason = can_multiclass(scores, "bard", {"fighter": 3})
+        assert ok is False
+        assert "charisma" in reason.lower()
+
+    def test_paladin_dual_prerequisite(self):
+        # Paladin needs STR 13+ AND CHA 13+
+        scores = {"strength": 14, "charisma": 14, "dexterity": 14}
+        ok, _ = can_multiclass(scores, "paladin", {"rogue": 3})
+        assert ok is True
+
+    def test_paladin_missing_one_prereq(self):
+        # Has STR but not CHA
+        scores = {"strength": 14, "charisma": 10, "dexterity": 14}
+        ok, reason = can_multiclass(scores, "paladin", {"rogue": 3})
+        assert ok is False
+        assert "charisma" in reason.lower()
+
+    def test_ranger_dual_prerequisite(self):
+        # Ranger needs DEX 13+ AND WIS 13+
+        scores = {"dexterity": 14, "wisdom": 14, "strength": 14}
+        ok, _ = can_multiclass(scores, "ranger", {"fighter": 3})
+        assert ok is True
+
+    def test_ranger_missing_wisdom(self):
+        scores = {"dexterity": 14, "wisdom": 10, "strength": 14}
+        ok, reason = can_multiclass(scores, "ranger", {"fighter": 3})
+        assert ok is False
+        assert "wisdom" in reason.lower()
+
     def test_unknown_class(self):
         scores = {"strength": 15}
-        ok, reason = can_multiclass(scores, "bard", {"fighter": 3})
+        ok, reason = can_multiclass(scores, "necromancer", {"fighter": 3})
         assert ok is False
         assert "unknown" in reason.lower()
 

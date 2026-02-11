@@ -1,0 +1,353 @@
+# Deadmarsh NPCs — Driftwood, Ashwatch, and the wasteland
+
+[[npcs]]
+id = "marshal_drake"
+name = "Marshal Drake"
+entity_type = "npc"
+profession = "marshal"
+description = "A towering human man in scarred plate armor, his jaw set like iron and his eyes constantly scanning the horizon. He commands Ashwatch Fortress with grim determination, knowing every day could be the last stand against the corruption."
+location_id = "ashwatch_fortress"
+dialogue_tags = ["greeting", "quest_info", "guard_info", "lore", "politics"]
+behaviors = ["authoritative", "quest_giver", "protector"]
+is_hostile = false
+is_alive = true
+level = 10
+hp_current = 72
+hp_max = 72
+ac = 19
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 18
+dexterity = 14
+constitution = 16
+intelligence = 13
+wisdom = 16
+charisma = 15
+
+[npcs.schedule]
+dawn = "ashwatch_fortress"
+morning = "ashwatch_fortress"
+midday = "ashwatch_fortress"
+afternoon = "forward_camp"
+evening = "ashwatch_fortress"
+night = "ashwatch_fortress"
+late_night = "ashwatch_fortress"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "rations"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Warding Greatsword"
+damage_dice = "2d6"
+damage_bonus = 4
+damage_type = "slashing"
+
+[[npcs]]
+id = "barkeep_slag"
+name = "Barkeep Slag"
+entity_type = "npc"
+profession = "barkeep"
+description = "A squat, heavily scarred dwarf with a shaved head and a missing ear. He pours drinks with one hand and keeps a spiked club under the bar with the other. His saloon, his rules."
+location_id = "driftwood_saloon"
+dialogue_tags = ["greeting", "rumors", "shop_food", "quest_info"]
+behaviors = ["tough", "merchant", "information"]
+is_hostile = false
+is_alive = true
+level = 5
+hp_current = 35
+hp_max = 35
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 12
+constitution = 16
+intelligence = 10
+wisdom = 12
+charisma = 13
+
+[npcs.schedule]
+dawn = "driftwood_saloon"
+morning = "driftwood_saloon"
+midday = "driftwood_saloon"
+afternoon = "driftwood_saloon"
+evening = "driftwood_saloon"
+night = "driftwood_saloon"
+late_night = "driftwood_saloon"
+
+[npcs.properties]
+preferred_gifts = ["rations", "healing_potion"]
+disliked_gifts = ["arcane_dust", "holy_symbol"]
+
+[[npcs.attacks]]
+name = "Broken Bottle"
+damage_dice = "1d6"
+damage_bonus = 2
+damage_type = "slashing"
+
+[[npcs]]
+id = "crystal_merchant_prism"
+name = "Crystal Merchant Prism"
+entity_type = "npc"
+profession = "merchant"
+description = "A wiry tiefling with opalescent eyes and fingers stained with crystal dust. She appraises magical artifacts with unnerving speed and always seems to know the exact value of everything — and everyone."
+location_id = "driftwood_market"
+dialogue_tags = ["greeting", "shop_supplies", "lore", "rumors"]
+behaviors = ["shrewd", "merchant", "knowledgeable"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 28
+hp_max = 28
+ac = 12
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 14
+constitution = 10
+intelligence = 18
+wisdom = 14
+charisma = 16
+
+[npcs.schedule]
+dawn = "driftwood_market"
+morning = "driftwood_market"
+midday = "driftwood_market"
+afternoon = "driftwood_market"
+evening = "driftwood_market"
+night = "driftwood_saloon"
+late_night = "driftwood_market"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "soul_gem"]
+disliked_gifts = ["rations", "bedroll"]
+
+[[npcs.attacks]]
+name = "Crystal Shard"
+damage_dice = "1d6"
+damage_bonus = 0
+damage_type = "force"
+
+[[npcs]]
+id = "mage_cassandra"
+name = "Mage Researcher Cassandra"
+entity_type = "npc"
+profession = "mage_researcher"
+description = "A tall human woman with prematurely white hair and burn scars across her hands from failed experiments. Her eyes hold the feverish intensity of someone chasing answers that could save — or doom — the world."
+location_id = "mage_camp"
+dialogue_tags = ["greeting", "quest_info", "lore", "shop_supplies"]
+behaviors = ["academic", "quest_giver", "curious"]
+is_hostile = false
+is_alive = true
+level = 9
+hp_current = 42
+hp_max = 42
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 8
+dexterity = 12
+constitution = 12
+intelligence = 20
+wisdom = 16
+charisma = 13
+
+[npcs.schedule]
+dawn = "mage_camp"
+morning = "mage_camp"
+midday = "mage_camp"
+afternoon = "mage_camp"
+evening = "crystal_fields"
+night = "mage_camp"
+late_night = "mage_camp"
+
+[npcs.properties]
+preferred_gifts = ["arcane_dust", "soul_gem", "moonpetal"]
+disliked_gifts = ["rations", "iron_ingot"]
+
+[[npcs.attacks]]
+name = "Force Bolt"
+damage_dice = "2d8"
+damage_bonus = 0
+damage_type = "force"
+
+[[npcs]]
+id = "chaplain_ember"
+name = "Chaplain Ember"
+entity_type = "npc"
+profession = "chaplain"
+description = "A gaunt half-elf woman with hollow cheeks and fierce, burning eyes. She tends to the soldiers' souls as much as their wounds, offering prayers and wards against the corruption that seeps into everything."
+location_id = "ashwatch_chapel"
+dialogue_tags = ["greeting", "healing", "blessing", "lore", "quest_info"]
+behaviors = ["devout", "healer", "grim"]
+is_hostile = false
+is_alive = true
+level = 8
+hp_current = 44
+hp_max = 44
+ac = 16
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 12
+dexterity = 10
+constitution = 14
+intelligence = 14
+wisdom = 18
+charisma = 15
+
+[npcs.schedule]
+dawn = "ashwatch_chapel"
+morning = "ashwatch_chapel"
+midday = "ashwatch_chapel"
+afternoon = "ashwatch_chapel"
+evening = "ashwatch_fortress"
+night = "ashwatch_chapel"
+late_night = "ashwatch_chapel"
+
+[npcs.properties]
+preferred_gifts = ["holy_symbol", "healing_herb"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Sacred Flame"
+damage_dice = "2d8"
+damage_bonus = 0
+damage_type = "radiant"
+
+[[npcs]]
+id = "scavenger_wreck"
+name = "Scavenger Boss Wreck"
+entity_type = "npc"
+profession = "scavenger_boss"
+description = "A lean, weathered human man with a mechanical left arm cobbled from scavenged parts. He leads the most successful salvage crew in the wasteland and has the scars to prove every expedition."
+location_id = "scavenger_camp"
+dialogue_tags = ["greeting", "quest_info", "rumors", "lore"]
+behaviors = ["pragmatic", "quest_giver", "survivor"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 45
+hp_max = 45
+ac = 14
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 15
+dexterity = 16
+constitution = 14
+intelligence = 12
+wisdom = 13
+charisma = 11
+
+[npcs.schedule]
+dawn = "scavenger_camp"
+morning = "scavenger_camp"
+midday = "scavenger_camp"
+afternoon = "bone_spires"
+evening = "scavenger_camp"
+night = "scavenger_camp"
+late_night = "scavenger_camp"
+
+[npcs.properties]
+preferred_gifts = ["healing_potion", "rations"]
+disliked_gifts = ["moonpetal", "holy_symbol"]
+
+[[npcs.attacks]]
+name = "Salvaged Blade"
+damage_dice = "1d8"
+damage_bonus = 3
+damage_type = "slashing"
+
+[[npcs]]
+id = "armorer_bolt"
+name = "Armorer Bolt"
+entity_type = "npc"
+profession = "armorer"
+description = "A broad-shouldered dwarven woman with soot-blackened hands and a no-nonsense attitude. She forges weapons and armor specifically designed to resist magical corruption, and her work is the best in the wasteland."
+location_id = "ashwatch_armory"
+dialogue_tags = ["greeting", "shop_weapons", "shop_armor", "craft_info"]
+behaviors = ["gruff", "merchant", "craftsman"]
+is_hostile = false
+is_alive = true
+level = 6
+hp_current = 40
+hp_max = 40
+ac = 15
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 16
+dexterity = 12
+constitution = 14
+intelligence = 14
+wisdom = 12
+charisma = 10
+
+[npcs.schedule]
+dawn = "ashwatch_armory"
+morning = "ashwatch_armory"
+midday = "ashwatch_armory"
+afternoon = "ashwatch_armory"
+evening = "ashwatch_armory"
+night = "ashwatch_fortress"
+late_night = "ashwatch_armory"
+
+[npcs.properties]
+preferred_gifts = ["iron_ingot", "healing_potion"]
+disliked_gifts = ["nightshade", "spider_silk"]
+
+[[npcs.attacks]]
+name = "Warhammer"
+damage_dice = "1d10"
+damage_bonus = 3
+damage_type = "bludgeoning"
+
+[[npcs]]
+id = "healer_salve"
+name = "Healer Salve"
+entity_type = "npc"
+profession = "healer"
+description = "A tired-eyed halfling man with gentle hands and a perpetual look of exhaustion. He treats a never-ending stream of crystal sickness, magical burns, and combat wounds with quiet competence and dwindling supplies."
+location_id = "driftwood_healer"
+dialogue_tags = ["greeting", "healing", "lore", "rumors"]
+behaviors = ["compassionate", "healer", "exhausted"]
+is_hostile = false
+is_alive = true
+level = 7
+hp_current = 36
+hp_max = 36
+ac = 13
+unavailable_periods = ["late_night"]
+
+[npcs.ability_scores]
+strength = 10
+dexterity = 12
+constitution = 13
+intelligence = 15
+wisdom = 18
+charisma = 14
+
+[npcs.schedule]
+dawn = "driftwood_healer"
+morning = "driftwood_healer"
+midday = "driftwood_healer"
+afternoon = "driftwood_healer"
+evening = "driftwood_healer"
+night = "driftwood_saloon"
+late_night = "driftwood_healer"
+
+[npcs.properties]
+preferred_gifts = ["healing_herb", "moonpetal"]
+disliked_gifts = ["nightshade", "poison_vial"]
+
+[[npcs.attacks]]
+name = "Sacred Flame"
+damage_dice = "1d8"
+damage_bonus = 0
+damage_type = "radiant"
